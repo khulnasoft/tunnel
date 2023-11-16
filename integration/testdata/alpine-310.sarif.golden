@@ -5,9 +5,9 @@
     {
       "tool": {
         "driver": {
-          "fullName": "Trivy Vulnerability Scanner",
+          "fullName": "Tunnel Vulnerability Scanner",
           "informationUri": "https://github.com/khulnasoft/tunnel",
-          "name": "Trivy",
+          "name": "Tunnel",
           "rules": [
             {
               "id": "CVE-2019-1549",

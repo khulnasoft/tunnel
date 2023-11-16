@@ -218,7 +218,7 @@ func (s Scanner) misconfsToResults(misconfs []ftypes.Misconfiguration, options t
 	return s.MisconfsToResults(misconfs)
 }
 
-// MisconfsToResults is exported for trivy-plugin-aqua purposes only
+// MisconfsToResults is exported for tunnel-plugin-aqua purposes only
 func (s Scanner) MisconfsToResults(misconfs []ftypes.Misconfiguration) types.Results {
 	log.Logger.Infof("Detected config files: %d", len(misconfs))
 	var results types.Results

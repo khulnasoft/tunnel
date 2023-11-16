@@ -126,9 +126,9 @@ func (sw *SarifWriter) Write(report types.Report) error {
 	if err != nil {
 		return xerrors.Errorf("error creating a new sarif template: %w", err)
 	}
-	sw.run = sarif.NewRunWithInformationURI("Trivy", "https://github.com/khulnasoft/tunnel")
+	sw.run = sarif.NewRunWithInformationURI("Tunnel", "https://github.com/khulnasoft/tunnel")
 	sw.run.Tool.Driver.WithVersion(sw.Version)
-	sw.run.Tool.Driver.WithFullName("Trivy Vulnerability Scanner")
+	sw.run.Tool.Driver.WithFullName("Tunnel Vulnerability Scanner")
 	sw.locationCache = make(map[string][]location)
 	if report.ArtifactType == ftypes.ArtifactContainerImage {
 		sw.run.Properties = sarif.Properties{

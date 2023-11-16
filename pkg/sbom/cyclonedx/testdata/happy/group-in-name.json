@@ -8,7 +8,7 @@
     "tools": [
       {
         "vendor": "aquasecurity",
-        "name": "trivy",
+        "name": "tunnel",
         "version": "0.42.1"
       }
     ],
@@ -18,7 +18,7 @@
       "name": "spring-web-5.3.22.jar",
       "properties": [
         {
-          "name": "aquasecurity:trivy:SchemaVersion",
+          "name": "aquasecurity:tunnel:SchemaVersion",
           "value": "2"
         }
       ]
@@ -33,11 +33,11 @@
       "purl": "pkg:maven/org.springframework/spring-web@5.3.22",
       "properties": [
         {
-          "name": "aquasecurity:trivy:FilePath",
+          "name": "aquasecurity:tunnel:FilePath",
           "value": "spring-web-5.3.22.jar"
         },
         {
-          "name": "aquasecurity:trivy:PkgType",
+          "name": "aquasecurity:tunnel:PkgType",
           "value": "jar"
         }
       ]

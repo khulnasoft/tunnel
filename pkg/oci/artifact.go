@@ -168,7 +168,7 @@ func (a *Artifact) download(ctx context.Context, layer v1.Layer, fileName, dir s
 	defer bar.Finish()
 
 	// https://github.com/hashicorp/go-getter/issues/326
-	tempDir, err := os.MkdirTemp("", "trivy")
+	tempDir, err := os.MkdirTemp("", "tunnel")
 	if err != nil {
 		return xerrors.Errorf("failed to create a temp dir: %w", err)
 	}

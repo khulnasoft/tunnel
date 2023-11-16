@@ -90,7 +90,7 @@ func (a Artifact) parseReferrer(ctx context.Context, repo string, desc v1.Descri
 		return ftypes.ArtifactReference{}, xerrors.Errorf("OCI error: %w", err)
 	}
 
-	tmpDir, err := os.MkdirTemp("", "trivy-sbom-*")
+	tmpDir, err := os.MkdirTemp("", "tunnel-sbom-*")
 	if err != nil {
 		return ftypes.ArtifactReference{}, xerrors.Errorf("mkdir temp error: %w", err)
 	}

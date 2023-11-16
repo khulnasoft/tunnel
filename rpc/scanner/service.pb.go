@@ -490,34 +490,34 @@ func file_rpc_scanner_service_proto_rawDescGZIP() []byte {
 
 var file_rpc_scanner_service_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_rpc_scanner_service_proto_goTypes = []interface{}{
-	(*ScanRequest)(nil),                     // 0: trivy.scanner.v1.ScanRequest
-	(*Licenses)(nil),                        // 1: trivy.scanner.v1.Licenses
-	(*ScanOptions)(nil),                     // 2: trivy.scanner.v1.ScanOptions
-	(*ScanResponse)(nil),                    // 3: trivy.scanner.v1.ScanResponse
-	(*Result)(nil),                          // 4: trivy.scanner.v1.Result
-	nil,                                     // 5: trivy.scanner.v1.ScanOptions.LicenseCategoriesEntry
-	(*common.OS)(nil),                       // 6: trivy.common.OS
-	(*common.Vulnerability)(nil),            // 7: trivy.common.Vulnerability
-	(*common.DetectedMisconfiguration)(nil), // 8: trivy.common.DetectedMisconfiguration
-	(*common.Package)(nil),                  // 9: trivy.common.Package
-	(*common.CustomResource)(nil),           // 10: trivy.common.CustomResource
-	(*common.SecretFinding)(nil),            // 11: trivy.common.SecretFinding
-	(*common.DetectedLicense)(nil),          // 12: trivy.common.DetectedLicense
+	(*ScanRequest)(nil),                     // 0: tunnel.scanner.v1.ScanRequest
+	(*Licenses)(nil),                        // 1: tunnel.scanner.v1.Licenses
+	(*ScanOptions)(nil),                     // 2: tunnel.scanner.v1.ScanOptions
+	(*ScanResponse)(nil),                    // 3: tunnel.scanner.v1.ScanResponse
+	(*Result)(nil),                          // 4: tunnel.scanner.v1.Result
+	nil,                                     // 5: tunnel.scanner.v1.ScanOptions.LicenseCategoriesEntry
+	(*common.OS)(nil),                       // 6: tunnel.common.OS
+	(*common.Vulnerability)(nil),            // 7: tunnel.common.Vulnerability
+	(*common.DetectedMisconfiguration)(nil), // 8: tunnel.common.DetectedMisconfiguration
+	(*common.Package)(nil),                  // 9: tunnel.common.Package
+	(*common.CustomResource)(nil),           // 10: tunnel.common.CustomResource
+	(*common.SecretFinding)(nil),            // 11: tunnel.common.SecretFinding
+	(*common.DetectedLicense)(nil),          // 12: tunnel.common.DetectedLicense
 }
 var file_rpc_scanner_service_proto_depIdxs = []int32{
-	2,  // 0: trivy.scanner.v1.ScanRequest.options:type_name -> trivy.scanner.v1.ScanOptions
-	5,  // 1: trivy.scanner.v1.ScanOptions.license_categories:type_name -> trivy.scanner.v1.ScanOptions.LicenseCategoriesEntry
-	6,  // 2: trivy.scanner.v1.ScanResponse.os:type_name -> trivy.common.OS
-	4,  // 3: trivy.scanner.v1.ScanResponse.results:type_name -> trivy.scanner.v1.Result
-	7,  // 4: trivy.scanner.v1.Result.vulnerabilities:type_name -> trivy.common.Vulnerability
-	8,  // 5: trivy.scanner.v1.Result.misconfigurations:type_name -> trivy.common.DetectedMisconfiguration
-	9,  // 6: trivy.scanner.v1.Result.packages:type_name -> trivy.common.Package
-	10, // 7: trivy.scanner.v1.Result.custom_resources:type_name -> trivy.common.CustomResource
-	11, // 8: trivy.scanner.v1.Result.secrets:type_name -> trivy.common.SecretFinding
-	12, // 9: trivy.scanner.v1.Result.licenses:type_name -> trivy.common.DetectedLicense
-	1,  // 10: trivy.scanner.v1.ScanOptions.LicenseCategoriesEntry.value:type_name -> trivy.scanner.v1.Licenses
-	0,  // 11: trivy.scanner.v1.Scanner.Scan:input_type -> trivy.scanner.v1.ScanRequest
-	3,  // 12: trivy.scanner.v1.Scanner.Scan:output_type -> trivy.scanner.v1.ScanResponse
+	2,  // 0: tunnel.scanner.v1.ScanRequest.options:type_name -> tunnel.scanner.v1.ScanOptions
+	5,  // 1: tunnel.scanner.v1.ScanOptions.license_categories:type_name -> tunnel.scanner.v1.ScanOptions.LicenseCategoriesEntry
+	6,  // 2: tunnel.scanner.v1.ScanResponse.os:type_name -> tunnel.common.OS
+	4,  // 3: tunnel.scanner.v1.ScanResponse.results:type_name -> tunnel.scanner.v1.Result
+	7,  // 4: tunnel.scanner.v1.Result.vulnerabilities:type_name -> tunnel.common.Vulnerability
+	8,  // 5: tunnel.scanner.v1.Result.misconfigurations:type_name -> tunnel.common.DetectedMisconfiguration
+	9,  // 6: tunnel.scanner.v1.Result.packages:type_name -> tunnel.common.Package
+	10, // 7: tunnel.scanner.v1.Result.custom_resources:type_name -> tunnel.common.CustomResource
+	11, // 8: tunnel.scanner.v1.Result.secrets:type_name -> tunnel.common.SecretFinding
+	12, // 9: tunnel.scanner.v1.Result.licenses:type_name -> tunnel.common.DetectedLicense
+	1,  // 10: tunnel.scanner.v1.ScanOptions.LicenseCategoriesEntry.value:type_name -> tunnel.scanner.v1.Licenses
+	0,  // 11: tunnel.scanner.v1.Scanner.Scan:input_type -> tunnel.scanner.v1.ScanRequest
+	3,  // 12: tunnel.scanner.v1.Scanner.Scan:output_type -> tunnel.scanner.v1.ScanResponse
 	12, // [12:13] is the sub-list for method output_type
 	11, // [11:12] is the sub-list for method input_type
 	11, // [11:11] is the sub-list for extension type_name

@@ -1,6 +1,6 @@
-package trivy
+package tunnel
 
-import data.lib.trivy
+import data.lib.tunnel
 
 default ignore=false
 

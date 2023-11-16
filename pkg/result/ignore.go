@@ -93,7 +93,7 @@ func (f *IgnoreFindings) Filter() {
 	*f = findings
 }
 
-// IgnoreConfig represents the structure of .trivyignore.yaml.
+// IgnoreConfig represents the structure of .tunnelignore.yaml.
 type IgnoreConfig struct {
 	Vulnerabilities   IgnoreFindings `yaml:"vulnerabilities"`
 	Misconfigurations IgnoreFindings `yaml:"misconfigurations"`
@@ -104,7 +104,7 @@ type IgnoreConfig struct {
 func getIgnoredFindings(ignoreFile string) (IgnoreConfig, error) {
 	var conf IgnoreConfig
 	if _, err := os.Stat(ignoreFile); errors.Is(err, fs.ErrNotExist) {
-		// .trivyignore doesn't necessarily exist
+		// .tunnelignore doesn't necessarily exist
 		return IgnoreConfig{}, nil
 	} else if filepath.Ext(ignoreFile) == ".yml" || filepath.Ext(ignoreFile) == ".yaml" {
 		conf, err = parseIgnoreYAML(ignoreFile)
@@ -117,7 +117,7 @@ func getIgnoredFindings(ignoreFile string) (IgnoreConfig, error) {
 			return IgnoreConfig{}, xerrors.Errorf("%s parse error: %w", ignoreFile, err)
 		}
 
-		// IDs in .trivyignore are treated as IDs for all scanners
+		// IDs in .tunnelignore are treated as IDs for all scanners
 		// as it is unclear which type of security issue they are
 		conf = IgnoreConfig{
 			Vulnerabilities:   ignoredFindings,
@@ -136,7 +136,7 @@ func getIgnoredFindings(ignoreFile string) (IgnoreConfig, error) {
 }
 
 func parseIgnoreYAML(ignoreFile string) (IgnoreConfig, error) {
-	// Read .trivyignore.yaml
+	// Read .tunnelignore.yaml
 	f, err := os.Open(ignoreFile)
 	if err != nil {
 		return IgnoreConfig{}, xerrors.Errorf("file open error: %w", err)
@@ -174,7 +174,7 @@ func parseIgnore(ignoreFile string) (IgnoreFindings, error) {
 		if len(fields) > 1 {
 			exp, err = getExpirationDate(fields)
 			if err != nil {
-				log.Logger.Warnf("Error while parsing expiration date in .trivyignore file: %s", err)
+				log.Logger.Warnf("Error while parsing expiration date in .tunnelignore file: %s", err)
 				continue
 			}
 		}

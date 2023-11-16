@@ -26,7 +26,7 @@ import (
 
 const updateInterval = 1 * time.Hour
 
-// Server represents Trivy server
+// Server represents Tunnel server
 type Server struct {
 	appVersion   string
 	addr         string
@@ -52,7 +52,7 @@ func NewServer(appVersion, addr, cacheDir, token, tokenHeader, dbRepository stri
 	}
 }
 
-// ListenAndServe starts Trivy server
+// ListenAndServe starts Tunnel server
 func (s Server) ListenAndServe(serverCache cache.Cache, skipDBUpdate bool) error {
 	requestWg := &sync.WaitGroup{}
 	dbUpdateWg := &sync.WaitGroup{}
@@ -174,7 +174,7 @@ func (w dbWorker) hotUpdate(ctx context.Context, cacheDir string, dbUpdateWg, re
 		return xerrors.Errorf("failed to close DB: %w", err)
 	}
 
-	// Copy trivy.db
+	// Copy tunnel.db
 	if _, err = fsutils.CopyFile(db.Path(tmpDir), db.Path(cacheDir)); err != nil {
 		return xerrors.Errorf("failed to copy the database file: %w", err)
 	}

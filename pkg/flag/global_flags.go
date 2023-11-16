@@ -14,7 +14,7 @@ var (
 		Name:       "config",
 		ConfigName: "config",
 		Shorthand:  "c",
-		Default:    "trivy.yaml",
+		Default:    "tunnel.yaml",
 		Usage:      "config path",
 		Persistent: true,
 	}
@@ -67,7 +67,7 @@ var (
 		Name:       "generate-default-config",
 		ConfigName: "generate-default-config",
 		Default:    false,
-		Usage:      "write the default config to trivy-default.yaml",
+		Usage:      "write the default config to tunnel-default.yaml",
 		Persistent: true,
 	}
 )
@@ -138,8 +138,8 @@ func (f *GlobalFlagGroup) Bind(cmd *cobra.Command) error {
 }
 
 func (f *GlobalFlagGroup) ToOptions() GlobalOptions {
-	// Keep TRIVY_NON_SSL for backward compatibility
-	insecure := getBool(f.Insecure) || os.Getenv("TRIVY_NON_SSL") != ""
+	// Keep TUNNEL_NON_SSL for backward compatibility
+	insecure := getBool(f.Insecure) || os.Getenv("TUNNEL_NON_SSL") != ""
 
 	return GlobalOptions{
 		ConfigFile:            getString(f.ConfigFile),

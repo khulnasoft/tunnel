@@ -13,7 +13,7 @@ EXAMPLE_MODULE_DIR := examples/module
 EXAMPLE_MODULE_SRCS := $(wildcard $(EXAMPLE_MODULE_DIR)/*/*.go)
 EXAMPLE_MODULES := $(patsubst %.go,%.wasm,$(EXAMPLE_MODULE_SRCS))
 
-MKDOCS_IMAGE := aquasec/mkdocs-material:dev
+MKDOCS_IMAGE := khulnasoft/mkdocs-material:dev
 MKDOCS_PORT := 8000
 
 u := $(if $(update),-u)

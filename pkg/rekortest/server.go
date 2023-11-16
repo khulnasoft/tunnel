@@ -57,7 +57,7 @@ var (
 					Tools: &[]cyclonedx.Tool{
 						{
 							Vendor:  "aquasecurity",
-							Name:    "trivy",
+							Name:    "tunnel",
 							Version: "dev",
 						},
 					},
@@ -68,23 +68,23 @@ var (
 						PackageURL: "pkg:oci/alpine@sha256:bc41182d7ef5ffc53a40b044e725193bc10142a1243f395ee852a8d9730fc2ad?repository_url=index.docker.io%2Flibrary%2Falpine\u0026arch=amd64",
 						Properties: &[]cyclonedx.Property{
 							{
-								Name:  "aquasecurity:trivy:SchemaVersion",
+								Name:  "aquasecurity:tunnel:SchemaVersion",
 								Value: "2",
 							},
 							{
-								Name:  "aquasecurity:trivy:ImageID",
+								Name:  "aquasecurity:tunnel:ImageID",
 								Value: "sha256:9c6f0724472873bb50a2ae67a9e7adcb57673a183cea8b06eb778dca859181b5",
 							},
 							{
-								Name:  "aquasecurity:trivy:RepoDigest",
+								Name:  "aquasecurity:tunnel:RepoDigest",
 								Value: "alpine@sha256:bc41182d7ef5ffc53a40b044e725193bc10142a1243f395ee852a8d9730fc2ad",
 							},
 							{
-								Name:  "aquasecurity:trivy:DiffID",
+								Name:  "aquasecurity:tunnel:DiffID",
 								Value: "sha256:994393dc58e7931862558d06e46aa2bb17487044f670f310dffe1d24e4d1eec7",
 							},
 							{
-								Name:  "aquasecurity:trivy:RepoTag",
+								Name:  "aquasecurity:tunnel:RepoTag",
 								Value: "alpine:3.16",
 							},
 						},
@@ -98,11 +98,11 @@ var (
 						Version: "3.16.2",
 						Properties: &[]cyclonedx.Property{
 							{
-								Name:  "aquasecurity:trivy:Type",
+								Name:  "aquasecurity:tunnel:Type",
 								Value: "alpine",
 							},
 							{
-								Name:  "aquasecurity:trivy:Class",
+								Name:  "aquasecurity:tunnel:Class",
 								Value: "os-pkgs",
 							},
 						},
@@ -118,19 +118,19 @@ var (
 						PackageURL: "pkg:apk/alpine/musl@1.2.3-r0?distro=3.16.2",
 						Properties: &[]cyclonedx.Property{
 							{
-								Name:  "aquasecurity:trivy:PkgType",
+								Name:  "aquasecurity:tunnel:PkgType",
 								Value: "alpine",
 							},
 							{
-								Name:  "aquasecurity:trivy:SrcName",
+								Name:  "aquasecurity:tunnel:SrcName",
 								Value: "musl",
 							},
 							{
-								Name:  "aquasecurity:trivy:SrcVersion",
+								Name:  "aquasecurity:tunnel:SrcVersion",
 								Value: "1.2.3-r0",
 							},
 							{
-								Name:  "aquasecurity:trivy:LayerDiffID",
+								Name:  "aquasecurity:tunnel:LayerDiffID",
 								Value: "sha256:994393dc58e7931862558d06e46aa2bb17487044f670f310dffe1d24e4d1eec7",
 							},
 						},
@@ -178,7 +178,7 @@ var (
 					Tools: &[]cyclonedx.Tool{
 						{
 							Vendor:  "aquasecurity",
-							Name:    "trivy",
+							Name:    "tunnel",
 							Version: "dev",
 						},
 					},
@@ -188,7 +188,7 @@ var (
 						Name:   "go.mod",
 						Properties: &[]cyclonedx.Property{
 							{
-								Name:  "aquasecurity:trivy:SchemaVersion",
+								Name:  "aquasecurity:tunnel:SchemaVersion",
 								Value: "2",
 							},
 						},
@@ -201,11 +201,11 @@ var (
 						Name:   "go.mod",
 						Properties: &[]cyclonedx.Property{
 							{
-								Name:  "aquasecurity:trivy:Type",
+								Name:  "aquasecurity:tunnel:Type",
 								Value: "gomod",
 							},
 							{
-								Name:  "aquasecurity:trivy:Class",
+								Name:  "aquasecurity:tunnel:Class",
 								Value: "lang-pkgs",
 							},
 						},
@@ -218,7 +218,7 @@ var (
 						PackageURL: "pkg:golang/github.com/spf13/cobra@1.5.0",
 						Properties: &[]cyclonedx.Property{
 							{
-								Name:  "aquasecurity:trivy:PkgType",
+								Name:  "aquasecurity:tunnel:PkgType",
 								Value: "gomod",
 							},
 						},

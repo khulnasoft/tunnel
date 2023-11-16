@@ -89,7 +89,7 @@ Policy Bundle:
 `
 	tests := []struct {
 		name      string
-		arguments []string // 1st argument is path to trivy binaries
+		arguments []string // 1st argument is path to tunnel binaries
 		want      string
 	}{
 		{
@@ -175,7 +175,7 @@ func TestFlags(t *testing.T) {
 	}
 	tests := []struct {
 		name      string
-		arguments []string // 1st argument is path to trivy binaries
+		arguments []string // 1st argument is path to tunnel binaries
 		want      want
 		wantErr   string
 	}{

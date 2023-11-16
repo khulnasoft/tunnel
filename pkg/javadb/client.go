@@ -21,7 +21,7 @@ import (
 )
 
 const (
-	mediaType = "application/vnd.aquasec.trivy.javadb.layer.v1.tar+gzip"
+	mediaType = "application/vnd.aquasec.tunnel.javadb.layer.v1.tar+gzip"
 )
 
 var updater *Updater

@@ -64,7 +64,7 @@ func (f *SBOMFlagGroup) ToOptions() (SBOMOptions, error) {
 	sbomFormat := getString(f.SBOMFormat)
 
 	if artifactType != "" || sbomFormat != "" {
-		log.Logger.Error("'trivy sbom' is now for scanning SBOM. " +
+		log.Logger.Error("'tunnel sbom' is now for scanning SBOM. " +
 			"See https://github.com/khulnasoft/tunnel/discussions/2407 for the detail")
 		return SBOMOptions{}, xerrors.New("'--artifact-type' and '--sbom-format' are no longer available")
 	}

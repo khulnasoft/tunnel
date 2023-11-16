@@ -197,7 +197,7 @@ func execute(osArgs []string) error {
 	app := commands.NewApp()
 	app.SetOut(io.Discard)
 
-	// Run Trivy
+	// Run Tunnel
 	app.SetArgs(osArgs)
 	return app.Execute()
 }

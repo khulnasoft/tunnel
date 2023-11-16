@@ -34,7 +34,7 @@ var (
 		"error": logError,
 	}
 
-	RelativeDir = filepath.Join(".trivy", "modules")
+	RelativeDir = filepath.Join(".tunnel", "modules")
 
 	DefaultDir = dir()
 )

@@ -146,7 +146,7 @@ func Test_dbWorker_update(t *testing.T) {
 			if tt.download.call {
 				mockDBClient.On("Download", mock.Anything, mock.Anything, mock.Anything).Run(
 					func(args mock.Arguments) {
-						// fake download: copy testdata/new.db to tmpDir/db/trivy.db
+						// fake download: copy testdata/new.db to tmpDir/db/tunnel.db
 						tmpDir := args.String(1)
 						err := os.MkdirAll(db.Dir(tmpDir), 0744)
 						require.NoError(t, err)

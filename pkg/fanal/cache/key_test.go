@@ -190,7 +190,7 @@ func TestCalcKey(t *testing.T) {
 				hookVersions: map[string]int{
 					"python-pkg": 1,
 				},
-				secretConfigPath: "testdata/trivy-secret.yaml",
+				secretConfigPath: "testdata/tunnel-secret.yaml",
 			},
 			want: "sha256:d3fb9503f2851ae9bdb250b7ef55c00c0bfa1250b19d4d398a9219c2c0e20958",
 		},
@@ -208,7 +208,7 @@ func TestCalcKey(t *testing.T) {
 				hookVersions: map[string]int{
 					"python-pkg": 1,
 				},
-				secretConfigPath: "trivy-secret.yaml",
+				secretConfigPath: "tunnel-secret.yaml",
 			},
 			want: "sha256:c720b502991465ea11929cfefc71cf4b5aeaa9a8c0ae59fdaf597f957f5cdb18",
 		},

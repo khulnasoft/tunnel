@@ -2,7 +2,7 @@ package result
 
 const (
 	module = `
-package lib.trivy
+package lib.tunnel
 
 parse_cvss_vector_v3(cvss) = vector {
 	s := split(cvss, "/")

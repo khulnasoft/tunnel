@@ -144,7 +144,7 @@ func TestTar(t *testing.T) {
 			golden: "testdata/alpine-39-high-critical.json.golden",
 		},
 		{
-			name: "alpine 3.9 with .trivyignore",
+			name: "alpine 3.9 with .tunnelignore",
 			testArgs: args{
 				IgnoreUnfixed: false,
 				IgnoreIDs: []string{
@@ -381,10 +381,10 @@ func TestTar(t *testing.T) {
 				osArgs = append(osArgs, "--severity", strings.Join(tt.testArgs.Severity, ","))
 			}
 			if len(tt.testArgs.IgnoreIDs) != 0 {
-				trivyIgnore := ".trivyignore"
-				err := os.WriteFile(trivyIgnore, []byte(strings.Join(tt.testArgs.IgnoreIDs, "\n")), 0444)
-				assert.NoError(t, err, "failed to write .trivyignore")
-				defer os.Remove(trivyIgnore)
+				tunnelIgnore := ".tunnelignore"
+				err := os.WriteFile(tunnelIgnore, []byte(strings.Join(tt.testArgs.IgnoreIDs, "\n")), 0444)
+				assert.NoError(t, err, "failed to write .tunnelignore")
+				defer os.Remove(tunnelIgnore)
 			}
 			if tt.testArgs.Input != "" {
 				osArgs = append(osArgs, "--input", tt.testArgs.Input)
@@ -413,7 +413,7 @@ func TestTar(t *testing.T) {
 				outputFile,
 			}...)
 
-			// Run Trivy
+			// Run Tunnel
 			err := execute(osArgs)
 			require.NoError(t, err)
 
@@ -481,23 +481,23 @@ func TestTarWithEnv(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			osArgs := []string{"image"}
 
-			t.Setenv("TRIVY_FORMAT", tt.testArgs.Format)
-			t.Setenv("TRIVY_CACHE_DIR", cacheDir)
-			t.Setenv("TRIVY_QUIET", "true")
-			t.Setenv("TRIVY_SKIP_UPDATE", "true")
+			t.Setenv("TUNNEL_FORMAT", tt.testArgs.Format)
+			t.Setenv("TUNNEL_CACHE_DIR", cacheDir)
+			t.Setenv("TUNNEL_QUIET", "true")
+			t.Setenv("TUNNEL_SKIP_UPDATE", "true")
 
 			if tt.testArgs.IgnoreUnfixed {
-				t.Setenv("TRIVY_IGNORE_UNFIXED", "true")
+				t.Setenv("TUNNEL_IGNORE_UNFIXED", "true")
 			}
 			if len(tt.testArgs.Severity) != 0 {
-				t.Setenv("TRIVY_SEVERITY", strings.Join(tt.testArgs.Severity, ","))
+				t.Setenv("TUNNEL_SEVERITY", strings.Join(tt.testArgs.Severity, ","))
 			}
 			if tt.testArgs.Input != "" {
 				osArgs = append(osArgs, "--input", tt.testArgs.Input)
 			}
 
 			if len(tt.testArgs.SkipDirs) != 0 {
-				t.Setenv("TRIVY_SKIP_DIRS", strings.Join(tt.testArgs.SkipDirs, ","))
+				t.Setenv("TUNNEL_SKIP_DIRS", strings.Join(tt.testArgs.SkipDirs, ","))
 			}
 
 			// Set up the output file
@@ -508,7 +508,7 @@ func TestTarWithEnv(t *testing.T) {
 				outputFile,
 			}...)
 
-			// Run Trivy
+			// Run Tunnel
 			err := execute(osArgs)
 			require.NoError(t, err)
 
@@ -565,7 +565,7 @@ cache:
 		t.Run(tt.name, func(t *testing.T) {
 			tmpDir := t.TempDir()
 			outputFile := filepath.Join(tmpDir, "output.json")
-			configPath := filepath.Join(tmpDir, "trivy.yaml")
+			configPath := filepath.Join(tmpDir, "tunnel.yaml")
 
 			err := os.WriteFile(configPath, []byte(tt.configFile), 0600)
 			require.NoError(t, err)
@@ -583,7 +583,7 @@ cache:
 				outputFile,
 			}
 
-			// Run Trivy
+			// Run Tunnel
 			err = execute(osArgs)
 			require.NoError(t, err)
 

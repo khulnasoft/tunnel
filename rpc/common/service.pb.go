@@ -889,7 +889,7 @@ type DetectedMisconfiguration struct {
 	Message       string         `protobuf:"bytes,5,opt,name=message,proto3" json:"message,omitempty"`
 	Namespace     string         `protobuf:"bytes,6,opt,name=namespace,proto3" json:"namespace,omitempty"`
 	Resolution    string         `protobuf:"bytes,7,opt,name=resolution,proto3" json:"resolution,omitempty"`
-	Severity      Severity       `protobuf:"varint,8,opt,name=severity,proto3,enum=trivy.common.Severity" json:"severity,omitempty"`
+	Severity      Severity       `protobuf:"varint,8,opt,name=severity,proto3,enum=tunnel.common.Severity" json:"severity,omitempty"`
 	PrimaryUrl    string         `protobuf:"bytes,9,opt,name=primary_url,json=primaryUrl,proto3" json:"primary_url,omitempty"`
 	References    []string       `protobuf:"bytes,10,rep,name=references,proto3" json:"references,omitempty"`
 	Status        string         `protobuf:"bytes,11,opt,name=status,proto3" json:"status,omitempty"`
@@ -1047,7 +1047,7 @@ type Vulnerability struct {
 	FixedVersion       string                 `protobuf:"bytes,4,opt,name=fixed_version,json=fixedVersion,proto3" json:"fixed_version,omitempty"`
 	Title              string                 `protobuf:"bytes,5,opt,name=title,proto3" json:"title,omitempty"`
 	Description        string                 `protobuf:"bytes,6,opt,name=description,proto3" json:"description,omitempty"`
-	Severity           Severity               `protobuf:"varint,7,opt,name=severity,proto3,enum=trivy.common.Severity" json:"severity,omitempty"`
+	Severity           Severity               `protobuf:"varint,7,opt,name=severity,proto3,enum=tunnel.common.Severity" json:"severity,omitempty"`
 	References         []string               `protobuf:"bytes,8,rep,name=references,proto3" json:"references,omitempty"`
 	Layer              *Layer                 `protobuf:"bytes,10,opt,name=layer,proto3" json:"layer,omitempty"`
 	SeveritySource     string                 `protobuf:"bytes,11,opt,name=severity_source,json=severitySource,proto3" json:"severity_source,omitempty"`
@@ -1060,7 +1060,7 @@ type Vulnerability struct {
 	CustomVulnData     *structpb.Value        `protobuf:"bytes,18,opt,name=custom_vuln_data,json=customVulnData,proto3" json:"custom_vuln_data,omitempty"`
 	VendorIds          []string               `protobuf:"bytes,19,rep,name=vendor_ids,json=vendorIds,proto3" json:"vendor_ids,omitempty"`
 	DataSource         *DataSource            `protobuf:"bytes,20,opt,name=data_source,json=dataSource,proto3" json:"data_source,omitempty"`
-	VendorSeverity     map[string]Severity    `protobuf:"bytes,21,rep,name=vendor_severity,json=vendorSeverity,proto3" json:"vendor_severity,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"varint,2,opt,name=value,proto3,enum=trivy.common.Severity"`
+	VendorSeverity     map[string]Severity    `protobuf:"bytes,21,rep,name=vendor_severity,json=vendorSeverity,proto3" json:"vendor_severity,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"varint,2,opt,name=value,proto3,enum=tunnel.common.Severity"`
 	PkgPath            string                 `protobuf:"bytes,22,opt,name=pkg_path,json=pkgPath,proto3" json:"pkg_path,omitempty"`
 	PkgId              string                 `protobuf:"bytes,23,opt,name=pkg_id,json=pkgId,proto3" json:"pkg_id,omitempty"`
 	Status             int32                  `protobuf:"varint,24,opt,name=status,proto3" json:"status,omitempty"`
@@ -1935,8 +1935,8 @@ type DetectedLicense struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Severity   Severity             `protobuf:"varint,1,opt,name=severity,proto3,enum=trivy.common.Severity" json:"severity,omitempty"`
-	Category   LicenseCategory_Enum `protobuf:"varint,2,opt,name=category,proto3,enum=trivy.common.LicenseCategory_Enum" json:"category,omitempty"`
+	Severity   Severity             `protobuf:"varint,1,opt,name=severity,proto3,enum=tunnel.common.Severity" json:"severity,omitempty"`
+	Category   LicenseCategory_Enum `protobuf:"varint,2,opt,name=category,proto3,enum=tunnel.common.LicenseCategory_Enum" json:"category,omitempty"`
 	PkgName    string               `protobuf:"bytes,3,opt,name=pkg_name,json=pkgName,proto3" json:"pkg_name,omitempty"`
 	FilePath   string               `protobuf:"bytes,4,opt,name=file_path,json=filePath,proto3" json:"file_path,omitempty"`
 	Name       string               `protobuf:"bytes,5,opt,name=name,proto3" json:"name,omitempty"`
@@ -2030,7 +2030,7 @@ type LicenseFile struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	LicenseType LicenseType_Enum  `protobuf:"varint,1,opt,name=license_type,json=licenseType,proto3,enum=trivy.common.LicenseType_Enum" json:"license_type,omitempty"`
+	LicenseType LicenseType_Enum  `protobuf:"varint,1,opt,name=license_type,json=licenseType,proto3,enum=tunnel.common.LicenseType_Enum" json:"license_type,omitempty"`
 	FilePath    string            `protobuf:"bytes,2,opt,name=file_path,json=filePath,proto3" json:"file_path,omitempty"`
 	PkgName     string            `protobuf:"bytes,3,opt,name=pkg_name,json=pkgName,proto3" json:"pkg_name,omitempty"`
 	Fingings    []*LicenseFinding `protobuf:"bytes,4,rep,name=fingings,proto3" json:"fingings,omitempty"`
@@ -2109,7 +2109,7 @@ type LicenseFinding struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Category   LicenseCategory_Enum `protobuf:"varint,1,opt,name=category,proto3,enum=trivy.common.LicenseCategory_Enum" json:"category,omitempty"`
+	Category   LicenseCategory_Enum `protobuf:"varint,1,opt,name=category,proto3,enum=tunnel.common.LicenseCategory_Enum" json:"category,omitempty"`
 	Name       string               `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Confidence float32              `protobuf:"fixed32,3,opt,name=confidence,proto3" json:"confidence,omitempty"`
 	Link       string               `protobuf:"bytes,4,opt,name=link,proto3" json:"link,omitempty"`
@@ -2637,75 +2637,75 @@ func file_rpc_common_service_proto_rawDescGZIP() []byte {
 var file_rpc_common_service_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
 var file_rpc_common_service_proto_msgTypes = make([]protoimpl.MessageInfo, 26)
 var file_rpc_common_service_proto_goTypes = []interface{}{
-	(Severity)(0),                    // 0: trivy.common.Severity
-	(LicenseCategory_Enum)(0),        // 1: trivy.common.LicenseCategory.Enum
-	(LicenseType_Enum)(0),            // 2: trivy.common.LicenseType.Enum
-	(*OS)(nil),                       // 3: trivy.common.OS
-	(*Repository)(nil),               // 4: trivy.common.Repository
-	(*PackageInfo)(nil),              // 5: trivy.common.PackageInfo
-	(*Application)(nil),              // 6: trivy.common.Application
-	(*Package)(nil),                  // 7: trivy.common.Package
-	(*Misconfiguration)(nil),         // 8: trivy.common.Misconfiguration
-	(*MisconfResult)(nil),            // 9: trivy.common.MisconfResult
-	(*PolicyMetadata)(nil),           // 10: trivy.common.PolicyMetadata
-	(*DetectedMisconfiguration)(nil), // 11: trivy.common.DetectedMisconfiguration
-	(*Vulnerability)(nil),            // 12: trivy.common.Vulnerability
-	(*DataSource)(nil),               // 13: trivy.common.DataSource
-	(*Layer)(nil),                    // 14: trivy.common.Layer
-	(*CauseMetadata)(nil),            // 15: trivy.common.CauseMetadata
-	(*CVSS)(nil),                     // 16: trivy.common.CVSS
-	(*CustomResource)(nil),           // 17: trivy.common.CustomResource
-	(*Line)(nil),                     // 18: trivy.common.Line
-	(*Code)(nil),                     // 19: trivy.common.Code
-	(*SecretFinding)(nil),            // 20: trivy.common.SecretFinding
-	(*Secret)(nil),                   // 21: trivy.common.Secret
-	(*DetectedLicense)(nil),          // 22: trivy.common.DetectedLicense
-	(*LicenseFile)(nil),              // 23: trivy.common.LicenseFile
-	(*LicenseFinding)(nil),           // 24: trivy.common.LicenseFinding
-	(*LicenseCategory)(nil),          // 25: trivy.common.LicenseCategory
-	(*LicenseType)(nil),              // 26: trivy.common.LicenseType
-	nil,                              // 27: trivy.common.Vulnerability.CvssEntry
-	nil,                              // 28: trivy.common.Vulnerability.VendorSeverityEntry
+	(Severity)(0),                    // 0: tunnel.common.Severity
+	(LicenseCategory_Enum)(0),        // 1: tunnel.common.LicenseCategory.Enum
+	(LicenseType_Enum)(0),            // 2: tunnel.common.LicenseType.Enum
+	(*OS)(nil),                       // 3: tunnel.common.OS
+	(*Repository)(nil),               // 4: tunnel.common.Repository
+	(*PackageInfo)(nil),              // 5: tunnel.common.PackageInfo
+	(*Application)(nil),              // 6: tunnel.common.Application
+	(*Package)(nil),                  // 7: tunnel.common.Package
+	(*Misconfiguration)(nil),         // 8: tunnel.common.Misconfiguration
+	(*MisconfResult)(nil),            // 9: tunnel.common.MisconfResult
+	(*PolicyMetadata)(nil),           // 10: tunnel.common.PolicyMetadata
+	(*DetectedMisconfiguration)(nil), // 11: tunnel.common.DetectedMisconfiguration
+	(*Vulnerability)(nil),            // 12: tunnel.common.Vulnerability
+	(*DataSource)(nil),               // 13: tunnel.common.DataSource
+	(*Layer)(nil),                    // 14: tunnel.common.Layer
+	(*CauseMetadata)(nil),            // 15: tunnel.common.CauseMetadata
+	(*CVSS)(nil),                     // 16: tunnel.common.CVSS
+	(*CustomResource)(nil),           // 17: tunnel.common.CustomResource
+	(*Line)(nil),                     // 18: tunnel.common.Line
+	(*Code)(nil),                     // 19: tunnel.common.Code
+	(*SecretFinding)(nil),            // 20: tunnel.common.SecretFinding
+	(*Secret)(nil),                   // 21: tunnel.common.Secret
+	(*DetectedLicense)(nil),          // 22: tunnel.common.DetectedLicense
+	(*LicenseFile)(nil),              // 23: tunnel.common.LicenseFile
+	(*LicenseFinding)(nil),           // 24: tunnel.common.LicenseFinding
+	(*LicenseCategory)(nil),          // 25: tunnel.common.LicenseCategory
+	(*LicenseType)(nil),              // 26: tunnel.common.LicenseType
+	nil,                              // 27: tunnel.common.Vulnerability.CvssEntry
+	nil,                              // 28: tunnel.common.Vulnerability.VendorSeverityEntry
 	(*timestamppb.Timestamp)(nil),    // 29: google.protobuf.Timestamp
 	(*structpb.Value)(nil),           // 30: google.protobuf.Value
 }
 var file_rpc_common_service_proto_depIdxs = []int32{
-	7,  // 0: trivy.common.PackageInfo.packages:type_name -> trivy.common.Package
-	7,  // 1: trivy.common.Application.libraries:type_name -> trivy.common.Package
-	14, // 2: trivy.common.Package.layer:type_name -> trivy.common.Layer
-	9,  // 3: trivy.common.Misconfiguration.successes:type_name -> trivy.common.MisconfResult
-	9,  // 4: trivy.common.Misconfiguration.warnings:type_name -> trivy.common.MisconfResult
-	9,  // 5: trivy.common.Misconfiguration.failures:type_name -> trivy.common.MisconfResult
-	9,  // 6: trivy.common.Misconfiguration.exceptions:type_name -> trivy.common.MisconfResult
-	10, // 7: trivy.common.MisconfResult.policy_metadata:type_name -> trivy.common.PolicyMetadata
-	15, // 8: trivy.common.MisconfResult.cause_metadata:type_name -> trivy.common.CauseMetadata
-	0,  // 9: trivy.common.DetectedMisconfiguration.severity:type_name -> trivy.common.Severity
-	14, // 10: trivy.common.DetectedMisconfiguration.layer:type_name -> trivy.common.Layer
-	15, // 11: trivy.common.DetectedMisconfiguration.cause_metadata:type_name -> trivy.common.CauseMetadata
-	0,  // 12: trivy.common.Vulnerability.severity:type_name -> trivy.common.Severity
-	14, // 13: trivy.common.Vulnerability.layer:type_name -> trivy.common.Layer
-	27, // 14: trivy.common.Vulnerability.cvss:type_name -> trivy.common.Vulnerability.CvssEntry
-	29, // 15: trivy.common.Vulnerability.published_date:type_name -> google.protobuf.Timestamp
-	29, // 16: trivy.common.Vulnerability.last_modified_date:type_name -> google.protobuf.Timestamp
-	30, // 17: trivy.common.Vulnerability.custom_advisory_data:type_name -> google.protobuf.Value
-	30, // 18: trivy.common.Vulnerability.custom_vuln_data:type_name -> google.protobuf.Value
-	13, // 19: trivy.common.Vulnerability.data_source:type_name -> trivy.common.DataSource
-	28, // 20: trivy.common.Vulnerability.vendor_severity:type_name -> trivy.common.Vulnerability.VendorSeverityEntry
-	19, // 21: trivy.common.CauseMetadata.code:type_name -> trivy.common.Code
-	14, // 22: trivy.common.CustomResource.layer:type_name -> trivy.common.Layer
-	30, // 23: trivy.common.CustomResource.data:type_name -> google.protobuf.Value
-	18, // 24: trivy.common.Code.lines:type_name -> trivy.common.Line
-	19, // 25: trivy.common.SecretFinding.code:type_name -> trivy.common.Code
-	14, // 26: trivy.common.SecretFinding.layer:type_name -> trivy.common.Layer
-	20, // 27: trivy.common.Secret.findings:type_name -> trivy.common.SecretFinding
-	0,  // 28: trivy.common.DetectedLicense.severity:type_name -> trivy.common.Severity
-	1,  // 29: trivy.common.DetectedLicense.category:type_name -> trivy.common.LicenseCategory.Enum
-	2,  // 30: trivy.common.LicenseFile.license_type:type_name -> trivy.common.LicenseType.Enum
-	24, // 31: trivy.common.LicenseFile.fingings:type_name -> trivy.common.LicenseFinding
-	14, // 32: trivy.common.LicenseFile.layer:type_name -> trivy.common.Layer
-	1,  // 33: trivy.common.LicenseFinding.category:type_name -> trivy.common.LicenseCategory.Enum
-	16, // 34: trivy.common.Vulnerability.CvssEntry.value:type_name -> trivy.common.CVSS
-	0,  // 35: trivy.common.Vulnerability.VendorSeverityEntry.value:type_name -> trivy.common.Severity
+	7,  // 0: tunnel.common.PackageInfo.packages:type_name -> tunnel.common.Package
+	7,  // 1: tunnel.common.Application.libraries:type_name -> tunnel.common.Package
+	14, // 2: tunnel.common.Package.layer:type_name -> tunnel.common.Layer
+	9,  // 3: tunnel.common.Misconfiguration.successes:type_name -> tunnel.common.MisconfResult
+	9,  // 4: tunnel.common.Misconfiguration.warnings:type_name -> tunnel.common.MisconfResult
+	9,  // 5: tunnel.common.Misconfiguration.failures:type_name -> tunnel.common.MisconfResult
+	9,  // 6: tunnel.common.Misconfiguration.exceptions:type_name -> tunnel.common.MisconfResult
+	10, // 7: tunnel.common.MisconfResult.policy_metadata:type_name -> tunnel.common.PolicyMetadata
+	15, // 8: tunnel.common.MisconfResult.cause_metadata:type_name -> tunnel.common.CauseMetadata
+	0,  // 9: tunnel.common.DetectedMisconfiguration.severity:type_name -> tunnel.common.Severity
+	14, // 10: tunnel.common.DetectedMisconfiguration.layer:type_name -> tunnel.common.Layer
+	15, // 11: tunnel.common.DetectedMisconfiguration.cause_metadata:type_name -> tunnel.common.CauseMetadata
+	0,  // 12: tunnel.common.Vulnerability.severity:type_name -> tunnel.common.Severity
+	14, // 13: tunnel.common.Vulnerability.layer:type_name -> tunnel.common.Layer
+	27, // 14: tunnel.common.Vulnerability.cvss:type_name -> tunnel.common.Vulnerability.CvssEntry
+	29, // 15: tunnel.common.Vulnerability.published_date:type_name -> google.protobuf.Timestamp
+	29, // 16: tunnel.common.Vulnerability.last_modified_date:type_name -> google.protobuf.Timestamp
+	30, // 17: tunnel.common.Vulnerability.custom_advisory_data:type_name -> google.protobuf.Value
+	30, // 18: tunnel.common.Vulnerability.custom_vuln_data:type_name -> google.protobuf.Value
+	13, // 19: tunnel.common.Vulnerability.data_source:type_name -> tunnel.common.DataSource
+	28, // 20: tunnel.common.Vulnerability.vendor_severity:type_name -> tunnel.common.Vulnerability.VendorSeverityEntry
+	19, // 21: tunnel.common.CauseMetadata.code:type_name -> tunnel.common.Code
+	14, // 22: tunnel.common.CustomResource.layer:type_name -> tunnel.common.Layer
+	30, // 23: tunnel.common.CustomResource.data:type_name -> google.protobuf.Value
+	18, // 24: tunnel.common.Code.lines:type_name -> tunnel.common.Line
+	19, // 25: tunnel.common.SecretFinding.code:type_name -> tunnel.common.Code
+	14, // 26: tunnel.common.SecretFinding.layer:type_name -> tunnel.common.Layer
+	20, // 27: tunnel.common.Secret.findings:type_name -> tunnel.common.SecretFinding
+	0,  // 28: tunnel.common.DetectedLicense.severity:type_name -> tunnel.common.Severity
+	1,  // 29: tunnel.common.DetectedLicense.category:type_name -> tunnel.common.LicenseCategory.Enum
+	2,  // 30: tunnel.common.LicenseFile.license_type:type_name -> tunnel.common.LicenseType.Enum
+	24, // 31: tunnel.common.LicenseFile.fingings:type_name -> tunnel.common.LicenseFinding
+	14, // 32: tunnel.common.LicenseFile.layer:type_name -> tunnel.common.Layer
+	1,  // 33: tunnel.common.LicenseFinding.category:type_name -> tunnel.common.LicenseCategory.Enum
+	16, // 34: tunnel.common.Vulnerability.CvssEntry.value:type_name -> tunnel.common.CVSS
+	0,  // 35: tunnel.common.Vulnerability.VendorSeverityEntry.value:type_name -> tunnel.common.Severity
 	36, // [36:36] is the sub-list for method output_type
 	36, // [36:36] is the sub-list for method input_type
 	36, // [36:36] is the sub-list for extension type_name

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package trivy.cache.v1;
+package tunnel.cache.v1;
 option  go_package = "github.com/khulnasoft/tunnel/rpc/cache;cache";
 
 import "google/protobuf/timestamp.proto";

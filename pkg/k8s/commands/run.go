@@ -145,22 +145,22 @@ func (r *runner) run(ctx context.Context, artifacts []*k8sArtifacts.Artifact) er
 // even though the default value of "--report" is "all".
 //
 // e.g.
-// $ trivy k8s --report all cluster
-// $ trivy k8s --report all all
+// $ tunnel k8s --report all cluster
+// $ tunnel k8s --report all all
 //
 // Or they can use "--format json" with implicit "--report all".
 //
-// e.g. $ trivy k8s --format json cluster // All the results are shown in JSON
+// e.g. $ tunnel k8s --format json cluster // All the results are shown in JSON
 //
 // Single resource scanning is allowed with implicit "--report all".
 //
-// e.g. $ trivy k8s pod myapp
+// e.g. $ tunnel k8s pod myapp
 func validateReportArguments(opts flag.Options) error {
 	if opts.ReportFormat == "all" &&
 		!viper.IsSet("report") &&
 		opts.Format == "table" {
 
-		m := "All the results in the table format can mess up your terminal. Use \"--report all\" to tell Trivy to output it to your terminal anyway, or consider \"--report summary\" to show the summary output."
+		m := "All the results in the table format can mess up your terminal. Use \"--report all\" to tell Tunnel to output it to your terminal anyway, or consider \"--report summary\" to show the summary output."
 
 		return xerrors.New(m)
 	}

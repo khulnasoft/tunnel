@@ -3,12 +3,12 @@
 	"creationInfo": {
 		"created": "2022-09-12T17:04:09.262672Z",
 		"creators": [
-			"Tool: trivy-dev",
+			"Tool: tunnel-dev",
 			"Organization: aquasecurity"
 		]
 	},
 	"dataLicense": "CC0-1.0",
-	"documentNamespace": "http://aquasecurity.github.io/trivy/container/maven-test-project-1a255568-e896-498f-93de-7975a5cb0212",
+	"documentNamespace": "http://aquasecurity.github.io/tunnel/container/maven-test-project-1a255568-e896-498f-93de-7975a5cb0212",
 	"name": "maven-test-project",
 	"packages": [
 		{

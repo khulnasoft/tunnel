@@ -77,7 +77,7 @@ func (w Writer) Write(report types.Report) error {
 	// use now() method that can be overwritten while integration tests run
 	snapshot.Scanned = clock.Now().Format(time.RFC3339)
 	snapshot.Detector = Detector{
-		Name:    "trivy",
+		Name:    "tunnel",
 		Version: w.Version,
 		Url:     "https://github.com/khulnasoft/tunnel",
 	}
@@ -145,10 +145,10 @@ func (w Writer) Write(report types.Report) error {
 func getMetadata(report types.Report) Metadata {
 	metadata := Metadata{}
 	if report.Metadata.RepoTags != nil {
-		metadata["aquasecurity:trivy:RepoTag"] = strings.Join(report.Metadata.RepoTags, ", ")
+		metadata["aquasecurity:tunnel:RepoTag"] = strings.Join(report.Metadata.RepoTags, ", ")
 	}
 	if report.Metadata.RepoDigests != nil {
-		metadata["aquasecurity:trivy:RepoDigest"] = strings.Join(report.Metadata.RepoDigests, ", ")
+		metadata["aquasecurity:tunnel:RepoDigest"] = strings.Join(report.Metadata.RepoDigests, ", ")
 	}
 	return metadata
 }

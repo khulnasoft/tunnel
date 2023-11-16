@@ -67,7 +67,7 @@ var (
 	NodeCollectorNamespace = Flag{
 		Name:       "node-collector-namespace",
 		ConfigName: "node.collector.namespace",
-		Default:    "trivy-temp",
+		Default:    "tunnel-temp",
 		Usage:      "specify the namespace in which the node-collector job should be deployed",
 	}
 	ExcludeOwned = Flag{

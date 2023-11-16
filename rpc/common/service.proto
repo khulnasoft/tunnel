@@ -2,7 +2,7 @@ syntax = "proto3";
 
 import "google/protobuf/timestamp.proto";
 
-package trivy.common;
+package tunnel.common;
 option  go_package = "github.com/khulnasoft/tunnel/rpc/common;common";
 
 import "google/protobuf/struct.proto";

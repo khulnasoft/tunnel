@@ -19,7 +19,7 @@ import (
 	"github.com/khulnasoft/tunnel/pkg/uuid"
 )
 
-// TestRepository tests `trivy repo` with the local code repositories
+// TestRepository tests `tunnel repo` with the local code repositories
 func TestRepository(t *testing.T) {
 	type args struct {
 		scanner        types.Scanner
@@ -325,7 +325,7 @@ func TestRepository(t *testing.T) {
 			args: args{
 				scanner:      "vuln,secret",
 				input:        "testdata/fixtures/repo/secrets",
-				secretConfig: "testdata/fixtures/repo/secrets/trivy-secret.yaml",
+				secretConfig: "testdata/fixtures/repo/secrets/tunnel-secret.yaml",
 			},
 			golden: "testdata/secrets.json.golden",
 		},
@@ -433,10 +433,10 @@ func TestRepository(t *testing.T) {
 			}
 
 			if len(tt.args.ignoreIDs) != 0 {
-				trivyIgnore := ".trivyignore"
-				err := os.WriteFile(trivyIgnore, []byte(strings.Join(tt.args.ignoreIDs, "\n")), 0444)
-				assert.NoError(t, err, "failed to write .trivyignore")
-				defer os.Remove(trivyIgnore)
+				tunnelIgnore := ".tunnelignore"
+				err := os.WriteFile(tunnelIgnore, []byte(strings.Join(tt.args.ignoreIDs, "\n")), 0444)
+				assert.NoError(t, err, "failed to write .tunnelignore")
+				defer os.Remove(tunnelIgnore)
 			}
 
 			if len(tt.args.filePatterns) != 0 {
@@ -493,7 +493,7 @@ func TestRepository(t *testing.T) {
 			clock.SetFakeTime(t, time.Date(2021, 8, 25, 12, 20, 30, 5, time.UTC))
 			uuid.SetFakeUUID(t, "3ff14136-e09f-4df9-80ea-%012d")
 
-			// Run "trivy repo"
+			// Run "tunnel repo"
 			err := execute(osArgs)
 			require.NoError(t, err)
 

@@ -20,13 +20,13 @@ const (
 
 var cacheDir string
 
-// defaultCacheDir returns/creates the cache-dir to be used for trivy operations
+// defaultCacheDir returns/creates the cache-dir to be used for tunnel operations
 func defaultCacheDir() string {
 	tmpDir, err := os.UserCacheDir()
 	if err != nil {
 		tmpDir = os.TempDir()
 	}
-	return filepath.Join(tmpDir, "trivy")
+	return filepath.Join(tmpDir, "tunnel")
 }
 
 // CacheDir returns the directory used for caching
@@ -37,7 +37,7 @@ func CacheDir() string {
 	return cacheDir
 }
 
-// SetCacheDir sets the trivy cacheDir
+// SetCacheDir sets the tunnel cacheDir
 func SetCacheDir(dir string) {
 	cacheDir = dir
 }

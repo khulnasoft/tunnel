@@ -59,7 +59,7 @@ func TestAnalyzer_PostAnalyze(t *testing.T) {
 									Description:        "This is a test policy.",
 									Severity:           "LOW",
 									RecommendedActions: "Have a cup of tea.",
-									References:         []string{"https://trivy.dev/"},
+									References:         []string{"https://tunnel.dev/"},
 								},
 								CauseMetadata: types.CauseMetadata{
 									Provider: "Generic",

@@ -80,7 +80,7 @@ const (
 	aws = `(aws)?_?`
 )
 
-// This function is exported for trivy-plugin-aqua purposes only
+// This function is exported for tunnel-plugin-aqua purposes only
 func GetSecretRulesMetadata() []defsecRules.Check {
 	return lo.Map(builtinRules, func(rule Rule, i int) defsecRules.Check {
 		return defsecRules.Check{

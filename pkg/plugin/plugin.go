@@ -22,7 +22,7 @@ const (
 )
 
 var (
-	pluginsRelativeDir = filepath.Join(".trivy", "plugins")
+	pluginsRelativeDir = filepath.Join(".tunnel", "plugins")
 
 	officialPlugins = map[string]string{
 		"kubectl": "github.com/khulnasoft/tunnel-plugin-kubectl",
@@ -129,7 +129,7 @@ func (p Plugin) dir() (string, error) {
 		return "", xerrors.Errorf("'name' is empty")
 	}
 
-	// e.g. ~/.trivy/plugins/kubectl
+	// e.g. ~/.tunnel/plugins/kubectl
 	return filepath.Join(dir(), p.Name), nil
 }
 

@@ -65,7 +65,7 @@ func TestClientServer(t *testing.T) {
 			golden: "testdata/alpine-39-high-critical.json.golden",
 		},
 		{
-			name: "alpine 3.9 with .trivyignore",
+			name: "alpine 3.9 with .tunnelignore",
 			args: csArgs{
 				IgnoreUnfixed: false,
 				IgnoreIDs: []string{
@@ -248,7 +248,7 @@ func TestClientServer(t *testing.T) {
 			args: csArgs{
 				Command:          "repo",
 				RemoteAddrOption: "--server",
-				secretConfig:     "testdata/fixtures/repo/secrets/trivy-secret.yaml",
+				secretConfig:     "testdata/fixtures/repo/secrets/tunnel-secret.yaml",
 				Target:           "testdata/fixtures/repo/secrets/",
 			},
 			golden: "testdata/secrets.json.golden",
@@ -258,7 +258,7 @@ func TestClientServer(t *testing.T) {
 			args: csArgs{
 				Command:          "repo",
 				RemoteAddrOption: "--server",
-				Target:           "https://github.com/knqyf263/trivy-ci-test",
+				Target:           "https://github.com/khulnasoft/tunnel-ci-test",
 			},
 			golden: "testdata/test-repo.json.golden",
 		},
@@ -385,7 +385,7 @@ func TestClientServerWithFormat(t *testing.T) {
 			t.Setenv("AWS_ACCOUNT_ID", "123456789012")
 			osArgs, outputFile := setupClient(t, tt.args, addr, cacheDir, tt.golden)
 
-			// Run Trivy client
+			// Run Tunnel client
 			err := execute(osArgs)
 			require.NoError(t, err)
 
@@ -424,7 +424,7 @@ func TestClientServerWithCycloneDX(t *testing.T) {
 
 			osArgs, outputFile := setupClient(t, tt.args, addr, cacheDir, tt.golden)
 
-			// Run Trivy client
+			// Run Tunnel client
 			err := execute(osArgs)
 			require.NoError(t, err)
 
@@ -445,7 +445,7 @@ func TestClientServerWithToken(t *testing.T) {
 			args: csArgs{
 				Input:             "testdata/fixtures/images/alpine-39.tar.gz",
 				ClientToken:       "token",
-				ClientTokenHeader: "Trivy-Token",
+				ClientTokenHeader: "Tunnel-Token",
 			},
 			golden: "testdata/alpine-39.json.golden",
 		},
@@ -454,7 +454,7 @@ func TestClientServerWithToken(t *testing.T) {
 			args: csArgs{
 				Input:             "testdata/fixtures/images/distroless-base.tar.gz",
 				ClientToken:       "invalidtoken",
-				ClientTokenHeader: "Trivy-Token",
+				ClientTokenHeader: "Tunnel-Token",
 			},
 			wantErr: "twirp error unauthenticated: invalid token",
 		},
@@ -470,7 +470,7 @@ func TestClientServerWithToken(t *testing.T) {
 	}
 
 	serverToken := "token"
-	serverTokenHeader := "Trivy-Token"
+	serverTokenHeader := "Tunnel-Token"
 	addr, cacheDir := setup(t, setupOptions{
 		token:       serverToken,
 		tokenHeader: serverTokenHeader,
@@ -480,7 +480,7 @@ func TestClientServerWithToken(t *testing.T) {
 		t.Run(c.name, func(t *testing.T) {
 			osArgs, outputFile := setupClient(t, c.args, addr, cacheDir, c.golden)
 
-			// Run Trivy client
+			// Run Tunnel client
 			err := execute(osArgs)
 			if c.wantErr != "" {
 				require.Error(t, err, c.name)
@@ -501,7 +501,7 @@ func TestClientServerWithRedis(t *testing.T) {
 	// redisC container will terminate after first check
 	redisC, addr := setupRedis(t, ctx)
 
-	// Set up Trivy server
+	// Set up Tunnel server
 	addr, cacheDir := setup(t, setupOptions{cacheBackend: addr})
 	t.Cleanup(func() { os.RemoveAll(cacheDir) })
 
@@ -514,7 +514,7 @@ func TestClientServerWithRedis(t *testing.T) {
 	t.Run("alpine 3.9", func(t *testing.T) {
 		osArgs, outputFile := setupClient(t, testArgs, addr, cacheDir, golden)
 
-		// Run Trivy client
+		// Run Tunnel client
 		err := execute(osArgs)
 		require.NoError(t, err)
 
@@ -527,7 +527,7 @@ func TestClientServerWithRedis(t *testing.T) {
 	t.Run("sad path", func(t *testing.T) {
 		osArgs, _ := setupClient(t, testArgs, addr, cacheDir, golden)
 
-		// Run Trivy client
+		// Run Tunnel client
 		err := execute(osArgs)
 		require.Error(t, err)
 		assert.Contains(t, err.Error(), "connect: connection refused")
@@ -556,7 +556,7 @@ func setup(t *testing.T, options setupOptions) (string, string) {
 	go func() {
 		osArgs := setupServer(addr, options.token, options.tokenHeader, cacheDir, options.cacheBackend)
 
-		// Run Trivy server
+		// Run Tunnel server
 		require.NoError(t, execute(osArgs))
 	}()
 
@@ -625,10 +625,10 @@ func setupClient(t *testing.T, c csArgs, addr string, cacheDir string, golden st
 	}
 
 	if len(c.IgnoreIDs) != 0 {
-		trivyIgnore := filepath.Join(t.TempDir(), ".trivyignore")
-		err := os.WriteFile(trivyIgnore, []byte(strings.Join(c.IgnoreIDs, "\n")), 0444)
-		require.NoError(t, err, "failed to write .trivyignore")
-		osArgs = append(osArgs, "--ignorefile", trivyIgnore)
+		tunnelIgnore := filepath.Join(t.TempDir(), ".tunnelignore")
+		err := os.WriteFile(tunnelIgnore, []byte(strings.Join(c.IgnoreIDs, "\n")), 0444)
+		require.NoError(t, err, "failed to write .tunnelignore")
+		osArgs = append(osArgs, "--ignorefile", tunnelIgnore)
 	}
 	if c.ClientToken != "" {
 		osArgs = append(osArgs, "--token", c.ClientToken, "--token-header", c.ClientTokenHeader)
