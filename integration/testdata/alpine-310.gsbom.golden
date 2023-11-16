@@ -1,7 +1,7 @@
 {
   "version": 0,
   "detector": {
-    "name": "trivy",
+    "name": "tunnel",
     "version": "dev",
     "url": "https://github.com/khulnasoft/tunnel"
   },

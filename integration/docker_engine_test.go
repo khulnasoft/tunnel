@@ -47,7 +47,7 @@ func TestDockerEngine(t *testing.T) {
 			golden:   "testdata/alpine-39-high-critical.json.golden",
 		},
 		{
-			name:      "alpine:3.9, with .trivyignore",
+			name:      "alpine:3.9, with .tunnelignore",
 			imageTag:  "ghcr.io/khulnasoft/tunnel-test-images:alpine-39",
 			ignoreIDs: []string{"CVE-2019-1549", "CVE-2019-14697"},
 			input:     "testdata/fixtures/images/alpine-39.tar.gz",
@@ -267,14 +267,14 @@ func TestDockerEngine(t *testing.T) {
 				)
 			}
 			if len(tt.ignoreIDs) != 0 {
-				trivyIgnore := ".trivyignore"
-				err = os.WriteFile(trivyIgnore, []byte(strings.Join(tt.ignoreIDs, "\n")), 0444)
-				assert.NoError(t, err, "failed to write .trivyignore")
-				defer os.Remove(trivyIgnore)
+				tunnelIgnore := ".tunnelignore"
+				err = os.WriteFile(tunnelIgnore, []byte(strings.Join(tt.ignoreIDs, "\n")), 0444)
+				assert.NoError(t, err, "failed to write .tunnelignore")
+				defer os.Remove(tunnelIgnore)
 			}
 			osArgs = append(osArgs, tt.input)
 
-			// Run Trivy
+			// Run Tunnel
 			err = execute(osArgs)
 			if tt.wantErr != "" {
 				require.Error(t, err)

@@ -43,7 +43,7 @@ func TestK8s(t *testing.T) {
 			outputFile,
 		}
 
-		// Run Trivy
+		// Run Tunnel
 		err := execute(osArgs)
 		require.NoError(t, err)
 
@@ -85,7 +85,7 @@ func TestK8s(t *testing.T) {
 			outputFile,
 		}
 
-		// Run Trivy
+		// Run Tunnel
 		err := execute(osArgs)
 		require.NoError(t, err)
 
@@ -132,7 +132,7 @@ func TestK8s(t *testing.T) {
 			outputFile,
 		}
 
-		// Run Trivy
+		// Run Tunnel
 		err := execute(osArgs)
 		require.NoError(t, err)
 

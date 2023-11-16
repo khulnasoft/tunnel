@@ -41,7 +41,7 @@ func Test_extractKindAndName(t *testing.T) {
 		{
 			name:          "multiple arguments separated",
 			args:          []string{"test", "test", "test"},
-			expectedError: "can't parse arguments [test test test]. Please run `trivy k8s` for usage.",
+			expectedError: "can't parse arguments [test test test]. Please run `tunnel k8s` for usage.",
 		},
 	}
 

@@ -207,7 +207,7 @@ func TestInstall(t *testing.T) {
 				GOOS:   "linux",
 				GOARCH: "amd64",
 			},
-			wantFile: ".trivy/plugins/test_plugin/test.sh",
+			wantFile: ".tunnel/plugins/test_plugin/test.sh",
 		},
 		{
 			name: "plugin not found",
@@ -288,7 +288,7 @@ func TestUninstall(t *testing.T) {
 	pluginName := "test_plugin"
 
 	tempDir := t.TempDir()
-	pluginDir := filepath.Join(tempDir, ".trivy", "plugins", pluginName)
+	pluginDir := filepath.Join(tempDir, ".tunnel", "plugins", pluginName)
 
 	// Create the test plugin directory
 	err := os.MkdirAll(pluginDir, os.ModePerm)
@@ -312,7 +312,7 @@ func TestInformation(t *testing.T) {
 	pluginName := "test_plugin"
 
 	tempDir := t.TempDir()
-	pluginDir := filepath.Join(tempDir, ".trivy", "plugins", pluginName)
+	pluginDir := filepath.Join(tempDir, ".tunnel", "plugins", pluginName)
 
 	t.Setenv("XDG_DATA_HOME", tempDir)
 
@@ -408,7 +408,7 @@ func TestUpdate(t *testing.T) {
 	pluginName := "test_plugin"
 
 	tempDir := t.TempDir()
-	pluginDir := filepath.Join(tempDir, ".trivy", "plugins", pluginName)
+	pluginDir := filepath.Join(tempDir, ".tunnel", "plugins", pluginName)
 
 	t.Setenv("XDG_DATA_HOME", tempDir)
 

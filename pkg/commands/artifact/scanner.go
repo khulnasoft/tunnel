@@ -10,7 +10,7 @@ import (
 )
 
 // imageStandaloneScanner initializes a container image scanner in standalone mode
-// $ trivy image alpine:3.15
+// $ tunnel image alpine:3.15
 func imageStandaloneScanner(ctx context.Context, conf ScannerConfig) (scanner.Scanner, func(), error) {
 	s, cleanup, err := initializeDockerScanner(ctx, conf.Target, conf.ArtifactCache, conf.LocalArtifactCache,
 		conf.ArtifactOption.ImageOption, conf.ArtifactOption)
@@ -21,7 +21,7 @@ func imageStandaloneScanner(ctx context.Context, conf ScannerConfig) (scanner.Sc
 }
 
 // archiveStandaloneScanner initializes an image archive scanner in standalone mode
-// $ trivy image --input alpine.tar
+// $ tunnel image --input alpine.tar
 func archiveStandaloneScanner(ctx context.Context, conf ScannerConfig) (scanner.Scanner, func(), error) {
 	s, err := initializeArchiveScanner(ctx, conf.Target, conf.ArtifactCache, conf.LocalArtifactCache, conf.ArtifactOption)
 	if err != nil {
@@ -31,7 +31,7 @@ func archiveStandaloneScanner(ctx context.Context, conf ScannerConfig) (scanner.
 }
 
 // imageRemoteScanner initializes a container image scanner in client/server mode
-// $ trivy image --server localhost:4954 alpine:3.15
+// $ tunnel image --server localhost:4954 alpine:3.15
 func imageRemoteScanner(ctx context.Context, conf ScannerConfig) (
 	scanner.Scanner, func(), error) {
 	s, cleanup, err := initializeRemoteDockerScanner(ctx, conf.Target, conf.ArtifactCache, conf.ServerOption,
@@ -43,7 +43,7 @@ func imageRemoteScanner(ctx context.Context, conf ScannerConfig) (
 }
 
 // archiveRemoteScanner initializes an image archive scanner in client/server mode
-// $ trivy image --server localhost:4954 --input alpine.tar
+// $ tunnel image --server localhost:4954 --input alpine.tar
 func archiveRemoteScanner(ctx context.Context, conf ScannerConfig) (scanner.Scanner, func(), error) {
 	// Scan tar file
 	s, err := initializeRemoteArchiveScanner(ctx, conf.Target, conf.ArtifactCache, conf.ServerOption, conf.ArtifactOption)

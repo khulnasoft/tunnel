@@ -69,15 +69,15 @@ func buildPathsToSkip(base string, paths []string) []string {
 		// All of them are converted into the relative path from the root directory.
 		// 1. Relative skip dirs/files from the root directory
 		//     The specified dirs and files will be used as is.
-		//       e.g. $ trivy fs --skip-dirs bar ./foo
+		//       e.g. $ tunnel fs --skip-dirs bar ./foo
 		//     The skip dir from the root directory will be `bar/`.
 		// 2. Relative skip dirs/files from the working directory
 		//     The specified dirs and files wll be converted to the relative path from the root directory.
-		//       e.g. $ trivy fs --skip-dirs ./foo/bar ./foo
+		//       e.g. $ tunnel fs --skip-dirs ./foo/bar ./foo
 		//     The skip dir will be converted to `bar/`.
 		// 3. Absolute skip dirs/files
 		//     The specified dirs and files wll be converted to the relative path from the root directory.
-		//       e.g. $ trivy fs --skip-dirs /bar/foo/baz ./foo
+		//       e.g. $ tunnel fs --skip-dirs /bar/foo/baz ./foo
 		//     When the working directory is
 		//       3.1 /bar: the skip dir will be converted to `baz/`.
 		//       3.2 /hoge : the skip dir will be converted to `../../bar/foo/baz/`.

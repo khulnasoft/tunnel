@@ -111,7 +111,7 @@ func (p *PackageURL) Package() *ftypes.Package {
 	return pkg
 }
 
-// LangType returns an application type in Trivy
+// LangType returns an application type in Tunnel
 // nolint: gocyclo
 func (p *PackageURL) LangType() ftypes.LangType {
 	switch p.Type {

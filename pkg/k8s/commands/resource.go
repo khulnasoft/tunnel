@@ -22,14 +22,14 @@ func resourceRun(ctx context.Context, args []string, opts flag.Options, cluster 
 
 	runner := newRunner(opts, cluster.GetCurrentContext())
 
-	var trivyk trivyk8s.TrivyK8S
+	var tunnelk tunnelk8s.TunnelK8S
 
-	trivyk = trivyk8s.New(cluster, log.Logger, trivyk8s.WithExcludeOwned(opts.ExcludeOwned))
+	tunnelk = tunnelk8s.New(cluster, log.Logger, tunnelk8s.WithExcludeOwned(opts.ExcludeOwned))
 
 	if opts.AllNamespaces {
-		trivyk = trivyk.AllNamespaces()
+		tunnelk = tunnelk.AllNamespaces()
 	} else {
-		trivyk = trivyk.Namespace(getNamespace(opts, cluster.GetCurrentNamespace()))
+		tunnelk = tunnelk.Namespace(getNamespace(opts, cluster.GetCurrentNamespace()))
 	}
 
 	if name == "" { // pods or configmaps etc
@@ -37,7 +37,7 @@ func resourceRun(ctx context.Context, args []string, opts flag.Options, cluster 
 			return err
 		}
 
-		targets, err := trivyk.Resources(kind).ListArtifacts(ctx)
+		targets, err := tunnelk.Resources(kind).ListArtifacts(ctx)
 		if err != nil {
 			return err
 		}
@@ -46,7 +46,7 @@ func resourceRun(ctx context.Context, args []string, opts flag.Options, cluster 
 	}
 
 	// pod/NAME or pod NAME etc
-	artifact, err := trivyk.GetArtifact(ctx, kind, name)
+	artifact, err := tunnelk.GetArtifact(ctx, kind, name)
 	if err != nil {
 		return err
 	}
@@ -67,5 +67,5 @@ func extractKindAndName(args []string) (string, string, error) {
 		return args[0], args[1], nil
 	}
 
-	return "", "", xerrors.Errorf("can't parse arguments %v. Please run `trivy k8s` for usage.", args)
+	return "", "", xerrors.Errorf("can't parse arguments %v. Please run `tunnel k8s` for usage.", args)
 }

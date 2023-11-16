@@ -16,12 +16,12 @@ func Test_implicitReference_TagName(t *testing.T) {
 	}{
 		{
 			name:  "explicit tag",
-			image: "aquasec/trivy:0.15.0",
+			image: "aquasec/tunnel:0.15.0",
 			want:  "0.15.0",
 		},
 		{
 			name:  "implicit tag",
-			image: "aquasec/trivy",
+			image: "aquasec/tunnel",
 			want:  "latest",
 		},
 	}
@@ -46,8 +46,8 @@ func Test_implicitReference_RepositoryName(t *testing.T) {
 	}{
 		{
 			name:  "explicit default registry",
-			image: "index.docker.io/aquasec/trivy:0.15.0",
-			want:  "aquasec/trivy",
+			image: "index.docker.io/aquasec/tunnel:0.15.0",
+			want:  "aquasec/tunnel",
 		},
 		{
 			name:  "explicit default namespace",
@@ -56,8 +56,8 @@ func Test_implicitReference_RepositoryName(t *testing.T) {
 		},
 		{
 			name:  "implicit registry",
-			image: "aquasec/trivy:latest",
-			want:  "aquasec/trivy",
+			image: "aquasec/tunnel:latest",
+			want:  "aquasec/tunnel",
 		},
 		{
 			name:  "implicit namespace",

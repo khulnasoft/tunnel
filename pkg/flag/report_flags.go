@@ -59,7 +59,7 @@ var (
 		Name:       "ignorefile",
 		ConfigName: "ignorefile",
 		Default:    result.DefaultIgnoreFile,
-		Usage:      "specify .trivyignore file",
+		Usage:      "specify .tunnelignore file",
 	}
 	IgnorePolicyFlag = Flag{
 		Name:       "ignore-policy",

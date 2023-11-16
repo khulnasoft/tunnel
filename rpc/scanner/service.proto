@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package trivy.scanner.v1;
+package tunnel.scanner.v1;
 option  go_package = "github.com/khulnasoft/tunnel/rpc/scanner;scanner";
 
 import "rpc/common/service.proto";

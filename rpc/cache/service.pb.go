@@ -716,48 +716,48 @@ func file_rpc_cache_service_proto_rawDescGZIP() []byte {
 
 var file_rpc_cache_service_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_rpc_cache_service_proto_goTypes = []interface{}{
-	(*ArtifactInfo)(nil),            // 0: trivy.cache.v1.ArtifactInfo
-	(*PutArtifactRequest)(nil),      // 1: trivy.cache.v1.PutArtifactRequest
-	(*BlobInfo)(nil),                // 2: trivy.cache.v1.BlobInfo
-	(*PutBlobRequest)(nil),          // 3: trivy.cache.v1.PutBlobRequest
-	(*PutResponse)(nil),             // 4: trivy.cache.v1.PutResponse
-	(*MissingBlobsRequest)(nil),     // 5: trivy.cache.v1.MissingBlobsRequest
-	(*MissingBlobsResponse)(nil),    // 6: trivy.cache.v1.MissingBlobsResponse
-	(*DeleteBlobsRequest)(nil),      // 7: trivy.cache.v1.DeleteBlobsRequest
+	(*ArtifactInfo)(nil),            // 0: tunnel.cache.v1.ArtifactInfo
+	(*PutArtifactRequest)(nil),      // 1: tunnel.cache.v1.PutArtifactRequest
+	(*BlobInfo)(nil),                // 2: tunnel.cache.v1.BlobInfo
+	(*PutBlobRequest)(nil),          // 3: tunnel.cache.v1.PutBlobRequest
+	(*PutResponse)(nil),             // 4: tunnel.cache.v1.PutResponse
+	(*MissingBlobsRequest)(nil),     // 5: tunnel.cache.v1.MissingBlobsRequest
+	(*MissingBlobsResponse)(nil),    // 6: tunnel.cache.v1.MissingBlobsResponse
+	(*DeleteBlobsRequest)(nil),      // 7: tunnel.cache.v1.DeleteBlobsRequest
 	(*timestamppb.Timestamp)(nil),   // 8: google.protobuf.Timestamp
-	(*common.Package)(nil),          // 9: trivy.common.Package
-	(*common.OS)(nil),               // 10: trivy.common.OS
-	(*common.Repository)(nil),       // 11: trivy.common.Repository
-	(*common.PackageInfo)(nil),      // 12: trivy.common.PackageInfo
-	(*common.Application)(nil),      // 13: trivy.common.Application
-	(*common.Misconfiguration)(nil), // 14: trivy.common.Misconfiguration
-	(*common.CustomResource)(nil),   // 15: trivy.common.CustomResource
-	(*common.Secret)(nil),           // 16: trivy.common.Secret
-	(*common.LicenseFile)(nil),      // 17: trivy.common.LicenseFile
+	(*common.Package)(nil),          // 9: tunnel.common.Package
+	(*common.OS)(nil),               // 10: tunnel.common.OS
+	(*common.Repository)(nil),       // 11: tunnel.common.Repository
+	(*common.PackageInfo)(nil),      // 12: tunnel.common.PackageInfo
+	(*common.Application)(nil),      // 13: tunnel.common.Application
+	(*common.Misconfiguration)(nil), // 14: tunnel.common.Misconfiguration
+	(*common.CustomResource)(nil),   // 15: tunnel.common.CustomResource
+	(*common.Secret)(nil),           // 16: tunnel.common.Secret
+	(*common.LicenseFile)(nil),      // 17: tunnel.common.LicenseFile
 	(*emptypb.Empty)(nil),           // 18: google.protobuf.Empty
 }
 var file_rpc_cache_service_proto_depIdxs = []int32{
-	8,  // 0: trivy.cache.v1.ArtifactInfo.created:type_name -> google.protobuf.Timestamp
-	9,  // 1: trivy.cache.v1.ArtifactInfo.history_packages:type_name -> trivy.common.Package
-	0,  // 2: trivy.cache.v1.PutArtifactRequest.artifact_info:type_name -> trivy.cache.v1.ArtifactInfo
-	10, // 3: trivy.cache.v1.BlobInfo.os:type_name -> trivy.common.OS
-	11, // 4: trivy.cache.v1.BlobInfo.repository:type_name -> trivy.common.Repository
-	12, // 5: trivy.cache.v1.BlobInfo.package_infos:type_name -> trivy.common.PackageInfo
-	13, // 6: trivy.cache.v1.BlobInfo.applications:type_name -> trivy.common.Application
-	14, // 7: trivy.cache.v1.BlobInfo.misconfigurations:type_name -> trivy.common.Misconfiguration
-	15, // 8: trivy.cache.v1.BlobInfo.custom_resources:type_name -> trivy.common.CustomResource
-	16, // 9: trivy.cache.v1.BlobInfo.secrets:type_name -> trivy.common.Secret
-	17, // 10: trivy.cache.v1.BlobInfo.licenses:type_name -> trivy.common.LicenseFile
-	2,  // 11: trivy.cache.v1.PutBlobRequest.blob_info:type_name -> trivy.cache.v1.BlobInfo
-	10, // 12: trivy.cache.v1.PutResponse.os:type_name -> trivy.common.OS
-	1,  // 13: trivy.cache.v1.Cache.PutArtifact:input_type -> trivy.cache.v1.PutArtifactRequest
-	3,  // 14: trivy.cache.v1.Cache.PutBlob:input_type -> trivy.cache.v1.PutBlobRequest
-	5,  // 15: trivy.cache.v1.Cache.MissingBlobs:input_type -> trivy.cache.v1.MissingBlobsRequest
-	7,  // 16: trivy.cache.v1.Cache.DeleteBlobs:input_type -> trivy.cache.v1.DeleteBlobsRequest
-	18, // 17: trivy.cache.v1.Cache.PutArtifact:output_type -> google.protobuf.Empty
-	18, // 18: trivy.cache.v1.Cache.PutBlob:output_type -> google.protobuf.Empty
-	6,  // 19: trivy.cache.v1.Cache.MissingBlobs:output_type -> trivy.cache.v1.MissingBlobsResponse
-	18, // 20: trivy.cache.v1.Cache.DeleteBlobs:output_type -> google.protobuf.Empty
+	8,  // 0: tunnel.cache.v1.ArtifactInfo.created:type_name -> google.protobuf.Timestamp
+	9,  // 1: tunnel.cache.v1.ArtifactInfo.history_packages:type_name -> tunnel.common.Package
+	0,  // 2: tunnel.cache.v1.PutArtifactRequest.artifact_info:type_name -> tunnel.cache.v1.ArtifactInfo
+	10, // 3: tunnel.cache.v1.BlobInfo.os:type_name -> tunnel.common.OS
+	11, // 4: tunnel.cache.v1.BlobInfo.repository:type_name -> tunnel.common.Repository
+	12, // 5: tunnel.cache.v1.BlobInfo.package_infos:type_name -> tunnel.common.PackageInfo
+	13, // 6: tunnel.cache.v1.BlobInfo.applications:type_name -> tunnel.common.Application
+	14, // 7: tunnel.cache.v1.BlobInfo.misconfigurations:type_name -> tunnel.common.Misconfiguration
+	15, // 8: tunnel.cache.v1.BlobInfo.custom_resources:type_name -> tunnel.common.CustomResource
+	16, // 9: tunnel.cache.v1.BlobInfo.secrets:type_name -> tunnel.common.Secret
+	17, // 10: tunnel.cache.v1.BlobInfo.licenses:type_name -> tunnel.common.LicenseFile
+	2,  // 11: tunnel.cache.v1.PutBlobRequest.blob_info:type_name -> tunnel.cache.v1.BlobInfo
+	10, // 12: tunnel.cache.v1.PutResponse.os:type_name -> tunnel.common.OS
+	1,  // 13: tunnel.cache.v1.Cache.PutArtifact:input_type -> tunnel.cache.v1.PutArtifactRequest
+	3,  // 14: tunnel.cache.v1.Cache.PutBlob:input_type -> tunnel.cache.v1.PutBlobRequest
+	5,  // 15: tunnel.cache.v1.Cache.MissingBlobs:input_type -> tunnel.cache.v1.MissingBlobsRequest
+	7,  // 16: tunnel.cache.v1.Cache.DeleteBlobs:input_type -> tunnel.cache.v1.DeleteBlobsRequest
+	18, // 17: tunnel.cache.v1.Cache.PutArtifact:output_type -> google.protobuf.Empty
+	18, // 18: tunnel.cache.v1.Cache.PutBlob:output_type -> google.protobuf.Empty
+	6,  // 19: tunnel.cache.v1.Cache.MissingBlobs:output_type -> tunnel.cache.v1.MissingBlobsResponse
+	18, // 20: tunnel.cache.v1.Cache.DeleteBlobs:output_type -> google.protobuf.Empty
 	17, // [17:21] is the sub-list for method output_type
 	13, // [13:17] is the sub-list for method input_type
 	13, // [13:13] is the sub-list for extension type_name

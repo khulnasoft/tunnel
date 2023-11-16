@@ -32,7 +32,7 @@ import (
 	"github.com/khulnasoft/tunnel/pkg/utils/fsutils"
 )
 
-// TargetKind represents what kind of artifact Trivy scans
+// TargetKind represents what kind of artifact Tunnel scans
 type TargetKind string
 
 const (
@@ -106,7 +106,7 @@ type runner struct {
 type runnerOption func(*runner)
 
 // WithCacheClient takes a custom cache implementation
-// It is useful when Trivy is imported as a library.
+// It is useful when Tunnel is imported as a library.
 func WithCacheClient(c cache.Cache) runnerOption {
 	return func(r *runner) {
 		r.cache = c
@@ -404,8 +404,8 @@ func Run(ctx context.Context, opts flag.Options, targetKind TargetKind) (err err
 	}()
 
 	if opts.GenerateDefaultConfig {
-		log.Logger.Info("Writing the default config to trivy-default.yaml...")
-		return viper.SafeWriteConfigAs("trivy-default.yaml")
+		log.Logger.Info("Writing the default config to tunnel-default.yaml...")
+		return viper.SafeWriteConfigAs("tunnel-default.yaml")
 	}
 
 	r, err := NewRunner(ctx, opts)
@@ -597,7 +597,7 @@ func initScannerConfig(opts flag.Options, cacheClient cache.Cache) (ScannerConfi
 		ver := canonicalVersion(opts.AppVersion)
 		log.Logger.Info("Secret scanning is enabled")
 		log.Logger.Info("If your scanning is slow, please try '--scanners vuln' to disable secret scanning")
-		log.Logger.Infof("Please see also https://aquasecurity.github.io/trivy/%s/docs/scanner/secret/#recommendation for faster secret detection", ver)
+		log.Logger.Infof("Please see also https://aquasecurity.github.io/tunnel/%s/docs/scanner/secret/#recommendation for faster secret detection", ver)
 	} else {
 		opts.SecretConfigPath = ""
 	}

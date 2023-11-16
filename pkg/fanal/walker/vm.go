@@ -84,7 +84,7 @@ func (w *VM) diskWalk(root string, partition types.Partition) error {
 
 	sr := partition.GetSectionReader()
 
-	// Trivy does not support LVM scanning. It is skipped at the moment.
+	// Tunnel does not support LVM scanning. It is skipped at the moment.
 	foundLVM, err := w.detectLVM(sr)
 	if err != nil {
 		return xerrors.Errorf("LVM detection error: %w", err)

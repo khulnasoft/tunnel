@@ -352,7 +352,7 @@ func TestFilter(t *testing.T) {
 					},
 				},
 				severities: []dbTypes.Severity{dbTypes.SeverityLow},
-				ignoreFile: "testdata/.trivyignore",
+				ignoreFile: "testdata/.tunnelignore",
 			},
 			want: types.Report{
 				Results: types.Results{
@@ -556,7 +556,7 @@ func TestFilter(t *testing.T) {
 						},
 					},
 				},
-				ignoreFile: "testdata/.trivyignore.yaml",
+				ignoreFile: "testdata/.tunnelignore.yaml",
 				severities: []dbTypes.Severity{dbTypes.SeverityLow},
 			},
 			want: types.Report{

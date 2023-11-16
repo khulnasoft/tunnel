@@ -369,7 +369,7 @@ var policyMetadata = types.PolicyMetadata{
 	Description:        "This is a test policy.",
 	Severity:           "LOW",
 	RecommendedActions: "Have a cup of tea.",
-	References:         []string{"https://trivy.dev/"},
+	References:         []string{"https://tunnel.dev/"},
 }
 
 func TestTerraformMisconfigurationScan(t *testing.T) {
@@ -872,7 +872,7 @@ func TestCloudFormationMisconfigurationScan(t *testing.T) {
 											Description:        "This is a test policy.",
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
-											References:         []string{"https://trivy.dev/"},
+											References:         []string{"https://tunnel.dev/"},
 										},
 										CauseMetadata: types.CauseMetadata{
 											Resource:  "main.yaml:3-6",
@@ -934,7 +934,7 @@ func TestCloudFormationMisconfigurationScan(t *testing.T) {
 											Description:        "This is a test policy.",
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
-											References:         []string{"https://trivy.dev/"},
+											References:         []string{"https://tunnel.dev/"},
 										},
 										CauseMetadata: types.CauseMetadata{
 											Resource:  "main.yaml:2-5",
@@ -956,7 +956,7 @@ func TestCloudFormationMisconfigurationScan(t *testing.T) {
 											Description:        "This is a test policy.",
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
-											References:         []string{"https://trivy.dev/"},
+											References:         []string{"https://tunnel.dev/"},
 										},
 										CauseMetadata: types.CauseMetadata{
 											Resource:  "main.yaml:6-9",
@@ -1107,7 +1107,7 @@ func TestCloudFormationMisconfigurationScan(t *testing.T) {
 											Description:        "This is a test policy.",
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
-											References:         []string{"https://trivy.dev/"},
+											References:         []string{"https://tunnel.dev/"},
 										},
 										CauseMetadata: types.CauseMetadata{
 											Provider: "Generic",
@@ -1195,7 +1195,7 @@ func TestDockerfileMisconfigurationScan(t *testing.T) {
 											Description:        "This is a test policy.",
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
-											References:         []string{"https://trivy.dev/"},
+											References:         []string{"https://tunnel.dev/"},
 										},
 										CauseMetadata: types.CauseMetadata{
 											Provider: "Generic",
@@ -1253,7 +1253,7 @@ func TestDockerfileMisconfigurationScan(t *testing.T) {
 											Description:        "This is a test policy.",
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
-											References:         []string{"https://trivy.dev/"},
+											References:         []string{"https://tunnel.dev/"},
 										},
 										CauseMetadata: types.CauseMetadata{
 											Provider: "Generic",
@@ -1342,7 +1342,7 @@ func TestDockerfileMisconfigurationScan(t *testing.T) {
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
 											References: []string{
-												"https://trivy.dev/",
+												"https://tunnel.dev/",
 											},
 										},
 										CauseMetadata: types.CauseMetadata{
@@ -1432,7 +1432,7 @@ func TestKubernetesMisconfigurationScan(t *testing.T) {
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
 											References: []string{
-												"https://trivy.dev/",
+												"https://tunnel.dev/",
 											},
 										},
 										CauseMetadata: types.CauseMetadata{
@@ -1495,7 +1495,7 @@ func TestKubernetesMisconfigurationScan(t *testing.T) {
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
 											References: []string{
-												"https://trivy.dev/",
+												"https://tunnel.dev/",
 											},
 										},
 										CauseMetadata: types.CauseMetadata{
@@ -1518,7 +1518,7 @@ func TestKubernetesMisconfigurationScan(t *testing.T) {
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
 											References: []string{
-												"https://trivy.dev/",
+												"https://tunnel.dev/",
 											},
 										},
 										CauseMetadata: types.CauseMetadata{
@@ -1610,7 +1610,7 @@ func TestKubernetesMisconfigurationScan(t *testing.T) {
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
 											References: []string{
-												"https://trivy.dev/",
+												"https://tunnel.dev/",
 											},
 										},
 										CauseMetadata: types.CauseMetadata{
@@ -1697,7 +1697,7 @@ func TestAzureARMMisconfigurationScan(t *testing.T) {
 											Description:        "This is a test policy.",
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
-											References:         []string{"https://trivy.dev/"},
+											References:         []string{"https://tunnel.dev/"},
 										},
 										CauseMetadata: types.CauseMetadata{
 											Resource:  "resources[0]",
@@ -1757,7 +1757,7 @@ func TestAzureARMMisconfigurationScan(t *testing.T) {
 											Description:        "This is a test policy.",
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
-											References:         []string{"https://trivy.dev/"},
+											References:         []string{"https://tunnel.dev/"},
 										},
 										CauseMetadata: types.CauseMetadata{
 											Resource:  "resources[0]",
@@ -1779,7 +1779,7 @@ func TestAzureARMMisconfigurationScan(t *testing.T) {
 											Description:        "This is a test policy.",
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
-											References:         []string{"https://trivy.dev/"},
+											References:         []string{"https://tunnel.dev/"},
 										},
 										CauseMetadata: types.CauseMetadata{
 											Resource:  "resources[1]",
@@ -1868,7 +1868,7 @@ func TestAzureARMMisconfigurationScan(t *testing.T) {
 											Description:        "This is a test policy.",
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
-											References:         []string{"https://trivy.dev/"},
+											References:         []string{"https://tunnel.dev/"},
 										},
 										CauseMetadata: types.CauseMetadata{
 											Provider: "Generic",
@@ -1956,7 +1956,7 @@ func TestMixedConfigurationScan(t *testing.T) {
 											Description:        "This is a test policy.",
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
-											References:         []string{"https://trivy.dev/"},
+											References:         []string{"https://tunnel.dev/"},
 										},
 										CauseMetadata: types.CauseMetadata{
 											Resource:  "aws_s3_bucket.asd",
@@ -1984,7 +1984,7 @@ func TestMixedConfigurationScan(t *testing.T) {
 											Description:        "This is a test policy.",
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
-											References:         []string{"https://trivy.dev/"},
+											References:         []string{"https://tunnel.dev/"},
 										},
 										CauseMetadata: types.CauseMetadata{
 											Resource:  "main.yaml:3-6",

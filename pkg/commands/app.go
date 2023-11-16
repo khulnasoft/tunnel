@@ -61,7 +61,7 @@ Use "{{.CommandPath}} [command] --help" for more information about a command.{{e
 	groupPlugin     = "plugin"
 )
 
-// NewApp is the factory method to return Trivy CLI
+// NewApp is the factory method to return Tunnel CLI
 func NewApp() *cobra.Command {
 	globalFlags := flag.NewGlobalFlagGroup()
 	rootCmd := NewRootCommand(globalFlags)
@@ -154,23 +154,23 @@ func initConfig(configFile string) error {
 func NewRootCommand(globalFlags *flag.GlobalFlagGroup) *cobra.Command {
 	var versionFormat string
 	cmd := &cobra.Command{
-		Use:   "trivy [global flags] command [flags] target",
+		Use:   "tunnel [global flags] command [flags] target",
 		Short: "Unified security scanner",
 		Long:  "Scanner for vulnerabilities in container images, file systems, and Git repositories, as well as for configuration issues and hard-coded secrets",
 		Example: `  # Scan a container image
-  $ trivy image python:3.4-alpine
+  $ tunnel image python:3.4-alpine
 
   # Scan a container image from a tar archive
-  $ trivy image --input ruby-3.1.tar
+  $ tunnel image --input ruby-3.1.tar
 
   # Scan local filesystem
-  $ trivy fs .
+  $ tunnel fs .
 
   # Run in server mode
-  $ trivy server`,
+  $ tunnel server`,
 		Args: cobra.NoArgs,
 		PersistentPreRunE: func(cmd *cobra.Command, args []string) error {
-			// Set the Trivy version here so that we can override version printer.
+			// Set the Tunnel version here so that we can override version printer.
 			cmd.Version = version.AppVersion()
 
 			// viper.BindPFlag cannot be called in init().
@@ -258,25 +258,25 @@ func NewImageCommand(globalFlags *flag.GlobalFlagGroup) *cobra.Command {
 		GroupID: groupScanning,
 		Short:   "Scan a container image",
 		Example: `  # Scan a container image
-  $ trivy image python:3.4-alpine
+  $ tunnel image python:3.4-alpine
 
   # Scan a container image from a tar archive
-  $ trivy image --input ruby-3.1.tar
+  $ tunnel image --input ruby-3.1.tar
 
   # Filter by severities
-  $ trivy image --severity HIGH,CRITICAL alpine:3.15
+  $ tunnel image --severity HIGH,CRITICAL alpine:3.15
 
   # Ignore unfixed/unpatched vulnerabilities
-  $ trivy image --ignore-unfixed alpine:3.15
+  $ tunnel image --ignore-unfixed alpine:3.15
 
   # Scan a container image in client mode
-  $ trivy image --server http://127.0.0.1:4954 alpine:latest
+  $ tunnel image --server http://127.0.0.1:4954 alpine:latest
 
   # Generate json result
-  $ trivy image --format json --output result.json alpine:3.15
+  $ tunnel image --format json --output result.json alpine:3.15
 
   # Generate a report in the CycloneDX format
-  $ trivy image --format cyclonedx --output result.cdx alpine:3.15`,
+  $ tunnel image --format cyclonedx --output result.cdx alpine:3.15`,
 
 		// 'Args' cannot be used since it is called before PreRunE and viper is not configured yet.
 		// cmd.Args     -> cannot validate args here
@@ -337,10 +337,10 @@ func NewFilesystemCommand(globalFlags *flag.GlobalFlagGroup) *cobra.Command {
 		GroupID: groupScanning,
 		Short:   "Scan local filesystem",
 		Example: `  # Scan a local project including language-specific files
-  $ trivy fs /path/to/your_project
+  $ tunnel fs /path/to/your_project
 
   # Scan a single file
-  $ trivy fs ./trivy-ci-test/Pipfile.lock`,
+  $ tunnel fs ./tunnel-ci-test/Pipfile.lock`,
 		PreRunE: func(cmd *cobra.Command, args []string) error {
 			if err := fsFlags.Bind(cmd); err != nil {
 				return xerrors.Errorf("flag bind error: %w", err)
@@ -394,12 +394,12 @@ func NewRootfsCommand(globalFlags *flag.GlobalFlagGroup) *cobra.Command {
 		GroupID: groupScanning,
 		Example: `  # Scan unpacked filesystem
   $ docker export $(docker create alpine:3.10.2) | tar -C /tmp/rootfs -xvf -
-  $ trivy rootfs /tmp/rootfs
+  $ tunnel rootfs /tmp/rootfs
 
   # Scan from inside a container
   $ docker run --rm -it alpine:3.11
   / # curl -sfL https://raw.githubusercontent.com/khulnasoft/tunnel/main/contrib/install.sh | sh -s -- -b /usr/local/bin
-  / # trivy rootfs /`,
+  / # tunnel rootfs /`,
 		PreRunE: func(cmd *cobra.Command, args []string) error {
 			if err := rootfsFlags.Bind(cmd); err != nil {
 				return xerrors.Errorf("flag bind error: %w", err)
@@ -452,9 +452,9 @@ func NewRepositoryCommand(globalFlags *flag.GlobalFlagGroup) *cobra.Command {
 		GroupID: groupScanning,
 		Short:   "Scan a repository",
 		Example: `  # Scan your remote git repository
-  $ trivy repo https://github.com/knqyf263/trivy-ci-test
+  $ tunnel repo https://github.com/khulnasoft/tunnel-ci-test
   # Scan your local git repository
-  $ trivy repo /path/to/your/repository`,
+  $ tunnel repo /path/to/your/repository`,
 		PreRunE: func(cmd *cobra.Command, args []string) error {
 			if err := repoFlags.Bind(cmd); err != nil {
 				return xerrors.Errorf("flag bind error: %w", err)
@@ -490,10 +490,10 @@ func NewConvertCommand(globalFlags *flag.GlobalFlagGroup) *cobra.Command {
 		Use:     "convert [flags] RESULT_JSON",
 		Aliases: []string{"conv"},
 		GroupID: groupUtility,
-		Short:   "Convert Trivy JSON report into a different format",
+		Short:   "Convert Tunnel JSON report into a different format",
 		Example: `  # report conversion
-  $ trivy image --format json --output result.json --list-all-pkgs debian:11
-  $ trivy convert --format cyclonedx --output result.cdx result.json
+  $ tunnel image --format json --output result.json --list-all-pkgs debian:11
+  $ tunnel convert --format cyclonedx --output result.cdx result.json
 `,
 		PreRunE: func(cmd *cobra.Command, args []string) error {
 			if err := convertFlags.Bind(cmd); err != nil {
@@ -598,10 +598,10 @@ func NewServerCommand(globalFlags *flag.GlobalFlagGroup) *cobra.Command {
 		GroupID: groupUtility,
 		Short:   "Server mode",
 		Example: `  # Run a server
-  $ trivy server
+  $ tunnel server
 
   # Listen on 0.0.0.0:10000
-  $ trivy server --listen 0.0.0.0:10000
+  $ tunnel server --listen 0.0.0.0:10000
 `,
 		Args: cobra.ExactArgs(0),
 		RunE: func(cmd *cobra.Command, args []string) error {
@@ -923,17 +923,17 @@ func NewKubernetesCommand(globalFlags *flag.GlobalFlagGroup) *cobra.Command {
 		GroupID: groupScanning,
 		Short:   "[EXPERIMENTAL] Scan kubernetes cluster",
 		Example: `  # cluster scanning
-  $ trivy k8s --report summary cluster
+  $ tunnel k8s --report summary cluster
 
   # namespace scanning:
-  $ trivy k8s -n kube-system --report summary all
+  $ tunnel k8s -n kube-system --report summary all
 
   # resources scanning:
-  $ trivy k8s --report=summary deploy
-  $ trivy k8s --namespace=kube-system --report=summary deploy,configmaps
+  $ tunnel k8s --report=summary deploy
+  $ tunnel k8s --namespace=kube-system --report=summary deploy,configmaps
 
   # resource scanning:
-  $ trivy k8s deployment/orion
+  $ tunnel k8s deployment/orion
 `,
 		PreRunE: func(cmd *cobra.Command, args []string) error {
 			if err := k8sFlags.Bind(cmd); err != nil {
@@ -989,23 +989,23 @@ func NewAWSCommand(globalFlags *flag.GlobalFlagGroup) *cobra.Command {
 		GroupID: groupScanning,
 		Args:    cobra.ExactArgs(0),
 		Short:   "[EXPERIMENTAL] Scan AWS account",
-		Long: fmt.Sprintf(`Scan an AWS account for misconfigurations. Trivy uses the same authentication methods as the AWS CLI. See https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
+		Long: fmt.Sprintf(`Scan an AWS account for misconfigurations. Tunnel uses the same authentication methods as the AWS CLI. See https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
 
 The following services are supported:
 
 - %s
 `, strings.Join(services, "\n- ")),
 		Example: `  # basic scanning
-  $ trivy aws --region us-east-1
+  $ tunnel aws --region us-east-1
 
   # limit scan to a single service:
-  $ trivy aws --region us-east-1 --service s3
+  $ tunnel aws --region us-east-1 --service s3
 
   # limit scan to multiple services:
-  $ trivy aws --region us-east-1 --service s3 --service ec2
+  $ tunnel aws --region us-east-1 --service s3 --service ec2
 
   # force refresh of cache for fresh results
-  $ trivy aws --region us-east-1 --update-cache
+  $ tunnel aws --region us-east-1 --update-cache
 `,
 		PreRunE: func(cmd *cobra.Command, args []string) error {
 			if err := awsFlags.Bind(cmd); err != nil {
@@ -1065,10 +1065,10 @@ func NewVMCommand(globalFlags *flag.GlobalFlagGroup) *cobra.Command {
 		GroupID: groupScanning,
 		Short:   "[EXPERIMENTAL] Scan a virtual machine image",
 		Example: `  # Scan your AWS AMI
-  $ trivy vm --scanners vuln ami:${your_ami_id}
+  $ tunnel vm --scanners vuln ami:${your_ami_id}
 
   # Scan your AWS EBS snapshot
-  $ trivy vm ebs:${your_ebs_snapshot_id}
+  $ tunnel vm ebs:${your_ebs_snapshot_id}
 `,
 		PreRunE: func(cmd *cobra.Command, args []string) error {
 			if err := vmFlags.Bind(cmd); err != nil {
@@ -1125,10 +1125,10 @@ func NewSBOMCommand(globalFlags *flag.GlobalFlagGroup) *cobra.Command {
 		Short:   "Scan SBOM for vulnerabilities",
 		GroupID: groupScanning,
 		Example: `  # Scan CycloneDX and show the result in tables
-  $ trivy sbom /path/to/report.cdx
+  $ tunnel sbom /path/to/report.cdx
 
   # Scan CycloneDX-type attestation and show the result in tables
-  $ trivy sbom /path/to/report.cdx.intoto.jsonl
+  $ tunnel sbom /path/to/report.cdx.intoto.jsonl
 `,
 		PreRunE: func(cmd *cobra.Command, args []string) error {
 			if err := sbomFlags.Bind(cmd); err != nil {

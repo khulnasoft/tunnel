@@ -22,7 +22,7 @@ import (
 
 const (
 	ToolVendor = "aquasecurity"
-	ToolName   = "trivy"
+	ToolName   = "tunnel"
 	Namespace  = ToolVendor + ":" + ToolName + ":"
 
 	// https://json-schema.org/understanding-json-schema/reference/string.html#dates-and-times
@@ -307,7 +307,7 @@ func (c *CycloneDX) Properties(properties []Property) []cdx.Property {
 	return cdxProps
 }
 
-func IsTrivySBOM(c *cdx.BOM) bool {
+func IsTunnelSBOM(c *cdx.BOM) bool {
 	if c == nil || c.Metadata == nil || c.Metadata.Tools == nil {
 		return false
 	}
@@ -415,7 +415,7 @@ func cdxRatings(vuln types.DetectedVulnerability) *[]cdx.VulnerabilityRating {
 func cdxRatingV2(sourceID dtypes.SourceID, severity dtypes.Severity, cvss dtypes.CVSS) cdx.VulnerabilityRating {
 	cdxSeverity := toCDXSeverity(severity)
 
-	// Trivy keeps only CVSSv3 severity for NVD.
+	// Tunnel keeps only CVSSv3 severity for NVD.
 	// The CVSSv2 severity must be calculated according to CVSSv2 score.
 	if sourceID == vulnerability.NVD {
 		cdxSeverity = nvdSeverityV2(cvss.V2Score)

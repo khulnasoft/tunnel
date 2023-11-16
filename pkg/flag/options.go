@@ -112,14 +112,14 @@ type Options struct {
 	SecretOptions
 	VulnerabilityOptions
 
-	// Trivy's version, not populated via CLI flags
+	// Tunnel's version, not populated via CLI flags
 	AppVersion string
 
 	// We don't want to allow disabled analyzers to be passed by users, but it is necessary for internal use.
 	DisabledAnalyzers []analyzer.Type
 
 	// outputWriter is not initialized via the CLI.
-	// It is mainly used for testing purposes or by tools that use Trivy as a library.
+	// It is mainly used for testing purposes or by tools that use Tunnel as a library.
 	outputWriter io.Writer
 }
 
@@ -231,7 +231,7 @@ func bind(cmd *cobra.Command, flag *Flag) error {
 	if flag == nil {
 		return nil
 	} else if flag.Name == "" {
-		// This flag is available only in trivy.yaml
+		// This flag is available only in tunnel.yaml
 		viper.SetDefault(flag.ConfigName, flag.Default)
 		return nil
 	}
@@ -256,14 +256,14 @@ func bind(cmd *cobra.Command, flag *Flag) error {
 
 func bindEnv(flag *Flag) error {
 	// We don't use viper.AutomaticEnv, so we need to add a prefix manually here.
-	envName := strings.ToUpper("trivy_" + strings.ReplaceAll(flag.Name, "-", "_"))
+	envName := strings.ToUpper("tunnel_" + strings.ReplaceAll(flag.Name, "-", "_"))
 	if err := viper.BindEnv(flag.ConfigName, envName); err != nil {
 		return xerrors.Errorf("bind env error: %w", err)
 	}
 
 	// Bind env aliases
 	for _, alias := range flag.Aliases {
-		envAlias := strings.ToUpper("trivy_" + strings.ReplaceAll(alias.Name, "-", "_"))
+		envAlias := strings.ToUpper("tunnel_" + strings.ReplaceAll(alias.Name, "-", "_"))
 		if err := viper.BindEnv(flag.ConfigName, envAlias); err != nil {
 			return xerrors.Errorf("bind env error: %w", err)
 		}
@@ -329,7 +329,7 @@ func getValue(flag *Flag) any {
 		return nil
 	}
 
-	// First, looks for aliases in config file (trivy.yaml).
+	// First, looks for aliases in config file (tunnel.yaml).
 	// Note that viper.RegisterAlias cannot be used for this purpose.
 	var v any
 	for _, alias := range flag.Aliases {

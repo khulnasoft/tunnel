@@ -162,7 +162,7 @@ func TestSBOM(t *testing.T) {
 			osArgs = append(osArgs, "--output", outputFile)
 			osArgs = append(osArgs, tt.args.input)
 
-			// Run "trivy sbom"
+			// Run "tunnel sbom"
 			err := execute(osArgs)
 			assert.NoError(t, err)
 

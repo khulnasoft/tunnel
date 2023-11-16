@@ -188,7 +188,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 					Timestamp: "2021-08-25T12:20:30+00:00",
 					Tools: &[]cdx.Tool{
 						{
-							Name:    "trivy",
+							Name:    "tunnel",
 							Vendor:  "aquasecurity",
 							Version: "dev",
 						},
@@ -200,27 +200,27 @@ func TestMarshaler_Marshal(t *testing.T) {
 						Name:       "rails:latest",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:trivy:DiffID",
+								Name:  "aquasecurity:tunnel:DiffID",
 								Value: "sha256:d871dadfb37b53ef1ca45be04fc527562b91989991a8f545345ae3be0b93f92a",
 							},
 							{
-								Name:  "aquasecurity:trivy:ImageID",
+								Name:  "aquasecurity:tunnel:ImageID",
 								Value: "sha256:5d0da3dc976460b72c77d94c8a1ad043720b0416bfc16c52c45d4847e53fadb6",
 							},
 							{
-								Name:  "aquasecurity:trivy:RepoDigest",
+								Name:  "aquasecurity:tunnel:RepoDigest",
 								Value: "rails@sha256:a27fd8080b517143cbbbab9dfb7c8571c40d67d534bbdee55bd6c473f432b177",
 							},
 							{
-								Name:  "aquasecurity:trivy:RepoTag",
+								Name:  "aquasecurity:tunnel:RepoTag",
 								Value: "rails:latest",
 							},
 							{
-								Name:  "aquasecurity:trivy:SchemaVersion",
+								Name:  "aquasecurity:tunnel:SchemaVersion",
 								Value: "2",
 							},
 							{
-								Name:  "aquasecurity:trivy:Size",
+								Name:  "aquasecurity:tunnel:Size",
 								Value: "1024",
 							},
 						},
@@ -234,11 +234,11 @@ func TestMarshaler_Marshal(t *testing.T) {
 						Version: "8.3.2011",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:trivy:Class",
+								Name:  "aquasecurity:tunnel:Class",
 								Value: "os-pkgs",
 							},
 							{
-								Name:  "aquasecurity:trivy:Type",
+								Name:  "aquasecurity:tunnel:Type",
 								Value: "centos",
 							},
 						},
@@ -250,11 +250,11 @@ func TestMarshaler_Marshal(t *testing.T) {
 						Version: "",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:trivy:Class",
+								Name:  "aquasecurity:tunnel:Class",
 								Value: "lang-pkgs",
 							},
 							{
-								Name:  "aquasecurity:trivy:Type",
+								Name:  "aquasecurity:tunnel:Type",
 								Value: "bundler",
 							},
 						},
@@ -266,11 +266,11 @@ func TestMarshaler_Marshal(t *testing.T) {
 						Version: "",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:trivy:Class",
+								Name:  "aquasecurity:tunnel:Class",
 								Value: "lang-pkgs",
 							},
 							{
-								Name:  "aquasecurity:trivy:Type",
+								Name:  "aquasecurity:tunnel:Type",
 								Value: "bundler",
 							},
 						},
@@ -282,11 +282,11 @@ func TestMarshaler_Marshal(t *testing.T) {
 						Version: "",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:trivy:Class",
+								Name:  "aquasecurity:tunnel:Class",
 								Value: "lang-pkgs",
 							},
 							{
-								Name:  "aquasecurity:trivy:Type",
+								Name:  "aquasecurity:tunnel:Type",
 								Value: "dotnet-core",
 							},
 						},
@@ -298,11 +298,11 @@ func TestMarshaler_Marshal(t *testing.T) {
 						Version: "",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:trivy:Class",
+								Name:  "aquasecurity:tunnel:Class",
 								Value: "lang-pkgs",
 							},
 							{
-								Name:  "aquasecurity:trivy:Type",
+								Name:  "aquasecurity:tunnel:Type",
 								Value: "gobinary",
 							},
 						},
@@ -315,7 +315,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 						Version: "(devel)",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:trivy:PkgType",
+								Name:  "aquasecurity:tunnel:PkgType",
 								Value: "gobinary",
 							},
 						},
@@ -328,11 +328,11 @@ func TestMarshaler_Marshal(t *testing.T) {
 						PackageURL: "pkg:gem/actioncontroller@7.0.0",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:trivy:PkgID",
+								Name:  "aquasecurity:tunnel:PkgID",
 								Value: "actioncontroller@7.0.0",
 							},
 							{
-								Name:  "aquasecurity:trivy:PkgType",
+								Name:  "aquasecurity:tunnel:PkgType",
 								Value: "bundler",
 							},
 						},
@@ -345,11 +345,11 @@ func TestMarshaler_Marshal(t *testing.T) {
 						PackageURL: "pkg:gem/actionpack@7.0.0",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:trivy:PkgID",
+								Name:  "aquasecurity:tunnel:PkgID",
 								Value: "actionpack@7.0.0",
 							},
 							{
-								Name:  "aquasecurity:trivy:PkgType",
+								Name:  "aquasecurity:tunnel:PkgType",
 								Value: "bundler",
 							},
 						},
@@ -362,7 +362,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 						PackageURL: "pkg:golang/golang.org/x/crypto@v0.0.0-20210421170649-83a5a9bb288b",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:trivy:PkgType",
+								Name:  "aquasecurity:tunnel:PkgType",
 								Value: "gobinary",
 							},
 						},
@@ -375,11 +375,11 @@ func TestMarshaler_Marshal(t *testing.T) {
 						PackageURL: "pkg:nuget/Newtonsoft.Json@9.0.1",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:trivy:PkgID",
+								Name:  "aquasecurity:tunnel:PkgID",
 								Value: "Newtonsoft.Json@9.0.1",
 							},
 							{
-								Name:  "aquasecurity:trivy:PkgType",
+								Name:  "aquasecurity:tunnel:PkgType",
 								Value: "dotnet-core",
 							},
 						},
@@ -402,23 +402,23 @@ func TestMarshaler_Marshal(t *testing.T) {
 						},
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:trivy:PkgID",
+								Name:  "aquasecurity:tunnel:PkgID",
 								Value: "binutils@2.30-93.el8",
 							},
 							{
-								Name:  "aquasecurity:trivy:PkgType",
+								Name:  "aquasecurity:tunnel:PkgType",
 								Value: "centos",
 							},
 							{
-								Name:  "aquasecurity:trivy:SrcName",
+								Name:  "aquasecurity:tunnel:SrcName",
 								Value: "binutils",
 							},
 							{
-								Name:  "aquasecurity:trivy:SrcRelease",
+								Name:  "aquasecurity:tunnel:SrcRelease",
 								Value: "93.el8",
 							},
 							{
-								Name:  "aquasecurity:trivy:SrcVersion",
+								Name:  "aquasecurity:tunnel:SrcVersion",
 								Value: "2.30",
 							},
 						},
@@ -752,7 +752,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 					Timestamp: "2021-08-25T12:20:30+00:00",
 					Tools: &[]cdx.Tool{
 						{
-							Name:    "trivy",
+							Name:    "tunnel",
 							Vendor:  "aquasecurity",
 							Version: "dev",
 						},
@@ -764,19 +764,19 @@ func TestMarshaler_Marshal(t *testing.T) {
 						Name:       "centos:latest",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:trivy:ImageID",
+								Name:  "aquasecurity:tunnel:ImageID",
 								Value: "sha256:5d0da3dc976460b72c77d94c8a1ad043720b0416bfc16c52c45d4847e53fadb6",
 							},
 							{
-								Name:  "aquasecurity:trivy:RepoTag",
+								Name:  "aquasecurity:tunnel:RepoTag",
 								Value: "centos:latest",
 							},
 							{
-								Name:  "aquasecurity:trivy:SchemaVersion",
+								Name:  "aquasecurity:tunnel:SchemaVersion",
 								Value: "2",
 							},
 							{
-								Name:  "aquasecurity:trivy:Size",
+								Name:  "aquasecurity:tunnel:Size",
 								Value: "1024",
 							},
 						},
@@ -790,11 +790,11 @@ func TestMarshaler_Marshal(t *testing.T) {
 						Version: "8.3.2011",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:trivy:Class",
+								Name:  "aquasecurity:tunnel:Class",
 								Value: "os-pkgs",
 							},
 							{
-								Name:  "aquasecurity:trivy:Type",
+								Name:  "aquasecurity:tunnel:Type",
 								Value: "centos",
 							},
 						},
@@ -807,19 +807,19 @@ func TestMarshaler_Marshal(t *testing.T) {
 						PackageURL: "pkg:gem/actionpack@7.0.0",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:trivy:FilePath",
+								Name:  "aquasecurity:tunnel:FilePath",
 								Value: "tools/project-john/specifications/actionpack.gemspec",
 							},
 							{
-								Name:  "aquasecurity:trivy:LayerDiffID",
+								Name:  "aquasecurity:tunnel:LayerDiffID",
 								Value: "sha256:ccb64cf0b7ba2e50741d0b64cae324eb5de3b1e2f580bbf177e721b67df38488",
 							},
 							{
-								Name:  "aquasecurity:trivy:PkgID",
+								Name:  "aquasecurity:tunnel:PkgID",
 								Value: "actionpack@7.0.0",
 							},
 							{
-								Name:  "aquasecurity:trivy:PkgType",
+								Name:  "aquasecurity:tunnel:PkgType",
 								Value: "gemspec",
 							},
 						},
@@ -832,19 +832,19 @@ func TestMarshaler_Marshal(t *testing.T) {
 						PackageURL: "pkg:gem/actionpack@7.0.1",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:trivy:FilePath",
+								Name:  "aquasecurity:tunnel:FilePath",
 								Value: "tools/project-doe/specifications/actionpack.gemspec",
 							},
 							{
-								Name:  "aquasecurity:trivy:LayerDiffID",
+								Name:  "aquasecurity:tunnel:LayerDiffID",
 								Value: "sha256:ccb64cf0b7ba2e50741d0b64cae324eb5de3b1e2f580bbf177e721b67df38488",
 							},
 							{
-								Name:  "aquasecurity:trivy:PkgID",
+								Name:  "aquasecurity:tunnel:PkgID",
 								Value: "actionpack@7.0.1",
 							},
 							{
-								Name:  "aquasecurity:trivy:PkgType",
+								Name:  "aquasecurity:tunnel:PkgType",
 								Value: "gemspec",
 							},
 						},
@@ -864,27 +864,27 @@ func TestMarshaler_Marshal(t *testing.T) {
 						PackageURL: "pkg:rpm/centos/acl@2.2.53-1.el8?arch=aarch64&distro=centos-8.3.2011&epoch=1",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:trivy:PkgID",
+								Name:  "aquasecurity:tunnel:PkgID",
 								Value: "acl@2.2.53-1.el8",
 							},
 							{
-								Name:  "aquasecurity:trivy:PkgType",
+								Name:  "aquasecurity:tunnel:PkgType",
 								Value: "centos",
 							},
 							{
-								Name:  "aquasecurity:trivy:SrcEpoch",
+								Name:  "aquasecurity:tunnel:SrcEpoch",
 								Value: "1",
 							},
 							{
-								Name:  "aquasecurity:trivy:SrcName",
+								Name:  "aquasecurity:tunnel:SrcName",
 								Value: "acl",
 							},
 							{
-								Name:  "aquasecurity:trivy:SrcRelease",
+								Name:  "aquasecurity:tunnel:SrcRelease",
 								Value: "1.el8",
 							},
 							{
-								Name:  "aquasecurity:trivy:SrcVersion",
+								Name:  "aquasecurity:tunnel:SrcVersion",
 								Value: "2.2.53",
 							},
 						},
@@ -910,23 +910,23 @@ func TestMarshaler_Marshal(t *testing.T) {
 						PackageURL: "pkg:rpm/centos/glibc@2.28-151.el8?arch=aarch64&distro=centos-8.3.2011",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:trivy:PkgID",
+								Name:  "aquasecurity:tunnel:PkgID",
 								Value: "glibc@2.28-151.el8",
 							},
 							{
-								Name:  "aquasecurity:trivy:PkgType",
+								Name:  "aquasecurity:tunnel:PkgType",
 								Value: "centos",
 							},
 							{
-								Name:  "aquasecurity:trivy:SrcName",
+								Name:  "aquasecurity:tunnel:SrcName",
 								Value: "glibc",
 							},
 							{
-								Name:  "aquasecurity:trivy:SrcRelease",
+								Name:  "aquasecurity:tunnel:SrcRelease",
 								Value: "151.el8",
 							},
 							{
-								Name:  "aquasecurity:trivy:SrcVersion",
+								Name:  "aquasecurity:tunnel:SrcVersion",
 								Value: "2.28",
 							},
 						},
@@ -951,7 +951,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 						Ref: "3ff14136-e09f-4df9-80ea-000000000003",
 						Dependencies: &[]string{
 							"pkg:rpm/centos/acl@2.2.53-1.el8?arch=aarch64&distro=centos-8.3.2011&epoch=1",
-							// Trivy is unable to identify the direct OS packages as of today.
+							// Tunnel is unable to identify the direct OS packages as of today.
 							"pkg:rpm/centos/glibc@2.28-151.el8?arch=aarch64&distro=centos-8.3.2011",
 						},
 					},
@@ -1098,7 +1098,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 					Timestamp: "2021-08-25T12:20:30+00:00",
 					Tools: &[]cdx.Tool{
 						{
-							Name:    "trivy",
+							Name:    "tunnel",
 							Vendor:  "aquasecurity",
 							Version: "dev",
 						},
@@ -1109,7 +1109,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 						Name:   "masahiro331/CVE-2021-41098",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:trivy:SchemaVersion",
+								Name:  "aquasecurity:tunnel:SchemaVersion",
 								Value: "2",
 							},
 						},
@@ -1122,11 +1122,11 @@ func TestMarshaler_Marshal(t *testing.T) {
 						Name:   "Gemfile.lock",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:trivy:Class",
+								Name:  "aquasecurity:tunnel:Class",
 								Value: "lang-pkgs",
 							},
 							{
-								Name:  "aquasecurity:trivy:Type",
+								Name:  "aquasecurity:tunnel:Type",
 								Value: "bundler",
 							},
 						},
@@ -1139,7 +1139,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 						PackageURL: "pkg:gem/actioncable@6.1.4.1",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:trivy:PkgType",
+								Name:  "aquasecurity:tunnel:PkgType",
 								Value: "bundler",
 							},
 						},
@@ -1153,11 +1153,11 @@ func TestMarshaler_Marshal(t *testing.T) {
 						PackageURL: "pkg:maven/org.springframework/spring-web@5.3.22",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:trivy:FilePath",
+								Name:  "aquasecurity:tunnel:FilePath",
 								Value: "spring-web-5.3.22.jar",
 							},
 							{
-								Name:  "aquasecurity:trivy:PkgType",
+								Name:  "aquasecurity:tunnel:PkgType",
 								Value: "jar",
 							},
 						},
@@ -1312,7 +1312,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 					Timestamp: "2021-08-25T12:20:30+00:00",
 					Tools: &[]cdx.Tool{
 						{
-							Name:    "trivy",
+							Name:    "tunnel",
 							Vendor:  "aquasecurity",
 							Version: "dev",
 						},
@@ -1323,7 +1323,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 						Name:   "CVE-2023-34468",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:trivy:SchemaVersion",
+								Name:  "aquasecurity:tunnel:SchemaVersion",
 								Value: "2",
 							},
 						},
@@ -1339,11 +1339,11 @@ func TestMarshaler_Marshal(t *testing.T) {
 						PackageURL: "pkg:maven/org.apache.nifi/nifi-dbcp-base@1.20.0",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:trivy:FilePath",
+								Name:  "aquasecurity:tunnel:FilePath",
 								Value: "nifi-dbcp-base-1.20.0.jar",
 							},
 							{
-								Name:  "aquasecurity:trivy:PkgType",
+								Name:  "aquasecurity:tunnel:PkgType",
 								Value: "jar",
 							},
 						},
@@ -1357,11 +1357,11 @@ func TestMarshaler_Marshal(t *testing.T) {
 						PackageURL: "pkg:maven/org.apache.nifi/nifi-hikari-dbcp-service@1.20.0",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:trivy:FilePath",
+								Name:  "aquasecurity:tunnel:FilePath",
 								Value: "nifi-hikari-dbcp-service-1.20.0.jar",
 							},
 							{
-								Name:  "aquasecurity:trivy:PkgType",
+								Name:  "aquasecurity:tunnel:PkgType",
 								Value: "jar",
 							},
 						},
@@ -1488,7 +1488,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 					Timestamp: "2021-08-25T12:20:30+00:00",
 					Tools: &[]cdx.Tool{
 						{
-							Name:    "trivy",
+							Name:    "tunnel",
 							Vendor:  "aquasecurity",
 							Version: "dev",
 						},
@@ -1499,7 +1499,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 						BOMRef: "3ff14136-e09f-4df9-80ea-000000000002",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:trivy:SchemaVersion",
+								Name:  "aquasecurity:tunnel:SchemaVersion",
 								Value: "2",
 							},
 						},
@@ -1521,19 +1521,19 @@ func TestMarshaler_Marshal(t *testing.T) {
 						},
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:trivy:FilePath",
+								Name:  "aquasecurity:tunnel:FilePath",
 								Value: "usr/local/lib/ruby/gems/3.1.0/gems/typeprof-0.21.1/vscode/package.json",
 							},
 							{
-								Name:  "aquasecurity:trivy:LayerDiffID",
+								Name:  "aquasecurity:tunnel:LayerDiffID",
 								Value: "sha256:661c3fd3cc16b34c070f3620ca6b03b6adac150f9a7e5d0e3c707a159990f88e",
 							},
 							{
-								Name:  "aquasecurity:trivy:PkgID",
+								Name:  "aquasecurity:tunnel:PkgID",
 								Value: "ruby-typeprof@0.20.1",
 							},
 							{
-								Name:  "aquasecurity:trivy:PkgType",
+								Name:  "aquasecurity:tunnel:PkgType",
 								Value: "node-pkg",
 							},
 						},
@@ -1573,7 +1573,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 					Timestamp: "2021-08-25T12:20:30+00:00",
 					Tools: &[]cdx.Tool{
 						{
-							Name:    "trivy",
+							Name:    "tunnel",
 							Vendor:  "aquasecurity",
 							Version: "dev",
 						},
@@ -1584,7 +1584,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 						BOMRef: "3ff14136-e09f-4df9-80ea-000000000002",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:trivy:SchemaVersion",
+								Name:  "aquasecurity:tunnel:SchemaVersion",
 								Value: "2",
 							},
 						},

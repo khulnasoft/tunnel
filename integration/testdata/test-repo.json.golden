@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 2,
   "CreatedAt": "2021-08-25T12:20:30.000000005Z",
-  "ArtifactName": "https://github.com/knqyf263/trivy-ci-test",
+  "ArtifactName": "https://github.com/khulnasoft/tunnel-ci-test",
   "ArtifactType": "repository",
   "Metadata": {
     "ImageConfig": {

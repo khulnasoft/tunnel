@@ -11,7 +11,7 @@ import (
 
 // DownloadToTempDir downloads the configured source to a temp dir.
 func DownloadToTempDir(ctx context.Context, url string) (string, error) {
-	tempDir, err := os.MkdirTemp("", "trivy-plugin")
+	tempDir, err := os.MkdirTemp("", "tunnel-plugin")
 	if err != nil {
 		return "", xerrors.Errorf("failed to create a temp dir: %w", err)
 	}

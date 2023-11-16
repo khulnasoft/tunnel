@@ -3,7 +3,7 @@
 	"creationInfo": {
 		"created": "2022-09-12T17:03:35.840861Z",
 		"creators": [
-			"Tool: trivy-dev",
+			"Tool: tunnel-dev",
 			"Organization: aquasecurity"
 		]
 	},
@@ -11,7 +11,7 @@
 	"documentDescribes": [
 		"SPDXRef-ContainerImage-7f428bd075b13fe8"
 	],
-	"documentNamespace": "http://aquasecurity.github.io/trivy/container/maven-test-project-3e87878b-eac3-4baa-af11-bdf2c5eab8ea",
+	"documentNamespace": "http://aquasecurity.github.io/tunnel/container/maven-test-project-3e87878b-eac3-4baa-af11-bdf2c5eab8ea",
 	"name": "maven-test-project",
 	"packages": [
 		{

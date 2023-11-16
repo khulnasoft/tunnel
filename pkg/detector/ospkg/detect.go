@@ -47,7 +47,7 @@ var (
 	}
 )
 
-// RegisterDriver is defined for extensibility and not supposed to be used in Trivy.
+// RegisterDriver is defined for extensibility and not supposed to be used in Tunnel.
 func RegisterDriver(name ftypes.OSType, driver Driver) {
 	drivers[name] = driver
 }

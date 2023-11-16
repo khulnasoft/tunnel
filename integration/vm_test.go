@@ -110,7 +110,7 @@ func TestVM(t *testing.T) {
 			osArgs = append(osArgs, "--output", outputFile)
 			osArgs = append(osArgs, imageFile)
 
-			// Run "trivy vm"
+			// Run "tunnel vm"
 			err = execute(osArgs)
 			require.NoError(t, err)
 			compareReports(t, goldenFile, outputFile, nil)

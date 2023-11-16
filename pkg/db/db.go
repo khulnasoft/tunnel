@@ -18,7 +18,7 @@ import (
 )
 
 const (
-	dbMediaType         = "application/vnd.aquasec.trivy.db.layer.v1.tar+gzip"
+	dbMediaType         = "application/vnd.aquasec.tunnel.db.layer.v1.tar+gzip"
 	defaultDBRepository = "ghcr.io/khulnasoft-lab/vul-db"
 )
 
@@ -99,7 +99,7 @@ func (c *Client) NeedsUpdate(cliVersion string, skip bool) (bool, error) {
 	}
 
 	if db.SchemaVersion < meta.Version {
-		log.Logger.Errorf("Trivy version (%s) is old. Update to the latest version.", cliVersion)
+		log.Logger.Errorf("Tunnel version (%s) is old. Update to the latest version.", cliVersion)
 		return false, xerrors.Errorf("the version of DB schema doesn't match. Local DB: %d, Expected: %d",
 			meta.Version, db.SchemaVersion)
 	}
@@ -122,7 +122,7 @@ func (c *Client) NeedsUpdate(cliVersion string, skip bool) (bool, error) {
 
 func (c *Client) validate(meta metadata.Metadata) error {
 	if db.SchemaVersion != meta.Version {
-		log.Logger.Error("The local DB has an old schema version which is not supported by the current version of Trivy CLI. DB needs to be updated.")
+		log.Logger.Error("The local DB has an old schema version which is not supported by the current version of Tunnel CLI. DB needs to be updated.")
 		return xerrors.Errorf("--skip-update cannot be specified with the old DB schema. Local DB: %d, Expected: %d",
 			meta.Version, db.SchemaVersion)
 	}
@@ -196,7 +196,7 @@ func (c *Client) initOCIArtifact(opt types.RegistryOptions) (*oci.Artifact, erro
 			for _, diagnostic := range terr.Errors {
 				// For better user experience
 				if diagnostic.Code == transport.DeniedErrorCode || diagnostic.Code == transport.UnauthorizedErrorCode {
-					log.Logger.Warn("See https://aquasecurity.github.io/trivy/latest/docs/references/troubleshooting/#db")
+					log.Logger.Warn("See https://aquasecurity.github.io/tunnel/latest/docs/references/troubleshooting/#db")
 					break
 				}
 			}

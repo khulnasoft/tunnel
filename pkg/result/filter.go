@@ -20,7 +20,7 @@ import (
 
 const (
 	// DefaultIgnoreFile is the file name to be evaluated
-	DefaultIgnoreFile = ".trivyignore"
+	DefaultIgnoreFile = ".tunnelignore"
 )
 
 type FilterOption struct {
@@ -229,9 +229,9 @@ func applyPolicy(ctx context.Context, vulns []types.DetectedVulnerability, misco
 	}
 
 	query, err := rego.New(
-		rego.Query("data.trivy.ignore"),
+		rego.Query("data.tunnel.ignore"),
 		rego.Module("lib.rego", module),
-		rego.Module("trivy.rego", string(policy)),
+		rego.Module("tunnel.rego", string(policy)),
 	).PrepareForEval(ctx)
 	if err != nil {
 		return nil, nil, 0, xerrors.Errorf("unable to prepare for eval: %w", err)
