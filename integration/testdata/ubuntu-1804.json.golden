@@ -83,7 +83,7 @@
             "DiffID": "sha256:6cebf3abed5fac58d2e792ce8461454e92c245d5312c42118f02e231a73b317f"
           },
           "SeveritySource": "ubuntu",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-18276",
+          "PrimaryURL": "https://avd.khulnasoft.com/nvd/cve-2019-18276",
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",
@@ -135,7 +135,7 @@
             "DiffID": "sha256:6cebf3abed5fac58d2e792ce8461454e92c245d5312c42118f02e231a73b317f"
           },
           "SeveritySource": "ubuntu",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-5094",
+          "PrimaryURL": "https://avd.khulnasoft.com/nvd/cve-2019-5094",
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",
@@ -193,7 +193,7 @@
             "DiffID": "sha256:6cebf3abed5fac58d2e792ce8461454e92c245d5312c42118f02e231a73b317f"
           },
           "SeveritySource": "ubuntu",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-5094",
+          "PrimaryURL": "https://avd.khulnasoft.com/nvd/cve-2019-5094",
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",
@@ -251,7 +251,7 @@
             "DiffID": "sha256:6cebf3abed5fac58d2e792ce8461454e92c245d5312c42118f02e231a73b317f"
           },
           "SeveritySource": "ubuntu",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-5094",
+          "PrimaryURL": "https://avd.khulnasoft.com/nvd/cve-2019-5094",
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",
@@ -309,7 +309,7 @@
             "DiffID": "sha256:6cebf3abed5fac58d2e792ce8461454e92c245d5312c42118f02e231a73b317f"
           },
           "SeveritySource": "ubuntu",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-5094",
+          "PrimaryURL": "https://avd.khulnasoft.com/nvd/cve-2019-5094",
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",

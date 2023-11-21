@@ -63,7 +63,7 @@
             "DiffID": "sha256:dffd9992ca398466a663c87c92cfea2a2db0ae0cf33fcb99da60eec52addbfc5"
           },
           "SeveritySource": "nvd",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-1551",
+          "PrimaryURL": "https://avd.khulnasoft.com/nvd/cve-2019-1551",
           "DataSource": {
             "ID": "debian",
             "Name": "Debian Security Tracker",
@@ -137,7 +137,7 @@
             "DiffID": "sha256:dffd9992ca398466a663c87c92cfea2a2db0ae0cf33fcb99da60eec52addbfc5"
           },
           "SeveritySource": "nvd",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-1563",
+          "PrimaryURL": "https://avd.khulnasoft.com/nvd/cve-2019-1563",
           "DataSource": {
             "ID": "debian",
             "Name": "Debian Security Tracker",
@@ -215,7 +215,7 @@
             "DiffID": "sha256:dffd9992ca398466a663c87c92cfea2a2db0ae0cf33fcb99da60eec52addbfc5"
           },
           "SeveritySource": "nvd",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-1551",
+          "PrimaryURL": "https://avd.khulnasoft.com/nvd/cve-2019-1551",
           "DataSource": {
             "ID": "debian",
             "Name": "Debian Security Tracker",
@@ -289,7 +289,7 @@
             "DiffID": "sha256:dffd9992ca398466a663c87c92cfea2a2db0ae0cf33fcb99da60eec52addbfc5"
           },
           "SeveritySource": "nvd",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-1563",
+          "PrimaryURL": "https://avd.khulnasoft.com/nvd/cve-2019-1563",
           "DataSource": {
             "ID": "debian",
             "Name": "Debian Security Tracker",

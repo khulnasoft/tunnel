@@ -7,7 +7,7 @@
     "timestamp": "2022-05-28T10:20:03.79527Z",
     "tools": [
       {
-        "vendor": "aquasecurity",
+        "vendor": "khulnasoft",
         "name": "tunnel",
         "version": "dev"
       }
@@ -18,7 +18,7 @@
       "name": "maven-test-project",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:SchemaVersion",
+          "name": "khulnasoft:tunnel:SchemaVersion",
           "value": "2"
         }
       ]

@@ -29,8 +29,8 @@ import (
 
 const (
 	DocumentSPDXIdentifier = "DOCUMENT"
-	DocumentNamespace      = "http://aquasecurity.github.io/tunnel"
-	CreatorOrganization    = "aquasecurity"
+	DocumentNamespace      = "http://khulnasoft.github.io/tunnel"
+	CreatorOrganization    = "khulnasoft"
 	CreatorTool            = "tunnel"
 	noneField              = "NONE"
 )

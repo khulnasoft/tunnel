@@ -22,7 +22,7 @@ import (
 	"github.com/khulnasoft/tunnel/pkg/oci"
 )
 
-const mediaType = "application/vnd.aquasec.tunnel.db.layer.v1.tar+gzip"
+const mediaType = "application/vnd.khulnasoft.tunnel.db.layer.v1.tar+gzip"
 
 type fakeLayer struct {
 	v1.Layer
@@ -205,7 +205,7 @@ func TestClient_Download(t *testing.T) {
 			img.ManifestReturns(&v1.Manifest{
 				Layers: []v1.Descriptor{
 					{
-						MediaType: "application/vnd.aquasec.tunnel.db.layer.v1.tar+gzip",
+						MediaType: "application/vnd.khulnasoft.tunnel.db.layer.v1.tar+gzip",
 						Size:      100,
 						Digest: v1.Hash{
 							Algorithm: "sha256",

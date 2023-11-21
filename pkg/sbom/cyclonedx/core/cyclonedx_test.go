@@ -184,7 +184,7 @@ func TestMarshaler_CoreComponent(t *testing.T) {
 					Tools: &[]cdx.Tool{
 						{
 							Name:    "tunnel",
-							Vendor:  "aquasecurity",
+							Vendor:  "khulnasoft",
 							Version: "dev",
 						},
 					},
@@ -203,7 +203,7 @@ func TestMarshaler_CoreComponent(t *testing.T) {
 						Name:   "kube-apiserver-kind-control-plane",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:control_plane_components",
+								Name:  "khulnasoft:tunnel:control_plane_components",
 								Value: "kube-apiserver",
 							},
 						},
@@ -214,23 +214,23 @@ func TestMarshaler_CoreComponent(t *testing.T) {
 						Name:   "kind-control-plane",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:architecture",
+								Name:  "khulnasoft:tunnel:architecture",
 								Value: "arm64",
 							},
 							{
-								Name:  "aquasecurity:tunnel:host_name",
+								Name:  "khulnasoft:tunnel:host_name",
 								Value: "kind-control-plane",
 							},
 							{
-								Name:  "aquasecurity:tunnel:kernel_version",
+								Name:  "khulnasoft:tunnel:kernel_version",
 								Value: "6.2.13-300.fc38.aarch64",
 							},
 							{
-								Name:  "aquasecurity:tunnel:node_role",
+								Name:  "khulnasoft:tunnel:node_role",
 								Value: "master",
 							},
 							{
-								Name:  "aquasecurity:tunnel:operating_system",
+								Name:  "khulnasoft:tunnel:operating_system",
 								Value: "linux",
 							},
 						},
@@ -242,11 +242,11 @@ func TestMarshaler_CoreComponent(t *testing.T) {
 						Version: "21.04",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:Class",
+								Name:  "khulnasoft:tunnel:Class",
 								Value: "os-pkgs",
 							},
 							{
-								Name:  "aquasecurity:tunnel:Type",
+								Name:  "khulnasoft:tunnel:Type",
 								Value: "ubuntu",
 							},
 						},
@@ -257,11 +257,11 @@ func TestMarshaler_CoreComponent(t *testing.T) {
 						Name:   "node-core-components",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:Class",
+								Name:  "khulnasoft:tunnel:Class",
 								Value: "lang-pkgs",
 							},
 							{
-								Name:  "aquasecurity:tunnel:Type",
+								Name:  "khulnasoft:tunnel:Type",
 								Value: "golang",
 							},
 						},
@@ -274,7 +274,7 @@ func TestMarshaler_CoreComponent(t *testing.T) {
 						PackageURL: "pkg:golang/containerd@1.5.2",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:PkgType",
+								Name:  "khulnasoft:tunnel:PkgType",
 								Value: "golang",
 							},
 						},
@@ -287,7 +287,7 @@ func TestMarshaler_CoreComponent(t *testing.T) {
 						PackageURL: "pkg:golang/kubelet@1.21.1",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:PkgType",
+								Name:  "khulnasoft:tunnel:PkgType",
 								Value: "golang",
 							},
 						},
@@ -306,11 +306,11 @@ func TestMarshaler_CoreComponent(t *testing.T) {
 						PackageURL: "pkg:oci/kube-apiserver@sha256%3A18e61c783b41758dd391ab901366ec3546b26fae00eef7e223d1f94da808e02f?arch=&repository_url=k8s.gcr.io%2Fkube-apiserver",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:PkgID",
+								Name:  "khulnasoft:tunnel:PkgID",
 								Value: "k8s.gcr.io/kube-apiserver:1.21.1",
 							},
 							{
-								Name:  "aquasecurity:tunnel:PkgType",
+								Name:  "khulnasoft:tunnel:PkgType",
 								Value: "oci",
 							},
 						},

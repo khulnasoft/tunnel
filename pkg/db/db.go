@@ -18,7 +18,7 @@ import (
 )
 
 const (
-	dbMediaType         = "application/vnd.aquasec.tunnel.db.layer.v1.tar+gzip"
+	dbMediaType         = "application/vnd.khulnasoft.tunnel.db.layer.v1.tar+gzip"
 	defaultDBRepository = "ghcr.io/khulnasoft-lab/tunnel-db"
 )
 
@@ -196,7 +196,7 @@ func (c *Client) initOCIArtifact(opt types.RegistryOptions) (*oci.Artifact, erro
 			for _, diagnostic := range terr.Errors {
 				// For better user experience
 				if diagnostic.Code == transport.DeniedErrorCode || diagnostic.Code == transport.UnauthorizedErrorCode {
-					log.Logger.Warn("See https://aquasecurity.github.io/tunnel/latest/docs/references/troubleshooting/#db")
+					log.Logger.Warn("See https://khulnasoft.github.io/tunnel/latest/docs/references/troubleshooting/#db")
 					break
 				}
 			}

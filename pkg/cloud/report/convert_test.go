@@ -120,9 +120,9 @@ func Test_ResultConversion(t *testing.T) {
 									Message:     "something failed",
 									Resolution:  "Remove bad stuff",
 									Severity:    "HIGH",
-									PrimaryURL:  "https://avd.aquasec.com/misconfig/avd-aws-9999",
+									PrimaryURL:  "https://avd.khulnasoft.com/misconfig/avd-aws-9999",
 									References: []string{
-										"https://avd.aquasec.com/misconfig/avd-aws-9999",
+										"https://avd.khulnasoft.com/misconfig/avd-aws-9999",
 									},
 									Status: "FAIL",
 									CauseMetadata: fanaltypes.CauseMetadata{
@@ -150,9 +150,9 @@ func Test_ResultConversion(t *testing.T) {
 									Message:     "something else failed",
 									Resolution:  "Remove bad stuff",
 									Severity:    "HIGH",
-									PrimaryURL:  "https://avd.aquasec.com/misconfig/avd-aws-9999",
+									PrimaryURL:  "https://avd.khulnasoft.com/misconfig/avd-aws-9999",
 									References: []string{
-										"https://avd.aquasec.com/misconfig/avd-aws-9999",
+										"https://avd.khulnasoft.com/misconfig/avd-aws-9999",
 									},
 									Status: "FAIL",
 									CauseMetadata: fanaltypes.CauseMetadata{
@@ -170,9 +170,9 @@ func Test_ResultConversion(t *testing.T) {
 									Message:     "something else failed again",
 									Resolution:  "Remove bad stuff",
 									Severity:    "HIGH",
-									PrimaryURL:  "https://avd.aquasec.com/misconfig/avd-aws-9999",
+									PrimaryURL:  "https://avd.khulnasoft.com/misconfig/avd-aws-9999",
 									References: []string{
-										"https://avd.aquasec.com/misconfig/avd-aws-9999",
+										"https://avd.khulnasoft.com/misconfig/avd-aws-9999",
 									},
 									Status: "FAIL",
 									CauseMetadata: fanaltypes.CauseMetadata{
@@ -201,9 +201,9 @@ func Test_ResultConversion(t *testing.T) {
 									Message:     "instance is bad",
 									Resolution:  "Remove bad stuff",
 									Severity:    "HIGH",
-									PrimaryURL:  "https://avd.aquasec.com/misconfig/avd-aws-9999",
+									PrimaryURL:  "https://avd.khulnasoft.com/misconfig/avd-aws-9999",
 									References: []string{
-										"https://avd.aquasec.com/misconfig/avd-aws-9999",
+										"https://avd.khulnasoft.com/misconfig/avd-aws-9999",
 									},
 									Status: "FAIL",
 									CauseMetadata: fanaltypes.CauseMetadata{

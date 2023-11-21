@@ -7,7 +7,7 @@
     "timestamp": "2023-06-20T04:32:10+00:00",
     "tools": [
       {
-        "vendor": "aquasecurity",
+        "vendor": "khulnasoft",
         "name": "tunnel",
         "version": "0.42.1"
       }
@@ -18,7 +18,7 @@
       "name": "spring-web-5.3.22.jar",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:SchemaVersion",
+          "name": "khulnasoft:tunnel:SchemaVersion",
           "value": "2"
         }
       ]
@@ -33,11 +33,11 @@
       "purl": "pkg:maven/org.springframework/spring-web@5.3.22",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:FilePath",
+          "name": "khulnasoft:tunnel:FilePath",
           "value": "spring-web-5.3.22.jar"
         },
         {
-          "name": "aquasecurity:tunnel:PkgType",
+          "name": "khulnasoft:tunnel:PkgType",
           "value": "jar"
         }
       ]

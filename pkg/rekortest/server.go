@@ -56,7 +56,7 @@ var (
 					Timestamp: "2022-09-15T13:53:49+00:00",
 					Tools: &[]cyclonedx.Tool{
 						{
-							Vendor:  "aquasecurity",
+							Vendor:  "khulnasoft",
 							Name:    "tunnel",
 							Version: "dev",
 						},
@@ -68,23 +68,23 @@ var (
 						PackageURL: "pkg:oci/alpine@sha256:bc41182d7ef5ffc53a40b044e725193bc10142a1243f395ee852a8d9730fc2ad?repository_url=index.docker.io%2Flibrary%2Falpine\u0026arch=amd64",
 						Properties: &[]cyclonedx.Property{
 							{
-								Name:  "aquasecurity:tunnel:SchemaVersion",
+								Name:  "khulnasoft:tunnel:SchemaVersion",
 								Value: "2",
 							},
 							{
-								Name:  "aquasecurity:tunnel:ImageID",
+								Name:  "khulnasoft:tunnel:ImageID",
 								Value: "sha256:9c6f0724472873bb50a2ae67a9e7adcb57673a183cea8b06eb778dca859181b5",
 							},
 							{
-								Name:  "aquasecurity:tunnel:RepoDigest",
+								Name:  "khulnasoft:tunnel:RepoDigest",
 								Value: "alpine@sha256:bc41182d7ef5ffc53a40b044e725193bc10142a1243f395ee852a8d9730fc2ad",
 							},
 							{
-								Name:  "aquasecurity:tunnel:DiffID",
+								Name:  "khulnasoft:tunnel:DiffID",
 								Value: "sha256:994393dc58e7931862558d06e46aa2bb17487044f670f310dffe1d24e4d1eec7",
 							},
 							{
-								Name:  "aquasecurity:tunnel:RepoTag",
+								Name:  "khulnasoft:tunnel:RepoTag",
 								Value: "alpine:3.16",
 							},
 						},
@@ -98,11 +98,11 @@ var (
 						Version: "3.16.2",
 						Properties: &[]cyclonedx.Property{
 							{
-								Name:  "aquasecurity:tunnel:Type",
+								Name:  "khulnasoft:tunnel:Type",
 								Value: "alpine",
 							},
 							{
-								Name:  "aquasecurity:tunnel:Class",
+								Name:  "khulnasoft:tunnel:Class",
 								Value: "os-pkgs",
 							},
 						},
@@ -118,19 +118,19 @@ var (
 						PackageURL: "pkg:apk/alpine/musl@1.2.3-r0?distro=3.16.2",
 						Properties: &[]cyclonedx.Property{
 							{
-								Name:  "aquasecurity:tunnel:PkgType",
+								Name:  "khulnasoft:tunnel:PkgType",
 								Value: "alpine",
 							},
 							{
-								Name:  "aquasecurity:tunnel:SrcName",
+								Name:  "khulnasoft:tunnel:SrcName",
 								Value: "musl",
 							},
 							{
-								Name:  "aquasecurity:tunnel:SrcVersion",
+								Name:  "khulnasoft:tunnel:SrcVersion",
 								Value: "1.2.3-r0",
 							},
 							{
-								Name:  "aquasecurity:tunnel:LayerDiffID",
+								Name:  "khulnasoft:tunnel:LayerDiffID",
 								Value: "sha256:994393dc58e7931862558d06e46aa2bb17487044f670f310dffe1d24e4d1eec7",
 							},
 						},
@@ -177,7 +177,7 @@ var (
 					Timestamp: "2022-10-21T09:50:08+00:00",
 					Tools: &[]cyclonedx.Tool{
 						{
-							Vendor:  "aquasecurity",
+							Vendor:  "khulnasoft",
 							Name:    "tunnel",
 							Version: "dev",
 						},
@@ -188,7 +188,7 @@ var (
 						Name:   "go.mod",
 						Properties: &[]cyclonedx.Property{
 							{
-								Name:  "aquasecurity:tunnel:SchemaVersion",
+								Name:  "khulnasoft:tunnel:SchemaVersion",
 								Value: "2",
 							},
 						},
@@ -201,11 +201,11 @@ var (
 						Name:   "go.mod",
 						Properties: &[]cyclonedx.Property{
 							{
-								Name:  "aquasecurity:tunnel:Type",
+								Name:  "khulnasoft:tunnel:Type",
 								Value: "gomod",
 							},
 							{
-								Name:  "aquasecurity:tunnel:Class",
+								Name:  "khulnasoft:tunnel:Class",
 								Value: "lang-pkgs",
 							},
 						},
@@ -218,7 +218,7 @@ var (
 						PackageURL: "pkg:golang/github.com/spf13/cobra@1.5.0",
 						Properties: &[]cyclonedx.Property{
 							{
-								Name:  "aquasecurity:tunnel:PkgType",
+								Name:  "khulnasoft:tunnel:PkgType",
 								Value: "gomod",
 							},
 						},

@@ -51,7 +51,7 @@ HIGH: something failed
 ════════════════════════════════════════
 Bad stuff is... bad
 
-See https://avd.aquasec.com/misconfig/avd-aws-9999
+See https://avd.khulnasoft.com/misconfig/avd-aws-9999
 ────────────────────────────────────────
 
 

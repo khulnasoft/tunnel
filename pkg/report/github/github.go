@@ -145,10 +145,10 @@ func (w Writer) Write(report types.Report) error {
 func getMetadata(report types.Report) Metadata {
 	metadata := Metadata{}
 	if report.Metadata.RepoTags != nil {
-		metadata["aquasecurity:tunnel:RepoTag"] = strings.Join(report.Metadata.RepoTags, ", ")
+		metadata["khulnasoft:tunnel:RepoTag"] = strings.Join(report.Metadata.RepoTags, ", ")
 	}
 	if report.Metadata.RepoDigests != nil {
-		metadata["aquasecurity:tunnel:RepoDigest"] = strings.Join(report.Metadata.RepoDigests, ", ")
+		metadata["khulnasoft:tunnel:RepoDigest"] = strings.Join(report.Metadata.RepoDigests, ", ")
 	}
 	return metadata
 }

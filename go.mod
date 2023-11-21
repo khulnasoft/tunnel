@@ -13,14 +13,14 @@ require (
 	github.com/NYTimes/gziphandler v1.1.1
 	github.com/alicebob/miniredis/v2 v2.31.0
 	github.com/aquasecurity/defsec v0.93.2-0.20231024055158-015ab97ce898
-	github.com/aquasecurity/go-dep-parser v0.0.0-20231115042849-89e3baba6a02
+	github.com/aquasecurity/go-dep-parser v0.0.0-20231120074854-8322cc2242bf
 	github.com/aquasecurity/go-gem-version v0.0.0-20201115065557-8eed6fe000ce
 	github.com/aquasecurity/go-version v0.0.0-20210121072130-637058cfe492
 	github.com/aquasecurity/loading v0.0.5
 	github.com/aquasecurity/testdocker v0.0.0-20231031014642-6aada09e700e
-	github.com/aquasecurity/trivy-aws v0.4.0
-	github.com/aquasecurity/trivy-iac v0.5.2
-	github.com/aquasecurity/trivy-policies v0.5.0
+	github.com/aquasecurity/trivy-aws v0.5.0
+	github.com/aquasecurity/trivy-iac v0.6.0
+	github.com/aquasecurity/trivy-policies v0.6.0
 	github.com/aws/aws-sdk-go-v2 v1.23.0
 	github.com/aws/aws-sdk-go-v2/config v1.25.1
 	github.com/aws/aws-sdk-go-v2/credentials v1.16.1

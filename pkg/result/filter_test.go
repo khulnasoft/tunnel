@@ -152,7 +152,7 @@ func TestFilter(t *testing.T) {
 								{
 									VulnerabilityID:  "CVE-2019-0001",
 									PkgName:          "foo",
-									PkgRef:           "pkg:golang/github.com/aquasecurity/foo@1.2.3",
+									PkgRef:           "pkg:golang/github.com/khulnasoft/foo@1.2.3",
 									InstalledVersion: "1.2.3",
 									FixedVersion:     "1.2.4",
 									Vulnerability: dbTypes.Vulnerability{
@@ -162,7 +162,7 @@ func TestFilter(t *testing.T) {
 								{
 									VulnerabilityID:  "CVE-2019-0001",
 									PkgName:          "bar",
-									PkgRef:           "pkg:golang/github.com/aquasecurity/bar@1.2.3",
+									PkgRef:           "pkg:golang/github.com/khulnasoft/bar@1.2.3",
 									InstalledVersion: "1.2.3",
 									FixedVersion:     "1.2.4",
 									Vulnerability: dbTypes.Vulnerability{
@@ -189,7 +189,7 @@ func TestFilter(t *testing.T) {
 							{
 								VulnerabilityID:  "CVE-2019-0001",
 								PkgName:          "bar",
-								PkgRef:           "pkg:golang/github.com/aquasecurity/bar@1.2.3",
+								PkgRef:           "pkg:golang/github.com/khulnasoft/bar@1.2.3",
 								InstalledVersion: "1.2.3",
 								FixedVersion:     "1.2.4",
 								Vulnerability: dbTypes.Vulnerability{

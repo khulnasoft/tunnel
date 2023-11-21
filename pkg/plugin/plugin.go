@@ -26,7 +26,7 @@ var (
 
 	officialPlugins = map[string]string{
 		"kubectl": "github.com/khulnasoft/tunnel-plugin-kubectl",
-		"aqua":    "github.com/khulnasoft/tunnel-plugin-aqua",
+		"khulnasoft":    "github.com/khulnasoft/tunnel-plugin-khulnasoft",
 	}
 )
 
