@@ -418,3 +418,7 @@ require (
 	sigs.k8s.io/structured-merge-diff/v4 v4.2.3 // indirect
 	sigs.k8s.io/yaml v1.4.0 // indirect
 )
+
+// v1.2.0 is taken from github.com/open-policy-agent/opa v0.42.0
+// v1.2.0 incompatible with github.com/docker/docker v23.0.0-rc.1+incompatible
+replace oras.land/oras-go => oras.land/oras-go v1.1.1
