@@ -5,7 +5,7 @@ import (
 
 	"golang.org/x/xerrors"
 
-	"github.com/khulnasoft-lab/vul-db/pkg/db"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/db"
 	"github.com/khulnasoft/tunnel/pkg/commands/operation"
 	"github.com/khulnasoft/tunnel/pkg/flag"
 	"github.com/khulnasoft/tunnel/pkg/log"

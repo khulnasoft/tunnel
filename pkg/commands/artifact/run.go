@@ -11,7 +11,7 @@ import (
 	"golang.org/x/xerrors"
 
 	"github.com/aquasecurity/go-version/pkg/semver"
-	"github.com/khulnasoft-lab/vul-db/pkg/db"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/db"
 	tcache "github.com/khulnasoft/tunnel/pkg/cache"
 	"github.com/khulnasoft/tunnel/pkg/commands/operation"
 	"github.com/khulnasoft/tunnel/pkg/fanal/analyzer"

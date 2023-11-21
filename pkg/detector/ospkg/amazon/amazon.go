@@ -8,7 +8,7 @@ import (
 	"golang.org/x/xerrors"
 	"k8s.io/utils/clock"
 
-	"github.com/khulnasoft-lab/vul-db/pkg/vulnsrc/amazon"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/vulnsrc/amazon"
 	osver "github.com/khulnasoft/tunnel/pkg/detector/ospkg/version"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"
 	"github.com/khulnasoft/tunnel/pkg/log"

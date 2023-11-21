@@ -12,7 +12,7 @@ import (
 	"golang.org/x/exp/slices"
 	"golang.org/x/xerrors"
 
-	dbTypes "github.com/khulnasoft-lab/vul-db/pkg/types"
+	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
 	"github.com/khulnasoft/tunnel/pkg/fanal/analyzer"
 	"github.com/khulnasoft/tunnel/pkg/fanal/applier"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"

@@ -6,7 +6,7 @@ import (
 
 	"golang.org/x/xerrors"
 
-	dbTypes "github.com/khulnasoft-lab/vul-db/pkg/types"
+	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
 	pkgReport "github.com/khulnasoft/tunnel/pkg/report/table"
 )
 

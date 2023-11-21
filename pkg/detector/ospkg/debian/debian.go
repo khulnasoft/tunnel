@@ -7,9 +7,9 @@ import (
 	"golang.org/x/xerrors"
 	"k8s.io/utils/clock"
 
-	dbTypes "github.com/khulnasoft-lab/vul-db/pkg/types"
-	"github.com/khulnasoft-lab/vul-db/pkg/vulnsrc/debian"
-	"github.com/khulnasoft-lab/vul-db/pkg/vulnsrc/vulnerability"
+	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/vulnsrc/debian"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/vulnsrc/vulnerability"
 	osver "github.com/khulnasoft/tunnel/pkg/detector/ospkg/version"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"
 	"github.com/khulnasoft/tunnel/pkg/log"

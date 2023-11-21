@@ -615,7 +615,7 @@ func TestAnalyzerGroup_PostAnalyze(t *testing.T) {
 
 			if tt.analyzerType == analyzer.TypeJar {
 				// init java-tunnel-db with skip update
-				javadb.Init("./language/java/jar/testdata", "ghcr.io/aquasecurity/trivy-java-db", true, false, types.RegistryOptions{Insecure: false})
+				javadb.Init("./language/java/jar/testdata", "ghcr.io/khulnasoft-lab/tunnel-java-db", true, false, types.RegistryOptions{Insecure: false})
 			}
 
 			ctx := context.Background()

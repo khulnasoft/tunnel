@@ -15,8 +15,8 @@ import (
 	"k8s.io/utils/clock"
 	clocktesting "k8s.io/utils/clock/testing"
 
-	tdb "github.com/khulnasoft-lab/vul-db/pkg/db"
-	"github.com/khulnasoft-lab/vul-db/pkg/metadata"
+	tdb "github.com/khulnasoft-lab/tunnel-db/pkg/db"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/metadata"
 	"github.com/khulnasoft/tunnel/pkg/db"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"
 	"github.com/khulnasoft/tunnel/pkg/oci"

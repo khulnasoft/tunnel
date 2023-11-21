@@ -13,9 +13,9 @@ import (
 	"golang.org/x/xerrors"
 	"google.golang.org/protobuf/types/known/timestamppb"
 
-	dbTypes "github.com/khulnasoft-lab/vul-db/pkg/types"
-	"github.com/khulnasoft-lab/vul-db/pkg/utils"
-	"github.com/khulnasoft-lab/vul-db/pkg/vulnsrc/vulnerability"
+	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/utils"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/vulnsrc/vulnerability"
 	"github.com/khulnasoft/tunnel/pkg/fanal/cache"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"
 	"github.com/khulnasoft/tunnel/pkg/scanner"

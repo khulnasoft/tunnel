@@ -9,8 +9,8 @@ import (
 	"github.com/samber/lo"
 	"github.com/stretchr/testify/assert"
 
-	dbTypes "github.com/khulnasoft-lab/vul-db/pkg/types"
-	"github.com/khulnasoft-lab/vul-db/pkg/vulnsrc/vulnerability"
+	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/vulnsrc/vulnerability"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"
 	"github.com/khulnasoft/tunnel/pkg/report"
 	"github.com/khulnasoft/tunnel/pkg/types"

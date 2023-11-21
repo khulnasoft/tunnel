@@ -10,8 +10,8 @@ import (
 	"golang.org/x/xerrors"
 	"k8s.io/utils/clock"
 
-	"github.com/khulnasoft-lab/vul-db/pkg/db"
-	"github.com/khulnasoft-lab/vul-db/pkg/metadata"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/db"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/metadata"
 	"github.com/khulnasoft/tunnel/pkg/fanal/types"
 	"github.com/khulnasoft/tunnel/pkg/log"
 	"github.com/khulnasoft/tunnel/pkg/oci"
@@ -19,7 +19,7 @@ import (
 
 const (
 	dbMediaType         = "application/vnd.aquasec.tunnel.db.layer.v1.tar+gzip"
-	defaultDBRepository = "ghcr.io/khulnasoft-lab/vul-db"
+	defaultDBRepository = "ghcr.io/khulnasoft-lab/tunnel-db"
 )
 
 // Operation defines the DB operations

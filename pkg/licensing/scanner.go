@@ -3,7 +3,7 @@ package licensing
 import (
 	"golang.org/x/exp/slices"
 
-	dbTypes "github.com/khulnasoft-lab/vul-db/pkg/types"
+	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
 	"github.com/khulnasoft/tunnel/pkg/fanal/types"
 )
 

@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/aquasecurity/tml"
-	dbTypes "github.com/khulnasoft-lab/vul-db/pkg/types"
+	"github.com/khulnasoft-lab/tml"
+	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
 	renderer "github.com/khulnasoft/tunnel/pkg/report/table"
 	"github.com/khulnasoft/tunnel/pkg/types"
 )

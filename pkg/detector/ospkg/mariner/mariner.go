@@ -4,7 +4,7 @@ import (
 	version "github.com/knqyf263/go-rpm-version"
 	"golang.org/x/xerrors"
 
-	"github.com/khulnasoft-lab/vul-db/pkg/vulnsrc/mariner"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/vulnsrc/mariner"
 	osver "github.com/khulnasoft/tunnel/pkg/detector/ospkg/version"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"
 	"github.com/khulnasoft/tunnel/pkg/log"

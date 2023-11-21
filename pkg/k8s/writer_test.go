@@ -8,7 +8,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	dbTypes "github.com/khulnasoft-lab/vul-db/pkg/types"
+	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"
 	"github.com/khulnasoft/tunnel/pkg/k8s/report"
 	"github.com/khulnasoft/tunnel/pkg/types"

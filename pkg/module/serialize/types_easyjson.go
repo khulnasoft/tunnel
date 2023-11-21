@@ -4,7 +4,7 @@ package serialize
 
 import (
 	json "encoding/json"
-	types2 "github.com/khulnasoft-lab/vul-db/pkg/types"
+	types2 "github.com/khulnasoft-lab/tunnel-db/pkg/types"
 	digest "github.com/khulnasoft/tunnel/pkg/digest"
 	types1 "github.com/khulnasoft/tunnel/pkg/fanal/types"
 	types "github.com/khulnasoft/tunnel/pkg/types"

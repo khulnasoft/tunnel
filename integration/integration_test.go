@@ -25,8 +25,8 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/xeipuuv/gojsonschema"
 
-	"github.com/khulnasoft-lab/vul-db/pkg/db"
-	"github.com/khulnasoft-lab/vul-db/pkg/metadata"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/db"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/metadata"
 	"github.com/khulnasoft/tunnel/pkg/clock"
 	"github.com/khulnasoft/tunnel/pkg/commands"
 	"github.com/khulnasoft/tunnel/pkg/dbtest"

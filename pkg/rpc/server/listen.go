@@ -12,8 +12,8 @@ import (
 	"github.com/twitchtv/twirp"
 	"golang.org/x/xerrors"
 
-	"github.com/khulnasoft-lab/vul-db/pkg/db"
-	"github.com/khulnasoft-lab/vul-db/pkg/metadata"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/db"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/metadata"
 	dbc "github.com/khulnasoft/tunnel/pkg/db"
 	"github.com/khulnasoft/tunnel/pkg/fanal/cache"
 	"github.com/khulnasoft/tunnel/pkg/fanal/types"

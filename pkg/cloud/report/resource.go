@@ -8,8 +8,8 @@ import (
 
 	"golang.org/x/term"
 
-	"github.com/aquasecurity/table"
-	"github.com/aquasecurity/tml"
+	"github.com/khulnasoft-lab/table"
+	"github.com/khulnasoft-lab/tml"
 	pkgReport "github.com/khulnasoft/tunnel/pkg/report/table"
 	"github.com/khulnasoft/tunnel/pkg/types"
 )

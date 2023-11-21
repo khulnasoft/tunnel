@@ -5,8 +5,8 @@ import (
 	"golang.org/x/xerrors"
 	"k8s.io/utils/clock"
 
-	dbTypes "github.com/khulnasoft-lab/vul-db/pkg/types"
-	"github.com/khulnasoft-lab/vul-db/pkg/vulnsrc/chainguard"
+	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/vulnsrc/chainguard"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"
 	"github.com/khulnasoft/tunnel/pkg/log"
 	"github.com/khulnasoft/tunnel/pkg/scanner/utils"

@@ -6,9 +6,9 @@ import (
 
 	"golang.org/x/xerrors"
 
-	"github.com/khulnasoft-lab/vul-db/pkg/db"
-	dbTypes "github.com/khulnasoft-lab/vul-db/pkg/types"
-	"github.com/khulnasoft-lab/vul-db/pkg/vulnsrc/vulnerability"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/db"
+	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/vulnsrc/vulnerability"
 	"github.com/khulnasoft/tunnel/pkg/detector/library/compare"
 	"github.com/khulnasoft/tunnel/pkg/detector/library/compare/maven"
 	"github.com/khulnasoft/tunnel/pkg/detector/library/compare/npm"

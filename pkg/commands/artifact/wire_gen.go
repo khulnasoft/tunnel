@@ -8,7 +8,7 @@ package artifact
 
 import (
 	"context"
-	"github.com/khulnasoft-lab/vul-db/pkg/db"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/db"
 	"github.com/khulnasoft/tunnel/pkg/fanal/applier"
 	"github.com/khulnasoft/tunnel/pkg/fanal/artifact"
 	image2 "github.com/khulnasoft/tunnel/pkg/fanal/artifact/image"

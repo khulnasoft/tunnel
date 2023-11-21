@@ -6,7 +6,7 @@ import (
 	"golang.org/x/xerrors"
 
 	defsecTypes "github.com/aquasecurity/defsec/pkg/types"
-	dbTypes "github.com/khulnasoft-lab/vul-db/pkg/types"
+	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
 	"github.com/khulnasoft/tunnel/pkg/compliance/spec"
 	"github.com/khulnasoft/tunnel/pkg/types"
 )

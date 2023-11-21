@@ -12,7 +12,7 @@ import (
 
 	"github.com/aquasecurity/defsec/pkg/scan"
 	defsecTypes "github.com/aquasecurity/defsec/pkg/types"
-	"github.com/khulnasoft-lab/vul-db/pkg/types"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/types"
 	"github.com/khulnasoft/tunnel/pkg/flag"
 )
 

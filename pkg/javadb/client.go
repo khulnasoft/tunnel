@@ -13,8 +13,8 @@ import (
 	"golang.org/x/xerrors"
 
 	"github.com/aquasecurity/go-dep-parser/pkg/java/jar"
-	"github.com/aquasecurity/trivy-java-db/pkg/db"
-	"github.com/aquasecurity/trivy-java-db/pkg/types"
+	"github.com/khulnasoft-lab/tunnel-java-db/pkg/db"
+	"github.com/khulnasoft-lab/tunnel-java-db/pkg/types"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"
 	"github.com/khulnasoft/tunnel/pkg/log"
 	"github.com/khulnasoft/tunnel/pkg/oci"

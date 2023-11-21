@@ -6,8 +6,8 @@ import (
 	"github.com/khulnasoft/tunnel/pkg/log"
 )
 
-const defaultDBRepository = "ghcr.io/khulnasoft-lab/vul-db"
-const defaultJavaDBRepository = "ghcr.io/aquasecurity/trivy-java-db"
+const defaultDBRepository = "ghcr.io/khulnasoft-lab/tunnel-db"
+const defaultJavaDBRepository = "ghcr.io/khulnasoft-lab/tunnel-java-db"
 
 var (
 	ResetFlag = Flag{

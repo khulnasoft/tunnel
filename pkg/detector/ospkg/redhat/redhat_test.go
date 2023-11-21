@@ -9,8 +9,8 @@ import (
 	"github.com/stretchr/testify/require"
 	fake "k8s.io/utils/clock/testing"
 
-	dbTypes "github.com/khulnasoft-lab/vul-db/pkg/types"
-	"github.com/khulnasoft-lab/vul-db/pkg/vulnsrc/vulnerability"
+	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/vulnsrc/vulnerability"
 	"github.com/khulnasoft/tunnel/pkg/dbtest"
 	"github.com/khulnasoft/tunnel/pkg/detector/ospkg/redhat"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"

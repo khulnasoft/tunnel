@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/khulnasoft-lab/vul-db/pkg/metadata"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/metadata"
 	"github.com/khulnasoft/tunnel/pkg/policy"
 )
 

@@ -17,7 +17,7 @@ import (
 )
 
 const (
-	defaultJavaDBRepository = "ghcr.io/aquasecurity/trivy-java-db"
+	defaultJavaDBRepository = "ghcr.io/khulnasoft-lab/tunnel-java-db"
 )
 
 func Test_javaLibraryAnalyzer_Analyze(t *testing.T) {

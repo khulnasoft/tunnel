@@ -11,9 +11,9 @@ import (
 	"github.com/fatih/color"
 	"golang.org/x/exp/slices"
 
-	"github.com/aquasecurity/table"
-	"github.com/aquasecurity/tml"
-	dbTypes "github.com/khulnasoft-lab/vul-db/pkg/types"
+	"github.com/khulnasoft-lab/table"
+	"github.com/khulnasoft-lab/tml"
+	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
 	"github.com/khulnasoft/tunnel/pkg/types"
 )
 

@@ -9,7 +9,7 @@ import (
 	"github.com/package-url/packageurl-go"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/aquasecurity/trivy-kubernetes/pkg/artifacts"
+	"github.com/khulnasoft-lab/tunnel-kubernetes/pkg/artifacts"
 	cmd "github.com/khulnasoft/tunnel/pkg/commands/artifact"
 	"github.com/khulnasoft/tunnel/pkg/flag"
 	"github.com/khulnasoft/tunnel/pkg/purl"

@@ -14,8 +14,8 @@ import (
 	"golang.org/x/xerrors"
 
 	"github.com/aquasecurity/go-version/pkg/version"
-	"github.com/aquasecurity/trivy-kubernetes/pkg/artifacts"
-	"github.com/aquasecurity/trivy-kubernetes/pkg/bom"
+	"github.com/khulnasoft-lab/tunnel-kubernetes/pkg/artifacts"
+	"github.com/khulnasoft-lab/tunnel-kubernetes/pkg/bom"
 	cmd "github.com/khulnasoft/tunnel/pkg/commands/artifact"
 	"github.com/khulnasoft/tunnel/pkg/digest"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"

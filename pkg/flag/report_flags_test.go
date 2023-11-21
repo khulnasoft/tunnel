@@ -9,7 +9,7 @@ import (
 	"go.uber.org/zap/zaptest/observer"
 
 	defsecTypes "github.com/aquasecurity/defsec/pkg/types"
-	dbTypes "github.com/khulnasoft-lab/vul-db/pkg/types"
+	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
 	"github.com/khulnasoft/tunnel/pkg/compliance/spec"
 	"github.com/khulnasoft/tunnel/pkg/flag"
 	"github.com/khulnasoft/tunnel/pkg/log"

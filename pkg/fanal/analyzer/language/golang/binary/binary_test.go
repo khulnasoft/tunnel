@@ -30,7 +30,7 @@ func Test_gobinaryLibraryAnalyzer_Analyze(t *testing.T) {
 						FilePath: "testdata/executable_gobinary",
 						Libraries: types.Packages{
 							{
-								Name:    "github.com/aquasecurity/go-pep440-version",
+								Name:    "github.com/khulnasoft-lab/go-pep440-version",
 								Version: "v0.0.0-20210121094942-22b2f8951d46",
 							},
 							{

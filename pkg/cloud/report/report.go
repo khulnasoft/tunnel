@@ -10,7 +10,7 @@ import (
 	"golang.org/x/xerrors"
 
 	"github.com/aquasecurity/defsec/pkg/scan"
-	"github.com/aquasecurity/tml"
+	"github.com/khulnasoft-lab/tml"
 	"github.com/khulnasoft/tunnel/pkg/clock"
 	cr "github.com/khulnasoft/tunnel/pkg/compliance/report"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"

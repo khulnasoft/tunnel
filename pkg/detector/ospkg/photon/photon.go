@@ -7,7 +7,7 @@ import (
 	"golang.org/x/xerrors"
 	"k8s.io/utils/clock"
 
-	"github.com/khulnasoft-lab/vul-db/pkg/vulnsrc/photon"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/vulnsrc/photon"
 	osver "github.com/khulnasoft/tunnel/pkg/detector/ospkg/version"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"
 	"github.com/khulnasoft/tunnel/pkg/log"

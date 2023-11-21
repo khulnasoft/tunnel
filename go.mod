@@ -12,21 +12,14 @@ require (
 	github.com/Masterminds/sprig/v3 v3.2.3
 	github.com/NYTimes/gziphandler v1.1.1
 	github.com/alicebob/miniredis/v2 v2.31.0
-	github.com/aquasecurity/bolt-fixtures v0.0.0-20200903104109-d34e7f983986
 	github.com/aquasecurity/defsec v0.93.2-0.20231024055158-015ab97ce898
 	github.com/aquasecurity/go-dep-parser v0.0.0-20231115042849-89e3baba6a02
 	github.com/aquasecurity/go-gem-version v0.0.0-20201115065557-8eed6fe000ce
-	github.com/aquasecurity/go-npm-version v0.0.0-20201110091526-0b796d180798
-	github.com/aquasecurity/go-pep440-version v0.0.0-20210121094942-22b2f8951d46
 	github.com/aquasecurity/go-version v0.0.0-20210121072130-637058cfe492
 	github.com/aquasecurity/loading v0.0.5
-	github.com/aquasecurity/table v1.8.0
 	github.com/aquasecurity/testdocker v0.0.0-20231031014642-6aada09e700e
-	github.com/aquasecurity/tml v0.6.1
 	github.com/aquasecurity/trivy-aws v0.4.0
 	github.com/aquasecurity/trivy-iac v0.5.2
-	github.com/aquasecurity/trivy-java-db v0.0.0-20230514115002-fb1b70d903ce
-	github.com/aquasecurity/trivy-kubernetes v0.5.8
 	github.com/aquasecurity/trivy-policies v0.5.0
 	github.com/aws/aws-sdk-go-v2 v1.23.0
 	github.com/aws/aws-sdk-go-v2/config v1.25.1
@@ -57,7 +50,14 @@ require (
 	github.com/hashicorp/go-multierror v1.1.1
 	github.com/hashicorp/golang-lru/v2 v2.0.7
 	github.com/in-toto/in-toto-golang v0.9.0
-	github.com/khulnasoft-lab/vul-db v0.0.1
+	github.com/khulnasoft-lab/boltdb-fixtures v1.0.0
+	github.com/khulnasoft-lab/go-npm-version v1.0.0
+	github.com/khulnasoft-lab/go-pep440-version v1.0.0
+	github.com/khulnasoft-lab/table v1.8.0
+	github.com/khulnasoft-lab/tml v0.0.2
+	github.com/khulnasoft-lab/tunnel-db v0.0.0-20231117205118-74e1113bd007
+	github.com/khulnasoft-lab/tunnel-java-db v0.0.0-20231121201702-7f1203ca078e
+	github.com/khulnasoft-lab/tunnel-kubernetes v0.0.0-20231121194224-7cbb4a0b852d
 	github.com/knqyf263/go-apk-version v0.0.0-20200609155635-041fdbb8563f
 	github.com/knqyf263/go-deb-version v0.0.0-20230223133812-3ed183d23422
 	github.com/knqyf263/go-rpm-version v0.0.0-20220614171824-631e686d1075
@@ -109,7 +109,7 @@ require (
 	google.golang.org/protobuf v1.31.0
 	gopkg.in/yaml.v3 v3.0.1
 	k8s.io/api v0.28.4
-	k8s.io/utils v0.0.0-20230726121419-3b25d923346b
+	k8s.io/utils v0.0.0-20231121161247-cf03d44ff3cf
 	modernc.org/sqlite v1.27.0
 )
 
@@ -150,8 +150,9 @@ require (
 	github.com/apparentlymart/go-cidr v1.1.0 // indirect
 	github.com/apparentlymart/go-textseg/v13 v13.0.0 // indirect
 	github.com/apparentlymart/go-textseg/v15 v15.0.0 // indirect
+	github.com/aquasecurity/go-pep440-version v0.0.0-20210121094942-22b2f8951d46 // indirect
 	github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2 // indirect
-	github.com/aws/aws-sdk-go v1.45.19 // indirect
+	github.com/aws/aws-sdk-go v1.48.1 // indirect
 	github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream v1.5.1 // indirect
 	github.com/aws/aws-sdk-go-v2/feature/ec2/imds v1.14.4 // indirect
 	github.com/aws/aws-sdk-go-v2/internal/configsources v1.2.3 // indirect
@@ -235,7 +236,7 @@ require (
 	github.com/go-git/go-billy/v5 v5.5.0 // indirect
 	github.com/go-gorp/gorp/v3 v3.1.0 // indirect
 	github.com/go-ini/ini v1.67.0 // indirect
-	github.com/go-logr/logr v1.2.4 // indirect
+	github.com/go-logr/logr v1.3.0 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-ole/go-ole v1.2.6 // indirect
 	github.com/go-openapi/analysis v0.21.4 // indirect
@@ -281,8 +282,8 @@ require (
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51 // indirect
 	github.com/kevinburke/ssh_config v1.2.0 // indirect
-	github.com/khulnasoft-lab/go-deb-version v0.0.0-20231008112102-b9979c743dca // indirect
-	github.com/khulnasoft-lab/go-rpm-version v0.0.0-20231008111517-b1e9c56c569d // indirect
+	github.com/khulnasoft-lab/go-deb-version v0.0.0-20231106220903-cfc740a3d549 // indirect
+	github.com/khulnasoft-lab/go-rpm-version v0.0.0-20231107021420-631caefbb931 // indirect
 	github.com/khulnasoft-lab/goversion v1.0.1 // indirect
 	github.com/klauspost/compress v1.17.0 // indirect
 	github.com/lann/builder v0.0.0-20180802200727-47ae307949d0 // indirect
@@ -297,7 +298,7 @@ require (
 	github.com/magiconair/properties v1.8.7 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
-	github.com/mattn/go-runewidth v0.0.14 // indirect
+	github.com/mattn/go-runewidth v0.0.15 // indirect
 	github.com/matttproud/golang_protobuf_extensions/v2 v2.0.0 // indirect
 	github.com/microsoft/go-rustaudit v0.0.0-20220808201409-204dfee52032 // indirect
 	github.com/mitchellh/copystructure v1.2.0 // indirect
@@ -394,12 +395,12 @@ require (
 	k8s.io/apiextensions-apiserver v0.28.2 // indirect
 	k8s.io/apimachinery v0.28.4 // indirect
 	k8s.io/apiserver v0.28.2 // indirect
-	k8s.io/cli-runtime v0.28.2 // indirect
-	k8s.io/client-go v0.28.2 // indirect
-	k8s.io/component-base v0.28.2 // indirect
-	k8s.io/klog/v2 v2.100.1 // indirect
+	k8s.io/cli-runtime v0.28.4 // indirect
+	k8s.io/client-go v0.28.4 // indirect
+	k8s.io/component-base v0.28.3 // indirect
+	k8s.io/klog/v2 v2.110.1 // indirect
 	k8s.io/kube-openapi v0.0.0-20230717233707-2695361300d9 // indirect
-	k8s.io/kubectl v0.28.2 // indirect
+	k8s.io/kubectl v0.28.3 // indirect
 	lukechampine.com/uint128 v1.2.0 // indirect
 	modernc.org/cc/v3 v3.40.0 // indirect
 	modernc.org/ccgo/v3 v3.16.13 // indirect

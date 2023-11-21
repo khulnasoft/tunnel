@@ -13,7 +13,7 @@ import (
 	"github.com/samber/lo"
 	"golang.org/x/xerrors"
 
-	"github.com/khulnasoft-lab/vul-db/pkg/metadata"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/metadata"
 	"github.com/khulnasoft/tunnel/pkg/db"
 	"github.com/khulnasoft/tunnel/pkg/fanal/cache"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"

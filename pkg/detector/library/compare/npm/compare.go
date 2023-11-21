@@ -3,8 +3,8 @@ package npm
 import (
 	"golang.org/x/xerrors"
 
-	npm "github.com/aquasecurity/go-npm-version/pkg"
-	dbTypes "github.com/khulnasoft-lab/vul-db/pkg/types"
+	npm "github.com/khulnasoft-lab/go-npm-version/pkg"
+	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
 	"github.com/khulnasoft/tunnel/pkg/detector/library/compare"
 )
 

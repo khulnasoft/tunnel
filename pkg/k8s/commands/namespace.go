@@ -5,8 +5,8 @@ import (
 
 	"golang.org/x/xerrors"
 
-	"github.com/aquasecurity/trivy-kubernetes/pkg/k8s"
-	"github.com/aquasecurity/trivy-kubernetes/pkg/trivyk8s"
+	"github.com/khulnasoft-lab/tunnel-kubernetes/pkg/k8s"
+	"github.com/khulnasoft-lab/tunnel-kubernetes/pkg/tunnelk8s"
 	"github.com/khulnasoft/tunnel/pkg/flag"
 	"github.com/khulnasoft/tunnel/pkg/log"
 )

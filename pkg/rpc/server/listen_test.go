@@ -16,8 +16,8 @@ import (
 	"github.com/stretchr/testify/require"
 	"golang.org/x/xerrors"
 
-	"github.com/khulnasoft-lab/vul-db/pkg/db"
-	"github.com/khulnasoft-lab/vul-db/pkg/metadata"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/db"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/metadata"
 	dbFile "github.com/khulnasoft/tunnel/pkg/db"
 	"github.com/khulnasoft/tunnel/pkg/fanal/cache"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"

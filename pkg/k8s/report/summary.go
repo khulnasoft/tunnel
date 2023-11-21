@@ -10,8 +10,8 @@ import (
 	"golang.org/x/exp/slices"
 	"golang.org/x/xerrors"
 
-	"github.com/aquasecurity/table"
-	dbTypes "github.com/khulnasoft-lab/vul-db/pkg/types"
+	"github.com/khulnasoft-lab/table"
+	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
 	pkgReport "github.com/khulnasoft/tunnel/pkg/report/table"
 	"github.com/khulnasoft/tunnel/pkg/types"
 )
