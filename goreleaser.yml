@@ -57,45 +57,40 @@ nfpms:
     maintainer: "Md Sulaiman <infosulaimanbd@gmail.com>"
     description: "A Fast Vulnerability Scanner for Containers"
     license: "Apache-2.0"
-    file_name_template: >-
-      {{ .ProjectName }}_{{ .Version }}_
-      {{- if eq .Os "darwin" }}macOS
-      {{- else if eq .Os "openbsd" }}OpenBSD
-      {{- else if eq .Os "netbsd" }}NetBSD
-      {{- else if eq .Os "freebsd" }}FreeBSD
-      {{- else if eq .Os "dragonfly" }}DragonFlyBSD
-      {{- else}}{{- title .Os }}{{ end }}-
-      {{- if eq .Arch "amd64" }}64bit
-      {{- else if eq .Arch "386" }}32bit
-      {{- else if eq .Arch "arm" }}ARM
-      {{- else if eq .Arch "arm64" }}ARM64
-      {{- else if eq .Arch "ppc64le" }}PPC64LE
-      {{- else }}{{ .Arch }}{{ end }}
+    file_name_template: "{{.ProjectName}}_{{.Version}}_{{.Os}}-{{.Arch}}"
+    replacements:
+      amd64: 64bit
+      386: 32bit
+      arm: ARM
+      arm64: ARM64
+      ppc64le: PPC64LE
+      darwin: macOS
+      linux: Linux
+      openbsd: OpenBSD
+      netbsd: NetBSD
+      freebsd: FreeBSD
+      dragonfly: DragonFlyBSD
+      windows: Windows
     contents:
      - src: contrib/*.tpl
        dst: /usr/local/share/tunnel/templates
-    rpm:
-      signature:
-         key_file: '{{ .Env.GPG_FILE }}'
 
 archives:
   -
     format: tar.gz
-    name_template: >-
-      {{ .ProjectName }}_{{ .Version }}_
-      {{- if eq .Os "darwin" }}macOS
-      {{- else if eq .Os "linux" }}Linux
-      {{- else if eq .Os "openbsd" }}OpenBSD
-      {{- else if eq .Os "netbsd" }}NetBSD
-      {{- else if eq .Os "freebsd" }}FreeBSD
-      {{- else if eq .Os "dragonfly" }}DragonFlyBSD
-      {{- else}}{{- .Os }}{{ end }}-
-      {{- if eq .Arch "amd64" }}64bit
-      {{- else if eq .Arch "386" }}32bit
-      {{- else if eq .Arch "arm" }}ARM
-      {{- else if eq .Arch "arm64" }}ARM64
-      {{- else if eq .Arch "ppc64le" }}PPC64LE
-      {{- else }}{{ .Arch }}{{ end }}
+    name_template: "{{.ProjectName}}_{{.Version}}_{{.Os}}-{{.Arch}}"
+    replacements:
+      amd64: 64bit
+      386: 32bit
+      arm: ARM
+      arm64: ARM64
+      ppc64le: PPC64LE
+      darwin: macOS
+      linux: Linux
+      openbsd: OpenBSD
+      netbsd: NetBSD
+      freebsd: FreeBSD
+      dragonfly: DragonFlyBSD
     files:
       - README.md
       - LICENSE
@@ -267,7 +262,6 @@ signs:
     - "--output-certificate=${certificate}"
     - "--output-signature=${signature}"
     - "${artifact}"
-    - "--yes"
   artifacts: all
   output: true
 
@@ -280,4 +274,3 @@ docker_signs:
   args:
   - 'sign'
   - '${artifact}'
-  - '--yes'
