@@ -124,6 +124,9 @@ jobs:
     - uses: actions/setup-python@v4
       with:
         python-version: 3.x
+    - name: Install dependencies
+      run: |
+        pip install -r docs/build/requirements.txt
     - name: Configure the git user
       run: |
         git config user.name "sulaiman-coder"
