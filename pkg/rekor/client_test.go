@@ -103,10 +103,10 @@ func TestClient_GetEntries(t *testing.T) {
 			},
 			want: []rekor.Entry{
 				{
-					Statement: []byte(`{"_type":"https://in-toto.io/Statement/v0.1","predicateType":"cosign.sigstore.dev/attestation/v1","subject":[{"name":"ghcr.io/khulnasoft/tunnel-test-images","digest":{"sha256":"20d3f693dcffa44d6b24eae88783324d25cc132c22089f70e4fbfb858625b062"}}],"predicate":{"Data":"\"foo\\n\"\n","Timestamp":"2022-08-26T01:17:17Z"}}`),
+					Statement: []byte(`{"_type":"https://in-toto.io/Statement/v0.1","predicateType":"cosign.sigstore.dev/attestation/v1","subject":[{"name":"ghcr.io/aquasecurity/trivy-test-images","digest":{"sha256":"20d3f693dcffa44d6b24eae88783324d25cc132c22089f70e4fbfb858625b062"}}],"predicate":{"Data":"\"foo\\n\"\n","Timestamp":"2022-08-26T01:17:17Z"}}`),
 				},
 				{
-					Statement: []byte(`{"_type":"https://in-toto.io/Statement/v0.1","predicateType":"cosign.sigstore.dev/attestation/v1","subject":[{"name":"ghcr.io/khulnasoft/tunnel-test-images","digest":{"sha256":"20d3f693dcffa44d6b24eae88783324d25cc132c22089f70e4fbfb858625b062"}}],"predicate":{"Data":"\"bar\\n\"\n","Timestamp":"2022-08-26T01:17:17Z"}}`),
+					Statement: []byte(`{"_type":"https://in-toto.io/Statement/v0.1","predicateType":"cosign.sigstore.dev/attestation/v1","subject":[{"name":"ghcr.io/aquasecurity/trivy-test-images","digest":{"sha256":"20d3f693dcffa44d6b24eae88783324d25cc132c22089f70e4fbfb858625b062"}}],"predicate":{"Data":"\"bar\\n\"\n","Timestamp":"2022-08-26T01:17:17Z"}}`),
 				},
 			},
 		},

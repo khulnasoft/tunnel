@@ -1,6 +1,6 @@
 module github.com/khulnasoft/tunnel
 
-go 1.19
+go 1.20
 
 require (
 	github.com/Azure/azure-sdk-for-go v68.0.0+incompatible
@@ -15,6 +15,7 @@ require (
 	github.com/aquasecurity/defsec v0.93.2-0.20231024055158-015ab97ce898
 	github.com/aquasecurity/go-dep-parser v0.0.0-20231120074854-8322cc2242bf
 	github.com/aquasecurity/go-gem-version v0.0.0-20201115065557-8eed6fe000ce
+	github.com/aquasecurity/go-pep440-version v0.0.0-20210121094942-22b2f8951d46
 	github.com/aquasecurity/go-version v0.0.0-20210121072130-637058cfe492
 	github.com/aquasecurity/loading v0.0.5
 	github.com/aquasecurity/testdocker v0.0.0-20231031014642-6aada09e700e
@@ -52,7 +53,6 @@ require (
 	github.com/in-toto/in-toto-golang v0.9.0
 	github.com/khulnasoft-lab/boltdb-fixtures v1.0.0
 	github.com/khulnasoft-lab/go-npm-version v1.0.0
-	github.com/khulnasoft-lab/go-pep440-version v1.0.0
 	github.com/khulnasoft-lab/table v1.8.0
 	github.com/khulnasoft-lab/tml v0.0.2
 	github.com/khulnasoft-lab/tunnel-db v0.0.0-20231117205118-74e1113bd007
@@ -150,7 +150,6 @@ require (
 	github.com/apparentlymart/go-cidr v1.1.0 // indirect
 	github.com/apparentlymart/go-textseg/v13 v13.0.0 // indirect
 	github.com/apparentlymart/go-textseg/v15 v15.0.0 // indirect
-	github.com/aquasecurity/go-pep440-version v0.0.0-20210121094942-22b2f8951d46 // indirect
 	github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2 // indirect
 	github.com/aws/aws-sdk-go v1.48.1 // indirect
 	github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream v1.5.1 // indirect
@@ -239,7 +238,6 @@ require (
 	github.com/go-ini/ini v1.67.0 // indirect
 	github.com/go-logr/logr v1.3.0 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
-	github.com/go-ole/go-ole v1.2.6 // indirect
 	github.com/go-openapi/analysis v0.21.4 // indirect
 	github.com/go-openapi/errors v0.20.3 // indirect
 	github.com/go-openapi/jsonpointer v0.19.6 // indirect
@@ -294,7 +292,6 @@ require (
 	github.com/liamg/memoryfs v1.6.0 // indirect
 	github.com/lib/pq v1.10.9 // indirect
 	github.com/liggitt/tabwriter v0.0.0-20181228230101-89fcab3d43de // indirect
-	github.com/lufia/plan9stats v0.0.0-20211012122336-39d0f177ccd0 // indirect
 	github.com/lunixbochs/struc v0.0.0-20200707160740-784aaebc1d40 // indirect
 	github.com/magiconair/properties v1.8.7 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
@@ -333,7 +330,6 @@ require (
 	github.com/pkg/browser v0.0.0-20210911075715-681adbf594b8 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
-	github.com/power-devops/perfstat v0.0.0-20210106213030-5aafc221ea8c // indirect
 	github.com/prometheus/client_golang v1.16.0 // indirect
 	github.com/prometheus/client_model v0.4.0 // indirect
 	github.com/prometheus/common v0.44.0 // indirect
@@ -345,8 +341,6 @@ require (
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
 	github.com/sergi/go-diff v1.2.0 // indirect
 	github.com/shibumi/go-pathspec v1.3.0 // indirect
-	github.com/shirou/gopsutil/v3 v3.23.9 // indirect
-	github.com/shoenig/go-m1cpu v0.1.6 // indirect
 	github.com/shopspring/decimal v1.3.1 // indirect
 	github.com/skeema/knownhosts v1.2.0 // indirect
 	github.com/spf13/afero v1.9.3 // indirect
@@ -354,8 +348,6 @@ require (
 	github.com/stretchr/objx v0.5.0 // indirect
 	github.com/subosito/gotenv v1.4.2 // indirect
 	github.com/tchap/go-patricia/v2 v2.3.1 // indirect
-	github.com/tklauser/go-sysconf v0.3.12 // indirect
-	github.com/tklauser/numcpus v0.6.1 // indirect
 	github.com/ulikunitz/xz v0.5.10 // indirect
 	github.com/vbatts/tar-split v0.11.3 // indirect
 	github.com/xanzy/ssh-agent v0.3.3 // indirect
@@ -363,7 +355,6 @@ require (
 	github.com/xeipuuv/gojsonreference v0.0.0-20180127040603-bd5ef7bd5415 // indirect
 	github.com/yashtewari/glob-intersection v0.2.0 // indirect
 	github.com/yuin/gopher-lua v1.1.0 // indirect
-	github.com/yusufpapurcu/wmi v1.2.3 // indirect
 	github.com/zclconf/go-cty v1.13.0 // indirect
 	github.com/zclconf/go-cty-yaml v1.0.3 // indirect
 	go.mongodb.org/mongo-driver v1.11.3 // indirect
@@ -420,6 +411,10 @@ require (
 
 // v1.2.0 is taken from github.com/open-policy-agent/opa v0.42.0
 // v1.2.0 incompatible with github.com/docker/docker v23.0.0-rc.1+incompatible
-replace oras.land/oras-go => oras.land/oras-go v1.1.1
+// oras 1.2.2 is incompatible with github.com/docker/docker v24.0.2
+// cf. https://github.com/oras-project/oras-go/pull/527
+replace oras.land/oras-go => oras.land/oras-go v1.2.4-0.20230801060855-932dd06d38af
 
-replace helm.sh/helm/v3 => helm.sh/helm/v3 v3.11.1
+// testcontainers-go has a bug with versions v0.25.0 and v0.26.0
+// ref: https://github.com/testcontainers/testcontainers-go/issues/1782
+replace github.com/testcontainers/testcontainers-go => github.com/testcontainers/testcontainers-go v0.23.0
