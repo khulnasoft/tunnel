@@ -88,7 +88,7 @@ jobs:
           context: .
           push: true
           tags: |
-            aquasec/tunnel:canary
+            khulnasoft/tunnel:canary
             ghcr.io/khulnasoft/tunnel:canary
 
       - name: Cache Tunnel binaries
