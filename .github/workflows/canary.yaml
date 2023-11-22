@@ -51,10 +51,3 @@ jobs:
           name: tunnel_macOS-64bit
           path: dist/tunnel_*_macOS-64bit.tar.gz
           if-no-files-found: error
-
-      - name: Upload artifacts (tunnel_macOS-ARM64)
-        uses: actions/upload-artifact@v3
-        with:
-          name: tunnel_macOS-ARM64
-          path: dist/tunnel_*_macOS-ARM64.tar.gz
-          if-no-files-found: error
