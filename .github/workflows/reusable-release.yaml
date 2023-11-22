@@ -92,7 +92,7 @@ jobs:
             ghcr.io/khulnasoft/tunnel:canary
 
       - name: Cache Tunnel binaries
-        uses: actions/cache@v3.0.11
+        uses: actions/cache@v3.3.2
         with:
           path: dist/
           # use 'github.sha' to create a unique cache folder for each run.
