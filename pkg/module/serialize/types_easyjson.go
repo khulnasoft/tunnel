@@ -1640,7 +1640,7 @@ func easyjson6601e8cdDecodeGithubComKhulnasoftTunnelPkgTypes(in *jlexer.Lexer, o
 				if out.DataSource == nil {
 					out.DataSource = new(types2.DataSource)
 				}
-				easyjson6601e8cdDecodeGithubComKhulnasoftLabVulDbPkgTypes(in, out.DataSource)
+				easyjson6601e8cdDecodeGithubComKhulnasoftLabTunnelDbPkgTypes(in, out.DataSource)
 			}
 		case "Custom":
 			if m, ok := out.Custom.(easyjson.Unmarshaler); ok {
@@ -1713,7 +1713,7 @@ func easyjson6601e8cdDecodeGithubComKhulnasoftTunnelPkgTypes(in *jlexer.Lexer, o
 					key := types2.SourceID(in.String())
 					in.WantColon()
 					var v40 types2.CVSS
-					easyjson6601e8cdDecodeGithubComKhulnasoftLabVulDbPkgTypes1(in, &v40)
+					easyjson6601e8cdDecodeGithubComKhulnasoftLabTunnelDbPkgTypes1(in, &v40)
 					(out.CVSS)[key] = v40
 					in.WantComma()
 				}
@@ -1913,7 +1913,7 @@ func easyjson6601e8cdEncodeGithubComKhulnasoftTunnelPkgTypes(out *jwriter.Writer
 		} else {
 			out.RawString(prefix)
 		}
-		easyjson6601e8cdEncodeGithubComKhulnasoftLabVulDbPkgTypes(out, *in.DataSource)
+		easyjson6601e8cdEncodeGithubComKhulnasoftLabTunnelDbPkgTypes(out, *in.DataSource)
 	}
 	if in.Custom != nil {
 		const prefix string = ",\"Custom\":"
@@ -2023,7 +2023,7 @@ func easyjson6601e8cdEncodeGithubComKhulnasoftTunnelPkgTypes(out *jwriter.Writer
 				}
 				out.String(string(v47Name))
 				out.RawByte(':')
-				easyjson6601e8cdEncodeGithubComKhulnasoftLabVulDbPkgTypes1(out, v47Value)
+				easyjson6601e8cdEncodeGithubComKhulnasoftLabTunnelDbPkgTypes1(out, v47Value)
 			}
 			out.RawByte('}')
 		}
@@ -2069,7 +2069,7 @@ func easyjson6601e8cdEncodeGithubComKhulnasoftTunnelPkgTypes(out *jwriter.Writer
 	}
 	out.RawByte('}')
 }
-func easyjson6601e8cdDecodeGithubComKhulnasoftLabVulDbPkgTypes1(in *jlexer.Lexer, out *types2.CVSS) {
+func easyjson6601e8cdDecodeGithubComKhulnasoftLabTunnelDbPkgTypes1(in *jlexer.Lexer, out *types2.CVSS) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -2106,7 +2106,7 @@ func easyjson6601e8cdDecodeGithubComKhulnasoftLabVulDbPkgTypes1(in *jlexer.Lexer
 		in.Consumed()
 	}
 }
-func easyjson6601e8cdEncodeGithubComKhulnasoftLabVulDbPkgTypes1(out *jwriter.Writer, in types2.CVSS) {
+func easyjson6601e8cdEncodeGithubComKhulnasoftLabTunnelDbPkgTypes1(out *jwriter.Writer, in types2.CVSS) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -2148,7 +2148,7 @@ func easyjson6601e8cdEncodeGithubComKhulnasoftLabVulDbPkgTypes1(out *jwriter.Wri
 	}
 	out.RawByte('}')
 }
-func easyjson6601e8cdDecodeGithubComKhulnasoftLabVulDbPkgTypes(in *jlexer.Lexer, out *types2.DataSource) {
+func easyjson6601e8cdDecodeGithubComKhulnasoftLabTunnelDbPkgTypes(in *jlexer.Lexer, out *types2.DataSource) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -2183,7 +2183,7 @@ func easyjson6601e8cdDecodeGithubComKhulnasoftLabVulDbPkgTypes(in *jlexer.Lexer,
 		in.Consumed()
 	}
 }
-func easyjson6601e8cdEncodeGithubComKhulnasoftLabVulDbPkgTypes(out *jwriter.Writer, in types2.DataSource) {
+func easyjson6601e8cdEncodeGithubComKhulnasoftLabTunnelDbPkgTypes(out *jwriter.Writer, in types2.DataSource) {
 	out.RawByte('{')
 	first := true
 	_ = first

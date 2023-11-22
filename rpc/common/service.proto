@@ -229,8 +229,8 @@ message LicenseFinding {
   string               link       = 4;
 }
 
-// Enumerations are wrapped with a message to improve the readability of enumerations 
-// in generated code and avoid name conflicts.
+// Enumerations are wrapped with a message to improve the readability of
+// enumerations in generated code and avoid name conflicts.
 // https://github.com/golang/protobuf/issues/513
 message LicenseCategory {
   enum Enum {
