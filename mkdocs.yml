@@ -222,7 +222,7 @@ extra:
     default: latest
   social:
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/AquaTunnel
+      link: https://twitter.com/KhulnasoftTunnel
     - icon: fontawesome/brands/github
       link: https://github.com/khulnasoft/tunnel
     - icon: fontawesome/brands/slack

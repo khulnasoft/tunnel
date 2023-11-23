@@ -11,7 +11,7 @@ import (
 	"github.com/aquasecurity/defsec/pkg/scan"
 	"github.com/aquasecurity/defsec/pkg/scanners/options"
 	"github.com/aquasecurity/defsec/pkg/state"
-	aws "github.com/aquasecurity/trivy-aws/pkg/scanner"
+	aws "github.com/khulnasoft/tunnel-aws/pkg/scanner"
 	"github.com/khulnasoft/tunnel/pkg/cloud/aws/cache"
 	"github.com/khulnasoft/tunnel/pkg/commands/operation"
 	"github.com/khulnasoft/tunnel/pkg/flag"

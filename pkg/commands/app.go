@@ -14,7 +14,7 @@ import (
 	"github.com/spf13/viper"
 	"golang.org/x/xerrors"
 
-	awsScanner "github.com/aquasecurity/trivy-aws/pkg/scanner"
+	awsScanner "github.com/khulnasoft/tunnel-aws/pkg/scanner"
 	awscommands "github.com/khulnasoft/tunnel/pkg/cloud/aws/commands"
 	"github.com/khulnasoft/tunnel/pkg/commands/artifact"
 	"github.com/khulnasoft/tunnel/pkg/commands/convert"

@@ -10,7 +10,7 @@ import (
 	"gopkg.in/yaml.v3"
 
 	defsecTypes "github.com/aquasecurity/defsec/pkg/types"
-	sp "github.com/aquasecurity/trivy-policies/pkg/spec"
+	sp "github.com/khulnasoft/tunnel-policies/pkg/spec"
 	"github.com/khulnasoft/tunnel/pkg/types"
 )
 

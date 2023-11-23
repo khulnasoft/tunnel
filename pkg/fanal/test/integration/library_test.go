@@ -47,7 +47,7 @@ type testCase struct {
 var tests = []testCase{
 	{
 		name:            "happy path, alpine:3.10",
-		remoteImageName: "ghcr.io/aquasecurity/trivy-test-images:alpine-310",
+		remoteImageName: "ghcr.io/khulnasoft/tunnel-test-images:alpine-310",
 		imageFile:       "../../../../integration/testdata/fixtures/images/alpine-310.tar.gz",
 		wantOS: types.OS{
 			Name:   "3.10.2",
@@ -56,7 +56,7 @@ var tests = []testCase{
 	},
 	{
 		name:            "happy path, amazonlinux:2",
-		remoteImageName: "ghcr.io/aquasecurity/trivy-test-images:amazon-2",
+		remoteImageName: "ghcr.io/khulnasoft/tunnel-test-images:amazon-2",
 		imageFile:       "../../../../integration/testdata/fixtures/images/amazon-2.tar.gz",
 		wantOS: types.OS{
 			Name:   "2 (Karoo)",
@@ -65,7 +65,7 @@ var tests = []testCase{
 	},
 	{
 		name:            "happy path, debian:buster",
-		remoteImageName: "ghcr.io/aquasecurity/trivy-test-images:debian-buster",
+		remoteImageName: "ghcr.io/khulnasoft/tunnel-test-images:debian-buster",
 		imageFile:       "../../../../integration/testdata/fixtures/images/debian-buster.tar.gz",
 		wantOS: types.OS{
 			Name:   "10.1",
@@ -74,7 +74,7 @@ var tests = []testCase{
 	},
 	{
 		name:            "happy path, photon:3.0",
-		remoteImageName: "ghcr.io/aquasecurity/trivy-test-images:photon-30",
+		remoteImageName: "ghcr.io/khulnasoft/tunnel-test-images:photon-30",
 		imageFile:       "../../../../integration/testdata/fixtures/images/photon-30.tar.gz",
 		wantOS: types.OS{
 			Name:   "3.0",
@@ -83,7 +83,7 @@ var tests = []testCase{
 	},
 	{
 		name:            "happy path, registry.redhat.io/ubi7",
-		remoteImageName: "ghcr.io/aquasecurity/trivy-test-images:ubi-7",
+		remoteImageName: "ghcr.io/khulnasoft/tunnel-test-images:ubi-7",
 		imageFile:       "../../../../integration/testdata/fixtures/images/ubi-7.tar.gz",
 		wantOS: types.OS{
 			Name:   "7.7",
@@ -92,7 +92,7 @@ var tests = []testCase{
 	},
 	{
 		name:            "happy path, opensuse leap 15.1",
-		remoteImageName: "ghcr.io/aquasecurity/trivy-test-images:opensuse-leap-151",
+		remoteImageName: "ghcr.io/khulnasoft/tunnel-test-images:opensuse-leap-151",
 		imageFile:       "../../../../integration/testdata/fixtures/images/opensuse-leap-151.tar.gz",
 		wantOS: types.OS{
 			Name:   "15.1",
@@ -102,7 +102,7 @@ var tests = []testCase{
 	{
 		// from registry.suse.com/suse/sle15:15.3.17.8.16
 		name:            "happy path, suse 15.3 (NDB)",
-		remoteImageName: "ghcr.io/aquasecurity/trivy-test-images:suse-15.3_ndb",
+		remoteImageName: "ghcr.io/khulnasoft/tunnel-test-images:suse-15.3_ndb",
 		imageFile:       "../../../../integration/testdata/fixtures/images/suse-15.3_ndb.tar.gz",
 		wantOS: types.OS{
 			Name:   "15.3",
@@ -111,7 +111,7 @@ var tests = []testCase{
 	},
 	{
 		name:            "happy path, Fedora 35",
-		remoteImageName: "ghcr.io/aquasecurity/trivy-test-images:fedora-35",
+		remoteImageName: "ghcr.io/khulnasoft/tunnel-test-images:fedora-35",
 		imageFile:       "../../../../integration/testdata/fixtures/images/fedora-35.tar.gz",
 		wantOS: types.OS{
 			Name:   "35",
@@ -120,7 +120,7 @@ var tests = []testCase{
 	},
 	{
 		name:            "happy path, vulnimage with lock files",
-		remoteImageName: "ghcr.io/aquasecurity/trivy-test-images:vulnimage",
+		remoteImageName: "ghcr.io/khulnasoft/tunnel-test-images:vulnimage",
 		imageFile:       "../../../../integration/testdata/fixtures/images/vulnimage.tar.gz",
 		wantOS: types.OS{
 			Name:   "3.7.1",

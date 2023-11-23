@@ -3,7 +3,7 @@ package pep440
 import (
 	"golang.org/x/xerrors"
 
-	version "github.com/aquasecurity/go-pep440-version"
+	version "github.com/khulnasoft-lab/go-pep440-version"
 	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
 	"github.com/khulnasoft/tunnel/pkg/detector/library/compare"
 )

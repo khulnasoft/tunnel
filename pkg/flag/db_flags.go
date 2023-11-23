@@ -62,7 +62,7 @@ var (
 		Name:       "java-db-repository",
 		ConfigName: "db.java-repository",
 		Default:    defaultJavaDBRepository,
-		Usage:      "OCI repository to retrieve trivy-java-db from",
+		Usage:      "OCI repository to retrieve tunnel-java-db from",
 	}
 	LightFlag = Flag{
 		Name:       "light",

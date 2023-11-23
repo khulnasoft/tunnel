@@ -9,8 +9,8 @@ import (
 	"golang.org/x/exp/slices"
 	"golang.org/x/xerrors"
 
-	"github.com/aquasecurity/trivy-aws/pkg/errs"
-	awsScanner "github.com/aquasecurity/trivy-aws/pkg/scanner"
+	"github.com/khulnasoft/tunnel-aws/pkg/errs"
+	awsScanner "github.com/khulnasoft/tunnel-aws/pkg/scanner"
 	"github.com/khulnasoft/tunnel/pkg/cloud"
 	"github.com/khulnasoft/tunnel/pkg/cloud/aws/config"
 	"github.com/khulnasoft/tunnel/pkg/cloud/aws/scanner"

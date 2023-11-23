@@ -5,7 +5,7 @@ import (
 
 	"github.com/samber/lo"
 
-	defsecRules "github.com/aquasecurity/trivy-iac/pkg/rules"
+	defsecRules "github.com/khulnasoft/tunnel-iac/pkg/rules"
 	"github.com/khulnasoft/tunnel/pkg/fanal/types"
 )
 
