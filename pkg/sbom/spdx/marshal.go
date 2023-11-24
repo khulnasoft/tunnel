@@ -449,7 +449,7 @@ func GetLicense(p ftypes.Package) string {
 	return s
 }
 
-func getDocumentNamespace(r types.Report, m *Marshaler) string {
+func getDocumentNamespace(r types.Report, _ *Marshaler) string {
 	return fmt.Sprintf("%s/%s/%s-%s",
 		DocumentNamespace,
 		string(r.ArtifactType),

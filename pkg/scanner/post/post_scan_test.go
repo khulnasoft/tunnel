@@ -23,7 +23,7 @@ func (testPostScanner) Version() int {
 	return 1
 }
 
-func (testPostScanner) PostScan(ctx context.Context, results types.Results) (types.Results, error) {
+func (testPostScanner) PostScan(_ context.Context, results types.Results) (types.Results, error) {
 	for i, r := range results {
 		if r.Target == "bad" {
 			return nil, errors.New("bad")
