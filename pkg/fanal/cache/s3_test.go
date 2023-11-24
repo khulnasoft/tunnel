@@ -22,15 +22,15 @@ const (
 	correctHash = "sha256:24df0d4e20c0f42d3703bf1f1db2bdd77346c7956f74f423603d651e8e5ae8a7"
 )
 
-func (m *mockS3Client) PutObject(ctx context.Context, in *s3.PutObjectInput, optFns ...func(*s3.Options)) (*s3.PutObjectOutput, error) {
+func (m *mockS3Client) PutObject(_ context.Context, _ *s3.PutObjectInput, _ ...func(*s3.Options)) (*s3.PutObjectOutput, error) {
 	return &s3.PutObjectOutput{}, nil
 }
 
-func (m *mockS3Client) HeadObject(ctx context.Context, params *s3.HeadObjectInput, optFns ...func(*s3.Options)) (*s3.HeadObjectOutput, error) {
+func (m *mockS3Client) HeadObject(_ context.Context, _ *s3.HeadObjectInput, _ ...func(*s3.Options)) (*s3.HeadObjectOutput, error) {
 	return &s3.HeadObjectOutput{}, nil
 }
 
-func (m *mockS3Client) DeleteBucket(ctx context.Context, in *s3.DeleteBucketInput, optFns ...func(*s3.Options)) (*s3.DeleteBucketOutput, error) {
+func (m *mockS3Client) DeleteBucket(_ context.Context, in *s3.DeleteBucketInput, _ ...func(*s3.Options)) (*s3.DeleteBucketOutput, error) {
 	if in != nil && *in.Bucket == blobBucket+"/prefix/"+correctHash {
 		return &s3.DeleteBucketOutput{}, nil
 	}
@@ -184,11 +184,11 @@ type mockS3ClientMissingBlobs struct {
 	s3API
 }
 
-func (m *mockS3ClientMissingBlobs) PutObject(ctx context.Context, in *s3.PutObjectInput, optFns ...func(*s3.Options)) (*s3.PutObjectOutput, error) {
+func (m *mockS3ClientMissingBlobs) PutObject(_ context.Context, _ *s3.PutObjectInput, _ ...func(*s3.Options)) (*s3.PutObjectOutput, error) {
 	return &s3.PutObjectOutput{}, nil
 }
 
-func (m *mockS3ClientMissingBlobs) HeadObject(ctx context.Context, params *s3.HeadObjectInput, optFns ...func(*s3.Options)) (*s3.HeadObjectOutput, error) {
+func (m *mockS3ClientMissingBlobs) HeadObject(_ context.Context, _ *s3.HeadObjectInput, _ ...func(*s3.Options)) (*s3.HeadObjectOutput, error) {
 	return &s3.HeadObjectOutput{}, xerrors.Errorf("the object doesn't exist in S3")
 }
 
