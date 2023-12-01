@@ -12,7 +12,7 @@ require (
 	github.com/Masterminds/sprig/v3 v3.2.3
 	github.com/NYTimes/gziphandler v1.1.1
 	github.com/alicebob/miniredis/v2 v2.31.0
-	github.com/aquasecurity/defsec v0.93.2-0.20231024055158-015ab97ce898
+	github.com/aquasecurity/defsec v0.93.2-0.20231120220217-6818261529c8
 	github.com/aquasecurity/go-dep-parser v0.0.0-20231120074854-8322cc2242bf
 	github.com/aquasecurity/go-gem-version v0.0.0-20201115065557-8eed6fe000ce
 	github.com/aquasecurity/go-pep440-version v0.0.0-20210121094942-22b2f8951d46
@@ -20,8 +20,8 @@ require (
 	github.com/aquasecurity/loading v0.0.5
 	github.com/aquasecurity/testdocker v0.0.0-20231031014642-6aada09e700e
 	github.com/aquasecurity/trivy-aws v0.5.0
-	github.com/aquasecurity/trivy-iac v0.6.0
-	github.com/aquasecurity/trivy-policies v0.6.0
+	github.com/aquasecurity/trivy-iac v0.7.0
+	github.com/aquasecurity/trivy-policies v0.6.1-0.20231120231532-f6f2330bf842
 	github.com/aws/aws-sdk-go-v2 v1.22.1
 	github.com/aws/aws-sdk-go-v2/config v1.18.45
 	github.com/aws/aws-sdk-go-v2/credentials v1.13.43
