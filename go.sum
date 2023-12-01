@@ -744,8 +744,8 @@ github.com/apparentlymart/go-textseg/v13 v13.0.0 h1:Y+KvPE1NYz0xl601PVImeQfFyEy6
 github.com/apparentlymart/go-textseg/v13 v13.0.0/go.mod h1:ZK2fH7c4NqDTLtiYLvIkEghdlcqw7yxLeM89kiTRPUo=
 github.com/apparentlymart/go-textseg/v15 v15.0.0 h1:uYvfpb3DyLSCGWnctWKGj857c6ew1u1fNQOlOtuGxQY=
 github.com/apparentlymart/go-textseg/v15 v15.0.0/go.mod h1:K8XmNZdhEBkdlyDdvbmmsvpAG721bKi0joRfFdHIWJ4=
-github.com/aquasecurity/defsec v0.93.2-0.20231024055158-015ab97ce898 h1:gu7XQvv2CswgzOdOFHg/AmtR4vBonG35XvGxHHvcIr4=
-github.com/aquasecurity/defsec v0.93.2-0.20231024055158-015ab97ce898/go.mod h1:J30VViSgmoW2Ic/6aqVJO2qvuADsmZ3MYuNxPcU6Vt0=
+github.com/aquasecurity/defsec v0.93.2-0.20231120220217-6818261529c8 h1:w/Sm2fVtb0Rv1bcLLwsW9j37mNUya8MwzKMcjG9OW/Q=
+github.com/aquasecurity/defsec v0.93.2-0.20231120220217-6818261529c8/go.mod h1:J30VViSgmoW2Ic/6aqVJO2qvuADsmZ3MYuNxPcU6Vt0=
 github.com/aquasecurity/go-dep-parser v0.0.0-20231120074854-8322cc2242bf h1:kweQrNMfarPfjZGI1537GtuujhpzhsuT/MvmW2FwaBE=
 github.com/aquasecurity/go-dep-parser v0.0.0-20231120074854-8322cc2242bf/go.mod h1:7+xrs6AWD5+onpmX8f7qIkAhUgkPP0mhUdBjxJBcfas=
 github.com/aquasecurity/go-gem-version v0.0.0-20201115065557-8eed6fe000ce h1:QgBRgJvtEOBtUXilDb1MLi1p1MWoyFDXAu5DEUl5nwM=
@@ -762,10 +762,10 @@ github.com/aquasecurity/testdocker v0.0.0-20231031014642-6aada09e700e h1:9qljRqr
 github.com/aquasecurity/testdocker v0.0.0-20231031014642-6aada09e700e/go.mod h1:LG3ttFIbLTYNWMKskestFN2ZQVgYmGVOLmYRF80NH7c=
 github.com/aquasecurity/trivy-aws v0.5.0 h1:6RJrw+QHeVn2MH7bI7bsVIiqRyhDCPvdEqkNn54Ui4I=
 github.com/aquasecurity/trivy-aws v0.5.0/go.mod h1:dPx0xRElmFrVXBxeYqEAl5NejJ2kHb51ybFPzBMxWow=
-github.com/aquasecurity/trivy-iac v0.6.0 h1:YzAi2etvQ3iUd+u+0XKIM/ycj623bL1Sa+ftI7MweH4=
-github.com/aquasecurity/trivy-iac v0.6.0/go.mod h1:b203qMvrWyx7OU0YrVuxez8k5CJxLJVlrpu2fjVvLcc=
-github.com/aquasecurity/trivy-policies v0.6.0 h1:eNYwbustTUDi4red7lhuYOCJbP65RVk7tgI6hDIjx68=
-github.com/aquasecurity/trivy-policies v0.6.0/go.mod h1:YPefENNCAcbPxMDgKBWxjLmhyzYnlAY/HIH89VFaogY=
+github.com/aquasecurity/trivy-iac v0.7.0 h1:L2/mqQJD1iwY4xOr1un5Prg51epYBQgM34JVZtkp4Gg=
+github.com/aquasecurity/trivy-iac v0.7.0/go.mod h1:GG9Y2YylH3e16PoJ0RUZ+C0Xw93Gic/5fwdkKjKwwqU=
+github.com/aquasecurity/trivy-policies v0.6.1-0.20231120231532-f6f2330bf842 h1:RnxM3eTcwPlA/WBwnmaEpeEk3WOCDcnz7yTIFxVL7us=
+github.com/aquasecurity/trivy-policies v0.6.1-0.20231120231532-f6f2330bf842/go.mod h1:BmEeSFgmBjo3avCli71736sy0veGcSUzGATupp1MCgA=
 github.com/arbovm/levenshtein v0.0.0-20160628152529-48b4e1c0c4d0 h1:jfIu9sQUG6Ig+0+Ap1h4unLjW6YQJpKZVmUzxsD4E/Q=
 github.com/arbovm/levenshtein v0.0.0-20160628152529-48b4e1c0c4d0/go.mod h1:t2tdKJDJF9BV14lnkjHmOQgcvEKgtqs5a1N3LNdJhGE=
 github.com/armon/circbuf v0.0.0-20150827004946-bbbad097214e/go.mod h1:3U/XgcO3hCbHZ8TKRvWD2dDTCfh9M9ya+I9JpbB7O8o=
