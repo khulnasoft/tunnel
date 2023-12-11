@@ -103,7 +103,7 @@ func Test_javaLibraryAnalyzer_Analyze(t *testing.T) {
 			},
 		},
 		{
-			name:      "happy path (package found in trivy-java-db by sha1)",
+			name:      "happy path (package found in tunnel-java-db by sha1)",
 			inputFile: "testdata/test.jar",
 			want: &analyzer.AnalysisResult{
 				Applications: []types.Application{

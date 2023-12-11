@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TEST_VM=ghcr.io/aquasecurity/trivy-test-vm-images
+TEST_VM=ghcr.io/khulnasoft/tunnel-test-vm-images
 
 CRANE_IMG=gcr.io/go-containerregistry/crane:v0.12.1
 ORAS_IMG=ghcr.io/oras-project/oras:v0.16.0

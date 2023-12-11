@@ -3,7 +3,7 @@ package terraform
 import (
 	"os"
 
-	"github.com/aquasecurity/trivy-iac/pkg/detection"
+	"github.com/khulnasoft/tunnel-iac/pkg/detection"
 	"github.com/khulnasoft/tunnel/pkg/fanal/analyzer"
 	"github.com/khulnasoft/tunnel/pkg/fanal/analyzer/config"
 	"github.com/khulnasoft/tunnel/pkg/misconf"

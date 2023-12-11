@@ -40,7 +40,7 @@ wire: $(GOBIN)/wire
 
 .PHONY: mock
 mock: $(GOBIN)/mockery
-	mockery -all -inpkg -case=snake -dir $(DIR)
+	mockery --inpackage --case=snake --dir $(DIR)
 
 .PHONY: deps
 deps:

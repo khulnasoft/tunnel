@@ -19,7 +19,7 @@ import (
 
 const (
 	BundleVersion    = 0 // Latest released MAJOR version for defsec
-	BundleRepository = "ghcr.io/aquasecurity/trivy-policies"
+	BundleRepository = "ghcr.io/khulnasoft/tunnel-policies"
 	policyMediaType  = "application/vnd.cncf.openpolicyagent.layer.v1.tar+gzip"
 	updateInterval   = 24 * time.Hour
 )
