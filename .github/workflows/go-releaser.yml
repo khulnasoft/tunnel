@@ -28,7 +28,7 @@ jobs:
 
       # Step 4: Run GoReleaser
       - name: Run GoReleaser
-        run: goreleaser release --clean --rm-dist
+        run: goreleaser release
 
       # Step 5: Upload release artifacts (optional)
       - name: Upload Release Assets
