@@ -109,4 +109,4 @@ Please replace:
 
 - [Rego provides a long list of courses](https://academy.styra.com/collections) that can be useful in writing more complex checks
 - [The Rego documentation provides detailed information on the different types, iterations etc.](https://www.openpolicyagent.org/docs/latest/)
-- Have a look at the [built-in checks](https://github.com/aquasecurity/trivy-checks/tree/main/checks) for Tunnel for inspiration on how to write custom checks.
+- Have a look at the [built-in checks](https://github.com/khulnasoft/tunnel-checks/tree/main/checks) for Tunnel for inspiration on how to write custom checks.

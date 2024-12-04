@@ -112,7 +112,7 @@ The version field specifies the version of the compliance report.
 
 Specify the check ID that needs to be evaluated based on the information collected from the command data output to assess the control.
 
-Example of how to define check data under [checks folder](https://github.com/aquasecurity/trivy-checks/tree/main/checks):
+Example of how to define check data under [checks folder](https://github.com/khulnasoft/tunnel-checks/tree/main/checks):
 
 ```sh
 # METADATA
@@ -158,7 +158,7 @@ deny[res] {
 
 Specify the command ID (#ref) that needs to be executed to collect the information required to evaluate the control.
 
-Example of how to define command data under [commands folder](https://github.com/aquasecurity/trivy-checks/tree/main/commands)
+Example of how to define command data under [commands folder](https://github.com/khulnasoft/tunnel-checks/tree/main/commands)
 
 ```yaml
 ---
@@ -174,7 +174,7 @@ Example of how to define command data under [commands folder](https://github.com
 
 #### Command ID
 
-Find the next command ID by running the command on [tunnel-checks project](https://github.com/aquasecurity/trivy-checks).
+Find the next command ID by running the command on [tunnel-checks project](https://github.com/khulnasoft/tunnel-checks).
 
 ```sh
 make command-id
@@ -223,12 +223,12 @@ kubelet:
 
 ### Commands Files Location
 
-Currently checks files location are :`https://github.com/aquasecurity/trivy-checks/tree/main/checks`
+Currently checks files location are :`https://github.com/khulnasoft/tunnel-checks/tree/main/checks`
 
-Command files location: `https://github.com/aquasecurity/trivy-checks/tree/main/commands`
+Command files location: `https://github.com/khulnasoft/tunnel-checks/tree/main/commands`
 under command file
 
-Note: command config files will be located under `https://github.com/aquasecurity/trivy-checks/tree/main/commands` as well
+Note: command config files will be located under `https://github.com/khulnasoft/tunnel-checks/tree/main/commands` as well
 
 ### Node-collector output
 

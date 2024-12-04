@@ -23,7 +23,6 @@ require (
 	github.com/aquasecurity/table v1.8.0
 	github.com/aquasecurity/testdocker v0.0.0-20240730042311-4642e94c7fc8
 	github.com/aquasecurity/tml v0.6.1
-	github.com/aquasecurity/trivy-checks v1.4.0
 	github.com/aws/aws-sdk-go-v2 v1.32.5
 	github.com/aws/aws-sdk-go-v2/config v1.28.5
 	github.com/aws/aws-sdk-go-v2/credentials v1.17.46
@@ -128,7 +127,7 @@ require (
 	google.golang.org/protobuf v1.35.2
 	gopkg.in/yaml.v3 v3.0.1
 	helm.sh/helm/v3 v3.16.3
-	k8s.io/api v0.31.2
+	k8s.io/api v0.31.3
 	k8s.io/utils v0.0.0-20240902221715-702e33fdd3c3
 	modernc.org/sqlite v1.34.1
 	sigs.k8s.io/yaml v1.4.0
@@ -136,9 +135,11 @@ require (
 
 require (
 	github.com/khulnasoft-lab/tunnel-java-db v0.0.0-20240907154440-0d77c2623acb
-	github.com/khulnasoft/tunnel-kubernetes v0.5.1
+	github.com/khulnasoft/tunnel-kubernetes v0.5.2
 	go.khulnasoft.com/tunnel-db v0.0.0-00010101000000-000000000000
 )
+
+require github.com/dsnet/compress v0.0.1 // indirect
 
 require (
 	cloud.google.com/go v0.112.1 // indirect
@@ -281,6 +282,7 @@ require (
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/kevinburke/ssh_config v1.2.0 // indirect
+	github.com/khulnasoft/tunnel-checks v0.0.1
 	github.com/klauspost/compress v1.17.11 // indirect
 	github.com/lann/builder v0.0.0-20180802200727-47ae307949d0 // indirect
 	github.com/lann/ps v0.0.0-20150810152359-62de8c46ede0 // indirect
@@ -405,10 +407,10 @@ require (
 	gopkg.in/warnings.v0 v0.1.2 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	k8s.io/apiextensions-apiserver v0.31.1 // indirect
-	k8s.io/apimachinery v0.31.2 // indirect
+	k8s.io/apimachinery v0.31.3 // indirect
 	k8s.io/apiserver v0.31.2 // indirect
 	k8s.io/cli-runtime v0.31.2 // indirect
-	k8s.io/client-go v0.31.2 // indirect
+	k8s.io/client-go v0.31.3 // indirect
 	k8s.io/component-base v0.31.2 // indirect
 	k8s.io/klog/v2 v2.130.1 // indirect
 	k8s.io/kube-openapi v0.0.0-20240228011516-70dd3763d340 // indirect

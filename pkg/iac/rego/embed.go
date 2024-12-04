@@ -10,7 +10,7 @@ import (
 
 	"github.com/open-policy-agent/opa/ast"
 
-	checks "github.com/aquasecurity/trivy-checks"
+	checks "github.com/khulnasoft/tunnel-checks"
 	"github.com/khulnasoft/tunnel/pkg/iac/rules"
 	"github.com/khulnasoft/tunnel/pkg/log"
 )

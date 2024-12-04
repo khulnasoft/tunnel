@@ -5,7 +5,7 @@ import (
 
 	"golang.org/x/xerrors"
 
-	tunnel_checks "github.com/aquasecurity/trivy-checks"
+	tunnel_checks "github.com/khulnasoft/tunnel-checks"
 	k8sArtifacts "github.com/khulnasoft/tunnel-kubernetes/pkg/artifacts"
 	"github.com/khulnasoft/tunnel-kubernetes/pkg/k8s"
 	tunnelk8s "github.com/khulnasoft/tunnel-kubernetes/pkg/tunnelk8s"

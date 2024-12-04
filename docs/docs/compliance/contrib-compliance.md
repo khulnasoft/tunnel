@@ -1,7 +1,7 @@
 # Custom Compliance Spec
 
 Tunnel supports several different compliance specs. The details on compliance scanning with Tunnel are provided in the [compliance documentation](../../docs/compliance/compliance.md).
-All of the Compliance Specs currently available in Tunnel can be found in the `tunnel-checks/pkg/specs/compliance/` directory ([Link](https://github.com/aquasecurity/trivy-checks/tree/main/pkg/specs/compliance)).
+All of the Compliance Specs currently available in Tunnel can be found in the `tunnel-checks/pkg/specs/compliance/` directory ([Link](https://github.com/khulnasoft/tunnel-checks/tree/main/pkg/specs/compliance)).
 
 New checks are based on the custom compliance report detailed in the [main documentation.](./compliance.md#custom-compliance)
 If you would like to create your custom compliance report, please reference the information in the main documentation. This section details how community members can contribute new Compliance Specs to Tunnel.
@@ -14,7 +14,7 @@ Compliance specs can be based on new compliance reports becoming available e.g. 
 
 ### Create a new Compliance Spec
 
-The existing compliance specs in Tunnel are located under the `tunnel-checks/pkg/specs/compliance/` directory ([Link](https://github.com/aquasecurity/trivy-checks/tree/main/pkg/specs/compliance)).
+The existing compliance specs in Tunnel are located under the `tunnel-checks/pkg/specs/compliance/` directory ([Link](https://github.com/khulnasoft/tunnel-checks/tree/main/pkg/specs/compliance)).
 
 Create a new file under `tunnel-checks/specs/compliance/` and name the file in the format of "provider-resource-spectype-version.yaml". For example, the file name for AWS CIS Benchmarks for EKS version 1.4 is: `aws-eks-cis-1.4.yaml`. Note that if the compliance spec is not specific to a provider, the `provider` field can be ignored.
 
@@ -35,14 +35,14 @@ Additional information is provided below.
 
 #### 1. Referencing a check that is already part of Tunnel
 
-Tunnel has a comprehensive list of checks as part of its misconfiguration scanning. These can be found in the `tunnel-checks/checks` directory ([Link](https://github.com/aquasecurity/trivy-checks/tree/main/checks)). If the check is present, the `AVD_ID` and other information from the check has to be used.
+Tunnel has a comprehensive list of checks as part of its misconfiguration scanning. These can be found in the `tunnel-checks/checks` directory ([Link](https://github.com/khulnasoft/tunnel-checks/tree/main/checks)). If the check is present, the `AVD_ID` and other information from the check has to be used.
 
-Note: Take a look at the more generic compliance specs that are already available in Tunnel. If you are adding new compliance spec to Kubernetes e.g. AWS EKS CIS Benchmarks, chances are high that the check you would like to add to the new spec has already been defined in the general `k8s-ci-v.000.yaml` compliance spec. The same applies for creating specific Cloud Provider Compliance Specs and the [generic compliance specs](https://github.com/aquasecurity/trivy-checks/tree/main/pkg/specs/compliance) available.
+Note: Take a look at the more generic compliance specs that are already available in Tunnel. If you are adding new compliance spec to Kubernetes e.g. AWS EKS CIS Benchmarks, chances are high that the check you would like to add to the new spec has already been defined in the general `k8s-ci-v.000.yaml` compliance spec. The same applies for creating specific Cloud Provider Compliance Specs and the [generic compliance specs](https://github.com/khulnasoft/tunnel-checks/tree/main/pkg/specs/compliance) available.
 
 For example, the following check is detailed in the AWS EKS CIS v1.4 Benchmark:
 `3.1.2 Ensure that the kubelet kubeconfig file ownership is set to root:root (Manual)`
 
-This check can be found in the general K8s CIS Compliance Benchmark: `k8s-cis-1.23.yaml` ([Link](https://github.com/aquasecurity/trivy-checks/blob/31e779916f3863dd74a28cee869ea24fdc4ca8c2/specs/compliance/k8s-cis-1.23.yaml#L480))
+This check can be found in the general K8s CIS Compliance Benchmark: `k8s-cis-1.23.yaml` ([Link](https://github.com/khulnasoft/tunnel-checks/blob/31e779916f3863dd74a28cee869ea24fdc4ca8c2/specs/compliance/k8s-cis-1.23.yaml#L480))
 
 Thus, we can use the information already present:
 
@@ -81,7 +81,7 @@ The corresponding check in the `control` section will look like this:
 ```
 
 - Again, the `id`, `name` and `description` are taken directly from the EKS CIS Benchmarks v1.4.0
-- The `checks` is in this case `null` as the check is not currently present in the AVD and does not have a check in the [tunnel policies](https://github.com/aquasecurity/trivy-checks/tree/main/checks) repository
+- The `checks` is in this case `null` as the check is not currently present in the AVD and does not have a check in the [tunnel policies](https://github.com/khulnasoft/tunnel-checks/tree/main/checks) repository
 - Since the check does not exist in Tunnel, the `severity` will be `MEDIUM`. However, in some cases, the compliance report e.g. the CIS Benchmark report will specify the severity
 
 #### Contributing new checks to tunnel-checks

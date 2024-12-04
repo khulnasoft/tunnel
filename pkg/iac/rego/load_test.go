@@ -13,7 +13,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	checks "github.com/aquasecurity/trivy-checks"
+	checks "github.com/khulnasoft/tunnel-checks"
 	"github.com/khulnasoft/tunnel/pkg/iac/rego"
 	"github.com/khulnasoft/tunnel/pkg/iac/types"
 	"github.com/khulnasoft/tunnel/pkg/log"

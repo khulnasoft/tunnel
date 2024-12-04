@@ -10,7 +10,7 @@ import (
 	"golang.org/x/xerrors"
 	"gopkg.in/yaml.v3"
 
-	sp "github.com/aquasecurity/trivy-checks/pkg/spec"
+	sp "github.com/khulnasoft/tunnel-checks/pkg/spec"
 	iacTypes "github.com/khulnasoft/tunnel/pkg/iac/types"
 	"github.com/khulnasoft/tunnel/pkg/log"
 	"github.com/khulnasoft/tunnel/pkg/types"

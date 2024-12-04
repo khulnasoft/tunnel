@@ -5,7 +5,7 @@ import (
 	"github.com/open-policy-agent/opa/rego"
 	"github.com/open-policy-agent/opa/types"
 
-	checksrego "github.com/aquasecurity/trivy-checks/pkg/rego"
+	checksrego "github.com/khulnasoft/tunnel-checks/pkg/rego"
 )
 
 func init() {

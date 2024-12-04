@@ -2,7 +2,7 @@
 
 ## Checks Sources
 
-Tunnel has an extensive library of misconfiguration checks that is maintained at <https://github.com/aquasecurity/trivy-checks>.  
+Tunnel has an extensive library of misconfiguration checks that is maintained at <https://github.com/khulnasoft/tunnel-checks>.  
 Tunnel checks are mainly written in [Rego][rego], while some checks are written in Go.  
 See [here](../../../coverage/iac/index.md) for the list of supported config types.
 

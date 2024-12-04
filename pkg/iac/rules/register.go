@@ -5,7 +5,7 @@ import (
 
 	"gopkg.in/yaml.v3"
 
-	"github.com/aquasecurity/trivy-checks/pkg/specs"
+	"github.com/khulnasoft/tunnel-checks/pkg/specs"
 	"github.com/khulnasoft/tunnel/pkg/iac/framework"
 	"github.com/khulnasoft/tunnel/pkg/iac/scan"
 	dftypes "github.com/khulnasoft/tunnel/pkg/iac/types"

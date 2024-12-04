@@ -91,7 +91,7 @@ A Rego file that defines rules for detecting misconfigurations in various types 
 
 ### Built-in Checks
 
-Default set of checks distributed through [the tunnel-checks repository](https://github.com/aquasecurity/trivy-checks), providing standard security and configuration best practices.
+Default set of checks distributed through [the tunnel-checks repository](https://github.com/khulnasoft/tunnel-checks), providing standard security and configuration best practices.
 
 ### Checks Bundle
 
