@@ -6419,10 +6419,10 @@ You're not viewing the latest version of the documentation.
 
 <h1 id="contribute-rego-checks">Contribute Rego Checks<a class="headerlink" href="#contribute-rego-checks" title="Permanent link">&para;</a></h1>
 <p>The following guide provides an overview of contributing checks to the default checks in Tunnel.</p>
-<p>All of the checks in Tunnel can be found in the <a href="https://github.com/aquasecurity/trivy-checks/tree/main">tunnel-checks</a> repository on GitHub. Before you begin writing a check, ensure:</p>
+<p>All of the checks in Tunnel can be found in the <a href="https://github.com/khulnasoft/tunnel-checks/tree/main">tunnel-checks</a> repository on GitHub. Before you begin writing a check, ensure:</p>
 <ol>
-<li>The check does not already exist as part of the default checks in the <a href="https://github.com/aquasecurity/trivy-checks/tree/main">tunnel-checks</a> repository.</li>
-<li>The pull requests in the <a href="https://github.com/aquasecurity/trivy-checks/pulls">tunnel-checks</a> repository to see whether someone else is already contributing the check that you wanted to add.</li>
+<li>The check does not already exist as part of the default checks in the <a href="https://github.com/khulnasoft/tunnel-checks/tree/main">tunnel-checks</a> repository.</li>
+<li>The pull requests in the <a href="https://github.com/khulnasoft/tunnel-checks/pulls">tunnel-checks</a> repository to see whether someone else is already contributing the check that you wanted to add.</li>
 <li>The <a href="https://github.com/khulnasoft/tunnel/issues">issues in Tunnel</a> to see whether any specific checks are missing in Tunnel that you can contribute.</li>
 </ol>
 <p>If anything is unclear, please <a href="https://github.com/khulnasoft/tunnel/discussions/new">start a discussion</a> and we will do our best to help.</p>
@@ -6466,22 +6466,22 @@ deny[res] {
 <details class="note" open="open">
 <summary>Note</summary>
 </details>
-<p>New Kubernetes and Dockerfile checks do not require any additional provider definitions. You can find an example of a Dockerfile check <a href="https://github.com/aquasecurity/trivy-checks/blob/main/checks/docker/add_instead_of_copy.rego">here</a> and a Kubernetes check <a href="https://github.com/aquasecurity/trivy-checks/blob/main/checks/kubernetes/general/CPU_not_limited.rego">here</a>.</p>
+<p>New Kubernetes and Dockerfile checks do not require any additional provider definitions. You can find an example of a Dockerfile check <a href="https://github.com/khulnasoft/tunnel-checks/blob/main/checks/docker/add_instead_of_copy.rego">here</a> and a Kubernetes check <a href="https://github.com/khulnasoft/tunnel-checks/blob/main/checks/kubernetes/general/CPU_not_limited.rego">here</a>.</p>
 <h3 id="add-support-for-a-new-service-in-an-existing-provider">Add Support for a New Service in an existing Provider<a class="headerlink" href="#add-support-for-a-new-service-in-an-existing-provider" title="Permanent link">&para;</a></h3>
 <p><a href="../service-support/">Please reference the documentation on adding Support for a New Service</a>.</p>
 <p>This guide also showcases how to add new properties for an existing Service.</p>
 <h2 id="create-a-new-rego-file">Create a new .rego file<a class="headerlink" href="#create-a-new-rego-file" title="Permanent link">&para;</a></h2>
-<p>The following directory in the tunnel-checks repository contains all of our custom checks. Depending on what type of check you want to create, you will need to nest a new <code>.rego</code> file in either of the <a href="https://github.com/aquasecurity/trivy-checks/tree/main/checks">subdirectories</a>:</p>
+<p>The following directory in the tunnel-checks repository contains all of our custom checks. Depending on what type of check you want to create, you will need to nest a new <code>.rego</code> file in either of the <a href="https://github.com/khulnasoft/tunnel-checks/tree/main/checks">subdirectories</a>:</p>
 <ul>
 <li>cloud: All checks related to cloud providers and their services</li>
 <li>docker: Docker specific checks</li>
 <li>kubernetes: Kubernetes specific checks</li>
 </ul>
 <h2 id="check-package-name">Check Package name<a class="headerlink" href="#check-package-name" title="Permanent link">&para;</a></h2>
-<p>Have a look at the existing package names in the <a href="https://github.com/aquasecurity/trivy-checks/tree/main/checks">built in checks</a>.</p>
+<p>Have a look at the existing package names in the <a href="https://github.com/khulnasoft/tunnel-checks/tree/main/checks">built in checks</a>.</p>
 <p>The package name should be in the format <code>builtin.PROVIDER.SERVICE.ID</code>, e.g. <code>builtin.aws.rds.aws0176</code>.</p>
 <h2 id="generating-an-id">Generating an ID<a class="headerlink" href="#generating-an-id" title="Permanent link">&para;</a></h2>
-<p>Every check has a custom ID that is referenced throughout the metadata of the check to uniquely identify the check. If you plan to contribue your check back into the <a href="https://github.com/aquasecurity/trivy-checks">tunnel-checks</a> repository, it will require a valid ID.</p>
+<p>Every check has a custom ID that is referenced throughout the metadata of the check to uniquely identify the check. If you plan to contribue your check back into the <a href="https://github.com/khulnasoft/tunnel-checks">tunnel-checks</a> repository, it will require a valid ID.</p>
 <p>Running <code>make id</code> in the root of the tunnel-checks repository will provide you with the next available <em>ID</em> for your rule.</p>
 <h2 id="check-schemas">Check Schemas<a class="headerlink" href="#check-schemas" title="Permanent link">&para;</a></h2>
 <p>Rego Checks for Tunnel can utilise Schemas to map the input to specific objects. The schemas available are listed <a href="https://github.com/khulnasoft/tunnel/tree/main/pkg/iac/rego/schemas">here.</a>.</p>
@@ -6491,7 +6491,7 @@ deny[res] {
 <p>For detailed information on each component of the Check Metadata, please refer to the <a href="../../../../docs/scanner/misconfiguration/custom/">main documentation.</a></p>
 <p>Note that while the Metadata is optional in your own custom checks for Tunnel, if you are contributing your check to the Tunnel builtin checks, the Metadata section will be required.</p>
 <h2 id="writing-rego-rules">Writing Rego Rules<a class="headerlink" href="#writing-rego-rules" title="Permanent link">&para;</a></h2>
-<p>Rules are defined using <em>OPA Rego</em>. You can find a number of examples in the <code>checks</code> directory (<a href="https://github.com/aquasecurity/trivy-checks/tree/main/checks">Link</a>). The <a href="https://www.openpolicyagent.org/docs/latest/policy-language/">OPA documentation</a> is a great place to start learning Rego. You can also check out the <a href="https://play.openpolicyagent.org/">Rego Playground</a> to experiment with Rego, and <a href="https://slack.openpolicyagent.org/">join the OPA Slack</a>.</p>
+<p>Rules are defined using <em>OPA Rego</em>. You can find a number of examples in the <code>checks</code> directory (<a href="https://github.com/khulnasoft/tunnel-checks/tree/main/checks">Link</a>). The <a href="https://www.openpolicyagent.org/docs/latest/policy-language/">OPA documentation</a> is a great place to start learning Rego. You can also check out the <a href="https://play.openpolicyagent.org/">Rego Playground</a> to experiment with Rego, and <a href="https://slack.openpolicyagent.org/">join the OPA Slack</a>.</p>
 <div class="highlight"><pre><span></span><code>deny[res] {
     instance := input.aws.rds.instances[_]
     instance.engine.value == [&quot;postgres&quot;, &quot;mysql&quot;][_]
@@ -6502,9 +6502,9 @@ deny[res] {
 <p>The rule should return a result, which can be created using <code>result.new</code>. This function does not need to be imported, it is defined internally and provided at runtime. The first argument is the message to display and the second argument is the resource that the issue was detected on.</p>
 <p>It is possible to pass any rego variable that references a field of the input document.</p>
 <h2 id="generate-docs">Generate docs<a class="headerlink" href="#generate-docs" title="Permanent link">&para;</a></h2>
-<p>Finally, you'll want to generate documentation for your newly added rule. Please run <code>make docs</code> in the <a href="https://github.com/aquasecurity/trivy-checks">tunnel-checks</a> directory to generate the documentation for your new policy and submit a PR for us to take a look at.</p>
+<p>Finally, you'll want to generate documentation for your newly added rule. Please run <code>make docs</code> in the <a href="https://github.com/khulnasoft/tunnel-checks">tunnel-checks</a> directory to generate the documentation for your new policy and submit a PR for us to take a look at.</p>
 <h2 id="adding-tests">Adding Tests<a class="headerlink" href="#adding-tests" title="Permanent link">&para;</a></h2>
-<p>All Rego checks need to have tests. There are many examples of these in the <code>checks</code> directory for each check (<a href="https://github.com/aquasecurity/trivy-checks/tree/main/checks">Link</a>). More information on how to write tests for Rego checks is provided in the <a href="../../../../docs/scanner/misconfiguration/custom/testing/">custom misconfiguration</a> section of the docs.</p>
+<p>All Rego checks need to have tests. There are many examples of these in the <code>checks</code> directory for each check (<a href="https://github.com/khulnasoft/tunnel-checks/tree/main/checks">Link</a>). More information on how to write tests for Rego checks is provided in the <a href="../../../../docs/scanner/misconfiguration/custom/testing/">custom misconfiguration</a> section of the docs.</p>
 <h2 id="example-pr">Example PR<a class="headerlink" href="#example-pr" title="Permanent link">&para;</a></h2>
 <p>You can see a full example PR for a new rule being added here: <a href="https://github.com/khulnasoft/defsec/pull/1000">https://github.com/khulnasoft/defsec/pull/1000</a>.</p>
 

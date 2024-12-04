@@ -6377,14 +6377,14 @@ You're not viewing the latest version of the documentation.
 
 <h1 id="custom-compliance-spec">Custom Compliance Spec<a class="headerlink" href="#custom-compliance-spec" title="Permanent link">&para;</a></h1>
 <p>Tunnel supports several different compliance specs. The details on compliance scanning with Tunnel are provided in the <a href="../compliance/">compliance documentation</a>.
-All of the Compliance Specs currently available in Tunnel can be found in the <code>tunnel-checks/pkg/specs/compliance/</code> directory (<a href="https://github.com/aquasecurity/trivy-checks/tree/main/pkg/specs/compliance">Link</a>).</p>
+All of the Compliance Specs currently available in Tunnel can be found in the <code>tunnel-checks/pkg/specs/compliance/</code> directory (<a href="https://github.com/khulnasoft/tunnel-checks/tree/main/pkg/specs/compliance">Link</a>).</p>
 <p>New checks are based on the custom compliance report detailed in the <a href="../compliance/#custom-compliance">main documentation.</a>
 If you would like to create your custom compliance report, please reference the information in the main documentation. This section details how community members can contribute new Compliance Specs to Tunnel.</p>
 <p>All compliance specs in Tunnel are based on formal compliance reports such as CIS Benchmarks.</p>
 <h2 id="contributing-new-compliance-specs">Contributing new Compliance Specs<a class="headerlink" href="#contributing-new-compliance-specs" title="Permanent link">&para;</a></h2>
 <p>Compliance specs can be based on new compliance reports becoming available e.g. a new CIS Benchmark version, or identifying missing compliance specs that Tunnel users would like to access.</p>
 <h3 id="create-a-new-compliance-spec">Create a new Compliance Spec<a class="headerlink" href="#create-a-new-compliance-spec" title="Permanent link">&para;</a></h3>
-<p>The existing compliance specs in Tunnel are located under the <code>tunnel-checks/pkg/specs/compliance/</code> directory (<a href="https://github.com/aquasecurity/trivy-checks/tree/main/pkg/specs/compliance">Link</a>).</p>
+<p>The existing compliance specs in Tunnel are located under the <code>tunnel-checks/pkg/specs/compliance/</code> directory (<a href="https://github.com/khulnasoft/tunnel-checks/tree/main/pkg/specs/compliance">Link</a>).</p>
 <p>Create a new file under <code>tunnel-checks/specs/compliance/</code> and name the file in the format of "provider-resource-spectype-version.yaml". For example, the file name for AWS CIS Benchmarks for EKS version 1.4 is: <code>aws-eks-cis-1.4.yaml</code>. Note that if the compliance spec is not specific to a provider, the <code>provider</code> field can be ignored.</p>
 <h3 id="minimum-spec-structure">Minimum spec structure<a class="headerlink" href="#minimum-spec-structure" title="Permanent link">&para;</a></h3>
 <p>The structure of the compliance spec is detailed in the <a href="../compliance/#custom-compliance">main documentation</a>.</p>
@@ -6397,11 +6397,11 @@ If you would like to create your custom compliance report, please reference the 
 </ol>
 <p>Additional information is provided below.</p>
 <h4 id="1-referencing-a-check-that-is-already-part-of-tunnel">1. Referencing a check that is already part of Tunnel<a class="headerlink" href="#1-referencing-a-check-that-is-already-part-of-tunnel" title="Permanent link">&para;</a></h4>
-<p>Tunnel has a comprehensive list of checks as part of its misconfiguration scanning. These can be found in the <code>tunnel-checks/checks</code> directory (<a href="https://github.com/aquasecurity/trivy-checks/tree/main/checks">Link</a>). If the check is present, the <code>AVD_ID</code> and other information from the check has to be used.</p>
-<p>Note: Take a look at the more generic compliance specs that are already available in Tunnel. If you are adding new compliance spec to Kubernetes e.g. AWS EKS CIS Benchmarks, chances are high that the check you would like to add to the new spec has already been defined in the general <code>k8s-ci-v.000.yaml</code> compliance spec. The same applies for creating specific Cloud Provider Compliance Specs and the <a href="https://github.com/aquasecurity/trivy-checks/tree/main/pkg/specs/compliance">generic compliance specs</a> available.</p>
+<p>Tunnel has a comprehensive list of checks as part of its misconfiguration scanning. These can be found in the <code>tunnel-checks/checks</code> directory (<a href="https://github.com/khulnasoft/tunnel-checks/tree/main/checks">Link</a>). If the check is present, the <code>AVD_ID</code> and other information from the check has to be used.</p>
+<p>Note: Take a look at the more generic compliance specs that are already available in Tunnel. If you are adding new compliance spec to Kubernetes e.g. AWS EKS CIS Benchmarks, chances are high that the check you would like to add to the new spec has already been defined in the general <code>k8s-ci-v.000.yaml</code> compliance spec. The same applies for creating specific Cloud Provider Compliance Specs and the <a href="https://github.com/khulnasoft/tunnel-checks/tree/main/pkg/specs/compliance">generic compliance specs</a> available.</p>
 <p>For example, the following check is detailed in the AWS EKS CIS v1.4 Benchmark:
 <code>3.1.2 Ensure that the kubelet kubeconfig file ownership is set to root:root (Manual)</code></p>
-<p>This check can be found in the general K8s CIS Compliance Benchmark: <code>k8s-cis-1.23.yaml</code> (<a href="https://github.com/aquasecurity/trivy-checks/blob/31e779916f3863dd74a28cee869ea24fdc4ca8c2/specs/compliance/k8s-cis-1.23.yaml#L480">Link</a>)</p>
+<p>This check can be found in the general K8s CIS Compliance Benchmark: <code>k8s-cis-1.23.yaml</code> (<a href="https://github.com/khulnasoft/tunnel-checks/blob/31e779916f3863dd74a28cee869ea24fdc4ca8c2/specs/compliance/k8s-cis-1.23.yaml#L480">Link</a>)</p>
 <p>Thus, we can use the information already present:</p>
 <div class="highlight"><pre><span></span><code>  - id: 3.1.2
     name: Ensure that the kubelet service file ownership is set to root:root (Manual)
@@ -6431,7 +6431,7 @@ If you would like to create your custom compliance report, please reference the 
 </code></pre></div>
 <ul>
 <li>Again, the <code>id</code>, <code>name</code> and <code>description</code> are taken directly from the EKS CIS Benchmarks v1.4.0</li>
-<li>The <code>checks</code> is in this case <code>null</code> as the check is not currently present in the AVD and does not have a check in the <a href="https://github.com/aquasecurity/trivy-checks/tree/main/checks">tunnel policies</a> repository</li>
+<li>The <code>checks</code> is in this case <code>null</code> as the check is not currently present in the AVD and does not have a check in the <a href="https://github.com/khulnasoft/tunnel-checks/tree/main/checks">tunnel policies</a> repository</li>
 <li>Since the check does not exist in Tunnel, the <code>severity</code> will be <code>MEDIUM</code>. However, in some cases, the compliance report e.g. the CIS Benchmark report will specify the severity</li>
 </ul>
 <h4 id="contributing-new-checks-to-tunnel-checks">Contributing new checks to tunnel-checks<a class="headerlink" href="#contributing-new-checks-to-tunnel-checks" title="Permanent link">&para;</a></h4>
