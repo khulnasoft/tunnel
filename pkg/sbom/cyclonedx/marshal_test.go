@@ -107,7 +107,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						Architecture: "arm64",
 						Config: v1.Config{
 							Labels: map[string]string{
-								"vendor": "aquasecurity",
+								"vendor": "khulnasoft",
 							},
 						},
 					},
@@ -287,7 +287,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 							{
 								Type:    cdx.ComponentTypeApplication,
 								Name:    "tunnel",
-								Group:   "aquasecurity",
+								Group:   "khulnasoft",
 								Version: "dev",
 							},
 						},
@@ -299,31 +299,31 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						Name:       "rails:latest",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:DiffID",
+								Name:  "khulnasoft:tunnel:DiffID",
 								Value: "sha256:d871dadfb37b53ef1ca45be04fc527562b91989991a8f545345ae3be0b93f92a",
 							},
 							{
-								Name:  "aquasecurity:tunnel:ImageID",
+								Name:  "khulnasoft:tunnel:ImageID",
 								Value: "sha256:5d0da3dc976460b72c77d94c8a1ad043720b0416bfc16c52c45d4847e53fadb6",
 							},
 							{
-								Name:  "aquasecurity:tunnel:Labels:vendor",
-								Value: "aquasecurity",
+								Name:  "khulnasoft:tunnel:Labels:vendor",
+								Value: "khulnasoft",
 							},
 							{
-								Name:  "aquasecurity:tunnel:RepoDigest",
+								Name:  "khulnasoft:tunnel:RepoDigest",
 								Value: "rails@sha256:a27fd8080b517143cbbbab9dfb7c8571c40d67d534bbdee55bd6c473f432b177",
 							},
 							{
-								Name:  "aquasecurity:tunnel:RepoTag",
+								Name:  "khulnasoft:tunnel:RepoTag",
 								Value: "rails:latest",
 							},
 							{
-								Name:  "aquasecurity:tunnel:SchemaVersion",
+								Name:  "khulnasoft:tunnel:SchemaVersion",
 								Value: "2",
 							},
 							{
-								Name:  "aquasecurity:tunnel:Size",
+								Name:  "khulnasoft:tunnel:Size",
 								Value: "1024",
 							},
 						},
@@ -337,11 +337,11 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						Version: "8.3.2011",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:Class",
+								Name:  "khulnasoft:tunnel:Class",
 								Value: "os-pkgs",
 							},
 							{
-								Name:  "aquasecurity:tunnel:Type",
+								Name:  "khulnasoft:tunnel:Type",
 								Value: "centos",
 							},
 						},
@@ -353,11 +353,11 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						Version: "",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:Class",
+								Name:  "khulnasoft:tunnel:Class",
 								Value: "lang-pkgs",
 							},
 							{
-								Name:  "aquasecurity:tunnel:Type",
+								Name:  "khulnasoft:tunnel:Type",
 								Value: "bundler",
 							},
 						},
@@ -370,11 +370,11 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						PackageURL: "pkg:gem/actionpack@7.0.0",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:PkgID",
+								Name:  "khulnasoft:tunnel:PkgID",
 								Value: "actionpack@7.0.0",
 							},
 							{
-								Name:  "aquasecurity:tunnel:PkgType",
+								Name:  "khulnasoft:tunnel:PkgType",
 								Value: "bundler",
 							},
 						},
@@ -386,11 +386,11 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						Version: "",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:Class",
+								Name:  "khulnasoft:tunnel:Class",
 								Value: "lang-pkgs",
 							},
 							{
-								Name:  "aquasecurity:tunnel:Type",
+								Name:  "khulnasoft:tunnel:Type",
 								Value: "bundler",
 							},
 						},
@@ -403,11 +403,11 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						PackageURL: "pkg:gem/actionpack@7.0.0",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:PkgID",
+								Name:  "khulnasoft:tunnel:PkgID",
 								Value: "actionpack@7.0.0",
 							},
 							{
-								Name:  "aquasecurity:tunnel:PkgType",
+								Name:  "khulnasoft:tunnel:PkgType",
 								Value: "bundler",
 							},
 						},
@@ -419,11 +419,11 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						Version: "",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:Class",
+								Name:  "khulnasoft:tunnel:Class",
 								Value: "lang-pkgs",
 							},
 							{
-								Name:  "aquasecurity:tunnel:Type",
+								Name:  "khulnasoft:tunnel:Type",
 								Value: "dotnet-core",
 							},
 						},
@@ -434,11 +434,11 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						Name:   "usr/local/bin/tfsec",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:Class",
+								Name:  "khulnasoft:tunnel:Class",
 								Value: "lang-pkgs",
 							},
 							{
-								Name:  "aquasecurity:tunnel:Type",
+								Name:  "khulnasoft:tunnel:Type",
 								Value: "gobinary",
 							},
 						},
@@ -451,7 +451,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						Version: "",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:PkgType",
+								Name:  "khulnasoft:tunnel:PkgType",
 								Value: "gobinary",
 							},
 						},
@@ -464,11 +464,11 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						PackageURL: "pkg:gem/actioncontroller@7.0.0",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:PkgID",
+								Name:  "khulnasoft:tunnel:PkgID",
 								Value: "actioncontroller@7.0.0",
 							},
 							{
-								Name:  "aquasecurity:tunnel:PkgType",
+								Name:  "khulnasoft:tunnel:PkgType",
 								Value: "bundler",
 							},
 						},
@@ -481,7 +481,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						PackageURL: "pkg:golang/golang.org/x/crypto@v0.0.0-20210421170649-83a5a9bb288b",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:PkgType",
+								Name:  "khulnasoft:tunnel:PkgType",
 								Value: "gobinary",
 							},
 						},
@@ -494,11 +494,11 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						PackageURL: "pkg:nuget/Newtonsoft.Json@9.0.1",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:PkgID",
+								Name:  "khulnasoft:tunnel:PkgID",
 								Value: "Newtonsoft.Json@9.0.1",
 							},
 							{
-								Name:  "aquasecurity:tunnel:PkgType",
+								Name:  "khulnasoft:tunnel:PkgType",
 								Value: "dotnet-core",
 							},
 						},
@@ -521,23 +521,23 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						},
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:PkgID",
+								Name:  "khulnasoft:tunnel:PkgID",
 								Value: "binutils@2.30-93.el8",
 							},
 							{
-								Name:  "aquasecurity:tunnel:PkgType",
+								Name:  "khulnasoft:tunnel:PkgType",
 								Value: "centos",
 							},
 							{
-								Name:  "aquasecurity:tunnel:SrcName",
+								Name:  "khulnasoft:tunnel:SrcName",
 								Value: "binutils",
 							},
 							{
-								Name:  "aquasecurity:tunnel:SrcRelease",
+								Name:  "khulnasoft:tunnel:SrcRelease",
 								Value: "93.el8",
 							},
 							{
-								Name:  "aquasecurity:tunnel:SrcVersion",
+								Name:  "khulnasoft:tunnel:SrcVersion",
 								Value: "2.30",
 							},
 						},
@@ -924,7 +924,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 							{
 								Type:    cdx.ComponentTypeApplication,
 								Name:    "tunnel",
-								Group:   "aquasecurity",
+								Group:   "khulnasoft",
 								Version: "dev",
 							},
 						},
@@ -936,19 +936,19 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						Name:       "centos:latest",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:ImageID",
+								Name:  "khulnasoft:tunnel:ImageID",
 								Value: "sha256:5d0da3dc976460b72c77d94c8a1ad043720b0416bfc16c52c45d4847e53fadb6",
 							},
 							{
-								Name:  "aquasecurity:tunnel:RepoTag",
+								Name:  "khulnasoft:tunnel:RepoTag",
 								Value: "centos:latest",
 							},
 							{
-								Name:  "aquasecurity:tunnel:SchemaVersion",
+								Name:  "khulnasoft:tunnel:SchemaVersion",
 								Value: "2",
 							},
 							{
-								Name:  "aquasecurity:tunnel:Size",
+								Name:  "khulnasoft:tunnel:Size",
 								Value: "1024",
 							},
 						},
@@ -962,11 +962,11 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						Version: "8.3.2011",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:Class",
+								Name:  "khulnasoft:tunnel:Class",
 								Value: "os-pkgs",
 							},
 							{
-								Name:  "aquasecurity:tunnel:Type",
+								Name:  "khulnasoft:tunnel:Type",
 								Value: "centos",
 							},
 						},
@@ -979,19 +979,19 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						PackageURL: "pkg:gem/actionpack@7.0.0",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:FilePath",
+								Name:  "khulnasoft:tunnel:FilePath",
 								Value: "tools/project-john/specifications/actionpack.gemspec",
 							},
 							{
-								Name:  "aquasecurity:tunnel:LayerDiffID",
+								Name:  "khulnasoft:tunnel:LayerDiffID",
 								Value: "sha256:ccb64cf0b7ba2e50741d0b64cae324eb5de3b1e2f580bbf177e721b67df38488",
 							},
 							{
-								Name:  "aquasecurity:tunnel:PkgID",
+								Name:  "khulnasoft:tunnel:PkgID",
 								Value: "actionpack@7.0.0",
 							},
 							{
-								Name:  "aquasecurity:tunnel:PkgType",
+								Name:  "khulnasoft:tunnel:PkgType",
 								Value: "gemspec",
 							},
 						},
@@ -1004,19 +1004,19 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						PackageURL: "pkg:gem/actionpack@7.0.1",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:FilePath",
+								Name:  "khulnasoft:tunnel:FilePath",
 								Value: "tools/project-doe/specifications/actionpack.gemspec",
 							},
 							{
-								Name:  "aquasecurity:tunnel:LayerDiffID",
+								Name:  "khulnasoft:tunnel:LayerDiffID",
 								Value: "sha256:ccb64cf0b7ba2e50741d0b64cae324eb5de3b1e2f580bbf177e721b67df38488",
 							},
 							{
-								Name:  "aquasecurity:tunnel:PkgID",
+								Name:  "khulnasoft:tunnel:PkgID",
 								Value: "actionpack@7.0.1",
 							},
 							{
-								Name:  "aquasecurity:tunnel:PkgType",
+								Name:  "khulnasoft:tunnel:PkgType",
 								Value: "gemspec",
 							},
 						},
@@ -1036,27 +1036,27 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						PackageURL: "pkg:rpm/centos/acl@2.2.53-1.el8?arch=aarch64&distro=centos-8.3.2011&epoch=1",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:PkgID",
+								Name:  "khulnasoft:tunnel:PkgID",
 								Value: "acl@2.2.53-1.el8",
 							},
 							{
-								Name:  "aquasecurity:tunnel:PkgType",
+								Name:  "khulnasoft:tunnel:PkgType",
 								Value: "centos",
 							},
 							{
-								Name:  "aquasecurity:tunnel:SrcEpoch",
+								Name:  "khulnasoft:tunnel:SrcEpoch",
 								Value: "1",
 							},
 							{
-								Name:  "aquasecurity:tunnel:SrcName",
+								Name:  "khulnasoft:tunnel:SrcName",
 								Value: "acl",
 							},
 							{
-								Name:  "aquasecurity:tunnel:SrcRelease",
+								Name:  "khulnasoft:tunnel:SrcRelease",
 								Value: "1.el8",
 							},
 							{
-								Name:  "aquasecurity:tunnel:SrcVersion",
+								Name:  "khulnasoft:tunnel:SrcVersion",
 								Value: "2.2.53",
 							},
 						},
@@ -1082,23 +1082,23 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						PackageURL: "pkg:rpm/centos/glibc@2.28-151.el8?arch=aarch64&distro=centos-8.3.2011",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:PkgID",
+								Name:  "khulnasoft:tunnel:PkgID",
 								Value: "glibc@2.28-151.el8",
 							},
 							{
-								Name:  "aquasecurity:tunnel:PkgType",
+								Name:  "khulnasoft:tunnel:PkgType",
 								Value: "centos",
 							},
 							{
-								Name:  "aquasecurity:tunnel:SrcName",
+								Name:  "khulnasoft:tunnel:SrcName",
 								Value: "glibc",
 							},
 							{
-								Name:  "aquasecurity:tunnel:SrcRelease",
+								Name:  "khulnasoft:tunnel:SrcRelease",
 								Value: "151.el8",
 							},
 							{
-								Name:  "aquasecurity:tunnel:SrcVersion",
+								Name:  "khulnasoft:tunnel:SrcVersion",
 								Value: "2.28",
 							},
 						},
@@ -1311,7 +1311,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 							{
 								Type:    cdx.ComponentTypeApplication,
 								Name:    "tunnel",
-								Group:   "aquasecurity",
+								Group:   "khulnasoft",
 								Version: "dev",
 							},
 						},
@@ -1322,7 +1322,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						Name:   "masahiro331/CVE-2021-41098",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:SchemaVersion",
+								Name:  "khulnasoft:tunnel:SchemaVersion",
 								Value: "2",
 							},
 						},
@@ -1335,11 +1335,11 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						Name:   "Gemfile.lock",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:Class",
+								Name:  "khulnasoft:tunnel:Class",
 								Value: "lang-pkgs",
 							},
 							{
-								Name:  "aquasecurity:tunnel:Type",
+								Name:  "khulnasoft:tunnel:Type",
 								Value: "bundler",
 							},
 						},
@@ -1350,11 +1350,11 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						Name:   "yarn.lock",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:Class",
+								Name:  "khulnasoft:tunnel:Class",
 								Value: "lang-pkgs",
 							},
 							{
-								Name:  "aquasecurity:tunnel:Type",
+								Name:  "khulnasoft:tunnel:Type",
 								Value: "yarn",
 							},
 						},
@@ -1367,7 +1367,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						PackageURL: "pkg:gem/actioncable@6.1.4.1",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:PkgType",
+								Name:  "khulnasoft:tunnel:PkgType",
 								Value: "bundler",
 							},
 						},
@@ -1381,11 +1381,11 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						PackageURL: "pkg:maven/org.springframework/spring-web@5.3.22",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:FilePath",
+								Name:  "khulnasoft:tunnel:FilePath",
 								Value: "spring-web-5.3.22.jar",
 							},
 							{
-								Name:  "aquasecurity:tunnel:PkgType",
+								Name:  "khulnasoft:tunnel:PkgType",
 								Value: "jar",
 							},
 						},
@@ -1399,11 +1399,11 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						PackageURL: "pkg:npm/%40babel/helper-string-parser@7.23.4",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:PkgID",
+								Name:  "khulnasoft:tunnel:PkgID",
 								Value: "@babel/helper-string-parser@7.23.4",
 							},
 							{
-								Name:  "aquasecurity:tunnel:PkgType",
+								Name:  "khulnasoft:tunnel:PkgType",
 								Value: "yarn",
 							},
 						},
@@ -1538,7 +1538,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 							{
 								Type:    cdx.ComponentTypeApplication,
 								Name:    "tunnel",
-								Group:   "aquasecurity",
+								Group:   "khulnasoft",
 								Version: "dev",
 							},
 						},
@@ -1549,7 +1549,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						Name:   "jackson-databind-2.13.4.1.jar",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:SchemaVersion",
+								Name:  "khulnasoft:tunnel:SchemaVersion",
 								Value: "2",
 							},
 						},
@@ -1565,11 +1565,11 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						PackageURL: "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.13.4.1",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:FilePath",
+								Name:  "khulnasoft:tunnel:FilePath",
 								Value: "jackson-databind-2.13.4.1.jar",
 							},
 							{
-								Name:  "aquasecurity:tunnel:PkgType",
+								Name:  "khulnasoft:tunnel:PkgType",
 								Value: "jar",
 							},
 						},
@@ -1794,7 +1794,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 							{
 								Type:    cdx.ComponentTypeApplication,
 								Name:    "tunnel",
-								Group:   "aquasecurity",
+								Group:   "khulnasoft",
 								Version: "dev",
 							},
 						},
@@ -1805,7 +1805,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						Name:   "CVE-2023-34468",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:SchemaVersion",
+								Name:  "khulnasoft:tunnel:SchemaVersion",
 								Value: "2",
 							},
 						},
@@ -1821,11 +1821,11 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						PackageURL: "pkg:maven/org.apache.nifi/nifi-dbcp-base@1.20.0",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:FilePath",
+								Name:  "khulnasoft:tunnel:FilePath",
 								Value: "nifi-dbcp-base-1.20.0.jar",
 							},
 							{
-								Name:  "aquasecurity:tunnel:PkgType",
+								Name:  "khulnasoft:tunnel:PkgType",
 								Value: "jar",
 							},
 						},
@@ -1839,11 +1839,11 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						PackageURL: "pkg:maven/org.apache.nifi/nifi-hikari-dbcp-service@1.20.0",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:FilePath",
+								Name:  "khulnasoft:tunnel:FilePath",
 								Value: "nifi-hikari-dbcp-service-1.20.0.jar",
 							},
 							{
-								Name:  "aquasecurity:tunnel:PkgType",
+								Name:  "khulnasoft:tunnel:PkgType",
 								Value: "jar",
 							},
 						},
@@ -1981,7 +1981,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 							{
 								Type:    cdx.ComponentTypeApplication,
 								Name:    "tunnel",
-								Group:   "aquasecurity",
+								Group:   "khulnasoft",
 								Version: "dev",
 							},
 						},
@@ -1992,7 +1992,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						BOMRef: "3ff14136-e09f-4df9-80ea-000000000001",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:SchemaVersion",
+								Name:  "khulnasoft:tunnel:SchemaVersion",
 								Value: "2",
 							},
 						},
@@ -2014,19 +2014,19 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						},
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:FilePath",
+								Name:  "khulnasoft:tunnel:FilePath",
 								Value: "usr/local/lib/ruby/gems/3.1.0/gems/typeprof-0.21.1/vscode/package.json",
 							},
 							{
-								Name:  "aquasecurity:tunnel:LayerDiffID",
+								Name:  "khulnasoft:tunnel:LayerDiffID",
 								Value: "sha256:661c3fd3cc16b34c070f3620ca6b03b6adac150f9a7e5d0e3c707a159990f88e",
 							},
 							{
-								Name:  "aquasecurity:tunnel:PkgID",
+								Name:  "khulnasoft:tunnel:PkgID",
 								Value: "ruby-typeprof@0.20.1",
 							},
 							{
-								Name:  "aquasecurity:tunnel:PkgType",
+								Name:  "khulnasoft:tunnel:PkgType",
 								Value: "node-pkg",
 							},
 						},
@@ -2069,7 +2069,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 							{
 								Type:    cdx.ComponentTypeApplication,
 								Name:    "tunnel",
-								Group:   "aquasecurity",
+								Group:   "khulnasoft",
 								Version: "dev",
 							},
 						},
@@ -2080,7 +2080,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						BOMRef: "3ff14136-e09f-4df9-80ea-000000000001",
 						Properties: &[]cdx.Property{
 							{
-								Name:  "aquasecurity:tunnel:SchemaVersion",
+								Name:  "khulnasoft:tunnel:SchemaVersion",
 								Value: "2",
 							},
 						},

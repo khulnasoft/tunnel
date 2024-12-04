@@ -47,7 +47,7 @@ func TestEncoder_Encode(t *testing.T) {
 					ImageConfig: v1.ConfigFile{
 						Config: v1.Config{
 							Labels: map[string]string{
-								"vendor": "aquasecurity",
+								"vendor": "khulnasoft",
 							},
 						},
 					},
@@ -195,7 +195,7 @@ func TestEncoder_Encode(t *testing.T) {
 					Properties: []core.Property{
 						{
 							Name:  "Labels:vendor",
-							Value: "aquasecurity",
+							Value: "khulnasoft",
 						},
 						{
 							Name:  core.PropertyRepoDigest,

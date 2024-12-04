@@ -106,8 +106,8 @@ container_scanning:
     - docker-runner
 ```
 
-[example]: https://gitlab.com/aquasecurity/tunnel-ci-test/pipelines
-[repository]: https://github.com/aquasecurity/tunnel-ci-test
+[example]: https://gitlab.com/khulnasoft/tunnel-ci-test/pipelines
+[repository]: https://github.com/khulnasoft/tunnel-ci-test
 
 ### GitLab CI alternative template
 

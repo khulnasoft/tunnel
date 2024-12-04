@@ -28,7 +28,7 @@ $ tunnel repo ./tunnel-ci-test/Pipfile.lock
 To scan remote code repositories, you need to specify the URL.
 
 ```bash
-$ tunnel repo https://github.com/aquasecurity/tunnel-ci-test
+$ tunnel repo https://github.com/khulnasoft/tunnel-ci-test
 ```
 
 ## Rationale
@@ -46,7 +46,7 @@ Tunnel will look for vulnerabilities based on lock files such as Gemfile.lock an
 See [here](../scanner/vulnerability.md) for the detail.
 
 ```
-$ tunnel repo ~/src/github.com/aquasecurity/tunnel-ci-test
+$ tunnel repo ~/src/github.com/khulnasoft/tunnel-ci-test
 ```
 
 <details>

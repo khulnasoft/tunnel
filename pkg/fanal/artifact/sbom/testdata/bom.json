@@ -9,7 +9,7 @@
       "components": [
         {
           "type": "application",
-          "group": "aquasecurity",
+          "group": "khulnasoft",
           "name": "tunnel",
           "version": "dev"
         }
@@ -21,23 +21,23 @@
       "name": "maven-test-project",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:SchemaVersion",
+          "name": "khulnasoft:tunnel:SchemaVersion",
           "value": "2"
         },
         {
-          "name": "aquasecurity:tunnel:ImageID",
+          "name": "khulnasoft:tunnel:ImageID",
           "value": "sha256:49193a2310dbad4c02382da87ac624a80a92387a4f7536235f9ba590e5bcd7b5"
         },
         {
-          "name": "aquasecurity:tunnel:DiffID",
+          "name": "khulnasoft:tunnel:DiffID",
           "value": "sha256:dd565ff850e7003356e2b252758f9bdc1ff2803f61e995e24c7844f6297f8fc3"
         },
         {
-          "name": "aquasecurity:tunnel:DiffID",
+          "name": "khulnasoft:tunnel:DiffID",
           "value": "sha256:3c79e832b1b4891a1cb4a326ef8524e0bd14a2537150ac0e203a5677176c1ca1"
         },
         {
-          "name": "aquasecurity:tunnel:RepoTag",
+          "name": "khulnasoft:tunnel:RepoTag",
           "value": "maven-test-project:latest"
         }
       ]
@@ -57,15 +57,15 @@
       "purl": "pkg:apk/alpine/musl@1.2.3-r0?distro=3.16.0",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:SrcName",
+          "name": "khulnasoft:tunnel:SrcName",
           "value": "musl"
         },
         {
-          "name": "aquasecurity:tunnel:SrcVersion",
+          "name": "khulnasoft:tunnel:SrcVersion",
           "value": "1.2.3-r0"
         },
         {
-          "name": "aquasecurity:tunnel:LayerDiffID",
+          "name": "khulnasoft:tunnel:LayerDiffID",
           "value": "sha256:dd565ff850e7003356e2b252758f9bdc1ff2803f61e995e24c7844f6297f8fc3"
         }
       ]
@@ -77,11 +77,11 @@
       "version": "3.16.0",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:Type",
+          "name": "khulnasoft:tunnel:Type",
           "value": "alpine"
         },
         {
-          "name": "aquasecurity:tunnel:Class",
+          "name": "khulnasoft:tunnel:Class",
           "value": "os-pkgs"
         }
       ]
@@ -94,15 +94,15 @@
       "purl": "pkg:maven/org.codehaus.mojo/child-project@1.0",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:FilePath",
+          "name": "khulnasoft:tunnel:FilePath",
           "value": "app/maven/target/child-project-1.0.jar"
         },
         {
-          "name": "aquasecurity:tunnel:LayerDiffID",
+          "name": "khulnasoft:tunnel:LayerDiffID",
           "value": "sha256:3c79e832b1b4891a1cb4a326ef8524e0bd14a2537150ac0e203a5677176c1ca1"
         },
         {
-          "name": "aquasecurity:tunnel:Type",
+          "name": "khulnasoft:tunnel:Type",
           "value": "jar"
         }
       ]
@@ -120,15 +120,15 @@
       "purl": "pkg:npm/bootstrap@5.0.2",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:FilePath",
+          "name": "khulnasoft:tunnel:FilePath",
           "value": "app/app/package.json"
         },
         {
-          "name": "aquasecurity:tunnel:LayerDiffID",
+          "name": "khulnasoft:tunnel:LayerDiffID",
           "value": "sha256:3c79e832b1b4891a1cb4a326ef8524e0bd14a2537150ac0e203a5677176c1ca1"
         },
         {
-          "name": "aquasecurity:tunnel:Type",
+          "name": "khulnasoft:tunnel:Type",
           "value": "node-pkg"
         }
       ]
@@ -141,7 +141,7 @@
       "purl": "pkg:composer/pear/log@1.13.1",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:LayerDiffID",
+          "name": "khulnasoft:tunnel:LayerDiffID",
           "value": "sha256:3c79e832b1b4891a1cb4a326ef8524e0bd14a2537150ac0e203a5677176c1ca1"
         }
       ]
@@ -154,7 +154,7 @@
       "purl": "pkg:composer/pear/pear_exception@v1.0.0",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:LayerDiffID",
+          "name": "khulnasoft:tunnel:LayerDiffID",
           "value": "sha256:3c79e832b1b4891a1cb4a326ef8524e0bd14a2537150ac0e203a5677176c1ca1"
         }
       ]
@@ -165,11 +165,11 @@
       "name": "app/composer/composer.lock",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:Type",
+          "name": "khulnasoft:tunnel:Type",
           "value": "composer"
         },
         {
-          "name": "aquasecurity:tunnel:Class",
+          "name": "khulnasoft:tunnel:Class",
           "value": "lang-pkgs"
         }
       ]
@@ -182,7 +182,7 @@
       "purl": "pkg:golang/github.com/package-url/packageurl-go@v0.1.1-0.20220203205134-d70459300c8a",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:LayerDiffID",
+          "name": "khulnasoft:tunnel:LayerDiffID",
           "value": "sha256:3c79e832b1b4891a1cb4a326ef8524e0bd14a2537150ac0e203a5677176c1ca1"
         }
       ]
@@ -193,11 +193,11 @@
       "name": "app/gobinary/gobinary",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:Type",
+          "name": "khulnasoft:tunnel:Type",
           "value": "gobinary"
         },
         {
-          "name": "aquasecurity:tunnel:Class",
+          "name": "khulnasoft:tunnel:Class",
           "value": "lang-pkgs"
         }
       ]

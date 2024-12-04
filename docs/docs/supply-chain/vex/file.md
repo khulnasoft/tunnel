@@ -190,7 +190,7 @@ If you only specify the PURL of the container image as the product, the resultin
   {
     "vulnerability": {"name": "CVE-2024-32002"},
     "products": [
-      {"@id": "pkg:oci/tunnel?repository_url=ghcr.io%2Faquasecurity%2Ftunnel"}
+      {"@id": "pkg:oci/tunnel?repository_url=ghcr.io%2Fkhulnasoft%2Ftunnel"}
     ],
     "status": "not_affected",
     "justification": "vulnerable_code_not_in_execute_path"
@@ -212,7 +212,7 @@ If the intention is to declare that the `git` package distributed by Alpine Linu
     "vulnerability": {"name": "CVE-2024-32002"},
     "products": [
       {
-        "@id": "pkg:oci/tunnel?repository_url=ghcr.io%2Faquasecurity%2Ftunnel",
+        "@id": "pkg:oci/tunnel?repository_url=ghcr.io%2Fkhulnasoft%2Ftunnel",
         "subcomponents": [
           {"@id": "pkg:apk/alpine/git"}
         ]
@@ -234,7 +234,7 @@ Furthermore, the product specified in a VEX statement does not necessarily need 
 It is possible to specify a component that is included in the scan target as the product.
 For example, you can designate a specific Go project as the product and its dependent modules as subcomponents.
 
-In the following example, the VEX statement declares that the `github.com/docker/docker` module, which is a dependency of the `github.com/aquasecurity/tunnel` Go project, is not affected by CVE-2024-29018.
+In the following example, the VEX statement declares that the `github.com/docker/docker` module, which is a dependency of the `github.com/khulnasoft/tunnel` Go project, is not affected by CVE-2024-29018.
 
 <details>
 <summary>OpenVEX intermediate components</summary>
@@ -331,7 +331,7 @@ $ cat <<EOF > debian11.vex.csaf
       "name": "Example Company ProductCERT",
       "namespace": "https://psirt.example.com"
     },
-    "title": "AquaSecurity example VEX document",
+    "title": "KhulnaSoft example VEX document",
     "tracking": {
       "current_release_date": "2024-01-01T11:00:00.000Z",
       "generator": {

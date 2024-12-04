@@ -30,5 +30,5 @@ workflows:
 [Example][example]
 [Repository][repository]
 
-[example]: https://circleci.com/gh/aquasecurity/tunnel-ci-test
-[repository]: https://github.com/aquasecurity/tunnel-ci-test
+[example]: https://circleci.com/gh/khulnasoft/tunnel-ci-test
+[repository]: https://github.com/khulnasoft/tunnel-ci-test

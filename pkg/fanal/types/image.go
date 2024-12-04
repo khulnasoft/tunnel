@@ -31,7 +31,7 @@ type Platform struct {
 	*v1.Platform
 
 	// Force returns an error if the specified platform is not found.
-	// This option is for Aqua, and cannot be configured via Tunnel CLI.
+	// This option is for KhulnaSoft, and cannot be configured via Tunnel CLI.
 	Force bool
 }
 

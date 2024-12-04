@@ -30,8 +30,8 @@ func Test_gobinaryLibraryAnalyzer_Analyze(t *testing.T) {
 						FilePath: "testdata/executable_gobinary",
 						Packages: types.Packages{
 							{
-								ID:           "github.com/aquasecurity/test",
-								Name:         "github.com/aquasecurity/test",
+								ID:           "github.com/khulnasoft/test",
+								Name:         "github.com/khulnasoft/test",
 								Version:      "",
 								Relationship: types.RelationshipRoot,
 								DependsOn: []string{

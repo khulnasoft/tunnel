@@ -18,13 +18,13 @@ This chart bootstraps a Tunnel deployment on a [Kubernetes](http://kubernetes.io
 - Kubernetes 1.12+
 - Helm 3+
 
-## Installing from the Aqua Chart Repository
+## Installing from the KhulnaSoft Chart Repository
 
 ```
-helm repo add aquasecurity https://khulnasoft.github.io/helm-charts/
+helm repo add khulnasoft https://khulnasoft.github.io/helm-charts/
 helm repo update
 helm search repo tunnel
-helm install my-tunnel aquasecurity/tunnel
+helm install my-tunnel khulnasoft/tunnel
 ```
 
 ## Installing the Chart

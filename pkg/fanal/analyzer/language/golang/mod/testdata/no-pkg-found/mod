@@ -3,7 +3,7 @@ module github.com/org/repo
 go 1.23
 
 require (
-    github.com/aquasecurity/go-dep-parser v1.0.0
+    github.com/khulnasoft/go-dep-parser v1.0.0
     github.com/aquasecurity/go-version v1.0.1
 )
 

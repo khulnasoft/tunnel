@@ -10,7 +10,7 @@
       "components": [
         {
           "type": "application",
-          "group": "aquasecurity",
+          "group": "khulnasoft",
           "name": "tunnel",
           "version": "dev"
         }
@@ -22,7 +22,7 @@
       "name": "testdata/fixtures/repo/conda-environment",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:SchemaVersion",
+          "name": "khulnasoft:tunnel:SchemaVersion",
           "value": "2"
         }
       ]
@@ -35,11 +35,11 @@
       "name": "environment.yaml",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:Class",
+          "name": "khulnasoft:tunnel:Class",
           "value": "lang-pkgs"
         },
         {
-          "name": "aquasecurity:tunnel:Type",
+          "name": "khulnasoft:tunnel:Type",
           "value": "conda-environment"
         }
       ]
@@ -52,7 +52,7 @@
       "purl": "pkg:conda/bzip2@1.0.8",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:PkgType",
+          "name": "khulnasoft:tunnel:PkgType",
           "value": "conda-environment"
         }
       ]

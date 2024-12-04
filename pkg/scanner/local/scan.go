@@ -192,7 +192,7 @@ func (s Scanner) misconfsToResults(misconfs []ftypes.Misconfiguration, options t
 	return s.MisconfsToResults(misconfs)
 }
 
-// MisconfsToResults is exported for tunnel-plugin-aqua purposes only
+// MisconfsToResults is exported for tunnel-plugin-khulnasoft purposes only
 func (s Scanner) MisconfsToResults(misconfs []ftypes.Misconfiguration) types.Results {
 	log.Info("Detected config files", log.Int("num", len(misconfs)))
 	var results types.Results

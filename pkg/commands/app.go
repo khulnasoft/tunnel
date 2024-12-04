@@ -116,7 +116,7 @@ func NewApp() *cobra.Command {
 	if cmd, _, _ := rootCmd.Find([]string{"aws"}); cmd == cmd.Root() { // "tunnel aws" not installed
 		rootCmd.AddCommand(&cobra.Command{
 			Hidden: true,
-			Long:   "Tunnel AWS is now available as an optional plugin. See github.com/aquasecurity/tunnel-aws for details.",
+			Long:   "Tunnel AWS is now available as an optional plugin. See github.com/khulnasoft/tunnel-aws for details.",
 			Use:    "aws",
 		})
 	}
@@ -760,7 +760,7 @@ func NewPluginCommand(globalFlags *flag.GlobalFlagGroup) *cobra.Command {
   $ tunnel plugin install referrer@v0.3.0
 
   # Install a plugin from a URL
-  $ tunnel plugin install github.com/aquasecurity/tunnel-plugin-referrer`,
+  $ tunnel plugin install github.com/khulnasoft/tunnel-plugin-referrer`,
 			SilenceErrors:         true,
 			SilenceUsage:          true,
 			DisableFlagsInUseLine: true,

@@ -27,7 +27,7 @@ func TestPlugin(t *testing.T) {
 		},
 		{
 			name:       "count plugin installed from github archive",
-			plugin:     "https://github.com/aquasecurity/tunnel-plugin-count/archive/refs/tags/v0.1.0.zip",
+			plugin:     "https://github.com/khulnasoft/tunnel-plugin-count/archive/refs/tags/v0.1.0.zip",
 			pluginArgs: "--published-before=2020-01-01",
 			golden:     "testdata/count-0.1.0-plugin-with-before-flag.txt.golden",
 		},

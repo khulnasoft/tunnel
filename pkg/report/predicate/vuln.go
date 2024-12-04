@@ -63,7 +63,7 @@ func NewVulnWriter(output io.Writer, version string) VulnWriter {
 func (w VulnWriter) Write(ctx context.Context, report types.Report) error {
 	predicate := CosignVulnPredicate{}
 
-	purl := packageurl.NewPackageURL("github", "aquasecurity", "tunnel", w.version, nil, "")
+	purl := packageurl.NewPackageURL("github", "khulnasoft", "tunnel", w.version, nil, "")
 	predicate.Scanner = Scanner{
 		URI:     purl.ToString(),
 		Version: w.version,

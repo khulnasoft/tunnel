@@ -95,7 +95,7 @@ tunnel k8s --report summary --exclude-namespace dev-system,staging-system
 
 ## Control Plane and Node Components Vulnerability Scanning
 
-Tunnel is capable of discovering Kubernetes control plane (apiserver, controller-manager and etc) and node components(kubelet, kube-proxy and etc), matching them against the [official Kubernetes vulnerability database feed](https://github.com/aquasecurity/vuln-list-k8s), and reporting any vulnerabilities it finds.
+Tunnel is capable of discovering Kubernetes control plane (apiserver, controller-manager and etc) and node components(kubelet, kube-proxy and etc), matching them against the [official Kubernetes vulnerability database feed](https://github.com/khulnasoft/vuln-list-k8s), and reporting any vulnerabilities it finds.
 
 To read more about KBOM, see the [documentation for Kubernetes scanning](./sbom.md#kbom).
 

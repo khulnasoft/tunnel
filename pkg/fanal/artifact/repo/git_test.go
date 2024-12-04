@@ -234,16 +234,16 @@ func Test_newURL(t *testing.T) {
 		{
 			name: "happy path",
 			args: args{
-				rawurl: "https://github.com/aquasecurity/fanal",
+				rawurl: "https://github.com/khulnasoft/fanal",
 			},
-			want: "https://github.com/aquasecurity/fanal",
+			want: "https://github.com/khulnasoft/fanal",
 		},
 		{
 			name: "happy path: no scheme",
 			args: args{
-				rawurl: "github.com/aquasecurity/fanal",
+				rawurl: "github.com/khulnasoft/fanal",
 			},
-			want: "https://github.com/aquasecurity/fanal",
+			want: "https://github.com/khulnasoft/fanal",
 		},
 		{
 			name: "sad path: invalid url",

@@ -20,7 +20,7 @@ You need to pass `--sbom-sources rekor` so that Tunnel will look for SBOM attest
 `--sbom-sources` can be used only with `tunnel image` at the moment.
 
 ```bash
-$ tunnel image --sbom-sources rekor otms61/alpine:3.7.3                                                                            [~/src/github.com/aquasecurity/tunnel]
+$ tunnel image --sbom-sources rekor otms61/alpine:3.7.3                                                                            [~/src/github.com/khulnasoft/tunnel]
 2022-09-16T17:37:13.258+0900	INFO	Vulnerability scanning is enabled
 2022-09-16T17:37:13.258+0900	INFO	Secret scanning is enabled
 2022-09-16T17:37:13.258+0900	INFO	If your scanning is slow, please try '--scanners vuln' to disable secret scanning
@@ -80,7 +80,7 @@ Then [our attestation plugin][plugin-attest] allows you to store the SBOM attest
 ```bash
 $ wget https://github.com/sharkdp/bat/releases/download/v0.20.0/bat-v0.20.0-x86_64-apple-darwin.tar.gz
 $ tar xvf bat-v0.20.0-x86_64-apple-darwin.tar.gz
-$ tunnel plugin install github.com/aquasecurity/tunnel-plugin-attest
+$ tunnel plugin install github.com/khulnasoft/tunnel-plugin-attest
 $ tunnel attest --predicate ./bat.cdx --type cyclonedx ./bat-v0.20.0-x86_64-apple-darwin/bat
 ```
 
@@ -145,5 +145,5 @@ The `--sbom-sources rekor` flag slows down the scanning as it queries Rekor on t
 
 [rekor]: https://github.com/sigstore/rekor
 [sbom-attest]: sbom.md#keyless-signing
-[plugin-attest]: https://github.com/aquasecurity/tunnel-plugin-attest
+[plugin-attest]: https://github.com/khulnasoft/tunnel-plugin-attest
 [bat]: https://github.com/sharkdp/bat

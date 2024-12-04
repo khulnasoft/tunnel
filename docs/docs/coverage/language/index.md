@@ -53,7 +53,7 @@ On the other hand, when the target is a post-build artifact, like a container im
 
 The path of these files does not matter.
 
-Example: [Dockerfile](https://github.com/aquasecurity/tunnel-ci-test/blob/main/Dockerfile)
+Example: [Dockerfile](https://github.com/khulnasoft/tunnel-ci-test/blob/main/Dockerfile)
 
 [sbom]: ../../supply-chain/sbom.md
 [vuln]: ../../scanner/vulnerability.md

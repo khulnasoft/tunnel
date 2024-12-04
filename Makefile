@@ -26,7 +26,7 @@ lint: $(GOBIN)/golangci-lint
 
 .PHONY: lintfix
 lintfix: $(GOBIN)/golangci-lint
-	$(GOBIN)/golangci-lint run --fix
+	$(GOBIN)/golangci-lint run --fix --timeout 5m
 
 .PHONY: build
 build:

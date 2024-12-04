@@ -2,7 +2,7 @@
 
 - Here is the [Azure DevOps Pipelines Task for Tunnel][action]
 
-![tunnel-azure](https://github.com/aquasecurity/tunnel-azure-pipelines-task/blob/main/screenshot.png?raw=true)
+![tunnel-azure](https://github.com/khulnasoft/tunnel-azure-pipelines-task/blob/main/screenshot.png?raw=true)
 
 ### [Use ImageCleaner to clean up stale images on your Azure Kubernetes Service cluster][azure2]
 
@@ -16,8 +16,8 @@ This blog explains how to scan your Azure Container Registry-based container ima
 
 To set up the scanner, you'll need to enable Microsoft Defender for Containers and the CI/CD integration. When your CI/CD workflows push images to your registries, you can view registry scan results and a summary of CI/CD scan results.
 
-The findings of the CI/CD scans are an enrichment to the existing registry scan findings by Qualys. Defender for Cloud's CI/CD scanning is powered by Aqua Tunnel
+The findings of the CI/CD scans are an enrichment to the existing registry scan findings by Qualys. Defender for Cloud's CI/CD scanning is powered by KhulnaSoft Tunnel
 
-[action]: https://github.com/aquasecurity/tunnel-azure-pipelines-task
+[action]: https://github.com/khulnasoft/tunnel-azure-pipelines-task
 [azure]: https://docs.microsoft.com/en-us/azure/defender-for-cloud/defender-for-containers-cicd
 [azure2]: https://docs.microsoft.com/en-us/azure/aks/image-cleaner?tabs=azure-cli

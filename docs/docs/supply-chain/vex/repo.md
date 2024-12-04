@@ -12,7 +12,7 @@ While it's planned to be enabled by default in the future, currently it can be a
 $ tunnel image ghcr.io/khulnasoft/tunnel:0.52.0 --vex repo
 2024-07-20T11:22:58+04:00       INFO    [vex] The default repository config has been created
 file_path="/Users/teppei/.tunnel/vex/repository.yaml"
-2024-07-20T11:23:23+04:00       INFO    [vex] Updating repository...    repo="default" url="https://github.com/aquasecurity/vexhub"
+2024-07-20T11:23:23+04:00       INFO    [vex] Updating repository...    repo="default" url="https://github.com/khulnasoft/vexhub"
 ```
 
 During scanning, Tunnel generates PURLs for discovered packages and searches for matching PURLs in the VEX Repository.
@@ -32,7 +32,7 @@ The default configuration file looks like this:
 ```yaml
 repositories:
   - name: default
-    url: https://github.com/aquasecurity/vexhub
+    url: https://github.com/khulnasoft/vexhub
     enabled: true
     username: ""
     password: ""
@@ -51,7 +51,7 @@ $ tunnel vex repo list
 VEX Repositories (config: /home/username/.tunnel/vex/repository.yaml)
 
 - Name: default
-  URL: https://github.com/aquasecurity/vexhub
+  URL: https://github.com/khulnasoft/vexhub
   Status: Enabled
 ```
 
@@ -135,7 +135,7 @@ Suppressed Vulnerabilities (Total: 4)
 │    Library    │ Vulnerability  │ Severity │    Status    │                     Statement                     │                  Source                  │
 ├───────────────┼────────────────┼──────────┼──────────────┼───────────────────────────────────────────────────┼──────────────────────────────────────────┤
 │ busybox       │ CVE-2023-42364 │ MEDIUM   │ not_affected │ vulnerable_code_cannot_be_controlled_by_adversary │ VEX Repository: default                  │
-│               │                │          │              │                                                   │ (https://github.com/aquasecurity/vexhub) │
+│               │                │          │              │                                                   │ (https://github.com/khulnasoft/vexhub) │
 │               ├────────────────┤          │              │                                                   │                                          │
 │               │ CVE-2023-42365 │          │              │                                                   │                                          │
 │               │                │          │              │                                                   │                                          │
@@ -204,7 +204,7 @@ There are various use cases for providing custom repositories:
 
 In these cases, you can create a repository that complies with [the VEX Repository Specification][vex-repo] to make it available for use with Tunnel.
 
-[vex-repo]: https://github.com/aquasecurity/vex-repo-spec
-[vexhub]: https://github.com/aquasecurity/vexhub
+[vex-repo]: https://github.com/khulnasoft/vex-repo-spec
+[vexhub]: https://github.com/khulnasoft/vexhub
 [tunnel-vex]: https://github.com/khulnasoft/tunnel/blob/b76a7250912cfc028cfef743f0f98cd81b39f8aa/.vex/tunnel.openvex.json
 [purl]: https://github.com/package-url/purl-spec

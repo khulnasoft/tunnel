@@ -179,7 +179,7 @@ func newURL(rawurl string) (*url.URL, error) {
 		return nil, xerrors.Errorf("url parse error: %w", err)
 	}
 	// "https://" can be omitted
-	// e.g. github.com/aquasecurity/tunnel
+	// e.g. github.com/khulnasoft/tunnel
 	if u.Scheme == "" {
 		u.Scheme = "https"
 	}
@@ -193,7 +193,7 @@ func gitAuth() *http.BasicAuth {
 	var auth *http.BasicAuth
 
 	// The username can be anything for HTTPS Git operations
-	gitUsername := "fanal-aquasecurity-scan"
+	gitUsername := "fanal-khulnasoft-scan"
 
 	// We first check if a GitHub token was provided
 	githubToken := os.Getenv("GITHUB_TOKEN")

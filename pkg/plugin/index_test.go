@@ -50,9 +50,9 @@ func TestManager_Search(t *testing.T) {
 			keyword: "",
 			dir:     "testdata",
 			want: `NAME                 DESCRIPTION                                                  MAINTAINER           OUTPUT
-foo                  A foo plugin                                                 aquasecurity           ✓
-bar                  A bar plugin                                                 aquasecurity         
-test_plugin          A test plugin                                                aquasecurity         
+foo                  A foo plugin                                                 khulnasoft           ✓
+bar                  A bar plugin                                                 khulnasoft         
+test_plugin          A test plugin                                                khulnasoft         
 `,
 		},
 		{
@@ -60,7 +60,7 @@ test_plugin          A test plugin                                              
 			keyword: "bar",
 			dir:     "testdata",
 			want: `NAME                 DESCRIPTION                                                  MAINTAINER           OUTPUT
-bar                  A bar plugin                                                 aquasecurity         
+bar                  A bar plugin                                                 khulnasoft         
 `,
 		},
 		{

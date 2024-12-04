@@ -3,7 +3,7 @@
         {
             "SchemaVersion": "2018-10-08",
             "Id": "testdata/fixtures/images/alpine-310.tar.gz (alpine 3.10.2)/CVE-2019-1549",
-            "ProductArn": "arn:aws:securityhub:test-region::product/aquasecurity/aquasecurity",
+            "ProductArn": "arn:aws:securityhub:test-region::product/khulnasoft/khulnasoft",
             "GeneratorId": "Tunnel/CVE-2019-1549",
             "AwsAccountId": "123456789012",
             "Types": [ "Software and Configuration Checks/Vulnerabilities/CVE" ],
@@ -48,7 +48,7 @@
         {
             "SchemaVersion": "2018-10-08",
             "Id": "testdata/fixtures/images/alpine-310.tar.gz (alpine 3.10.2)/CVE-2019-1551",
-            "ProductArn": "arn:aws:securityhub:test-region::product/aquasecurity/aquasecurity",
+            "ProductArn": "arn:aws:securityhub:test-region::product/khulnasoft/khulnasoft",
             "GeneratorId": "Tunnel/CVE-2019-1551",
             "AwsAccountId": "123456789012",
             "Types": [ "Software and Configuration Checks/Vulnerabilities/CVE" ],
@@ -93,7 +93,7 @@
         {
             "SchemaVersion": "2018-10-08",
             "Id": "testdata/fixtures/images/alpine-310.tar.gz (alpine 3.10.2)/CVE-2019-1549",
-            "ProductArn": "arn:aws:securityhub:test-region::product/aquasecurity/aquasecurity",
+            "ProductArn": "arn:aws:securityhub:test-region::product/khulnasoft/khulnasoft",
             "GeneratorId": "Tunnel/CVE-2019-1549",
             "AwsAccountId": "123456789012",
             "Types": [ "Software and Configuration Checks/Vulnerabilities/CVE" ],
@@ -138,7 +138,7 @@
         {
             "SchemaVersion": "2018-10-08",
             "Id": "testdata/fixtures/images/alpine-310.tar.gz (alpine 3.10.2)/CVE-2019-1551",
-            "ProductArn": "arn:aws:securityhub:test-region::product/aquasecurity/aquasecurity",
+            "ProductArn": "arn:aws:securityhub:test-region::product/khulnasoft/khulnasoft",
             "GeneratorId": "Tunnel/CVE-2019-1551",
             "AwsAccountId": "123456789012",
             "Types": [ "Software and Configuration Checks/Vulnerabilities/CVE" ],

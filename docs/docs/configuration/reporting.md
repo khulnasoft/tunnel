@@ -449,7 +449,7 @@ $ tunnel convert --format table --severity CRITICAL result.json
 JSON reports from "tunnel k8s" are not yet supported.
 
 [cargo-auditable]: https://github.com/rust-secure-code/cargo-auditable/
-[action]: https://github.com/aquasecurity/tunnel-action
+[action]: https://github.com/khulnasoft/tunnel-action
 [asff]: ../../tutorials/integrations/aws-security-hub.md
 [sarif-home]: https://sarifweb.azurewebsites.net
 [sarif-spec]: https://docs.oasis-open.org/sarif/sarif/v2.1.0/sarif-v2.1.0.html

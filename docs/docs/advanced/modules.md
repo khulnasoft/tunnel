@@ -134,7 +134,7 @@ See [examples](#examples) for the detail.
 Replace the repository name with yours.
 
 ```
-$ go mod init github.com/aquasecurity/tunnel-module-wordpress
+$ go mod init github.com/khulnasoft/tunnel-module-wordpress
 ```
 
 #### Module interface
@@ -362,6 +362,6 @@ Digest: sha256:6416d0199d66ce52ced19f01d75454b22692ff3aa7737e45f7a189880840424f
 [spring4shell]: https://blog.khulnasoft.com/zero-day-rce-vulnerability-spring4shell
 [wazero]: https://github.com/tetratelabs/wazero
 [tunnel-module-spring4shell]: https://github.com/khulnasoft/tunnel/tree/main/examples/module/spring4shell
-[tunnel-module-wordpress]: https://github.com/aquasecurity/tunnel-module-wordpress
+[tunnel-module-wordpress]: https://github.com/khulnasoft/tunnel-module-wordpress
 [tinygo-installation]: https://tinygo.org/getting-started/install/
 [oras]: https://oras.land/cli/

@@ -4,7 +4,7 @@
 
 [Visual Studio Code](https://code.visualstudio.com/) is an open source versatile code editor and development environment.
 
-👉 Get it at: <https://github.com/aquasecurity/tunnel-vscode-extension>
+👉 Get it at: <https://github.com/khulnasoft/tunnel-vscode-extension>
 
 ## JetBrains (Official)
 
@@ -20,7 +20,7 @@ The Tunnel plugin for JetBrains IDEs lets you use Tunnel right from your develop
 
 Tunnel has an extension for Kubernetes Lens that lets you scan Kubernetes workloads and view the results in the Lens UI.
 
-👉 Get it at: <https://github.com/aquasecurity/tunnel-operator-lens-extension>
+👉 Get it at: <https://github.com/khulnasoft/tunnel-operator-lens-extension>
 
 ## Vim (Community)
 
@@ -28,7 +28,7 @@ Tunnel has an extension for Kubernetes Lens that lets you scan Kubernetes worklo
 
 Vim plugin for Tunnel to install and run Tunnel.
 
-👉 Get it at: <https://github.com/aquasecurity/vim-tunnel>
+👉 Get it at: <https://github.com/khulnasoft/vim-tunnel>
 
 ## Docker Desktop (Community)
 
@@ -36,7 +36,7 @@ Vim plugin for Tunnel to install and run Tunnel.
 
 Tunnel Docker Desktop extension for scanning container images for vulnerabilities and generating SBOMs
 
-👉 Get it at: <https://github.com/aquasecurity/tunnel-docker-extension>
+👉 Get it at: <https://github.com/khulnasoft/tunnel-docker-extension>
 
 ## Rancher Desktop (Community)
 

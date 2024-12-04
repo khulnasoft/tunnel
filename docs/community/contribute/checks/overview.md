@@ -124,4 +124,4 @@ All Rego checks need to have tests. There are many examples of these in the `che
 
 ## Example PR
 
-You can see a full example PR for a new rule being added here: [https://github.com/aquasecurity/defsec/pull/1000](https://github.com/aquasecurity/defsec/pull/1000).
+You can see a full example PR for a new rule being added here: [https://github.com/khulnasoft/defsec/pull/1000](https://github.com/khulnasoft/defsec/pull/1000).

@@ -17,7 +17,7 @@ The Product [ARN][arn] field follows the pattern below to match what AWS require
 {% raw %}
 
 ```
-"ProductArn": "arn:aws:securityhub:{{ env "AWS_REGION" }}::product/aquasecurity/aquasecurity",
+"ProductArn": "arn:aws:securityhub:{{ env "AWS_REGION" }}::product/khulnasoft/khulnasoft",
 ```
 
 {% endraw %}
@@ -25,7 +25,7 @@ The Product [ARN][arn] field follows the pattern below to match what AWS require
 In order to upload results you must first run [enable-import-findings-for-product][enable] like:
 
 ```
-aws securityhub enable-import-findings-for-product --product-arn arn:aws:securityhub:<AWS_REGION>::product/aquasecurity/aquasecurity
+aws securityhub enable-import-findings-for-product --product-arn arn:aws:securityhub:<AWS_REGION>::product/khulnasoft/khulnasoft
 ```
 
 The findings are [formatted for the API][asff-syntax] with a key of `Findings` and a value of the array of findings.
@@ -68,7 +68,7 @@ $ tunnel image --format template --template "@your-asff.tpl" -o report.asff gola
 [asff]: https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html
 [asff-syntax]: https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-syntax.html
 [arn]: https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html
-[resource-type]: https://github.com/awsdocs/aws-security-hub-user-guide/blob/master/doc_source/securityhub-partner-providers.md#aqua-security--aqua-cloud-native-security-platform-sends-findings
+[resource-type]: https://github.com/awsdocs/aws-security-hub-user-guide/blob/master/doc_source/securityhub-partner-providers.md#khulnasoft-security--khulnasoft-cloud-native-security-platform-sends-findings
 [enable]: https://docs.aws.amazon.com/cli/latest/reference/securityhub/enable-import-findings-for-product.html
 [batch-import-findings]: https://docs.aws.amazon.com/cli/latest/reference/securityhub/batch-import-findings.html#options
 [asff.tpl]: https://github.com/khulnasoft/tunnel/blob/main/contrib/asff.tpl

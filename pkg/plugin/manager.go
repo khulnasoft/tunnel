@@ -121,7 +121,7 @@ func (m *Manager) install(ctx context.Context, src string, opts Options) (Plugin
 		return Plugin{}, xerrors.Errorf("failed to read %s: %w", tempDir, err)
 	} else if len(entries) == 1 && entries[0].IsDir() {
 		//　A single directory may be contained within an archive file.
-		// e.g. https://github.com/aquasecurity/tunnel-plugin-referrer/archive/refs/heads/main.zip
+		// e.g. https://github.com/khulnasoft/tunnel-plugin-referrer/archive/refs/heads/main.zip
 		tempDir = filepath.Join(tempDir, entries[0].Name())
 	}
 

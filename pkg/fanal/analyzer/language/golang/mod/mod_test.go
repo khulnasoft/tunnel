@@ -37,7 +37,7 @@ func Test_gomodAnalyzer_Analyze(t *testing.T) {
 								Name:         "github.com/org/repo",
 								Relationship: types.RelationshipRoot,
 								DependsOn: []string{
-									"github.com/aquasecurity/go-dep-parser@v0.0.0-20220406074731-71021a481237",
+									"github.com/khulnasoft/go-dep-parser@v0.0.0-20220406074731-71021a481237",
 								},
 								ExternalReferences: []types.ExternalRef{
 									{
@@ -47,15 +47,15 @@ func Test_gomodAnalyzer_Analyze(t *testing.T) {
 								},
 							},
 							{
-								ID:           "github.com/aquasecurity/go-dep-parser@v0.0.0-20220406074731-71021a481237",
-								Name:         "github.com/aquasecurity/go-dep-parser",
+								ID:           "github.com/khulnasoft/go-dep-parser@v0.0.0-20220406074731-71021a481237",
+								Name:         "github.com/khulnasoft/go-dep-parser",
 								Version:      "v0.0.0-20220406074731-71021a481237",
 								Relationship: types.RelationshipDirect,
 								Licenses:     []string{"MIT"},
 								ExternalReferences: []types.ExternalRef{
 									{
 										Type: types.RefVCS,
-										URL:  "https://github.com/aquasecurity/go-dep-parser",
+										URL:  "https://github.com/khulnasoft/go-dep-parser",
 									},
 								},
 								DependsOn: []string{
@@ -132,7 +132,7 @@ func Test_gomodAnalyzer_Analyze(t *testing.T) {
 								Name:         "github.com/org/repo",
 								Relationship: types.RelationshipRoot,
 								DependsOn: []string{
-									"github.com/aquasecurity/go-dep-parser@v1.0.0",
+									"github.com/khulnasoft/go-dep-parser@v1.0.0",
 									"github.com/aquasecurity/go-version@v1.0.1",
 									"golang.org/x/xerrors@v0.0.0-20200804184101-5ec99f83aff1", // No parent found, so it's added here.
 								},
@@ -144,14 +144,14 @@ func Test_gomodAnalyzer_Analyze(t *testing.T) {
 								},
 							},
 							{
-								ID:           "github.com/aquasecurity/go-dep-parser@v1.0.0",
-								Name:         "github.com/aquasecurity/go-dep-parser",
+								ID:           "github.com/khulnasoft/go-dep-parser@v1.0.0",
+								Name:         "github.com/khulnasoft/go-dep-parser",
 								Version:      "v1.0.0",
 								Relationship: types.RelationshipDirect,
 								ExternalReferences: []types.ExternalRef{
 									{
 										Type: types.RefVCS,
-										URL:  "https://github.com/aquasecurity/go-dep-parser",
+										URL:  "https://github.com/khulnasoft/go-dep-parser",
 									},
 								},
 							},
@@ -196,7 +196,7 @@ func Test_gomodAnalyzer_Analyze(t *testing.T) {
 								Name:         "github.com/org/repo",
 								Relationship: types.RelationshipRoot,
 								DependsOn: []string{
-									"github.com/aquasecurity/go-dep-parser@v0.0.0-20230219131432-590b1dfb6edd",
+									"github.com/khulnasoft/go-dep-parser@v0.0.0-20230219131432-590b1dfb6edd",
 								},
 								ExternalReferences: []types.ExternalRef{
 									{
@@ -206,8 +206,8 @@ func Test_gomodAnalyzer_Analyze(t *testing.T) {
 								},
 							},
 							{
-								ID:           "github.com/aquasecurity/go-dep-parser@v0.0.0-20230219131432-590b1dfb6edd",
-								Name:         "github.com/aquasecurity/go-dep-parser",
+								ID:           "github.com/khulnasoft/go-dep-parser@v0.0.0-20230219131432-590b1dfb6edd",
+								Name:         "github.com/khulnasoft/go-dep-parser",
 								Version:      "v0.0.0-20230219131432-590b1dfb6edd",
 								Relationship: types.RelationshipDirect,
 								DependsOn: []string{
@@ -216,7 +216,7 @@ func Test_gomodAnalyzer_Analyze(t *testing.T) {
 								ExternalReferences: []types.ExternalRef{
 									{
 										Type: types.RefVCS,
-										URL:  "https://github.com/aquasecurity/go-dep-parser",
+										URL:  "https://github.com/khulnasoft/go-dep-parser",
 									},
 								},
 							},
@@ -251,7 +251,7 @@ func Test_gomodAnalyzer_Analyze(t *testing.T) {
 								Name:         "github.com/org/repo",
 								Relationship: types.RelationshipRoot,
 								DependsOn: []string{
-									"github.com/aquasecurity/go-dep-parser@v0.0.0-20230219131432-590b1dfb6edd",
+									"github.com/khulnasoft/go-dep-parser@v0.0.0-20230219131432-590b1dfb6edd",
 								},
 								ExternalReferences: []types.ExternalRef{
 									{
@@ -261,15 +261,15 @@ func Test_gomodAnalyzer_Analyze(t *testing.T) {
 								},
 							},
 							{
-								ID:           "github.com/aquasecurity/go-dep-parser@v0.0.0-20230219131432-590b1dfb6edd",
-								Name:         "github.com/aquasecurity/go-dep-parser",
+								ID:           "github.com/khulnasoft/go-dep-parser@v0.0.0-20230219131432-590b1dfb6edd",
+								Name:         "github.com/khulnasoft/go-dep-parser",
 								Version:      "v0.0.0-20230219131432-590b1dfb6edd",
 								Relationship: types.RelationshipDirect,
 								DependsOn:    []string{},
 								ExternalReferences: []types.ExternalRef{
 									{
 										Type: types.RefVCS,
-										URL:  "https://github.com/aquasecurity/go-dep-parser",
+										URL:  "https://github.com/khulnasoft/go-dep-parser",
 									},
 								},
 							},

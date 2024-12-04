@@ -258,22 +258,22 @@ Specify your image name in containerd running locally.
 ```bash
 $ nerdctl images
 REPOSITORY        TAG       IMAGE ID        CREATED         PLATFORM       SIZE         BLOB SIZE
-aquasec/nginx    latest    2bcabc23b454    3 hours ago     linux/amd64    149.1 MiB    54.1 MiB
-$ tunnel image aquasec/nginx
+khulnasoft/nginx    latest    2bcabc23b454    3 hours ago     linux/amd64    149.1 MiB    54.1 MiB
+$ tunnel image khulnasoft/nginx
 ```
 
 If your containerd socket is not the default path (`//run/containerd/containerd.sock`), you can override it via `CONTAINERD_ADDRESS`.
 
 ```bash
 $ export CONTAINERD_ADDRESS=/run/k3s/containerd/containerd.sock
-$ tunnel image aquasec/nginx
+$ tunnel image khulnasoft/nginx
 ```
 
 If your scan targets are images in a namespace other than containerd's default namespace (`default`), you can override it via `CONTAINERD_NAMESPACE`.
 
 ```bash
 $ export CONTAINERD_NAMESPACE=k8s.io
-$ tunnel image aquasec/nginx
+$ tunnel image khulnasoft/nginx
 ```
 
 ### Podman

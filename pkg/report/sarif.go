@@ -130,7 +130,7 @@ func (sw *SarifWriter) Write(ctx context.Context, report types.Report) error {
 	if err != nil {
 		return xerrors.Errorf("error creating a new sarif template: %w", err)
 	}
-	sw.run = sarif.NewRunWithInformationURI("Tunnel", "https://github.com/aquasecurity/tunnel")
+	sw.run = sarif.NewRunWithInformationURI("Tunnel", "https://github.com/khulnasoft/tunnel")
 	sw.run.Tool.Driver.WithVersion(sw.Version)
 	sw.run.Tool.Driver.WithFullName("Tunnel Vulnerability Scanner")
 	sw.locationCache = make(map[string][]location)
@@ -279,7 +279,7 @@ func toSarifLocations(locations []location, artifactLocation, locationMessage st
 	}
 
 	// some dependencies can be placed in multiple places.
-	// e.g.https://github.com/aquasecurity/go-dep-parser/pull/134#discussion_r985353240
+	// e.g.https://github.com/khulnasoft/go-dep-parser/pull/134#discussion_r985353240
 	// create locations for each place.
 
 	for _, l := range locations {

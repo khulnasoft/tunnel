@@ -16,9 +16,9 @@ To list all plugins available, run:
 ```bash
 $ tunnel plugin search
 NAME                 DESCRIPTION                                                  MAINTAINER           OUTPUT
-aqua                 A plugin for integration with KhulnaSoft Security SaaS platform    aquasecurity
-kubectl              A plugin scanning the images of a kubernetes resource        aquasecurity
-referrer             A plugin for OCI referrers                                   aquasecurity           ✓
+khulnasoft                 A plugin for integration with KhulnaSoft Security SaaS platform    khulnasoft
+kubectl              A plugin scanning the images of a kubernetes resource        khulnasoft
+referrer             A plugin for OCI referrers                                   khulnasoft           ✓
 ```
 
 You can specify search keywords as arguments:
@@ -27,7 +27,7 @@ You can specify search keywords as arguments:
 $ tunnel plugin search referrer
 
 NAME                 DESCRIPTION                                                  MAINTAINER           OUTPUT
-referrer             A plugin for OCI referrers                                   aquasecurity           ✓
+referrer             A plugin for OCI referrers                                   khulnasoft           ✓
 ```
 
 It lists plugins with the keyword in the name or description.
@@ -52,11 +52,11 @@ The preference order is as follows:
 Furthermore, it is possible to download plugins that are not registered in the index by specifying the URL directly or by specifying the file path.
 
 ```bash
-$ tunnel plugin install github.com/aquasecurity/tunnel-plugin-kubectl
+$ tunnel plugin install github.com/khulnasoft/tunnel-plugin-kubectl
 ```
 
 ```bash
-$ tunnel plugin install https://github.com/aquasecurity/tunnel-plugin-kubectl/archive/refs/heads/main.zip
+$ tunnel plugin install https://github.com/khulnasoft/tunnel-plugin-kubectl/archive/refs/heads/main.zip
 ```
 
 ```bash
@@ -182,9 +182,9 @@ You can determine whether a plugin supports the output mode by checking the `OUT
 ```bash
 $ tunnel plugin search
 NAME                 DESCRIPTION                                                  MAINTAINER           OUTPUT
-aqua                 A plugin for integration with KhulnaSoft Security SaaS platform    aquasecurity
-kubectl              A plugin scanning the images of a kubernetes resource        aquasecurity
-referrer             A plugin for OCI referrers                                   aquasecurity           ✓
+khulnasoft                 A plugin for integration with KhulnaSoft Security SaaS platform    khulnasoft
+kubectl              A plugin scanning the images of a kubernetes resource        khulnasoft
+referrer             A plugin for OCI referrers                                   khulnasoft           ✓
 ```
 
 In this case, the `referrer` plugin supports the output mode.
@@ -224,5 +224,5 @@ $ tunnel image --format json --output plugin=count --output-plugin-arg "--publis
 
 [tunnel-plugin-index]: https://khulnasoft.github.io/tunnel-plugin-index/
 [go-getter]: https://github.com/hashicorp/go-getter
-[tunnel-plugin-kubectl]: https://github.com/aquasecurity/tunnel-plugin-kubectl
-[tunnel-plugin-count]: https://github.com/aquasecurity/tunnel-plugin-count
+[tunnel-plugin-kubectl]: https://github.com/khulnasoft/tunnel-plugin-kubectl
+[tunnel-plugin-count]: https://github.com/khulnasoft/tunnel-plugin-count

@@ -101,7 +101,7 @@ func TestReportWriter_Sarif(t *testing.T) {
 								FullName:       lo.ToPtr("Tunnel Vulnerability Scanner"),
 								Name:           "Tunnel",
 								Version:        lo.ToPtr(""),
-								InformationURI: lo.ToPtr("https://github.com/aquasecurity/tunnel"),
+								InformationURI: lo.ToPtr("https://github.com/khulnasoft/tunnel"),
 								Rules: []*sarif.ReportingDescriptor{
 									{
 										ID:               "CVE-2020-0001",
@@ -227,7 +227,7 @@ func TestReportWriter_Sarif(t *testing.T) {
 								FullName:       lo.ToPtr("Tunnel Vulnerability Scanner"),
 								Name:           "Tunnel",
 								Version:        lo.ToPtr(""),
-								InformationURI: lo.ToPtr("https://github.com/aquasecurity/tunnel"),
+								InformationURI: lo.ToPtr("https://github.com/khulnasoft/tunnel"),
 								Rules: []*sarif.ReportingDescriptor{
 									{
 										ID:               "KSV001",
@@ -367,7 +367,7 @@ func TestReportWriter_Sarif(t *testing.T) {
 								FullName:       lo.ToPtr("Tunnel Vulnerability Scanner"),
 								Name:           "Tunnel",
 								Version:        lo.ToPtr(""),
-								InformationURI: lo.ToPtr("https://github.com/aquasecurity/tunnel"),
+								InformationURI: lo.ToPtr("https://github.com/khulnasoft/tunnel"),
 								Rules: []*sarif.ReportingDescriptor{
 									{
 										ID:               "aws-secret-access-key",
@@ -461,7 +461,7 @@ func TestReportWriter_Sarif(t *testing.T) {
 								FullName:       lo.ToPtr("Tunnel Vulnerability Scanner"),
 								Name:           "Tunnel",
 								Version:        lo.ToPtr(""),
-								InformationURI: lo.ToPtr("https://github.com/aquasecurity/tunnel"),
+								InformationURI: lo.ToPtr("https://github.com/khulnasoft/tunnel"),
 								Rules: []*sarif.ReportingDescriptor{
 									{
 										ID:                   "alpine-base:GPL-3.0",
@@ -531,7 +531,7 @@ func TestReportWriter_Sarif(t *testing.T) {
 								FullName:       lo.ToPtr("Tunnel Vulnerability Scanner"),
 								Name:           "Tunnel",
 								Version:        lo.ToPtr(""),
-								InformationURI: lo.ToPtr("https://github.com/aquasecurity/tunnel"),
+								InformationURI: lo.ToPtr("https://github.com/khulnasoft/tunnel"),
 								Rules:          []*sarif.ReportingDescriptor{},
 							},
 						},
@@ -638,7 +638,7 @@ func TestReportWriter_Sarif(t *testing.T) {
 								FullName:       lo.ToPtr("Tunnel Vulnerability Scanner"),
 								Name:           "Tunnel",
 								Version:        lo.ToPtr(""),
-								InformationURI: lo.ToPtr("https://github.com/aquasecurity/tunnel"),
+								InformationURI: lo.ToPtr("https://github.com/khulnasoft/tunnel"),
 								Rules: []*sarif.ReportingDescriptor{
 									{
 										ID:               "AVD-GCP-0007",

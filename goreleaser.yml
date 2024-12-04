@@ -80,7 +80,7 @@ nfpms:
       - deb
       - rpm
     vendor: "khulnasoft"
-    homepage: "https://github.com/aquasecurity"
+    homepage: "https://github.com/khulnasoft"
     maintainer: "Teppei Fukuda <knqyf263@gmail.com>"
     description: "A Fast Vulnerability Scanner for Containers"
     license: "Apache-2.0"
@@ -133,9 +133,9 @@ archives:
 
 brews:
   - repository:
-      owner: aquasecurity
+      owner: khulnasoft
       name: homebrew-tunnel
-    homepage: "https://github.com/aquasecurity/tunnel"
+    homepage: "https://github.com/khulnasoft/tunnel"
     description: "Scanner for vulnerabilities in container images, file systems, and Git repositories, as well as for configuration issues"
     test: |
       system "#{bin}/tunnel", "--version"
@@ -159,7 +159,7 @@ dockers:
       - "--label=org.opencontainers.image.vendor=KhulnaSoft Security"
       - "--label=org.opencontainers.image.version={{ .Version }}"
       - "--label=org.opencontainers.image.created={{ .Date }}"
-      - "--label=org.opencontainers.image.source=https://github.com/aquasecurity/tunnel"
+      - "--label=org.opencontainers.image.source=https://github.com/khulnasoft/tunnel"
       - "--label=org.opencontainers.image.revision={{ .FullCommit }}"
       - "--label=org.opencontainers.image.url=https://www.khulnasoft.com/products/tunnel/"
       - "--label=org.opencontainers.image.documentation=https://khulnasoft.github.io/tunnel/v{{ .Version }}/"
@@ -184,7 +184,7 @@ dockers:
       - "--label=org.opencontainers.image.vendor=KhulnaSoft Security"
       - "--label=org.opencontainers.image.version={{ .Version }}"
       - "--label=org.opencontainers.image.created={{ .Date }}"
-      - "--label=org.opencontainers.image.source=https://github.com/aquasecurity/tunnel"
+      - "--label=org.opencontainers.image.source=https://github.com/khulnasoft/tunnel"
       - "--label=org.opencontainers.image.revision={{ .FullCommit }}"
       - "--label=org.opencontainers.image.url=https://www.khulnasoft.com/products/tunnel/"
       - "--label=org.opencontainers.image.documentation=https://khulnasoft.github.io/tunnel/v{{ .Version }}/"
@@ -209,7 +209,7 @@ dockers:
       - "--label=org.opencontainers.image.vendor=KhulnaSoft Security"
       - "--label=org.opencontainers.image.version={{ .Version }}"
       - "--label=org.opencontainers.image.created={{ .Date }}"
-      - "--label=org.opencontainers.image.source=https://github.com/aquasecurity/tunnel"
+      - "--label=org.opencontainers.image.source=https://github.com/khulnasoft/tunnel"
       - "--label=org.opencontainers.image.revision={{ .FullCommit }}"
       - "--label=org.opencontainers.image.url=https://www.khulnasoft.com/products/tunnel/"
       - "--label=org.opencontainers.image.documentation=https://khulnasoft.github.io/tunnel/v{{ .Version }}/"
@@ -234,7 +234,7 @@ dockers:
       - "--label=org.opencontainers.image.vendor=KhulnaSoft Security"
       - "--label=org.opencontainers.image.version={{ .Version }}"
       - "--label=org.opencontainers.image.created={{ .Date }}"
-      - "--label=org.opencontainers.image.source=https://github.com/aquasecurity/tunnel"
+      - "--label=org.opencontainers.image.source=https://github.com/khulnasoft/tunnel"
       - "--label=org.opencontainers.image.revision={{ .FullCommit }}"
       - "--label=org.opencontainers.image.url=https://www.khulnasoft.com/products/tunnel/"
       - "--label=org.opencontainers.image.documentation=https://khulnasoft.github.io/tunnel/v{{ .Version }}/"

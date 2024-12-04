@@ -29,7 +29,7 @@ Tunnel's databases are published to the following locations:
 | Docker Hub | `khulnasoft/tunnel-db`                      | <https://hub.docker.com/r/khulnasoft/tunnel-db>      |
 |            | `khulnasoft/tunnel-java-db`                 | <https://hub.docker.com/r/khulnasoft/tunnel-java-db> |
 |            | `khulnasoft/tunnel-checks`                  | <https://hub.docker.com/r/khulnasoft/tunnel-checks>  |
-| AWS ECR    | `public.ecr.aws/aquasecurity/tunnel-db`     | <https://gallery.ecr.aws/aquasecurity/tunnel-db>     |
+| AWS ECR    | `public.ecr.aws/khulnasoft/tunnel-db`       | <https://gallery.ecr.aws/khulnasoft/tunnel-db>       |
 |            | `public.ecr.aws/aquasecurity/trivy-java-db` | <https://gallery.ecr.aws/aquasecurity/trivy-java-db> |
 |            | `public.ecr.aws/aquasecurity/trivy-checks`  | <https://gallery.ecr.aws/aquasecurity/trivy-checks>  |
 

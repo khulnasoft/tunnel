@@ -10,7 +10,7 @@
       "components": [
         {
           "type": "application",
-          "group": "aquasecurity",
+          "group": "khulnasoft",
           "name": "tunnel",
           "version": "dev"
         }
@@ -22,7 +22,7 @@
       "name": "testdata/fixtures/repo/npm",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:SchemaVersion",
+          "name": "khulnasoft:tunnel:SchemaVersion",
           "value": "2"
         }
       ]
@@ -35,11 +35,11 @@
       "name": "package-lock.json",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:Class",
+          "name": "khulnasoft:tunnel:Class",
           "value": "lang-pkgs"
         },
         {
-          "name": "aquasecurity:tunnel:Type",
+          "name": "khulnasoft:tunnel:Type",
           "value": "npm"
         }
       ]
@@ -52,11 +52,11 @@
       "purl": "pkg:npm/asap@2.0.6",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:PkgID",
+          "name": "khulnasoft:tunnel:PkgID",
           "value": "asap@2.0.6"
         },
         {
-          "name": "aquasecurity:tunnel:PkgType",
+          "name": "khulnasoft:tunnel:PkgType",
           "value": "npm"
         }
       ]
@@ -76,11 +76,11 @@
       "purl": "pkg:npm/jquery@3.3.9",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:PkgID",
+          "name": "khulnasoft:tunnel:PkgID",
           "value": "jquery@3.3.9"
         },
         {
-          "name": "aquasecurity:tunnel:PkgType",
+          "name": "khulnasoft:tunnel:PkgType",
           "value": "npm"
         }
       ]
@@ -93,11 +93,11 @@
       "purl": "pkg:npm/js-tokens@4.0.0",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:PkgID",
+          "name": "khulnasoft:tunnel:PkgID",
           "value": "js-tokens@4.0.0"
         },
         {
-          "name": "aquasecurity:tunnel:PkgType",
+          "name": "khulnasoft:tunnel:PkgType",
           "value": "npm"
         }
       ]
@@ -110,11 +110,11 @@
       "purl": "pkg:npm/loose-envify@1.4.0",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:PkgID",
+          "name": "khulnasoft:tunnel:PkgID",
           "value": "loose-envify@1.4.0"
         },
         {
-          "name": "aquasecurity:tunnel:PkgType",
+          "name": "khulnasoft:tunnel:PkgType",
           "value": "npm"
         }
       ]
@@ -127,11 +127,11 @@
       "purl": "pkg:npm/object-assign@4.1.1",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:PkgID",
+          "name": "khulnasoft:tunnel:PkgID",
           "value": "object-assign@4.1.1"
         },
         {
-          "name": "aquasecurity:tunnel:PkgType",
+          "name": "khulnasoft:tunnel:PkgType",
           "value": "npm"
         }
       ]
@@ -151,11 +151,11 @@
       "purl": "pkg:npm/promise@8.0.3",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:PkgID",
+          "name": "khulnasoft:tunnel:PkgID",
           "value": "promise@8.0.3"
         },
         {
-          "name": "aquasecurity:tunnel:PkgType",
+          "name": "khulnasoft:tunnel:PkgType",
           "value": "npm"
         }
       ]
@@ -168,11 +168,11 @@
       "purl": "pkg:npm/prop-types@15.7.2",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:PkgID",
+          "name": "khulnasoft:tunnel:PkgID",
           "value": "prop-types@15.7.2"
         },
         {
-          "name": "aquasecurity:tunnel:PkgType",
+          "name": "khulnasoft:tunnel:PkgType",
           "value": "npm"
         }
       ]
@@ -192,11 +192,11 @@
       "purl": "pkg:npm/react-is@16.8.6",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:PkgID",
+          "name": "khulnasoft:tunnel:PkgID",
           "value": "react-is@16.8.6"
         },
         {
-          "name": "aquasecurity:tunnel:PkgType",
+          "name": "khulnasoft:tunnel:PkgType",
           "value": "npm"
         }
       ]
@@ -216,11 +216,11 @@
       "purl": "pkg:npm/react@16.8.6",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:PkgID",
+          "name": "khulnasoft:tunnel:PkgID",
           "value": "react@16.8.6"
         },
         {
-          "name": "aquasecurity:tunnel:PkgType",
+          "name": "khulnasoft:tunnel:PkgType",
           "value": "npm"
         }
       ]
@@ -240,11 +240,11 @@
       "purl": "pkg:npm/redux@4.0.1",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:PkgID",
+          "name": "khulnasoft:tunnel:PkgID",
           "value": "redux@4.0.1"
         },
         {
-          "name": "aquasecurity:tunnel:PkgType",
+          "name": "khulnasoft:tunnel:PkgType",
           "value": "npm"
         }
       ]
@@ -257,11 +257,11 @@
       "purl": "pkg:npm/scheduler@0.13.6",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:PkgID",
+          "name": "khulnasoft:tunnel:PkgID",
           "value": "scheduler@0.13.6"
         },
         {
-          "name": "aquasecurity:tunnel:PkgType",
+          "name": "khulnasoft:tunnel:PkgType",
           "value": "npm"
         }
       ]
@@ -274,11 +274,11 @@
       "purl": "pkg:npm/symbol-observable@1.2.0",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:PkgID",
+          "name": "khulnasoft:tunnel:PkgID",
           "value": "symbol-observable@1.2.0"
         },
         {
-          "name": "aquasecurity:tunnel:PkgType",
+          "name": "khulnasoft:tunnel:PkgType",
           "value": "npm"
         }
       ]

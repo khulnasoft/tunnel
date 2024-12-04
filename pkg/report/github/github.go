@@ -81,7 +81,7 @@ func (w Writer) Write(ctx context.Context, report types.Report) error {
 	snapshot.Detector = Detector{
 		Name:    "tunnel",
 		Version: w.Version,
-		Url:     "https://github.com/aquasecurity/tunnel",
+		Url:     "https://github.com/khulnasoft/tunnel",
 	}
 	snapshot.Version = 0 // The version of the repository snapshot submission.
 
@@ -168,10 +168,10 @@ func (w Writer) Write(ctx context.Context, report types.Report) error {
 func getMetadata(report types.Report) Metadata {
 	metadata := Metadata{}
 	if report.Metadata.RepoTags != nil {
-		metadata["aquasecurity:tunnel:RepoTag"] = strings.Join(report.Metadata.RepoTags, ", ")
+		metadata["khulnasoft:tunnel:RepoTag"] = strings.Join(report.Metadata.RepoTags, ", ")
 	}
 	if report.Metadata.RepoDigests != nil {
-		metadata["aquasecurity:tunnel:RepoDigest"] = strings.Join(report.Metadata.RepoDigests, ", ")
+		metadata["khulnasoft:tunnel:RepoDigest"] = strings.Join(report.Metadata.RepoDigests, ", ")
 	}
 	return metadata
 }

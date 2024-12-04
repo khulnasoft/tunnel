@@ -6,7 +6,7 @@ set -e
 usage() {
   this=$1
   cat <<EOF
-$this: download go binaries for aquasecurity/tunnel
+$this: download go binaries for khulnasoft/tunnel
 
 Usage: $this [-b] bindir [-d] [tag]
   -b sets bindir or installation directory, Defaults to ./bin
@@ -380,7 +380,7 @@ End of functions from https://github.com/client9/shlib
 EOF
 
 PROJECT_NAME="tunnel"
-OWNER=aquasecurity
+OWNER=khulnasoft
 REPO="tunnel"
 BINARY=tunnel
 FORMAT=tar.gz
