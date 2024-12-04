@@ -22,7 +22,7 @@ updates:
     schedule:
       interval: weekly
     ignore:
-      - dependency-name: "github.com/aquasecurity/tunnel-*" ## `tunnel-*` dependencies are updated manually
+      - dependency-name: "github.com/khulnasoft/tunnel-*" ## `tunnel-*` dependencies are updated manually
     groups:
       aws:
         patterns:
@@ -36,6 +36,6 @@ updates:
           - "github.com/testcontainers/*"
       common:
         exclude-patterns:
-          - "github.com/aquasecurity/tunnel-*"
+          - "github.com/khulnasoft/tunnel-*"
         patterns:
           - "*"

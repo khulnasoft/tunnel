@@ -6,7 +6,7 @@
 
 Tunnel has a "Azure Devops Pipelines Task" for Tunnel, that lets you easily introduce security scanning into your workflow, with an integrated Azure Devops UI.
 
-👉 Get it at: <https://github.com/aquasecurity/tunnel-azure-pipelines-task>
+👉 Get it at: <https://github.com/khulnasoft/tunnel-azure-pipelines-task>
 
 ## GitHub Actions
 
@@ -16,7 +16,7 @@ Tunnel has a "Azure Devops Pipelines Task" for Tunnel, that lets you easily intr
 
 GitHub Action for integrating Tunnel into your GitHub pipeline
 
-👉 Get it at: <https://github.com/aquasecurity/tunnel-action>
+👉 Get it at: <https://github.com/khulnasoft/tunnel-action>
 
 ### tunnel-action (Community)
 

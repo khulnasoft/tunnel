@@ -27,7 +27,7 @@ import (
 )
 
 const (
-	repoURL    = "https://github.com/aquasecurity/tunnel"
+	repoURL    = "https://github.com/khulnasoft/tunnel"
 	minVersion = "0.40.0"
 )
 
@@ -40,7 +40,7 @@ var (
 		// According to https://github.com/package-url/purl-spec/issues/63,
 		// It's probably better to leave namespace empty and put a module name into `name`.
 		Namespace: "",
-		Name:      "github.com/aquasecurity/tunnel",
+		Name:      "github.com/khulnasoft/tunnel",
 	}
 )
 

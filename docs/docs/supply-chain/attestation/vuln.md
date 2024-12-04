@@ -22,7 +22,7 @@ $ tunnel image --format cosign-vuln --output vuln.json alpine:3.10
     "builder.id": ""
   },
   "scanner": {
-    "uri": "pkg:github/aquasecurity/tunnel@v0.30.1-8-gf9cb8a28",
+    "uri": "pkg:github/khulnasoft/tunnel@v0.30.1-8-gf9cb8a28",
     "version": "v0.30.1-8-gf9cb8a28",
     "db": {
       "uri": "",

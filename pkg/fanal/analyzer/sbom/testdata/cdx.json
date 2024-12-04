@@ -9,7 +9,7 @@
       "components": [
         {
           "type": "application",
-          "group": "aquasecurity",
+          "group": "khulnasoft",
           "name": "tunnel",
           "version": "0.41.0-80-g1c03982fe"
         }
@@ -31,11 +31,11 @@
       "purl": "pkg:maven/co.elastic.apm/apm-agent@1.36.0",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:PkgType",
+          "name": "khulnasoft:tunnel:PkgType",
           "value": "jar"
         },
         {
-          "name": "aquasecurity:tunnel:FilePath",
+          "name": "khulnasoft:tunnel:FilePath",
           "value": "modules/apm/elastic-apm-agent-1.36.0.jar"
         }
       ]
@@ -48,11 +48,11 @@
       "purl": "pkg:maven/co.elastic.apm/apm-agent-cached-lookup-key@1.36.0",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:PkgType",
+          "name": "khulnasoft:tunnel:PkgType",
           "value": "jar"
         },
         {
-          "name": "aquasecurity:tunnel:FilePath",
+          "name": "khulnasoft:tunnel:FilePath",
           "value": "modules/apm/elastic-apm-agent-1.36.0.jar"
         }
       ]

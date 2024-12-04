@@ -79,7 +79,7 @@ func (e *Encoder) rootComponent(r types.Report) (*core.Component, error) {
 		})
 
 		// Save image labels as properties with `Labels:` prefix.
-		// e.g. `LABEL vendor="aquasecurity"` => `Labels:vendor` -> `aquasecurity`
+		// e.g. `LABEL vendor="khulnasoft"` => `Labels:vendor` -> `khulnasoft`
 		for label, value := range r.Metadata.ImageConfig.Config.Labels {
 			props = append(props, core.Property{
 				Name:  core.PropertyLabelsPrefix + ":" + label,

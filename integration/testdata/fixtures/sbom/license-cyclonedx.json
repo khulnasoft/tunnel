@@ -10,7 +10,7 @@
       "components": [
         {
           "type": "application",
-          "group": "aquasecurity",
+          "group": "khulnasoft",
           "name": "tunnel",
           "version": "dev"
         }
@@ -22,7 +22,7 @@
       "name": "C:/Users/bedla.czech/IdeaProjects/sbom-demo",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:SchemaVersion",
+          "name": "khulnasoft:tunnel:SchemaVersion",
           "value": "2"
         }
       ]
@@ -35,11 +35,11 @@
       "name": "pom.xml",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:Class",
+          "name": "khulnasoft:tunnel:Class",
           "value": "lang-pkgs"
         },
         {
-          "name": "aquasecurity:tunnel:Type",
+          "name": "khulnasoft:tunnel:Type",
           "value": "pom"
         }
       ]
@@ -60,11 +60,11 @@
       "purl": "pkg:maven/org.eclipse.sisu/org.eclipse.sisu.plexus@0.3.0.M1",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:PkgID",
+          "name": "khulnasoft:tunnel:PkgID",
           "value": "org.eclipse.sisu:org.eclipse.sisu.plexus:0.3.0.M1"
         },
         {
-          "name": "aquasecurity:tunnel:PkgType",
+          "name": "khulnasoft:tunnel:PkgType",
           "value": "pom"
         }
       ]
@@ -85,11 +85,11 @@
       "purl": "pkg:maven/org.ow2.asm/asm@9.5",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:PkgID",
+          "name": "khulnasoft:tunnel:PkgID",
           "value": "org.ow2.asm:asm:9.5"
         },
         {
-          "name": "aquasecurity:tunnel:PkgType",
+          "name": "khulnasoft:tunnel:PkgType",
           "value": "pom"
         }
       ]
@@ -110,11 +110,11 @@
       "purl": "pkg:maven/org.slf4j/slf4j-api@2.0.11",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:PkgID",
+          "name": "khulnasoft:tunnel:PkgID",
           "value": "org.slf4j:slf4j-api:2.0.11"
         },
         {
-          "name": "aquasecurity:tunnel:PkgType",
+          "name": "khulnasoft:tunnel:PkgType",
           "value": "pom"
         }
       ]

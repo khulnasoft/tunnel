@@ -12,8 +12,8 @@ Use one of the official Tunnel images:
 | Registry                             | Repository                          | Link                                                                  |
 | ------------------------------------ | ----------------------------------- | --------------------------------------------------------------------- |
 | Docker Hub                           | `docker.io/khulnasoft/tunnel`       | https://hub.docker.com/r/khulnasoft/tunnel                            |
-| GitHub Container Registry (GHCR)     | `ghcr.io/khulnasoft/tunnel`         | https://github.com/orgs/aquasecurity/packages/container/package/tunnel |
-| AWS Elastic Container Registry (ECR) | `public.ecr.aws/aquasecurity/tunnel` | https://gallery.ecr.aws/aquasecurity/tunnel                            |
+| GitHub Container Registry (GHCR)     | `ghcr.io/khulnasoft/tunnel`         | https://github.com/orgs/khulnasoft/packages/container/package/tunnel |
+| AWS Elastic Container Registry (ECR) | `public.ecr.aws/khulnasoft/tunnel` | https://gallery.ecr.aws/khulnasoft/tunnel                            |
 
 !!! Tip
 It is advisable to mount a persistent [cache dir](../docs/configuration/cache.md) on the host into the Tunnel container.

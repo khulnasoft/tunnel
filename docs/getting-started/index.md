@@ -11,9 +11,9 @@ Tunnel is available in most common distribution channels. The complete list of i
 
 Tunnel is integrated with many popular platforms and applications. The complete list of integrations is available in the [Ecosystem](../ecosystem/index.md) page. Here are a few popular options examples:
 
-- [GitHub Actions](https://github.com/aquasecurity/tunnel-action)
-- [Kubernetes operator](https://github.com/aquasecurity/tunnel-operator)
-- [VS Code plugin](https://github.com/aquasecurity/tunnel-vscode-extension)
+- [GitHub Actions](https://github.com/khulnasoft/tunnel-action)
+- [Kubernetes operator](https://github.com/khulnasoft/tunnel-operator)
+- [VS Code plugin](https://github.com/khulnasoft/tunnel-vscode-extension)
 - See [Ecosystem](../ecosystem/index.md) for more
 
 ## General usage
@@ -63,12 +63,12 @@ Now that you up and ready, here are some resources to help you deepen your knowl
 - Learn more about Tunnel's capabilities by exploring the complete [documentation](../docs/index.md).
 - Explore community questions and under [GitHub Discussions](https://github.com/khulnasoft/tunnel/discussions).
 - Stay up to date by watching for [New Releases & Announcements](https://github.com/khulnasoft/tunnel/discussions/categories/announcements).
-- Follow Tunnel on Twitter/X: [@aquatunnel](https://x.com/aquatunnel)
-- Explore and subscribe to our YouTube channel [@AquaSecOSS](http://youtube.com/@aquasecoss)
+- Follow Tunnel on Twitter/X: [@khulnasofttunnel](https://x.com/khulnasofttunnel)
+- Explore and subscribe to our YouTube channel [@KhulnaSoftOSS](http://youtube.com/@khulnasoftoss)
 
-# Want more? Check out Aqua
+# Want more? Check out KhulnaSoft
 
-If you liked Tunnel, you will love Aqua which builds on top of Tunnel to provide even more enhanced capabilities for a complete security management offering.  
+If you liked Tunnel, you will love KhulnaSoft which builds on top of Tunnel to provide even more enhanced capabilities for a complete security management offering.  
 You can find a high level comparison table specific to Tunnel users [here](../commercial/compare.md).  
 In addition, check out the <https://khulnasoft.com> website for more information about our products and services.
-If you'd like to contact Aqua or request a demo, please use this form: <https://www.khulnasoft.com/demo>
+If you'd like to contact KhulnaSoft or request a demo, please use this form: <https://www.khulnasoft.com/demo>

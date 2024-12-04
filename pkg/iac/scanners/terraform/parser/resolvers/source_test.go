@@ -16,14 +16,14 @@ func TestSplitPackageSubdirRaw(t *testing.T) {
 	}{
 		{
 			name:           "address with scheme and query string",
-			source:         "git::https://github.com/aquasecurity/terraform-modules.git//modules/ecs-service?ref=v0.1.0",
-			expectedPkg:    "git::https://github.com/aquasecurity/terraform-modules.git?ref=v0.1.0",
+			source:         "git::https://github.com/khulnasoft/terraform-modules.git//modules/ecs-service?ref=v0.1.0",
+			expectedPkg:    "git::https://github.com/khulnasoft/terraform-modules.git?ref=v0.1.0",
 			expectedSubdir: "modules/ecs-service",
 		},
 		{
 			name:           "address with scheme",
-			source:         "git::https://github.com/aquasecurity/terraform-modules.git//modules/ecs-service",
-			expectedPkg:    "git::https://github.com/aquasecurity/terraform-modules.git",
+			source:         "git::https://github.com/khulnasoft/terraform-modules.git//modules/ecs-service",
+			expectedPkg:    "git::https://github.com/khulnasoft/terraform-modules.git",
 			expectedSubdir: "modules/ecs-service",
 		},
 		{

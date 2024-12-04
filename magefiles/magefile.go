@@ -59,12 +59,12 @@ func buildLdflags() (string, error) {
 
 type Tool mg.Namespace
 
-// Aqua installs aqua if not installed
-func (Tool) Aqua() error {
-	if exists(filepath.Join(GOBIN, "aqua")) {
+// KhulnaSoft installs khulnasoft if not installed
+func (Tool) KhulnaSoft() error {
+	if exists(filepath.Join(GOBIN, "khulnasoft")) {
 		return nil
 	}
-	return sh.Run("go", "install", "github.com/aquaproj/aqua/v2/cmd/aqua@v2.2.1")
+	return sh.Run("go", "install", "github.com/khulnasoftproj/khulnasoft/v2/cmd/khulnasoft@v2.2.1")
 }
 
 // Wire installs wire if not installed

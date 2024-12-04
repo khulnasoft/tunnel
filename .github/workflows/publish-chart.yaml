@@ -17,7 +17,7 @@ on:
       - "v*"
 env:
   HELM_REP: helm-charts
-  GH_OWNER: aquasecurity
+  GH_OWNER: khulnasoft
   CHART_DIR: helm/tunnel
   KIND_VERSION: "v0.14.0"
   KIND_IMAGE: "kindest/node:v1.23.6@sha256:b1fa224cc6c7ff32455e0b1fd9cbfd3d3bc87ecaa8fcb06961ed1afb3db0f9ae"
@@ -70,10 +70,10 @@ jobs:
           git config --global user.name "GitHub Actions"
 
       - name: Install tools
-        uses: aquaproj/aqua-installer@v3.0.1
+        uses: khulnasoftproj/khulnasoft-installer@v3.0.1
         with:
-          aqua_version: v1.25.0
-          aqua_opts: ""
+          khulnasoft_version: v1.25.0
+          khulnasoft_opts: ""
 
       - name: Create a PR with Tunnel version
         run: mage helm:updateVersion
@@ -118,5 +118,5 @@ jobs:
           destination_repo: "${{ env.GH_OWNER }}/${{ env.HELM_REP }}"
           destination_folder: "."
           destination_branch: "gh-pages"
-          user_email: aqua-bot@users.noreply.github.com
-          user_name: "aqua-bot"
+          user_email: khulnasoft-bot@users.noreply.github.com
+          user_name: "khulnasoft-bot"

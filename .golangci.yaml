@@ -18,7 +18,7 @@ linters-settings:
     sections:
       - standard
       - default
-      - prefix(github.com/aquasecurity/)
+      - prefix(github.com/khulnasoft/)
       - blank
       - dot
   goconst:
@@ -45,14 +45,14 @@ linters-settings:
     settings:
       ruleguard:
         failOn: all
-        rules: '${configDir}/misc/lint/rules.go'
+        rules: "${configDir}/misc/lint/rules.go"
   gocyclo:
     min-complexity: 20
   gofmt:
     simplify: false
     rewrite-rules:
-      - pattern: 'interface{}'
-        replacement: 'any'
+      - pattern: "interface{}"
+        replacement: "any"
   gomodguard:
     blocked:
       modules:
@@ -109,7 +109,7 @@ linters:
     - usestdlibvars
 
 run:
-  go: '1.22'
+  go: "1.22"
   timeout: 30m
 
 issues:

@@ -60,7 +60,7 @@ Thus, we can use the information already present:
 
 #### 2. Referencing a check manually that is not part of the Tunnel default checks
 
-If the check does not already exist in the [Aqua Vulnerability Database](https://avd.khulnasoft.com/) (AVD) and is not part of the tunnel-checks, the fields in the compliance spec for the check have to be populated manually. This is done by referencing the information in the official compliance specification.
+If the check does not already exist in the [KhulnaSoft Vulnerability Database](https://avd.khulnasoft.com/) (AVD) and is not part of the tunnel-checks, the fields in the compliance spec for the check have to be populated manually. This is done by referencing the information in the official compliance specification.
 
 Below is the beginning of the information of the EKS CIS Benchmarks v1.4.0:
 

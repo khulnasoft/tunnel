@@ -51,7 +51,7 @@ var (
 	// mkdir repo
 	// cd repo
 	// go mod init github.com/org/repo
-	// go get github.com/aquasecurity/tunnel
+	// go get github.com/khulnasoft/tunnel
 	// go list -m all | awk 'NR>1 {sub(/^v/, "", $2); printf("{\""$1"\", \""$2"\", },\n")}'
 	GoModTunnel = []ftypes.Package{
 		{Name: "cloud.google.com/go", Version: "v0.65.0"},
@@ -88,16 +88,16 @@ var (
 		{Name: "github.com/alicebob/miniredis/v2", Version: "v2.14.1"},
 		{Name: "github.com/anmitsu/go-shlex", Version: "v0.0.0-20161002113705-648efa622239"},
 		{Name: "github.com/aquasecurity/bolt-fixtures", Version: "v0.0.0-20200903104109-d34e7f983986"},
-		{Name: "github.com/aquasecurity/fanal", Version: "v0.0.0-20210119051230-28c249da7cfd"},
-		{Name: "github.com/aquasecurity/go-dep-parser", Version: "v0.0.0-20201028043324-889d4a92b8e0"},
+		{Name: "github.com/khulnasoft/fanal", Version: "v0.0.0-20210119051230-28c249da7cfd"},
+		{Name: "github.com/khulnasoft/go-dep-parser", Version: "v0.0.0-20201028043324-889d4a92b8e0"},
 		{Name: "github.com/aquasecurity/go-gem-version", Version: "v0.0.0-20201115065557-8eed6fe000ce"},
 		{Name: "github.com/aquasecurity/go-npm-version", Version: "v0.0.0-20201110091526-0b796d180798"},
 		{Name: "github.com/aquasecurity/go-pep440-version", Version: "v0.0.0-20210121094942-22b2f8951d46"},
 		{Name: "github.com/aquasecurity/go-version", Version: "v0.0.0-20210121072130-637058cfe492"},
 		{Name: "github.com/aquasecurity/testdocker", Version: "v0.0.0-20210106133225-0b17fe083674"},
-		{Name: "github.com/aquasecurity/tunnel", Version: "v0.16.0"},
+		{Name: "github.com/khulnasoft/tunnel", Version: "v0.16.0"},
 		{Name: "go.khulnasoft.com/tunnel-db", Version: "v0.0.0-20210105160501-c5bf4e153277"},
-		{Name: "github.com/aquasecurity/vuln-list-update", Version: "v0.0.0-20191016075347-3d158c2bf9a2"},
+		{Name: "github.com/khulnasoft/vuln-list-update", Version: "v0.0.0-20191016075347-3d158c2bf9a2"},
 		{Name: "github.com/araddon/dateparse", Version: "v0.0.0-20190426192744-0d74ffceef83"},
 		{Name: "github.com/armon/consul-api", Version: "v0.0.0-20180202201655-eb2c6b5be1b6"},
 		{Name: "github.com/armon/go-socks5", Version: "v0.0.0-20160902184237-e75332964ef5"},

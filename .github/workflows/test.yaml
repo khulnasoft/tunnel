@@ -53,10 +53,10 @@ jobs:
         if: ${{ failure() && steps.lint.conclusion == 'failure' }}
 
       - name: Install tools
-        uses: aquaproj/aqua-installer@v3.0.1
+        uses: khulnasoftproj/khulnasoft-installer@v3.0.1
         with:
-          aqua_version: v1.25.0
-          aqua_opts: ""
+          khulnasoft_version: v1.25.0
+          khulnasoft_opts: ""
 
       - name: Check if CLI references are up-to-date
         run: |
@@ -84,9 +84,9 @@ jobs:
           cache: false
 
       - name: Install tools
-        uses: aquaproj/aqua-installer@v3.0.1
+        uses: khulnasoftproj/khulnasoft-installer@v3.0.1
         with:
-          aqua_version: v1.25.0
+          khulnasoft_version: v1.25.0
 
       - name: Generate image list digest
         id: image-digest
@@ -120,9 +120,9 @@ jobs:
           cache: false
 
       - name: Install tools
-        uses: aquaproj/aqua-installer@v3.0.1
+        uses: khulnasoftproj/khulnasoft-installer@v3.0.1
         with:
-          aqua_version: v1.25.0
+          khulnasoft_version: v1.25.0
 
       - name: Run k8s integration tests
         run: mage test:k8s
@@ -141,9 +141,9 @@ jobs:
           cache: false
 
       - name: Install tools
-        uses: aquaproj/aqua-installer@v3.0.1
+        uses: khulnasoftproj/khulnasoft-installer@v3.0.1
         with:
-          aqua_version: v1.25.0
+          khulnasoft_version: v1.25.0
 
       - name: Generate image list digest
         id: image-digest
@@ -179,9 +179,9 @@ jobs:
           cache: false
 
       - name: Install tools
-        uses: aquaproj/aqua-installer@v3.0.1
+        uses: khulnasoftproj/khulnasoft-installer@v3.0.1
         with:
-          aqua_version: v1.25.0
+          khulnasoft_version: v1.25.0
 
       - name: Generate image list digest
         id: image-digest

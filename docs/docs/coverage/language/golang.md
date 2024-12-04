@@ -47,7 +47,7 @@ If you want to have better detection, please consider updating the Go version in
 The Go version doesn't mean your Go tool version, but the Go version in your go.mod.
 
     ```
-    module github.com/aquasecurity/tunnel
+    module github.com/khulnasoft/tunnel
 
     go 1.18
 

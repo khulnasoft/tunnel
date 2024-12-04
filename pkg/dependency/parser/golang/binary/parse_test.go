@@ -14,8 +14,8 @@ import (
 func TestParse(t *testing.T) {
 	wantPkgs := []ftypes.Package{
 		{
-			ID:           "github.com/aquasecurity/test",
-			Name:         "github.com/aquasecurity/test",
+			ID:           "github.com/khulnasoft/test",
+			Name:         "github.com/khulnasoft/test",
 			Version:      "",
 			Relationship: ftypes.RelationshipRoot,
 		},
@@ -43,7 +43,7 @@ func TestParse(t *testing.T) {
 	}
 	wantDeps := []ftypes.Dependency{
 		{
-			ID: "github.com/aquasecurity/test",
+			ID: "github.com/khulnasoft/test",
 			DependsOn: []string{
 				"github.com/aquasecurity/go-pep440-version@v0.0.0-20210121094942-22b2f8951d46",
 				"github.com/aquasecurity/go-version@v0.0.0-20210121072130-637058cfe492",
@@ -147,8 +147,8 @@ func TestParse(t *testing.T) {
 			inputFile: "testdata/main-version-via-ldflags.elf",
 			wantPkgs: []ftypes.Package{
 				{
-					ID:           "github.com/aquasecurity/test@v1.0.0",
-					Name:         "github.com/aquasecurity/test",
+					ID:           "github.com/khulnasoft/test@v1.0.0",
+					Name:         "github.com/khulnasoft/test",
 					Version:      "v1.0.0",
 					Relationship: ftypes.RelationshipRoot,
 				},
@@ -161,7 +161,7 @@ func TestParse(t *testing.T) {
 			},
 			wantDeps: []ftypes.Dependency{
 				{
-					ID: "github.com/aquasecurity/test@v1.0.0",
+					ID: "github.com/khulnasoft/test@v1.0.0",
 					DependsOn: []string{
 						"stdlib@v1.22.1",
 					},
@@ -218,7 +218,7 @@ func TestParser_ParseLDFlags(t *testing.T) {
 		{
 			name: "with version suffix",
 			args: args{
-				name: "github.com/aquasecurity/tunnel",
+				name: "github.com/khulnasoft/tunnel",
 				flags: []string{
 					"-s",
 					"-w",
@@ -231,7 +231,7 @@ func TestParser_ParseLDFlags(t *testing.T) {
 		{
 			name: "with version suffix titlecased",
 			args: args{
-				name: "github.com/aquasecurity/tunnel",
+				name: "github.com/khulnasoft/tunnel",
 				flags: []string{
 					"-s",
 					"-w",
@@ -244,7 +244,7 @@ func TestParser_ParseLDFlags(t *testing.T) {
 		{
 			name: "with ver suffix",
 			args: args{
-				name: "github.com/aquasecurity/tunnel",
+				name: "github.com/khulnasoft/tunnel",
 				flags: []string{
 					"-s",
 					"-w",
@@ -257,7 +257,7 @@ func TestParser_ParseLDFlags(t *testing.T) {
 		{
 			name: "with ver suffix titlecased",
 			args: args{
-				name: "github.com/aquasecurity/tunnel",
+				name: "github.com/khulnasoft/tunnel",
 				flags: []string{
 					"-s",
 					"-w",
@@ -270,7 +270,7 @@ func TestParser_ParseLDFlags(t *testing.T) {
 		{
 			name: "with double quoted flag",
 			args: args{
-				name: "github.com/aquasecurity/tunnel",
+				name: "github.com/khulnasoft/tunnel",
 				flags: []string{
 					"-s",
 					"-w",
@@ -283,7 +283,7 @@ func TestParser_ParseLDFlags(t *testing.T) {
 		{
 			name: "with semver version without v prefix",
 			args: args{
-				name: "github.com/aquasecurity/tunnel",
+				name: "github.com/khulnasoft/tunnel",
 				flags: []string{
 					"-s",
 					"-w",
@@ -296,7 +296,7 @@ func TestParser_ParseLDFlags(t *testing.T) {
 		{
 			name: "with `cmd` + `default prefix` flags",
 			args: args{
-				name: "github.com/aquasecurity/tunnel",
+				name: "github.com/khulnasoft/tunnel",
 				flags: []string{
 					"-X='github.com/khulnasoft/tunnel/cmd/Any.Ver=0.50.0'",
 					"-X='github.com/khulnasoft/tunnel/pkg/version.Ver=0.50.1'",
@@ -307,7 +307,7 @@ func TestParser_ParseLDFlags(t *testing.T) {
 		{
 			name: "with `cmd` flag",
 			args: args{
-				name: "github.com/aquasecurity/tunnel",
+				name: "github.com/khulnasoft/tunnel",
 				flags: []string{
 					"-X='github.com/khulnasoft/tunnel/cmd/Any.Ver=0.50.0'",
 				},
@@ -317,7 +317,7 @@ func TestParser_ParseLDFlags(t *testing.T) {
 		{
 			name: "with `cmd` + `other` flags",
 			args: args{
-				name: "github.com/aquasecurity/tunnel",
+				name: "github.com/khulnasoft/tunnel",
 				flags: []string{
 					"-X='github.com/khulnasoft/tunnel/cmd/Any.Ver=0.50.0'",
 					"-X='github.com/khulnasoft/tunnel/pkg/Any.Ver=0.50.1'",
@@ -328,7 +328,7 @@ func TestParser_ParseLDFlags(t *testing.T) {
 		{
 			name: "with `default prefix` flag",
 			args: args{
-				name: "github.com/aquasecurity/tunnel",
+				name: "github.com/khulnasoft/tunnel",
 				flags: []string{
 					"-X='github.com/khulnasoft/tunnel/pkg/Common.Ver=0.50.1'",
 				},
@@ -338,7 +338,7 @@ func TestParser_ParseLDFlags(t *testing.T) {
 		{
 			name: "with `default prefix` + `other` flags",
 			args: args{
-				name: "github.com/aquasecurity/tunnel",
+				name: "github.com/khulnasoft/tunnel",
 				flags: []string{
 					"-X='github.com/khulnasoft/tunnel/pkg/Any.Ver=0.50.0'",
 					"-X='github.com/khulnasoft/tunnel/pkg/Common.Ver=0.50.1'",
@@ -349,7 +349,7 @@ func TestParser_ParseLDFlags(t *testing.T) {
 		{
 			name: "with `other` flag",
 			args: args{
-				name: "github.com/aquasecurity/tunnel",
+				name: "github.com/khulnasoft/tunnel",
 				flags: []string{
 					"-X='github.com/khulnasoft/tunnel/pkg/Any.Ver=0.50.1'",
 				},
@@ -359,7 +359,7 @@ func TestParser_ParseLDFlags(t *testing.T) {
 		{
 			name: "with 2 flags using default prefixes",
 			args: args{
-				name: "github.com/aquasecurity/tunnel",
+				name: "github.com/khulnasoft/tunnel",
 				flags: []string{
 					"-X='github.com/khulnasoft/tunnel/pkg/Common.Ver=0.50.0'",
 					"-X='github.com/khulnasoft/tunnel/pkg/Main.Ver=0.50.1'",
@@ -370,7 +370,7 @@ func TestParser_ParseLDFlags(t *testing.T) {
 		{
 			name: "with two `other` flags",
 			args: args{
-				name: "github.com/aquasecurity/tunnel",
+				name: "github.com/khulnasoft/tunnel",
 				flags: []string{
 					"-X='github.com/khulnasoft/tunnel/pkg/Any.Ver=0.50.1'",
 					"-X='github.com/khulnasoft/tunnel/pkg/Any-pref.Ver=0.50.0'",
@@ -393,7 +393,7 @@ func TestParser_ParseLDFlags(t *testing.T) {
 		{
 			name: "with no flags",
 			args: args{
-				name:  "github.com/aquasecurity/test",
+				name:  "github.com/khulnasoft/test",
 				flags: []string{},
 			},
 			want: "",

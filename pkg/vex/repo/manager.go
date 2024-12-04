@@ -18,7 +18,7 @@ import (
 )
 
 const (
-	defaultVEXHubURL = "https://github.com/aquasecurity/vexhub"
+	defaultVEXHubURL = "https://github.com/khulnasoft/vexhub"
 	vexDir           = "vex"
 	repoDir          = "repositories"
 )

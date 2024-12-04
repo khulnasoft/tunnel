@@ -12,7 +12,7 @@ ArgoCD command:
 
 ```
 > kubectl create ns tunnel-system
-> argocd app create tunnel-operator --repo https://github.com/aquasecurity/tunnel-operator --path deploy/helm --dest-server https://kubernetes.default.svc --dest-namespace tunnel-system
+> argocd app create tunnel-operator --repo https://github.com/khulnasoft/tunnel-operator --path deploy/helm --dest-server https://kubernetes.default.svc --dest-namespace tunnel-system
 ```
 
 Note that this installation is directly related to our official Helm Chart. If you want to change any of the value, we'd suggest you to create a separate values.yaml file.

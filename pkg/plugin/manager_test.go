@@ -77,7 +77,7 @@ func TestManager_Run(t *testing.T) {
 			name: "happy path",
 			fields: fields{
 				Name:        "test_plugin",
-				Repository:  "github.com/aquasecurity/tunnel-plugin-test",
+				Repository:  "github.com/khulnasoft/tunnel-plugin-test",
 				Version:     "0.1.0",
 				Summary:     "test",
 				Description: "test",
@@ -87,7 +87,7 @@ func TestManager_Run(t *testing.T) {
 							OS:   "linux",
 							Arch: "amd64",
 						},
-						URI: "github.com/aquasecurity/tunnel-plugin-test",
+						URI: "github.com/khulnasoft/tunnel-plugin-test",
 						Bin: "test.sh",
 					},
 				},
@@ -99,13 +99,13 @@ func TestManager_Run(t *testing.T) {
 			name: "no selector",
 			fields: fields{
 				Name:        "test_plugin",
-				Repository:  "github.com/aquasecurity/tunnel-plugin-test",
+				Repository:  "github.com/khulnasoft/tunnel-plugin-test",
 				Version:     "0.1.0",
 				Summary:     "test",
 				Description: "test",
 				Platforms: []plugin.Platform{
 					{
-						URI: "github.com/aquasecurity/tunnel-plugin-test",
+						URI: "github.com/khulnasoft/tunnel-plugin-test",
 						Bin: "test.sh",
 					},
 				},
@@ -115,7 +115,7 @@ func TestManager_Run(t *testing.T) {
 			name: "no matched platform",
 			fields: fields{
 				Name:        "test_plugin",
-				Repository:  "github.com/aquasecurity/tunnel-plugin-test",
+				Repository:  "github.com/khulnasoft/tunnel-plugin-test",
 				Version:     "0.1.0",
 				Summary:     "test",
 				Description: "test",
@@ -125,7 +125,7 @@ func TestManager_Run(t *testing.T) {
 							OS:   "darwin",
 							Arch: "amd64",
 						},
-						URI: "github.com/aquasecurity/tunnel-plugin-test",
+						URI: "github.com/khulnasoft/tunnel-plugin-test",
 						Bin: "test.sh",
 					},
 				},
@@ -138,7 +138,7 @@ func TestManager_Run(t *testing.T) {
 			name: "no execution file",
 			fields: fields{
 				Name:        "test_plugin",
-				Repository:  "github.com/aquasecurity/tunnel-plugin-test",
+				Repository:  "github.com/khulnasoft/tunnel-plugin-test",
 				Version:     "0.1.0",
 				Summary:     "test",
 				Description: "test",
@@ -148,7 +148,7 @@ func TestManager_Run(t *testing.T) {
 							OS:   "linux",
 							Arch: "amd64",
 						},
-						URI: "github.com/aquasecurity/tunnel-plugin-test",
+						URI: "github.com/khulnasoft/tunnel-plugin-test",
 						Bin: "nonexistence.sh",
 					},
 				},
@@ -161,7 +161,7 @@ func TestManager_Run(t *testing.T) {
 			name: "plugin exec error",
 			fields: fields{
 				Name:        "error_plugin",
-				Repository:  "github.com/aquasecurity/tunnel-plugin-error",
+				Repository:  "github.com/khulnasoft/tunnel-plugin-error",
 				Version:     "0.1.0",
 				Summary:     "test",
 				Description: "test",
@@ -171,7 +171,7 @@ func TestManager_Run(t *testing.T) {
 							OS:   "linux",
 							Arch: "amd64",
 						},
-						URI: "github.com/aquasecurity/tunnel-plugin-test",
+						URI: "github.com/khulnasoft/tunnel-plugin-test",
 						Bin: "test.sh",
 					},
 				},
@@ -259,7 +259,7 @@ func TestManager_Information(t *testing.T) {
 
 	// write the plugin name
 	pluginMetadata := `name: "test_plugin"
-repository: github.com/aquasecurity/tunnel-plugin-test
+repository: github.com/khulnasoft/tunnel-plugin-test
 version: "0.1.0"
 usage: test
 description: A simple test plugin`
@@ -300,7 +300,7 @@ func TestManager_LoadAll(t *testing.T) {
 			want: []plugin.Plugin{
 				{
 					Name:        "test_plugin",
-					Repository:  "github.com/aquasecurity/tunnel-plugin-test",
+					Repository:  "github.com/khulnasoft/tunnel-plugin-test",
 					Version:     "0.1.0",
 					Summary:     "test",
 					Description: "test",

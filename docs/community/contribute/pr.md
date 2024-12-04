@@ -227,8 +227,8 @@ The PR title should describe what the PR adds or fixes even though it just updat
 
 Tunnel is composed of several repositories that work together:
 
-- [Tunnel](https://github.com/aquasecurity/tunnel) is the client-side, user-facing, command line tool.
-- [vuln-list](https://github.com/aquasecurity/vuln-list) is a vulnerability database, aggregated from different sources, and normalized for easy consumption. Think of this as the "server" side of the tunnel command line tool. **There should be no pull requests to this repo**
-- [vuln-list-update](https://github.com/aquasecurity/vuln-list-update) is the code that maintains the vuln-list database.
+- [Tunnel](https://github.com/khulnasoft/tunnel) is the client-side, user-facing, command line tool.
+- [vuln-list](https://github.com/khulnasoft/vuln-list) is a vulnerability database, aggregated from different sources, and normalized for easy consumption. Think of this as the "server" side of the tunnel command line tool. **There should be no pull requests to this repo**
+- [vuln-list-update](https://github.com/khulnasoft/vuln-list-update) is the code that maintains the vuln-list database.
 - [tunnel-db](https://go.khulnasoft.com/tunnel-db) maintains the vulnerability database pulled by Tunnel CLI.
-- [go-dep-parser](https://github.com/aquasecurity/go-dep-parser) is a library for parsing lock files such as package-lock.json and Gemfile.lock.
+- [go-dep-parser](https://github.com/khulnasoft/go-dep-parser) is a library for parsing lock files such as package-lock.json and Gemfile.lock.

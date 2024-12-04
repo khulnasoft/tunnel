@@ -16,7 +16,7 @@ type cacheResolver struct{}
 
 var Cache = &cacheResolver{}
 
-const tempDirName = ".aqua"
+const tempDirName = ".khulnasoft"
 
 var defaultCacheDir = filepath.Join(os.TempDir(), tempDirName, "cache")
 

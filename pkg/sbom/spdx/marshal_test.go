@@ -66,7 +66,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 						Architecture: "arm64",
 						Config: v1.Config{
 							Labels: map[string]string{
-								"vendor": "aquasecurity",
+								"vendor": "khulnasoft",
 							},
 						},
 					},
@@ -174,7 +174,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 				CreationInfo: &spdx.CreationInfo{
 					Creators: []common.Creator{
 						{
-							Creator:     "aquasecurity",
+							Creator:     "khulnasoft",
 							CreatorType: "Organization",
 						},
 						{
@@ -219,7 +219,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 						Annotations: []spdx.Annotation{
 							annotation(t, "DiffID: sha256:d871dadfb37b53ef1ca45be04fc527562b91989991a8f545345ae3be0b93f92a"),
 							annotation(t, "ImageID: sha256:5d0da3dc976460b72c77d94c8a1ad043720b0416bfc16c52c45d4847e53fadb6"),
-							annotation(t, "Labels:vendor: aquasecurity"),
+							annotation(t, "Labels:vendor: khulnasoft"),
 							annotation(t, "RepoDigest: rails@sha256:a27fd8080b517143cbbbab9dfb7c8571c40d67d534bbdee55bd6c473f432b177"),
 							annotation(t, "RepoTag: rails:latest"),
 							annotation(t, "SchemaVersion: 2"),
@@ -496,7 +496,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 				CreationInfo: &spdx.CreationInfo{
 					Creators: []common.Creator{
 						{
-							Creator:     "aquasecurity",
+							Creator:     "khulnasoft",
 							CreatorType: "Organization",
 						},
 						{
@@ -729,7 +729,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 				CreationInfo: &spdx.CreationInfo{
 					Creators: []common.Creator{
 						{
-							Creator:     "aquasecurity",
+							Creator:     "khulnasoft",
 							CreatorType: "Organization",
 						},
 						{
@@ -888,7 +888,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 				CreationInfo: &spdx.CreationInfo{
 					Creators: []common.Creator{
 						{
-							Creator:     "aquasecurity",
+							Creator:     "khulnasoft",
 							CreatorType: "Organization",
 						},
 						{
@@ -990,7 +990,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 				CreationInfo: &spdx.CreationInfo{
 					Creators: []common.Creator{
 						{
-							Creator:     "aquasecurity",
+							Creator:     "khulnasoft",
 							CreatorType: "Organization",
 						},
 						{
@@ -1085,7 +1085,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 				CreationInfo: &spdx.CreationInfo{
 					Creators: []common.Creator{
 						{
-							Creator:     "aquasecurity",
+							Creator:     "khulnasoft",
 							CreatorType: "Organization",
 						},
 						{
@@ -1147,7 +1147,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 				CreationInfo: &spdx.CreationInfo{
 					Creators: []common.Creator{
 						{
-							Creator:     "aquasecurity",
+							Creator:     "khulnasoft",
 							CreatorType: "Organization",
 						},
 						{
@@ -1219,7 +1219,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 				CreationInfo: &spdx.CreationInfo{
 					Creators: []common.Creator{
 						{
-							Creator:     "aquasecurity",
+							Creator:     "khulnasoft",
 							CreatorType: "Organization",
 						},
 						{

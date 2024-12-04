@@ -119,7 +119,7 @@ correct and do not reference incorrect properties/values.
 
 #### custom.avd_id and custom.id
 
-The AVD_ID can be used to link the check to the Aqua Vulnerability Database (AVD) entry. For example, the `avd_id` `AVD-AWS-0176` is the ID of the check in the [AWS Vulnerability Database](https://avd.khulnasoft.com/). If you are [contributing your check to tunnel-checks](../../../../community/contribute/checks/overview.md), you need to generate an ID using `make id` in the [tunnel-checks](https://github.com/aquasecurity/trivy-checks) repository. The output of the command will provide you the next free IDs for the different providers in Tunnel.
+The AVD_ID can be used to link the check to the KhulnaSoft Vulnerability Database (AVD) entry. For example, the `avd_id` `AVD-AWS-0176` is the ID of the check in the [AWS Vulnerability Database](https://avd.khulnasoft.com/). If you are [contributing your check to tunnel-checks](../../../../community/contribute/checks/overview.md), you need to generate an ID using `make id` in the [tunnel-checks](https://github.com/aquasecurity/trivy-checks) repository. The output of the command will provide you the next free IDs for the different providers in Tunnel.
 
 The ID is based on the AVD_ID. For instance if the `avd_id` is `AVD-AWS-0176`, the ID is `ID0176`.
 

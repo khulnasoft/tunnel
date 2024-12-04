@@ -215,7 +215,7 @@ If Tunnel is running behind corporate firewall, refer to the necessary connectiv
 ### Denied
 
 !!! error
-GET https://ghcr.io/token?scope=repository%3Aaquasecurity%2Ftunnel-db%3Apull&service=ghcr.io: DENIED: denied
+GET https://ghcr.io/token?scope=repository%3Akhulnasoft%2Ftunnel-db%3Apull&service=ghcr.io: DENIED: denied
 
 Your local GHCR (GitHub Container Registry) token might be expired.
 Please remove the token and try downloading the DB again.
@@ -232,7 +232,7 @@ docker logout ghcr.io
 Error: Your macOS keychain GitHub credentials do not have sufficient scope!
 
 ```
-$ brew tap aquasecurity/tunnel
+$ brew tap khulnasoft/tunnel
 Error: Your macOS keychain GitHub credentials do not have sufficient scope!
 Scopes they need: none
 Scopes they have:

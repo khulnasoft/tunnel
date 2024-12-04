@@ -48,14 +48,14 @@ Tunnel is available in most common distribution channels. The full list of insta
 
 Tunnel is integrated with many popular platforms and applications. The complete list of integrations is available in the [Ecosystem] page. Here are a few popular examples:
 
-- [GitHub Actions](https://github.com/aquasecurity/tunnel-action)
-- [Kubernetes operator](https://github.com/aquasecurity/tunnel-operator)
-- [VS Code plugin](https://github.com/aquasecurity/tunnel-vscode-extension)
+- [GitHub Actions](https://github.com/khulnasoft/tunnel-action)
+- [Kubernetes operator](https://github.com/khulnasoft/tunnel-operator)
+- [VS Code plugin](https://github.com/khulnasoft/tunnel-vscode-extension)
 - See [Ecosystem] for more
 
 ### Canary builds
 
-There are canary builds ([Docker Hub](https://hub.docker.com/r/khulnasoft/tunnel/tags?page=1&name=canary), [GitHub](https://github.com/khulnasoft/tunnel/pkgs/container/tunnel/75776514?tag=canary), [ECR](https://gallery.ecr.aws/aquasecurity/tunnel#canary) images and [binaries](https://github.com/khulnasoft/tunnel/actions/workflows/canary.yaml)) as generated every push to main branch.
+There are canary builds ([Docker Hub](https://hub.docker.com/r/khulnasoft/tunnel/tags?page=1&name=canary), [GitHub](https://github.com/khulnasoft/tunnel/pkgs/container/tunnel/75776514?tag=canary), [ECR](https://gallery.ecr.aws/khulnasoft/tunnel#canary) images and [binaries](https://github.com/khulnasoft/tunnel/actions/workflows/canary.yaml)) as generated every push to main branch.
 
 Please be aware: canary builds might have critical bugs, it's not recommended for use in production.
 
@@ -106,16 +106,16 @@ tunnel k8s --report summary cluster
 
 `tri` is pronounced like **tri**gger, `vy` is pronounced like en**vy**.
 
-## Want more? Check out Aqua
+## Want more? Check out KhulnaSoft
 
-If you liked Tunnel, you will love Aqua which builds on top of Tunnel to provide even more enhanced capabilities for a complete security management offering.  
+If you liked Tunnel, you will love KhulnaSoft which builds on top of Tunnel to provide even more enhanced capabilities for a complete security management offering.  
 You can find a high level comparison table specific to Tunnel users [here](https://tunnel.dev/commercial/comparison).  
 In addition check out the <https://khulnasoft.com> website for more information about our products and services.
-If you'd like to contact Aqua or request a demo, please use this form: <https://www.khulnasoft.com/demo>
+If you'd like to contact KhulnaSoft or request a demo, please use this form: <https://www.khulnasoft.com/demo>
 
 ## Community
 
-Tunnel is an [KhulnaSoft Security][aquasec] open source project.  
+Tunnel is an [KhulnaSoft Security][khulnasoft] open source project.  
 Learn about our open source work and portfolio [here][oss].  
 Contact us about any matter by opening a GitHub Discussion [here][discussions]
 Join our [Slack community][slack] to stay up to date with community efforts.
@@ -124,10 +124,10 @@ Please ensure to abide by our [Code of Conduct][code-of-conduct] during all inte
 
 [test]: https://github.com/khulnasoft/tunnel/actions/workflows/test.yaml
 [test-img]: https://github.com/khulnasoft/tunnel/actions/workflows/test.yaml/badge.svg
-[go-report]: https://goreportcard.com/report/github.com/aquasecurity/tunnel
-[go-report-img]: https://goreportcard.com/badge/github.com/aquasecurity/tunnel
+[go-report]: https://goreportcard.com/report/github.com/khulnasoft/tunnel
+[go-report-img]: https://goreportcard.com/badge/github.com/khulnasoft/tunnel
 [release]: https://github.com/khulnasoft/tunnel/releases
-[release-img]: https://img.shields.io/github/release/aquasecurity/tunnel.svg?logo=github
+[release-img]: https://img.shields.io/github/release/khulnasoft/tunnel.svg?logo=github
 [github-downloads-img]: https://img.shields.io/github/downloads/khulnasoft/tunnel/total?logo=github
 [docker-pulls]: https://img.shields.io/docker/pulls/khulnasoft/tunnel?logo=docker&label=docker%20pulls%20%2F%20tunnel
 [license]: https://github.com/khulnasoft/tunnel/blob/main/LICENSE
@@ -136,13 +136,13 @@ Please ensure to abide by our [Code of Conduct][code-of-conduct] during all inte
 [docs]: https://khulnasoft.github.io/tunnel
 [pronunciation]: #how-to-pronounce-the-name-tunnel
 [slack]: https://slack.khulnasoft.com
-[code-of-conduct]: https://github.com/aquasecurity/community/blob/main/CODE_OF_CONDUCT.md
+[code-of-conduct]: https://github.com/khulnasoft/community/blob/main/CODE_OF_CONDUCT.md
 [Installation]: https://khulnasoft.github.io/tunnel/latest/getting-started/installation/
 [Ecosystem]: https://khulnasoft.github.io/tunnel/latest/ecosystem/
 [Scanning Coverage]: https://khulnasoft.github.io/tunnel/latest/docs/coverage/
 [alpine]: https://ariadne.space/2021/06/08/the-vulnerability-remediation-lifecycle-of-alpine-containers/
 [rego]: https://www.openpolicyagent.org/docs/latest/#rego
 [sigstore]: https://www.sigstore.dev/
-[aquasec]: https://khulnasoft.com
+[khulnasoft]: https://khulnasoft.com
 [oss]: https://www.khulnasoft.com/products/open-source-projects/
 [discussions]: https://github.com/khulnasoft/tunnel/discussions

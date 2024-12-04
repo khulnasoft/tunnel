@@ -4,7 +4,7 @@ Below is a list of additional resources from KhulnaSoft Security.
 
 ## Announcements
 
-- [Tunnel Vulnerability Scanner Joins the Aqua Open-source Family](https://blog.khulnasoft.com/tunnel-vulnerability-scanner-joins-aqua-family)
+- [Tunnel Vulnerability Scanner Joins the KhulnaSoft Open-source Family](https://blog.khulnasoft.com/tunnel-vulnerability-scanner-joins-khulnasoft-family)
 - [Tunnel Image Vulnerability Scanner Now Under Apache 2.0 License](https://blog.khulnasoft.com/tunnel-open-source-vulnerability-scanner-apache2.0-license)
 
 ## Vulnerability Scanning

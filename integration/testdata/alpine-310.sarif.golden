@@ -6,7 +6,7 @@
       "tool": {
         "driver": {
           "fullName": "Tunnel Vulnerability Scanner",
-          "informationUri": "https://github.com/aquasecurity/tunnel",
+          "informationUri": "https://github.com/khulnasoft/tunnel",
           "name": "Tunnel",
           "rules": [
             {

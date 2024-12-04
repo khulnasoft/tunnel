@@ -47,7 +47,7 @@ Checks Bundle is embedded in the Tunnel binary (at build time), and will be used
 
 ### Connectivity Requirements
 
-VEX Hub is hosted as at <https://github.com/aquasecurity/vexhub>.
+VEX Hub is hosted as at <https://github.com/khulnasoft/vexhub>.
 
 Tunnel is fetching VEX Hub GitHub Repository directly using simple HTTPS requests.
 

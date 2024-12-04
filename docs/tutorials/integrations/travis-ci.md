@@ -25,5 +25,5 @@ cache:
 [Example][example]
 [Repository][repository]
 
-[example]: https://travis-ci.org/aquasecurity/tunnel-ci-test
-[repository]: https://github.com/aquasecurity/tunnel-ci-test
+[example]: https://travis-ci.org/khulnasoft/tunnel-ci-test
+[repository]: https://github.com/khulnasoft/tunnel-ci-test

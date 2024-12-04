@@ -38,4 +38,4 @@ In the above example, the Java version is 8 which is not affected by CVE-2022-22
 
 This module is also used for testing in Tunnel.
 
-[tunnel-module-spring4shell]: https://github.com/orgs/aquasecurity/packages/container/package/tunnel-module-spring4shell
+[tunnel-module-spring4shell]: https://github.com/orgs/khulnasoft/packages/container/package/tunnel-module-spring4shell

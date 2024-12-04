@@ -1,24 +1,24 @@
 # KhulnaSoft Security is the home of Tunnel
 
 Tunnel is proudly maintained by [KhulnaSoft Security](https://khulnasoft.com).
-If you liked Tunnel, you will love Aqua which builds on top of Tunnel to provide even more enhanced capabilities for a complete security management offering.  
-In this page you can find a high level comparison between Tunnel Open Source and Aqua's commercial product.
+If you liked Tunnel, you will love KhulnaSoft which builds on top of Tunnel to provide even more enhanced capabilities for a complete security management offering.  
+In this page you can find a high level comparison between Tunnel Open Source and KhulnaSoft's commercial product.
 If you'd like to learn more or request a demo, [click here to contact us](./contact.md).
 
 ## User experience
 
-| Feature                    | Tunnel OSS                                                                        | Aqua                                                                                                                                                 |
+| Feature                    | Tunnel OSS                                                                        | KhulnaSoft                                                                                                                                           |
 | -------------------------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Interface                  | CLI tool                                                                          | CLI tool <br> Enterprise-grade web application <br> SaaS or on-prem                                                                                  |
 | Search & Discover          | -                                                                                 | Easily search for security issues across all workloads and infrastructure in your organization <br> Visually discover risks across your organization |
 | User management            | -                                                                                 | Multi account <br> Granular permissions (RBAC) <br> Single Sign On (SSO)                                                                             |
-| Support                    | Some skills required for setup and integration <br> Best effort community support | Personal onboarding by Aqua Customer Success <br> SLA backed professional support                                                                    |
+| Support                    | Some skills required for setup and integration <br> Best effort community support | Personal onboarding by KhulnaSoft Customer Success <br> SLA backed professional support                                                              |
 | Scalability & Availability | Single scan at a time                                                             | Centralized scanning service supports concurrent scans efficiently <br> Highly available production grade architecture                               |
-| Rate limiting              | Assets hosted on public free infrastructure and could be rate limited             | Assets hosted on Aqua infrastructure and does not have limitations                                                                                   |
+| Rate limiting              | Assets hosted on public free infrastructure and could be rate limited             | Assets hosted on KhulnaSoft infrastructure and does not have limitations                                                                             |
 
 ## Vulnerability scanning
 
-| Feature                      | Tunnel OSS                                                                                   | Aqua                                                                                                                                                                                                       |
+| Feature                      | Tunnel OSS                                                                                   | KhulnaSoft                                                                                                                                                                                                 |
 | ---------------------------- | -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Vulnerabilities sources      | Based on open source vulnerability feeds                                                     | Based on open source and commercial vulnerability feeds                                                                                                                                                    |
 | New Vulnerabilities SLA      | No SLA                                                                                       | Commercial level SLA                                                                                                                                                                                       |
@@ -31,7 +31,7 @@ If you'd like to learn more or request a demo, [click here to contact us](./cont
 
 ## Container scanning
 
-| Feature                   | Tunnel OSS                                                              | Aqua                                                          |
+| Feature                   | Tunnel OSS                                                              | KhulnaSoft                                                    |
 | ------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------- |
 | Windows containers        | -                                                                       | Support scanning windows containers                           |
 | Scan container registries | -                                                                       | Connect to any container registries and automatically scan it |
@@ -40,7 +40,7 @@ If you'd like to learn more or request a demo, [click here to contact us](./cont
 
 ## Advanced scanning
 
-| Feature              | Tunnel OSS | Aqua                                                                                                         |
+| Feature              | Tunnel OSS | KhulnaSoft                                                                                                   |
 | -------------------- | ---------- | ------------------------------------------------------------------------------------------------------------ |
 | Malware scanning     | -          | Scan container images for malware                                                                            |
 | Sandbox scanning     | -          | Use DTA (Dynamic threat analysis) to run and test container images' behavior to detect sophisticated threats |
@@ -48,7 +48,7 @@ If you'd like to learn more or request a demo, [click here to contact us](./cont
 
 ## Policy and enforcement
 
-| Feature                   | Tunnel OSS                               | Aqua                                                                      |
+| Feature                   | Tunnel OSS                               | KhulnaSoft                                                                |
 | ------------------------- | ---------------------------------------- | ------------------------------------------------------------------------- |
 | Kubernetes admission      | -                                        | Validating Kubernetes Admission based on automatic or user defined policy |
 | CI/CD policies            | Can fail the entire build on any finding | Granular policies to fail builds based on custom criteria                 |
@@ -57,14 +57,14 @@ If you'd like to learn more or request a demo, [click here to contact us](./cont
 
 ## Secrets scanning
 
-| Feature                   | Tunnel OSS     | Aqua                                                        |
+| Feature                   | Tunnel OSS     | KhulnaSoft                                                  |
 | ------------------------- | -------------- | ----------------------------------------------------------- |
 | Detected patterns         | Basic patterns | Advanced patterns                                           |
 | Leaked secrets validation | -              | Automatically checks if leaked secrets are valid and usable |
 
 ## IaC/CSPM scanning
 
-| Feature                      | Tunnel OSS                                                                                                                          | Aqua                                                                                                     |
+| Feature                      | Tunnel OSS                                                                                                                          | KhulnaSoft                                                                                               |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | Infrastructure as Code (IaC) | Many popular languages as detailed [here](https://khulnasoft.github.io/tunnel/latest/docs/scanner/misconfiguration/policy/builtin/) | In addition, Build Pipeline configuration scanning                                                       |
 | Checks customization         | Create custom checks with Rego                                                                                                      | Create custom checks in no-code interface <br> Customize existing checks with organizational preferences |
@@ -75,12 +75,12 @@ If you'd like to learn more or request a demo, [click here to contact us](./cont
 
 ## Kubernetes scanning
 
-| Feature                 | Tunnel OSS                                                              | Aqua                                                                                       |
+| Feature                 | Tunnel OSS                                                              | KhulnaSoft                                                                                 |
 | ----------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
 | Scan initiation         | CLI / Kubernetes Operator                                               | Kubernetes Operator / Management web application                                           |
 | Results consumption     | kubectl / CRD / Prometheus exporter                                     | In addition, Advanced UI dashboards, Automatic notifications and incident management flows |
 | Cluster discovery       | Kubeconfig                                                              | Automatic discovery thorough cloud onboarding                                              |
-| Workload image scanning | Scanning in cluster, requires capacity planning                         | Scanning offloaded to Aqua service, little impact on scanned clusters                      |
+| Workload image scanning | Scanning in cluster, requires capacity planning                         | Scanning offloaded to KhulnaSoft service, little impact on scanned clusters                |
 | Cluster scanning        | CIS, NSA, PSS                                                           | More than 25 compliance programs                                                           |
 | Scope                   | Single cluster                                                          | Multi cluster, Cloud relationship                                                          |
 | Scalability             | Reports limited by in-cluster etcd storage (size and number of reports) | Cloud-based storage (unlimited scalability)                                                |

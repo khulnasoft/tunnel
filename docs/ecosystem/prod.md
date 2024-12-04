@@ -8,7 +8,7 @@
 
 Using the Tunnel Operator you can install Tunnel into a Kubernetes cluster so that it automatically and continuously scan your workloads and cluster for security issues.
 
-👉 Get it at: <https://github.com/aquasecurity/tunnel-operator>
+👉 Get it at: <https://github.com/khulnasoft/tunnel-operator>
 
 ## Harbor (Official)
 

@@ -3,7 +3,7 @@
   "detector": {
     "name": "tunnel",
     "version": "dev",
-    "url": "https://github.com/aquasecurity/tunnel"
+    "url": "https://github.com/khulnasoft/tunnel"
   },
   "ref": "/ref/feature-1",
   "sha": "39da54a1ff04120a31df8cbc94ce9ede251d21a3",

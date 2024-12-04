@@ -35,9 +35,9 @@ Let’s get started:
    ```bash
    $ tunnel plugin search
    NAME                 DESCRIPTION                                                  MAINTAINER           OUTPUT
-   aqua                 A plugin for integration with KhulnaSoft Security SaaS platform    aquasecurity
-   kubectl              A plugin scanning the images of a kubernetes resource        aquasecurity
-   referrer             A plugin for OCI referrers                                   aquasecurity           ✓
+   khulnasoft                 A plugin for integration with KhulnaSoft Security SaaS platform    khulnasoft
+   kubectl              A plugin scanning the images of a kubernetes resource        khulnasoft
+   referrer             A plugin for OCI referrers                                   khulnasoft           ✓
    [...]
    ```
 

@@ -6,7 +6,7 @@
   "documentNamespace": "http://khulnasoft.github.io/tunnel/filesystem/testdata/fixtures/repo/conda-3ff14136-e09f-4df9-80ea-000000000004",
   "creationInfo": {
     "creators": [
-      "Organization: aquasecurity",
+      "Organization: khulnasoft",
       "Tool: tunnel-dev"
     ],
     "created": "2021-08-25T12:20:30Z"

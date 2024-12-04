@@ -44,7 +44,7 @@ func TestWriter_Write(t *testing.T) {
 			},
 			want: predicate.CosignVulnPredicate{
 				Scanner: predicate.Scanner{
-					URI:     "pkg:github/aquasecurity/tunnel@dev",
+					URI:     "pkg:github/khulnasoft/tunnel@dev",
 					Version: "dev",
 					Result: types.Report{
 						SchemaVersion: 2,

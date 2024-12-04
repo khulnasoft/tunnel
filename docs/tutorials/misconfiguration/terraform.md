@@ -2,10 +2,10 @@
 
 This tutorial is focused on ways Tunnel can scan Terraform IaC configuration files.
 
-A video tutorial on Terraform Misconfiguration scans can be found on the [Aqua Open Source YouTube account.](https://youtu.be/BWp5JLXkbBc)
+A video tutorial on Terraform Misconfiguration scans can be found on the [KhulnaSoft Open Source YouTube account.](https://youtu.be/BWp5JLXkbBc)
 
 **A note to tfsec users**
-We have been consolidating all of our scanning-related efforts in one place, and that is Tunnel. You can read more on the decision in the [tfsec discussions.](https://github.com/aquasecurity/tfsec/discussions/1994)
+We have been consolidating all of our scanning-related efforts in one place, and that is Tunnel. You can read more on the decision in the [tfsec discussions.](https://github.com/khulnasoft/tfsec/discussions/1994)
 
 ## Tunnel Config Command
 

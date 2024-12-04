@@ -119,14 +119,14 @@ var (
 			},
 		},
 		{
-			ID:           "github.com/aquasecurity/go-dep-parser@v0.0.0-20220406074731-71021a481237",
-			Name:         "github.com/aquasecurity/go-dep-parser",
+			ID:           "github.com/khulnasoft/go-dep-parser@v0.0.0-20220406074731-71021a481237",
+			Name:         "github.com/khulnasoft/go-dep-parser",
 			Version:      "v0.0.0-20220406074731-71021a481237",
 			Relationship: ftypes.RelationshipDirect,
 			ExternalReferences: []ftypes.ExternalRef{
 				{
 					Type: ftypes.RefVCS,
-					URL:  "https://github.com/aquasecurity/go-dep-parser",
+					URL:  "https://github.com/khulnasoft/go-dep-parser",
 				},
 			},
 		},
@@ -141,7 +141,7 @@ var (
 		{
 			ID: "github.com/org/repo",
 			DependsOn: []string{
-				"github.com/aquasecurity/go-dep-parser@v0.0.0-20220406074731-71021a481237",
+				"github.com/khulnasoft/go-dep-parser@v0.0.0-20220406074731-71021a481237",
 			},
 		},
 	}
@@ -160,14 +160,14 @@ var (
 			},
 		},
 		{
-			ID:           "github.com/aquasecurity/go-dep-parser@v0.0.0-20211110174639-8257534ffed3",
-			Name:         "github.com/aquasecurity/go-dep-parser",
+			ID:           "github.com/khulnasoft/go-dep-parser@v0.0.0-20211110174639-8257534ffed3",
+			Name:         "github.com/khulnasoft/go-dep-parser",
 			Version:      "v0.0.0-20211110174639-8257534ffed3",
 			Relationship: ftypes.RelationshipDirect,
 			ExternalReferences: []ftypes.ExternalRef{
 				{
 					Type: ftypes.RefVCS,
-					URL:  "https://github.com/aquasecurity/go-dep-parser",
+					URL:  "https://github.com/khulnasoft/go-dep-parser",
 				},
 			},
 		},
@@ -183,7 +183,7 @@ var (
 		{
 			ID: "github.com/org/repo",
 			DependsOn: []string{
-				"github.com/aquasecurity/go-dep-parser@v0.0.0-20211110174639-8257534ffed3",
+				"github.com/khulnasoft/go-dep-parser@v0.0.0-20211110174639-8257534ffed3",
 			},
 		},
 	}
@@ -202,14 +202,14 @@ var (
 			},
 		},
 		{
-			ID:           "github.com/aquasecurity/go-dep-parser@v0.0.0-20220406074731-71021a481237",
-			Name:         "github.com/aquasecurity/go-dep-parser",
+			ID:           "github.com/khulnasoft/go-dep-parser@v0.0.0-20220406074731-71021a481237",
+			Name:         "github.com/khulnasoft/go-dep-parser",
 			Version:      "v0.0.0-20220406074731-71021a481237",
 			Relationship: ftypes.RelationshipDirect,
 			ExternalReferences: []ftypes.ExternalRef{
 				{
 					Type: ftypes.RefVCS,
-					URL:  "https://github.com/aquasecurity/go-dep-parser",
+					URL:  "https://github.com/khulnasoft/go-dep-parser",
 				},
 			},
 		},
@@ -225,7 +225,7 @@ var (
 		{
 			ID: "github.com/org/repo",
 			DependsOn: []string{
-				"github.com/aquasecurity/go-dep-parser@v0.0.0-20220406074731-71021a481237",
+				"github.com/khulnasoft/go-dep-parser@v0.0.0-20220406074731-71021a481237",
 			},
 		},
 	}
@@ -244,14 +244,14 @@ var (
 			},
 		},
 		{
-			ID:           "github.com/aquasecurity/go-dep-parser@v0.0.0-20211224170007-df43bca6b6ff",
-			Name:         "github.com/aquasecurity/go-dep-parser",
+			ID:           "github.com/khulnasoft/go-dep-parser@v0.0.0-20211224170007-df43bca6b6ff",
+			Name:         "github.com/khulnasoft/go-dep-parser",
 			Version:      "v0.0.0-20211224170007-df43bca6b6ff",
 			Relationship: ftypes.RelationshipDirect,
 			ExternalReferences: []ftypes.ExternalRef{
 				{
 					Type: ftypes.RefVCS,
-					URL:  "https://github.com/aquasecurity/go-dep-parser",
+					URL:  "https://github.com/khulnasoft/go-dep-parser",
 				},
 			},
 		},
@@ -279,7 +279,7 @@ var (
 		{
 			ID: "github.com/org/repo",
 			DependsOn: []string{
-				"github.com/aquasecurity/go-dep-parser@v0.0.0-20211224170007-df43bca6b6ff",
+				"github.com/khulnasoft/go-dep-parser@v0.0.0-20211224170007-df43bca6b6ff",
 			},
 		},
 	}
@@ -298,14 +298,14 @@ var (
 			},
 		},
 		{
-			ID:           "github.com/aquasecurity/go-dep-parser@v0.0.0-20211224170007-df43bca6b6ff",
-			Name:         "github.com/aquasecurity/go-dep-parser",
+			ID:           "github.com/khulnasoft/go-dep-parser@v0.0.0-20211224170007-df43bca6b6ff",
+			Name:         "github.com/khulnasoft/go-dep-parser",
 			Version:      "v0.0.0-20211224170007-df43bca6b6ff",
 			Relationship: ftypes.RelationshipDirect,
 			ExternalReferences: []ftypes.ExternalRef{
 				{
 					Type: ftypes.RefVCS,
-					URL:  "https://github.com/aquasecurity/go-dep-parser",
+					URL:  "https://github.com/khulnasoft/go-dep-parser",
 				},
 			},
 		},
@@ -337,14 +337,14 @@ var (
 			},
 		},
 		{
-			ID:           "github.com/aquasecurity/go-dep-parser@v0.0.0-20211224170007-df43bca6b6ff",
-			Name:         "github.com/aquasecurity/go-dep-parser",
+			ID:           "github.com/khulnasoft/go-dep-parser@v0.0.0-20211224170007-df43bca6b6ff",
+			Name:         "github.com/khulnasoft/go-dep-parser",
 			Version:      "v0.0.0-20211224170007-df43bca6b6ff",
 			Relationship: ftypes.RelationshipDirect,
 			ExternalReferences: []ftypes.ExternalRef{
 				{
 					Type: ftypes.RefVCS,
-					URL:  "https://github.com/aquasecurity/go-dep-parser",
+					URL:  "https://github.com/khulnasoft/go-dep-parser",
 				},
 			},
 		},
@@ -376,14 +376,14 @@ var (
 			},
 		},
 		{
-			ID:           "github.com/aquasecurity/go-dep-parser@v0.0.0-20211224170007-df43bca6b6ff",
-			Name:         "github.com/aquasecurity/go-dep-parser",
+			ID:           "github.com/khulnasoft/go-dep-parser@v0.0.0-20211224170007-df43bca6b6ff",
+			Name:         "github.com/khulnasoft/go-dep-parser",
 			Version:      "v0.0.0-20211224170007-df43bca6b6ff",
 			Relationship: ftypes.RelationshipDirect,
 			ExternalReferences: []ftypes.ExternalRef{
 				{
 					Type: ftypes.RefVCS,
-					URL:  "https://github.com/aquasecurity/go-dep-parser",
+					URL:  "https://github.com/khulnasoft/go-dep-parser",
 				},
 			},
 		},
@@ -421,14 +421,14 @@ var (
 			},
 		},
 		{
-			ID:           "github.com/aquasecurity/go-dep-parser@v0.0.0-20211224170007-df43bca6b6ff",
-			Name:         "github.com/aquasecurity/go-dep-parser",
+			ID:           "github.com/khulnasoft/go-dep-parser@v0.0.0-20211224170007-df43bca6b6ff",
+			Name:         "github.com/khulnasoft/go-dep-parser",
 			Version:      "v0.0.0-20211224170007-df43bca6b6ff",
 			Relationship: ftypes.RelationshipDirect,
 			ExternalReferences: []ftypes.ExternalRef{
 				{
 					Type: ftypes.RefVCS,
-					URL:  "https://github.com/aquasecurity/go-dep-parser",
+					URL:  "https://github.com/khulnasoft/go-dep-parser",
 				},
 			},
 		},
@@ -448,14 +448,14 @@ var (
 			},
 		},
 		{
-			ID:           "github.com/aquasecurity/go-dep-parser@v0.0.0-20211224170007-df43bca6b6ff",
-			Name:         "github.com/aquasecurity/go-dep-parser",
+			ID:           "github.com/khulnasoft/go-dep-parser@v0.0.0-20211224170007-df43bca6b6ff",
+			Name:         "github.com/khulnasoft/go-dep-parser",
 			Version:      "v0.0.0-20211224170007-df43bca6b6ff",
 			Relationship: ftypes.RelationshipDirect,
 			ExternalReferences: []ftypes.ExternalRef{
 				{
 					Type: ftypes.RefVCS,
-					URL:  "https://github.com/aquasecurity/go-dep-parser",
+					URL:  "https://github.com/khulnasoft/go-dep-parser",
 				},
 			},
 		},

@@ -87,8 +87,8 @@ Here is an example YAML of [tunnel-plugin-kubectl][tunnel-plugin-kubectl] plugin
 ```yaml
 name: "kubectl"
 version: "0.1.0"
-repository: github.com/aquasecurity/tunnel-plugin-kubectl
-maintainer: aquasecurity
+repository: github.com/khulnasoft/tunnel-plugin-kubectl
+maintainer: khulnasoft
 output: false
 summary: Scan kubectl resources
 description: |-
@@ -103,7 +103,7 @@ platforms:
   - selector: # optional
       os: linux
       arch: amd64
-    uri: https://github.com/aquasecurity/tunnel-plugin-kubectl/releases/download/v0.1.0/tunnel-kubectl.tar.gz
+    uri: https://github.com/khulnasoft/tunnel-plugin-kubectl/releases/download/v0.1.0/tunnel-kubectl.tar.gz
     bin: ./tunnel-kubectl
 ```
 
@@ -185,7 +185,7 @@ For an example of how to structure your plugin repository, refer to [the plugin 
 
 ## Distributing plugins via the Tunnel plugin index
 
-Tunnel can install plugins directly by specifying a repository, like `tunnel plugin install github.com/aquasecurity/tunnel-plugin-referrer`,
+Tunnel can install plugins directly by specifying a repository, like `tunnel plugin install github.com/khulnasoft/tunnel-plugin-referrer`,
 so you don't necessarily need to register your plugin in the Tunnel plugin index.
 However, we would recommend distributing your plugin via the Tunnel plugin index
 since it makes it easier for other users to find (`tunnel plugin search`) and install your plugin (e.g. `tunnel plugin install kubectl`).
@@ -200,7 +200,7 @@ since it makes it easier for other users to find (`tunnel plugin search`) and in
 ### Submitting plugins
 
 Submitting your plugin to the plugin index is a straightforward process.
-All you need to do is create a YAML file for your plugin and place it in the [plugins/](https://github.com/aquasecurity/tunnel-plugin-index/tree/main/plugins) directory of [the index repository][tunnel-plugin-index].
+All you need to do is create a YAML file for your plugin and place it in the [plugins/](https://github.com/khulnasoft/tunnel-plugin-index/tree/main/plugins) directory of [the index repository][tunnel-plugin-index].
 
 Once you've done that, create a pull request (PR) and have it reviewed by the maintainers.
 Once your PR is merged, the index will be updated, and your plugin will be available for installation.
@@ -211,18 +211,18 @@ You only need to specify the name of your plugin and the repository where it is 
 
 ```yaml
 name: referrer
-repository: github.com/aquasecurity/tunnel-plugin-referrer
+repository: github.com/khulnasoft/tunnel-plugin-referrer
 ```
 
 After your PR is merged, the CI system will automatically retrieve the `plugin.yaml` file from your repository and update [the index.yaml file][index].
 If any required fields are missing from your `plugin.yaml`, the CI will fail, so make sure your `plugin.yaml` has all the required fields before creating a PR.
 Once [the index.yaml][index] has been updated, running `tunnel plugin update` will download the updated index to your local machine.
 
-[plugin-template]: https://github.com/aquasecurity/tunnel-plugin-template
+[plugin-template]: https://github.com/khulnasoft/tunnel-plugin-template
 [plugin-list]: https://khulnasoft.github.io/tunnel-plugin-index/
 [index]: https://khulnasoft.github.io/tunnel-plugin-index/v1/index.yaml
 [semver]: https://semver.org/
-[tunnel-plugin-index]: https://github.com/aquasecurity/tunnel-plugin-index
-[tunnel-plugin-kubectl]: https://github.com/aquasecurity/tunnel-plugin-kubectl
-[tunnel-plugin-count]: https://github.com/aquasecurity/tunnel-plugin-count/blob/main/plugin.yaml
-[tunnel-plugin-referrer]: https://github.com/aquasecurity/tunnel-plugin-referrer/blob/main/plugin.yaml
+[tunnel-plugin-index]: https://github.com/khulnasoft/tunnel-plugin-index
+[tunnel-plugin-kubectl]: https://github.com/khulnasoft/tunnel-plugin-kubectl
+[tunnel-plugin-count]: https://github.com/khulnasoft/tunnel-plugin-count/blob/main/plugin.yaml
+[tunnel-plugin-referrer]: https://github.com/khulnasoft/tunnel-plugin-referrer/blob/main/plugin.yaml

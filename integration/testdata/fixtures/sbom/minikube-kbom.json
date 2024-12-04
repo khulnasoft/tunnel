@@ -8,7 +8,7 @@
     "timestamp": "2023-09-29T06:25:00+00:00",
     "tools": [
       {
-        "vendor": "aquasecurity",
+        "vendor": "khulnasoft",
         "name": "tunnel",
         "version": "0.45.1-15-g7bbd0d097"
       }
@@ -21,11 +21,11 @@
       "purl": "pkg:k8s/k8s.io%2Fkubernetes@1.27.0",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:resource:Name",
+          "name": "khulnasoft:tunnel:resource:Name",
           "value": "minikube"
         },
         {
-          "name": "aquasecurity:tunnel:resource:Type",
+          "name": "khulnasoft:tunnel:resource:Type",
           "value": "cluster"
         }
       ]
@@ -39,11 +39,11 @@
       "version": "22.04.2",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:Class",
+          "name": "khulnasoft:tunnel:Class",
           "value": "os-pkgs"
         },
         {
-          "name": "aquasecurity:tunnel:Type",
+          "name": "khulnasoft:tunnel:Type",
           "value": "ubuntu"
         }
       ]
@@ -55,11 +55,11 @@
       "version": "22.04.2",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:Class",
+          "name": "khulnasoft:tunnel:Class",
           "value": "os-pkgs"
         },
         {
-          "name": "aquasecurity:tunnel:Type",
+          "name": "khulnasoft:tunnel:Type",
           "value": "ubuntu"
         }
       ]
@@ -75,31 +75,31 @@
       "name": "minikube",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:Architecture",
+          "name": "khulnasoft:tunnel:Architecture",
           "value": "arm64"
         },
         {
-          "name": "aquasecurity:tunnel:HostName",
+          "name": "khulnasoft:tunnel:HostName",
           "value": "minikube"
         },
         {
-          "name": "aquasecurity:tunnel:KernelVersion",
+          "name": "khulnasoft:tunnel:KernelVersion",
           "value": "5.15.49-linuxkit-pr"
         },
         {
-          "name": "aquasecurity:tunnel:NodeRole",
+          "name": "khulnasoft:tunnel:NodeRole",
           "value": "master"
         },
         {
-          "name": "aquasecurity:tunnel:OperatingSystem",
+          "name": "khulnasoft:tunnel:OperatingSystem",
           "value": "linux"
         },
         {
-          "name": "aquasecurity:tunnel:resource:Name",
+          "name": "khulnasoft:tunnel:resource:Name",
           "value": "minikube"
         },
         {
-          "name": "aquasecurity:tunnel:resource:Type",
+          "name": "khulnasoft:tunnel:resource:Type",
           "value": "node"
         }
       ]
@@ -110,7 +110,7 @@
       "name": "kube-dns",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:resource:Name",
+          "name": "khulnasoft:tunnel:resource:Name",
           "value": "coredns-5d78c9869d-nd92n"
         }
       ]
@@ -122,11 +122,11 @@
       "version": "3.5.7-0",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:resource:Name",
+          "name": "khulnasoft:tunnel:resource:Name",
           "value": "etcd-minikube"
         },
         {
-          "name": "aquasecurity:tunnel:resource:Type",
+          "name": "khulnasoft:tunnel:resource:Type",
           "value": "controlPlane"
         }
       ]
@@ -139,11 +139,11 @@
       "purl": "pkg:golang/docker@24.0.4",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:resource:Name",
+          "name": "khulnasoft:tunnel:resource:Name",
           "value": "docker"
         },
         {
-          "name": "aquasecurity:tunnel:resource:Type",
+          "name": "khulnasoft:tunnel:resource:Type",
           "value": "node"
         }
       ]
@@ -156,11 +156,11 @@
       "purl": "pkg:k8s/k8s.io%2Fapiserver@1.27.0",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:resource:Name",
+          "name": "khulnasoft:tunnel:resource:Name",
           "value": "kube-apiserver-minikube"
         },
         {
-          "name": "aquasecurity:tunnel:resource:Type",
+          "name": "khulnasoft:tunnel:resource:Type",
           "value": "controlPlane"
         }
       ]
@@ -173,11 +173,11 @@
       "purl": "pkg:k8s/k8s.io%2Fcontroller-manager@1.27.0",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:resource:Name",
+          "name": "khulnasoft:tunnel:resource:Name",
           "value": "kube-controller-manager-minikube"
         },
         {
-          "name": "aquasecurity:tunnel:resource:Type",
+          "name": "khulnasoft:tunnel:resource:Type",
           "value": "controlPlane"
         }
       ]
@@ -190,11 +190,11 @@
       "purl": "pkg:k8s/k8s.io%2Fkube-proxy@1.27.0",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:resource:Name",
+          "name": "khulnasoft:tunnel:resource:Name",
           "value": "kube-proxy-4wftc"
         },
         {
-          "name": "aquasecurity:tunnel:resource:Type",
+          "name": "khulnasoft:tunnel:resource:Type",
           "value": "node"
         }
       ]
@@ -207,11 +207,11 @@
       "purl": "pkg:k8s/k8s.io%2Fkube-scheduler@1.27.0",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:resource:Name",
+          "name": "khulnasoft:tunnel:resource:Name",
           "value": "kube-scheduler-minikube"
         },
         {
-          "name": "aquasecurity:tunnel:resource:Type",
+          "name": "khulnasoft:tunnel:resource:Type",
           "value": "controlPlane"
         }
       ]
@@ -224,11 +224,11 @@
       "purl": "pkg:k8s/k8s.io%2Fkubelet@1.27.0",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:resource:Name",
+          "name": "khulnasoft:tunnel:resource:Name",
           "value": "k8s.io/kubelet"
         },
         {
-          "name": "aquasecurity:tunnel:resource:Type",
+          "name": "khulnasoft:tunnel:resource:Type",
           "value": "node"
         }
       ]
@@ -241,11 +241,11 @@
       "purl": "pkg:oci/coredns@sha256%3Aa0ead06651cf580044aeb0a0feba63591858fb2e43ade8c9dea45a6a89ae7e5e?repository_url=registry.k8s.io%2Fcoredns%2Fcoredns",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:PkgID",
+          "name": "khulnasoft:tunnel:PkgID",
           "value": "registry.k8s.io/coredns/coredns:1.10.1"
         },
         {
-          "name": "aquasecurity:tunnel:PkgType",
+          "name": "khulnasoft:tunnel:PkgType",
           "value": "oci"
         }
       ]
@@ -258,11 +258,11 @@
       "purl": "pkg:oci/etcd@sha256%3A51eae8381dcb1078289fa7b4f3df2630cdc18d09fb56f8e56b41c40e191d6c83?repository_url=registry.k8s.io%2Fetcd",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:PkgID",
+          "name": "khulnasoft:tunnel:PkgID",
           "value": "registry.k8s.io/etcd:3.5.7-0"
         },
         {
-          "name": "aquasecurity:tunnel:PkgType",
+          "name": "khulnasoft:tunnel:PkgType",
           "value": "oci"
         }
       ]
@@ -275,11 +275,11 @@
       "purl": "pkg:oci/kube-apiserver@sha256%3A697cd88d94f7f2ef42144cb3072b016dcb2e9251f0e7d41a7fede557e555452d?repository_url=registry.k8s.io%2Fkube-apiserver",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:PkgID",
+          "name": "khulnasoft:tunnel:PkgID",
           "value": "registry.k8s.io/kube-apiserver:1.27.0"
         },
         {
-          "name": "aquasecurity:tunnel:PkgType",
+          "name": "khulnasoft:tunnel:PkgType",
           "value": "oci"
         }
       ]
@@ -292,11 +292,11 @@
       "purl": "pkg:oci/kube-controller-manager@sha256%3A6286e500782ad6d0b37a1b8be57fc73f597dc931dfc73ff18ce534059803b265?repository_url=registry.k8s.io%2Fkube-controller-manager",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:PkgID",
+          "name": "khulnasoft:tunnel:PkgID",
           "value": "registry.k8s.io/kube-controller-manager:1.27.0"
         },
         {
-          "name": "aquasecurity:tunnel:PkgType",
+          "name": "khulnasoft:tunnel:PkgType",
           "value": "oci"
         }
       ]
@@ -309,11 +309,11 @@
       "purl": "pkg:oci/kube-proxy@sha256%3A4bcb707da9898d2625f5d4edc6d0c96519a24f16db914fc673aa8f97e41dbabf?repository_url=registry.k8s.io%2Fkube-proxy",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:PkgID",
+          "name": "khulnasoft:tunnel:PkgID",
           "value": "registry.k8s.io/kube-proxy:1.27.0"
         },
         {
-          "name": "aquasecurity:tunnel:PkgType",
+          "name": "khulnasoft:tunnel:PkgType",
           "value": "oci"
         }
       ]
@@ -326,11 +326,11 @@
       "purl": "pkg:oci/kube-scheduler@sha256%3A5897d7a97d23dce25cbf36fcd6e919180a8ef904bf5156583ffdb6a733ab04af?repository_url=registry.k8s.io%2Fkube-scheduler",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:PkgID",
+          "name": "khulnasoft:tunnel:PkgID",
           "value": "registry.k8s.io/kube-scheduler:1.27.0"
         },
         {
-          "name": "aquasecurity:tunnel:PkgType",
+          "name": "khulnasoft:tunnel:PkgType",
           "value": "oci"
         }
       ]

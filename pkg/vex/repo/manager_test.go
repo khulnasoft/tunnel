@@ -54,7 +54,7 @@ func TestManager_Config(t *testing.T) {
 				Repositories: []repo.Repository{
 					{
 						Name:    "default",
-						URL:     "https://github.com/aquasecurity/vexhub",
+						URL:     "https://github.com/khulnasoft/vexhub",
 						Enabled: true,
 					},
 				},
@@ -95,7 +95,7 @@ func TestManager_Init(t *testing.T) {
 				Repositories: []repo.Repository{
 					{
 						Name:    "default",
-						URL:     "https://github.com/aquasecurity/vexhub",
+						URL:     "https://github.com/khulnasoft/vexhub",
 						Enabled: true,
 					},
 				},
@@ -259,7 +259,7 @@ func TestManager_List(t *testing.T) {
 				Repositories: []repo.Repository{
 					{
 						Name:    "default",
-						URL:     "https://github.com/aquasecurity/vexhub",
+						URL:     "https://github.com/khulnasoft/vexhub",
 						Enabled: true,
 					},
 					{
@@ -272,7 +272,7 @@ func TestManager_List(t *testing.T) {
 			want: `VEX Repositories (config: %s)
 
 - Name: default
-  URL: https://github.com/aquasecurity/vexhub
+  URL: https://github.com/khulnasoft/vexhub
   Status: Enabled
 
 - Name: custom

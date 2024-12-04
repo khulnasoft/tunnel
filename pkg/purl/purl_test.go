@@ -816,19 +816,19 @@ func TestPackageURL_Match(t *testing.T) {
 		{
 			name:       "different type",
 			constraint: "pkg:golang/github.com/khulnasoft/tunnel@v0.49.0",
-			target:     "pkg:maven/github.com/aquasecurity/tunnel@0.49.0",
+			target:     "pkg:maven/github.com/khulnasoft/tunnel@0.49.0",
 			want:       false,
 		},
 		{
 			name:       "different namespace",
 			constraint: "pkg:golang/github.com/khulnasoft/tunnel@v0.49.0",
-			target:     "pkg:golang/github.com/aquasecurity2/tunnel@v.49.0",
+			target:     "pkg:golang/github.com/khulnasoft2/tunnel@v.49.0",
 			want:       false,
 		},
 		{
 			name:       "different name",
 			constraint: "pkg:golang/github.com/khulnasoft/tunnel@v0.49.0",
-			target:     "pkg:golang/github.com/aquasecurity/tracee@v0.49.0",
+			target:     "pkg:golang/github.com/khulnasoft/tracee@v0.49.0",
 			want:       false,
 		},
 		{

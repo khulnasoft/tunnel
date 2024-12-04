@@ -16,7 +16,7 @@ tunnel plugin install NAME | URL | FILE_PATH
   $ tunnel plugin install referrer@v0.3.0
 
   # Install a plugin from a URL
-  $ tunnel plugin install github.com/aquasecurity/tunnel-plugin-referrer
+  $ tunnel plugin install github.com/khulnasoft/tunnel-plugin-referrer
 ```
 
 ### Options

@@ -9,7 +9,7 @@
       "components": [
         {
           "type": "application",
-          "group": "aquasecurity",
+          "group": "khulnasoft",
           "name": "tunnel",
           "version": "dev"
         }
@@ -21,7 +21,7 @@
       "name": "spring-web-5.3.22.jar",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:SchemaVersion",
+          "name": "khulnasoft:tunnel:SchemaVersion",
           "value": "2"
         }
       ]
@@ -36,11 +36,11 @@
       "purl": "pkg:maven/org.springframework/spring-web@5.3.22",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:FilePath",
+          "name": "khulnasoft:tunnel:FilePath",
           "value": "spring-web-5.3.22.jar"
         },
         {
-          "name": "aquasecurity:tunnel:PkgType",
+          "name": "khulnasoft:tunnel:PkgType",
           "value": "jar"
         }
       ]

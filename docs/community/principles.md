@@ -44,7 +44,7 @@ The focus is on identifying developer mistakes or undesirable states, not on det
 ## Out of Scope Features
 
 KhulnaSoft Security offers a premium version with several features not available in the open-source Tunnel project.
-While detailed information can be found [here][tunnel-aqua], it's beneficial to highlight specific functionalities frequently inquired about:
+While detailed information can be found [here][tunnel-khulnasoft], it's beneficial to highlight specific functionalities frequently inquired about:
 
 ### Runtime Security
 
@@ -53,12 +53,12 @@ Runtime security needs are addressed by [Tracee][tracee] or [the commercial vers
 
 ### Intentional Attacks
 
-As mentioned in [the Core Principles](#detecting-unintended-states), detection of intentional attacks, such as malware or malicious container images, is not covered by Tunnel and is supported in [the commercial version][aqua].
+As mentioned in [the Core Principles](#detecting-unintended-states), detection of intentional attacks, such as malware or malicious container images, is not covered by Tunnel and is supported in [the commercial version][khulnasoft].
 
 ### User Interface
 
-Tunnel primarily operates via CLI for displaying results, with a richer UI available in [the commercial version][aqua].
+Tunnel primarily operates via CLI for displaying results, with a richer UI available in [the commercial version][khulnasoft].
 
-[tunnel-aqua]: ../commercial/compare.md
-[tracee]: https://github.com/aquasecurity/tracee
-[aqua]: https://www.khulnasoft.com/
+[tunnel-khulnasoft]: ../commercial/compare.md
+[tracee]: https://github.com/khulnasoft/tracee
+[khulnasoft]: https://www.khulnasoft.com/

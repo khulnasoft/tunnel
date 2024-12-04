@@ -67,10 +67,10 @@ This repository serves as the foundation for building the Tunnel DB.
 
 Managed at:
 
-- https://github.com/aquasecurity/vuln-list
-- https://github.com/aquasecurity/vuln-list-nvd
-- https://github.com/aquasecurity/vuln-list-redhat
-- https://github.com/aquasecurity/vuln-list-debian
+- https://github.com/khulnasoft/vuln-list
+- https://github.com/khulnasoft/vuln-list-nvd
+- https://github.com/khulnasoft/vuln-list-redhat
+- https://github.com/khulnasoft/vuln-list-debian
 - etc.
 
 ### Java Index Database (Tunnel Java DB, tunnel-java-db)
@@ -118,14 +118,14 @@ A specialized SBOM format for Kubernetes clusters that includes detailed informa
 
 ### VEX Repository
 
-A repository system that stores VEX documents following [the VEX Repository Specification](https://github.com/aquasecurity/vex-repo-spec).
+A repository system that stores VEX documents following [the VEX Repository Specification](https://github.com/khulnasoft/vex-repo-spec).
 VEX repositories help users manage and share information about vulnerability applicability and exploitability.
 
 For detailed information about VEX repositories, see [the document](../supply-chain/vex/repo.md).
 
 ### VEX Hub
 
-The default VEX repository managed by KhulnaSoft Security at https://github.com/aquasecurity/vexhub.
+The default VEX repository managed by KhulnaSoft Security at https://github.com/khulnasoft/vexhub.
 It primarily aggregates VEX documents published by package maintainers in their source repositories.
 VEX Hub serves as a central point for collecting and distributing vulnerability applicability information for OSS projects.
 
@@ -164,7 +164,7 @@ For detailed information about plugins, see [the document](../plugin/index.md).
 
 ### Plugin Index (tunnel-plugin-index)
 
-A centralized registry that lists available Tunnel plugins, managed at https://github.com/aquasecurity/tunnel-plugin-index.
+A centralized registry that lists available Tunnel plugins, managed at https://github.com/khulnasoft/tunnel-plugin-index.
 The index maintains a curated list of official and community plugins, providing metadata such as plugin names, descriptions, and maintainers.
 It enables plugin discovery through the `tunnel plugin search` command and facilitates automatic plugin installation and updates.
 

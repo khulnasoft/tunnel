@@ -9,7 +9,7 @@
       "components": [
         {
           "type": "application",
-          "group": "aquasecurity",
+          "group": "khulnasoft",
           "name": "tunnel",
           "version": "dev"
         }
@@ -22,23 +22,23 @@
       "purl": "pkg:oci/ubuntu@sha256:67211c14fa74f070d27cc59d69a7fa9aeff8e28ea118ef3babc295a0428a6d21?repository_url=index.docker.io%2Flibrary%2Fubuntu\u0026arch=amd64",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:SchemaVersion",
+          "name": "khulnasoft:tunnel:SchemaVersion",
           "value": "2"
         },
         {
-          "name": "aquasecurity:tunnel:ImageID",
+          "name": "khulnasoft:tunnel:ImageID",
           "value": "sha256:08d22c0ceb150ddeb2237c5fa3129c0183f3cc6f5eeb2e7aa4016da3ad02140a"
         },
         {
-          "name": "aquasecurity:tunnel:RepoDigest",
+          "name": "khulnasoft:tunnel:RepoDigest",
           "value": "ubuntu@sha256:67211c14fa74f070d27cc59d69a7fa9aeff8e28ea118ef3babc295a0428a6d21"
         },
         {
-          "name": "aquasecurity:tunnel:DiffID",
+          "name": "khulnasoft:tunnel:DiffID",
           "value": "sha256:b93c1bd012ab8fda60f5b4f5906bf244586e0e3292d84571d3abb56472248466"
         },
         {
-          "name": "aquasecurity:tunnel:RepoTag",
+          "name": "khulnasoft:tunnel:RepoTag",
           "value": "ubuntu:latest"
         }
       ]
@@ -70,31 +70,31 @@
       "purl": "pkg:deb/ubuntu/libc6@2.35-0ubuntu3.1?distro=ubuntu-22.04",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:PkgID",
+          "name": "khulnasoft:tunnel:PkgID",
           "value": "libc6@2.35-0ubuntu3.1"
         },
         {
-          "name": "aquasecurity:tunnel:PkgType",
+          "name": "khulnasoft:tunnel:PkgType",
           "value": "ubuntu"
         },
         {
-          "name": "aquasecurity:tunnel:SrcName",
+          "name": "khulnasoft:tunnel:SrcName",
           "value": "glibc"
         },
         {
-          "name": "aquasecurity:tunnel:SrcVersion",
+          "name": "khulnasoft:tunnel:SrcVersion",
           "value": "2.35"
         },
         {
-          "name": "aquasecurity:tunnel:SrcRelease",
+          "name": "khulnasoft:tunnel:SrcRelease",
           "value": "0ubuntu3.1"
         },
         {
-          "name": "aquasecurity:tunnel:LayerDigest",
+          "name": "khulnasoft:tunnel:LayerDigest",
           "value": "sha256:74ac377868f863e123f24c409f79709f7563fa464557c36a09cf6f85c8b92b7f"
         },
         {
-          "name": "aquasecurity:tunnel:LayerDiffID",
+          "name": "khulnasoft:tunnel:LayerDiffID",
           "value": "sha256:b93c1bd012ab8fda60f5b4f5906bf244586e0e3292d84571d3abb56472248466"
         }
       ]
@@ -107,35 +107,35 @@
       "purl": "pkg:deb/ubuntu/libcrypt1@4.4.27-1?epoch=1\u0026distro=ubuntu-22.04",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:PkgID",
+          "name": "khulnasoft:tunnel:PkgID",
           "value": "libcrypt1@1:4.4.27-1"
         },
         {
-          "name": "aquasecurity:tunnel:PkgType",
+          "name": "khulnasoft:tunnel:PkgType",
           "value": "ubuntu"
         },
         {
-          "name": "aquasecurity:tunnel:SrcName",
+          "name": "khulnasoft:tunnel:SrcName",
           "value": "libxcrypt"
         },
         {
-          "name": "aquasecurity:tunnel:SrcVersion",
+          "name": "khulnasoft:tunnel:SrcVersion",
           "value": "4.4.27"
         },
         {
-          "name": "aquasecurity:tunnel:SrcRelease",
+          "name": "khulnasoft:tunnel:SrcRelease",
           "value": "1"
         },
         {
-          "name": "aquasecurity:tunnel:SrcEpoch",
+          "name": "khulnasoft:tunnel:SrcEpoch",
           "value": "1"
         },
         {
-          "name": "aquasecurity:tunnel:LayerDigest",
+          "name": "khulnasoft:tunnel:LayerDigest",
           "value": "sha256:74ac377868f863e123f24c409f79709f7563fa464557c36a09cf6f85c8b92b7f"
         },
         {
-          "name": "aquasecurity:tunnel:LayerDiffID",
+          "name": "khulnasoft:tunnel:LayerDiffID",
           "value": "sha256:b93c1bd012ab8fda60f5b4f5906bf244586e0e3292d84571d3abb56472248466"
         }
       ]
@@ -147,11 +147,11 @@
       "version": "22.04",
       "properties": [
         {
-          "name": "aquasecurity:tunnel:Type",
+          "name": "khulnasoft:tunnel:Type",
           "value": "ubuntu"
         },
         {
-          "name": "aquasecurity:tunnel:Class",
+          "name": "khulnasoft:tunnel:Class",
           "value": "os-pkgs"
         }
       ]

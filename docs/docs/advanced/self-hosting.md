@@ -35,11 +35,11 @@ If the registry requires authentication, you can configure it as described in th
 
 When serving, proxying, or manipulating Tunnel's databases, note that the media type of the OCI layer is not a standard container image type:
 
-| DB               | Media Type                                                | Reference                                                                   |
-| ---------------- | --------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `tunnel-db`      | `application/vnd.khulnasoft.tunnel.db.layer.v1.tar+gzip`  | <https://go.khulnasoft.com/tunnel-db/pkgs/container/tunnel-db>              |
-| `tunnel-java-db` | `application/vnd.aquasec.tunnel.javadb.layer.v1.tar+gzip` | https://github.com/aquasecurity/trivy-java-db/pkgs/container/tunnel-java-db |
-| `tunnel-checks`  | `application/vnd.oci.image.manifest.v1+json`              | https://github.com/aquasecurity/trivy-checks/pkgs/container/tunnel-checks   |
+| DB               | Media Type                                                   | Reference                                                                   |
+| ---------------- | ------------------------------------------------------------ | --------------------------------------------------------------------------- |
+| `tunnel-db`      | `application/vnd.khulnasoft.tunnel.db.layer.v1.tar+gzip`     | <https://go.khulnasoft.com/tunnel-db/pkgs/container/tunnel-db>              |
+| `tunnel-java-db` | `application/vnd.khulnasoft.tunnel.javadb.layer.v1.tar+gzip` | https://github.com/aquasecurity/trivy-java-db/pkgs/container/tunnel-java-db |
+| `tunnel-checks`  | `application/vnd.oci.image.manifest.v1+json`                 | https://github.com/aquasecurity/trivy-checks/pkgs/container/tunnel-checks   |
 
 ## Manual cache population
 
@@ -111,11 +111,11 @@ For Java DB the process is the same, except for the following:
 
 To make a copy of VEX Hub in a location that is accessible to Tunnel.
 
-1. Download the [VEX Hub](https://github.com/aquasecurity/vexhub) archive from: <https://github.com/aquasecurity/vexhub/archive/refs/heads/main.zip>.
-1. Download the [VEX Hub Repository Manifest](https://github.com/aquasecurity/vex-repo-spec#2-repository-manifest) file from: <https://github.com/aquasecurity/vexhub/blob/main/vex-repository.json>.
+1. Download the [VEX Hub](https://github.com/khulnasoft/vexhub) archive from: <https://github.com/khulnasoft/vexhub/archive/refs/heads/main.zip>.
+1. Download the [VEX Hub Repository Manifest](https://github.com/khulnasoft/vex-repo-spec#2-repository-manifest) file from: <https://github.com/khulnasoft/vexhub/blob/main/vex-repository.json>.
 1. Create or identify an internal HTTP server that can serve the VEX Hub repository in your environment (e.g `https://server.local`).
 1. Make the downloaded archive file available for serving from your server (e.g `https://server.local/main.zip`).
-1. Modify the downloaded manifest file's [Location URL](https://github.com/aquasecurity/vex-repo-spec?tab=readme-ov-file#locations-subfields) field to the URL of the archive file on your server (e.g `url: https://server.local/main.zip`).
+1. Modify the downloaded manifest file's [Location URL](https://github.com/khulnasoft/vex-repo-spec?tab=readme-ov-file#locations-subfields) field to the URL of the archive file on your server (e.g `url: https://server.local/main.zip`).
 1. Make the manifest file available for serving from your server under the `/.well-known` path (e.g `https://server.local/.well-known/vex-repository.json`).
 
 ### Configure Tunnel

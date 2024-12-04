@@ -16,7 +16,7 @@ $ tunnel fs /path/to/project
 It's also possible to scan a single file.
 
 ```
-$ tunnel fs ~/src/github.com/aquasecurity/tunnel-ci-test/Pipfile.lock
+$ tunnel fs ~/src/github.com/khulnasoft/tunnel-ci-test/Pipfile.lock
 ```
 
 ## Scanners
@@ -28,7 +28,7 @@ Tunnel will look for vulnerabilities based on lock files such as Gemfile.lock an
 See [here](../scanner/vulnerability.md) for the detail.
 
 ```
-$ tunnel fs ~/src/github.com/aquasecurity/tunnel-ci-test
+$ tunnel fs ~/src/github.com/khulnasoft/tunnel-ci-test
 ```
 
 <details>
