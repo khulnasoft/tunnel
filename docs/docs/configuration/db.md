@@ -21,17 +21,17 @@ To learn about external connectivity requirements, see the [Advanced Network Sce
 
 Tunnel's databases are published to the following locations:
 
-| Registry   | Image Address                               | Link                                                 |
-| ---------- | ------------------------------------------- | ---------------------------------------------------- |
-| GHCR       | `ghcr.io/khulnasoft/tunnel-db`              | <https://ghcr.io/khulnasoft/tunnel-db>               |
-|            | `ghcr.io/khulnasoft/tunnel-java-db`         | <https://ghcr.io/khulnasoft/tunnel-java-db>          |
-|            | `ghcr.io/khulnasoft/tunnel-checks`          | <https://ghcr.io/khulnasoft/tunnel-checks>           |
-| Docker Hub | `khulnasoft/tunnel-db`                      | <https://hub.docker.com/r/khulnasoft/tunnel-db>      |
-|            | `khulnasoft/tunnel-java-db`                 | <https://hub.docker.com/r/khulnasoft/tunnel-java-db> |
-|            | `khulnasoft/tunnel-checks`                  | <https://hub.docker.com/r/khulnasoft/tunnel-checks>  |
-| AWS ECR    | `public.ecr.aws/khulnasoft/tunnel-db`       | <https://gallery.ecr.aws/khulnasoft/tunnel-db>       |
-|            | `public.ecr.aws/aquasecurity/trivy-java-db` | <https://gallery.ecr.aws/aquasecurity/trivy-java-db> |
-|            | `public.ecr.aws/aquasecurity/trivy-checks`  | <https://gallery.ecr.aws/aquasecurity/trivy-checks>  |
+| Registry   | Image Address                                  | Link                                                    |
+| ---------- | ---------------------------------------------- | ------------------------------------------------------- |
+| GHCR       | `ghcr.io/khulnasoft/tunnel-db`                 | <https://ghcr.io/khulnasoft/tunnel-db>                  |
+|            | `ghcr.io/khulnasoft/tunnel-java-db`            | <https://ghcr.io/khulnasoft/tunnel-java-db>             |
+|            | `ghcr.io/khulnasoft/tunnel-checks`             | <https://ghcr.io/khulnasoft/tunnel-checks>              |
+| Docker Hub | `khulnasoft/tunnel-db`                         | <https://hub.docker.com/r/khulnasoft/tunnel-db>         |
+|            | `khulnasoft/tunnel-java-db`                    | <https://hub.docker.com/r/khulnasoft/tunnel-java-db>    |
+|            | `khulnasoft/tunnel-checks`                     | <https://hub.docker.com/r/khulnasoft/tunnel-checks>     |
+| AWS ECR    | `public.ecr.aws/khulnasoft/tunnel-db`          | <https://gallery.ecr.aws/khulnasoft/tunnel-db>          |
+|            | `public.ecr.aws/khulnasoft-lab/tunnel-java-db` | <https://gallery.ecr.aws/khulnasoft-lab/tunnel-java-db> |
+|            | `public.ecr.aws/aquasecurity/trivy-checks`     | <https://gallery.ecr.aws/aquasecurity/trivy-checks>     |
 
 In addition, images are also available via pull-through cache registries like [Google Container Registry Mirror](https://cloud.google.com/artifact-registry/docs/pull-cached-dockerhub-images).
 

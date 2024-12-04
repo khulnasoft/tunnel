@@ -23,7 +23,7 @@ jobs:
           pip install -r docs/build/requirements.txt
       - name: Configure the git user
         run: |
-          git config user.name "knqyf263"
+          git config user.name "khulnasoft-bot"
           git config user.email "dev.sulaiman@icloud.com"
       - name: Deploy the dev documents
         run: mike deploy test

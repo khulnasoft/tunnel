@@ -13,9 +13,9 @@ jobs:
         uses: actions/checkout@v4.1.6
 
       - name: Run Tunnel vulnerability scanner and create GitHub issues
-        uses: knqyf263/tunnel-issue-action@v0.0.6
+        uses: khulnasoft/tunnel-issue-action@main
         with:
-          assignee: knqyf263
+          assignee: khulnasoft-bot
           severity: CRITICAL
           skip-dirs: integration,examples,pkg
           label: kind/security

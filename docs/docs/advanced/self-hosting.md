@@ -35,11 +35,11 @@ If the registry requires authentication, you can configure it as described in th
 
 When serving, proxying, or manipulating Tunnel's databases, note that the media type of the OCI layer is not a standard container image type:
 
-| DB               | Media Type                                                   | Reference                                                                   |
-| ---------------- | ------------------------------------------------------------ | --------------------------------------------------------------------------- |
-| `tunnel-db`      | `application/vnd.khulnasoft.tunnel.db.layer.v1.tar+gzip`     | <https://go.khulnasoft.com/tunnel-db/pkgs/container/tunnel-db>              |
-| `tunnel-java-db` | `application/vnd.khulnasoft.tunnel.javadb.layer.v1.tar+gzip` | https://github.com/aquasecurity/trivy-java-db/pkgs/container/tunnel-java-db |
-| `tunnel-checks`  | `application/vnd.oci.image.manifest.v1+json`                 | https://github.com/aquasecurity/trivy-checks/pkgs/container/tunnel-checks   |
+| DB               | Media Type                                                   | Reference                                                                      |
+| ---------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `tunnel-db`      | `application/vnd.khulnasoft.tunnel.db.layer.v1.tar+gzip`     | <https://go.khulnasoft.com/tunnel-db/pkgs/container/tunnel-db>                 |
+| `tunnel-java-db` | `application/vnd.khulnasoft.tunnel.javadb.layer.v1.tar+gzip` | https://github.com/khulnasoft-lab/tunnel-java-db/pkgs/container/tunnel-java-db |
+| `tunnel-checks`  | `application/vnd.oci.image.manifest.v1+json`                 | https://github.com/aquasecurity/trivy-checks/pkgs/container/tunnel-checks      |
 
 ## Manual cache population
 

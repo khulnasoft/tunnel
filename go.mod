@@ -24,8 +24,6 @@ require (
 	github.com/aquasecurity/testdocker v0.0.0-20240730042311-4642e94c7fc8
 	github.com/aquasecurity/tml v0.6.1
 	github.com/aquasecurity/trivy-checks v1.4.0
-	github.com/aquasecurity/trivy-java-db v0.0.0-20240109071736-184bd7481d48
-	github.com/aquasecurity/trivy-kubernetes v0.6.7-0.20241101182546-89bffc3932bc
 	github.com/aws/aws-sdk-go-v2 v1.32.5
 	github.com/aws/aws-sdk-go-v2/config v1.28.5
 	github.com/aws/aws-sdk-go-v2/credentials v1.17.46
@@ -126,17 +124,21 @@ require (
 	golang.org/x/term v0.26.0
 	golang.org/x/text v0.20.0
 	golang.org/x/vuln v1.1.3
-	golang.org/x/xerrors v0.0.0-20231012003039-104605ab7028
+	golang.org/x/xerrors v0.0.0-20240903120638-7835f813f4da
 	google.golang.org/protobuf v1.35.2
 	gopkg.in/yaml.v3 v3.0.1
 	helm.sh/helm/v3 v3.16.3
 	k8s.io/api v0.31.2
-	k8s.io/utils v0.0.0-20240711033017-18e509b52bc8
+	k8s.io/utils v0.0.0-20240902221715-702e33fdd3c3
 	modernc.org/sqlite v1.34.1
 	sigs.k8s.io/yaml v1.4.0
 )
 
-require go.khulnasoft.com/tunnel-db v0.0.0-00010101000000-000000000000
+require (
+	github.com/khulnasoft-lab/tunnel-java-db v0.0.0-20240907154440-0d77c2623acb
+	github.com/khulnasoft/tunnel-kubernetes v0.5.1
+	go.khulnasoft.com/tunnel-db v0.0.0-00010101000000-000000000000
+)
 
 require (
 	cloud.google.com/go v0.112.1 // indirect
@@ -217,7 +219,6 @@ require (
 	github.com/docker/docker-credential-helpers v0.8.2 // indirect
 	github.com/docker/go-metrics v0.0.1 // indirect
 	github.com/docker/go-units v0.5.0 // indirect
-	github.com/dsnet/compress v0.0.1 // indirect
 	github.com/dustin/go-humanize v1.0.1 // indirect
 	github.com/emicklei/go-restful/v3 v3.11.0 // indirect
 	github.com/emirpasic/gods v1.18.1 // indirect

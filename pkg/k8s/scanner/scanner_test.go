@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/aquasecurity/trivy-kubernetes/pkg/artifacts"
+	"github.com/khulnasoft/tunnel-kubernetes/pkg/artifacts"
 	cmd "github.com/khulnasoft/tunnel/pkg/commands/artifact"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"
 	"github.com/khulnasoft/tunnel/pkg/flag"

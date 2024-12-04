@@ -8,8 +8,8 @@ import (
 	"github.com/spf13/viper"
 	"golang.org/x/xerrors"
 
-	k8sArtifacts "github.com/aquasecurity/trivy-kubernetes/pkg/artifacts"
-	"github.com/aquasecurity/trivy-kubernetes/pkg/k8s"
+	k8sArtifacts "github.com/khulnasoft/tunnel-kubernetes/pkg/artifacts"
+	"github.com/khulnasoft/tunnel-kubernetes/pkg/k8s"
 	cmd "github.com/khulnasoft/tunnel/pkg/commands/artifact"
 	"github.com/khulnasoft/tunnel/pkg/commands/operation"
 	cr "github.com/khulnasoft/tunnel/pkg/compliance/report"
