@@ -1,17 +1,18 @@
-version: 2
+# GoReleaser configuration file
 
 project_name: tunnel
 
-# Default common build configuration
+# Global defaults (should be placed under `defaults` block)
 defaults:
-  main: ./cmd/tunnel/
-  binary: tunnel
-  ldflags:
-    - -s -w
-    - "-extldflags '-static'"
-    - -X github.com/khulnasoft/tunnel/pkg/version/app.ver={{.Version}}
-  env:
-    - CGO_ENABLED=0
+  build:
+    main: ./cmd/tunnel/
+    binary: tunnel
+    ldflags:
+      - -s -w
+      - "-extldflags '-static'"
+      - -X github.com/khulnasoft/tunnel/pkg/version/app.ver={{.Version}}
+    env:
+      - CGO_ENABLED=0
 
 builds:
   - id: build-linux
@@ -191,3 +192,4 @@ docker_manifests:
       - "ghulnasoft/tunnel:{{ .Version }}-arm64"
       - "ghulnasoft/tunnel:{{ .Version }}-s390x"
       - "ghulnasoft/tunnel:{{ .Version }}-ppc64le"
+
