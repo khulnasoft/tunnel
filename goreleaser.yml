@@ -146,8 +146,6 @@ dockers:
       - "docker.io/khulnasoft/tunnel:latest-amd64"
       - "ghcr.io/khulnasoft/tunnel:{{ .Version }}-amd64"
       - "ghcr.io/khulnasoft/tunnel:latest-amd64"
-      - "public.ecr.aws/khulnasoft/tunnel:latest-amd64"
-      - "public.ecr.aws/khulnasoft/tunnel:{{ .Version }}-amd64"
     use: buildx
     goos: linux
     goarch: amd64
@@ -171,8 +169,6 @@ dockers:
       - "docker.io/khulnasoft/tunnel:latest-arm64"
       - "ghcr.io/khulnasoft/tunnel:{{ .Version }}-arm64"
       - "ghcr.io/khulnasoft/tunnel:latest-arm64"
-      - "public.ecr.aws/khulnasoft/tunnel:latest-arm64"
-      - "public.ecr.aws/khulnasoft/tunnel:{{ .Version }}-arm64"
     use: buildx
     goos: linux
     goarch: arm64
@@ -196,8 +192,6 @@ dockers:
       - "docker.io/khulnasoft/tunnel:latest-s390x"
       - "ghcr.io/khulnasoft/tunnel:{{ .Version }}-s390x"
       - "ghcr.io/khulnasoft/tunnel:latest-s390x"
-      - "public.ecr.aws/khulnasoft/tunnel:latest-s390x"
-      - "public.ecr.aws/khulnasoft/tunnel:{{ .Version }}-s390x"
     use: buildx
     goos: linux
     goarch: s390x
@@ -221,8 +215,6 @@ dockers:
       - "docker.io/khulnasoft/tunnel:latest-ppc64le"
       - "ghcr.io/khulnasoft/tunnel:{{ .Version }}-ppc64le"
       - "ghcr.io/khulnasoft/tunnel:latest-ppc64le"
-      - "public.ecr.aws/khulnasoft/tunnel:latest-ppc64le"
-      - "public.ecr.aws/khulnasoft/tunnel:{{ .Version }}-ppc64le"
     use: buildx
     goos: linux
     goarch: ppc64le
@@ -255,12 +247,6 @@ docker_manifests:
       - "ghcr.io/khulnasoft/tunnel:{{ .Version }}-arm64"
       - "ghcr.io/khulnasoft/tunnel:{{ .Version }}-s390x"
       - "ghcr.io/khulnasoft/tunnel:{{ .Version }}-ppc64le"
-  - name_template: "public.ecr.aws/khulnasoft/tunnel:{{ .Version }}"
-    image_templates:
-      - "public.ecr.aws/khulnasoft/tunnel:{{ .Version }}-amd64"
-      - "public.ecr.aws/khulnasoft/tunnel:{{ .Version }}-arm64"
-      - "public.ecr.aws/khulnasoft/tunnel:{{ .Version }}-s390x"
-      - "public.ecr.aws/khulnasoft/tunnel:{{ .Version }}-ppc64le"
   - name_template: "khulnasoft/tunnel:latest"
     image_templates:
       - "khulnasoft/tunnel:{{ .Version }}-amd64"
@@ -273,12 +259,6 @@ docker_manifests:
       - "ghcr.io/khulnasoft/tunnel:{{ .Version }}-arm64"
       - "ghcr.io/khulnasoft/tunnel:{{ .Version }}-s390x"
       - "ghcr.io/khulnasoft/tunnel:{{ .Version }}-ppc64le"
-  - name_template: "public.ecr.aws/khulnasoft/tunnel:latest"
-    image_templates:
-      - "public.ecr.aws/khulnasoft/tunnel:{{ .Version }}-amd64"
-      - "public.ecr.aws/khulnasoft/tunnel:{{ .Version }}-arm64"
-      - "public.ecr.aws/khulnasoft/tunnel:{{ .Version }}-s390x"
-      - "public.ecr.aws/khulnasoft/tunnel:{{ .Version }}-ppc64le"
 
 signs:
   - cmd: cosign
