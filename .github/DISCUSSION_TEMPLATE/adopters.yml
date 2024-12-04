@@ -1,0 +1,47 @@
+title: "<company name>"
+labels: ["adopters"]
+body:
+  - type: textarea
+    id: info
+    attributes:
+      label: "[Optional] How do you use Tunnel?"
+    validations:
+      required: false
+  - type: textarea
+    id: info
+    attributes:
+      label: "[Optional] Can you provide us with a quote on your favourite part of Tunnel? This may be used on the tunnel.dev website, posted on Twitter (@AquaTunnel) or similar marketing material."
+    validations:
+      required: false
+  - type: checkboxes
+    attributes:
+      label: "[Optional] Which targets are you scanning with Tunnel?"
+      options:
+        - label: "Container Image"
+        - label: "Filesystem"
+        - label: "Git Repository"
+        - label: "Virtual Machine Image"
+        - label: "Kubernetes"
+        - label: "AWS"
+        - label: "SBOM"
+    validations:
+      required: false
+  - type: checkboxes
+    attributes:
+      label: "[Optional] What kind of issues are scanning with Tunnel?"
+      options:
+        - label: "Software Bill of Materials (SBOM)"
+        - label: "Known vulnerabilities (CVEs)"
+        - label: "IaC issues and misconfigurations"
+        - label: "Sensitive information and secrets"
+        - label: "Software licenses"
+  - type: markdown
+    attributes:
+      value: |
+        ## Get in touch
+        We are always looking for 
+        * User feedback
+        * Collaboration with other companies and organisations
+        * Or just to have a chat with you about tunnel. 
+        If any of this interests you or your marketing team, please reach out at: oss@khulnasoft.com
+        We would love to hear from you!

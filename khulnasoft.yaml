@@ -1,0 +1,8 @@
+---
+registries:
+  - type: standard
+    ref: v3.157.0
+packages:
+  - name: tinygo-org/tinygo@v0.31.1
+  - name: WebAssembly/binaryen@version_112
+  - name: magefile/mage@v1.14.0
