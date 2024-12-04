@@ -6732,7 +6732,7 @@ Supported platforms:</p>
 </ul>
 <h3 id="compliance-check-id">Compliance Check ID<a class="headerlink" href="#compliance-check-id" title="Permanent link">&para;</a></h3>
 <p>Specify the check ID that needs to be evaluated based on the information collected from the command data output to assess the control.</p>
-<p>Example of how to define check data under <a href="https://github.com/aquasecurity/trivy-checks/tree/main/checks">checks folder</a>:</p>
+<p>Example of how to define check data under <a href="https://github.com/khulnasoft/tunnel-checks/tree/main/checks">checks folder</a>:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># METADATA</span>
 <span class="c1"># title: &quot;Ensure that the --kubeconfig kubelet.conf file permissions are set to 600 or more restrictive&quot;</span>
 <span class="c1"># description: &quot;Ensure that the kubelet.conf file has permissions of 600 or more restrictive.&quot;</span>
@@ -6772,7 +6772,7 @@ deny<span class="o">[</span>res<span class="o">]</span><span class="w"> </span><
 <h3 id="compliance-command-id">Compliance Command ID<a class="headerlink" href="#compliance-command-id" title="Permanent link">&para;</a></h3>
 <p><strong><em>Note:</em></strong> This field is not mandatory, it is relevant to k8s compliance report when node-collector is in use</p>
 <p>Specify the command ID (#ref) that needs to be executed to collect the information required to evaluate the control.</p>
-<p>Example of how to define command data under <a href="https://github.com/aquasecurity/trivy-checks/tree/main/commands">commands folder</a></p>
+<p>Example of how to define command data under <a href="https://github.com/khulnasoft/tunnel-checks/tree/main/commands">commands folder</a></p>
 <div class="highlight"><pre><span></span><code><span class="nn">---</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CMD-0001</span>
 <span class="w">  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kubeletConfFilePermissions</span>
@@ -6784,7 +6784,7 @@ deny<span class="o">[</span>res<span class="o">]</span><span class="w"> </span><
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aks</span>
 </code></pre></div>
 <h4 id="command-id">Command ID<a class="headerlink" href="#command-id" title="Permanent link">&para;</a></h4>
-<p>Find the next command ID by running the command on <a href="https://github.com/aquasecurity/trivy-checks">tunnel-checks project</a>.</p>
+<p>Find the next command ID by running the command on <a href="https://github.com/khulnasoft/tunnel-checks">tunnel-checks project</a>.</p>
 <div class="highlight"><pre><span></span><code>make<span class="w"> </span>command-id
 </code></pre></div>
 <h4 id="command-key">Command Key<a class="headerlink" href="#command-key" title="Permanent link">&para;</a></h4>
@@ -6816,10 +6816,10 @@ deny<span class="o">[</span>res<span class="o">]</span><span class="w"> </span><
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/kubelet/config.yaml</span>
 </code></pre></div>
 <h3 id="commands-files-location">Commands Files Location<a class="headerlink" href="#commands-files-location" title="Permanent link">&para;</a></h3>
-<p>Currently checks files location are :<code>https://github.com/aquasecurity/trivy-checks/tree/main/checks</code></p>
-<p>Command files location: <code>https://github.com/aquasecurity/trivy-checks/tree/main/commands</code>
+<p>Currently checks files location are :<code>https://github.com/khulnasoft/tunnel-checks/tree/main/checks</code></p>
+<p>Command files location: <code>https://github.com/khulnasoft/tunnel-checks/tree/main/commands</code>
 under command file</p>
-<p>Note: command config files will be located under <code>https://github.com/aquasecurity/trivy-checks/tree/main/commands</code> as well</p>
+<p>Note: command config files will be located under <code>https://github.com/khulnasoft/tunnel-checks/tree/main/commands</code> as well</p>
 <h3 id="node-collector-output">Node-collector output<a class="headerlink" href="#node-collector-output" title="Permanent link">&para;</a></h3>
 <p>The node collector will read commands and execute each command, and incorporate the output into the NodeInfo resource.</p>
 <p>example:</p>
