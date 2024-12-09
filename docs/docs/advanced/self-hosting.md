@@ -38,7 +38,7 @@ When serving, proxying, or manipulating Tunnel's databases, note that the media 
 | DB               | Media Type                                                   | Reference                                                                      |
 | ---------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------ |
 | `tunnel-db`      | `application/vnd.khulnasoft.tunnel.db.layer.v1.tar+gzip`     | <https://go.khulnasoft.com/tunnel-db/pkgs/container/tunnel-db>                 |
-| `tunnel-java-db` | `application/vnd.khulnasoft.tunnel.javadb.layer.v1.tar+gzip` | https://github.com/khulnasoft-lab/tunnel-java-db/pkgs/container/tunnel-java-db |
+| `tunnel-java-db` | `application/vnd.khulnasoft.tunnel.javadb.layer.v1.tar+gzip` | https://github.com/aquasecurity/trivy-java-db/pkgs/container/tunnel-java-db |
 | `tunnel-checks`  | `application/vnd.oci.image.manifest.v1+json`                 | https://github.com/khulnasoft/tunnel-checks/pkgs/container/tunnel-checks       |
 
 ## Manual cache population

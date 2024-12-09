@@ -13,8 +13,8 @@ import (
 	"github.com/google/go-containerregistry/pkg/name"
 	"golang.org/x/xerrors"
 
-	"github.com/khulnasoft-lab/tunnel-java-db/pkg/db"
-	"github.com/khulnasoft-lab/tunnel-java-db/pkg/types"
+	"github.com/aquasecurity/trivy-java-db/pkg/db"
+	"github.com/aquasecurity/trivy-java-db/pkg/types"
 	"github.com/khulnasoft/tunnel/pkg/dependency/parser/java/jar"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"
 	"github.com/khulnasoft/tunnel/pkg/log"
@@ -28,7 +28,7 @@ const (
 
 var (
 	// GitHub Container Registry
-	DefaultGHCRRepository = fmt.Sprintf("%s:%d", "ghcr.io/khulnasoft/tunnel-java-db", SchemaVersion)
+	DefaultGHCRRepository = fmt.Sprintf("%s:%d", "ghcr.io/khulnasoft-lab/tunnel-java-db", SchemaVersion)
 
 	// GCR mirrors
 	DefaultGCRRepository = fmt.Sprintf("%s:%d", "mirror.gcr.io/khulnasoft/tunnel-java-db", SchemaVersion)

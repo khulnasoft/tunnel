@@ -134,8 +134,55 @@ require (
 )
 
 require (
-	github.com/khulnasoft-lab/tunnel-java-db v0.0.0-20240907154440-0d77c2623acb
-	github.com/khulnasoft/tunnel-kubernetes v0.5.2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	github.com/aquasecurity/trivy-java-db v0.0.0-20241014084703-6714acbc62f0
+	github.com/khulnasoft/tunnel-kubernetes v0.5.3
 	go.khulnasoft.com/tunnel-db v0.0.0-00010101000000-000000000000
 )
 
@@ -282,7 +329,7 @@ require (
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/kevinburke/ssh_config v1.2.0 // indirect
-	github.com/khulnasoft/tunnel-checks v0.0.1
+	github.com/khulnasoft/tunnel-checks v0.0.2
 	github.com/klauspost/compress v1.17.11 // indirect
 	github.com/lann/builder v0.0.0-20180802200727-47ae307949d0 // indirect
 	github.com/lann/ps v0.0.0-20150810152359-62de8c46ede0 // indirect
