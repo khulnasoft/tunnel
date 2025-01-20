@@ -24,35 +24,35 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Restore Tunnel binaries from cache
-        uses: actions/cache@v3.0.9
+        uses: actions/cache@v4.2.0
         with:
           path: dist/
           key: ${{ runner.os }}-bins-${{github.workflow}}-${{github.sha}}
 
         # Upload artifacts
       - name: Upload artifacts (tunnel_Linux-64bit)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: tunnel_Linux-64bit
           path: dist/tunnel_*_Linux-64bit.tar.gz
           if-no-files-found: error
 
       - name: Upload artifacts (tunnel_Linux-ARM64)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: tunnel_Linux-ARM64
           path: dist/tunnel_*_Linux-ARM64.tar.gz
           if-no-files-found: error
 
       - name: Upload artifacts (tunnel_macOS-64bit)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: tunnel_macOS-64bit
           path: dist/tunnel_*_macOS-64bit.tar.gz
           if-no-files-found: error
 
       - name: Upload artifacts (tunnel_macOS-ARM64)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: tunnel_macOS-ARM64
           path: dist/tunnel_*_macOS-ARM64.tar.gz
