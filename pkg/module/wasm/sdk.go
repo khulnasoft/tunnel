@@ -6,10 +6,11 @@ package wasm
 // TinyGo can build this package, but Go cannot.
 
 import (
-	"encoding/json"
 	"fmt"
 	"reflect"
 	"unsafe"
+
+	"github.com/mailru/easyjson"
 
 	"github.com/khulnasoft/tunnel/pkg/module/api"
 	"github.com/khulnasoft/tunnel/pkg/module/serialize"
@@ -39,16 +40,20 @@ func Error(message string) {
 	_error(ptr, size)
 }
 
-//go:wasmimport env debug
+//go:wasm-module env
+//export debug
 func _debug(ptr uint32, size uint32)
 
-//go:wasmimport env info
+//go:wasm-module env
+//export info
 func _info(ptr uint32, size uint32)
 
-//go:wasmimport env warn
+//go:wasm-module env
+//export warn
 func _warn(ptr uint32, size uint32)
 
-//go:wasmimport env error
+//go:wasm-module env
+//export error
 func _error(ptr uint32, size uint32)
 
 var module api.Module
@@ -129,8 +134,8 @@ func _post_scan(ptr, size uint32) uint64 {
 	return marshal(results)
 }
 
-func marshal(v any) uint64 {
-	b, err := json.Marshal(v)
+func marshal(v easyjson.Marshaler) uint64 {
+	b, err := easyjson.Marshal(v)
 	if err != nil {
 		Error(fmt.Sprintf("marshal error: %s", err))
 		return 0
@@ -140,14 +145,14 @@ func marshal(v any) uint64 {
 	return (uint64(p) << uint64(32)) | uint64(len(b))
 }
 
-func unmarshal(ptr, size uint32, v any) error {
+func unmarshal(ptr, size uint32, v easyjson.Unmarshaler) error {
 	var b []byte
 	s := (*reflect.SliceHeader)(unsafe.Pointer(&b))
 	s.Len = uintptr(size)
 	s.Cap = uintptr(size)
 	s.Data = uintptr(ptr)
 
-	if err := json.Unmarshal(b, v); err != nil {
+	if err := easyjson.Unmarshal(b, v); err != nil {
 		return fmt.Errorf("unmarshal error: %s", err)
 	}
 

@@ -1,7 +1,7 @@
-VERSION := $(shell git describe --tags --always)
+VERSION := $(patsubst v%,%,$(shell git describe --tags --always)) #Strips the v prefix from the tag
 LDFLAGS := -ldflags "-s -w -X=main.version=$(VERSION)"
 
-GOPATH := $(shell go env GOPATH)
+GOPATH := $(firstword $(subst :, ,$(shell go env GOPATH)))
 GOBIN := $(GOPATH)/bin
 GOSRC := $(GOPATH)/src
 
@@ -26,7 +26,7 @@ $(GOBIN)/crane:
 	go install github.com/google/go-containerregistry/cmd/crane@v0.9.0
 
 $(GOBIN)/golangci-lint:
-	curl -sfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh| sh -s -- -b $(GOBIN) v1.45.2
+	curl -sfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh| sh -s -- -b $(GOBIN) v1.49.0
 
 $(GOBIN)/labeler:
 	go install github.com/khulnasoft-lab/labeler@latest
@@ -35,7 +35,7 @@ $(GOBIN)/easyjson:
 	go install github.com/mailru/easyjson/...@v0.7.7
 
 $(GOBIN)/mockery:
-	go install github.com/vektra/mockery/v2@latest
+	go install github.com/khulnasoft-lab/mockery/cmd/mockery@latest
 
 .PHONY: wire
 wire: $(GOBIN)/wire
