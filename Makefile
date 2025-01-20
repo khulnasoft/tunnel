@@ -28,6 +28,7 @@ $(GOBIN)/crane:
 $(GOBIN)/golangci-lint:
 	curl -sfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh| sh -s -- -b $(GOBIN) v1.49.0
 
+
 $(GOBIN)/labeler:
 	go install github.com/khulnasoft-lab/labeler@latest
 
@@ -83,6 +84,10 @@ test-module-integration: integration/testdata/fixtures/images/*.tar.gz $(EXAMPLE
 .PHONY: lint
 lint: $(GOBIN)/golangci-lint
 	$(GOBIN)/golangci-lint run --timeout 5m
+
+.PHONY: lintfix
+lintfix: $(GOBIN)/golangci-lint
+	$(GOBIN)/golangci-lint run --fix
 
 .PHONY: fmt
 fmt:
