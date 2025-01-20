@@ -129,7 +129,7 @@ func (Tool) Labeler() error {
 	if exists(filepath.Join(GOBIN, "labeler")) {
 		return nil
 	}
-	return sh.Run("go", "install", "github.com/knqyf263/labeler@latest")
+	return sh.Run("go", "install", "github.com/khulnasoft-lab/labeler@latest")
 }
 
 // Kind installs kind cluster
@@ -520,13 +520,6 @@ func (Schema) Generate() error {
 // Verify verifies Cloud Schema for misconfiguration scanning
 func (Schema) Verify() error {
 	return sh.RunWith(ENV, "go", "run", "-tags=mage_schema", "./magefiles", "--", "verify")
-}
-
-type CloudActions mg.Namespace
-
-// Generate generates the list of possible cloud actions with AWS
-func (CloudActions) Generate() error {
-	return sh.RunWith(ENV, "go", "run", "-tags=mage_cloudactions", "./magefiles")
 }
 
 // VEX generates a VEX document for Tunnel

@@ -10,7 +10,7 @@ import (
 	"golang.org/x/xerrors"
 	"gopkg.in/yaml.v3"
 
-	sp "github.com/khulnasoft/tunnel-checks/pkg/spec"
+	"github.com/khulnasoft/tunnel-checks/pkg/specs"
 	iacTypes "github.com/khulnasoft/tunnel/pkg/iac/types"
 	"github.com/khulnasoft/tunnel/pkg/log"
 	"github.com/khulnasoft/tunnel/pkg/types"
@@ -97,7 +97,7 @@ func GetComplianceSpec(specNameOrPath, cacheDir string) (ComplianceSpec, error) 
 	} else {
 		_, err := os.Stat(filepath.Join(checksDir(cacheDir), "metadata.json"))
 		if err != nil { // cache corrupt or bundle does not exist, load embedded version
-			b = []byte(sp.NewSpecLoader().GetSpecByName(specNameOrPath))
+			b = []byte(specs.GetSpec(specNameOrPath))
 			log.Debug("Compliance spec loaded from embedded library", log.String("spec", specNameOrPath))
 		} else {
 			// load from bundle on disk

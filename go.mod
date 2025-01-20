@@ -13,7 +13,6 @@ require (
 	github.com/NYTimes/gziphandler v1.1.1
 	github.com/alecthomas/chroma v0.10.0
 	github.com/alicebob/miniredis/v2 v2.33.0
-	github.com/antchfx/htmlquery v1.3.3
 	github.com/apparentlymart/go-cidr v1.1.0
 	github.com/aquasecurity/bolt-fixtures v0.0.0-20200903104109-d34e7f983986
 	github.com/aquasecurity/go-gem-version v0.0.0-20201115065557-8eed6fe000ce
@@ -134,53 +133,6 @@ require (
 )
 
 require (
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	github.com/aquasecurity/trivy-java-db v0.0.0-20241014084703-6714acbc62f0
 	github.com/khulnasoft/tunnel-kubernetes v0.5.3
 	go.khulnasoft.com/tunnel-db v0.0.0-00010101000000-000000000000
@@ -221,7 +173,6 @@ require (
 	github.com/agnivade/levenshtein v1.2.0 // indirect
 	github.com/alicebob/gopher-json v0.0.0-20200520072559-a9ecdc9d1d3a // indirect
 	github.com/anchore/go-struct-converter v0.0.0-20221118182256-c68fdcfa2092 // indirect
-	github.com/antchfx/xpath v1.3.2 // indirect
 	github.com/apparentlymart/go-textseg/v15 v15.0.0 // indirect
 	github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2 // indirect
 	github.com/aws/aws-sdk-go v1.55.5 // indirect
@@ -339,7 +290,7 @@ require (
 	github.com/lufia/plan9stats v0.0.0-20240226150601-1dcf7310316a // indirect
 	github.com/lunixbochs/struc v0.0.0-20200707160740-784aaebc1d40 // indirect
 	github.com/magiconair/properties v1.8.7 // indirect
-	github.com/mailru/easyjson v0.7.7 // indirect
+	github.com/mailru/easyjson v0.7.7
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/mattn/go-runewidth v0.0.15 // indirect
