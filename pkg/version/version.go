@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"go.khulnasoft.com/tunnel-db/pkg/metadata"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/metadata"
 	javadb "github.com/aquasecurity/trivy-java-db/pkg/db"
 	"github.com/khulnasoft/tunnel/pkg/db"
 	"github.com/khulnasoft/tunnel/pkg/log"

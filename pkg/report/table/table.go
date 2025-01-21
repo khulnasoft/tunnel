@@ -13,7 +13,7 @@ import (
 
 	"github.com/aquasecurity/table"
 	"github.com/aquasecurity/tml"
-	dbTypes "go.khulnasoft.com/tunnel-db/pkg/types"
+	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
 	"github.com/khulnasoft/tunnel/pkg/types"
 )
 

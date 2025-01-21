@@ -7,7 +7,7 @@
 package server
 
 import (
-	"go.khulnasoft.com/tunnel-db/pkg/db"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/db"
 	"github.com/khulnasoft/tunnel/pkg/cache"
 	"github.com/khulnasoft/tunnel/pkg/fanal/applier"
 	"github.com/khulnasoft/tunnel/pkg/scanner/langpkg"

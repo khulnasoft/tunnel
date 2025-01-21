@@ -10,8 +10,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"go.khulnasoft.com/tunnel-db/pkg/db"
-	dbTypes "go.khulnasoft.com/tunnel-db/pkg/types"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/db"
+	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
 	"github.com/khulnasoft/tunnel/internal/dbtest"
 	"github.com/khulnasoft/tunnel/pkg/fanal/analyzer"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"

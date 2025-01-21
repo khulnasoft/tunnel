@@ -118,7 +118,7 @@ require (
 	golang.org/x/exp v0.0.0-20241108190413-2d47ceb2692f // indirect
 	golang.org/x/mod v0.22.0
 	golang.org/x/net v0.31.0
-	golang.org/x/sync v0.9.0
+	golang.org/x/sync v0.10.0
 	golang.org/x/term v0.26.0
 	golang.org/x/text v0.20.0
 	golang.org/x/vuln v1.1.3
@@ -134,8 +134,8 @@ require (
 
 require (
 	github.com/aquasecurity/trivy-java-db v0.0.0-20241014084703-6714acbc62f0
+	github.com/khulnasoft-lab/tunnel-db v0.0.0-20250120221338-63ade460b189
 	github.com/khulnasoft/tunnel-kubernetes v0.5.3
-	go.khulnasoft.com/tunnel-db v0.0.0-00010101000000-000000000000
 )
 
 require github.com/dsnet/compress v0.0.1 // indirect
@@ -388,7 +388,7 @@ require (
 	go.uber.org/multierr v1.11.0 // indirect
 	go.uber.org/zap v1.27.0 // indirect
 	golang.org/x/oauth2 v0.22.0 // indirect
-	golang.org/x/sys v0.27.0 // indirect
+	golang.org/x/sys v0.28.0 // indirect
 	golang.org/x/telemetry v0.0.0-20240522233618-39ace7a40ae7 // indirect
 	golang.org/x/time v0.7.0 // indirect
 	golang.org/x/tools v0.27.0 // indirect
@@ -428,5 +428,3 @@ require (
 	tags.cncf.io/container-device-interface v0.8.0 // indirect
 	tags.cncf.io/container-device-interface/specs-go v0.8.0 // indirect
 )
-
-replace go.khulnasoft.com/tunnel-db => github.com/khulnasoft/tunnel-db v0.0.0-20241204031238-ec18faa3917b

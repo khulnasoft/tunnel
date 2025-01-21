@@ -77,7 +77,7 @@
       },
       "identifiers": [
         {
-	  {{- /* TODO: Type not extractable - https://go.khulnasoft.com/tunnel-db/pull/24 */}}
+	  {{- /* TODO: Type not extractable - https://github.com/khulnasoft-lab/tunnel-db/pull/24 */}}
           "type": "cve",
           "name": "{{ .VulnerabilityID }}",
           "value": "{{ .VulnerabilityID }}"

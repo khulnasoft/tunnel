@@ -8,7 +8,7 @@ import (
 	version "github.com/knqyf263/go-rpm-version"
 	"golang.org/x/xerrors"
 
-	"go.khulnasoft.com/tunnel-db/pkg/vulnsrc/alma"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/vulnsrc/alma"
 	osver "github.com/khulnasoft/tunnel/pkg/detector/ospkg/version"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"
 	"github.com/khulnasoft/tunnel/pkg/log"

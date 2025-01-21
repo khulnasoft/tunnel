@@ -4,7 +4,7 @@ import (
 	"golang.org/x/xerrors"
 
 	npm "github.com/aquasecurity/go-npm-version/pkg"
-	dbTypes "go.khulnasoft.com/tunnel-db/pkg/types"
+	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
 	"github.com/khulnasoft/tunnel/pkg/detector/library/compare"
 )
 

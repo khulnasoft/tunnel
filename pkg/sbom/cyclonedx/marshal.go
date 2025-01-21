@@ -14,8 +14,8 @@ import (
 	"github.com/samber/lo"
 	"golang.org/x/xerrors"
 
-	dtypes "go.khulnasoft.com/tunnel-db/pkg/types"
-	"go.khulnasoft.com/tunnel-db/pkg/vulnsrc/vulnerability"
+	dtypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/vulnsrc/vulnerability"
 	"github.com/khulnasoft/tunnel/pkg/clock"
 	"github.com/khulnasoft/tunnel/pkg/digest"
 	"github.com/khulnasoft/tunnel/pkg/log"

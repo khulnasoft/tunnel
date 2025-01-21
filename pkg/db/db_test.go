@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"go.khulnasoft.com/tunnel-db/pkg/metadata"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/metadata"
 	"github.com/khulnasoft/tunnel/internal/dbtest"
 	"github.com/khulnasoft/tunnel/pkg/clock"
 	"github.com/khulnasoft/tunnel/pkg/db"

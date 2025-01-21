@@ -60,7 +60,7 @@ The core vulnerability database required for vulnerability detection.
 Contains comprehensive vulnerability information for multiple ecosystems.
 Distributed via OCI registry.
 
-Managed at https://go.khulnasoft.com/tunnel-db.
+Managed at https://github.com/khulnasoft-lab/tunnel-db.
 
 The vulnerability database is built from a GitHub repository that collects and stores vulnerability information from various data sources.
 This repository serves as the foundation for building the Tunnel DB.

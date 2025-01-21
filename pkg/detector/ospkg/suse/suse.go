@@ -7,7 +7,7 @@ import (
 	version "github.com/knqyf263/go-rpm-version"
 	"golang.org/x/xerrors"
 
-	susecvrf "go.khulnasoft.com/tunnel-db/pkg/vulnsrc/suse-cvrf"
+	susecvrf "github.com/khulnasoft-lab/tunnel-db/pkg/vulnsrc/suse-cvrf"
 	osver "github.com/khulnasoft/tunnel/pkg/detector/ospkg/version"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"
 	"github.com/khulnasoft/tunnel/pkg/log"

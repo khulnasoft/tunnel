@@ -1,7 +1,7 @@
 package serialize
 
 import (
-	"go.khulnasoft.com/tunnel-db/pkg/types"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/types"
 )
 
 type StringSlice []string

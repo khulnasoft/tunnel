@@ -7,7 +7,7 @@ import (
 	version "github.com/knqyf263/go-rpm-version"
 	"golang.org/x/xerrors"
 
-	oracleoval "go.khulnasoft.com/tunnel-db/pkg/vulnsrc/oracle-oval"
+	oracleoval "github.com/khulnasoft-lab/tunnel-db/pkg/vulnsrc/oracle-oval"
 	osver "github.com/khulnasoft/tunnel/pkg/detector/ospkg/version"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"
 	"github.com/khulnasoft/tunnel/pkg/log"

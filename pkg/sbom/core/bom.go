@@ -3,7 +3,7 @@ package core
 import (
 	"sort"
 
-	dtypes "go.khulnasoft.com/tunnel-db/pkg/types"
+	dtypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
 	"github.com/khulnasoft/tunnel/pkg/digest"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"
 	"github.com/khulnasoft/tunnel/pkg/uuid"

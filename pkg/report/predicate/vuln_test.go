@@ -9,8 +9,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	dbTypes "go.khulnasoft.com/tunnel-db/pkg/types"
-	"go.khulnasoft.com/tunnel-db/pkg/vulnsrc/vulnerability"
+	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/vulnsrc/vulnerability"
 	"github.com/khulnasoft/tunnel/pkg/clock"
 	"github.com/khulnasoft/tunnel/pkg/fanal/artifact"
 	"github.com/khulnasoft/tunnel/pkg/report/predicate"

@@ -7,7 +7,7 @@ import (
 	version "github.com/knqyf263/go-rpm-version"
 	"golang.org/x/xerrors"
 
-	"go.khulnasoft.com/tunnel-db/pkg/vulnsrc/photon"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/vulnsrc/photon"
 	osver "github.com/khulnasoft/tunnel/pkg/detector/ospkg/version"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"
 	"github.com/khulnasoft/tunnel/pkg/log"

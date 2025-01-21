@@ -96,7 +96,7 @@ var (
 		{Name: "github.com/aquasecurity/go-version", Version: "v0.0.0-20210121072130-637058cfe492"},
 		{Name: "github.com/aquasecurity/testdocker", Version: "v0.0.0-20210106133225-0b17fe083674"},
 		{Name: "github.com/khulnasoft/tunnel", Version: "v0.16.0"},
-		{Name: "go.khulnasoft.com/tunnel-db", Version: "v0.0.0-20210105160501-c5bf4e153277"},
+		{Name: "github.com/khulnasoft-lab/tunnel-db", Version: "v0.0.0-20210105160501-c5bf4e153277"},
 		{Name: "github.com/khulnasoft/vuln-list-update", Version: "v0.0.0-20191016075347-3d158c2bf9a2"},
 		{Name: "github.com/araddon/dateparse", Version: "v0.0.0-20190426192744-0d74ffceef83"},
 		{Name: "github.com/armon/consul-api", Version: "v0.0.0-20180202201655-eb2c6b5be1b6"},

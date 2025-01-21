@@ -4,7 +4,7 @@ import (
 	version "github.com/bitnami/go-version/pkg/version"
 	"golang.org/x/xerrors"
 
-	dbTypes "go.khulnasoft.com/tunnel-db/pkg/types"
+	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
 	"github.com/khulnasoft/tunnel/pkg/detector/library/compare"
 )
 

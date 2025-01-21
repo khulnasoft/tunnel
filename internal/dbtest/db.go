@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/require"
 
 	fixtures "github.com/aquasecurity/bolt-fixtures"
-	tunneldb "go.khulnasoft.com/tunnel-db/pkg/db"
+	tunneldb "github.com/khulnasoft-lab/tunnel-db/pkg/db"
 	jdb "github.com/aquasecurity/trivy-java-db/pkg/db"
 	"github.com/khulnasoft/tunnel/pkg/db"
 )

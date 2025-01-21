@@ -9,7 +9,7 @@ import (
 	"github.com/spf13/viper"
 	"golang.org/x/xerrors"
 
-	dbTypes "go.khulnasoft.com/tunnel-db/pkg/types"
+	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
 	"github.com/khulnasoft/tunnel/pkg/cache"
 	"github.com/khulnasoft/tunnel/pkg/compliance/spec"
 	"github.com/khulnasoft/tunnel/pkg/log"

@@ -43,7 +43,7 @@ nfpms:
       - rpm
     vendor: "khulnasoft"
     homepage: "https://github.com/khulnasoft"
-    maintainer: "Teppei Fukuda <knqyf263@gmail.com>"
+    maintainer: "Md Sulaiman <dev.sulaiman@icloud.com>"
     description: "A Fast Vulnerability Scanner for Containers"
     license: "Apache-2.0"
     file_name_template: "{{.ProjectName}}_{{.Version}}_{{.Os}}-{{.Arch}}"

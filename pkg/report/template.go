@@ -13,7 +13,7 @@ import (
 	"github.com/Masterminds/sprig/v3"
 	"golang.org/x/xerrors"
 
-	dbTypes "go.khulnasoft.com/tunnel-db/pkg/types"
+	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
 	"github.com/khulnasoft/tunnel/pkg/log"
 	"github.com/khulnasoft/tunnel/pkg/types"
 )

@@ -1,6 +1,6 @@
 - bucket: rocky 8
   pairs:
-    - bucket: nginx:1.16::nginx # actual: bucket of modular package is not created. ref: https://go.khulnasoft.com/tunnel-db/pull/154
+    - bucket: nginx:1.16::nginx # actual: bucket of modular package is not created. ref: https://github.com/khulnasoft-lab/tunnel-db/pull/154
       pairs:
         - key: CVE-2021-23017
           value:

@@ -13,7 +13,7 @@ import (
 	"github.com/samber/lo"
 	"golang.org/x/xerrors"
 
-	dbTypes "go.khulnasoft.com/tunnel-db/pkg/types"
+	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
 	ospkgDetector "github.com/khulnasoft/tunnel/pkg/detector/ospkg"
 	"github.com/khulnasoft/tunnel/pkg/fanal/analyzer"
 	"github.com/khulnasoft/tunnel/pkg/fanal/applier"

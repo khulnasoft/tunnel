@@ -7,9 +7,9 @@ import (
 	"github.com/samber/lo"
 	"golang.org/x/xerrors"
 
-	"go.khulnasoft.com/tunnel-db/pkg/db"
-	dbTypes "go.khulnasoft.com/tunnel-db/pkg/types"
-	"go.khulnasoft.com/tunnel-db/pkg/vulnsrc/vulnerability"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/db"
+	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
+	"github.com/khulnasoft-lab/tunnel-db/pkg/vulnsrc/vulnerability"
 	"github.com/khulnasoft/tunnel/pkg/detector/library/compare"
 	"github.com/khulnasoft/tunnel/pkg/detector/library/compare/bitnami"
 	"github.com/khulnasoft/tunnel/pkg/detector/library/compare/maven"
