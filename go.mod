@@ -14,10 +14,6 @@ require (
 	github.com/alecthomas/chroma v0.10.0
 	github.com/alicebob/miniredis/v2 v2.33.0
 	github.com/apparentlymart/go-cidr v1.1.0
-	github.com/khulnasoft-lab/bolt-fixtures v0.0.0-20200903104109-d34e7f983986
-	github.com/khulnasoft-lab/go-gem-version v0.0.0-20201115065557-8eed6fe000ce
-	github.com/khulnasoft-lab/go-npm-version v0.0.0-20201110091526-0b796d180798
-	github.com/khulnasoft-lab/go-pep440-version v0.0.0-20210121094942-22b2f8951d46
 	github.com/aquasecurity/go-version v0.0.0-20241105054539-1951e80d786f
 	github.com/aquasecurity/table v1.8.0
 	github.com/aquasecurity/testdocker v0.0.0-20240730042311-4642e94c7fc8
@@ -134,11 +130,18 @@ require (
 
 require (
 	github.com/aquasecurity/trivy-java-db v0.0.0-20241014084703-6714acbc62f0
+	github.com/khulnasoft-lab/bolt-fixtures v0.0.0-20241110174126-88aac252c2ab
+	github.com/khulnasoft-lab/go-gem-version v1.0.0
+	github.com/khulnasoft-lab/go-npm-version v1.0.0
+	github.com/khulnasoft-lab/go-pep440-version v1.0.0
 	github.com/khulnasoft-lab/tunnel-db v0.0.0-20250120221338-63ade460b189
 	github.com/khulnasoft/tunnel-kubernetes v0.5.3
 )
 
-require github.com/dsnet/compress v0.0.1 // indirect
+require (
+	github.com/dsnet/compress v0.0.1 // indirect
+	github.com/khulnasoft-lab/goversion v1.0.1 // indirect
+)
 
 require (
 	cloud.google.com/go v0.112.1 // indirect
