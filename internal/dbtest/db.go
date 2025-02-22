@@ -8,7 +8,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	fixtures "github.com/aquasecurity/bolt-fixtures"
+	fixtures "github.com/khulnasoft-lab/bolt-fixtures"
 	tunneldb "github.com/khulnasoft-lab/tunnel-db/pkg/db"
 	jdb "github.com/aquasecurity/trivy-java-db/pkg/db"
 	"github.com/khulnasoft/tunnel/pkg/db"

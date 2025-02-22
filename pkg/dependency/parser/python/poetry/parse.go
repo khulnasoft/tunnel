@@ -7,7 +7,7 @@ import (
 	"github.com/BurntSushi/toml"
 	"golang.org/x/xerrors"
 
-	version "github.com/aquasecurity/go-pep440-version"
+	version "github.com/khulnasoft-lab/go-pep440-version"
 	"github.com/khulnasoft/tunnel/pkg/dependency"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"
 	"github.com/khulnasoft/tunnel/pkg/log"

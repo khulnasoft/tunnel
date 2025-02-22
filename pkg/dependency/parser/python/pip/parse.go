@@ -10,7 +10,7 @@ import (
 	"golang.org/x/text/transform"
 	"golang.org/x/xerrors"
 
-	version "github.com/aquasecurity/go-pep440-version"
+	version "github.com/khulnasoft-lab/go-pep440-version"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"
 	"github.com/khulnasoft/tunnel/pkg/log"
 	xio "github.com/khulnasoft/tunnel/pkg/x/io"
