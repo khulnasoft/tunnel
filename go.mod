@@ -15,8 +15,6 @@ require (
 	github.com/alicebob/miniredis/v2 v2.33.0
 	github.com/apparentlymart/go-cidr v1.1.0
 	github.com/aquasecurity/go-version v0.0.0-20241105054539-1951e80d786f
-	github.com/aquasecurity/table v1.8.0
-	github.com/aquasecurity/testdocker v0.0.0-20240730042311-4642e94c7fc8
 	github.com/aquasecurity/tml v0.6.1
 	github.com/aws/aws-sdk-go-v2 v1.32.5
 	github.com/aws/aws-sdk-go-v2/config v1.28.5
@@ -58,6 +56,7 @@ require (
 	github.com/hashicorp/hcl/v2 v2.23.0
 	github.com/hashicorp/terraform-exec v0.21.0
 	github.com/in-toto/in-toto-golang v0.9.0
+	github.com/khulnasoft-lab/table v1.8.0
 	github.com/knqyf263/go-apk-version v0.0.0-20200609155635-041fdbb8563f
 	github.com/knqyf263/go-deb-version v0.0.0-20241115132648-6f4aee6ccd23
 	github.com/knqyf263/go-rpm-version v0.0.0-20220614171824-631e686d1075
@@ -129,12 +128,13 @@ require (
 )
 
 require (
-	github.com/aquasecurity/trivy-java-db v0.0.0-20241014084703-6714acbc62f0
 	github.com/khulnasoft-lab/bolt-fixtures v0.0.0-20241110174126-88aac252c2ab
 	github.com/khulnasoft-lab/go-gem-version v1.0.0
 	github.com/khulnasoft-lab/go-npm-version v1.0.0
 	github.com/khulnasoft-lab/go-pep440-version v1.0.0
+	github.com/khulnasoft-lab/testdocker v1.0.0
 	github.com/khulnasoft-lab/tunnel-db v0.0.0-20250120221338-63ade460b189
+	github.com/khulnasoft-lab/tunnel-java-db v0.0.0-20240907154440-0d77c2623acb
 	github.com/khulnasoft/tunnel-kubernetes v0.5.3
 )
 
@@ -220,7 +220,7 @@ require (
 	github.com/docker/distribution v2.8.3+incompatible // indirect
 	github.com/docker/docker-credential-helpers v0.8.2 // indirect
 	github.com/docker/go-metrics v0.0.1 // indirect
-	github.com/docker/go-units v0.5.0 // indirect
+	github.com/docker/go-units v0.5.0
 	github.com/dustin/go-humanize v1.0.1 // indirect
 	github.com/emicklei/go-restful/v3 v3.11.0 // indirect
 	github.com/emirpasic/gods v1.18.1 // indirect

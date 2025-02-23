@@ -1,0 +1,6 @@
+{
+    "go.formatTool": "gofmt",  // Set Go formatting tool
+    "go.useLanguageServer": true,  // Enable Go language server
+    "editor.formatOnSave": true  // Automatically format code on save
+  }
+  

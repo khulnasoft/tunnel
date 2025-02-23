@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 
 	"github.com/khulnasoft-lab/tunnel-db/pkg/metadata"
-	javadb "github.com/aquasecurity/trivy-java-db/pkg/db"
+	javadb "github.com/khulnasoft-lab/tunnel-java-db/pkg/db"
 	"github.com/khulnasoft/tunnel/pkg/db"
 	"github.com/khulnasoft/tunnel/pkg/log"
 	"github.com/khulnasoft/tunnel/pkg/policy"

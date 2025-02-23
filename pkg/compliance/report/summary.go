@@ -9,7 +9,7 @@ import (
 	"github.com/samber/lo"
 	"golang.org/x/xerrors"
 
-	"github.com/aquasecurity/table"
+	"github.com/khulnasoft-lab/table"
 )
 
 func BuildSummary(cr *ComplianceReport) *SummaryReport {

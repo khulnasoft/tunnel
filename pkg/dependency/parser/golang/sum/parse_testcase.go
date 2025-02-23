@@ -94,7 +94,7 @@ var (
 		{Name: "github.com/khulnasoft-lab/go-npm-version", Version: "v0.0.0-20201110091526-0b796d180798"},
 		{Name: "github.com/khulnasoft-lab/go-pep440-version", Version: "v0.0.0-20210121094942-22b2f8951d46"},
 		{Name: "github.com/aquasecurity/go-version", Version: "v0.0.0-20210121072130-637058cfe492"},
-		{Name: "github.com/aquasecurity/testdocker", Version: "v0.0.0-20210106133225-0b17fe083674"},
+		{Name: "github.com/khulnasoft-lab/testdocker", Version: "v0.0.0-20210106133225-0b17fe083674"},
 		{Name: "github.com/khulnasoft/tunnel", Version: "v0.16.0"},
 		{Name: "github.com/khulnasoft-lab/tunnel-db", Version: "v0.0.0-20210105160501-c5bf4e153277"},
 		{Name: "github.com/khulnasoft/vuln-list-update", Version: "v0.0.0-20191016075347-3d158c2bf9a2"},

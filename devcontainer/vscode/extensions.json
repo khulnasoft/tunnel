@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+      "golang.go",  // Go extension
+      "ms-vscode.cpptools",  // For C/C++ code assistance
+      "redhat.vscode-yaml"  // YAML syntax highlighting
+    ]
+  }
+  

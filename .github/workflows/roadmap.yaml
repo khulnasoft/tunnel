@@ -1,0 +1,45 @@
+name: Add issues to the roadmap project
+
+on:
+  issues:
+    types:
+      - labeled
+
+jobs:
+  add-issue-to-roadmap-project:
+    name: Add issue to the roadmap project
+    runs-on: ubuntu-latest
+    steps:
+      # 'kind/feature' AND 'priority/backlog' labels -> 'Backlog' column
+      - uses: actions/add-to-project@v1.0.2 # add new issue to project
+        with:
+          project-url: https://github.com/orgs/khulnasoft/projects/16
+          github-token: ${{ secrets.ORG_PROJECT_TOKEN }}
+          labeled: kind/feature, priority/backlog
+          label-operator: AND
+        id: add-backlog-issue
+      - uses: titoportas/update-project-fields@v0.1.0 # change Priority(column) of added issue
+        if: ${{ steps.add-backlog-issue.outputs.itemId }}
+        with:
+          project-url: https://github.com/orgs/khulnasoft/projects/16
+          github-token: ${{ secrets.ORG_PROJECT_TOKEN }}
+          item-id: ${{ steps.add-backlog-issue.outputs.itemId }} # Use the item-id output of the previous step
+          field-keys: Priority
+          field-values: Backlog
+
+      # 'kind/feature' AND 'priority/critical-urgent' labels -> 'Urgent' column
+      - uses: actions/add-to-project@v1.0.2 # add new issue to project
+        with:
+          project-url: https://github.com/orgs/khulnasoft/projects/16
+          github-token: ${{ secrets.ORG_PROJECT_TOKEN }}
+          labeled: kind/feature, priority/critical-urgent
+          label-operator: AND
+        id: add-urgent-issue
+      - uses: titoportas/update-project-fields@v0.1.0 # change Priority(column) of added issue
+        if: ${{ steps.add-urgent-issue.outputs.itemId }}
+        with:
+          project-url: https://github.com/orgs/khulnasoft/projects/16
+          github-token: ${{ secrets.ORG_PROJECT_TOKEN }}
+          item-id: ${{ steps.add-urgent-issue.outputs.itemId }} # Use the item-id output of the previous step
+          field-keys: Priority
+          field-values: Urgent

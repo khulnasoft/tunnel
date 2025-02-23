@@ -10,7 +10,7 @@ import (
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"
 
-	"github.com/aquasecurity/table"
+	"github.com/khulnasoft-lab/table"
 	"github.com/aquasecurity/tml"
 	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"

@@ -20,8 +20,8 @@ import (
 	"github.com/secure-systems-lab/go-securesystemslib/dsse"
 	"github.com/stretchr/testify/require"
 
-	"github.com/aquasecurity/testdocker/auth"
-	"github.com/aquasecurity/testdocker/registry"
+	"github.com/khulnasoft-lab/testdocker/auth"
+	"github.com/khulnasoft-lab/testdocker/registry"
 	"github.com/khulnasoft/tunnel/internal/testutil"
 	"github.com/khulnasoft/tunnel/pkg/purl"
 	"github.com/khulnasoft/tunnel/pkg/vex"

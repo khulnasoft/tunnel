@@ -78,7 +78,7 @@ Managed at:
 Specialized database used for identifying Java libraries and their components during JAR/WAR/PAR/EAR scanning.
 Distributed via OCI registry.
 
-Managed at https://github.com/aquasecurity/trivy-java-db.
+Managed at https://github.com/khulnasoft-lab/tunnel-java-db.
 
 ## Misconfiguration Scanning
 

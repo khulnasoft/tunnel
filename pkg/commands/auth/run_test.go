@@ -10,8 +10,8 @@ import (
 	"github.com/samber/lo"
 	"github.com/stretchr/testify/require"
 
-	testauth "github.com/aquasecurity/testdocker/auth"
-	"github.com/aquasecurity/testdocker/registry"
+	testauth "github.com/khulnasoft-lab/testdocker/auth"
+	"github.com/khulnasoft-lab/testdocker/registry"
 	"github.com/khulnasoft/tunnel/pkg/commands/auth"
 	"github.com/khulnasoft/tunnel/pkg/fanal/types"
 	"github.com/khulnasoft/tunnel/pkg/flag"

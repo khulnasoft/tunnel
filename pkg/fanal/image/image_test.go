@@ -12,10 +12,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/aquasecurity/testdocker/auth"
-	"github.com/aquasecurity/testdocker/engine"
-	"github.com/aquasecurity/testdocker/registry"
-	"github.com/aquasecurity/testdocker/tarfile"
+	"github.com/khulnasoft-lab/testdocker/auth"
+	"github.com/khulnasoft-lab/testdocker/engine"
+	"github.com/khulnasoft-lab/testdocker/registry"
+	"github.com/khulnasoft-lab/testdocker/tarfile"
 	"github.com/khulnasoft/tunnel/pkg/fanal/types"
 )
 

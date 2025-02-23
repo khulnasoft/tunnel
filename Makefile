@@ -36,7 +36,7 @@ $(GOBIN)/easyjson:
 	go install github.com/mailru/easyjson/...@v0.7.7
 
 $(GOBIN)/mockery:
-	go install github.com/khulnasoft-lab/mockery/cmd/mockery@latest
+	go install github.com/knqyf263/labeler@latest
 
 .PHONY: wire
 wire: $(GOBIN)/wire

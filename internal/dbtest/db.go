@@ -10,7 +10,7 @@ import (
 
 	fixtures "github.com/khulnasoft-lab/bolt-fixtures"
 	tunneldb "github.com/khulnasoft-lab/tunnel-db/pkg/db"
-	jdb "github.com/aquasecurity/trivy-java-db/pkg/db"
+	jdb "github.com/khulnasoft-lab/tunnel-java-db/pkg/db"
 	"github.com/khulnasoft/tunnel/pkg/db"
 )
 

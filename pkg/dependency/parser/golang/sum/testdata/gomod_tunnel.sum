@@ -78,7 +78,7 @@ github.com/khulnasoft-lab/go-npm-version v0.0.0-20201110091526-0b796d180798/go.m
 github.com/khulnasoft-lab/go-pep440-version v0.0.0-20210121094942-22b2f8951d46/go.mod h1:olhPNdiiAAMiSujemd1O/sc6GcyePr23f/6uGKtthNg=
 github.com/aquasecurity/go-version v0.0.0-20201107203531-5e48ac5d022a/go.mod h1:9Beu8XsUNNfzml7WBf3QmyPToP1wm1Gj/Vc5UJKqTzU=
 github.com/aquasecurity/go-version v0.0.0-20210121072130-637058cfe492/go.mod h1:9Beu8XsUNNfzml7WBf3QmyPToP1wm1Gj/Vc5UJKqTzU=
-github.com/aquasecurity/testdocker v0.0.0-20210106133225-0b17fe083674/go.mod h1:psfu0MVaiTDLpNxCoNsTeILSKY2EICBwv345f3M+Ffs=
+github.com/khulnasoft-lab/testdocker v0.0.0-20210106133225-0b17fe083674/go.mod h1:psfu0MVaiTDLpNxCoNsTeILSKY2EICBwv345f3M+Ffs=
 github.com/khulnasoft/tunnel v0.16.0 h1:lyzqYGQ2TYxcjFwKBw6aU3PwHLvc0+6VTech+0/LnqQ=
 github.com/khulnasoft/tunnel v0.16.0/go.mod h1:SLXDW/zKJWE7XhMEGGfkFGABNvz6b8BAbNjuXztJlj0=
 github.com/khulnasoft-lab/tunnel-db v0.0.0-20210105160501-c5bf4e153277/go.mod h1:N7CWA/vjVw78GWAdCJGhFQVqNGEA4e47a6eIWm+C/Bc=
