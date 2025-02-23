@@ -1,6 +1,6 @@
 VERSION := $(patsubst v%,%,$(shell git describe --tags --always)) #Strips the v prefix from the tag
 LDFLAGS := -ldflags "-s -w -X=main.version=$(VERSION)"
-
+DIR := $(shell pwd)/pkg/scanner
 GOPATH := $(firstword $(subst :, ,$(shell go env GOPATH)))
 GOBIN := $(GOPATH)/bin
 GOSRC := $(GOPATH)/src
@@ -36,7 +36,7 @@ $(GOBIN)/easyjson:
 	go install github.com/mailru/easyjson/...@v0.7.7
 
 $(GOBIN)/mockery:
-	go install github.com/knqyf263/labeler@latest
+	go install github.com/vektra/mockery/v2/...@latest
 
 .PHONY: wire
 wire: $(GOBIN)/wire
@@ -44,11 +44,10 @@ wire: $(GOBIN)/wire
 
 .PHONY: mock
 mock: $(GOBIN)/mockery
-	mockery -all -inpkg -case=snake -dir $(DIR)
+	mockery --all --inpackage --case=snake --dir $(DIR)
 
 .PHONY: deps
 deps:
-	go get ${u} -d
 	go mod tidy
 
 .PHONY: generate-test-modules

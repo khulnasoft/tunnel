@@ -23,15 +23,15 @@ import (
 
 const (
 	SchemaVersion = db.SchemaVersion
-	mediaType     = "application/vnd.khulnasoft.tunnel.javadb.layer.v1.tar+gzip"
+	mediaType     = "application/vnd.aquasec.tunnel.javadb.layer.v1.tar+gzip"
 )
 
 var (
 	// GitHub Container Registry
-	DefaultGHCRRepository = fmt.Sprintf("%s:%d", "ghcr.io/khulnasoft-lab/tunnel-java-db", SchemaVersion)
+	DefaultGHCRRepository = fmt.Sprintf("%s:%d", "ghcr.io/aquasecurity/tunnel-java-db", SchemaVersion)
 
 	// GCR mirrors
-	DefaultGCRRepository = fmt.Sprintf("%s:%d", "mirror.gcr.io/khulnasoft/tunnel-java-db", SchemaVersion)
+	DefaultGCRRepository = fmt.Sprintf("%s:%d", "mirror.gcr.io/aquasec/tunnel-java-db", SchemaVersion)
 )
 
 var updater *Updater
