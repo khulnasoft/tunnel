@@ -48,6 +48,7 @@ mock: $(GOBIN)/mockery
 
 .PHONY: deps
 deps:
+	go get ${u} -d ./...
 	go mod tidy
 
 .PHONY: generate-test-modules
