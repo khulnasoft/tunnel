@@ -55,7 +55,7 @@ The preference order is as follows:
 For example, to download the WebAssembly module, you can execute the following command:
 
 ```bash
-$ tunnel module install ghcr.io/khulnasoft/tunnel-module-spring4shell
+$ tunnel module install ghcr.io/khulnasoft-lab/tunnel-module-spring4shell
 ```
 
 ## Using Modules
@@ -68,7 +68,7 @@ You will see the log messages about WASM modules.
 
 ```shell
 $ tunnel image ghcr.io/khulnasoft/tunnel-test-images:spring4shell-jre8
-2022-06-12T12:57:13.210+0300    INFO    Loading ghcr.io/khulnasoft/tunnel-module-spring4shell/spring4shell.wasm...
+2022-06-12T12:57:13.210+0300    INFO    Loading ghcr.io/khulnasoft-lab/tunnel-module-spring4shell/spring4shell.wasm...
 2022-06-12T12:57:13.596+0300    INFO    Registering WASM module: spring4shell@v1
 ...
 2022-06-12T12:57:14.865+0300    INFO    Module spring4shell: Java Version: 8, Tomcat Version: 8.5.77
@@ -94,7 +94,7 @@ In the above example, the Spring4Shell module changed the severity from CRITICAL
 Specify a module repository with `tunnel module uninstall` command.
 
 ```bash
-$ tunnel module uninstall ghcr.io/khulnasoft/tunnel-module-spring4shell
+$ tunnel module uninstall ghcr.io/khulnasoft-lab/tunnel-module-spring4shell
 ```
 
 ## Building Modules

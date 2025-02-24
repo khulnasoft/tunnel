@@ -56,7 +56,7 @@ Note that these examples operate in the current working directory.
 This example uses [ORAS](https://oras.land), but you can use any other container registry manipulation tool.
 
     ```shell
-    oras pull ghcr.io/khulnasoft/tunnel-db:2
+    oras pull ghcr.io/khulnasoft-lab/tunnel-db:2
     ```
 
     You should now have a file called `db.tar.gz`. Next, extract it to reveal the db files:
@@ -101,7 +101,7 @@ cp /path/to/tunnel.db /path/to/metadata.json ${TUNNEL_CACHE_DIR}/db/
 
 For Java DB the process is the same, except for the following:
 
-1. Image location is `ghcr.io/khulnasoft/tunnel-java-db:1`
+1. Image location is `ghcr.io/khulnasoft-lab/tunnel-java-db:1`
 2. Archive file name is `javadb.tar.gz`
 3. DB file name is `tunnel-java.db`
 

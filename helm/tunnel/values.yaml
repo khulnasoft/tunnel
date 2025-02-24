@@ -101,7 +101,7 @@ tunnel:
   # `/home/scanner/.cache/tunnel/db/tunnel.db` path (see `cacheDir`).
   skipDBUpdate: false
   # OCI repository to retrieve the tunnel vulnerability database from
-  dbRepository: ghcr.io/khulnasoft/tunnel-db
+  dbRepository: ghcr.io/khulnasoft-lab/tunnel-db
   # Tunnel supports filesystem and redis as caching backend
   # https://github.com/khulnasoft/tunnel#specify-cache-backend
   # This location is only used for the cache, not the db storage: https://github.com/khulnasoft/tunnel/issues/765#issue-756010345

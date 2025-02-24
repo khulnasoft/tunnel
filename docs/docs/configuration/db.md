@@ -23,11 +23,11 @@ Tunnel's databases are published to the following locations:
 
 | Registry   | Image Address                                  | Link                                                    |
 | ---------- | ---------------------------------------------- | ------------------------------------------------------- |
-| GHCR       | `ghcr.io/khulnasoft/tunnel-db`                 | <https://ghcr.io/khulnasoft/tunnel-db>                  |
-|            | `ghcr.io/khulnasoft/tunnel-java-db`            | <https://ghcr.io/khulnasoft/tunnel-java-db>             |
-|            | `ghcr.io/khulnasoft/tunnel-checks`             | <https://ghcr.io/khulnasoft/tunnel-checks>              |
+| GHCR       | `ghcr.io/khulnasoft-lab/tunnel-db`                 | <https://ghcr.io/khulnasoft-lab/tunnel-db>                  |
+|            | `ghcr.io/khulnasoft-lab/tunnel-java-db`            | <https://ghcr.io/khulnasoft-lab/tunnel-java-db>             |
+|            | `ghcr.io/khulnasoft-lab/tunnel-audit`             | <https://ghcr.io/khulnasoft-lab/tunnel-audit>              |
 | Docker Hub | `khulnasoft/tunnel-db`                         | <https://hub.docker.com/r/khulnasoft/tunnel-db>         |
-|            | `khulnasoft/tunnel-java-db`                    | <https://hub.docker.com/r/khulnasoft/tunnel-java-db>    |
+|            | `khulnasoft-lab/tunnel-java-db`                    | <https://hub.docker.com/r/khulnasoft-lab/tunnel-java-db>    |
 |            | `khulnasoft/tunnel-checks`                     | <https://hub.docker.com/r/khulnasoft/tunnel-checks>     |
 | AWS ECR    | `public.ecr.aws/khulnasoft/tunnel-db`          | <https://gallery.ecr.aws/khulnasoft/tunnel-db>          |
 |            | `public.ecr.aws/khulnasoft-lab/tunnel-java-db` | <https://gallery.ecr.aws/khulnasoft-lab/tunnel-java-db> |

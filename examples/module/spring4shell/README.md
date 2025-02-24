@@ -14,8 +14,8 @@ It is also available in [GHCR][tunnel-module-spring4shell].
 You can install it via `tunnel module install`.
 
 ```bash
-$ tunnel module install ghcr.io/khulnasoft/tunnel-module-spring4shell
-2022-06-13T15:32:21.972+0300    INFO    Installing the module from ghcr.io/khulnasoft/tunnel-module-spring4shell...
+$ tunnel module install ghcr.io/khulnasoft-lab/tunnel-module-spring4shell
+2022-06-13T15:32:21.972+0300    INFO    Installing the module from ghcr.io/khulnasoft-lab/tunnel-module-spring4shell...
 ```
 
 ## Run Tunnel

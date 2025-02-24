@@ -106,8 +106,8 @@ db:
 
   # Same as '--java-db-repository'
   java-repository:
-    - mirror.gcr.io/khulnasoft/tunnel-java-db:1
-    - ghcr.io/khulnasoft/tunnel-java-db:1
+    - mirror.gcr.io/khulnasoft-lab/tunnel-java-db:1
+    - ghcr.io/khulnasoft-lab/tunnel-java-db:1
 
   # Same as '--skip-java-db-update'
   java-skip-update: false
@@ -117,8 +117,8 @@ db:
 
   # Same as '--db-repository'
   repository:
-    - ghcr.io/khulnasoft/tunnel-db:2
-    - ghcr.io/khulnasoft/tunnel-db:2
+    - ghcr.io/khulnasoft-lab/tunnel-db:2
+    - ghcr.io/khulnasoft-lab/tunnel-db:2
 
   # Same as '--skip-db-update'
   skip-update: false

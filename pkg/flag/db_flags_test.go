@@ -32,8 +32,8 @@ func TestDBFlagGroup_ToOptions(t *testing.T) {
 			fields: fields{
 				SkipDBUpdate:     true,
 				DownloadDBOnly:   false,
-				DBRepository:     []string{"ghcr.io/khulnasoft/tunnel-db"},
-				JavaDBRepository: []string{"ghcr.io/khulnasoft/tunnel-java-db"},
+				DBRepository:     []string{"ghcr.io/khulnasoft-lab/tunnel-db"},
+				JavaDBRepository: []string{"ghcr.io/khulnasoft-lab/tunnel-java-db"},
 			},
 			want: flag.DBOptions{
 				SkipDBUpdate:       true,
@@ -42,8 +42,8 @@ func TestDBFlagGroup_ToOptions(t *testing.T) {
 				JavaDBRepositories: []name.Reference{name.Tag{}}, // All fields are unexported
 			},
 			wantLogs: []string{
-				`Adding schema version to the DB repository for backward compatibility	repository="ghcr.io/khulnasoft/tunnel-db:2"`,
-				`Adding schema version to the DB repository for backward compatibility	repository="ghcr.io/khulnasoft/tunnel-java-db:1"`,
+				`Adding schema version to the DB repository for backward compatibility	repository="ghcr.io/khulnasoft-lab/tunnel-db:2"`,
+				`Adding schema version to the DB repository for backward compatibility	repository="ghcr.io/khulnasoft-lab/tunnel-java-dba-db:1"`,
 			},
 		},
 		{
@@ -69,12 +69,12 @@ func TestDBFlagGroup_ToOptions(t *testing.T) {
 				SkipDBUpdate:   true,
 				DownloadDBOnly: false,
 				DBRepository: []string{
-					"ghcr.io/khulnasoft/tunnel-db:2",
-					"ghcr.io/khulnasoft/tunnel-db:2",
+					"ghcr.io/khulnasoft-lab/tunnel-db:2",
+					"ghcr.io/khulnasoft-lab/tunnel-db:2",
 				},
 				JavaDBRepository: []string{
 					"mirror.gcr.io/khulnasoft/tunnel-java-db:1",
-					"ghcr.io/khulnasoft/tunnel-java-db:1",
+					"ghcr.io/khulnasoft-lab/tunnel-java-dba-db:1",
 				},
 			},
 			want: flag.DBOptions{

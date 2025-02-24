@@ -12,7 +12,7 @@ When performing a misconfiguration scan, Tunnel will automatically download the 
 
 ## Checks Distribution
 
-Tunnel checks are distributed as an [OPA bundle][opa-bundle] hosted in the following GitHub Container Registry: <https://ghcr.io/khulnasoft/tunnel-checks>.  
+Tunnel checks are distributed as an [OPA bundle][opa-bundle] hosted in the following GitHub Container Registry: <https://ghcr.io/khulnasoft-lab/tunnel-audit>.  
 Tunnel checks for updates to OPA bundle on GHCR every 24 hours and pulls it if there are any updates.
 
 ### External connectivity

@@ -43,7 +43,7 @@ tunnel image [flags] IMAGE_NAME
       --config-data strings               specify paths from which data for the Rego checks will be recursively loaded
       --config-file-schemas strings       specify paths to JSON configuration file schemas to determine that a file matches some configuration and pass the schema to Rego checks for type checking
       --custom-headers strings            custom headers in client mode
-      --db-repository strings             OCI repository(ies) to retrieve tunnel-db in order of priority (default [ghcr.io/khulnasoft/tunnel-db:2,ghcr.io/khulnasoft/tunnel-db:2])
+      --db-repository strings             OCI repository(ies) to retrieve tunnel-db in order of priority (default [ghcr.io/khulnasoft-lab/tunnel-db:2,ghcr.io/khulnasoft-lab/tunnel-db:2])
       --dependency-tree                   [EXPERIMENTAL] show dependency origin tree of vulnerable packages
       --detection-priority string         specify the detection priority:
                                             - "precise": Prioritizes precise by minimizing false positives.
@@ -74,7 +74,7 @@ tunnel image [flags] IMAGE_NAME
       --include-deprecated-checks         include deprecated checks
       --include-non-failures              include successes, available with '--scanners misconfig'
       --input string                      input file path instead of image name
-      --java-db-repository strings        OCI repository(ies) to retrieve tunnel-java-db in order of priority (default [mirror.gcr.io/khulnasoft/tunnel-java-db:1,ghcr.io/khulnasoft/tunnel-java-db:1])
+      --java-db-repository strings        OCI repository(ies) to retrieve tunnel-java-db in order of priority (default [mirror.gcr.io/khulnasoft-lab/tunnel-java-db:1,ghcr.io/khulnasoft-lab/tunnel-java-db:1])
       --license-confidence-level float    specify license classifier's confidence level (default 0.9)
       --license-full                      eagerly look for licenses in source code headers and license files
       --list-all-pkgs                     output all packages in the JSON report regardless of vulnerability
