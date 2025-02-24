@@ -6515,7 +6515,7 @@ The preference order is as follows:</p>
 <li>$HOME/.tunnel/plugins</li>
 </ul>
 <p>For example, to download the WebAssembly module, you can execute the following command:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>tunnel<span class="w"> </span>module<span class="w"> </span>install<span class="w"> </span>ghcr.io/khulnasoft/tunnel-module-spring4shell
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>tunnel<span class="w"> </span>module<span class="w"> </span>install<span class="w"> </span>ghcr.io/khulnasoft-lab/tunnel-module-spring4shell
 </code></pre></div>
 <h2 id="using-modules">Using Modules<a class="headerlink" href="#using-modules" title="Permanent link">&para;</a></h2>
 <p>Once the module is installed, Tunnel will load all available modules in the cache on the start of the next Tunnel execution.
@@ -6523,7 +6523,7 @@ The modules may inject custom logic into scanning and change the result.
 You can run Tunnel as usual and modules are loaded automatically.</p>
 <p>You will see the log messages about WASM modules.</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>tunnel<span class="w"> </span>image<span class="w"> </span>ghcr.io/khulnasoft/tunnel-test-images:spring4shell-jre8
-<span class="m">2022</span>-06-12T12:57:13.210+0300<span class="w">    </span>INFO<span class="w">    </span>Loading<span class="w"> </span>ghcr.io/khulnasoft/tunnel-module-spring4shell/spring4shell.wasm...
+<span class="m">2022</span>-06-12T12:57:13.210+0300<span class="w">    </span>INFO<span class="w">    </span>Loading<span class="w"> </span>ghcr.io/khulnasoft-lab/tunnel-module-spring4shell/spring4shell.wasm...
 <span class="m">2022</span>-06-12T12:57:13.596+0300<span class="w">    </span>INFO<span class="w">    </span>Registering<span class="w"> </span>WASM<span class="w"> </span>module:<span class="w"> </span>spring4shell@v1
 ...
 <span class="m">2022</span>-06-12T12:57:14.865+0300<span class="w">    </span>INFO<span class="w">    </span>Module<span class="w"> </span>spring4shell:<span class="w"> </span>Java<span class="w"> </span>Version:<span class="w"> </span><span class="m">8</span>,<span class="w"> </span>Tomcat<span class="w"> </span>Version:<span class="w"> </span><span class="m">8</span>.5.77
@@ -6544,7 +6544,7 @@ Total:<span class="w"> </span><span class="m">9</span><span class="w"> </span><s
 <p>In the above example, the Spring4Shell module changed the severity from CRITICAL to LOW because the application doesn't satisfy one of conditions.</p>
 <h2 id="uninstalling-modules">Uninstalling Modules<a class="headerlink" href="#uninstalling-modules" title="Permanent link">&para;</a></h2>
 <p>Specify a module repository with <code>tunnel module uninstall</code> command.</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>tunnel<span class="w"> </span>module<span class="w"> </span>uninstall<span class="w"> </span>ghcr.io/khulnasoft/tunnel-module-spring4shell
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>tunnel<span class="w"> </span>module<span class="w"> </span>uninstall<span class="w"> </span>ghcr.io/khulnasoft-lab/tunnel-module-spring4shell
 </code></pre></div>
 <h2 id="building-modules">Building Modules<a class="headerlink" href="#building-modules" title="Permanent link">&para;</a></h2>
 <p>It supports TinyGo only at the moment.</p>

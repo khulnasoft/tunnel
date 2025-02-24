@@ -6543,7 +6543,7 @@ You can download the databases files and surgically populate the Tunnel cache di
 </div>
 <p>This example uses <a href="https://oras.land">ORAS</a>, but you can use any other container registry manipulation tool.</p>
 <div class="highlight"><pre><span></span><code>```shell
-oras pull ghcr.io/khulnasoft/tunnel-db:2
+oras pull ghcr.io/khulnasoft-lab/tunnel-db:2
 ```
 
 You should now have a file called `db.tar.gz`. Next, extract it to reveal the db files:
@@ -6579,7 +6579,7 @@ cp<span class="w"> </span>/path/to/tunnel.db<span class="w"> </span>/path/to/met
 <h3 id="java-db-adaptations">Java DB adaptations<a class="headerlink" href="#java-db-adaptations" title="Permanent link">&para;</a></h3>
 <p>For Java DB the process is the same, except for the following:</p>
 <ol>
-<li>Image location is <code>ghcr.io/khulnasoft/tunnel-java-db:1</code></li>
+<li>Image location is <code>ghcr.io/khulnasoft-lab/tunnel-java-db:1</code></li>
 <li>Archive file name is <code>javadb.tar.gz</code></li>
 <li>DB file name is <code>tunnel-java.db</code></li>
 </ol>
