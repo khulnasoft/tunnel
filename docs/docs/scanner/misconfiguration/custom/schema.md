@@ -1,7 +1,6 @@
 # Input Schema
 
 ## Overview
-
 Checks can be defined with custom schemas that allow inputs to be verified against them. Adding a policy schema
 enables Tunnel to show more detailed error messages when an invalid input is encountered.
 
@@ -9,9 +8,9 @@ In Tunnel we have been able to define a schema for a [Dockerfile](https://github
 Without input schemas, a policy would be as follows:
 
 !!! example
-
-````# METADATA
-package mypackage
+    ```
+    # METADATA
+    package mypackage
 
     deny {
         input.evil == "foo bar"
@@ -25,9 +24,12 @@ For instance if we have a policy that checks for misconfigurations in a `Dockerf
 schema as such
 
 !!! example
-``` # METADATA # schemas: # - input: schema["dockerfile"]
-package mypackage
-
+    ```
+    # METADATA
+    # schemas:
+    # - input: schema["dockerfile"]
+    package mypackage
+    
     deny {
         input.evil == "foo bar"
     }
@@ -44,7 +46,7 @@ Now if this policy is evaluated against, a more descriptive error will be availa
               ^
               have: "evil"
               want (one of): ["Stages"]
-````
+```
 
 Currently, out of the box the following schemas are supported natively:
 
@@ -52,15 +54,19 @@ Currently, out of the box the following schemas are supported natively:
 2. [Kubernetes](https://github.com/khulnasoft/tunnel/blob/main/pkg/iac/rego/schemas/kubernetes.json)
 3. [Cloud](https://github.com/khulnasoft/tunnel/blob/main/pkg/iac/rego/schemas/cloud.json)
 
+
 ## Custom Checks with Custom Schemas
 
-You can also bring a custom policy that defines one or more custom schema.
+You can also bring a custom policy that defines one or more custom schema. 
 
 !!! example
-
-````# METADATA # schemas: # - input: schema["fooschema"] # - input: schema["barschema"]
-package mypackage
-
+    ```
+    # METADATA
+    # schemas:
+    # - input: schema["fooschema"]
+    # - input: schema["barschema"]
+    package mypackage
+    
     deny {
         input.evil == "foo bar"
     }
@@ -69,17 +75,18 @@ package mypackage
 The checks can be placed in a structure as follows
 
 !!! example
-`    /Users/user/my-custom-checks
+    ```
+    /Users/user/my-custom-checks
     ├── my_policy.rego
     └── schemas
         └── fooschema.json
         └── barschema.json
-   `
+    ```
 
 To use such a policy with Tunnel, use the `--config-policy` flag that points to the policy file or to the directory where the schemas and checks are contained.
 
 ```bash
 $ tunnel --config-policy=/Users/user/my-custom-checks <path/to/iac>
-````
+```
 
 For more details on how to define schemas within Rego checks, please see the [OPA guide](https://www.openpolicyagent.org/docs/latest/policy-language/#schema-annotations) that describes it in more detail.

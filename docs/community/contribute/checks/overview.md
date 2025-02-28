@@ -1,11 +1,11 @@
 # Contribute Rego Checks
 
-The following guide provides an overview of contributing checks to the default checks in Tunnel.
+The following guide provides an overview of contributing checks to the default checks in Tunnel. 
 
-All of the checks in Tunnel can be found in the [tunnel-checks](https://github.com/khulnasoft/tunnel-checks/tree/main) repository on GitHub. Before you begin writing a check, ensure:
+All of the checks in Tunnel can be found in the [tunnel-checks](https://github.com/khulnasoft/tunnel-audit/tree/main) repository on GitHub. Before you begin writing a check, ensure:
 
-1. The check does not already exist as part of the default checks in the [tunnel-checks](https://github.com/khulnasoft/tunnel-checks/tree/main) repository.
-2. The pull requests in the [tunnel-checks](https://github.com/khulnasoft/tunnel-checks/pulls) repository to see whether someone else is already contributing the check that you wanted to add.
+1. The check does not already exist as part of the default checks in the [tunnel-checks](https://github.com/khulnasoft/tunnel-audit/tree/main) repository.
+2. The pull requests in the [tunnel-checks](https://github.com/khulnasoft/tunnel-audit/pulls) repository to see  whether someone else is already contributing the check that you wanted to add. 
 3. The [issues in Tunnel](https://github.com/khulnasoft/tunnel/issues) to see whether any specific checks are missing in Tunnel that you can contribute.
 
 If anything is unclear, please [start a discussion](https://github.com/khulnasoft/tunnel/discussions/new) and we will do our best to help.
@@ -50,12 +50,13 @@ deny[res] {
 
 ## Verify the provider and service exists
 
-Every check for a cloud service references a cloud provider. The list of providers are found in the [Tunnel](https://github.com/khulnasoft/tunnel/tree/main/pkg/iac/providers) repository.
+Every check for a cloud service references a cloud provider. The list of providers are found in the [Tunnel](https://github.com/khulnasoft/tunnel/tree/main/pkg/iac/providers) repository. 
 
 Before writing a new check for a cloud provider, you need to verify if the cloud provider or resource type that your check targets is supported by Tunnel. If it's not, you'll need to add support for it. Additionally, if the provider that you want to target exists, you need to check whether the service your policy will target is supported. As a reference you can take a look at the AWS provider [here](https://github.com/khulnasoft/tunnel/blob/main/pkg/iac/providers/aws/aws.go).
 
 ???+ note
-New Kubernetes and Dockerfile checks do not require any additional provider definitions. You can find an example of a Dockerfile check [here](https://github.com/khulnasoft/tunnel-checks/blob/main/checks/docker/add_instead_of_copy.rego) and a Kubernetes check [here](https://github.com/khulnasoft/tunnel-checks/blob/main/checks/kubernetes/general/CPU_not_limited.rego).
+    New Kubernetes and Dockerfile checks do not require any additional provider definitions. You can find an example of a Dockerfile check [here](https://github.com/khulnasoft/tunnel-audit/blob/main/checks/docker/add_instead_of_copy.rego) and a Kubernetes check [here](https://github.com/khulnasoft/tunnel-audit/blob/main/checks/kubernetes/general/CPU_not_limited.rego).
+
 
 ### Add Support for a New Service in an existing Provider
 
@@ -65,27 +66,27 @@ This guide also showcases how to add new properties for an existing Service.
 
 ## Create a new .rego file
 
-The following directory in the tunnel-checks repository contains all of our custom checks. Depending on what type of check you want to create, you will need to nest a new `.rego` file in either of the [subdirectories](https://github.com/khulnasoft/tunnel-checks/tree/main/checks):
+The following directory in the tunnel-checks repository contains all of our custom checks. Depending on what type of check you want to create, you will need to nest a new `.rego` file in either of the [subdirectories](https://github.com/khulnasoft/tunnel-audit/tree/main/checks):
 
-- cloud: All checks related to cloud providers and their services
-- docker: Docker specific checks
-- kubernetes: Kubernetes specific checks
+* cloud: All checks related to cloud providers and their services
+* docker: Docker specific checks
+* kubernetes: Kubernetes specific checks
 
 ## Check Package name
 
-Have a look at the existing package names in the [built in checks](https://github.com/khulnasoft/tunnel-checks/tree/main/checks).
+Have a look at the existing package names in the [built in checks](https://github.com/khulnasoft/tunnel-audit/tree/main/checks). 
 
 The package name should be in the format `builtin.PROVIDER.SERVICE.ID`, e.g. `builtin.aws.rds.aws0176`.
 
 ## Generating an ID
 
-Every check has a custom ID that is referenced throughout the metadata of the check to uniquely identify the check. If you plan to contribue your check back into the [tunnel-checks](https://github.com/khulnasoft/tunnel-checks) repository, it will require a valid ID.
+Every check has a custom ID that is referenced throughout the metadata of the check to uniquely identify the check. If you plan to contribute your check back into the [tunnel-checks](https://github.com/khulnasoft/tunnel-audit) repository, it will require a valid ID. 
 
-Running `make id` in the root of the tunnel-checks repository will provide you with the next available _ID_ for your rule.
+Running `make id` in the root of the tunnel-checks repository will provide you with the next available _ID_ for your rule. 
 
 ## Check Schemas
 
-Rego Checks for Tunnel can utilise Schemas to map the input to specific objects. The schemas available are listed [here.](https://github.com/khulnasoft/tunnel/tree/main/pkg/iac/rego/schemas).
+Rego Checks for Tunnel can utilise Schemas to map the input to specific objects. The schemas available are listed [here.](https://github.com/khulnasoft/tunnel/tree/main/pkg/iac/rego/schemas). 
 
 More information on using the builtin schemas is provided in the [main documentation.](../../../docs/scanner/misconfiguration/custom/schema.md)
 
@@ -97,9 +98,11 @@ For detailed information on each component of the Check Metadata, please refer t
 
 Note that while the Metadata is optional in your own custom checks for Tunnel, if you are contributing your check to the Tunnel builtin checks, the Metadata section will be required.
 
+
 ## Writing Rego Rules
 
-Rules are defined using _OPA Rego_. You can find a number of examples in the `checks` directory ([Link](https://github.com/khulnasoft/tunnel-checks/tree/main/checks)). The [OPA documentation](https://www.openpolicyagent.org/docs/latest/policy-language/) is a great place to start learning Rego. You can also check out the [Rego Playground](https://play.openpolicyagent.org/) to experiment with Rego, and [join the OPA Slack](https://slack.openpolicyagent.org/).
+Rules are defined using _OPA Rego_. You can find a number of examples in the `checks` directory ([Link](https://github.com/khulnasoft/tunnel-audit/tree/main/checks)). The [OPA documentation](https://www.openpolicyagent.org/docs/latest/policy-language/) is a great place to start learning Rego. You can also check out the [Rego Playground](https://play.openpolicyagent.org/) to experiment with Rego, and [join the OPA Slack](https://slack.openpolicyagent.org/).
+
 
 ```rego
 deny[res] {
@@ -116,12 +119,12 @@ It is possible to pass any rego variable that references a field of the input do
 
 ## Generate docs
 
-Finally, you'll want to generate documentation for your newly added rule. Please run `make docs` in the [tunnel-checks](https://github.com/khulnasoft/tunnel-checks) directory to generate the documentation for your new policy and submit a PR for us to take a look at.
+Finally, you'll want to generate documentation for your newly added rule. Please run `make docs` in the [tunnel-checks](https://github.com/khulnasoft/tunnel-audit) directory to generate the documentation for your new policy and submit a PR for us to take a look at.
 
 ## Adding Tests
 
-All Rego checks need to have tests. There are many examples of these in the `checks` directory for each check ([Link](https://github.com/khulnasoft/tunnel-checks/tree/main/checks)). More information on how to write tests for Rego checks is provided in the [custom misconfiguration](../../../docs/scanner/misconfiguration/custom/testing.md) section of the docs.
+All Rego checks need to have tests. There are many examples of these in the `checks` directory for each check ([Link](https://github.com/khulnasoft/tunnel-audit/tree/main/checks)). More information on how to write tests for Rego checks is provided in the [custom misconfiguration](../../../docs/scanner/misconfiguration/custom/testing.md) section of the docs.
 
 ## Example PR
 
-You can see a full example PR for a new rule being added here: [https://github.com/khulnasoft/defsec/pull/1000](https://github.com/khulnasoft/defsec/pull/1000).
+You can see a full example PR for a new rule being added here: [https://github.com/aquasecurity/defsec/pull/1000](https://github.com/aquasecurity/defsec/pull/1000).

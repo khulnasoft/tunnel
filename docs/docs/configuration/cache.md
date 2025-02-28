@@ -1,17 +1,15 @@
 # Cache
-
-The cache directory includes
+The cache directory includes 
 
 - Cache of previous scans (Scan cache).
 - [Vulnerability Database][tunnel-db][^1]
 - [Java Index Database][tunnel-java-db][^2]
 - [Misconfiguration Checks][misconf-checks][^3]
 - [VEX Repositories](../supply-chain/vex/repo.md)
-
+ 
 The cache option is common to all scanners.
 
 ## Clear Caches
-
 `tunnel clean` subcommand removes caches.
 
 ```bash
@@ -32,7 +30,6 @@ You can also delete all caches with `--all`.
 See `tunnel clean --help` for details.
 
 ## Cache Directory
-
 Specify where the cache is stored with `--cache-dir`.
 
 ```bash
@@ -40,36 +37,31 @@ $ tunnel --cache-dir /tmp/tunnel/ image python:3.4-alpine3.9
 ```
 
 ## Scan Cache Backend
-
 !!! warning "EXPERIMENTAL"
-This feature might change without preserving backwards compatibility.
+    This feature might change without preserving backwards compatibility.
 
 Tunnel utilizes a scan cache to store analysis results, such as package lists.
-It supports three types of backends for this cache:
+It supports three types of backends for this cache: 
 
 - Local File System (`fs`)
-  - The cache path can be specified by `--cache-dir`
+    - The cache path can be specified by `--cache-dir`
 - Memory (`memory`)
 - Redis (`redis://`)
-  - `redis://[HOST]:[PORT]`
-  - TTL can be configured via `--cache-ttl`
+    - `redis://[HOST]:[PORT]`
+    - TTL can be configured via `--cache-ttl`
 
 ### Local File System
-
-The local file system backend is the default choice for container and VM image scans.
-When scanning container images, it stores analysis results on a per-layer basis, using layer IDs as keys.
-This approach enables faster scans of the same container image or different images that share layers.
+The local file system backend is the default choice for container image, VM image and repository scans.
 
 !!! note
-Internally, this backend uses [BoltDB][boltdb], which has an important limitation: only one process can access the cache at a time.
-Subsequent processes attempting to access the cache will be locked.
-For more details on this limitation, refer to the [troubleshooting guide][parallel-run].
+    Internally, this backend uses [BoltDB][boltdb], which has an important limitation: only one process can access the cache at a time.
+    Subsequent processes attempting to access the cache will be locked.
+    For more details on this limitation, refer to the [troubleshooting guide][parallel-run].
 
 ### Memory
-
 The memory backend stores analysis results in memory, which means the cache is discarded when the process ends.
 This makes it useful in scenarios where caching is not required or desired.
-It serves as the default for repository, filesystem and SBOM scans and can also be employed for container image scans when caching is unnecessary.
+It serves as the default for filesystem and SBOM scans and can also be employed for container image scans when caching is unnecessary.
 
 To use the memory backend for a container image scan, you can use the following command:
 
@@ -104,11 +96,11 @@ $ tunnel server --cache-backend redis://localhost:6379 \
   --redis-key /path/to/key.pem
 ```
 
-[tunnel-db]: ./db.md#vulnerability-database
-[tunnel-java-db]: ./db.md#java-index-database
+[tunnel-db]: ./db.md
+[tunnel-java-db]: ./db.md
 [misconf-checks]: ../scanner/misconfiguration/check/builtin.md
 [boltdb]: https://github.com/etcd-io/bbolt
-[parallel-run]: https://khulnasoft.github.io/tunnel/v0.52/docs/references/troubleshooting/#running-in-parallel-takes-same-time-as-series-run
+[parallel-run]: https://tunnel.dev/{{ git.tag}}/docs/references/troubleshooting/#running-in-parallel-takes-same-time-as-series-run
 
 [^1]: Downloaded when scanning for vulnerabilities
 [^2]: Downloaded when scanning `jar/war/par/ear` files

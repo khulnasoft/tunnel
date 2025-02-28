@@ -1,7 +1,6 @@
 # CI/CD Integrations
 
 ## Azure DevOps (Official)
-
 [Azure Devops](https://azure.microsoft.com/en-us/products/devops/#overview) is Microsoft Azure cloud native CI/CD service.
 
 Tunnel has a "Azure Devops Pipelines Task" for Tunnel, that lets you easily introduce security scanning into your workflow, with an integrated Azure Devops UI.
@@ -9,7 +8,6 @@ Tunnel has a "Azure Devops Pipelines Task" for Tunnel, that lets you easily intr
 👉 Get it at: <https://github.com/khulnasoft/tunnel-azure-pipelines-task>
 
 ## GitHub Actions
-
 [GitHub Actions](https://github.com/features/actions) is GitHub's native CI/CD and job orchestration service.
 
 ### tunnel-action (Official)
@@ -32,20 +30,19 @@ In this action, Tunnel scans the dependency files such as package-lock.json and 
 
 ## Buildkite Plugin (Community)
 
-The tunnel buildkite plugin provides a convenient mechanism for running the open-source tunnel static analysis tool on your project.
+The tunnel buildkite plugin provides a convenient mechanism for running the open-source tunnel static analysis tool on your project. 
 
 👉 Get it at: https://github.com/equinixmetal-buildkite/tunnel-buildkite-plugin
 
 ## Dagger (Community)
-
 [Dagger](https://dagger.io/) is CI/CD as code that runs anywhere.
 
 The Dagger module for Tunnel provides functions for scanning container images from registries as well as Dagger Container objects from any Dagger SDK (e.g. Go, Python, Node.js, etc).
 
 👉 Get it at: <https://daggerverse.dev/mod/github.com/jpadams/daggerverse/tunnel>
 
-## Semaphore (Community)
 
+## Semaphore (Community)
 [Semaphore](https://semaphoreci.com/) is a CI/CD service.
 
 You can use Tunnel in Semaphore for scanning code, containers, infrastructure, and Kubernetes in Semaphore workflow.
@@ -53,7 +50,6 @@ You can use Tunnel in Semaphore for scanning code, containers, infrastructure, a
 👉 Get it at: <https://semaphoreci.com/blog/continuous-container-vulnerability-testing-with-tunnel>
 
 ## CircleCI (Community)
-
 [CircleCI](https://circleci.com/) is a CI/CD service.
 
 You can use the Tunnel Orb for Circle CI to introduce security scanning into your workflow.
@@ -77,7 +73,6 @@ pipeline:
 Woodpecker does use Tunnel itself so you can [see it in use there](https://github.com/woodpecker-ci/woodpecker/pull/1163).
 
 ## Concourse CI (Community)
-
 [Concourse CI](https://concourse-ci.org/) is a CI/CD service.
 
 You can use Tunnel Resource in Concourse for scanning containers and introducing security scanning into your workflow.
@@ -85,8 +80,8 @@ It has capabilities to fail the pipeline, create issues, alert communication cha
 
 👉 Get it at: <https://github.com/Comcast/tunnel-resource/>
 
-## SecObserve GitHub actions and GitLab templates (Community)
 
+## SecObserve GitHub actions and GitLab templates (Community)
 [SecObserve GitHub actions and GitLab templates](https://github.com/MaibornWolff/secobserve_actions_templates) run various vulnerability scanners, providing uniform methods and parameters for launching the tools.
 
 The Tunnel integration supports scanning Docker images and local filesystems for vulnerabilities as well as scanning IaC files for misconfigurations.

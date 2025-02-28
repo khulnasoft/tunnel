@@ -89,7 +89,7 @@ container_scanning:
     - time tunnel image --download-db-only
     # Builds report and puts it in the default workdir $CI_PROJECT_DIR, so `artifacts:` can take it from there
     - time tunnel image --exit-code 0 --format template --template "@/contrib/gitlab.tpl"
-      --output "$CI_PROJECT_DIR/gl-container-scanning-report.json" "$FULL_IMAGE_NAME"
+        --output "$CI_PROJECT_DIR/gl-container-scanning-report.json" "$FULL_IMAGE_NAME"
     # Prints full report
     - time tunnel image --exit-code 0 "$FULL_IMAGE_NAME"
     # Fail on critical vulnerabilities
@@ -99,9 +99,9 @@ container_scanning:
       - .tunnelcache/
   # Enables https://docs.gitlab.com/ee/user/application_security/container_scanning/ (Container Scanning report is available on GitLab EE Ultimate or GitLab.com Gold)
   artifacts:
-    when: always
+    when:                          always
     reports:
-      container_scanning: gl-container-scanning-report.json
+      container_scanning:          gl-container-scanning-report.json
   tags:
     - docker-runner
 ```

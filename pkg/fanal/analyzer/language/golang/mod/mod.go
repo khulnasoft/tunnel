@@ -150,7 +150,7 @@ func (a *gomodAnalyzer) fillAdditionalData(apps []types.Application) error {
 				continue
 			}
 
-			// e.g. $GOPATH/pkg/mod/github.com/khulnasoft/go-dep-parser@v1.0.0
+			// e.g. $GOPATH/pkg/mod/github.com/khulnasoft/de-parser@v1.0.0
 			modDir := filepath.Join(modPath, fmt.Sprintf("%s@%s", normalizeModName(lib.Name), lib.Version))
 
 			// Collect licenses
@@ -186,7 +186,7 @@ func (a *gomodAnalyzer) fillAdditionalData(apps []types.Application) error {
 }
 
 func (a *gomodAnalyzer) collectDeps(modDir, pkgID string) (types.Dependency, error) {
-	// e.g. $GOPATH/pkg/mod/github.com/khulnasoft/go-dep-parser@v0.0.0-20220406074731-71021a481237/go.mod
+	// e.g. $GOPATH/pkg/mod/github.com/khulnasoft/de-parser@v0.0.0-20220406074731-71021a481237/go.mod
 	modPath := filepath.Join(modDir, "go.mod")
 	f, err := os.Open(modPath)
 	if errors.Is(err, fs.ErrNotExist) {
@@ -312,7 +312,7 @@ func findLicense(dir string, classifierConfidenceLevel float64) ([]string, error
 		if !licenseRegexp.MatchString(filepath.Base(path)) {
 			return nil
 		}
-		// e.g. $GOPATH/pkg/mod/github.com/khulnasoft/go-dep-parser@v0.0.0-20220406074731-71021a481237/LICENSE
+		// e.g. $GOPATH/pkg/mod/github.com/khulnasoft/de-parser@v0.0.0-20220406074731-71021a481237/LICENSE
 		f, err := os.Open(path)
 		if err != nil {
 			return xerrors.Errorf("file (%s) open error: %w", path, err)

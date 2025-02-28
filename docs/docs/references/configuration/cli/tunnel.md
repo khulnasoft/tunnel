@@ -43,19 +43,20 @@ tunnel [global flags] command [flags] target
 
 ### SEE ALSO
 
-- [tunnel clean](tunnel_clean.md) - Remove cached files
-- [tunnel config](tunnel_config.md) - Scan config files for misconfigurations
-- [tunnel convert](tunnel_convert.md) - Convert Tunnel JSON report into a different format
-- [tunnel filesystem](tunnel_filesystem.md) - Scan local filesystem
-- [tunnel image](tunnel_image.md) - Scan a container image
-- [tunnel kubernetes](tunnel_kubernetes.md) - [EXPERIMENTAL] Scan kubernetes cluster
-- [tunnel module](tunnel_module.md) - Manage modules
-- [tunnel plugin](tunnel_plugin.md) - Manage plugins
-- [tunnel registry](tunnel_registry.md) - Manage registry authentication
-- [tunnel repository](tunnel_repository.md) - Scan a repository
-- [tunnel rootfs](tunnel_rootfs.md) - Scan rootfs
-- [tunnel sbom](tunnel_sbom.md) - Scan SBOM for vulnerabilities and licenses
-- [tunnel server](tunnel_server.md) - Server mode
-- [tunnel version](tunnel_version.md) - Print the version
-- [tunnel vex](tunnel_vex.md) - [EXPERIMENTAL] VEX utilities
-- [tunnel vm](tunnel_vm.md) - [EXPERIMENTAL] Scan a virtual machine image
+* [tunnel clean](tunnel_clean.md)	 - Remove cached files
+* [tunnel config](tunnel_config.md)	 - Scan config files for misconfigurations
+* [tunnel convert](tunnel_convert.md)	 - Convert Tunnel JSON report into a different format
+* [tunnel filesystem](tunnel_filesystem.md)	 - Scan local filesystem
+* [tunnel image](tunnel_image.md)	 - Scan a container image
+* [tunnel kubernetes](tunnel_kubernetes.md)	 - [EXPERIMENTAL] Scan kubernetes cluster
+* [tunnel module](tunnel_module.md)	 - Manage modules
+* [tunnel plugin](tunnel_plugin.md)	 - Manage plugins
+* [tunnel registry](tunnel_registry.md)	 - Manage registry authentication
+* [tunnel repository](tunnel_repository.md)	 - Scan a repository
+* [tunnel rootfs](tunnel_rootfs.md)	 - Scan rootfs
+* [tunnel sbom](tunnel_sbom.md)	 - Scan SBOM for vulnerabilities and licenses
+* [tunnel server](tunnel_server.md)	 - Server mode
+* [tunnel version](tunnel_version.md)	 - Print the version
+* [tunnel vex](tunnel_vex.md)	 - [EXPERIMENTAL] VEX utilities
+* [tunnel vm](tunnel_vm.md)	 - [EXPERIMENTAL] Scan a virtual machine image
+

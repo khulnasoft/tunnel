@@ -1,37 +1,37 @@
 # Tunnel Databases
 
 When you install Tunnel, the installed artifact contains the scanner engine but is lacking relevant security information needed to make security detections and recommendations.
-These so called "databases" are automatically fetched and maintained by Tunnel as needed, so normally you shouldn't notice or worry about them.  
+These so called "databases" are automatically fetched and maintained by Tunnel as needed, so normally you shouldn't notice or worry about them.   
 This document elaborates on the database management mechanism and its configuration options.
 
 Tunnel relies on the following databases:
 
-| DB                 | Artifact name    | Contents                                      | Purpose                                                                                    |
-| ------------------ | ---------------- | --------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Vulnerabilities DB | `tunnel-db`      | CVE information collected from various feeds  | used only for [vulnerability scanning](../scanner/vulnerability.md)                        |
-| Java DB            | `tunnel-java-db` | Index of Java artifacts and their hash digest | used to identify Java artifacts only in [JAR scanning](../coverage/language/java.md)       |
-| Checks Bundle      | `tunnel-checks`  | Logic of misconfiguration checks              | used only in [misconfiguration/IaC scanning](../scanner/misconfiguration/check/builtin.md) |
+DB | Artifact name | Contents | Purpose
+--- | --- | --- | ---
+Vulnerabilities DB | `tunnel-db` | CVE information collected from various feeds | used only for [vulnerability scanning](../scanner/vulnerability.md)
+Java DB | `tunnel-java-db` | Index of Java artifacts and their hash digest | used to identify Java artifacts only in [JAR scanning](../coverage/language/java.md)
+Checks Bundle | `tunnel-checks` | Logic of misconfiguration checks | used only in [misconfiguration/IaC scanning](../scanner/misconfiguration/check/builtin.md)
 
 !!! note
-This is not an exhaustive list of Tunnel's external connectivity requirements.
-There are additional external resources which may be required by specific Tunnel features.
-To learn about external connectivity requirements, see the [Advanced Network Scenarios](../advanced/air-gap.md).
+    This is not an exhaustive list of Tunnel's external connectivity requirements.
+    There are additional external resources which may be required by specific Tunnel features.
+    To learn about external connectivity requirements, see the [Advanced Network Scenarios](../advanced/air-gap.md).
 
 ## Locations
 
 Tunnel's databases are published to the following locations:
 
-| Registry   | Image Address                                  | Link                                                    |
-| ---------- | ---------------------------------------------- | ------------------------------------------------------- |
-| GHCR       | `ghcr.io/khulnasoft-lab/tunnel-db`                 | <https://ghcr.io/khulnasoft-lab/tunnel-db>                  |
-|            | `ghcr.io/khulnasoft-lab/tunnel-java-db`            | <https://ghcr.io/khulnasoft-lab/tunnel-java-db>             |
-|            | `ghcr.io/khulnasoft-lab/tunnel-audit`             | <https://ghcr.io/khulnasoft-lab/tunnel-audit>              |
-| Docker Hub | `khulnasoft/tunnel-db`                         | <https://hub.docker.com/r/khulnasoft/tunnel-db>         |
-|            | `khulnasoft-lab/tunnel-java-db`                    | <https://hub.docker.com/r/khulnasoft-lab/tunnel-java-db>    |
-|            | `khulnasoft/tunnel-checks`                     | <https://hub.docker.com/r/khulnasoft/tunnel-checks>     |
-| AWS ECR    | `public.ecr.aws/khulnasoft/tunnel-db`          | <https://gallery.ecr.aws/khulnasoft/tunnel-db>          |
-|            | `public.ecr.aws/khulnasoft-lab/tunnel-java-db` | <https://gallery.ecr.aws/khulnasoft-lab/tunnel-java-db> |
-|            | `public.ecr.aws/khulnasoft/tunnel-checks`      | <https://gallery.ecr.aws/khulnasoft/tunnel-checks>      |
+| Registry | Image Address | Link
+| --- | --- | ---
+| GHCR | `ghcr.io/khulnasoft-lab/tunnel-db` | <https://ghcr.io/khulnasoft-lab/tunnel-db>
+| | `ghcr.io/khulnasoft-lab/tunnel-java-db` | <https://ghcr.io/khulnasoft-lab/tunnel-java-db>
+| | `ghcr.io/khulnasoft/tunnel-audit` | <https://ghcr.io/khulnasoft/tunnel-audit>
+| Docker Hub | `khulnasoft/tunnel-db` | <https://hub.docker.com/r/khulnasoft/tunnel-db>
+| | `khulnasoft/tunnel-java-db` | <https://hub.docker.com/r/khulnasoft/tunnel-java-db>
+| | `khulnasoft/tunnel-checks` | <https://hub.docker.com/r/khulnasoft/tunnel-checks>
+| AWS ECR | `public.ecr.aws/khulnasoft-lab/tunnel-db` | <https://gallery.ecr.aws/khulnasoft-lab/tunnel-db>
+| | `public.ecr.aws/khulnasoft-lab/tunnel-java-db` | <https://gallery.ecr.aws/khulnasoft-lab/tunnel-java-db>
+| | `public.ecr.aws/khulnasoft/tunnel-audit` | <https://gallery.ecr.aws/khulnasoft/tunnel-audit>
 
 In addition, images are also available via pull-through cache registries like [Google Container Registry Mirror](https://cloud.google.com/artifact-registry/docs/pull-cached-dockerhub-images).
 
@@ -39,8 +39,8 @@ In addition, images are also available via pull-through cache registries like [G
 
 Tunnel will attempt to pull images from the following registries in the order specified.
 
-1. `ghcr.io/khulnasoft`
-2. `ghcr.io/khulnasoft`
+1. `mirror.gcr.io/aquasec`
+2. `ghcr.io/aquasecurity`
 
 You can specify additional alternative repositories as explained in the [configuring database locations section](#database-locations).
 
@@ -72,11 +72,11 @@ tunnel image --db-repository my.registry.local/tunnel-db --db-repository registr
 
 The Checks Bundle registry location option does not support fallback through multiple options. This is because in case of a failure pulling the Checks Bundle, Tunnel will use the embedded checks as a fallback.
 
-!!! note
-Setting the repository location flags override the default values which include the official db locations. In case you want to preserve the default locations, you should include them in the list the you set as repository locations.
+!!! note 
+    Setting the repository location flags override the default values which include the official db locations. In case you want to preserve the default locations, you should include them in the list the you set as repository locations.
 
 !!!note
-When pulling `tunnel-db` or `tunnel-java-db`, if image tag is not specified, Tunnel defaults to the db schema number instead of the `latest` tag.
+    When pulling `tunnel-db` or `tunnel-java-db`, if image tag is not specified, Tunnel defaults to the db schema number instead of the `latest` tag.
 
 ### Skip updates
 
@@ -112,13 +112,13 @@ Note that currently there is no option to download only the Checks Bundle.
 `tunnel clean` command removes caches and databases.
 You can select which cache component to remove:
 
-| option            | description                                                 |
-| ----------------- | ----------------------------------------------------------- |
-| `-a`/`--all`      | remove all caches                                           |
-| `--checks-bundle` | remove checks bundle                                        |
-| `--java-db`       | remove Java database                                        |
-| `--scan-cache`    | remove scan cache (container and VM image analysis results) |
-| `--vuln-db`       | remove vulnerability database                               |
+option | description
+--- | ---
+`-a`/`--all` | remove all caches
+`--checks-bundle` | remove checks bundle
+`--java-db` | remove Java database
+`--scan-cache` | remove scan cache (container and VM image analysis results)
+`--vuln-db` | remove vulnerability database
 
 Example:
 

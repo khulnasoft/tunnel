@@ -6,14 +6,14 @@ Tunnel supports [Pkg.jl](https://pkgdocs.julialang.org/v1/), which is the Julia 
 The following scanners are supported.
 
 | Package manager | SBOM | Vulnerability | License |
-| --------------- | :--: | :-----------: | :-----: |
+|-----------------|:----:|:-------------:|:-------:|
 | Pkg.jl          |  ✓   |       -       |    -    |
 
 The following table provides an outline of the features Tunnel offers.
 
 | Package manager | File          | Transitive dependencies | Dev dependencies | License | Dependency graph | Position |
 | --------------- | ------------- | :---------------------: | :--------------- | :-----: | :--------------: | :------: |
-| Pkg.jl          | Manifest.toml |           ✅            | Excluded[^1]     |    -    |        ✅        |    ✅    |
+| Pkg.jl          | Manifest.toml |            ✅            | Excluded[^1]     |    -    |        ✅         |    ✅     |
 
 ### Pkg.jl
 

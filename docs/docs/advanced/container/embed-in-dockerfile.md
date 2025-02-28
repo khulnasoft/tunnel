@@ -2,7 +2,7 @@
 
 Scan your image as part of the build process by embedding Tunnel in the
 Dockerfile. This approach can be used to update Dockerfiles currently using
-KhulnaSoft’s [Microscanner][microscanner].
+Aqua’s [Microscanner][microscanner].
 
 ```bash
 $ cat Dockerfile
@@ -14,10 +14,8 @@ RUN apk add curl \
 
 $ docker build -t vulnerable-image .
 ```
-
 Alternatively you can use Tunnel in a multistage build. Thus avoiding the
 insecure `curl | sh`. Also the image is not changed.
-
 ```bash
 [...]
 # Run vulnerability scan on build image
@@ -27,4 +25,4 @@ RUN tunnel rootfs --exit-code 1 --no-progress /
 [...]
 ```
 
-[microscanner]: https://github.com/khulnasoft/microscanner
+[microscanner]: https://github.com/aquasecurity/microscanner

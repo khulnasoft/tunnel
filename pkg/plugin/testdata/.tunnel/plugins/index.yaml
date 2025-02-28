@@ -2,14 +2,14 @@ version: 1
 plugins:
   - name: foo
     output: true
-    maintainer: khulnasoft
+    maintainer: aquasecurity
     summary: A foo plugin
     repository: github.com/khulnasoft/tunnel-plugin-foo
   - name: bar
-    maintainer: khulnasoft
+    maintainer: aquasecurity
     summary: A bar plugin
     repository: github.com/khulnasoft/tunnel-plugin-bar
   - name: test_plugin
-    maintainer: khulnasoft
+    maintainer: aquasecurity
     summary: A test plugin
     repository: testdata/test_plugin

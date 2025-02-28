@@ -20,10 +20,10 @@ u := $(if $(update),-u)
 
 # Tools
 $(GOBIN)/wire:
-	go install github.com/google/wire/cmd/wire@v0.5.0
+	go install github.com/google/wire/cmd/wire@latest
 
 $(GOBIN)/crane:
-	go install github.com/google/go-containerregistry/cmd/crane@v0.9.0
+	go install github.com/google/go-containerregistry/cmd/crane@latest
 
 $(GOBIN)/golangci-lint:
 	curl -sfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh| sh -s -- -b $(GOBIN) v1.49.0
@@ -36,7 +36,7 @@ $(GOBIN)/easyjson:
 	go install github.com/mailru/easyjson/...@v0.7.7
 
 $(GOBIN)/mockery:
-	go install github.com/knqyf263/labeler@latest
+	go install github.com/knqyf263/mockery/cmd/mockery@latest
 
 .PHONY: wire
 wire: $(GOBIN)/wire
@@ -44,7 +44,7 @@ wire: $(GOBIN)/wire
 
 .PHONY: mock
 mock: $(GOBIN)/mockery
-	mockery -all -inpkg -case=snake -dir $(DIR)
+	mockery -all -inpkg -case=snake --dir pkg/
 
 .PHONY: deps
 deps:

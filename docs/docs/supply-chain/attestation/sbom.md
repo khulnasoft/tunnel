@@ -4,8 +4,8 @@
 And, Tunnel can take an SBOM attestation as input and scan for vulnerabilities
 
 !!! note
-In the following examples, the `cosign` command will write an attestation to a target OCI registry, so you must have permission to write.
-If you want to avoid writing an OCI registry and only want to see an attestation, add the `--no-upload` option to the `cosign` command.
+    In the following examples, the `cosign` command will write an attestation to a target OCI registry, so you must have permission to write.
+    If you want to avoid writing an OCI registry and only want to see an attestation, add the `--no-upload` option to the `cosign` command.
 
 ## Sign with a local key pair
 
@@ -53,7 +53,6 @@ $ COSIGN_EXPERIMENTAL=1 cosign attest --type cyclonedx --predicate sbom.cdx.json
 ```
 
 You can verify attestations.
-
 ```bash
 $ COSIGN_EXPERIMENTAL=1 cosign verify-attestation --type cyclonedx <IMAGE>
 ```
@@ -79,7 +78,7 @@ Total: 2 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 2)
 ├────────────┼────────────────┼──────────┼───────────────────┼───────────────┼──────────────────────────────────────────────────────────┤
 │ musl       │ CVE-2019-14697 │ CRITICAL │ 1.1.18-r3         │ 1.1.18-r4     │ musl libc through 1.1.23 has an x87 floating-point stack │
 │            │                │          │                   │               │ adjustment im ......                                     │
-│            │                │          │                   │               │ https://avd.khulnasoft.com/nvd/cve-2019-14697               │
+│            │                │          │                   │               │ https://avd.aquasec.com/nvd/cve-2019-14697               │
 ├────────────┤                │          │                   │               │                                                          │
 │ musl-utils │                │          │                   │               │                                                          │
 │            │                │          │                   │               │                                                          │

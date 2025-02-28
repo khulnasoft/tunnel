@@ -5,7 +5,7 @@ This module provides a more in-depth investigation of Spring4Shell detection.
 ## Set up
 
 ```
-$ tinygo build -o spring4shell.wasm -scheduler=none -target=wasi --no-debug spring4shell.go
+$ tinygo build -o spring4shell.wasm -scheduler=none -target=wasi --no-debug spring4shell.go 
 $ mkdir -p ~/.tunnel/modules
 $ cp spring4shell.wasm ~/.tunnel/modules
 ```
@@ -14,8 +14,8 @@ It is also available in [GHCR][tunnel-module-spring4shell].
 You can install it via `tunnel module install`.
 
 ```bash
-$ tunnel module install ghcr.io/khulnasoft-lab/tunnel-module-spring4shell
-2022-06-13T15:32:21.972+0300    INFO    Installing the module from ghcr.io/khulnasoft-lab/tunnel-module-spring4shell...
+$ tunnel module install ghcr.io/khulnasoft/tunnel-module-spring4shell
+2022-06-13T15:32:21.972+0300    INFO    Installing the module from ghcr.io/khulnasoft/tunnel-module-spring4shell...
 ```
 
 ## Run Tunnel
@@ -35,7 +35,6 @@ $ tunnel image spring-core-rce-jdk8:latest
 In the above example, the Java version is 8 which is not affected by CVE-2022-22965, so this module changes the severity from CRITICAL to LOW.
 
 ## Note
-
 This module is also used for testing in Tunnel.
 
 [tunnel-module-spring4shell]: https://github.com/orgs/khulnasoft/packages/container/package/tunnel-module-spring4shell

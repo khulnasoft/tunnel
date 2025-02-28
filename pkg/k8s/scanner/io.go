@@ -10,7 +10,7 @@ import (
 	"golang.org/x/xerrors"
 	"gopkg.in/yaml.v3"
 
-	"github.com/khulnasoft/tunnel-kubernetes/pkg/artifacts"
+	"github.com/khulnasoft-lab/tunnel-kubernetes/pkg/artifacts"
 	"github.com/khulnasoft/tunnel/pkg/log"
 )
 

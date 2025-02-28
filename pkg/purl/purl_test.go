@@ -446,8 +446,7 @@ func TestNewPackageURL(t *testing.T) {
 		t.Run(tc.name, func(t *testing.T) {
 			packageURL, err := purl.New(tc.typ, tc.metadata, tc.pkg)
 			if tc.wantErr != "" {
-				require.Error(t, err)
-				assert.Contains(t, err.Error(), tc.wantErr)
+				require.ErrorContains(t, err, tc.wantErr)
 				return
 			}
 			require.NoError(t, err)
@@ -822,13 +821,13 @@ func TestPackageURL_Match(t *testing.T) {
 		{
 			name:       "different namespace",
 			constraint: "pkg:golang/github.com/khulnasoft/tunnel@v0.49.0",
-			target:     "pkg:golang/github.com/khulnasoft2/tunnel@v.49.0",
+			target:     "pkg:golang/github.com/aquasecurity2/tunnel@v.49.0",
 			want:       false,
 		},
 		{
 			name:       "different name",
 			constraint: "pkg:golang/github.com/khulnasoft/tunnel@v0.49.0",
-			target:     "pkg:golang/github.com/khulnasoft/tracee@v0.49.0",
+			target:     "pkg:golang/github.com/aquasecurity/tracee@v0.49.0",
 			want:       false,
 		},
 		{

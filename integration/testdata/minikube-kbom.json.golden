@@ -44,7 +44,7 @@
           "Status": "fixed",
           "Layer": {},
           "SeveritySource": "k8s",
-          "PrimaryURL": "https://avd.khulnasoft.com/nvd/cve-2023-2431",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-2431",
           "DataSource": {
             "ID": "k8s",
             "Name": "Official Kubernetes CVE Feed",

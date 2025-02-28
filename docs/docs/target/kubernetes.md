@@ -1,10 +1,10 @@
 # Kubernetes
 
 !!! warning "EXPERIMENTAL"
-This feature might change without preserving backwards compatibility.
+    This feature might change without preserving backwards compatibility.
 
 Tunnel can connect to your Kubernetes cluster and scan it for security issues using the `tunnel k8s` command. This page covers the technical capabilities of Tunnel Kubernetes scanning.
-Tunnel can also be installed _inside_ your cluster as a Kubernetes Operator, and continuously scan it. For more about this, please see the [Tunnel Operator](https://khulnasoft.github.io/tunnel-operator/) project.
+Tunnel can also be installed *inside* your cluster as a Kubernetes Operator, and continuously scan it. For more about this, please see the [Tunnel Operator](https://khulnasoft.github.io/tunnel-operator/) project.
 
 When scanning a Kubernetes cluster, Tunnel differentiates between the following:
 
@@ -38,6 +38,10 @@ for example:
 tunnel k8s --report summary
 ```
 
+!!! note "JSON result for multi-container pods"
+    For multi-container pods, it may be challenging to associate results with specific images in the json summary report. Kubernetes treats a pod as a single object, so individual images within the pod aren’t distinguished. 
+    For detailed information, please use the `--report all` option.
+
 By default Tunnel will look for a [`kubeconfig` configuration file in the default location](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/), and use the default cluster that is specified.  
 You can also specify a `kubeconfig` using the `--kubeconfig` flag:
 
@@ -45,9 +49,40 @@ You can also specify a `kubeconfig` using the `--kubeconfig` flag:
 tunnel k8s --kubeconfig ~/.kube/config2
 ```
 
-By default, all cluster resource images will be downloaded and scanned.
+## Required roles
+To successfully scan a Kubernetes cluster, `tunnel kubernetes` subcommand must be executed under a role or a cluster role that has some specific permissions.
+
+The role must have `list` verb for all resources (`"*"`) inside the following API groups: core (`""`), `"apps"`, `"batch"`,`"networking.k8s.io"`, `"rbac.authorization.k8s.io"`:
+```yaml
+- apiGroups: [""]
+  resources: ["*"]
+  verbs: ["list"]
+- apiGroups: ["apps", "batch", "networking.k8s.io", "rbac.authorization.k8s.io"]
+  resources: ["*"]
+  verbs: ["list"]
+```
+If `node collector` is enabled (default: enabled), Tunnel needs a cluster role with some additional permissions to run and track the jobs:
+```yaml
+- apiGroups: [""]
+  resources: ["nodes/proxy", "pods/log"]
+  verbs: ["get"]
+- apiGroups: [""]
+  resources: ["events"]
+  verbs: ["watch"]
+- apiGroups: ["batch"]
+  resources: ["jobs", "cronjobs"]
+  verbs: ["list", "get"]
+- apiGroups: ["batch"]
+  resources: ["jobs"]
+  verbs: ["create","delete", "watch"]
+- apiGroups: [""]
+  resources: ["namespaces"]
+  verbs: ["create"]
+```
 
 ### Skip-images
+
+By default, all cluster resource images will be downloaded and scanned.
 
 You can control whether Tunnel will scan and download the cluster resource images. To disable this feature, add the --skip-images flag.
 
@@ -63,7 +98,7 @@ tunnel k8s --report summary --skip-images
 
 You can control which kinds of resources will be discovered using the `--include-kinds` or `--exclude-kinds` comma-separated flags:
 
-**_Note:_** Both flags (`--include-kinds` or `--exclude-kinds`) cannot be set in conjunction.
+***Note:*** Both flags (`--include-kinds` or `--exclude-kinds`) cannot be set in conjunction.
 
 - `--include-kinds` will include the listed kinds in cluster scanning.
 - `--exclude-kinds` will exclude the listed kinds from cluster scanning.
@@ -80,12 +115,15 @@ tunnel k8s --report summary --exclude-kinds node,pod
 
 You can control which namespaces will be discovered using the `--include-namespaces` or `--exclude-namespaces` comma-separated flags:
 
-**_Note:_** Both flags (`--include-namespaces` or `--exclude-namespaces`) cannot be set in conjunction.
+***Note:*** Both flags (`--include-namespaces` or `--exclude-namespaces`) cannot be set in conjunction.
 
 - `--include-namespaces` will include the listed namespaces in cluster scanning.
 - `--exclude-namespaces` will exclude the listed namespaces from cluster scanning.
 
 By default, all namespaces will be included in cluster scanning.
+
+!!! note "using `--exclude-namespaces`"
+    Tunnel requires a complete list of namespaces to exclude specific ones. Therefore, `--exclude-namespaces` option is only available for cluster roles now.
 
 Example:
 
@@ -95,7 +133,7 @@ tunnel k8s --report summary --exclude-namespace dev-system,staging-system
 
 ## Control Plane and Node Components Vulnerability Scanning
 
-Tunnel is capable of discovering Kubernetes control plane (apiserver, controller-manager and etc) and node components(kubelet, kube-proxy and etc), matching them against the [official Kubernetes vulnerability database feed](https://github.com/khulnasoft/vuln-list-k8s), and reporting any vulnerabilities it finds.
+Tunnel is capable of discovering Kubernetes control plane (apiserver, controller-manager and etc) and node components(kubelet, kube-proxy and etc), matching them against the [official Kubernetes vulnerability database feed](https://github.com/aquasecurity/vuln-list-k8s), and reporting any vulnerabilities it finds.
 
 To read more about KBOM, see the [documentation for Kubernetes scanning](./sbom.md#kbom).
 
@@ -110,13 +148,13 @@ Total: 3 (UNKNOWN: 0, LOW: 1, MEDIUM: 0, HIGH: 2, CRITICAL: 0)
 │    Library     │ Vulnerability  │ Severity │ Status │ Installed Version │          Fixed Version           │                       Title                       │
 ├────────────────┼────────────────┼──────────┼────────┼───────────────────┼──────────────────────────────────┼───────────────────────────────────────────────────┤
 │ k8s.io/kubelet │ CVE-2023-2431  │ LOW      │ fixed  │ 1.21.1            │ 1.24.14, 1.25.10, 1.26.5, 1.27.2 │ Bypass of seccomp profile enforcement             │
-│                │                │          │        │                   │                                  │ https://avd.khulnasoft.com/nvd/cve-2023-2431         │
+│                │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2023-2431         │
 │                ├────────────────┼──────────┤        │                   ├──────────────────────────────────┼───────────────────────────────────────────────────┤
 │                │ CVE-2021-25741 │ HIGH     │        │                   │ 1.19.16, 1.20.11, 1.21.5, 1.22.1 │ Symlink exchange can allow host filesystem access │
-│                │                │          │        │                   │                                  │ https://avd.khulnasoft.com/nvd/cve-2021-25741        │
+│                │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2021-25741        │
 │                ├────────────────┤          │        │                   ├──────────────────────────────────┼───────────────────────────────────────────────────┤
 │                │ CVE-2021-25749 │          │        │                   │ 1.22.14, 1.23.11, 1.24.5         │ runAsNonRoot logic bypass for Windows containers  │
-│                │                │          │        │                   │                                  │ https://avd.khulnasoft.com/nvd/cve-2021-25749        │
+│                │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2021-25749        │
 └────────────────┴────────────────┴──────────┴────────┴───────────────────┴──────────────────────────────────┴───────────────────────────────────────────────────┘
 ```
 
@@ -126,7 +164,7 @@ Node-collector is a scan job that collects node configuration parameters and per
 
 ### Disable Node Collector
 
-You can control whether the node scan-job (`node-collector`) will run in the cluster. To disable it, add the `--disable-node-collector` flag
+You can control whether the node scan-job (`node-collector`) will run in the cluster. To disable it, add the `--disable-node-collector` flag  
 
 - `--disable-node-collector` This flag will exclude findings related to Node (infra assessment) misconfigurations
 
@@ -142,7 +180,7 @@ tunnel k8s --report summary --disable-node-collector
 
 The node-collector scan-job will run on every node. In case the node has been tainted, it is possible to add toleration to the scan job for it to be scheduled on the tainted node. for more details [see k8s docs](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/)
 
-- `--tolerations  key1=value1:NoExecute,key2=value2:NoSchedule` this flag wil enable node-collector to be schedule on tainted Node
+- `--tolerations  key1=value1:NoExecute,key2=value2:NoSchedule` this flag will enable node-collector to be schedule on tainted Node
 
 Example:
 
@@ -218,7 +256,7 @@ tunnel k8s --format json -o results.json cluster
                 "DiffID": "sha256:e59fc94956120a6c7629f085027578e6357b48061d45714107e79f04a81a6f0c"
               },
               "SeveritySource": "ubuntu",
-              "PrimaryURL": "https://avd.khulnasoft.com/nvd/cve-2016-2781",
+              "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2016-2781",
               "DataSource": {
                 "ID": "ubuntu",
                 "Name": "Ubuntu CVE Tracker",
@@ -227,7 +265,9 @@ tunnel k8s --format json -o results.json cluster
               "Title": "coreutils: Non-privileged session can escape to the parent session in chroot",
               "Description": "chroot in GNU coreutils, when used with --userspec, allows local users to escape to the parent session via a crafted TIOCSTI ioctl call, which pushes characters to the terminal's input buffer.",
               "Severity": "LOW",
-              "CweIDs": ["CWE-20"],
+              "CweIDs": [
+                "CWE-20"
+              ],
               "VendorSeverity": {
                 "cbl-mariner": 2,
                 "nvd": 2,
@@ -291,10 +331,10 @@ tunnel k8s --format json -o results.json cluster
               "Query": "data.builtin.kubernetes.KSV001.deny",
               "Resolution": "Set 'set containers[].securityContext.allowPrivilegeEscalation' to 'false'.",
               "Severity": "MEDIUM",
-              "PrimaryURL": "https://avd.khulnasoft.com/misconfig/ksv001",
+              "PrimaryURL": "https://avd.aquasec.com/misconfig/ksv001",
               "References": [
                 "https://kubernetes.io/docs/concepts/security/pod-security-standards/#restricted",
-                "https://avd.khulnasoft.com/misconfig/ksv001"
+                "https://avd.aquasec.com/misconfig/ksv001"
               ],
               "Status": "FAIL",
               "Layer": {},
@@ -315,10 +355,10 @@ tunnel k8s --format json -o results.json cluster
               "Query": "data.builtin.kubernetes.KSV003.deny",
               "Resolution": "Add 'ALL' to containers[].securityContext.capabilities.drop.",
               "Severity": "LOW",
-              "PrimaryURL": "https://avd.khulnasoft.com/misconfig/ksv003",
+              "PrimaryURL": "https://avd.aquasec.com/misconfig/ksv003",
               "References": [
                 "https://kubesec.io/basics/containers-securitycontext-capabilities-drop-index-all/",
-                "https://avd.khulnasoft.com/misconfig/ksv003"
+                "https://avd.aquasec.com/misconfig/ksv003"
               ],
               "Status": "FAIL",
               "Layer": {},
@@ -340,6 +380,7 @@ tunnel k8s --format json -o results.json cluster
     }
   ]
 }
+
 ```
 
 </details>
@@ -352,13 +393,13 @@ For an overview of Tunnel's Compliance feature, including working with custom co
 The following reports are available out of the box:
 
 | Compliance                                   | Name for command         | More info                                                                                                           |
-| -------------------------------------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------- |
+|----------------------------------------------|--------------------------|---------------------------------------------------------------------------------------------------------------------|
 | NSA, CISA Kubernetes Hardening Guidance v1.0 | `k8s-nsa-1.0`            | [Link](https://media.defense.gov/2022/Aug/29/2003066362/-1/-1/0/CTR_KUBERNETES_HARDENING_GUIDANCE_1.2_20220829.PDF) |
 | CIS Benchmark for Kubernetes v1.23           | `k8s-cis-1.23`           | [Link](https://www.cisecurity.org/benchmark/kubernetes)                                                             |
 | CIS Benchmark for RKE2 v1.24                 | `rke2-cis-1.24`          | [Link](https://www.cisecurity.org/benchmark/kubernetes)                                                             |
 | CIS Benchmark for EKS v1.4                   | `eks-cis-1.4`            | [Link](https://www.cisecurity.org/benchmark/kubernetes)                                                             |
 | Pod Security Standards, Baseline             | `k8s-pss-baseline-0.1`   | [Link](https://kubernetes.io/docs/concepts/security/pod-security-standards/#baseline)                               |
-| Pod Security Standards, Restricted           | `k8s-pss-restricted-0.1` | [Link](https://kubernetes.io/docs/concepts/security/pod-security-standards/#restricted)                             |
+| Pod  Security Standards, Restricted          | `k8s-pss-restricted-0.1` | [Link](https://kubernetes.io/docs/concepts/security/pod-security-standards/#restricted)                             |
 
 Examples:
 
@@ -435,10 +476,10 @@ tunnel sbom mykbom.cdx.json
  │    Library     │ Vulnerability  │ Severity │ Status │ Installed Version │          Fixed Version          │                      Title                       │
  ├────────────────┼────────────────┼──────────┼────────┼───────────────────┼─────────────────────────────────┼──────────────────────────────────────────────────┤
  │ k8s.io/kubelet │ CVE-2021-25749 │ HIGH     │ fixed  │ 1.24.0            │ 1.22.14, 1.23.11, 1.24.5        │ runAsNonRoot logic bypass for Windows containers │
- │                │                │          │        │                   │                                 │ https://avd.khulnasoft.com/nvd/cve-2021-25749       │
+ │                │                │          │        │                   │                                 │ https://avd.aquasec.com/nvd/cve-2021-25749       │
  │                ├────────────────┼──────────┤        │                   ├─────────────────────────────────┼──────────────────────────────────────────────────┤
  │                │ CVE-2023-2431  │ LOW      │        │                   │ 1.24.14, 1.25.9, 1.26.4, 1.27.1 │ Bypass of seccomp profile enforcement            │
- │                │                │          │        │                   │                                 │ https://avd.khulnasoft.com/nvd/cve-2023-2431        │
+ │                │                │          │        │                   │                                 │ https://avd.aquasec.com/nvd/cve-2023-2431        │
  └────────────────┴────────────────┴──────────┴────────┴───────────────────┴─────────────────────────────────┴──────────────────────────────────────────────────┘
 ```
 

@@ -4,7 +4,7 @@ go 1.22.0
 
 toolchain go1.22.5
 
-require github.com/aquasecurity/go-version v0.0.0-20240603093900-cf8a8d29271d
+require github.com/khulnasoft/goversify v0.0.0-20240603093900-cf8a8d29271d
 
 require (
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect

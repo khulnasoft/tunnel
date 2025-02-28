@@ -3,33 +3,33 @@
 In this section you will find an aggregation of the different ways to install Tunnel. Installation options are labeled as either "Official" or "Community". Official installations are developed by the Tunnel team and supported by it. Community installations could be developed by anyone from the Tunnel community, and collected here for your convenience. For support or questions about community installations, please contact the original developers.
 
 !!! note
-If you are looking to integrate Tunnel into another system, such as CI/CD, IDE, Kubernetes, etc, please see [Ecosystem section](../ecosystem/index.md) to explore integrations of Tunnel with other tools.
+    If you are looking to integrate Tunnel into another system, such as CI/CD, IDE, Kubernetes, etc, please see [Ecosystem section](../ecosystem/index.md) to explore integrations of Tunnel with other tools.
 
 ## Container image (Official)
 
 Use one of the official Tunnel images:
 
-| Registry                             | Repository                          | Link                                                                  |
-| ------------------------------------ | ----------------------------------- | --------------------------------------------------------------------- |
-| Docker Hub                           | `docker.io/khulnasoft/tunnel`       | https://hub.docker.com/r/khulnasoft/tunnel                            |
-| GitHub Container Registry (GHCR)     | `ghcr.io/khulnasoft/tunnel`         | https://github.com/orgs/khulnasoft/packages/container/package/tunnel |
-| AWS Elastic Container Registry (ECR) | `public.ecr.aws/khulnasoft/tunnel` | https://gallery.ecr.aws/khulnasoft/tunnel                            |
+| Registry | Repository | Link |
+| --- | --- | --- |
+| Docker Hub | `docker.io/khulnasoft/tunnel` | https://hub.docker.com/r/khulnasoft/tunnel |
+| GitHub Container Registry (GHCR) | `ghcr.io/khulnasoft/tunnel` | https://github.com/orgs/aquasecurity/packages/container/package/tunnel |
+| AWS Elastic Container Registry (ECR) | `public.ecr.aws/khulnasoft/tunnel` | https://gallery.ecr.aws/khulnasoft/tunnel |
 
 !!! Tip
-It is advisable to mount a persistent [cache dir](../docs/configuration/cache.md) on the host into the Tunnel container.
+    It is advisable to mount a persistent [cache dir](../docs/configuration/cache.md) on the host into the Tunnel container.
 
 !!! Tip
-For scanning container images with Tunnel, mount the container engine socket from the host into the Tunnel container.
+    For scanning container images with Tunnel, mount the container engine socket from the host into the Tunnel container.
 
 Example:
 
-```bash
+``` bash
 docker run -v /var/run/docker.sock:/var/run/docker.sock -v $HOME/Library/Caches:/root/.cache/ khulnasoft/tunnel:{{ git.tag[1:] }} image python:3.4-alpine
 ```
 
 ## GitHub Release (Official)
 
-1. Download the file for your operating system/architecture from [GitHub Release assets](https://github.com/khulnasoft/tunnel/releases/tag/{{ git.tag }}).
+1. Download the file for your operating system/architecture from [GitHub Release assets](https://github.com/khulnasoft/tunnel/releases/tag/{{ git.tag }}).  
 2. Unpack the downloaded archive (`tar -xzf ./tunnel.tar.gz`).
 3. Make sure the binary has execution bit turned on (`chmod +x ./tunnel`).
 
@@ -44,7 +44,7 @@ curl -sfL https://raw.githubusercontent.com/khulnasoft/tunnel/main/contrib/insta
 ## RHEL/CentOS (Official)
 
 === "Repository"
-Add repository setting to `/etc/yum.repos.d`.
+    Add repository setting to `/etc/yum.repos.d`.
 
     ``` bash
     cat << EOF | sudo tee -a /etc/yum.repos.d/tunnel.repo
@@ -68,7 +68,7 @@ Add repository setting to `/etc/yum.repos.d`.
 ## Debian/Ubuntu (Official)
 
 === "Repository"
-Add repository setting to `/etc/apt/sources.list.d`.
+    Add repository setting to `/etc/apt/sources.list.d`.
 
     ``` bash
     sudo apt-get install wget gnupg
@@ -106,10 +106,10 @@ Arch Linux Package Repository.
 sudo pacman -S tunnel
 ```
 
-References:
-
+References: 
 - <https://archlinux.org/packages/extra/x86_64/tunnel/>
 - <https://gitlab.archlinux.org/archlinux/packaging/packages/tunnel/-/blob/main/PKGBUILD>
+
 
 ## MacPorts (Community)
 
@@ -120,7 +120,6 @@ sudo port install tunnel
 ```
 
 References:
-
 - <https://ports.macports.org/port/tunnel/details/>
 
 ## Nix/NixOS (Community)
@@ -128,29 +127,29 @@ References:
 Nix package manager for Linux and macOS.
 
 === "Command line"
-`nix-env --install -A nixpkgs.tunnel`
+    `nix-env --install -A nixpkgs.tunnel`
 
 === "Configuration"
-`nix
+    ```nix
     # your other config ...
     environment.systemPackages = with pkgs; [
       # your other packages ...
       tunnel
     ];
-    `
+    ```
 
 === "Home Manager"
-`nix
+    ```nix
     # your other config ...
     home.packages = with pkgs; [
       # your other packages ...
       tunnel
     ];
-    `
+    ```
 
-References:
+References: 
 
-- https://github.com/NixOS/nixpkgs/blob/master/pkgs/tools/admin/tunnel/default.nix
+-  https://github.com/NixOS/nixpkgs/blob/master/pkgs/tools/admin/tunnel/default.nix
 
 ## FreeBSD (Official)
 
@@ -168,10 +167,11 @@ See their respective documentation for more information of how to install them a
 - [asdf](https://asdf-vm.com/guide/getting-started.html)
 - [mise](https://mise.jdx.dev/getting-started.html)
 
-The plugin used by both tools is developped [here](https://github.com/zufardhiyaulhaq/asdf-tunnel)
+The plugin used by both tools is developed [here](https://github.com/zufardhiyaulhaq/asdf-tunnel)
+
 
 === "asdf"
-A basic global installation is shown below, for specific version or/and local version to a directory see "asdf" documentation.
+    A basic global installation is shown below, for specific version or/and local version to a directory see "asdf" documentation.
 
     ```shell
     # Install plugin
@@ -188,7 +188,7 @@ A basic global installation is shown below, for specific version or/and local ve
     ```
 
 === "mise"
-A basic global installation is shown below, for specific version or/and local version to a directory see "mise" documentation.
+    A basic global installation is shown below, for specific version or/and local version to a directory see "mise" documentation.
 
     ``` shell
     # Install plugin and install latest version

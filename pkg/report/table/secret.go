@@ -3,11 +3,12 @@ package table
 import (
 	"bytes"
 	"fmt"
+	"strconv"
 	"strings"
 
 	"golang.org/x/term"
 
-	"github.com/aquasecurity/tml"
+	"github.com/khulnasoft-lab/tml"
 	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
 	"github.com/khulnasoft/tunnel/pkg/types"
 )
@@ -141,7 +142,7 @@ func (r *secretRenderer) renderCode(secret types.DetectedSecret) {
 		for i, line := range lines {
 			switch {
 			case line.Truncated:
-				r.printf("<dim>%4s   ", strings.Repeat(".", len(fmt.Sprintf("%d", line.Number))))
+				r.printf("<dim>%4s   ", strings.Repeat(".", len(strconv.Itoa(line.Number))))
 			case line.IsCause:
 				r.printf("<red>%4d ", line.Number)
 				switch {

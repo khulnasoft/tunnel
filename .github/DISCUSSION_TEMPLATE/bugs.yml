@@ -7,10 +7,10 @@ body:
         Feel free to raise a bug report if something doesn't work as expected.
         Please ensure that you're not creating a duplicate report by searching the [issues](https://github.com/khulnasoft/tunnel/issues)/[discussions](https://github.com/khulnasoft/tunnel/discussions) beforehand.
         If you see any false positives or false negatives, please file a ticket [here](https://github.com/khulnasoft/tunnel/discussions/new?category=false-detection).
-
+        
         **Do not open a GitHub issue, please.** Maintainers triage discussions and then create issues.
-
-        Please also check [our contribution guidelines](https://khulnasoft.github.io/tunnel/latest/community/contribute/discussion/).
+        
+        Please also check [our contribution guidelines](https://tunnel.dev/latest/community/contribute/discussion/).
   - type: textarea
     attributes:
       label: Description
@@ -117,7 +117,7 @@ body:
       description: Have you tried the following?
       options:
         - label: Run `tunnel clean --all`
-        - label: Read [the troubleshooting](https://khulnasoft.github.io/tunnel/latest/docs/references/troubleshooting/)
+        - label: Read [the troubleshooting](https://tunnel.dev/latest/docs/references/troubleshooting/)
   - type: markdown
     attributes:
       value: |

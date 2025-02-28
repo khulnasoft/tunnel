@@ -4,17 +4,17 @@ Tunnel scans any container image for license files and offers an opinionated vie
 
 License are classified using the [Google License Classification][google-license-classification] -
 
-- Forbidden
-- Restricted
-- Reciprocal
-- Notice
-- Permissive
-- Unencumbered
-- Unknown
+ - Forbidden
+ - Restricted 
+ - Reciprocal
+ - Notice
+ - Permissive
+ - Unencumbered
+ - Unknown
 
 !!! tip
-Licenses that Tunnel fails to recognize are classified as UNKNOWN.
-As those licenses may be in violation, it is recommended to check those unknown licenses as well.
+    Licenses that Tunnel fails to recognize are classified as UNKNOWN.
+    As those licenses may be in violation, it is recommended to check those unknown licenses as well.    
 
 By default, Tunnel scans licenses for packages installed by `apk`, `apt-get`, `dnf`, `npm`, `pip`, `gem`, etc.
 Check out [the coverage document][coverage] for details.
@@ -23,15 +23,15 @@ To enable extended license scanning, you can use `--license-full`.
 In addition to package licenses, Tunnel scans source code files, Markdown documents, text files and `LICENSE` documents to identify license usage within the image or filesystem.
 
 By default, Tunnel only classifies licenses that are matched with a confidence level of 0.9 or more by the classifier.
-To configure the confidence level, you can use `--license-confidence-level`. This enables us to classify licenses that might be matched with a lower confidence level by the classifer.
+To configure the confidence level, you can use `--license-confidence-level`. This enables us to classify licenses that might be matched with a lower confidence level by the classifier. 
 
 !!! note
-The full license scanning is expensive. It takes a while.
+    The full license scanning is expensive. It takes a while.
 
 |   License scanning    | Image | Rootfs | Filesystem | Repository | SBOM |
-| :-------------------: | :---: | :----: | :--------: | :--------: | :--: |
-|       Standard        |  ✅   |   ✅   | ✅[^1][^2] | ✅[^1][^2] |  ✅  |
-| Full (--license-full) |  ✅   |   ✅   |     ✅     |     ✅     |  -   |
+|:---------------------:|:-----:|:------:|:----------:|:----------:|:----:|
+|       Standard        |   ✅   |   ✅    | ✅[^1][^2]  | ✅[^1][^2]  |  ✅   |
+| Full (--license-full) |   ✅   |   ✅    |     ✅      |     ✅      |  -   |
 
 License checking classifies the identified licenses and map the classification to severity.
 
@@ -46,14 +46,12 @@ License checking classifies the identified licenses and map the classification t
 | Unknown        | UNKNOWN  |
 
 ## Quick start
-
 This section shows how to scan license in container image and filesystem.
 
 ### Standard scanning
-
 Specify an image name with `--scanners license`.
 
-```shell
+``` shell
 $ tunnel image --scanners license --severity UNKNOWN,HIGH,CRITICAL alpine:3.15
 2022-07-13T17:28:39.526+0300    INFO    License scanning is enabled
 
@@ -79,10 +77,9 @@ Total: 6 (UNKNOWN: 0, HIGH: 6, CRITICAL: 0)
 ```
 
 ### Full scanning
-
 Specify `--license-full`
 
-```shell
+``` shell
 $ tunnel image --scanners license --severity UNKNOWN,HIGH,CRITICAL --license-full grafana/grafana
 2022-07-13T17:48:40.905+0300    INFO    Full license scanning is enabled
 
@@ -140,7 +137,7 @@ Total: 6 (UNKNOWN: 4, HIGH: 0, CRITICAL: 2)
 ## Configuration
 
 Tunnel has number of configuration flags for use with license scanning;
-
+                                 
 ### Ignored Licenses
 
 Tunnel license scanning can ignore licenses that are identified to explicitly remove them from the results using the `--ignored-licenses` flag;
@@ -164,7 +161,6 @@ Total: 2 (HIGH: 2, CRITICAL: 0)
 ```
 
 ### Configuring Classifier Confidence Level
-
 You can use the `--license-confidence-level` flag to adjust the confidence level between 0.0 to 1.0 (default 0.9).
 For example, when you run the scanner with the default confidence level on [SPDX license list data](https://github.com/spdx/license-list-data/tree/main/text), it is able to detect only 258 licenses.
 
@@ -189,7 +185,6 @@ Total: 282 (UNKNOWN: 81, LOW: 97, MEDIUM: 24, HIGH: 58, CRITICAL: 22)
 ```
 
 ### Custom Classification
-
 You can generate the default config by the `--generate-default-config` flag and customize the license classification.
 For example, if you want to forbid only AGPL-3.0, you can leave it under `forbidden` and move other licenses to another classification.
 
@@ -199,7 +194,7 @@ $ vim tunnel.yaml
 license:
   forbidden:
   - AGPL-3.0
-
+  
   restricted:
   - AGPL-1.0
   - CC-BY-NC-1.0
@@ -255,7 +250,7 @@ license:
   - OSL-3.0
   - QPL-1.0
   - Sleepycat
-
+  
   reciprocal:
   - APSL-1.0
   - APSL-1.1
@@ -272,7 +267,7 @@ license:
   - MPL-1.1
   - MPL-2.0
   - Ruby
-
+  
   notice:
   - AFL-1.1
   - AFL-1.2
@@ -338,12 +333,12 @@ license:
   - ZPL-1.1
   - ZPL-2.0
   - ZPL-2.1
-
+  
   unencumbered:
   - CC0-1.0
   - Unlicense
   - 0BSD
-
+  
   permissive: []
 ```
 

@@ -1,7 +1,6 @@
 # User Guide
 
 ## Discovering Plugins
-
 You can find a list of Tunnel plugins distributed via tunnel-plugin-index [here][tunnel-plugin-index].
 However, you can find plugins using the command line as well.
 
@@ -16,9 +15,9 @@ To list all plugins available, run:
 ```bash
 $ tunnel plugin search
 NAME                 DESCRIPTION                                                  MAINTAINER           OUTPUT
-khulnasoft                 A plugin for integration with KhulnaSoft Security SaaS platform    khulnasoft
-kubectl              A plugin scanning the images of a kubernetes resource        khulnasoft
-referrer             A plugin for OCI referrers                                   khulnasoft           ✓
+aqua                 A plugin for integration with Khulnasoft Security SaaS platform    aquasecurity
+kubectl              A plugin scanning the images of a kubernetes resource        aquasecurity
+referrer             A plugin for OCI referrers                                   aquasecurity           ✓
 ```
 
 You can specify search keywords as arguments:
@@ -27,13 +26,12 @@ You can specify search keywords as arguments:
 $ tunnel plugin search referrer
 
 NAME                 DESCRIPTION                                                  MAINTAINER           OUTPUT
-referrer             A plugin for OCI referrers                                   khulnasoft           ✓
+referrer             A plugin for OCI referrers                                   aquasecurity           ✓
 ```
 
 It lists plugins with the keyword in the name or description.
 
-## Installing Plugins
-
+## Installing  Plugins
 Plugins can be installed with the `tunnel plugin install` command:
 
 ```bash
@@ -54,11 +52,9 @@ Furthermore, it is possible to download plugins that are not registered in the i
 ```bash
 $ tunnel plugin install github.com/khulnasoft/tunnel-plugin-kubectl
 ```
-
 ```bash
 $ tunnel plugin install https://github.com/khulnasoft/tunnel-plugin-kubectl/archive/refs/heads/main.zip
 ```
-
 ```bash
 $ tunnel plugin install ./myplugin.tar.gz
 ```
@@ -70,7 +66,7 @@ $ tunnel plugin install referrer@v0.3.0
 ```
 
 !!! note
-The leading `v` in the version is required. Also, the version must follow the [Semantic Versioning](https://semver.org/).
+    The leading `v` in the version is required. Also, the version must follow the [Semantic Versioning](https://semver.org/).
 
 Under the hood Tunnel leverages [go-getter][go-getter] to download plugins.
 This means the following protocols are supported for downloading plugins:
@@ -84,7 +80,6 @@ This means the following protocols are supported for downloading plugins:
 - Google Cloud Storage
 
 ## Listing Installed Plugins
-
 To list all plugins installed, run:
 
 ```bash
@@ -92,7 +87,6 @@ $ tunnel plugin list
 ```
 
 ## Using Plugins
-
 Once the plugin is installed, Tunnel will load all available plugins in the cache on the start of the next Tunnel execution.
 A plugin will be made in the Tunnel CLI based on the plugin name.
 To display all plugins, you can list them by `tunnel --help`
@@ -112,7 +106,7 @@ Scanning Commands
   config      Scan config files for misconfigurations
   filesystem  Scan local filesystem
   image       Scan a container image
-
+  
 ...
 
 Plugin Commands
@@ -137,7 +131,6 @@ $ TUNNEL_RUN_AS_PLUGIN=kubectl tunnel job your-job -- --format json
 ```
 
 ## Installing and Running Plugins on the fly
-
 `tunnel plugin run` installs a plugin and runs it on the fly.
 If the plugin is already present in the cache, the installation is skipped.
 
@@ -146,7 +139,6 @@ tunnel plugin run kubectl pod your-pod -- --exit-code 1
 ```
 
 ## Upgrading Plugins
-
 To upgrade all plugins that you have installed to their latest versions, run:
 
 ```bash
@@ -160,7 +152,6 @@ $ tunnel plugin upgrade <PLUGIN1> <PLUGIN2>
 ```
 
 ## Uninstalling Plugins
-
 Specify a plugin name with `tunnel plugin uninstall` command.
 
 ```bash
@@ -170,11 +161,10 @@ $ tunnel plugin uninstall kubectl
 Here's the revised English documentation based on your requested changes:
 
 ## Output Mode Support
-
 While plugins are typically intended to be used as subcommands of Tunnel, plugins supporting the output mode can be invoked as part of Tunnel's built-in commands.
 
 !!! warning "EXPERIMENTAL"
-This feature might change without preserving backwards compatibility.
+    This feature might change without preserving backwards compatibility.
 
 Tunnel supports plugins that are compatible with the output mode, which process Tunnel's output, such as by transforming the output format or sending it elsewhere.
 You can determine whether a plugin supports the output mode by checking the `OUTPUT` column in the output of `tunnel plugin search` or `tunnel plugin list`.
@@ -182,9 +172,9 @@ You can determine whether a plugin supports the output mode by checking the `OUT
 ```bash
 $ tunnel plugin search
 NAME                 DESCRIPTION                                                  MAINTAINER           OUTPUT
-khulnasoft                 A plugin for integration with KhulnaSoft Security SaaS platform    khulnasoft
-kubectl              A plugin scanning the images of a kubernetes resource        khulnasoft
-referrer             A plugin for OCI referrers                                   khulnasoft           ✓
+aqua                 A plugin for integration with Khulnasoft Security SaaS platform    aquasecurity
+kubectl              A plugin scanning the images of a kubernetes resource        aquasecurity
+referrer             A plugin for OCI referrers                                   aquasecurity           ✓
 ```
 
 In this case, the `referrer` plugin supports the output mode.
@@ -198,7 +188,7 @@ $ tunnel image --format json --output plugin=<plugin_name> [--output-plugin-arg 
 Since scan results are passed to the plugin via standard input, plugins must be capable of handling standard input.
 
 !!! warning
-To avoid Tunnel hanging, you need to read all data from `Stdin` before the plugin exits successfully or stops with an error.
+    To avoid Tunnel hanging, you need to read all data from `Stdin` before the plugin exits successfully or stops with an error.
 
 While the example passes JSON to the plugin, other formats like SBOM can also be passed (e.g., `--format cyclonedx`).
 

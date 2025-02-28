@@ -1,6 +1,5 @@
 # Misconfiguration Scanning
-
-Tunnel provides built-in checks to detect configuration issues in popular Infrastructure as Code files, such as: Docker, Kubernetes, Terraform, CloudFormation, and more.
+Tunnel provides built-in checks to detect configuration issues in popular Infrastructure as Code files, such as: Docker, Kubernetes, Terraform, CloudFormation, and more. 
 In addition to built-in checks, you can write your own custom checks, as you can see [here][custom].
 
 ## Quick start
@@ -11,24 +10,24 @@ Simply specify a directory containing IaC files such as Terraform, CloudFormatio
 $ tunnel config [YOUR_IaC_DIRECTORY]
 ```
 
+
 !!! example
-
-````
-$ ls build/
-Dockerfile
-$ tunnel config ./build
-2022-05-16T13:29:29.952+0100 INFO Detected config files: 1
-
+    ```
+    $ ls build/
+    Dockerfile
+    $ tunnel config ./build
+    2022-05-16T13:29:29.952+0100	INFO	Detected config files: 1
+    
     Dockerfile (dockerfile)
     =======================
     Tests: 23 (SUCCESSES: 22, FAILURES: 1)
     Failures: 1 (UNKNOWN: 0, LOW: 0, MEDIUM: 1, HIGH: 0, CRITICAL: 0)
-
+    
     MEDIUM: Specify a tag in the 'FROM' statement for image 'alpine'
     ══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
     When using a 'FROM' statement you should use a specific tag to avoid uncontrolled behavior when the image is updated.
-
-    See https://avd.khulnasoft.com/misconfig/ds001
+    
+    See https://avd.aquasec.com/misconfig/ds001
     ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
     Dockerfile:1
     ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -40,50 +39,50 @@ You can also enable misconfiguration detection in container image, filesystem an
 
 ```bash
 $ tunnel image --scanners misconfig IMAGE_NAME
-````
+```
 
 ```bash
 $ tunnel fs --scanners misconfig /path/to/dir
 ```
 
 !!! note
-Misconfiguration detection is not enabled by default in `image`, `fs` and `repo` subcommands.
+    Misconfiguration detection is not enabled by default in `image`, `fs` and `repo` subcommands.
 
-Unlike the `config` subcommand, `image`, `fs` and `repo` subcommands can also scan for vulnerabilities and secrets at the same time.
+Unlike the `config` subcommand, `image`, `fs` and `repo` subcommands can also scan for vulnerabilities and secrets at the same time. 
 You can specify `--scanners vuln,misconfig,secret` to enable vulnerability and secret detection as well as misconfiguration detection.
 
+
 !!! example
-
-````bash
-$ ls myapp/
-Dockerfile Pipfile.lock
-$ tunnel fs --scanners vuln,misconfig,secret --severity HIGH,CRITICAL myapp/
-2022-05-16T13:42:21.440+0100 INFO Number of language-specific files: 1
-2022-05-16T13:42:21.440+0100 INFO Detecting pipenv vulnerabilities...
-2022-05-16T13:42:21.440+0100 INFO Detected config files: 1
-
+    ``` bash
+    $ ls myapp/
+    Dockerfile Pipfile.lock
+    $ tunnel fs --scanners vuln,misconfig,secret --severity HIGH,CRITICAL myapp/
+    2022-05-16T13:42:21.440+0100	INFO	Number of language-specific files: 1
+    2022-05-16T13:42:21.440+0100	INFO	Detecting pipenv vulnerabilities...
+    2022-05-16T13:42:21.440+0100	INFO	Detected config files: 1
+    
     Pipfile.lock (pipenv)
     =====================
     Total: 1 (HIGH: 1, CRITICAL: 0)
-
+    
     ┌──────────┬────────────────┬──────────┬───────────────────┬───────────────┬───────────────────────────────────────────────────────────┐
     │ Library  │ Vulnerability  │ Severity │ Installed Version │ Fixed Version │                           Title                           │
     ├──────────┼────────────────┼──────────┼───────────────────┼───────────────┼───────────────────────────────────────────────────────────┤
     │ httplib2 │ CVE-2021-21240 │ HIGH     │ 0.12.1            │ 0.19.0        │ python-httplib2: Regular expression denial of service via │
     │          │                │          │                   │               │ malicious header                                          │
-    │          │                │          │                   │               │ https://avd.khulnasoft.com/nvd/cve-2021-21240                │
+    │          │                │          │                   │               │ https://avd.aquasec.com/nvd/cve-2021-21240                │
     └──────────┴────────────────┴──────────┴───────────────────┴───────────────┴───────────────────────────────────────────────────────────┘
-
+    
     Dockerfile (dockerfile)
     =======================
     Tests: 17 (SUCCESSES: 16, FAILURES: 1)
     Failures: 1 (HIGH: 1, CRITICAL: 0)
-
+    
     HIGH: Last USER command in Dockerfile should not be 'root'
     ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
     Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
-
-    See https://avd.khulnasoft.com/misconfig/ds002
+    
+    See https://avd.aquasec.com/misconfig/ds002
     ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
     Dockerfile:3
     ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -94,17 +93,16 @@ $ tunnel fs --scanners vuln,misconfig,secret --severity HIGH,CRITICAL myapp/
 In the above example, Tunnel detected vulnerabilities of Python dependencies and misconfigurations in Dockerfile.
 
 ## Type detection
-
 The specified directory can contain mixed types of IaC files.
 Tunnel automatically detects config types and applies relevant checks.
 
 For example, the following example holds IaC files for Terraform, CloudFormation, Kubernetes, Helm Charts, and Dockerfile in the same directory.
 
-```bash
+``` bash
 $ ls iac/
 Dockerfile  deployment.yaml  main.tf mysql-8.8.26.tar
 $ tunnel config --severity HIGH,CRITICAL ./iac
-````
+```
 
 <details>
 <summary>Result</summary>
@@ -121,7 +119,7 @@ HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argume
 ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
 
-See https://avd.khulnasoft.com/misconfig/ds002
+See https://avd.aquasec.com/misconfig/ds002
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 
@@ -135,7 +133,7 @@ MEDIUM: Container 'hello-kubernetes' of Deployment 'hello-kubernetes' should set
 ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 A program inside the container can elevate its own privileges and run as root, which might give the program control over the container and node.
 
-See https://avd.khulnasoft.com/misconfig/ksv001
+See https://avd.aquasec.com/misconfig/ksv001
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
  deployment.yaml:16-19
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -150,7 +148,7 @@ HIGH: Deployment 'hello-kubernetes' should not specify '/var/run/docker.socker' 
 ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 Mounting docker.sock from the host can give the container full root access to the host.
 
-See https://avd.khulnasoft.com/misconfig/ksv006
+See https://avd.aquasec.com/misconfig/ksv006
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
  deployment.yaml:6-29
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -163,7 +161,7 @@ See https://avd.khulnasoft.com/misconfig/ksv006
   12 │       labels:
   13 │         app: hello-kubernetes
   14 └     spec:
-  ..
+  ..   
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 
@@ -171,7 +169,7 @@ MEDIUM: Container 'hello-kubernetes' of Deployment 'hello-kubernetes' should set
 ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 'runAsNonRoot' forces the running image to run as a non-root user to ensure least privileges.
 
-See https://avd.khulnasoft.com/misconfig/ksv012
+See https://avd.aquasec.com/misconfig/ksv012
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
  deployment.yaml:16-19
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -186,7 +184,7 @@ MEDIUM: Deployment 'hello-kubernetes' should not set 'spec.template.volumes.host
 ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 HostPath volumes must be forbidden.
 
-See https://avd.khulnasoft.com/misconfig/ksv023
+See https://avd.aquasec.com/misconfig/ksv023
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
  deployment.yaml:6-29
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -199,7 +197,7 @@ See https://avd.khulnasoft.com/misconfig/ksv023
   12 │       labels:
   13 │         app: hello-kubernetes
   14 └     spec:
-  ..
+  ..   
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 
@@ -207,7 +205,7 @@ MEDIUM: Deployment 'hello-kubernetes' should set 'securityContext.sysctl' to the
 ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 Sysctls can disable security mechanisms or affect all containers on a host, and should be disallowed except for an allowed 'safe' subset. A sysctl is considered safe if it is namespaced in the container or the Pod, and it is isolated from other Pods or processes on the same Node.
 
-See https://avd.khulnasoft.com/misconfig/ksv026
+See https://avd.aquasec.com/misconfig/ksv026
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
  deployment.yaml:6-29
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -220,7 +218,7 @@ See https://avd.khulnasoft.com/misconfig/ksv026
   12 │       labels:
   13 │         app: hello-kubernetes
   14 └     spec:
-  ..
+  ..   
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 
@@ -234,7 +232,7 @@ MEDIUM: Container 'mysql' of StatefulSet 'mysql' should set 'securityContext.all
 ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 A program inside the container can elevate its own privileges and run as root, which might give the program control over the container and node.
 
-See https://avd.khulnasoft.com/misconfig/ksv001
+See https://avd.aquasec.com/misconfig/ksv001
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
  mysql-8.8.26.tar:templates/primary/statefulset.yaml:56-130
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -247,7 +245,7 @@ See https://avd.khulnasoft.com/misconfig/ksv001
   62 │             - name: BITNAMI_DEBUG
   63 │               value: "false"
   64 └             - name: MYSQL_ROOT_PASSWORD
-  ..
+  ..   
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 
@@ -255,7 +253,7 @@ MEDIUM: Container 'mysql' of StatefulSet 'mysql' should set 'securityContext.run
 ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 'runAsNonRoot' forces the running image to run as a non-root user to ensure least privileges.
 
-See https://avd.khulnasoft.com/misconfig/ksv012
+See https://avd.aquasec.com/misconfig/ksv012
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
  mysql-8.8.26.tar:templates/primary/statefulset.yaml:56-130
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -268,7 +266,7 @@ See https://avd.khulnasoft.com/misconfig/ksv012
   62 │             - name: BITNAMI_DEBUG
   63 │               value: "false"
   64 └             - name: MYSQL_ROOT_PASSWORD
-  ..
+  ..   
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 ```
@@ -278,8 +276,7 @@ See https://avd.khulnasoft.com/misconfig/ksv012
 You can see the config type next to each file name.
 
 !!! example
-
-```bash
+``` bash
 Dockerfile (dockerfile)
 =======================
 Tests: 23 (SUCCESSES: 22, FAILURES: 1)
@@ -315,16 +312,13 @@ Failures: 2 (MEDIUM: 2, HIGH: 0, CRITICAL: 0)
 ```
 
 ## Configuration
-
 This section describes misconfiguration-specific configuration.
 Other common options are documented [here](../../configuration/index.md).
 
 ### External connectivity
-
 Tunnel needs to connect to the internet to download the checks bundle. If you are running Tunnel in an air-gapped environment, or an tightly controlled network, please refer to the [Advanced Network Scenarios document](../../advanced/air-gap.md).
 
 ### Enabling a subset of misconfiguration scanners
-
 It's possible to only enable certain misconfiguration scanners if you prefer.
 You can do so by passing the `--misconfig-scanners` option.
 This flag takes a comma-separated list of configuration scanner types.
@@ -336,7 +330,6 @@ tunnel config --misconfig-scanners=terraform,dockerfile .
 Will only scan for misconfigurations that pertain to Terraform and Dockerfiles.
 
 ### Loading custom checks
-
 You can load check files or directories including your custom checks using the `--config-check` flag.
 This can be repeated for specifying multiple files or directories.
 
@@ -350,12 +343,12 @@ You can load checks bundle as OCI Image from a Container Registry using the `--c
 tunnel config --checks-bundle-repository myregistry.local/mychecks --namespaces user myapp
 ```
 
-### Scan arbitrary JSON and YAML configurations
 
+### Scan arbitrary JSON and YAML configurations
 By default, scanning JSON and YAML configurations is disabled, since Tunnel does not contain built-in checks for these configurations. To enable it, pass the `json` or `yaml` to `--misconfig-scanners`. See [Enabling a subset of misconfiguration scanners](#enabling-a-subset-of-misconfiguration-scanners) for more information. Tunnel will pass each file as is to the checks input.
 
-!!! example
 
+!!! example
 ```bash
 $ cat iac/serverless.yaml
 service: serverless-rest-api-with-pynamodb
@@ -397,28 +390,27 @@ Ensure that Serverless Framework service names start with "aws-"
 ```
 
 !!! note
-In the case above, the custom check specified has a metadata annotation for the input schema `input: schema["serverless-schema"]`. This allows Tunnel to type check the input IaC files provided.
+    In the case above, the custom check specified has a metadata annotation for the input schema `input: schema["serverless-schema"]`. This allows Tunnel to type check the input IaC files provided.
 
 Optionally, you can also pass schemas using the `config-file-schemas` flag. Tunnel will use these schemas for file filtering and type checking in Rego checks.
 
 !!! example
-
 ```bash
 $ tunnel config --misconfig-scanners=json,yaml --config-check ./serverless.rego --check-namespaces user --config-file-schemas ./serverless-schema.json ./iac
 ```
 
-If the `--config-file-schemas` flag is specified Tunnel ensures that each input IaC config file being scanned is type-checked against the schema. If the input file does not match any of the passed schemas, it will be ignored.
+If the `--config-file-schemas` flag is specified Tunnel ensures that each input IaC config file being scanned is type-checked against the schema. If the input file does not match any of the passed schemas, it will be ignored. 
 
 If the schema is specified in the check metadata and is in the directory specified in the `--config-check` argument, it will be automatically loaded as specified [here](./custom/schema.md#custom-checks-with-custom-schemas), and will only be used for type checking in Rego.
 
 !!! note
-If a user specifies the `--config-file-schemas` flag, all input IaC config files are ensured that they pass type-checking. It is not required to pass an input schema in case type checking is not required. This is helpful for scenarios where you simply want to write a Rego check and pass in IaC input for it. Such a use case could include scanning for a new service which Tunnel might not support just yet.
+    If a user specifies the `--config-file-schemas` flag, all input IaC config files are ensured that they pass type-checking. It is not required to pass an input schema in case type checking is not required. This is helpful for scenarios where you simply want to write a Rego check and pass in IaC input for it. Such a use case could include scanning for a new service which Tunnel might not support just yet.
 
 !!! tip
-It is also possible to specify multiple input schemas with `--config-file-schema` flag as it can accept a comma seperated list of file paths or a directory as input. In the case of multiple schemas being specified, all of them will be evaluated against all the input files.
+    It is also possible to specify multiple input schemas with `--config-file-schema` flag as it can accept a comma separated list of file paths or a directory as input. In the case of multiple schemas being specified, all of them will be evaluated against all the input files.
+
 
 ### Passing custom data
-
 You can pass directories including your custom data through `--data` option.
 This can be repeated for specifying multiple directories.
 
@@ -430,37 +422,36 @@ tunnel config --config-check ./my-check --data ./data --namespaces user ./config
 For more details, see [Custom Data](./custom/data.md).
 
 ### Passing namespaces
-
 By default, Tunnel evaluates checks defined in `builtin.*`.
 If you want to evaluate custom checks in other packages, you have to specify package prefixes through `--namespaces` option.
 This can be repeated for specifying multiple packages.
 
-```bash
+``` bash
 tunnel config --config-check ./my-check --namespaces main --namespaces user ./configs
 ```
 
 ### Private Terraform registries
-
 Tunnel can download Terraform code from private registries.
 To pass credentials you must use the `TF_TOKEN_` environment variables.
 You cannot use a `.terraformrc` or `terraform.rc` file, these are not supported by tunnel yet.
 
 From the Terraform [docs](https://developer.hashicorp.com/terraform/cli/config/config-file#environment-variable-credentials):
 
-> Environment variable names should have the prefix TF*TOKEN* added to the domain name, with periods encoded as underscores.
+> Environment variable names should have the prefix TF_TOKEN_ added to the domain name, with periods encoded as underscores.
 > For example, the value of a variable named `TF_TOKEN_app_terraform_io` will be used as a bearer authorization token when the CLI makes service requests to the hostname `app.terraform.io`.
 >
 > You must convert domain names containing non-ASCII characters to their punycode equivalent with an ACE prefix.
 > For example, token credentials for `例えば.com` must be set in a variable called `TF_TOKEN_xn--r8j3dr99h_com`.
 >
 > Hyphens are also valid within host names but usually invalid as variable names and may be encoded as double underscores.
-> For example, you can set a token for the domain name café.fr as TF_TOKEN_xn--caf-dma_fr or TF_TOKEN_xn\_**\_caf**dma_fr.
+> For example, you can set a token for the domain name café.fr as TF_TOKEN_xn--caf-dma_fr or TF_TOKEN_xn____caf__dma_fr.
 
 If multiple variables evaluate to the same hostname, Tunnel will choose the environment variable name where the dashes have not been encoded as double underscores.
 
-### Skipping resources by inline comments
 
-Tunnel supports ignoring misconfigured resources by inline comments for Terraform and CloudFormation configuration files only.
+### Skipping detected misconfigurations by inline comments
+
+Tunnel supports ignoring detected misconfigurations by inline comments for Terraform, CloudFormation (YAML), Helm and Dockerfile configuration files only.
 
 In cases where Tunnel can detect comments of a specific format immediately adjacent to resource definitions, it is possible to ignore findings from a single source of resource definition (in contrast to `.tunnelignore`, which has a directory-wide scope on all of the files scanned). The format for these comments is `tunnel:ignore:<rule>` immediately following the format-specific line-comment [token](https://developer.hashicorp.com/terraform/language/syntax/configuration#comments).
 
@@ -477,7 +468,6 @@ resource "google_container_cluster" "example" {
 ```
 
 You can add multiple ignores on the same comment line:
-
 ```terraform
 #tunnel:ignore:AVD-GCP-0051 tunnel:ignore:AVD-GCP-0053
 resource "google_container_cluster" "example" {
@@ -492,32 +482,53 @@ As an example, consider the following check metadata:
 
 ```yaml
 # custom:
-# id: AVD-AWS-0089
-# avd_id: AVD-AWS-0089
-# provider: aws
-# service: s3
-# severity: LOW
-# short_code: enable-logging
+  # id: AVD-AWS-0089
+  # avd_id: AVD-AWS-0089
+  # provider: aws
+  # service: s3
+  # severity: LOW
+  # short_code: enable-logging
 ```
 
 Long ID would look like the following: `aws-s3-enable-logging`.
 
 Example for CloudFromation:
-
 ```yaml
 AWSTemplateFormatVersion: "2010-09-09"
 Resources:
-  #tunnel:ignore:*
+#tunnel:ignore:*
   S3Bucket:
-    Type: "AWS::S3::Bucket"
+    Type: 'AWS::S3::Bucket'
     Properties:
       BucketName: test-bucket
+```
+
+!!!note
+    Ignore rules for Helm files should be placed before the YAML object, since only it contains the location data needed for ignoring.
+    
+Example for Helm:
+```yaml
+      serviceAccountName: "testchart.serviceAccountName"
+      containers:
+        # tunnel:ignore:KSV018
+        - name: "testchart"
+          securityContext:
+            runAsUser: 1000
+            runAsGroup: 3000
+          image: "your-repository/your-image:your-tag"
+          imagePullPolicy: "Always"
+```
+
+Example for Dockerfile:
+```Dockerfile
+FROM scratch
+# tunnel:ignore:AVD-DS-0022
+MAINTAINER moby@example.com
 ```
 
 #### Expiration Date
 
 You can specify the expiration date of the ignore rule in `yyyy-mm-dd` format. This is a useful feature when you want to make sure that an ignored issue is not forgotten and worth revisiting in the future. For example:
-
 ```tf
 #tunnel:ignore:aws-s3-enable-logging:exp:2024-03-10
 resource "aws_s3_bucket" "example" {
@@ -559,7 +570,6 @@ If you want to ignore multiple resources on different attributes, you can specif
 ```
 
 You can also ignore a resource on multiple attributes in the same rule:
-
 ```tf
 locals {
   rules = {
@@ -615,7 +625,6 @@ module "s3_bucket" {
 ```
 
 An example of ignoring checks for a specific bucket in a module:
-
 ```tf
 locals {
   bucket = ["test1", "test2"]

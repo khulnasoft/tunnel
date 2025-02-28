@@ -1,5 +1,4 @@
 # Docker
-
 Tunnel supports the scanners listed in the table below.
 
 |      Scanner       | Supported |
@@ -16,11 +15,9 @@ It supports the following configurations.
 |    Compose    |     -     |
 
 ## Misconfiguration
-
 Tunnel recursively searches directories and scans all found Docker files.
 
 ## Secret
-
 The secret scan is performed on plain text files, with no special treatment for Dockerfile.
 
 [Misconfiguration]: ../../scanner/misconfiguration/index.md

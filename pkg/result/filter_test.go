@@ -28,7 +28,7 @@ func TestFilter(t *testing.T) {
 				UID: "01",
 				PURL: &packageurl.PackageURL{
 					Type:      packageurl.TypeGolang,
-					Namespace: "github.com/khulnasoft",
+					Namespace: "github.com/aquasecurity",
 					Name:      "foo",
 					Version:   "v1.2.3",
 				},
@@ -95,7 +95,7 @@ func TestFilter(t *testing.T) {
 			PkgIdentifier: ftypes.PkgIdentifier{
 				PURL: &packageurl.PackageURL{
 					Type:      packageurl.TypeGolang,
-					Namespace: "github.com/khulnasoft",
+					Namespace: "github.com/aquasecurity",
 					Name:      "foo",
 					Version:   "v1.2.3",
 				},
@@ -112,7 +112,7 @@ func TestFilter(t *testing.T) {
 			PkgIdentifier: ftypes.PkgIdentifier{
 				PURL: &packageurl.PackageURL{
 					Type:      packageurl.TypeGolang,
-					Namespace: "github.com/khulnasoft",
+					Namespace: "github.com/aquasecurity",
 					Name:      "bar",
 					Version:   "v2.3.4",
 				},

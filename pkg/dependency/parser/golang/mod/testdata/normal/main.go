@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/aquasecurity/go-version/pkg/version"
+	"github.com/khulnasoft/goversify/pkg/version"
 )
 
 func main() {

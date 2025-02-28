@@ -3,7 +3,7 @@
 When scanning a Kubernetes cluster, Tunnel differentiates between the following:
 
 1. Cluster infrastructure (e.g api-server, kubelet, addons)
-1. Cluster configuration (e.g Roles, ClusterRoles).
+1. Cluster configuration (e.g Roles, ClusterRoles). 
 1. Application workloads (e.g nginx, postgresql).
 
 Whenever Tunnel scans either of these Kubernetes resources, the container image is scanned separately to the Kubernetes resource definition (the YAML manifest) that defines the resource.

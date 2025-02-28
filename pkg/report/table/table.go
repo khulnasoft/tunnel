@@ -12,7 +12,7 @@ import (
 	"github.com/fatih/color"
 
 	"github.com/khulnasoft-lab/table"
-	"github.com/aquasecurity/tml"
+	"github.com/khulnasoft-lab/tml"
 	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
 	"github.com/khulnasoft/tunnel/pkg/types"
 )

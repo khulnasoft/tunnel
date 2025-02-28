@@ -1,5 +1,4 @@
 # SUSE
-
 Tunnel supports the following distributions:
 
 - openSUSE Leap
@@ -20,26 +19,24 @@ Tunnel supports these scanners for OS packages.
 The table below outlines the features offered by Tunnel.
 
 |               Feature                | Supported |
-| :----------------------------------: | :-------: |
+|:------------------------------------:|:---------:|
 |       Unfixed vulnerabilities        |     -     |
 | [Dependency graph][dependency-graph] |     ✓     |
 
 ## SBOM
-
 Tunnel detects packages that have been installed through package managers such as `dnf` and `yum`.
 
 ## Vulnerability
-
 SUSE offers its [own security advisories][cvrf], and these are utilized when scanning openSUSE/SLE for vulnerabilities.
 
 ### Data Source
-
 See [here](../../scanner/vulnerability.md#data-sources).
 
 ## License
-
 Tunnel identifies licenses by examining the metadata of RPM packages.
+
 
 [dependency-graph]: ../../configuration/reporting.md#show-origins-of-vulnerable-dependencies
 [cvrf]: https://ftp.suse.com/pub/projects/security/cvrf/
+
 [vulnerability statuses]: ../../configuration/filtering.md#by-status

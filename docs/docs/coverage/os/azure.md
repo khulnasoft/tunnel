@@ -1,17 +1,18 @@
 # Azure Linux (CBL-Mariner)
 
-_CBL-Mariner was rebranded to Azure Linux for version 3.0 onwards._
+*CBL-Mariner was rebranded to Azure Linux for version 3.0 onwards.*
 
 Tunnel supports the following scanners for OS packages.
 
-| Version          | SBOM | Vulnerability | License |
-| ---------------- | :--: | :-----------: | :-----: |
-| 1.0              |  ✔   |       ✔       |    ✔    |
-| 1.0 (Distroless) |  ✔   |       ✔       |         |
-| 2.0              |  ✔   |       ✔       |    ✔    |
-| 2.0 (Distroless) |  ✔   |       ✔       |         |
-| 3.0              |  ✔   |       ✔       |    ✔    |
-| 3.0 (Distroless) |  ✔   |       ✔       |         |
+| Version          | SBOM  | Vulnerability | License |
+| ---------------- | :---: | :-----------: | :-----: |
+| 1.0              |   ✔   |       ✔       |    ✔    |
+| 1.0 (Distroless) |   ✔   |       ✔       |         |
+| 2.0              |   ✔   |       ✔       |    ✔    |
+| 2.0 (Distroless) |   ✔   |       ✔       |         |
+| 3.0              |   ✔   |       ✔       |    ✔    |
+| 3.0 (Distroless) |   ✔   |       ✔       |         |
+
 
 The following table provides an outline of the targets Tunnel supports.
 
@@ -24,32 +25,26 @@ The following table provides an outline of the targets Tunnel supports.
 The table below outlines the features offered by Tunnel.
 
 |               Feature                | Supported |
-| :----------------------------------: | :-------: |
+|:------------------------------------:|:---------:|
 |    Detect unfixed vulnerabilities    |     ✓     |
 | [Dependency graph][dependency-graph] |     ✓     |
 
 ## SBOM
-
 Tunnel detects packages that have been installed through package managers such as `tdnf`, `dnf` and `yum`.
 
 ## Vulnerability
-
 Azure Linux offers its own security advisories, and these are utilized when scanning Azure Linux for vulnerabilities.
 
 ### Data Source
-
 See [here](../../scanner/vulnerability.md#data-sources).
 
 ### Fixed Version
-
 Tunnel takes fixed versions from [Azure Linux OVAL][oval].
 
 ### Severity
-
 Tunnel calculates the severity of an issue based on the severity provided in [Azure Linux OVAL][oval].
 
 ### Status
-
 Tunnel supports the following [vulnerability statuses] for Azure Linux.
 
 |       Status        | Supported |
@@ -61,13 +56,16 @@ Tunnel supports the following [vulnerability statuses] for Azure Linux.
 |    Fix Deferred     |           |
 |     End of Life     |           |
 
-## License
 
+## License
 Tunnel identifies licenses by examining the metadata of RPM packages.
 
 !!! note
-License detection is not supported for Azure Linux Distroless images.
+    License detection is not supported for Azure Linux Distroless images.
+
 
 [dependency-graph]: ../../configuration/reporting.md#show-origins-of-vulnerable-dependencies
+
 [oval]: https://github.com/microsoft/AzureLinuxVulnerabilityData/
+
 [vulnerability statuses]: ../../configuration/filtering.md#by-status

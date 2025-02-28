@@ -29,4 +29,5 @@ tunnel module uninstall [flags] REPOSITORY
 
 ### SEE ALSO
 
-- [tunnel module](tunnel_module.md) - Manage modules
+* [tunnel module](tunnel_module.md)	 - Manage modules
+

@@ -22,7 +22,7 @@ const (
 		"The config path can be overridden by the `--config` flag.\n\n" +
 		"An example is [here][example].\n\n" +
 		"These samples contain default values for flags."
-	footer = "[example]: https://github.com/khulnasoft/tunnel/tree/{{ git.tag }}/examples/tunnel-config/tunnel.yaml"
+	footer = "[example]: https://github.com/khulnasoft/tunnel/tree/{{ git.tag }}/examples/tunnel-conf/tunnel.yaml"
 )
 
 // Generate CLI references
@@ -146,6 +146,14 @@ func writeFlagValue(val any, ind string, w *os.File) {
 			}
 		} else {
 			w.WriteString(" []\n")
+		}
+	case map[string][]string:
+		w.WriteString("\n")
+		for k, vv := range v {
+			fmt.Fprintf(w, "%s  %s:\n", ind, k)
+			for _, vvv := range vv {
+				fmt.Fprintf(w, "  %s - %s\n", ind, vvv)
+			}
 		}
 	case string:
 		fmt.Fprintf(w, " %q\n", v)

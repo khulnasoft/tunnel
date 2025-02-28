@@ -32,15 +32,12 @@ $ tunnel repo https://github.com/khulnasoft/tunnel-ci-test
 ```
 
 ## Rationale
-
-`tunnel repo` is designed to scan code repositories, and it is intended to be used for scanning local/remote repositories in your machine or in your CI environment.
+`tunnel repo` is  designed to scan code repositories, and it is intended to be used for scanning local/remote repositories in your machine or in your CI environment.
 Therefore, unlike container/VM image scanning, it targets lock files such as package-lock.json and does not target artifacts like JAR files, binary files, etc.
 See [here](../scanner/vulnerability.md#language-specific-packages) for the detail.
 
 ## Scanners
-
 ### Vulnerabilities
-
 It is enabled by default.
 Tunnel will look for vulnerabilities based on lock files such as Gemfile.lock and package-lock.json.
 See [here](../scanner/vulnerability.md) for the detail.
@@ -85,7 +82,6 @@ Total: 10 (UNKNOWN: 2, LOW: 0, MEDIUM: 6, HIGH: 2, CRITICAL: 0)
 </details>
 
 ### Misconfigurations
-
 It is disabled by default and can be enabled with `--scanners misconfig`.
 See [here](../scanner/misconfiguration/index.md) for the detail.
 
@@ -94,7 +90,6 @@ $ tunnel repo --scanners misconfig (REPO_PATH | REPO_URL)
 ```
 
 ### Secrets
-
 It is enabled by default.
 See [here](../scanner/secret.md) for the detail.
 
@@ -103,7 +98,6 @@ $ tunnel repo (REPO_PATH | REPO_URL)
 ```
 
 ### Licenses
-
 It is disabled by default.
 See [here](../scanner/license.md) for the detail.
 
@@ -112,12 +106,16 @@ $ tunnel repo --scanners license (REPO_PATH | REPO_URL)
 ```
 
 ## SBOM generation
-
 Tunnel can generate SBOM for code repositories.
 See [here](../supply-chain/sbom.md) for the detail.
 
-## References
+## Scan Cache
+When scanning git repositories, it stores analysis results in the cache, using the latest commit hash as the key.
+Note that the cache is not used when the repository is dirty, otherwise Tunnel will miss the files that are not committed.
 
+More details are available in the [cache documentation](../configuration/cache.md#scan-cache-backend).
+
+## References
 The following flags and environmental variables are available for remote git repositories.
 
 ### Scanning a Branch
@@ -145,7 +143,6 @@ $ tunnel repo --tag <tag-name> <repo-name>
 ```
 
 ### Scanning Private Repositories
-
 In order to scan private GitHub or GitLab repositories, the environment variable `GITHUB_TOKEN` or `GITLAB_TOKEN` must be set, respectively, with a valid token that has access to the private repository being scanned.
 
 The `GITHUB_TOKEN` environment variable will take precedence over `GITLAB_TOKEN`, so if a private GitLab repository will be scanned, then `GITHUB_TOKEN` must be unset.

@@ -9,7 +9,7 @@
       "components": [
         {
           "type": "application",
-          "group": "khulnasoft",
+          "group": "aquasecurity",
           "name": "tunnel",
           "version": "0.41.0-80-g1c03982fe"
         }

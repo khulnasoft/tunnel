@@ -22,7 +22,7 @@ import (
 	"github.com/samber/lo"
 	"golang.org/x/vuln/scan"
 
-	"github.com/aquasecurity/go-version/pkg/version"
+	"github.com/khulnasoft/goversify/pkg/version"
 	"github.com/khulnasoft/tunnel/pkg/log"
 )
 
@@ -389,7 +389,7 @@ func updateVEX(output string, statements []vex.Statement) error {
 	d := &vex.VEX{
 		Metadata: vex.Metadata{
 			Context:   "https://openvex.dev/ns/v0.2.0",
-			Author:    "KhulnaSoft Security",
+			Author:    "Khulnasoft Security",
 			Timestamp: lo.ToPtr(time.Now()),
 			Version:   doc.Version + 1,
 			Tooling:   "https://github.com/khulnasoft/tunnel/tree/main/magefiles/vex.go",

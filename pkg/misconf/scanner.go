@@ -434,7 +434,7 @@ func CreateDataFS(dataPaths []string, opts ...string) (fs.FS, []string, error) {
 	return fsys, dataPaths, nil
 }
 
-// ResultsToMisconf is exported for tunnel-plugin-khulnasoft purposes only
+// ResultsToMisconf is exported for tunnel-plugin-aqua purposes only
 func ResultsToMisconf(configType types.ConfigType, scannerName string, results scan.Results) []types.Misconfiguration {
 	misconfs := make(map[string]types.Misconfiguration)
 

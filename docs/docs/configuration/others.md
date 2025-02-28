@@ -1,7 +1,6 @@
 # Others
 
 ## Enable/Disable Scanners
-
 You can enable/disable scanners with the `--scanners` flag.
 
 Supported values:
@@ -10,18 +9,17 @@ Supported values:
 - misconfig
 - secret
 - license
-
+ 
 For example, container image scanning enables vulnerability and secret scanners by default.
 If you don't need secret scanning, it can be disabled.
 
-```shell
+``` shell
 $ tunnel image --scanners vuln alpine:3.15
 ```
 
 ## Exit Code
-
 |     Scanner      | Supported |
-| :--------------: | :-------: |
+|:----------------:|:---------:|
 |  Vulnerability   |     ✓     |
 | Misconfiguration |     ✓     |
 |      Secret      |     ✓     |
@@ -63,9 +61,8 @@ $ tunnel image --exit-code 1 --severity CRITICAL ruby:2.4.0
 ```
 
 ## Exit on EOL
-
 |     Scanner      | Supported |
-| :--------------: | :-------: |
+|:----------------:|:---------:|
 |  Vulnerability   |     ✓     |
 | Misconfiguration |           |
 |      Secret      |           |
@@ -107,7 +104,7 @@ Total: 1 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 1)
 ├───────────┼────────────────┼──────────┼───────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
 │ apk-tools │ CVE-2021-36159 │ CRITICAL │ 2.10.6-r0         │ 2.10.7-r0     │ libfetch before 2021-07-26, as used in apk-tools, xbps, and │
 │           │                │          │                   │               │ other products, mishandles...                               │
-│           │                │          │                   │               │ https://avd.khulnasoft.com/nvd/cve-2021-36159                  │
+│           │                │          │                   │               │ https://avd.aquasec.com/nvd/cve-2021-36159                  │
 └───────────┴────────────────┴──────────┴───────────────────┴───────────────┴─────────────────────────────────────────────────────────────┘
 2023-03-01T11:07:17.941+0200    ERROR   Detected EOL OS: alpine 3.10.9
 ```
@@ -120,3 +117,46 @@ The following example will fail when a critical vulnerability is found or the OS
 ```
 $ tunnel image --exit-code 1 --exit-on-eol 1 --severity CRITICAL alpine:3.16.3
 ```
+
+## Mirror Registries
+
+!!! warning "EXPERIMENTAL"
+    This feature might change without preserving backwards compatibility.
+
+Tunnel supports mirrors for [remote container images](../target/container_image.md#container-registry) and [databases](./db.md).
+
+To configure them, add a list of mirrors along with the host to the [tunnel config file](../references/configuration/config-file.md#registry-options).
+
+!!! note
+    Use the `index.docker.io` host for images from `Docker Hub`, even if you don't use that prefix.
+
+Example for `index.docker.io`:
+```yaml
+registry:
+  mirrors:
+    index.docker.io:
+     - mirror.gcr.io
+```
+
+### Registry check procedure
+Tunnel uses the following registry order to get the image:
+
+- mirrors in the same order as they are specified in the configuration file
+- source registry
+
+In cases where we can't get the image from the mirror registry (e.g. when authentication fails, image doesn't exist, etc.) - Tunnel will check other mirrors (or the source registry if all mirrors have already been checked).
+
+Example:
+```yaml
+registry:
+  mirrors:
+    index.docker.io:
+     - mirror.with.bad.auth // We don't have credentials for this registry
+     - mirror.without.image // Registry doesn't have this image
+```
+
+When we want to get the image `alpine` with the settings above. The logic will be as follows:
+
+1. Try to get the image from `mirror.with.bad.auth/library/alpine`, but we get an error because there are no credentials for this registry.
+2. Try to get the image from `mirror.without.image/library/alpine`, but we get an error because this registry doesn't have this image (but most likely it will be an error about authorization).
+3. Get the image from `index.docker.io` (the original registry).

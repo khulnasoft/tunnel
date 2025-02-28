@@ -5,25 +5,23 @@ Tunnel supports Conan C/C++ Package Manager ([v1][conanV1] and [v2][conanV2] wit
 The following scanners are supported.
 
 | Package manager | SBOM | Vulnerability | License |
-| --------------- | :--: | :-----------: | :-----: |
+|-----------------|:----:|:-------------:|:-------:|
 | Conan           |  ✓   |       ✓       |  ✓[^1]  |
 
 The following table provides an outline of the features Tunnel offers.
 
-| Package manager     | File           | Transitive dependencies | Dev dependencies | [Dependency graph][dependency-graph] | Position |
-| ------------------- | -------------- | :---------------------: | :--------------: | :----------------------------------: | :------: |
-| Conan (lockfile v1) | conan.lock[^2] |            ✓            |     Excluded     |                  ✓                   |    ✓     |
-| Conan (lockfile v2) | conan.lock[^2] |         ✓ [^3]          |     Excluded     |                  -                   |    ✓     |
+| Package manager       | File           | Transitive dependencies | Dev dependencies | [Dependency graph][dependency-graph] | Position |
+|-----------------------|----------------|:-----------------------:|:----------------:|:------------------------------------:|:--------:|
+| Conan (lockfile v1)   | conan.lock[^2] |            ✓            |     Excluded     |                  ✓                   |    ✓     |
+| Conan (lockfile v2)   | conan.lock[^2] |            ✓ [^3]       |     Excluded     |                  -                   |    ✓     |
 
 ## Conan
-
 In order to detect dependencies, Tunnel searches for `conan.lock`[^1].
 
 [conanV1]: https://docs.conan.io/1/index.html
 [conanV2]: https://docs.conan.io/2/
 
 ### Licenses
-
 The Conan lock file doesn't contain any license information.
 To obtain licenses we parse the `conanfile.py` files from the [conan v1 cache directory][conan-v1-cache-dir] and [conan v2 cache directory][conan-v2-cache-dir].
 To correctly detection licenses, ensure that the cache directory contains all dependencies used.

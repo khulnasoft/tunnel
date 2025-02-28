@@ -3,10 +3,10 @@ package s3
 import (
 	"testing"
 
-	"github.com/liamg/iamgo"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
+	"github.com/aquasecurity/iamgo"
 	"github.com/khulnasoft/tunnel/internal/testutil"
 	"github.com/khulnasoft/tunnel/pkg/iac/adapters/terraform/tftestutil"
 	"github.com/khulnasoft/tunnel/pkg/iac/providers/aws/iam"

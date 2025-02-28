@@ -18,9 +18,9 @@ Add the AWS role in tunnel's service account annotations:
 
 ```yaml
 tunnel:
+
   serviceAccount:
-    annotations:
-      {}
+    annotations: {}
       # eks.amazonaws.com/role-arn: arn:aws:iam::ACCOUNT_ID:role/IAM_ROLE_NAME
 ```
 
@@ -29,8 +29,7 @@ tunnel:
 Add the AWS role to pod's annotations:
 
 ```yaml
-podAnnotations:
-  {}
+podAnnotations: {}
   ## kube2iam/kiam annotation
   # iam.amazonaws.com/role: arn:aws:iam::ACCOUNT_ID:role/IAM_ROLE_NAME
 ```

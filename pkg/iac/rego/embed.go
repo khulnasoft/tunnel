@@ -10,9 +10,10 @@ import (
 
 	"github.com/open-policy-agent/opa/ast"
 
-	checks "github.com/khulnasoft/tunnel-checks"
+	checks "github.com/khulnasoft/tunnel-audit"
 	"github.com/khulnasoft/tunnel/pkg/iac/rules"
 	"github.com/khulnasoft/tunnel/pkg/log"
+	"github.com/khulnasoft/tunnel/pkg/set"
 )
 
 var LoadAndRegister = sync.OnceFunc(func() {
@@ -35,7 +36,7 @@ var LoadAndRegister = sync.OnceFunc(func() {
 func RegisterRegoRules(modules map[string]*ast.Module) {
 	ctx := context.TODO()
 
-	schemaSet, _, _ := BuildSchemaSetFromPolicies(modules, nil, nil, make(map[string][]byte))
+	schemaSet, _ := BuildSchemaSetFromPolicies(modules, nil, nil, make(map[string][]byte))
 
 	compiler := ast.NewCompiler().
 		WithSchemas(schemaSet).
@@ -49,7 +50,7 @@ func RegisterRegoRules(modules map[string]*ast.Module) {
 	}
 
 	retriever := NewMetadataRetriever(compiler)
-	regoCheckIDs := make(map[string]struct{})
+	regoCheckIDs := set.New[string]()
 
 	for _, module := range modules {
 		metadata, err := retriever.RetrieveMetadata(ctx, module)
@@ -66,7 +67,7 @@ func RegisterRegoRules(modules map[string]*ast.Module) {
 		}
 
 		if !metadata.Deprecated {
-			regoCheckIDs[metadata.AVDID] = struct{}{}
+			regoCheckIDs.Append(metadata.AVDID)
 		}
 
 		rules.Register(metadata.ToRule())

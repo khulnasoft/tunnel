@@ -1,7 +1,7 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
   "@id": "khulnasoft/tunnel:613fd55abbc2857b5ca28b07a26f3cd4c8b0ddc4c8a97c57497a2d4c4880d7fc",
-  "author": "KhulnaSoft Security",
+  "author": "Khulnasoft Security",
   "timestamp": "2024-07-09T11:38:00.115697+04:00",
   "version": 1,
   "tooling": "https://github.com/khulnasoft/tunnel/tree/main/magefiles/vex.go",
@@ -532,6 +532,65 @@
               "@id": "pkg:golang/stdlib",
               "identifiers": {
                 "purl": "pkg:golang/stdlib"
+              }
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2024-3321",
+        "name": "GO-2024-3321",
+        "description": "Misuse of ServerConfig.PublicKeyCallback may cause authorization bypass in golang.org/x/crypto",
+        "aliases": [
+          "CVE-2024-45337",
+          "GHSA-v778-237x-gjrc"
+        ]
+      },
+      "products": [
+        {
+          "@id": "pkg:golang/github.com/khulnasoft/tunnel",
+          "identifiers": {
+            "purl": "pkg:golang/github.com/khulnasoft/tunnel"
+          },
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/golang.org/x/crypto",
+              "identifiers": {
+                "purl": "pkg:golang/golang.org/x/crypto"
+              }
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2024-3333",
+        "name": "GO-2024-3333",
+        "description": "Non-linear parsing of case-insensitive content in golang.org/x/net/html",
+        "aliases": [
+          "CVE-2024-45338"
+        ]
+      },
+      "products": [
+        {
+          "@id": "pkg:golang/github.com/khulnasoft/tunnel",
+          "identifiers": {
+            "purl": "pkg:golang/github.com/khulnasoft/tunnel"
+          },
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/golang.org/x/net",
+              "identifiers": {
+                "purl": "pkg:golang/golang.org/x/net"
               }
             }
           ]

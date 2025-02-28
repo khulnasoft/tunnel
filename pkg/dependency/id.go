@@ -1,7 +1,7 @@
 package dependency
 
 import (
-	"fmt"
+	"strconv"
 	"strings"
 
 	"github.com/mitchellh/hashstructure/v2"
@@ -26,7 +26,7 @@ func ID(ltype types.LangType, name, version string) string {
 	case types.GoModule, types.GoBinary:
 		// Return a module ID according the Go way.
 		// Format: <module_name>@v<module_version>
-		// e.g. github.com/khulnasoft/go-dep-parser@v0.0.0-20230130190635-5e31092b0621
+		// e.g. github.com/khulnasoft/de-parser@v0.0.0-20230130190635-5e31092b0621
 		if !strings.HasPrefix(version, "v") {
 			version = "v" + version
 		}
@@ -52,5 +52,5 @@ func UID(filePath string, pkg types.Package) string {
 	if err != nil {
 		log.Warn("Failed to calculate the package hash", log.String("pkg", pkg.Name), log.Err(err))
 	}
-	return fmt.Sprintf("%x", hash)
+	return strconv.FormatUint(hash, 16)
 }

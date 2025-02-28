@@ -31,7 +31,7 @@ func TestWriter_Write(t *testing.T) {
 							VulnerabilityID:  "CVE-2020-0001",
 							PkgName:          "foo",
 							InstalledVersion: "1.2.3",
-							PrimaryURL:       "https://avd.khulnasoft.com/nvd/cve-2020-0001",
+							PrimaryURL:       "https://avd.aquasec.com/nvd/cve-2020-0001",
 							Status:           dbTypes.StatusWillNotFix,
 							Vulnerability: dbTypes.Vulnerability{
 								Title:       "foobar",
@@ -57,7 +57,7 @@ Total: 1 (MEDIUM: 0, HIGH: 1)
 │ Library │ Vulnerability │ Severity │    Status    │ Installed Version │ Fixed Version │                   Title                   │
 ├─────────┼───────────────┼──────────┼──────────────┼───────────────────┼───────────────┼───────────────────────────────────────────┤
 │ foo     │ CVE-2020-0001 │ HIGH     │ will_not_fix │ 1.2.3             │               │ foobar                                    │
-│         │               │          │              │                   │               │ https://avd.khulnasoft.com/nvd/cve-2020-0001 │
+│         │               │          │              │                   │               │ https://avd.aquasec.com/nvd/cve-2020-0001 │
 └─────────┴───────────────┴──────────┴──────────────┴───────────────────┴───────────────┴───────────────────────────────────────────┘
 `,
 		},

@@ -8,7 +8,7 @@
     "timestamp": "2023-09-29T06:25:00+00:00",
     "tools": [
       {
-        "vendor": "khulnasoft",
+        "vendor": "aquasecurity",
         "name": "tunnel",
         "version": "0.45.1-15-g7bbd0d097"
       }

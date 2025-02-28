@@ -34,4 +34,5 @@ tunnel registry logout SERVER [flags]
 
 ### SEE ALSO
 
-- [tunnel registry](tunnel_registry.md) - Manage registry authentication
+* [tunnel registry](tunnel_registry.md)	 - Manage registry authentication
+

@@ -4,11 +4,11 @@
 		"created": "2022-09-12T17:04:09.262672Z",
 		"creators": [
 			"Tool: tunnel-dev",
-			"Organization: khulnasoft"
+			"Organization: aquasecurity"
 		]
 	},
 	"dataLicense": "CC0-1.0",
-	"documentNamespace": "http://khulnasoft.github.io/tunnel/container/maven-test-project-1a255568-e896-498f-93de-7975a5cb0212",
+	"documentNamespace": "http://tunnel.dev/container/maven-test-project-1a255568-e896-498f-93de-7975a5cb0212",
 	"name": "maven-test-project",
 	"packages": [
 		{

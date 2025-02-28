@@ -4,7 +4,7 @@ import (
 	"context"
 	"crypto/md5" // #nosec
 	"encoding/hex"
-	"fmt"
+	"errors"
 	"io/fs"
 	"os"
 	"path/filepath"
@@ -16,7 +16,7 @@ type cacheResolver struct{}
 
 var Cache = &cacheResolver{}
 
-const tempDirName = ".khulnasoft"
+const tempDirName = ".aqua"
 
 var defaultCacheDir = filepath.Join(os.TempDir(), tempDirName, "cache")
 
@@ -37,7 +37,7 @@ func locateCacheDir(cacheDir string) (string, error) {
 		return "", err
 	}
 	if !isWritable(cacheDir) {
-		return "", fmt.Errorf("cache directory is not writable")
+		return "", errors.New("cache directory is not writable")
 	}
 	return cacheDir, nil
 }

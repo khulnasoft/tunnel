@@ -17,7 +17,7 @@ import (
 	"github.com/khulnasoft/tunnel/pkg/oci"
 )
 
-const defaultMediaType = "application/vnd.khulnasoft.tunnel.db.layer.v1.tar+gzip"
+const defaultMediaType = "application/vnd.aquasec.tunnel.db.layer.v1.tar+gzip"
 
 type fakeLayer struct {
 	v1.Layer

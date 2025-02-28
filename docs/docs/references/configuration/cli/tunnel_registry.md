@@ -23,6 +23,7 @@ Manage registry authentication
 
 ### SEE ALSO
 
-- [tunnel](tunnel.md) - Unified security scanner
-- [tunnel registry login](tunnel_registry_login.md) - Log in to a registry
-- [tunnel registry logout](tunnel_registry_logout.md) - Log out of a registry
+* [tunnel](tunnel.md)	 - Unified security scanner
+* [tunnel registry login](tunnel_registry_login.md)	 - Log in to a registry
+* [tunnel registry logout](tunnel_registry_logout.md)	 - Log out of a registry
+

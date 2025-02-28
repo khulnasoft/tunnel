@@ -34,7 +34,7 @@
           "Status": "fixed",
           "Layer": {},
           "SeveritySource": "nvd",
-          "PrimaryURL": "https://avd.khulnasoft.com/nvd/cve-2019-15542",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-15542",
           "DataSource": {
             "Name": "RustSec Advisory Database",
             "URL": "https://github.com/RustSec/advisory-db"
@@ -77,7 +77,7 @@
           "Status": "fixed",
           "Layer": {},
           "SeveritySource": "nvd",
-          "PrimaryURL": "https://avd.khulnasoft.com/nvd/cve-2021-38193",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-38193",
           "DataSource": {
             "Name": "RustSec Advisory Database",
             "URL": "https://github.com/RustSec/advisory-db"

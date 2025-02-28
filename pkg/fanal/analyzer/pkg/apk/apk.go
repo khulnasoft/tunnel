@@ -20,6 +20,7 @@ import (
 	"github.com/khulnasoft/tunnel/pkg/fanal/types"
 	"github.com/khulnasoft/tunnel/pkg/licensing"
 	"github.com/khulnasoft/tunnel/pkg/log"
+	"github.com/khulnasoft/tunnel/pkg/set"
 )
 
 func init() {
@@ -185,13 +186,13 @@ func (a alpinePkgAnalyzer) consolidateDependencies(pkgs []types.Package, provide
 }
 
 func (a alpinePkgAnalyzer) uniquePkgs(pkgs []types.Package) (uniqPkgs []types.Package) {
-	uniq := make(map[string]struct{})
+	uniq := set.New[string]()
 	for _, pkg := range pkgs {
-		if _, ok := uniq[pkg.Name]; ok {
+		if uniq.Contains(pkg.Name) {
 			continue
 		}
 		uniqPkgs = append(uniqPkgs, pkg)
-		uniq[pkg.Name] = struct{}{}
+		uniq.Append(pkg.Name)
 	}
 	return uniqPkgs
 }

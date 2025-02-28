@@ -3,8 +3,7 @@ package iam
 import (
 	"testing"
 
-	"github.com/liamg/iamgo"
-
+	"github.com/aquasecurity/iamgo"
 	"github.com/khulnasoft/tunnel/pkg/iac/adapters/cloudformation/testutil"
 	"github.com/khulnasoft/tunnel/pkg/iac/providers/aws/iam"
 	"github.com/khulnasoft/tunnel/pkg/iac/types"

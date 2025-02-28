@@ -5,11 +5,12 @@ import (
 
 	"gopkg.in/yaml.v3"
 
-	"github.com/khulnasoft/tunnel-checks/pkg/specs"
+	"github.com/khulnasoft/tunnel-audit/pkg/specs"
 	"github.com/khulnasoft/tunnel/pkg/iac/framework"
 	"github.com/khulnasoft/tunnel/pkg/iac/scan"
 	dftypes "github.com/khulnasoft/tunnel/pkg/iac/types"
 	ruleTypes "github.com/khulnasoft/tunnel/pkg/iac/types/rules"
+	"github.com/khulnasoft/tunnel/pkg/set"
 )
 
 type registry struct {
@@ -74,14 +75,14 @@ func (r *registry) getFrameworkRules(fw ...framework.Framework) []ruleTypes.Regi
 	if len(fw) == 0 {
 		fw = []framework.Framework{framework.Default}
 	}
-	unique := make(map[int]struct{})
+	unique := set.New[int]()
 	for _, f := range fw {
 		for _, rule := range r.frameworks[f] {
-			if _, ok := unique[rule.Number]; ok {
+			if unique.Contains(rule.Number) {
 				continue
 			}
 			registered = append(registered, rule)
-			unique[rule.Number] = struct{}{}
+			unique.Append(rule.Number)
 		}
 	}
 	return registered

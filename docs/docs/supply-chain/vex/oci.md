@@ -1,7 +1,7 @@
 # Discover VEX Attestation in OCI Registry
 
 !!! warning "EXPERIMENTAL"
-This feature might change without preserving backwards compatibility.
+    This feature might change without preserving backwards compatibility.
 
 Tunnel can discover VEX attestations for container images.
 This feature allows you to automatically use VEX during container image scanning.
@@ -22,8 +22,8 @@ Steps 1 and 2 are not necessary if you are trying to scan a third-party containe
 Let's go through each step in detail.
 
 !!! note
-In the following examples, the `cosign` command will write an attestation to a target OCI registry, so you must have permission to write.
-If you want to avoid writing an OCI registry and only want to see an attestation, add the `--no-upload` option to the cosign command.
+    In the following examples, the `cosign` command will write an attestation to a target OCI registry, so you must have permission to write.
+    If you want to avoid writing an OCI registry and only want to see an attestation, add the `--no-upload` option to the cosign command.
 
 ### Step 1: Create a VEX Document
 
@@ -45,7 +45,7 @@ pkg:oci/tunnel@sha256:5bd5ab35814f86783561603ebb35d5d5d99006dcdcd5c3f828ea1afb4c
 ```
 
 !!! note
-Using an image tag, like `pkg:oci/tunnel?repository_url=ghcr.io/khulnasoft/tunnel&tag=0.50.0`, is not supported in the product ID at the moment.
+    Using an image tag, like `pkg:oci/tunnel?repository_url=ghcr.io/khulnasoft/tunnel&tag=0.50.0`, is not supported in the product ID at the moment.
 
 Next, specify vulnerable packages as subcomponents, such as `pkg:apk/alpine/busybox`.
 You can also include the package version and other [qualifiers][qualifiers] (e.g., `arch`) to limit statements, like `pkg:apk/alpine/busybox@1.36.1-r29?arch=x86`.
@@ -58,7 +58,7 @@ Here's an example VEX document:
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
   "@id": "https://openvex.dev/docs/public/vex-2e67563e128250cbcb3e98930df948dd053e43271d70dc50cfa22d57e03fe96f",
-  "author": "KhulnaSoft Security",
+  "author": "Khulnasoft Security",
   "timestamp": "2024-07-30T19:07:16.853479631-06:00",
   "version": 1,
   "statements": [
@@ -70,8 +70,8 @@ Here's an example VEX document:
         {
           "@id": "pkg:oci/tunnel?repository_url=ghcr.io/khulnasoft/tunnel",
           "subcomponents": [
-            { "@id": "pkg:apk/alpine/busybox" },
-            { "@id": "pkg:apk/alpine/busybox-binsh" }
+            {"@id": "pkg:apk/alpine/busybox"},
+            {"@id": "pkg:apk/alpine/busybox-binsh"}
           ]
         }
       ],

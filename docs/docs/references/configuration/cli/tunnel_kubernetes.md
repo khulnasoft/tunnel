@@ -17,12 +17,12 @@ tunnel kubernetes [flags] [CONTEXT]
   $ tunnel k8s --report summary
 
   # cluster scanning with specific namespace:
-  $ tunnel k8s --include-namespaces kube-system --report summary
+  $ tunnel k8s --include-namespaces kube-system --report summary 
 
   # cluster with specific context:
-  $ tunnel k8s kind-kind --report summary
-
-
+  $ tunnel k8s kind-kind --report summary 
+  
+  
 
 ```
 
@@ -38,13 +38,14 @@ tunnel kubernetes [flags] [CONTEXT]
       --config-check strings              specify the paths to the Rego check files or to the directories containing them, applying config files
       --config-data strings               specify paths from which data for the Rego checks will be recursively loaded
       --config-file-schemas strings       specify paths to JSON configuration file schemas to determine that a file matches some configuration and pass the schema to Rego checks for type checking
-      --db-repository strings             OCI repository(ies) to retrieve tunnel-db in order of priority (default [ghcr.io/khulnasoft-lab/tunnel-db:2,ghcr.io/khulnasoft-lab/tunnel-db:2])
+      --db-repository strings             OCI repository(ies) to retrieve tunnel-db in order of priority (default [mirror.gcr.io/khulnasoft/tunnel-db:2,ghcr.io/khulnasoft-lab/tunnel-db:2])
       --dependency-tree                   [EXPERIMENTAL] show dependency origin tree of vulnerable packages
       --detection-priority string         specify the detection priority:
                                             - "precise": Prioritizes precise by minimizing false positives.
                                             - "comprehensive": Aims to detect more security findings at the cost of potential false positives.
                                            (precise,comprehensive) (default "precise")
       --disable-node-collector            When the flag is activated, the node-collector job will not be executed, thus skipping misconfiguration findings on the node.
+      --distro string                     [EXPERIMENTAL] specify a distribution, <family>/<version>
       --download-db-only                  download/update vulnerability database but don't run a scan
       --download-java-db-only             download/update Java index database but don't run a scan
       --exclude-kinds strings             indicate the kinds exclude from scanning (example: node)
@@ -70,13 +71,13 @@ tunnel kubernetes [flags] [CONTEXT]
       --include-kinds strings             indicate the kinds included in scanning (example: node)
       --include-namespaces strings        indicate the namespaces included in scanning (example: kube-system)
       --include-non-failures              include successes, available with '--scanners misconfig'
-      --java-db-repository strings        OCI repository(ies) to retrieve tunnel-java-db in order of priority (default [mirror.gcr.io/khulnasoft-lab/tunnel-java-db:1,ghcr.io/khulnasoft-lab/tunnel-java-db:1])
+      --java-db-repository strings        OCI repository(ies) to retrieve tunnel-java-db in order of priority (default [mirror.gcr.io/khulnasoft/tunnel-java-db:1,ghcr.io/khulnasoft-lab/tunnel-java-db:1])
       --k8s-version string                specify k8s version to validate outdated api by it (example: 1.21.0)
       --kubeconfig string                 specify the kubeconfig file path to use
       --list-all-pkgs                     output all packages in the JSON report regardless of vulnerability
       --misconfig-scanners strings        comma-separated list of misconfig scanners to use for misconfiguration scanning (default [azure-arm,cloudformation,dockerfile,helm,kubernetes,terraform,terraformplan-json,terraformplan-snapshot])
       --no-progress                       suppress progress bar
-      --node-collector-imageref string    indicate the image reference for the node-collector scan job (default "ghcr.io/khulnasoft/node-collector:0.3.1")
+      --node-collector-imageref string    indicate the image reference for the node-collector scan job (default "ghcr.io/aquasecurity/node-collector:0.3.1")
       --node-collector-namespace string   specify the namespace in which the node-collector job should be deployed (default "tunnel-temp")
       --offline-scan                      do not issue API requests to identify dependencies
   -o, --output string                     output file name
@@ -129,4 +130,5 @@ tunnel kubernetes [flags] [CONTEXT]
 
 ### SEE ALSO
 
-- [tunnel](tunnel.md) - Unified security scanner
+* [tunnel](tunnel.md)	 - Unified security scanner
+

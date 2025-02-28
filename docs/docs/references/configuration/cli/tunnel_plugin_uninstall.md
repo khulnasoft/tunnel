@@ -27,4 +27,5 @@ tunnel plugin uninstall PLUGIN_NAME
 
 ### SEE ALSO
 
-- [tunnel plugin](tunnel_plugin.md) - Manage plugins
+* [tunnel plugin](tunnel_plugin.md)	 - Manage plugins
+

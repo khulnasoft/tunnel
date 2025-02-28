@@ -4,18 +4,18 @@ Tunnel supports [Hex][hex] repository for [Elixir][elixir].
 
 The following scanners are supported.
 
-| Package manager | SBOM | Vulnerability | License |
-| --------------- | :--: | :-----------: | :-----: |
-| [hex][hex]      |  ✓   |       ✓       |    -    |
+| Package manager | SBOM  | Vulnerability | License |
+|-----------------| :---: | :-----------: |:-------:|
+| [hex][hex]        |   ✓   |       ✓       |    -    |
 
 The following table provides an outline of the features Tunnel offers.
 
+
 | Package manager | File         | Transitive dependencies | Dev dependencies | [Dependency graph][dependency-graph] | Position |
-| --------------- | ------------ | :---------------------: | :--------------: | :----------------------------------: | :------: |
+|-----------------|--------------|:-----------------------:|:----------------:|:------------------------------------:|:--------:|
 | [hex][hex]      | mix.lock[^1] |            ✓            |     Excluded     |                  -                   |    ✓     |
 
 ## Hex
-
 In order to detect dependencies, Tunnel searches for `mix.lock`[^1].
 
 [Configure](https://hexdocs.pm/mix/Mix.Project.html#module-configuration) your project to use `mix.lock`[^1] file.

@@ -12,6 +12,7 @@ import (
 
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"
 	"github.com/khulnasoft/tunnel/pkg/log"
+	"github.com/khulnasoft/tunnel/pkg/set"
 	"github.com/khulnasoft/tunnel/pkg/version/doc"
 )
 
@@ -19,7 +20,7 @@ var (
 	varRegexp        = regexp.MustCompile(`\${(\S+?)}`)
 	emptyVersionWarn = sync.OnceFunc(func() {
 		log.WithPrefix("pom").Warn("Dependency version cannot be determined. Child dependencies will not be found.",
-			// e.g. https://khulnasoft.github.io/tunnel/latest/docs/coverage/language/java/#empty-dependency-version
+			// e.g. https://tunnel.dev/latest/docs/coverage/language/java/#empty-dependency-version
 			log.String("details", doc.URL("/docs/coverage/language/java/", "empty-dependency-version")))
 	})
 )
@@ -30,7 +31,7 @@ type artifact struct {
 	Version    version
 	Licenses   []string
 
-	Exclusions map[string]struct{}
+	Exclusions set.Set[string]
 
 	Module       bool
 	Relationship ftypes.Relationship

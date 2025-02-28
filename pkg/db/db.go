@@ -21,7 +21,7 @@ import (
 
 const (
 	SchemaVersion = db.SchemaVersion
-	dbMediaType   = "application/vnd.khulnasoft.tunnel.db.layer.v1.tar+gzip"
+	dbMediaType   = "application/vnd.aquasec.tunnel.db.layer.v1.tar+gzip"
 )
 
 var (
@@ -30,7 +30,7 @@ var (
 	defaultGHCRRepository = lo.Must(name.NewTag(DefaultGHCRRepository))
 
 	// GCR mirror
-	DefaultGCRRepository = fmt.Sprintf("%s:%d", "ghcr.io/khulnasoft-lab/tunnel-db", db.SchemaVersion)
+	DefaultGCRRepository = fmt.Sprintf("%s:%d", "mirror.gcr.io/khulnasoft/tunnel-db", db.SchemaVersion)
 	defaultGCRRepository = lo.Must(name.NewTag(DefaultGCRRepository))
 
 	Init  = db.Init

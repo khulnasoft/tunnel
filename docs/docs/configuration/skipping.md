@@ -3,9 +3,8 @@
 This section details ways to specify the files and directories that Tunnel should not scan.
 
 ## Skip Files
-
 |     Scanner      | Supported |
-| :--------------: | :-------: |
+|:----------------:|:---------:|
 |  Vulnerability   |     ✓     |
 | Misconfiguration |     ✓     |
 |      Secret      |     ✓     |
@@ -15,13 +14,11 @@ By default, Tunnel traverses directories and searches for all necessary files fo
 You can skip files that you don't maintain using the `--skip-files` flag, or the equivalent Tunnel YAML config option.
 
 Using the `--skip-files` flag:
-
 ```bash
 $ tunnel image --skip-files "/Gemfile.lock" --skip-files "/var/lib/gems/2.5.0/gems/http_parser.rb-0.6.0/Gemfile.lock" quay.io/fluentd_elasticsearch/fluentd:v2.9.0
 ```
 
 Using the Tunnel YAML configuration:
-
 ```yaml
 image:
   skip-files:
@@ -44,9 +41,8 @@ $ tunnel config --skip-files "./foo/**/*.tf" .
 This will skip any files with the extension `.tf` in subdirectories of foo at any depth.
 
 ## Skip Directories
-
 |     Scanner      | Supported |
-| :--------------: | :-------: |
+|:----------------:|:---------:|
 |  Vulnerability   |     ✓     |
 | Misconfiguration |     ✓     |
 |      Secret      |     ✓     |
@@ -56,13 +52,11 @@ By default, Tunnel traverses directories and searches for all necessary files fo
 You can skip directories that you don't maintain using the `--skip-dirs` flag, or the equivalent Tunnel YAML config option.
 
 Using the `--skip-dirs` flag:
-
 ```bash
 $ tunnel image --skip-dirs /var/lib/gems/2.5.0/gems/fluent-plugin-detect-exceptions-0.0.13 --skip-dirs "/var/lib/gems/2.5.0/gems/http_parser.rb-0.6.0" quay.io/fluentd_elasticsearch/fluentd:v2.9.0
 ```
 
 Using the Tunnel YAML configuration:
-
 ```yaml
 image:
   skip-dirs:
@@ -86,22 +80,21 @@ This will skip subdirectories at any depth named `.terraform/`. (Note: this will
 `./foo/bar/.terraform`, but not `./.terraform`.)
 
 !!! tip
-Glob patterns work with any tunnel subcommand (image, config, etc.) and can be specified to skip both directories (with `--skip-dirs`) and files (with `--skip-files`).
+    Glob patterns work with any tunnel subcommand (image, config, etc.) and can be specified to skip both directories (with `--skip-dirs`) and files (with `--skip-files`).
+
 
 ### Advanced globbing
-
 Tunnel also supports bash style [extended](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Pattern-Matching) glob pattern matching.
 
 ```bash
 $ tunnel image --skip-files "**/foo" image:tag
 ```
 
-This will skip the file `foo` that happens to be nested under any parent(s).
+This will skip the file `foo` that happens to be nested under any parent(s). 
 
 ## File patterns
-
 |     Scanner      | Supported |
-| :--------------: | :-------: |
+|:----------------:|:---------:|
 |  Vulnerability   |     ✓     |
 | Misconfiguration |     ✓     |
 |      Secret      |           |
@@ -116,11 +109,11 @@ For example, it may be useful when your file name of Dockerfile doesn't match th
 This can be repeated for specifying multiple file patterns.
 
 A file pattern contains the analyzer it is used for, and the pattern itself, joined by a semicolon. For example:
-
 ```
 --file-patterns "dockerfile:.*.docker" --file-patterns "kubernetes:*.tpl" --file-patterns "pip:requirements-.*\.txt"
 ```
 
 The prefixes are listed [here](https://github.com/khulnasoft/tunnel/tree/{{ git.commit }}/pkg/fanal/analyzer/const.go)
+
 
 [^1]: Only work with the [license-full](../scanner/license.md) flag)

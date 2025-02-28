@@ -5,18 +5,18 @@ Tunnel supports [Composer][composer], which is a tool for dependency management 
 The following scanners are supported.
 
 | Package manager | SBOM | Vulnerability | License |
-| --------------- | :--: | :-----------: | :-----: |
+|-----------------|:----:|:-------------:|:-------:|
 | Composer        |  ✓   |       ✓       |    ✓    |
 
 The following table provides an outline of the features Tunnel offers.
 
+
 | Package manager | File           | Transitive dependencies | Dev dependencies | [Dependency graph][dependency-graph] | Position |
-| --------------- | -------------- | :---------------------: | :--------------: | :----------------------------------: | :------: |
+|-----------------|----------------|:-----------------------:|:----------------:|:------------------------------------:|:--------:|
 | Composer        | composer.lock  |            ✓            |     Excluded     |                  ✓                   |    ✓     |
 | Composer        | installed.json |            ✓            |     Excluded     |                  -                   |    ✓     |
 
 ## composer.lock
-
 In order to detect dependencies, Tunnel searches for `composer.lock`.
 
 Tunnel also supports dependency trees; however, to display an accurate tree, it needs to know whether each package is a direct dependency of the project.
@@ -24,7 +24,6 @@ Since this information is not included in `composer.lock`, Tunnel parses `compos
 If you want to see the dependency tree, please ensure that `composer.json` is present.
 
 ## installed.json
-
 Tunnel also supports dependency detection for `installed.json` files. By default, you can find this file at `path_to_app/vendor/composer/installed.json`.
 
 [composer]: https://getcomposer.org/

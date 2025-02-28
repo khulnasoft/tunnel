@@ -1,5 +1,4 @@
 # Community References
-
 Below is a list of additional resources from the community.
 
 ## Vulnerability Scanning

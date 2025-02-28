@@ -43,7 +43,9 @@ $ tunnel image --format cosign-vuln --output vuln.json alpine:3.10
         "DiffIDs": [
           "sha256:9fb3aa2f8b8023a4bebbf92aa567caf88e38e969ada9f0ac12643b2847391635"
         ],
-        "RepoTags": ["alpine:3.10"],
+        "RepoTags": [
+          "alpine:3.10"
+        ],
         "RepoDigests": [
           "alpine@sha256:451eee8bedcb2f029756dc3e9d73bab0e7943c1ac55cff3a4861c52a0fdd3e98"
         ],
@@ -71,7 +73,9 @@ $ tunnel image --format cosign-vuln --output vuln.json alpine:3.10
             ]
           },
           "config": {
-            "Cmd": ["/bin/sh"],
+            "Cmd": [
+              "/bin/sh"
+            ],
             "Env": [
               "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
             ],
@@ -95,7 +99,7 @@ $ tunnel image --format cosign-vuln --output vuln.json alpine:3.10
                 "DiffID": "sha256:9fb3aa2f8b8023a4bebbf92aa567caf88e38e969ada9f0ac12643b2847391635"
               },
               "SeveritySource": "nvd",
-              "PrimaryURL": "https://avd.khulnasoft.com/nvd/cve-2021-36159",
+              "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-36159",
               "DataSource": {
                 "ID": "alpine",
                 "Name": "Alpine Secdb",
@@ -103,7 +107,9 @@ $ tunnel image --format cosign-vuln --output vuln.json alpine:3.10
               },
               "Description": "libfetch before 2021-07-26, as used in apk-tools, xbps, and other products, mishandles numeric strings for the FTP and HTTP protocols. The FTP passive mode implementation allows an out-of-bounds read because strtol is used to parse the relevant numbers into address bytes. It does not check if the line ends prematurely. If it does, the for-loop condition checks for the '\\0' terminator one byte too late.",
               "Severity": "CRITICAL",
-              "CweIDs": ["CWE-125"],
+              "CweIDs": [
+                "CWE-125"
+              ],
               "CVSS": {
                 "nvd": {
                   "V2Vector": "AV:N/AC:L/Au:N/C:P/I:N/A:P",
@@ -142,8 +148,9 @@ $ tunnel image --format cosign-vuln --output vuln.json alpine:3.10
 [Cosign](https://github.com/sigstore/cosign) supports generating and verifying [in-toto attestations](https://github.com/in-toto/attestation). This tool enables you to sign and verify Cosign vulnerability attestation.
 
 !!! note
-In the following examples, the `cosign` command will write an attestation to a target OCI registry, so you must have permission to write.
-If you want to avoid writing an OCI registry and only want to see an attestation, add the `--no-upload` option to the `cosign` command.
+    In the following examples, the `cosign` command will write an attestation to a target OCI registry, so you must have permission to write.
+    If you want to avoid writing an OCI registry and only want to see an attestation, add the `--no-upload` option to the `cosign` command.
+
 
 ### Sign with a local key pair
 
@@ -174,7 +181,6 @@ You can use Cosign to sign without keys by authenticating with an OpenID Connect
 $ tunnel image --format cosign-vuln -o vuln.json <IMAGE>
 $ cosign attest --type vuln --predicate vuln.json <IMAGE>
 ```
-
 This will provide a certificate in the output section.
 
 You can verify attestations:

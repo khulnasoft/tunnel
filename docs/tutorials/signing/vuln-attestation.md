@@ -14,19 +14,17 @@ This tutorial details how to
 ## Scan Container Image for vulnerabilities
 
 Scan your container image for vulnerabilities and save the scan result to a scan.json file:
-
 ```
 tunnel image --ignore-unfixed --format cosign-vuln --output scan.json DockerHubID/imagename:imagetag
 ```
 
 For example:
-
 ```
 tunnel image --ignore-unfixed --format cosign-vuln --output scan.json anaisurlichs/signed-example:0.1
 ```
 
-- `--ignore-unfixed`: Ensures only the vulnerabilities, which have a already a fix available, are displayed
-- `--output scan.json`: The scan output is saved to a scan.json file instead of being displayed in the terminal.
+* `--ignore-unfixed`: Ensures only the vulnerabilities, which have a already a fix available, are displayed
+* `--output scan.json`: The scan output is saved to a scan.json file instead of being displayed in the terminal.
 
 Note: Replace the container image with the container image that you want to scan.
 
@@ -35,23 +33,19 @@ Note: Replace the container image with the container image that you want to scan
 #### Signing
 
 Sign the container image:
-
 ```
 cosign sign DockerHubID/imagename@imageSHA
 ```
 
 The `imageSHA` can be obtained through the following docker command:
-
 ```
 docker image ls --digests
 ```
-
 The SHA will be displayed next to the image name and tag.
 
 Note that it is better practice to sign the image SHA rather than the tag as the SHA will remain the same for the particular image that we have signed.
 
 For example:
-
 ```
 cosign sign docker.io/anaisurlichs/signed-example@sha256:c5911ac313e0be82a740bd726dc290e655800a9588424ba4e0558c705d1287fd
 ```
@@ -59,13 +53,11 @@ cosign sign docker.io/anaisurlichs/signed-example@sha256:c5911ac313e0be82a740bd7
 #### Attestation
 
 The following command generates an attestation for the vulnerability scan and uploads it to the container image used:
-
 ```
 cosign attest --predicate scan.json --type vuln docker.io/DockerHubID/imagename:imageSHA
 ```
 
 For example:
-
 ```
 cosign attest --predicate scan.json --type vuln docker.io/anaisurlichs/signed-example@sha256:c5911ac313e0be82a740bd726dc290e655800a9588424ba4e0558c705d1287fd
 ```
@@ -75,7 +67,6 @@ Note: Replace the container image with the container image that you would like t
 Next, Sigstore will ask you to verify with an account -- Microsoft, GitHub, or Google.
 
 Once done, the user will be provided with a certificate in the terminal where they ran the command. Example certificate:
-
 ```
 -----BEGIN CERTIFICATE-----
 MIIC1TCCAlygAwIBAgIUfSXI7xTWSLq4nuygd8YPuhPZlEswCgYIKoZIzj0EAwMw
@@ -87,20 +78,19 @@ unkHs1Uk59CWv3qm6sUyRNYaATs9zdHAZqLck8G4P/Pj7+GzCKOCAXswggF3MA4G
 -----END CERTIFICATE-----
 ```
 
+
 ## Option 2: Signing and Generating an attestation with a new Cosign key pair
 
 To generate an attestation for the container image with a separate key pair, we can use Cosign to generate a new key pair:
-
 ```
 cosign generate-key-pair 
 ```
 
-This will generate a `cosign.key` and a `cosign.pub` file. The `cosign.key` file is your private key that should be kept confidential as it is used to sign artefacts. However, the `cosign.pub` file contains the information of the corresponding public key. This key can be used by third parties to verify the attestation -- basically that this person who claims to have signed the attestation actually is the one who signed it.
+This will generate a `cosign.key` and a `cosign.pub` file. The `cosign.key` file is your private key that should be kept confidential as it is used to sign artefacts. However, the `cosign.pub` file contains the information of the corresponding public key. This key can be used by third parties to verify the attestation -- basically that this person who claims to have signed the attestation actually is the one who signed it. 
 
 #### Signing
 
 Sign the container image:
-
 ```
 cosign sign --key cosign.key docker.io/anaisurlichs/signed-example@sha256:c5911ac313e0be82a740bd726dc290e655800a9588424ba4e0558c705d1287fd
 ```
@@ -108,7 +98,6 @@ cosign sign --key cosign.key docker.io/anaisurlichs/signed-example@sha256:c5911a
 #### Attestation
 
 To generate the attestation with the specific key pairs, run the following command:
-
 ```
 cosign attest --key cosign.key --type vuln --predicate scan.json docker.io/anaisurlichs/signed-example@sha256:c5911ac313e0be82a740bd726dc290e655800a9588424ba4e0558c705d1287fd 
 ```
@@ -124,7 +113,6 @@ cosign verify-attestation --type vuln --certificate-identity Email-used-to-sign 
 ```
 
 For example, the command could be like this:
-
 ```
 cosign verify-attestation --type vuln --certificate-identity urlichsanais@gmail.com  --certificate-oidc-issuer='https://github.com/login/oauth' anaisurlichs/signed-example@sha256:c5911ac313e0be82a740bd726dc290e655800a9588424ba4e0558c705d1287fd
 ```
@@ -132,7 +120,6 @@ cosign verify-attestation --type vuln --certificate-identity urlichsanais@gmail.
 ### Option 2 -- Separate key pair
 
 If you have used a new cosign key pair, the attestation can be verified through the following command:
-
 ```
 cosign verify-attestation --key cosign.pub --type vuln anaisurlichs/signed-example@sha256:c5911ac313e0be82a740bd726dc290e655800a9588424ba4e0558c705d1287fd 
 ```
@@ -141,7 +128,6 @@ cosign verify-attestation --key cosign.pub --type vuln anaisurlichs/signed-examp
 <summary>Output</summary>
 
 The output should look similar to the following:
-
 ```
 Verification for anaisurlichs/signed-example@sha256:c5911ac313e0be82a740bd726dc290e655800a9588424ba4e0558c705d1287fd --
 The following checks were performed on each of these signatures:
@@ -150,7 +136,6 @@ The following checks were performed on each of these signatures:
   - The signatures were verified against the specified public key
 {"payloadType":"application/vnd.in-toto+json","payload":
 ```
-
 </details>
 
 ## More information

@@ -1,8 +1,8 @@
-name: "tunnel-discussion-triage"
-description: "automatic triage of Tunnel discussions"
+name: 'tunnel-discussion-triage'
+description: 'automatic triage of Tunnel discussions'
 inputs:
   discussion_num:
-    description: "Discussion number to triage"
+    description: 'Discussion number to triage'
     required: false
 runs:
   using: "composite"

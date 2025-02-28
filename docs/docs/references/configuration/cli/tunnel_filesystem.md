@@ -29,12 +29,13 @@ tunnel filesystem [flags] PATH
       --config-data strings               specify paths from which data for the Rego checks will be recursively loaded
       --config-file-schemas strings       specify paths to JSON configuration file schemas to determine that a file matches some configuration and pass the schema to Rego checks for type checking
       --custom-headers strings            custom headers in client mode
-      --db-repository strings             OCI repository(ies) to retrieve tunnel-db in order of priority (default [ghcr.io/khulnasoft-lab/tunnel-db:2,ghcr.io/khulnasoft-lab/tunnel-db:2])
+      --db-repository strings             OCI repository(ies) to retrieve tunnel-db in order of priority (default [mirror.gcr.io/khulnasoft/tunnel-db:2,ghcr.io/khulnasoft-lab/tunnel-db:2])
       --dependency-tree                   [EXPERIMENTAL] show dependency origin tree of vulnerable packages
       --detection-priority string         specify the detection priority:
                                             - "precise": Prioritizes precise by minimizing false positives.
                                             - "comprehensive": Aims to detect more security findings at the cost of potential false positives.
                                            (precise,comprehensive) (default "precise")
+      --distro string                     [EXPERIMENTAL] specify a distribution, <family>/<version>
       --download-db-only                  download/update vulnerability database but don't run a scan
       --download-java-db-only             download/update Java index database but don't run a scan
       --enable-modules strings            [EXPERIMENTAL] module names to enable
@@ -56,7 +57,7 @@ tunnel filesystem [flags] PATH
       --include-deprecated-checks         include deprecated checks
       --include-dev-deps                  include development dependencies in the report (supported: npm, yarn)
       --include-non-failures              include successes, available with '--scanners misconfig'
-      --java-db-repository strings        OCI repository(ies) to retrieve tunnel-java-db in order of priority (default [mirror.gcr.io/khulnasoft-lab/tunnel-java-db:1,ghcr.io/khulnasoft-lab/tunnel-java-db:1])
+      --java-db-repository strings        OCI repository(ies) to retrieve tunnel-java-db in order of priority (default [mirror.gcr.io/khulnasoft/tunnel-java-db:1,ghcr.io/khulnasoft-lab/tunnel-java-db:1])
       --license-confidence-level float    specify license classifier's confidence level (default 0.9)
       --license-full                      eagerly look for licenses in source code headers and license files
       --list-all-pkgs                     output all packages in the JSON report regardless of vulnerability
@@ -115,4 +116,5 @@ tunnel filesystem [flags] PATH
 
 ### SEE ALSO
 
-- [tunnel](tunnel.md) - Unified security scanner
+* [tunnel](tunnel.md)	 - Unified security scanner
+

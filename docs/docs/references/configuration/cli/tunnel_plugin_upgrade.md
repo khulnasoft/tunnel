@@ -27,4 +27,5 @@ tunnel plugin upgrade [PLUGIN_NAMES]
 
 ### SEE ALSO
 
-- [tunnel plugin](tunnel_plugin.md) - Manage plugins
+* [tunnel plugin](tunnel_plugin.md)	 - Manage plugins
+

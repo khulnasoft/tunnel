@@ -41,7 +41,7 @@ type ArtifactSettings struct {
 
 The `iacTypes.Metadata` struct is embedded in all of the Tunnel types and provides a common set of metadata for all resources. This includes the file and line number where the resource was defined and the name of the resource.
 
-A resource in this example `Project` can have a name and can optionally be encrypted. Instead of using raw string and bool types respectively, we use the tunnel types `iacTypes.Metadata` and `iacTypes.BoolValue`. These types wrap the raw values and provide additional metadata about the value. For instance, whether it was set by the user and the file and line number where the resource was defined.
+A resource in this example `Project` can have a name and can optionally be encrypted. Instead of using raw string and bool types respectively, we use the tunnel types `iacTypes.Metadata` and `iacTypes.BoolValue`. These types wrap the raw values and provide additional metadata about the value. For instance, whether it was set by the user and the file and line number where the resource was defined. 
 
 Have a look at the other providers and services in the [`iac/providers`](https://github.com/khulnasoft/tunnel/tree/main/pkg/iac/providers) directory in Tunnel.
 
@@ -57,12 +57,13 @@ type AWS struct {
 
 ### Update Adapters
 
-Now you'll need to update all of the [adapters](https://github.com/khulnasoft/tunnel/tree/main/pkg/iac/adapters) which populate the struct of the provider that you have been using. Following the example above, if you want to add support for CodeBuild in Terraform, you'll need to update the Terraform AWS adatper as shown here: [`tunnel/pkg/iac/adapters/terraform/aws/codebuild/adapt.go`](https://github.com/khulnasoft/tunnel/blob/main/pkg/iac/adapters/terraform/aws/codebuild/adapt.go).
+Now you'll need to update all of the [adapters](https://github.com/khulnasoft/tunnel/tree/main/pkg/iac/adapters) which populate the struct of the provider that you have been using. Following the example above, if you want to add support for CodeBuild in Terraform, you'll need to update the Terraform AWS adapter as shown here: [`tunnel/pkg/iac/adapters/terraform/aws/codebuild/adapt.go`](https://github.com/khulnasoft/tunnel/blob/main/pkg/iac/adapters/terraform/aws/codebuild/adapt.go).
 
-Another example for updating the adapters is provided in the [following PR.](https://github.com/khulnasoft/defsec/pull/1000/files) Additionally, please refer to the respective Terraform documentation on the provider to which you are adding the service. For instance, the Terraform documentation for AWS CodeBuild is provided [here.](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/codebuild_project)
+Another example for updating the adapters is provided in the [following PR.](https://github.com/aquasecurity/defsec/pull/1000/files) Additionally, please refer to the respective Terraform documentation on the provider to which you are adding the service. For instance, the Terraform documentation for AWS CodeBuild is provided [here.](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/codebuild_project)
+
 
 ## Create a new Schema for your provider
 
-Once the new service has been added to the provider, you need to create the schema for the service as part of the provider schema.
+Once the new service has been added to the provider, you need to create the schema for the service as part of the provider schema. 
 
 This process has been automated with mage commands. In the Tunnel root directory run `mage schema:generate` to generate the schema for your new service and `mage schema:verify`.

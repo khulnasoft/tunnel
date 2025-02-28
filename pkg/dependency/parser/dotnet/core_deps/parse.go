@@ -6,10 +6,10 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/liamg/jfather"
 	"github.com/samber/lo"
 	"golang.org/x/xerrors"
 
+	"github.com/aquasecurity/jfather"
 	"github.com/khulnasoft/tunnel/pkg/dependency"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"
 	"github.com/khulnasoft/tunnel/pkg/log"

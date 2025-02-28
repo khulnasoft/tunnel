@@ -1,5 +1,4 @@
 # Kubernetes
-
 Tunnel supports the scanners listed in the table below.
 
 |      Scanner       | Supported |
@@ -15,17 +14,16 @@ In addition to raw YAML and JSON, it supports the following templates:
 |    Kustomize    |   ✓[^1]   |
 
 !!! note
-Tunnel does not support Kustomize overlays, so it scans files defined in the base.
-Or, you can scan the output of `kustomize build`.
+    Tunnel does not support Kustomize overlays, so it scans files defined in the base.
+    Or, you can scan the output of `kustomize build`.
 
 ## Misconfiguration
-
 Tunnel recursively searches directories and scans all found Kubernetes files.
 
 ## Secret
-
 The secret scan is performed on plain text files, with no special treatment for Kubernetes.
 This means that Base64 encoded secrets are not scanned, and only secrets written in plain text are detected.
+
 
 [Misconfiguration]: ../../scanner/misconfiguration/index.md
 [Secret]: ../../scanner/secret.md

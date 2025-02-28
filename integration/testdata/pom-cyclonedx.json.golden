@@ -2,7 +2,7 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.6",
-  "serialNumber": "urn:uuid:3ff14136-e09f-4df9-80ea-000000000005",
+  "serialNumber": "urn:uuid:3ff14136-e09f-4df9-80ea-000000000006",
   "version": 1,
   "metadata": {
     "timestamp": "2021-08-25T12:20:30+00:00",
@@ -10,14 +10,14 @@
       "components": [
         {
           "type": "application",
-          "group": "khulnasoft",
+          "group": "aquasecurity",
           "name": "tunnel",
           "version": "dev"
         }
       ]
     },
     "component": {
-      "bom-ref": "3ff14136-e09f-4df9-80ea-000000000001",
+      "bom-ref": "3ff14136-e09f-4df9-80ea-000000000002",
       "type": "application",
       "name": "testdata/fixtures/repo/pom",
       "properties": [
@@ -30,7 +30,7 @@
   },
   "components": [
     {
-      "bom-ref": "3ff14136-e09f-4df9-80ea-000000000002",
+      "bom-ref": "3ff14136-e09f-4df9-80ea-000000000003",
       "type": "application",
       "name": "pom.xml",
       "properties": [
@@ -83,13 +83,13 @@
   ],
   "dependencies": [
     {
-      "ref": "3ff14136-e09f-4df9-80ea-000000000001",
+      "ref": "3ff14136-e09f-4df9-80ea-000000000002",
       "dependsOn": [
-        "3ff14136-e09f-4df9-80ea-000000000002"
+        "3ff14136-e09f-4df9-80ea-000000000003"
       ]
     },
     {
-      "ref": "3ff14136-e09f-4df9-80ea-000000000002",
+      "ref": "3ff14136-e09f-4df9-80ea-000000000003",
       "dependsOn": [
         "pkg:maven/com.example/log4shell@1.0-SNAPSHOT"
       ]
@@ -154,7 +154,7 @@
       "recommendation": "Upgrade com.fasterxml.jackson.core:jackson-databind to version 2.9.10.4",
       "advisories": [
         {
-          "url": "https://avd.khulnasoft.com/nvd/cve-2020-9548"
+          "url": "https://avd.aquasec.com/nvd/cve-2020-9548"
         },
         {
           "url": "https://access.redhat.com/security/cve/CVE-2020-9548"
@@ -276,7 +276,7 @@
       "recommendation": "Upgrade com.fasterxml.jackson.core:jackson-databind to version 2.9.10.7",
       "advisories": [
         {
-          "url": "https://avd.khulnasoft.com/nvd/cve-2021-20190"
+          "url": "https://avd.aquasec.com/nvd/cve-2021-20190"
         },
         {
           "url": "https://access.redhat.com/security/cve/CVE-2021-20190"

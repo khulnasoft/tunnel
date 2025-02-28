@@ -1,5 +1,5 @@
 site_name: Tunnel
-site_url: https://khulnasoft.github.io/tunnel/
+site_url: https://tunnel.dev/
 site_description: Tunnel - All-in-one open source security scanner
 docs_dir: docs/
 repo_name: GitHub
@@ -9,12 +9,12 @@ edit_uri: "blob/main/docs/"
 nav:
   - Home: index.md
   - Getting Started:
-      - First steps: getting-started/index.md
+      - First steps: getting-started/index.md 
       - Installation: getting-started/installation.md
       - Signature Verification: getting-started/signature-verification.md
       - FAQ: getting-started/faq.md
   - Tutorials:
-      - Overview: tutorials/overview.md
+      - Overview: tutorials/overview.md   
       - CI/CD:
           - Overview: tutorials/integrations/index.md
           - GitHub Actions: tutorials/integrations/github-actions.md
@@ -133,9 +133,10 @@ nav:
               - Overview: docs/supply-chain/vex/index.md
               - VEX Repository: docs/supply-chain/vex/repo.md
               - Local VEX Files: docs/supply-chain/vex/file.md
+              - VEX SBOM Reference: docs/supply-chain/vex/sbom-ref.md
               - VEX Attestation: docs/supply-chain/vex/oci.md
       - Compliance:
-          - Built-in Compliance: docs/compliance/compliance.md
+          - Built-in Compliance:  docs/compliance/compliance.md
           - Custom Compliance: docs/compliance/contrib-compliance.md
       - Plugins:
           - Overview: docs/plugin/index.md
@@ -180,9 +181,9 @@ nav:
                       - Plugin Upgrade: docs/references/configuration/cli/tunnel_plugin_upgrade.md
                       - Plugin Search: docs/references/configuration/cli/tunnel_plugin_search.md
                   - Registry:
-                      - Registry: docs/references/configuration/cli/tunnel_registry.md
-                      - Registry Login: docs/references/configuration/cli/tunnel_registry_login.md
-                      - Registry Logout: docs/references/configuration/cli/tunnel_registry_logout.md
+                        - Registry: docs/references/configuration/cli/tunnel_registry.md
+                        - Registry Login: docs/references/configuration/cli/tunnel_registry_login.md
+                        - Registry Logout: docs/references/configuration/cli/tunnel_registry_logout.md
                   - Repository: docs/references/configuration/cli/tunnel_repository.md
                   - Rootfs: docs/references/configuration/cli/tunnel_rootfs.md
                   - SBOM: docs/references/configuration/cli/tunnel_sbom.md
@@ -201,12 +202,12 @@ nav:
               - Client/Server: docs/references/modes/client-server.md
           - Troubleshooting: docs/references/troubleshooting.md
           - Terminology: docs/references/terminology.md
-  - Ecosystem:
-      - Overview: ecosystem/index.md
-      - CI/CD: ecosystem/cicd.md
-      - IDE and Dev tools: ecosystem/ide.md
-      - Production and Clouds: ecosystem/prod.md
-      - Reporting: ecosystem/reporting.md
+  - Ecosystem: 
+    - Overview: ecosystem/index.md
+    - CI/CD: ecosystem/cicd.md
+    - IDE and Dev tools: ecosystem/ide.md
+    - Production and Clouds: ecosystem/prod.md
+    - Reporting: ecosystem/reporting.md
   - Contributing:
       - Principles: community/principles.md
       - How to contribute:
@@ -268,8 +269,8 @@ extra:
     provider: mike
     default: latest
   social:
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/khulnasoft
+    - icon: fontawesome/brands/x-twitter
+      link: https://twitter.com/AquaTunnel
     - icon: fontawesome/brands/github
       link: https://github.com/khulnasoft/tunnel
     - icon: fontawesome/brands/slack
@@ -281,3 +282,4 @@ extra:
 plugins:
   - search
   - macros
+

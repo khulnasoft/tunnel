@@ -1,7 +1,7 @@
 # Built-in Compliance Reports
 
 !!! warning "EXPERIMENTAL"
-This feature might change without preserving backwards compatibility.
+    This feature might change without preserving backwards compatibility.
 
 Tunnel’s compliance flag lets you curate a specific set of checks into a report. In a typical Tunnel scan, there are hundreds of different checks for many different components and configurations, but sometimes you already know which specific checks you are interested in. Often this would be an industry accepted set of checks such as CIS, or some vendor specific guideline, or your own organization policy that you want to comply with. These are all possible using the flexible compliance infrastructure that's built into Tunnel. Compliance reports are defined as simple YAML documents that select checks to include in the report.
 
@@ -20,7 +20,7 @@ For example: `tunnel k8s cluster --compliance k8s-nsa` (see below for built-in a
 The following flags are compatible with `--compliance` flag and allows customizing it's output:
 
 | flag               | effect                                                                               |
-| ------------------ | ------------------------------------------------------------------------------------ |
+|--------------------|--------------------------------------------------------------------------------------|
 | `--report summary` | shows a summary of the results. for every control shows the number of failed checks. |
 | `--report all`     | shows fully detailed results. for every control shows where it failed and why.       |
 | `--format table`   | shows results in textual table format (good for human readability).                  |
@@ -35,7 +35,6 @@ For the list of built-in compliance reports, please see the relevant section:
 
 - [Docker compliance](../target/container_image.md#compliance)
 - [Kubernetes compliance](../target/kubernetes.md#compliance)
-- [AWS compliance](../target/aws.md#compliance)
 
 ## Contribute a Built-in Compliance Report
 
@@ -51,22 +50,21 @@ spec:
   description: CIS Kubernetes Benchmarks
   platform: k8s
   type: cis
-  version: "1.23"
+  version: '1.23'
   relatedResources:
-    - https://www.cisecurity.org/benchmark/kubernetes
+  - https://www.cisecurity.org/benchmark/kubernetes
   controls:
-    - id: 1.1.1
-      name:
-        Ensure that the API server pod specification file permissions are set to
-        600 or more restrictive
-      description:
-        Ensure that the API server pod specification file has permissions
-        of 600 or more restrictive
-      checks:
-        - id: AVD-KCV-0073
-      commands:
-        - id: CMD-0001
-      severity: HIGH
+  - id: 1.1.1
+    name: Ensure that the API server pod specification file permissions are set to
+      600 or more restrictive
+    description: Ensure that the API server pod specification file has permissions
+      of 600 or more restrictive
+    checks:
+    - id: AVD-KCV-0073
+    commands:
+    - id: CMD-0001
+    severity: HIGH
+
 ```
 
 ### Compliance ID
@@ -112,7 +110,7 @@ The version field specifies the version of the compliance report.
 
 Specify the check ID that needs to be evaluated based on the information collected from the command data output to assess the control.
 
-Example of how to define check data under [checks folder](https://github.com/khulnasoft/tunnel-checks/tree/main/checks):
+Example of how to define check data under [checks folder](https://github.com/khulnasoft/tunnel-audit/tree/main/checks):
 
 ```sh
 # METADATA
@@ -154,11 +152,11 @@ deny[res] {
 
 ### Compliance Command ID
 
-**_Note:_** This field is not mandatory, it is relevant to k8s compliance report when node-collector is in use
+***Note:*** This field is not mandatory, it is relevant to k8s compliance report when node-collector is in use
 
 Specify the command ID (#ref) that needs to be executed to collect the information required to evaluate the control.
 
-Example of how to define command data under [commands folder](https://github.com/khulnasoft/tunnel-checks/tree/main/commands)
+Example of how to define command data under [commands folder](https://github.com/khulnasoft/tunnel-audit/tree/main/commands)
 
 ```yaml
 ---
@@ -167,14 +165,14 @@ Example of how to define command data under [commands folder](https://github.com
   title: kubelet.conf file permissions
   nodeType: worker
   audit: stat -c %a $kubelet.kubeconfig
-  platfroms:
+  platforms:
     - k8s
     - aks
 ```
 
 #### Command ID
 
-Find the next command ID by running the command on [tunnel-checks project](https://github.com/khulnasoft/tunnel-checks).
+Find the next command ID by running the command on [tunnel-checks project](https://github.com/khulnasoft/tunnel-audit).
 
 ```sh
 make command-id
@@ -182,7 +180,7 @@ make command-id
 
 #### Command Key
 
-- Re-use an existing key or specifiy a new one (make sure key name has no spaces)
+- Re-use an existing key or specify a new one (make sure key name has no spaces)
 
 Note: The key value should match the key name evaluated by the Rego check.
 
@@ -199,7 +197,7 @@ Specify the node type on which the command is supposed to run.
 
 ### Command Audit
 
-Specify here the shell command to be used please make sure to add error supression (2>/dev/null)
+Specify here the shell command to be used please make sure to add error suppression (2>/dev/null)
 
 ### Command Platforms
 
@@ -213,22 +211,22 @@ For example:
 
 ```yaml
 kubelet:
-  bins:
-    - kubelet
-    - hyperkube kubelet
-  confs:
-    - /etc/kubernetes/kubelet-config.yaml
-    - /var/lib/kubelet/config.yaml
+    bins:
+      - kubelet
+      - hyperkube kubelet
+    confs:
+      - /etc/kubernetes/kubelet-config.yaml
+      - /var/lib/kubelet/config.yaml
 ```
 
 ### Commands Files Location
 
-Currently checks files location are :`https://github.com/khulnasoft/tunnel-checks/tree/main/checks`
+Currently checks files location are :`https://github.com/khulnasoft/tunnel-audit/tree/main/checks`
 
-Command files location: `https://github.com/khulnasoft/tunnel-checks/tree/main/commands`
+Command files location: `https://github.com/khulnasoft/tunnel-audit/tree/main/commands`
 under command file
 
-Note: command config files will be located under `https://github.com/khulnasoft/tunnel-checks/tree/main/commands` as well
+Note: command config files will be located under `https://github.com/khulnasoft/tunnel-audit/tree/main/commands` as well
 
 ### Node-collector output
 
@@ -269,24 +267,24 @@ spec:
   id: "k8s-myreport" # report unique identifier. this should not container spaces.
   title: "My custom Kubernetes report" # report title. Any one-line title.
   description: "Describe your report" # description of the report. Any text.
-  relatedResources:
+  relatedResources :
     - https://some.url # useful references. URLs only.
   version: "1.0" # spec version (string)
   controls:
     - name: "Non-root containers" # Name for the control (appears in the report as is). Any one-line name.
-      description: "Check that container is not running as root" # Description (appears in the report as is). Any text.
+      description: 'Check that container is not running as root' # Description (appears in the report as is). Any text.
       id: "1.0" # control identifier (string)
-      checks: # list of existing Tunnel checks that define the control
-        - id: AVD-KSV-0012 # check ID. Must start with `AVD-` or `CVE-`
+      checks:   # list of existing Tunnel checks that define the control
+        - id: AVD-KSV-0012 # check ID. Must start with `AVD-` or `CVE-` 
       severity: "MEDIUM" # Severity for the control (note that checks severity isn't used)
     - name: "Immutable container file systems"
-      description: "Check that container root file system is immutable"
+      description: 'Check that container root file system is immutable'
       id: "1.1"
       checks:
         - id: AVD-KSV-0014
       severity: "LOW"
 ```
 
-The check id field (`controls[].checks[].id`) is referring to existing check by it's "AVD ID". This AVD ID is easily located in the check's source code metadata header, or by browsing [KhulnaSoft vulnerability DB](https://avd.khulnasoft.com/), specifically in the [Misconfigurations](https://avd.khulnasoft.com/misconfig/) and [Vulnerabilities](https://avd.khulnasoft.com/nvd) sections.
+The check id field (`controls[].checks[].id`) is referring to existing check by it's "AVD ID". This AVD ID is easily located in the check's source code metadata header, or by browsing [Khulnasoft vulnerability DB](https://avd.aquasec.com/), specifically in the [Misconfigurations](https://avd.aquasec.com/misconfig/) and [Vulnerabilities](https://avd.aquasec.com/nvd) sections.
 
 Once you have a compliance spec, you can select it by file path: `tunnel --compliance @</path/to/compliance.yaml>` (note the `@` indicating file path instead of report id).

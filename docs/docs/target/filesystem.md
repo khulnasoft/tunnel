@@ -6,7 +6,7 @@ Scan your local projects for
 - Misconfigurations
 - Secrets
 - Licenses
-
+ 
 By default, vulnerability and secret scanning are enabled, and you can configure that with `--scanners`.
 
 ```bash
@@ -20,9 +20,7 @@ $ tunnel fs ~/src/github.com/khulnasoft/tunnel-ci-test/Pipfile.lock
 ```
 
 ## Scanners
-
 ### Vulnerabilities
-
 It is enabled by default.
 Tunnel will look for vulnerabilities based on lock files such as Gemfile.lock and package-lock.json.
 See [here](../scanner/vulnerability.md) for the detail.
@@ -67,7 +65,6 @@ Total: 10 (UNKNOWN: 2, LOW: 0, MEDIUM: 6, HIGH: 2, CRITICAL: 0)
 </details>
 
 ### Misconfigurations
-
 It is disabled by default and can be enabled with `--scanners misconfig`.
 See [here](../scanner/misconfiguration/index.md) for the detail.
 
@@ -76,7 +73,6 @@ $ tunnel fs --scanners misconfig /path/to/project
 ```
 
 ### Secrets
-
 It is enabled by default.
 See [here](../scanner/secret.md) for the detail.
 
@@ -85,7 +81,6 @@ $ tunnel fs /path/to/project
 ```
 
 ### Licenses
-
 It is disabled by default.
 See [here](../scanner/license.md) for the detail.
 
@@ -94,6 +89,15 @@ $ tunnel fs --scanners license /path/to/project
 ```
 
 ## SBOM generation
-
 Tunnel can generate SBOM for local projects.
 See [here](../supply-chain/sbom.md) for the detail.
+
+## Scan Cache
+When scanning local projects, it doesn't use the cache by default.
+However, when the local project is a git repository with clean status and the cache backend other than the memory one is enabled, it stores analysis results, using the latest commit hash as the key.
+
+```shell
+$ tunnel fs --cache-backend fs /path/to/git/repo
+```
+
+More details are available in the [cache documentation](../configuration/cache.md#scan-cache-backend).

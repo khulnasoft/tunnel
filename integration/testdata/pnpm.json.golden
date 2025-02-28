@@ -64,7 +64,7 @@
           "Status": "fixed",
           "Layer": {},
           "SeveritySource": "ghsa",
-          "PrimaryURL": "https://avd.khulnasoft.com/nvd/cve-2019-11358",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-11358",
           "DataSource": {
             "ID": "ghsa",
             "Name": "GitHub Security Advisory Npm",
@@ -197,7 +197,7 @@
           "Status": "fixed",
           "Layer": {},
           "SeveritySource": "ghsa",
-          "PrimaryURL": "https://avd.khulnasoft.com/nvd/cve-2019-10744",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-10744",
           "DataSource": {
             "ID": "ghsa",
             "Name": "GitHub Security Advisory Npm",

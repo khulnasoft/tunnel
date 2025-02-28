@@ -172,7 +172,7 @@
           "Status": "fixed",
           "Layer": {},
           "SeveritySource": "nvd",
-          "PrimaryURL": "https://avd.khulnasoft.com/nvd/cve-2020-14155",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2020-14155",
           "Title": "pcre: Integer overflow when parsing callout numeric arguments",
           "Description": "libpcre in PCRE before 8.44 allows an integer overflow via a large number after a (?C substring.",
           "Severity": "MEDIUM",

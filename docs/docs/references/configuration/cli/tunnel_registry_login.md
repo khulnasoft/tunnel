@@ -37,4 +37,5 @@ tunnel registry login SERVER [flags]
 
 ### SEE ALSO
 
-- [tunnel registry](tunnel_registry.md) - Manage registry authentication
+* [tunnel registry](tunnel_registry.md)	 - Manage registry authentication
+

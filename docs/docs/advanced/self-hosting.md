@@ -17,7 +17,7 @@ To host these databases in your own infrastructure:
 Use any container registry manipulation tool (e.g , [crane](https://github.com/google/go-containerregistry/blob/main/cmd/crane/doc/crane.md, [ORAS](https://oras.land), [regclient](https://github.com/regclient/regclient/tree/main)) to copy the images to your destination registry.
 
 !!! note
-You will need to keep the databases updated in order to maintain relevant scanning results over time.
+    You will need to keep the databases updated in order to maintain relevant scanning results over time.
 
 ### Configure Tunnel
 
@@ -35,11 +35,11 @@ If the registry requires authentication, you can configure it as described in th
 
 When serving, proxying, or manipulating Tunnel's databases, note that the media type of the OCI layer is not a standard container image type:
 
-| DB               | Media Type                                                   | Reference                                                                      |
-| ---------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `tunnel-db`      | `application/vnd.khulnasoft.tunnel.db.layer.v1.tar+gzip`     | <https://github.com/khulnasoft-lab/tunnel-db/pkgs/container/tunnel-db>                 |
-| `tunnel-java-db` | `application/vnd.khulnasoft.tunnel.javadb.layer.v1.tar+gzip` | https://github.com/khulnasoft-lab/tunnel-java-db/pkgs/container/tunnel-java-db |
-| `tunnel-checks`  | `application/vnd.oci.image.manifest.v1+json`                 | https://github.com/khulnasoft/tunnel-checks/pkgs/container/tunnel-checks       |
+DB | Media Type | Reference
+--- | --- | ---
+`tunnel-db` | `application/vnd.aquasec.tunnel.db.layer.v1.tar+gzip` | <https://github.com/khulnasoft-lab/tunnel-db/pkgs/container/tunnel-db>
+`tunnel-java-db` | `application/vnd.aquasec.tunnel.javadb.layer.v1.tar+gzip` | https://github.com/khulnasoft-lab/tunnel-java-db/pkgs/container/tunnel-java-db
+`tunnel-checks` | `application/vnd.oci.image.manifest.v1+json` | https://github.com/khulnasoft/tunnel-audit/pkgs/container/tunnel-checks
 
 ## Manual cache population
 
@@ -53,21 +53,22 @@ On a machine with internet access, pull the database container archive from the 
 Note that these examples operate in the current working directory.
 
 === "Using ORAS"
-This example uses [ORAS](https://oras.land), but you can use any other container registry manipulation tool.
+    This example uses [ORAS](https://oras.land), but you can use any other container registry manipulation tool.
 
     ```shell
     oras pull ghcr.io/khulnasoft-lab/tunnel-db:2
     ```
-
+    
     You should now have a file called `db.tar.gz`. Next, extract it to reveal the db files:
-
+    
     ```shell
     tar -xzf db.tar.gz
     ```
+    
 
 === "Using Tunnel"
-This example uses Tunnel to pull the database container archive. The `--cache-dir` flag makes Tunnel download the database files into our current working directory. The `--download-db-only` flag tells Tunnel to only download the database files, not to scan any images.
-
+    This example uses Tunnel to pull the database container archive. The `--cache-dir` flag makes Tunnel download the database files into our current working directory. The `--download-db-only` flag tells Tunnel to only download the database files, not to scan any images.
+    
     ```shell
     tunnel image --cache-dir . --download-db-only
     ```
@@ -111,21 +112,21 @@ For Java DB the process is the same, except for the following:
 
 To make a copy of VEX Hub in a location that is accessible to Tunnel.
 
-1. Download the [VEX Hub](https://github.com/khulnasoft/vexhub) archive from: <https://github.com/khulnasoft/vexhub/archive/refs/heads/main.zip>.
-1. Download the [VEX Hub Repository Manifest](https://github.com/khulnasoft/vex-repo-spec#2-repository-manifest) file from: <https://github.com/khulnasoft/vexhub/blob/main/vex-repository.json>.
+1. Download the [VEX Hub](https://github.com/aquasecurity/vexhub) archive from: <https://github.com/aquasecurity/vexhub/archive/refs/heads/main.zip>.
+1. Download the [VEX Hub Repository Manifest](https://github.com/aquasecurity/vex-repo-spec#2-repository-manifest) file from: <https://github.com/aquasecurity/vexhub/blob/main/vex-repository.json>.
 1. Create or identify an internal HTTP server that can serve the VEX Hub repository in your environment (e.g `https://server.local`).
 1. Make the downloaded archive file available for serving from your server (e.g `https://server.local/main.zip`).
-1. Modify the downloaded manifest file's [Location URL](https://github.com/khulnasoft/vex-repo-spec?tab=readme-ov-file#locations-subfields) field to the URL of the archive file on your server (e.g `url: https://server.local/main.zip`).
-1. Make the manifest file available for serving from your server under the `/.well-known` path (e.g `https://server.local/.well-known/vex-repository.json`).
+1. Modify the downloaded manifest file's [Location URL](https://github.com/aquasecurity/vex-repo-spec?tab=readme-ov-file#locations-subfields) field to the URL of the archive file on your server (e.g `url: https://server.local/main.zip`).
+1. Make the manifest file available for serving from your server under the `/.well-known` path  (e.g `https://server.local/.well-known/vex-repository.json`).
 
 ### Configure Tunnel
 
 To configure Tunnel to use the local VEX Repository:
 
-1. Locate your [Tunnel VEX configuration file](../supply-chain/vex/repo/#configuration-file) by running `tunnel vex repo init`. Make the following changes to the file.
+1. Locate your [Tunnel VEX configuration file](../supply-chain/vex/repo.md#configuration-file) by running `tunnel vex repo init`. Make the following changes to the file.
 1. Disable the default VEX Hub repo (`enabled: false`)
-1. Add your internal VEX Hub repository as a [custom repository](../supply-chain/vex/repo/#custom-repositories) with the URL pointing to your local server (e.g `url: https://server.local`).
+1. Add your internal VEX Hub repository as a [custom repository](../supply-chain/vex/repo.md#custom-repositories) with the URL pointing to your local server (e.g `url: https://server.local`).
 
 ### Authentication
 
-If your server requires authentication, you can configure it as described in the [VEX Repository Authentication document](../supply-chain/vex/repo/#authentication).
+If your server requires authentication, you can configure it as described in the [VEX Repository Authentication document](../supply-chain/vex/repo.md#authentication).

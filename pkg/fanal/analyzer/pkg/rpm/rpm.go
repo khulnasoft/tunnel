@@ -17,7 +17,6 @@ import (
 	"github.com/khulnasoft/tunnel/pkg/digest"
 	"github.com/khulnasoft/tunnel/pkg/fanal/analyzer"
 	"github.com/khulnasoft/tunnel/pkg/fanal/types"
-	"github.com/khulnasoft/tunnel/pkg/fanal/utils"
 	"github.com/khulnasoft/tunnel/pkg/log"
 )
 
@@ -198,7 +197,7 @@ func (a rpmPkgAnalyzer) listPkgs(ctx context.Context, db RPMDB) (types.Packages,
 }
 
 func (a rpmPkgAnalyzer) Required(filePath string, _ os.FileInfo) bool {
-	return utils.StringInSlice(filePath, requiredFiles)
+	return slices.Contains(requiredFiles, filePath)
 }
 
 func (a rpmPkgAnalyzer) Type() analyzer.Type {

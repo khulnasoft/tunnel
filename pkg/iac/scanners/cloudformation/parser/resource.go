@@ -4,9 +4,9 @@ import (
 	"io/fs"
 	"strings"
 
-	"github.com/liamg/jfather"
 	"gopkg.in/yaml.v3"
 
+	"github.com/aquasecurity/jfather"
 	iacTypes "github.com/khulnasoft/tunnel/pkg/iac/types"
 )
 

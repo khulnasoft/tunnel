@@ -11,11 +11,11 @@ Tunnel supports them for
 ## Supported elements
 
 | Element                        | File                                                | Image[^1] | Rootfs[^2] | Filesystem[^3] | Repository[^4] |
-| ------------------------------ | --------------------------------------------------- | :-------: | :--------: | :------------: | :------------: |
-| [Bitnami packages](bitnami.md) | `/opt/bitnami/<component>/.spdx-<component>.spdx`   |    ✅     |     ✅     |       -        |       -        |
-| [Conda](conda.md)              | `<conda-root>/envs/<env>/conda-meta/<package>.json` |    ✅     |     ✅     |       -        |       -        |
-|                                | `environment.yml`                                   |     -     |     -      |       ✅       |       ✅       |
-| [RPM Archives](rpm.md)         | `*.rpm`                                             |  ✅[^5]   |   ✅[^5]   |     ✅[^5]     |     ✅[^5]     |
+|--------------------------------|-----------------------------------------------------|:---------:|:----------:|:--------------:|:--------------:|
+| [Bitnami packages](bitnami.md) | `/opt/bitnami/<component>/.spdx-<component>.spdx`   |     ✅     |     ✅      |       -        |       -        |
+| [Conda](conda.md)              | `<conda-root>/envs/<env>/conda-meta/<package>.json` |     ✅     |     ✅      |       -        |       -        |
+|                                | `environment.yml`                                   |     -     |     -      |       ✅        |       ✅        |
+| [RPM Archives](rpm.md)         | `*.rpm`                                             |   ✅[^5]   |   ✅[^5]    |     ✅[^5]      |     ✅[^5]      |
 
 [sbom]: ../../supply-chain/sbom.md
 [vuln]: ../../scanner/vulnerability.md

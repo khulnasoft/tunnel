@@ -6,7 +6,6 @@ Tunnel supports two targets for container images.
 - Container image metadata
 
 ## Files inside container images
-
 Container images consist of files.
 For instance, new files will be installed if you install a package.
 
@@ -20,7 +19,6 @@ Tunnel scans the files inside container images for
 By default, vulnerability and secret scanning are enabled, and you can configure that with `--scanners`.
 
 ### Vulnerabilities
-
 It is enabled by default.
 You can simply specify your image name (and a tag).
 It detects known vulnerabilities in your container image.
@@ -64,7 +62,6 @@ $ tunnel image --scanners vuln [YOUR_IMAGE_NAME]
 ```
 
 ### Misconfigurations
-
 It is supported, but it is not useful in most cases.
 As mentioned [here](../scanner/misconfiguration/index.md), Tunnel mainly supports Infrastructure as Code (IaC) files for misconfigurations.
 If your container image includes IaC files such as Kubernetes YAML files or Terraform files, you should enable this feature with `--scanners misconfig`.
@@ -74,7 +71,6 @@ $ tunnel image --scanners misconfig [YOUR_IMAGE_NAME]
 ```
 
 ### Secrets
-
 It is enabled by default.
 See [here](../scanner/secret.md) for the detail.
 
@@ -83,7 +79,6 @@ $ tunnel image [YOUR_IMAGE_NAME]
 ```
 
 ### Licenses
-
 It is disabled by default.
 See [here](../scanner/license.md) for the detail.
 
@@ -92,7 +87,6 @@ $ tunnel image --scanners license [YOUR_IMAGE_NAME]
 ```
 
 ## Container image metadata
-
 Container images have [configuration](https://github.com/opencontainers/image-spec/blob/2fb996805b3734779bf9a3a84dc9a9691ad7efdd/config.md).
 `docker inspect` and `docker history` show the information according to the configuration.
 
@@ -103,12 +97,11 @@ Tunnel scans the configuration of container images for
 
 They are disabled by default.
 You can enable them with `--image-config-scanners`.
-
+ 
 !!! tips
-The configuration can be exported as the JSON file by `docker save`.
+    The configuration can be exported as the JSON file by `docker save`.
 
 ### Misconfigurations
-
 Tunnel detects misconfigurations on the configuration of container images.
 The image config is converted into Dockerfile and Tunnel handles it as Dockerfile.
 See [here](../scanner/misconfiguration/index.md) for the detail of Dockerfile scanning.
@@ -133,7 +126,7 @@ HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argume
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
 
-See https://avd.khulnasoft.com/misconfig/ds002
+See https://avd.aquasec.com/misconfig/ds002
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 
@@ -141,7 +134,7 @@ LOW: Consider using 'COPY file:e4d600fc4c9c293efe360be7b30ee96579925d1b4634c9433
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 You should use COPY instead of ADD unless you want to extract a tar file. Note that an ADD command will extract a tar file, which adds the risk of Zip-based vulnerabilities. Accordingly, it is advised to use a COPY command, which does not extract tar files.
 
-See https://avd.khulnasoft.com/misconfig/ds005
+See https://avd.aquasec.com/misconfig/ds005
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
  alpine:3.17:1
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -151,21 +144,27 @@ See https://avd.khulnasoft.com/misconfig/ds005
 
 LOW: Add HEALTHCHECK instruction in your Dockerfile
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
-You shoud add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
 
-See https://avd.khulnasoft.com/misconfig/ds026
+See https://avd.aquasec.com/misconfig/ds026
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ```
-
 </details>
 
 !!! tip
-You can see how each layer is created with `docker history`.
+    You can see how each layer is created with `docker history`.
 
-The [AVD-DS-0016](https://avd.khulnasoft.com/misconfig/dockerfile/general/avd-ds-0016/) check is disabled for this scan type, see [issue](https://github.com/khulnasoft/tunnel/issues/7368) for details.
+#### Disabled checks
+
+The following checks are disabled for this scan type due to known issues. See the linked issues for more details.
+
+| Check ID | Reason | Issue |
+|----------|------------|--------|
+| [AVD-DS-0007](https://avd.aquasec.com/misconfig/dockerfile/general/avd-ds-0007/) | This check detects multiple `ENTRYPOINT` instructions in a stage, but since image history analysis does not identify stages, this check is not relevant for this scan type. | [#8364](https://github.com/khulnasoft/tunnel/issues/8364) |
+| [AVD-DS-0016](https://avd.aquasec.com/misconfig/dockerfile/general/avd-ds-0016/) | This check detects multiple `CMD` instructions in a stage, but since image history analysis does not identify stages, this check is not relevant for this scan type. | [#7368](https://github.com/khulnasoft/tunnel/issues/7368) |
+
 
 ### Secrets
-
 Tunnel detects secrets on the configuration of container images.
 The image config is converted into JSON and Tunnel scans the file for secrets.
 It is especially useful for environment variables that are likely to have credentials by accident.
@@ -218,7 +217,7 @@ GitHub Personal Access Token
 </details>
 
 !!! tip
-You can see environment variables with `docker inspect`.
+    You can see environment variables with `docker inspect`.
 
 ## Supported
 
@@ -239,7 +238,6 @@ search in Containerd. If the image is not found there either, the scan will
 fail and no more image sources will be searched.
 
 ### Docker Engine
-
 Tunnel tries to looks for the specified image in your local Docker Engine.
 It will be skipped if Docker Engine is not running locally.
 
@@ -248,8 +246,8 @@ If your docker socket is not the default path, you can override it via `DOCKER_H
 ### containerd
 
 !!! warning "EXPERIMENTAL"
-This feature might change without preserving backwards compatibility.
-
+    This feature might change without preserving backwards compatibility.
+    
 Tunnel tries to looks for the specified image in your local [containerd](https://containerd.io/).
 It will be skipped if containerd is not running locally.
 
@@ -279,11 +277,12 @@ $ tunnel image khulnasoft/nginx
 ### Podman
 
 !!! warning "EXPERIMENTAL"
-This feature might change without preserving backwards compatibility.
+    This feature might change without preserving backwards compatibility.
 
 Scan your image in Podman (>=2.0) running locally. The remote Podman is not supported.
 If you prefer to keep the socket open at all times, then before performing Tunnel commands, you can enable the podman.sock systemd service on your machine.
 For more details, see [here](https://github.com/containers/podman/blob/master/docs/tutorials/remote_client.md#enable-the-podman-service-on-the-server-machine).
+
 
 ```bash
 $ systemctl --user enable --now podman.socket
@@ -305,14 +304,13 @@ $ tunnel image test
 If you prefer not to keep the socket open at all times, but to limit the socket opening for your tunnel scanning duration only then you can scan your image with the following command:
 
 ```bash
-podman system service --time=0 "${TMP_PODMAN_SOCKET}" &
-PODMAN_SYSTEM_SERVICE_PID="$!"
+podman system service --time=0 "${TMP_PODMAN_SOCKET}" &                                                                                                                                                             
+PODMAN_SYSTEM_SERVICE_PID="$!"                                                                                                                                                                                      
 tunnel image --podman-host="${TMP_PODMAN_SOCKET}" --docker-host="${TMP_PODMAN_SOCKET}" test
 kill "${PODMAN_SYSTEM_SERVICE_PID}"
 ```
 
 ### Container Registry
-
 Tunnel supports registries that comply with the following specifications.
 
 - [Docker Registry HTTP API V2](https://docs.docker.com/registry/spec/api/)
@@ -322,14 +320,13 @@ You can configure credentials with `tunnel registry login`.
 See [here](../advanced/private-registries/index.md) for the detail.
 
 ### Tar Files
-
 Tunnel supports image tar files generated by the following tools.
 
 - [Docker Image Specification](https://github.com/moby/moby/tree/master/image/spec)
-  - [Moby Project](https://github.com/moby/moby/)
-  - [Buildah](https://github.com/containers/buildah)
-  - [Podman](https://github.com/containers/podman)
-  - [img](https://github.com/genuinetools/img)
+    - [Moby Project](https://github.com/moby/moby/)
+    - [Buildah](https://github.com/containers/buildah)
+    - [Podman](https://github.com/containers/podman)
+    - [img](https://github.com/genuinetools/img)
 - [Kaniko](https://github.com/GoogleContainerTools/kaniko)
 
 ```
@@ -360,7 +357,7 @@ Total: 3 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 3, CRITICAL: 0)
 +----------+------------------+----------+-------------------+---------------+---------------------------------------+
 | gmp      | CVE-2021-43618   | HIGH     | 6.2.1-r0          | 6.2.1-r1      | gmp: Integer overflow and resultant   |
 |          |                  |          |                   |               | buffer overflow via crafted input     |
-|          |                  |          |                   |               | -->avd.khulnasoft.com/nvd/cve-2021-43618 |
+|          |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-43618 |
 +----------+                  +          +                   +               +                                       +
 | gmp-dev  |                  |          |                   |               |                                       |
 |          |                  |          |                   |               |                                       |
@@ -384,7 +381,6 @@ Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
 </details>
 
 ### OCI Layout
-
 Tunnel supports image directories compliant with [Open Container Image Layout Specification](https://github.com/opencontainers/image-spec/blob/master/spec.md).
 
 Buildah:
@@ -402,7 +398,6 @@ $ tunnel image --input /path/to/alpine
 ```
 
 Referencing specific images can be done by their tag or by their manifest digest:
-
 ```
 # Referenced by tag
 $ tunnel image --input /path/to/alpine:3.15
@@ -412,16 +407,24 @@ $ tunnel image --input /path/to/alpine@sha256:82389ea44e50c696aba18393b168a83392
 ```
 
 ## SBOM
-
 Tunnel supports the generation of Software Bill of Materials (SBOM) for container images and the search for SBOMs during vulnerability scanning.
 
 ### Generation
-
 Tunnel can generate SBOM for container images.
-See [here](../supply-chain/sbom.md) for the detail.
+See [here](../supply-chain/sbom.md) for details.
 
-### Discovery
+### Discover SBOM inside container images
+Tunnel can search for Software Bill of Materials (SBOMs) within container image files and scan their components for vulnerabilities.
 
+#### Third-party SBOM files
+SBOM specifications define key requirements for component documentation[^2].
+However, different tools and systems often have varying approaches to documenting component types and their relationships.
+
+Due to these variations, Tunnel cannot always accurately interpret SBOMs generated by other tools.
+For example, it may have difficulty determining the correct file paths to component information files (such as lock files or binaries).
+In such cases, Tunnel uses the path to the scanned SBOM file itself to maintain traceability and ensure accurate dependency reporting.
+
+### Discover SBOM referencing the container image
 Tunnel can search for Software Bill of Materials (SBOMs) that reference container images.
 If an SBOM is found, the vulnerability scan is performed using the SBOM instead of the container image.
 By using the SBOM, you can perform a vulnerability scan more quickly, as it allows you to skip pulling the container image and analyzing its layers.
@@ -452,7 +455,7 @@ For more information about Rekor, please refer to [its documentation](../supply-
 ## Compliance
 
 !!! warning "EXPERIMENTAL"
-This feature might change without preserving backwards compatibility.
+    This feature might change without preserving backwards compatibility.
 
 This section describes container image specific compliance reports.
 For an overview of Tunnel's Compliance feature, including working with custom compliance, check out the [Compliance documentation](../compliance/compliance.md).
@@ -461,9 +464,9 @@ For an overview of Tunnel's Compliance feature, including working with custom co
 
 The following reports are available out of the box:
 
-| Compliance                             | Version | Name for command   | More info                                                                                      |
-| -------------------------------------- | ------- | ------------------ | ---------------------------------------------------------------------------------------------- |
-| CIS Docker Community Edition Benchmark | 1.1.0   | `docker-cis-1.6.0` | [Link](https://www.khulnasoft.com/cloud-native-academy/docker-container/docker-cis-benchmark/) |
+| Compliance                             | Version | Name for command | More info                                                                                   |
+|----------------------------------------|---------|------------------|---------------------------------------------------------------------------------------------|
+| CIS Docker Community Edition Benchmark | 1.1.0   | `docker-cis-1.6.0`     | [Link](https://www.khulnasoft.com/cloud-native-academy/docker-container/docker-cis-benchmark/) |
 
 ### Examples
 
@@ -474,16 +477,19 @@ tunnel image --compliance docker-cis-1.6.0 [YOUR_IMAGE_NAME]
 ```
 
 !!! note
-The `Issues` column represent the total number of failed checks for this control.
+    The `Issues` column represent the total number of failed checks for this control.
 
 ## Authentication
-
 Please reference [this page](../advanced/private-registries/index.md).
 
+## Scan Cache
+When scanning container images, it stores analysis results in the cache, using the image ID and the layer IDs as the key.
+This approach enables faster scans of the same container image or different images that share layers.
+
+More details are available in the [cache documentation](../configuration/cache.md#scan-cache-backend).
+
 ## Options
-
 ### Scan Image on a specific Architecture and OS
-
 By default, Tunnel loads an image on a "linux/amd64" machine.
 To customise this, pass a `--platform` argument in the format OS/Architecture for the image:
 
@@ -504,7 +510,7 @@ $ tunnel image --platform=linux/arm alpine:3.16.1
 2022-10-25T21:00:50.972+0300    INFO    Vulnerability scanning is enabled
 2022-10-25T21:00:50.972+0300    INFO    Secret scanning is enabled
 2022-10-25T21:00:50.972+0300    INFO    If your scanning is slow, please try '--scanners vuln' to disable secret scanning
-2022-10-25T21:00:50.972+0300    INFO    Please see also https://khulnasoft.github.io/tunnel/dev/docs/secret/scanning/#recommendation for faster secret detection
+2022-10-25T21:00:50.972+0300    INFO    Please see also https://tunnel.dev/dev/docs/secret/scanning/#recommendation for faster secret detection
 2022-10-25T21:00:56.190+0300    INFO    Detected OS: alpine
 2022-10-25T21:00:56.190+0300    INFO    Detecting Alpine vulnerabilities...
 2022-10-25T21:00:56.191+0300    INFO    Number of language-specific files: 0
@@ -518,14 +524,13 @@ Total: 1 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 1)
 ├─────────┼────────────────┼──────────┼───────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
 │ zlib    │ CVE-2022-37434 │ CRITICAL │ 1.2.12-r1         │ 1.2.12-r2     │ zlib: heap-based buffer over-read and overflow in inflate() │
 │         │                │          │                   │               │ in inflate.c via a...                                       │
-│         │                │          │                   │               │ https://avd.khulnasoft.com/nvd/cve-2022-37434                  │
+│         │                │          │                   │               │ https://avd.aquasec.com/nvd/cve-2022-37434                  │
 └─────────┴────────────────┴──────────┴───────────────────┴───────────────┴─────────────────────────────────────────────────────────────┘
 ```
 
 </details>
 
 ### Configure Docker daemon socket to connect to.
-
 You can configure Docker daemon socket with `DOCKER_HOST` or `--docker-host`.
 
 ```shell
@@ -533,14 +538,21 @@ $ tunnel image --docker-host tcp://127.0.0.1:2375 YOUR_IMAGE
 ```
 
 ### Configure Podman daemon socket to connect to.
-
 You can configure Podman daemon socket with `--podman-host`.
 
 ```shell
 $ tunnel image --podman-host /run/user/1000/podman/podman.sock YOUR_IMAGE
 ```
+
 ### Prevent scanning oversized container images
-Use the `--max-image-size` flag to avoid scanning images that exceed a specified size. The size is specified in a human-readable format (e.g., `100MB`, `10GB`). If the compressed image size exceeds the specified threshold, an error is returned immediately. Otherwise, all layers are pulled, stored in a temporary folder, and their uncompressed size is verified before scanning. Temporary layers are always cleaned up, even after a successful scan.
+Use the `--max-image-size` flag to avoid scanning images that exceed a specified size. The size is specified in a human-readable format[^1] (e.g., `100MB`, `10GB`).
+
+An error is returned in the following cases:
+
+- if the compressed image size exceeds the limit,
+- if the accumulated size of the uncompressed layers exceeds the limit during their pulling.
+
+The layers are pulled into a temporary folder during their pulling and are always cleaned up, even after a successful scan.
 
 !!! warning "EXPERIMENTAL"
     This feature might change without preserving backwards compatibility.
@@ -555,3 +567,7 @@ $ tunnel image --max-image-size=10GB myapp:latest
 Error Output:
 ```bash
 Error: uncompressed image size (15GB) exceeds maximum allowed size (10GB)
+```
+
+[^1]: Tunnel uses decimal (SI) prefixes (based on 1000) for size.
+[^2]: SPDX uses `package` instead of `component`.

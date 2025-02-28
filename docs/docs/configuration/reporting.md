@@ -85,10 +85,10 @@ Total: 2 (HIGH: 1, CRITICAL: 1)
 ├──────────────────┼────────────────┼──────────┼───────────────────┼───────────────┼────────────────────────────────────────────────────────────┤
 │ follow-redirects │ CVE-2022-0155  │ HIGH     │ 1.14.6            │ 1.14.7        │ follow-redirects: Exposure of Private Personal Information │
 │                  │                │          │                   │               │ to an Unauthorized Actor                                   │
-│                  │                │          │                   │               │ https://avd.khulnasoft.com/nvd/cve-2022-0155                  │
+│                  │                │          │                   │               │ https://avd.aquasec.com/nvd/cve-2022-0155                  │
 ├──────────────────┼────────────────┼──────────┼───────────────────┼───────────────┼────────────────────────────────────────────────────────────┤
 │ glob-parent      │ CVE-2020-28469 │ CRITICAL │ 3.1.0             │ 5.1.2         │ nodejs-glob-parent: Regular expression denial of service   │
-│                  │                │          │                   │               │ https://avd.khulnasoft.com/nvd/cve-2020-28469                 │
+│                  │                │          │                   │               │ https://avd.aquasec.com/nvd/cve-2020-28469                 │
 └──────────────────┴────────────────┴──────────┴───────────────────┴───────────────┴────────────────────────────────────────────────────────────┘
 
 Dependency Origin Tree (Reversed)
@@ -123,22 +123,6 @@ Then, you can try to update **axios@0.21.4** and **cra-append-sw@2.7.0** to reso
 ```
 $ tunnel image -f json -o results.json alpine:latest
 ```
-
-<details>
-<summary>Result</summary>
-
-```
-2024-12-26T22:01:18+05:30	INFO	[vuln] Vulnerability scanning is enabled
-2024-12-26T22:01:18+05:30	INFO	[secret] Secret scanning is enabled
-2024-12-26T22:01:18+05:30	INFO	[secret] If your scanning is slow, please try '--scanners vuln' to disable secret scanning
-2024-12-26T22:01:18+05:30	INFO	[secret] Please see also https://khulnasoft.github.io/tunnel/v0.58/docs/scanner/secret#recommendation for faster secret detection
-2024-12-26T22:01:18+05:30	INFO	Detected OS	family="alpine" version="3.20.3"
-2024-12-26T22:01:18+05:30	INFO	[alpine] Detecting vulnerabilities...	os_version="3.20" repository="3.20" pkg_num=14
-2024-12-26T22:01:18+05:30	INFO	Number of language-specific files	num=0
-2024-12-26T22:01:18+05:30	WARN	Using severities from other vendors for some vulnerabilities. Read https://khulnasoft.github.io/tunnel/v0.58/docs/scanner/vulnerability#severity-selection for details.
-```
-
-</details>
 
 <details>
 <summary>JSON</summary>
@@ -219,7 +203,7 @@ $ tunnel image -f json -o results.json alpine:latest
           "Layer": {
             "DiffID": "sha256:651d9022c23486dfbd396c13db293af6845731cbd098a5f5606db4bc9f5573e8"
           },
-          "PrimaryURL": "https://avd.khulnasoft.com/nvd/cve-2024-9143",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-9143",
           "DataSource": {
             "ID": "alpine",
             "Name": "Alpine Secdb",
@@ -271,7 +255,7 @@ $ tunnel image -f json -o results.json alpine:latest
           "Layer": {
             "DiffID": "sha256:651d9022c23486dfbd396c13db293af6845731cbd098a5f5606db4bc9f5573e8"
           },
-          "PrimaryURL": "https://avd.khulnasoft.com/nvd/cve-2024-9143",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-9143",
           "DataSource": {
             "ID": "alpine",
             "Name": "Alpine Secdb",

@@ -58,60 +58,60 @@ var (
 		},
 	}
 	goModulePackage = ftypes.Package{
-		ID:           "github.com/khulnasoft/go-module@v1.0.0",
-		Name:         "github.com/khulnasoft/go-module",
+		ID:           "github.com/aquasecurity/go-module@v1.0.0",
+		Name:         "github.com/aquasecurity/go-module",
 		Version:      "v1.0.0",
 		Relationship: ftypes.RelationshipRoot,
 		Identifier: ftypes.PkgIdentifier{
 			UID: "03",
 			PURL: &packageurl.PackageURL{
 				Type:      packageurl.TypeGolang,
-				Namespace: "github.com/khulnasoft",
+				Namespace: "github.com/aquasecurity",
 				Name:      "go-module",
 				Version:   "v1.0.0",
 			},
 		},
 	}
 	goDirectPackage1 = ftypes.Package{
-		ID:           "github.com/khulnasoft/go-direct1@v2.0.0",
-		Name:         "github.com/khulnasoft/go-direct1",
+		ID:           "github.com/aquasecurity/go-direct1@v2.0.0",
+		Name:         "github.com/aquasecurity/go-direct1",
 		Version:      "v2.0.0",
 		Relationship: ftypes.RelationshipDirect,
 		Identifier: ftypes.PkgIdentifier{
 			UID: "04",
 			PURL: &packageurl.PackageURL{
 				Type:      packageurl.TypeGolang,
-				Namespace: "github.com/khulnasoft",
+				Namespace: "github.com/aquasecurity",
 				Name:      "go-direct1",
 				Version:   "v2.0.0",
 			},
 		},
 	}
 	goDirectPackage2 = ftypes.Package{
-		ID:           "github.com/khulnasoft/go-direct2@v3.0.0",
-		Name:         "github.com/khulnasoft/go-direct2",
+		ID:           "github.com/aquasecurity/go-direct2@v3.0.0",
+		Name:         "github.com/aquasecurity/go-direct2",
 		Version:      "v3.0.0",
 		Relationship: ftypes.RelationshipDirect,
 		Identifier: ftypes.PkgIdentifier{
 			UID: "05",
 			PURL: &packageurl.PackageURL{
 				Type:      packageurl.TypeGolang,
-				Namespace: "github.com/khulnasoft",
+				Namespace: "github.com/aquasecurity",
 				Name:      "go-direct2",
 				Version:   "v3.0.0",
 			},
 		},
 	}
 	goTransitivePackage = ftypes.Package{
-		ID:           "github.com/khulnasoft/go-transitive@v4.0.0",
-		Name:         "github.com/khulnasoft/go-transitive",
+		ID:           "github.com/aquasecurity/go-transitive@v4.0.0",
+		Name:         "github.com/aquasecurity/go-transitive",
 		Version:      "v4.0.0",
 		Relationship: ftypes.RelationshipIndirect,
 		Identifier: ftypes.PkgIdentifier{
 			UID: "06",
 			PURL: &packageurl.PackageURL{
 				Type:      packageurl.TypeGolang,
-				Namespace: "github.com/khulnasoft",
+				Namespace: "github.com/aquasecurity",
 				Name:      "go-transitive",
 				Version:   "v4.0.0",
 			},
@@ -646,9 +646,9 @@ func goSinglePathResult(result types.Result) types.Result {
 	result.Type = ftypes.GoModule
 	result.Class = types.ClassLangPkg
 
-	// - pkg:golang/github.com/khulnasoft/go-module@v1.0.0
-	//     - pkg:golang/github.com/khulnasoft/go-direct1@v2.0.0
-	//         - pkg:golang/github.com/khulnasoft/go-transitive@v4.0.0
+	// - pkg:golang/github.com/aquasecurity/go-module@v1.0.0
+	//     - pkg:golang/github.com/aquasecurity/go-direct1@v2.0.0
+	//         - pkg:golang/github.com/aquasecurity/go-transitive@v4.0.0
 	goModule := clonePackage(goModulePackage)
 	goDirect1 := clonePackage(goDirectPackage1)
 	goTransitive := clonePackage(goTransitivePackage)
@@ -667,11 +667,11 @@ func goMultiPathResult(result types.Result) types.Result {
 	result.Type = ftypes.GoModule
 	result.Class = types.ClassLangPkg
 
-	// - pkg:golang/github.com/khulnasoft/go-module@v2.0.0
-	//     - pkg:golang/github.com/khulnasoft/go-direct1@v3.0.0
-	//         - pkg:golang/github.com/khulnasoft/go-transitive@v5.0.0
-	//     - pkg:golang/github.com/khulnasoft/go-direct2@v4.0.0
-	//         - pkg:golang/github.com/khulnasoft/go-transitive@v5.0.0
+	// - pkg:golang/github.com/aquasecurity/go-module@v2.0.0
+	//     - pkg:golang/github.com/aquasecurity/go-direct1@v3.0.0
+	//         - pkg:golang/github.com/aquasecurity/go-transitive@v5.0.0
+	//     - pkg:golang/github.com/aquasecurity/go-direct2@v4.0.0
+	//         - pkg:golang/github.com/aquasecurity/go-transitive@v5.0.0
 	goModule := clonePackage(goModulePackage)
 	goDirect1 := clonePackage(goDirectPackage1)
 	goDirect2 := clonePackage(goDirectPackage2)

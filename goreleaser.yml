@@ -1,35 +1,74 @@
+version: 2
+
 project_name: tunnel
 builds:
-  -
-    main: cmd/tunnel/main.go
+  - id: build-linux
+    main: ./cmd/tunnel/
     binary: tunnel
     ldflags:
       - -s -w
       - "-extldflags '-static'"
-      - -X main.version={{.Version}}
+      - -X github.com/khulnasoft/tunnel/pkg/version/app.ver={{.Version}}
     env:
       - CGO_ENABLED=0
     goos:
-      - darwin
       - linux
-      - freebsd
     goarch:
-      - amd64
       - 386
       - arm
+      - amd64
       - arm64
       - s390x
       - ppc64le
     goarm:
       - 7
-    ignore:
-      - goos: darwin
-        goarch: 386
-      # modernc.org/sqlite doesn't support the following pairs
-      - goos: freebsd
-        goarch: arm
-      - goos: freebsd
-        goarch: arm64
+  - id: build-bsd
+    main: ./cmd/tunnel/
+    binary: tunnel
+    ldflags:
+      - -s -w
+      - "-extldflags '-static'"
+      - -X github.com/khulnasoft/tunnel/pkg/version/app.ver={{.Version}}
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - freebsd
+    goarch:
+      # modernc.org/sqlite doesn't support freebsd/arm64, etc.
+      - 386
+      - amd64
+  - id: build-macos
+    main: ./cmd/tunnel/
+    binary: tunnel
+    ldflags:
+      - -s -w
+      - "-extldflags '-static'"
+      - -X github.com/khulnasoft/tunnel/pkg/version/app.ver={{.Version}}
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    goarm:
+      - 7
+  - id: build-windows
+    main: ./cmd/tunnel/
+    binary: tunnel
+    ldflags:
+      - -s -w
+      - "-extldflags '-static'"
+      - -X github.com/khulnasoft/tunnel/pkg/version/app.ver={{.Version}}
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - windows
+    goarch:
+      # modernc.org/sqlite doesn't support windows/386 and windows/arm, etc.
+      - amd64
+    goarm:
+      - 7
 
 release:
     extra_files:
@@ -43,51 +82,60 @@ nfpms:
       - rpm
     vendor: "khulnasoft"
     homepage: "https://github.com/khulnasoft"
-    maintainer: "Md Sulaiman <dev.sulaiman@icloud.com>"
+    maintainer: "Teppei Fukuda <knqyf263@gmail.com>"
     description: "A Fast Vulnerability Scanner for Containers"
     license: "Apache-2.0"
-    file_name_template: "{{.ProjectName}}_{{.Version}}_{{.Os}}-{{.Arch}}"
-    replacements:
-      amd64: 64bit
-      386: 32bit
-      arm: ARM
-      arm64: ARM64
-      ppc64le: PPC64LE
-      darwin: macOS
-      linux: Linux
-      openbsd: OpenBSD
-      netbsd: NetBSD
-      freebsd: FreeBSD
-      dragonfly: DragonFlyBSD
+    file_name_template: >-
+      {{ .ProjectName }}_{{ .Version }}_
+      {{- if eq .Os "darwin" }}macOS
+      {{- else if eq .Os "openbsd" }}OpenBSD
+      {{- else if eq .Os "netbsd" }}NetBSD
+      {{- else if eq .Os "freebsd" }}FreeBSD
+      {{- else if eq .Os "dragonfly" }}DragonFlyBSD
+      {{- else}}{{- title .Os }}{{ end }}-
+      {{- if eq .Arch "amd64" }}64bit
+      {{- else if eq .Arch "386" }}32bit
+      {{- else if eq .Arch "arm" }}ARM
+      {{- else if eq .Arch "arm64" }}ARM64
+      {{- else if eq .Arch "ppc64le" }}PPC64LE
+      {{- else }}{{ .Arch }}{{ end }}
     contents:
      - src: contrib/*.tpl
        dst: /usr/local/share/tunnel/templates
+    rpm:
+      signature:
+         key_file: '{{ .Env.GPG_FILE }}'
 
 archives:
-  -
+  - id: archive
     format: tar.gz
-    name_template: "{{.ProjectName}}_{{.Version}}_{{.Os}}-{{.Arch}}"
-    replacements:
-      amd64: 64bit
-      386: 32bit
-      arm: ARM
-      arm64: ARM64
-      ppc64le: PPC64LE
-      darwin: macOS
-      linux: Linux
-      openbsd: OpenBSD
-      netbsd: NetBSD
-      freebsd: FreeBSD
-      dragonfly: DragonFlyBSD
+    name_template: >-
+      {{ .ProjectName }}_{{ .Version }}_
+      {{- if eq .Os "darwin" }}macOS
+      {{- else if eq .Os "linux" }}Linux
+      {{- else if eq .Os "openbsd" }}OpenBSD
+      {{- else if eq .Os "netbsd" }}NetBSD
+      {{- else if eq .Os "freebsd" }}FreeBSD
+      {{- else if eq .Os "dragonfly" }}DragonFlyBSD
+      {{- else}}{{- .Os }}{{ end }}-
+      {{- if eq .Arch "amd64" }}64bit
+      {{- else if eq .Arch "386" }}32bit
+      {{- else if eq .Arch "arm" }}ARM
+      {{- else if eq .Arch "arm64" }}ARM64
+      {{- else if eq .Arch "ppc64le" }}PPC64LE
+      {{- else }}{{ .Arch }}{{ end }}
     files:
       - README.md
       - LICENSE
       - contrib/*.tpl
+    format_overrides:
+      - goos: windows
+        format: zip
 
 
 brews:
   -
-    tap:
+    repository:
       owner: khulnasoft
       name: homebrew-tunnel
     homepage: "https://github.com/khulnasoft/tunnel"
@@ -107,7 +155,7 @@ dockers:
     goos: linux
     goarch: amd64
     ids:
-      - tunnel
+      - build-linux
     build_flag_templates:
       - "--label=org.opencontainers.image.title={{ .ProjectName }}"
       - "--label=org.opencontainers.image.description=A Fast Vulnerability Scanner for Containers"
@@ -117,7 +165,7 @@ dockers:
       - "--label=org.opencontainers.image.source=https://github.com/khulnasoft/tunnel"
       - "--label=org.opencontainers.image.revision={{ .FullCommit }}"
       - "--label=org.opencontainers.image.url=https://www.khulnasoft.com/products/tunnel/"
-      - "--label=org.opencontainers.image.documentation=https://khulnasoft.github.io/tunnel/v{{ .Version }}/"
+      - "--label=org.opencontainers.image.documentation=https://tunnel.dev/v{{ .Version }}/"
       - "--platform=linux/amd64"
     extra_files:
     - contrib/
@@ -132,7 +180,7 @@ dockers:
     goos: linux
     goarch: arm64
     ids:
-      - tunnel
+      - build-linux
     build_flag_templates:
       - "--label=org.opencontainers.image.title={{ .ProjectName }}"
       - "--label=org.opencontainers.image.description=A Fast Vulnerability Scanner for Containers"
@@ -142,7 +190,7 @@ dockers:
       - "--label=org.opencontainers.image.source=https://github.com/khulnasoft/tunnel"
       - "--label=org.opencontainers.image.revision={{ .FullCommit }}"
       - "--label=org.opencontainers.image.url=https://www.khulnasoft.com/products/tunnel/"
-      - "--label=org.opencontainers.image.documentation=https://khulnasoft.github.io/tunnel/v{{ .Version }}/"
+      - "--label=org.opencontainers.image.documentation=https://tunnel.dev/v{{ .Version }}/"
       - "--platform=linux/arm64"
     extra_files:
     - contrib/
@@ -157,7 +205,7 @@ dockers:
     goos: linux
     goarch: s390x
     ids:
-      - tunnel
+      - build-linux
     build_flag_templates:
       - "--label=org.opencontainers.image.title={{ .ProjectName }}"
       - "--label=org.opencontainers.image.description=A Fast Vulnerability Scanner for Containers"
@@ -167,7 +215,7 @@ dockers:
       - "--label=org.opencontainers.image.source=https://github.com/khulnasoft/tunnel"
       - "--label=org.opencontainers.image.revision={{ .FullCommit }}"
       - "--label=org.opencontainers.image.url=https://www.khulnasoft.com/products/tunnel/"
-      - "--label=org.opencontainers.image.documentation=https://khulnasoft.github.io/tunnel/v{{ .Version }}/"
+      - "--label=org.opencontainers.image.documentation=https://tunnel.dev/v{{ .Version }}/"
       - "--platform=linux/s390x"
     extra_files:
     - contrib/
@@ -182,7 +230,7 @@ dockers:
     goos: linux
     goarch: ppc64le
     ids:
-      - tunnel
+      - build-linux
     build_flag_templates:
       - "--label=org.opencontainers.image.title={{ .ProjectName }}"
       - "--label=org.opencontainers.image.description=A Fast Vulnerability Scanner for Containers"
@@ -192,7 +240,7 @@ dockers:
       - "--label=org.opencontainers.image.source=https://github.com/khulnasoft/tunnel"
       - "--label=org.opencontainers.image.revision={{ .FullCommit }}"
       - "--label=org.opencontainers.image.url=https://www.khulnasoft.com/products/tunnel/"
-      - "--label=org.opencontainers.image.documentation=https://khulnasoft.github.io/tunnel/v{{ .Version }}/"
+      - "--label=org.opencontainers.image.documentation=https://tunnel.dev/v{{ .Version }}/"
       - "--platform=linux/ppc64le"
     extra_files:
     - contrib/
@@ -247,6 +295,7 @@ signs:
     - "--output-certificate=${certificate}"
     - "--output-signature=${signature}"
     - "${artifact}"
+    - "--yes"
   artifacts: all
   output: true
 
@@ -259,3 +308,4 @@ docker_signs:
   args:
   - 'sign'
   - '${artifact}'
+  - '--yes'

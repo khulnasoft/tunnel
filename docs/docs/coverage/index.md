@@ -1,5 +1,4 @@
 # Scanning Coverage
-
 Tunnel can detect security issues in many different platforms, languages and configuration files.
 This section gives a general overview of that coverage, and can help answer the frequently asked question "Does Tunnel support X?".
 For more detailed information about the specific platforms and languages, check the relevant documentation.

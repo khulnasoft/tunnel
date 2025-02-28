@@ -23,5 +23,6 @@
 
 ### SEE ALSO
 
-- [tunnel](tunnel.md) - Unified security scanner
-- [tunnel vex repo](tunnel_vex_repo.md) - Manage VEX repositories
+* [tunnel](tunnel.md)	 - Unified security scanner
+* [tunnel vex repo](tunnel_vex_repo.md)	 - Manage VEX repositories
+

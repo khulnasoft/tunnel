@@ -5,16 +5,16 @@ This document explains Tunnel's network connectivity requirements, and how to co
 
 The following table lists all external resources that are required by Tunnel:
 
-| External Resource                   | Feature                     | Details                                                                              |
-| ----------------------------------- | --------------------------- | ------------------------------------------------------------------------------------ |
-| Vulnerability Database              | Vulnerability scanning      | [Tunnel DB](../scanner/vulnerability.md)                                             |
-| Java Vulnerability Database         | Java vulnerability scanning | [Tunnel Java DB](../coverage/language/java.md)                                       |
-| Checks Bundle                       | Misconfigurations scanning  | [Tunnel Checks](../scanner/misconfiguration/check/builtin.md)                        |
-| VEX Hub                             | VEX Hub                     | [VEX Hub](../supply-chain/vex/repo/#vex-hub)                                         |
-| Maven Central / Remote Repositories | Java vulnerability scanning | [Java Scanner/Remote Repositories](../coverage/language/java.md#remote-repositories) |
+External Resource | Feature | Details
+--- | --- | ---
+Vulnerability Database | Vulnerability scanning | [Tunnel DB](../scanner/vulnerability.md)
+Java Vulnerability Database | Java vulnerability scanning | [Tunnel Java DB](../coverage/language/java.md)
+Checks Bundle | Misconfigurations scanning | [Tunnel Checks](../scanner/misconfiguration/check/builtin.md)
+VEX Hub | VEX Hub | [VEX Hub](../supply-chain/vex/repo.md)
+Maven Central / Remote Repositories | Java vulnerability scanning | [Java Scanner/Remote Repositories](../coverage/language/java.md#remote-repositories)
 
 !!! note
-Tunnel is an open source project that relies on public free infrastructure. In case of extreme load, you may encounter rate limiting when Tunnel attempts to connect to external resources.
+    Tunnel is an open source project that relies on public free infrastructure. In case of extreme load, you may encounter rate limiting when Tunnel attempts to connect to external resources.
 
 The rest of this document details each resource's connectivity requirements and network related considerations.
 
@@ -30,10 +30,10 @@ Communication with OCI Registries follows the [OCI Distribution](https://github.
 
 The following hosts are known to be used by the default container registries:
 
-| Registry                  | Hosts                                                                          | Additional info                                                                                                                    |
-| ------------------------- | ------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
-| Google Artifact Registry  | <ul><li>`mirror.gcr.io`</li><li>`googlecode.l.googleusercontent.com`</li></ul> | [Google's IP addresses](https://support.google.com/a/answer/10026322?hl=en)                                                        |
-| GitHub Container Registry | <ul><li>`ghcr.io`</li><li>`pkg-containers.githubusercontent.com`</li></ul>     | [GitHub's IP addresses](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-githubs-ip-addresses) |
+Registry | Hosts | Additional info
+--- | --- | ---
+Google Artifact Registry | <ul><li>`mirror.gcr.io`</li><li>`googlecode.l.googleusercontent.com`</li></ul> | [Google's IP addresses](https://support.google.com/a/answer/10026322?hl=en)
+GitHub Container Registry | <ul><li>`ghcr.io`</li><li>`pkg-containers.githubusercontent.com`</li></ul> | [GitHub's IP addresses](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-githubs-ip-addresses)
 
 ### Self-hosting
 
@@ -47,7 +47,7 @@ Checks Bundle is embedded in the Tunnel binary (at build time), and will be used
 
 ### Connectivity Requirements
 
-VEX Hub is hosted as at <https://github.com/khulnasoft/vexhub>.
+VEX Hub is hosted as at <https://github.com/aquasecurity/vexhub>.
 
 Tunnel is fetching VEX Hub GitHub Repository directly using simple HTTPS requests.
 

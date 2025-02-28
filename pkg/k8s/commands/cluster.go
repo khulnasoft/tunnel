@@ -5,10 +5,10 @@ import (
 
 	"golang.org/x/xerrors"
 
-	tunnel_checks "github.com/khulnasoft/tunnel-checks"
-	k8sArtifacts "github.com/khulnasoft/tunnel-kubernetes/pkg/artifacts"
-	"github.com/khulnasoft/tunnel-kubernetes/pkg/k8s"
-	tunnelk8s "github.com/khulnasoft/tunnel-kubernetes/pkg/tunnelk8s"
+	tunnel_checks "github.com/khulnasoft/tunnel-audit"
+	k8sArtifacts "github.com/khulnasoft-lab/tunnel-kubernetes/pkg/artifacts"
+	"github.com/khulnasoft-lab/tunnel-kubernetes/pkg/k8s"
+	"github.com/khulnasoft-lab/tunnel-kubernetes/pkg/tunnelk8s"
 	"github.com/khulnasoft/tunnel/pkg/commands/operation"
 	"github.com/khulnasoft/tunnel/pkg/flag"
 	"github.com/khulnasoft/tunnel/pkg/log"

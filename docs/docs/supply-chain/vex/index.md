@@ -1,7 +1,7 @@
 # Vulnerability Exploitability Exchange (VEX)
 
 !!! warning "EXPERIMENTAL"
-This feature might change without preserving backwards compatibility.
+    This feature might change without preserving backwards compatibility.
 
 Tunnel supports filtering detected vulnerabilities using the [Vulnerability Exploitability eXchange (VEX)](https://www.ntia.gov/files/ntia/publications/vex_one-page_summary.pdf), a standardized format for sharing and exchanging information about vulnerabilities.
 By providing VEX during scanning, it is possible to filter vulnerabilities based on their status.
@@ -15,7 +15,6 @@ Tunnel currently supports two methods for utilizing VEX:
 3. [VEX Attestation](./oci.md)
 
 ### Enabling VEX
-
 To enable VEX, use the `--vex` option.
 You can specify the method to use:
 

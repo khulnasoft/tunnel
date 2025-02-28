@@ -83,12 +83,12 @@ const (
 	aws = `aws_?`
 )
 
-// This function is exported for tunnel-plugin-khulnasoft purposes only
+// This function is exported for tunnel-plugin-aqua purposes only
 func GetBuiltinRules() []Rule {
 	return builtinRules
 }
 
-// This function is exported for tunnel-plugin-khulnasoft purposes only
+// This function is exported for tunnel-plugin-aqua purposes only
 func GetSecretRulesMetadata() []iacRules.Check {
 	return lo.Map(builtinRules, func(rule Rule, i int) iacRules.Check {
 		return iacRules.Check{

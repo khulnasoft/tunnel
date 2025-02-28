@@ -1,14 +1,11 @@
 # Requirements
-
 None, Tunnel uses Google Cloud SDK. You don't need to install `gcloud` command.
 
 # Privileges
-
 Credential file must have the `roles/storage.objectViewer` permissions.
 More information can be found in [Google's documentation](https://cloud.google.com/container-registry/docs/access-control)
 
 ## JSON File Format
-
 The JSON file specified should have the following format provided by google's service account mechanisms:
 
 ```json
@@ -27,16 +24,13 @@ The JSON file specified should have the following format provided by google's se
 ```
 
 # Usage
-
 If you want to use target project's repository, you can set them via `GOOGLE_APPLICATION_CREDENTIALS`.
-
 ```bash
 # must set TUNNEL_USERNAME empty char
 export GOOGLE_APPLICATION_CREDENTIALS=/path/to/credential.json
 ```
 
 # Testing
-
 You can test credentials in the following manner (assuming they are in `/tmp` on host machine).
 
 ```bash

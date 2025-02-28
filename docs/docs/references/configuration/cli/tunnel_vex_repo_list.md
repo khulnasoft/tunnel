@@ -27,4 +27,5 @@ tunnel vex repo list [flags]
 
 ### SEE ALSO
 
-- [tunnel vex repo](tunnel_vex_repo.md) - Manage VEX repositories
+* [tunnel vex repo](tunnel_vex_repo.md)	 - Manage VEX repositories
+

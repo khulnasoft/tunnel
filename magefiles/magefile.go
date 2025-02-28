@@ -16,10 +16,12 @@ import (
 	"github.com/magefile/mage/sh"
 	"github.com/magefile/mage/target"
 
-	//mage:import rpm
-	rpm "github.com/khulnasoft/tunnel/pkg/fanal/analyzer/pkg/rpm/testdata"
 	// Tunnel packages should not be imported in Mage (see https://github.com/khulnasoft/tunnel/pull/4242),
 	// but this package doesn't have so many dependencies, and Mage is still fast.
+	//mage:import gittest
+	gittest "github.com/khulnasoft/tunnel/internal/gittest/testdata"
+	//mage:import rpm
+	rpm "github.com/khulnasoft/tunnel/pkg/fanal/analyzer/pkg/rpm/testdata"
 	"github.com/khulnasoft/tunnel/pkg/log"
 )
 
@@ -59,12 +61,12 @@ func buildLdflags() (string, error) {
 
 type Tool mg.Namespace
 
-// KhulnaSoft installs khulnasoft if not installed
-func (Tool) KhulnaSoft() error {
-	if exists(filepath.Join(GOBIN, "khulnasoft")) {
+// Khulnasoft installs aqua if not installed
+func (Tool) Aqua() error {
+	if exists(filepath.Join(GOBIN, "aqua")) {
 		return nil
 	}
-	return sh.Run("go", "install", "github.com/khulnasoftproj/khulnasoft/v2/cmd/khulnasoft@v2.2.1")
+	return sh.Run("go", "install", "github.com/aquaproj/aqua/v2/cmd/aqua@v2.2.1")
 }
 
 // Wire installs wire if not installed
@@ -129,7 +131,7 @@ func (Tool) Labeler() error {
 	if exists(filepath.Join(GOBIN, "labeler")) {
 		return nil
 	}
-	return sh.Run("go", "install", "github.com/khulnasoft-lab/labeler@latest")
+	return sh.Run("go", "install", "github.com/knqyf263/labeler@latest")
 }
 
 // Kind installs kind cluster
@@ -145,31 +147,10 @@ func (Tool) Goyacc() error {
 	return sh.Run("go", "install", "golang.org/x/tools/cmd/goyacc@v0.7.0")
 }
 
-// Mockery installs mockery
-func (Tool) Mockery() error {
-	if exists(filepath.Join(GOBIN, "mockery")) {
-		return nil
-	}
-	return sh.Run("go", "install", "github.com/khulnasoft-lab/mockery/cmd/mockery@latest")
-}
-
 // Wire generates the wire_gen.go file for each package
 func Wire() error {
 	mg.Deps(Tool{}.Wire)
 	return sh.RunV("wire", "gen", "./pkg/commands/...", "./pkg/rpc/...", "./pkg/k8s/...")
-}
-
-// Mock generates mocks
-func Mock(dir string) error {
-	mg.Deps(Tool{}.Mockery)
-	mockeryArgs := []string{
-		"-all",
-		"-inpkg",
-		"-case=snake",
-		"-dir",
-		dir,
-	}
-	return sh.RunV("mockery", mockeryArgs...)
 }
 
 // Protoc parses PROTO_FILES and generates the Go code for client/server mode
@@ -286,7 +267,7 @@ func compileWasmModules(pattern string) error {
 
 // Unit runs unit tests
 func (t Test) Unit() error {
-	mg.Deps(t.GenerateModules, rpm.Fixtures)
+	mg.Deps(t.GenerateModules, rpm.Fixtures, gittest.Fixtures)
 	return sh.RunWithV(ENV, "go", "test", "-v", "-short", "-coverprofile=coverage.txt", "-covermode=atomic", "./...")
 }
 
@@ -307,11 +288,72 @@ func (t Test) K8s() error {
 	defer func() {
 		_ = sh.RunWithV(ENV, "kind", "delete", "cluster", "--name", "kind-test")
 	}()
+	// wait for the kind cluster is running correctly
+	err = sh.RunWithV(ENV, "kubectl", "wait", "--for=condition=Ready", "nodes", "--all", "--timeout=300s")
+	if err != nil {
+		return fmt.Errorf("can't wait for the kind cluster: %w", err)
+	}
+
 	err = sh.RunWithV(ENV, "kubectl", "apply", "-f", "./integration/testdata/fixtures/k8s/test_nginx.yaml")
+	if err != nil {
+		return fmt.Errorf("can't create a test deployment: %w", err)
+	}
+
+	// create an environment for limited user test
+	err = initk8sLimitedUserEnv()
+	if err != nil {
+		return fmt.Errorf("can't create environment for limited user: %w", err)
+	}
+
+	// print all resources for info
+	err = sh.RunWithV(ENV, "kubectl", "get", "all", "-A")
 	if err != nil {
 		return err
 	}
+
 	return sh.RunWithV(ENV, "go", "test", "-v", "-tags=k8s_integration", "./integration/...")
+}
+
+func initk8sLimitedUserEnv() error {
+	commands := [][]string{
+		{"kubectl", "create", "namespace", "limitedns"},
+		{"kubectl", "create", "-f", "./integration/testdata/fixtures/k8s/limited-pod.yaml"},
+		{"kubectl", "create", "serviceaccount", "limiteduser"},
+		{"kubectl", "create", "-f", "./integration/testdata/fixtures/k8s/limited-role.yaml"},
+		{"kubectl", "create", "-f", "./integration/testdata/fixtures/k8s/limited-binding.yaml"},
+		{"cp", "./integration/testdata/fixtures/k8s/kube-config-template", "./integration/limitedconfig"},
+	}
+
+	for _, cmd := range commands {
+		if err := sh.RunV(cmd[0], cmd[1:]...); err != nil {
+			return err
+		}
+	}
+	envs := make(map[string]string)
+	var err error
+	envs["CA"], err = sh.Output("kubectl", "config", "view", "-o", "jsonpath=\"{.clusters[?(@.name == 'kind-kind-test')].cluster.certificate-authority-data}\"", "--flatten")
+	if err != nil {
+		return err
+	}
+	envs["URL"], err = sh.Output("kubectl", "config", "view", "-o", "jsonpath=\"{.clusters[?(@.name == 'kind-kind-test')].cluster.server}\"")
+	if err != nil {
+		return err
+	}
+	envs["TOKEN"], err = sh.Output("kubectl", "create", "token", "limiteduser", "--duration=8760h")
+	if err != nil {
+		return err
+	}
+	commandsWith := [][]string{
+		{"sed", "-i", "-e", "s|{{CA}}|$CA|g", "./integration/limitedconfig"},
+		{"sed", "-i", "-e", "s|{{URL}}|$URL|g", "./integration/limitedconfig"},
+		{"sed", "-i", "-e", "s|{{TOKEN}}|$TOKEN|g", "./integration/limitedconfig"},
+	}
+	for _, cmd := range commandsWith {
+		if err := sh.RunWithV(envs, cmd[0], cmd[1:]...); err != nil {
+			return err
+		}
+	}
+	return nil
 }
 
 // Module runs Wasm integration tests
@@ -532,4 +574,11 @@ type Helm mg.Namespace
 // UpdateVersion updates a version for Tunnel Helm Chart and creates a PR
 func (Helm) UpdateVersion() error {
 	return sh.RunWith(ENV, "go", "run", "-tags=mage_helm", "./magefiles")
+}
+
+type SPDX mg.Namespace
+
+// UpdateLicenseExceptions updates 'exception.json' with SPDX license exceptions
+func (SPDX) UpdateLicenseExceptions() error {
+	return sh.RunWith(ENV, "go", "run", "-tags=mage_spdx", "./magefiles/spdx.go")
 }

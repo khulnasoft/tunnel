@@ -4,13 +4,13 @@ import (
 	"bufio"
 	"context"
 	"os"
+	"slices"
 
 	"golang.org/x/xerrors"
 
 	"github.com/khulnasoft/tunnel/pkg/fanal/analyzer"
 	fos "github.com/khulnasoft/tunnel/pkg/fanal/analyzer/os"
 	"github.com/khulnasoft/tunnel/pkg/fanal/types"
-	"github.com/khulnasoft/tunnel/pkg/fanal/utils"
 )
 
 func init() {
@@ -38,7 +38,7 @@ func (a debianOSAnalyzer) Analyze(_ context.Context, input analyzer.AnalysisInpu
 }
 
 func (a debianOSAnalyzer) Required(filePath string, _ os.FileInfo) bool {
-	return utils.StringInSlice(filePath, requiredFiles)
+	return slices.Contains(requiredFiles, filePath)
 }
 
 func (a debianOSAnalyzer) Type() analyzer.Type {

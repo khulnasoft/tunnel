@@ -25,6 +25,7 @@ Manage modules
 
 ### SEE ALSO
 
-- [tunnel](tunnel.md) - Unified security scanner
-- [tunnel module install](tunnel_module_install.md) - Install a module
-- [tunnel module uninstall](tunnel_module_uninstall.md) - Uninstall a module
+* [tunnel](tunnel.md)	 - Unified security scanner
+* [tunnel module install](tunnel_module_install.md)	 - Install a module
+* [tunnel module uninstall](tunnel_module_uninstall.md)	 - Uninstall a module
+

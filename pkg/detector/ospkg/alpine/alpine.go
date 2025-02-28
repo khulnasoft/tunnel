@@ -123,7 +123,7 @@ func (s *Scanner) Detect(ctx context.Context, osVer string, repo *ftypes.Reposit
 func (s *Scanner) isVulnerable(ctx context.Context, installedVersion version.Version, adv dbTypes.Advisory) bool {
 	// This logic is for unfixed vulnerabilities, but Tunnel DB doesn't have advisories for unfixed vulnerabilities for now
 	// because Alpine just provides potentially vulnerable packages. It will cause a lot of false positives.
-	// This is for KhulnaSoft commercial products.
+	// This is for Khulnasoft commercial products.
 	if adv.AffectedVersion != "" {
 		// AffectedVersion means which version introduced this vulnerability.
 		affectedVersion, err := version.NewVersion(adv.AffectedVersion)

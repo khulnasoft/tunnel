@@ -21,14 +21,14 @@ var (
 			},
 		},
 		{
-			ID:           "github.com/aquasecurity/go-version@v0.0.0-20240603093900-cf8a8d29271d",
-			Name:         "github.com/aquasecurity/go-version",
+			ID:           "github.com/khulnasoft/goversify@v0.0.0-20240603093900-cf8a8d29271d",
+			Name:         "github.com/khulnasoft/goversify",
 			Version:      "v0.0.0-20240603093900-cf8a8d29271d",
 			Relationship: ftypes.RelationshipDirect,
 			ExternalReferences: []ftypes.ExternalRef{
 				{
 					Type: ftypes.RefVCS,
-					URL:  "https://github.com/aquasecurity/go-version",
+					URL:  "https://github.com/khulnasoft/goversify",
 				},
 			},
 		},
@@ -86,7 +86,7 @@ var (
 		{
 			ID: "github.com/org/repo",
 			DependsOn: []string{
-				"github.com/aquasecurity/go-version@v0.0.0-20240603093900-cf8a8d29271d",
+				"github.com/khulnasoft/goversify@v0.0.0-20240603093900-cf8a8d29271d",
 				"stdlib@v1.22.5",
 			},
 		},
@@ -100,7 +100,7 @@ var (
 		{
 			ID: "github.com/org/repo",
 			DependsOn: []string{
-				"github.com/aquasecurity/go-version@v0.0.0-20240603093900-cf8a8d29271d",
+				"github.com/khulnasoft/goversify@v0.0.0-20240603093900-cf8a8d29271d",
 			},
 		},
 	}
@@ -119,14 +119,14 @@ var (
 			},
 		},
 		{
-			ID:           "github.com/khulnasoft/go-dep-parser@v0.0.0-20220406074731-71021a481237",
-			Name:         "github.com/khulnasoft/go-dep-parser",
+			ID:           "github.com/khulnasoft/de-parser@v0.0.0-20220406074731-71021a481237",
+			Name:         "github.com/khulnasoft/de-parser",
 			Version:      "v0.0.0-20220406074731-71021a481237",
 			Relationship: ftypes.RelationshipDirect,
 			ExternalReferences: []ftypes.ExternalRef{
 				{
 					Type: ftypes.RefVCS,
-					URL:  "https://github.com/khulnasoft/go-dep-parser",
+					URL:  "https://github.com/khulnasoft/de-parser",
 				},
 			},
 		},
@@ -141,7 +141,7 @@ var (
 		{
 			ID: "github.com/org/repo",
 			DependsOn: []string{
-				"github.com/khulnasoft/go-dep-parser@v0.0.0-20220406074731-71021a481237",
+				"github.com/khulnasoft/de-parser@v0.0.0-20220406074731-71021a481237",
 			},
 		},
 	}
@@ -160,14 +160,14 @@ var (
 			},
 		},
 		{
-			ID:           "github.com/khulnasoft/go-dep-parser@v0.0.0-20211110174639-8257534ffed3",
-			Name:         "github.com/khulnasoft/go-dep-parser",
+			ID:           "github.com/khulnasoft/de-parser@v0.0.0-20211110174639-8257534ffed3",
+			Name:         "github.com/khulnasoft/de-parser",
 			Version:      "v0.0.0-20211110174639-8257534ffed3",
 			Relationship: ftypes.RelationshipDirect,
 			ExternalReferences: []ftypes.ExternalRef{
 				{
 					Type: ftypes.RefVCS,
-					URL:  "https://github.com/khulnasoft/go-dep-parser",
+					URL:  "https://github.com/khulnasoft/de-parser",
 				},
 			},
 		},
@@ -183,7 +183,7 @@ var (
 		{
 			ID: "github.com/org/repo",
 			DependsOn: []string{
-				"github.com/khulnasoft/go-dep-parser@v0.0.0-20211110174639-8257534ffed3",
+				"github.com/khulnasoft/de-parser@v0.0.0-20211110174639-8257534ffed3",
 			},
 		},
 	}
@@ -202,14 +202,14 @@ var (
 			},
 		},
 		{
-			ID:           "github.com/khulnasoft/go-dep-parser@v0.0.0-20220406074731-71021a481237",
-			Name:         "github.com/khulnasoft/go-dep-parser",
+			ID:           "github.com/khulnasoft/de-parser@v0.0.0-20220406074731-71021a481237",
+			Name:         "github.com/khulnasoft/de-parser",
 			Version:      "v0.0.0-20220406074731-71021a481237",
 			Relationship: ftypes.RelationshipDirect,
 			ExternalReferences: []ftypes.ExternalRef{
 				{
 					Type: ftypes.RefVCS,
-					URL:  "https://github.com/khulnasoft/go-dep-parser",
+					URL:  "https://github.com/khulnasoft/de-parser",
 				},
 			},
 		},
@@ -225,7 +225,7 @@ var (
 		{
 			ID: "github.com/org/repo",
 			DependsOn: []string{
-				"github.com/khulnasoft/go-dep-parser@v0.0.0-20220406074731-71021a481237",
+				"github.com/khulnasoft/de-parser@v0.0.0-20220406074731-71021a481237",
 			},
 		},
 	}
@@ -244,14 +244,14 @@ var (
 			},
 		},
 		{
-			ID:           "github.com/khulnasoft/go-dep-parser@v0.0.0-20211224170007-df43bca6b6ff",
-			Name:         "github.com/khulnasoft/go-dep-parser",
+			ID:           "github.com/khulnasoft/de-parser@v0.0.0-20211224170007-df43bca6b6ff",
+			Name:         "github.com/khulnasoft/de-parser",
 			Version:      "v0.0.0-20211224170007-df43bca6b6ff",
 			Relationship: ftypes.RelationshipDirect,
 			ExternalReferences: []ftypes.ExternalRef{
 				{
 					Type: ftypes.RefVCS,
-					URL:  "https://github.com/khulnasoft/go-dep-parser",
+					URL:  "https://github.com/khulnasoft/de-parser",
 				},
 			},
 		},
@@ -279,7 +279,7 @@ var (
 		{
 			ID: "github.com/org/repo",
 			DependsOn: []string{
-				"github.com/khulnasoft/go-dep-parser@v0.0.0-20211224170007-df43bca6b6ff",
+				"github.com/khulnasoft/de-parser@v0.0.0-20211224170007-df43bca6b6ff",
 			},
 		},
 	}
@@ -298,14 +298,14 @@ var (
 			},
 		},
 		{
-			ID:           "github.com/khulnasoft/go-dep-parser@v0.0.0-20211224170007-df43bca6b6ff",
-			Name:         "github.com/khulnasoft/go-dep-parser",
+			ID:           "github.com/khulnasoft/de-parser@v0.0.0-20211224170007-df43bca6b6ff",
+			Name:         "github.com/khulnasoft/de-parser",
 			Version:      "v0.0.0-20211224170007-df43bca6b6ff",
 			Relationship: ftypes.RelationshipDirect,
 			ExternalReferences: []ftypes.ExternalRef{
 				{
 					Type: ftypes.RefVCS,
-					URL:  "https://github.com/khulnasoft/go-dep-parser",
+					URL:  "https://github.com/khulnasoft/de-parser",
 				},
 			},
 		},
@@ -337,14 +337,14 @@ var (
 			},
 		},
 		{
-			ID:           "github.com/khulnasoft/go-dep-parser@v0.0.0-20211224170007-df43bca6b6ff",
-			Name:         "github.com/khulnasoft/go-dep-parser",
+			ID:           "github.com/khulnasoft/de-parser@v0.0.0-20211224170007-df43bca6b6ff",
+			Name:         "github.com/khulnasoft/de-parser",
 			Version:      "v0.0.0-20211224170007-df43bca6b6ff",
 			Relationship: ftypes.RelationshipDirect,
 			ExternalReferences: []ftypes.ExternalRef{
 				{
 					Type: ftypes.RefVCS,
-					URL:  "https://github.com/khulnasoft/go-dep-parser",
+					URL:  "https://github.com/khulnasoft/de-parser",
 				},
 			},
 		},
@@ -376,14 +376,14 @@ var (
 			},
 		},
 		{
-			ID:           "github.com/khulnasoft/go-dep-parser@v0.0.0-20211224170007-df43bca6b6ff",
-			Name:         "github.com/khulnasoft/go-dep-parser",
+			ID:           "github.com/khulnasoft/de-parser@v0.0.0-20211224170007-df43bca6b6ff",
+			Name:         "github.com/khulnasoft/de-parser",
 			Version:      "v0.0.0-20211224170007-df43bca6b6ff",
 			Relationship: ftypes.RelationshipDirect,
 			ExternalReferences: []ftypes.ExternalRef{
 				{
 					Type: ftypes.RefVCS,
-					URL:  "https://github.com/khulnasoft/go-dep-parser",
+					URL:  "https://github.com/khulnasoft/de-parser",
 				},
 			},
 		},
@@ -421,14 +421,14 @@ var (
 			},
 		},
 		{
-			ID:           "github.com/khulnasoft/go-dep-parser@v0.0.0-20211224170007-df43bca6b6ff",
-			Name:         "github.com/khulnasoft/go-dep-parser",
+			ID:           "github.com/khulnasoft/de-parser@v0.0.0-20211224170007-df43bca6b6ff",
+			Name:         "github.com/khulnasoft/de-parser",
 			Version:      "v0.0.0-20211224170007-df43bca6b6ff",
 			Relationship: ftypes.RelationshipDirect,
 			ExternalReferences: []ftypes.ExternalRef{
 				{
 					Type: ftypes.RefVCS,
-					URL:  "https://github.com/khulnasoft/go-dep-parser",
+					URL:  "https://github.com/khulnasoft/de-parser",
 				},
 			},
 		},
@@ -448,14 +448,14 @@ var (
 			},
 		},
 		{
-			ID:           "github.com/khulnasoft/go-dep-parser@v0.0.0-20211224170007-df43bca6b6ff",
-			Name:         "github.com/khulnasoft/go-dep-parser",
+			ID:           "github.com/khulnasoft/de-parser@v0.0.0-20211224170007-df43bca6b6ff",
+			Name:         "github.com/khulnasoft/de-parser",
 			Version:      "v0.0.0-20211224170007-df43bca6b6ff",
 			Relationship: ftypes.RelationshipDirect,
 			ExternalReferences: []ftypes.ExternalRef{
 				{
 					Type: ftypes.RefVCS,
-					URL:  "https://github.com/khulnasoft/go-dep-parser",
+					URL:  "https://github.com/khulnasoft/de-parser",
 				},
 			},
 		},

@@ -1,18 +1,15 @@
 # Testing
-
 It is highly recommended to write tests for your custom checks.
 
 ## Rego testing
-
-To help you verify the correctness of your custom checks, OPA gives you a framework that you can use to write tests for your checks.
+To help you verify the correctness of your custom checks, OPA gives you a framework that you can use to write tests for your checks. 
 By writing tests for your custom checks you can speed up the development process of new rules and reduce the amount of time it takes to modify rules as requirements evolve.
 
 For more details, see [Policy Testing][opa-testing].
 
 !!! example
-
-````
-package user.dockerfile.ID002
+    ```
+    package user.dockerfile.ID002
 
     test_add_denied {
         r := deny with input as {"stages": {"alpine:3.13": [
@@ -28,7 +25,6 @@ package user.dockerfile.ID002
 To write tests for custom checks, you can refer to existing tests under [tunnel-checks][tunnel-checks].
 
 ## Go testing
-
 [Fanal][fanal] which is a core library of Tunnel can be imported as a Go library.
 You can scan config files in Go and test your custom checks using Go's testing methods, such as [table-driven tests][table].
 This allows you to use the actual configuration file as input, making it easy to prepare test data and ensure that your custom checks work in practice.
@@ -36,12 +32,12 @@ This allows you to use the actual configuration file as input, making it easy to
 In particular, Dockerfile and HCL need to be converted to structural data as input, which may be different from the expected input format.
 
 !!! tip
-We recommend writing OPA and Go tests both since they have different roles, like unit tests and integration tests.
+    We recommend writing OPA and Go tests both since they have different roles, like unit tests and integration tests.
 
 The following example stores allowed and denied configuration files in a directory.
 `Successes` contains the result of successes, and `Failures` contains the result of failures.
 
-```go
+``` go
 {
 	name:  "disallowed ports",
 	input: "configs/",
@@ -84,11 +80,11 @@ The following example stores allowed and denied configuration files in a directo
 		},
 	},
 },
-````
+```
 
 `Dockerfile.allowed` has one successful result in `Successes`, while `Dockerfile.denied` has one failure result in `Failures`.
 
 [opa-testing]: https://www.openpolicyagent.org/docs/latest/policy-testing/
-[defsec]: https://github.com/khulnasoft/tunnel-checks/tree/main
+[defsec]: https://github.com/khulnasoft/tunnel-audit/tree/main
 [table]: https://github.com/golang/go/wiki/TableDrivenTests
-[fanal]: https://github.com/khulnasoft/fanal
+[fanal]: https://github.com/aquasecurity/fanal

@@ -1,30 +1,28 @@
 # Java
-
 Tunnel supports four types of Java scanning: `JAR/WAR/PAR/EAR`, `pom.xml`, `*gradle.lockfile` and `*.sbt.lock` files.
 
 Each artifact supports the following scanners:
 
-| Artifact          | SBOM | Vulnerability | License |
-| ----------------- | :--: | :-----------: | :-----: |
-| JAR/WAR/PAR/EAR   |  ✓   |       ✓       |    -    |
-| pom.xml           |  ✓   |       ✓       |    ✓    |
-| \*gradle.lockfile |  ✓   |       ✓       |    ✓    |
-| \*.sbt.lock       |  ✓   |       ✓       |    -    |
+| Artifact         | SBOM | Vulnerability | License |
+|------------------|:----:|:-------------:|:-------:|
+| JAR/WAR/PAR/EAR  |  ✓   |       ✓       |    -    |
+| pom.xml          |  ✓   |       ✓       |    ✓    |
+| *gradle.lockfile |  ✓   |       ✓       |    ✓    |
+| *.sbt.lock       |  ✓   |       ✓       |    -    |
 
 The following table provides an outline of the features Tunnel offers.
 
-| Artifact          |    Internet access    | Dev dependencies | [Dependency graph][dependency-graph] | Position | [Detection Priority][detection-priority] |
-| ----------------- | :-------------------: | :--------------: | :----------------------------------: | :------: | :--------------------------------------: |
-| JAR/WAR/PAR/EAR   |    Tunnel Java DB     |     Include      |                  -                   |    -     |                Not needed                |
-| pom.xml           | Maven repository [^1] |     Exclude      |                  ✓                   |  ✓[^7]   |                    -                     |
-| \*gradle.lockfile |           -           |     Exclude      |                  ✓                   |    ✓     |                Not needed                |
-| \*.sbt.lock       |           -           |     Exclude      |                  -                   |    ✓     |                Not needed                |
+| Artifact         |    Internet access    | Dev dependencies | [Dependency graph][dependency-graph] | Position | [Detection Priority][detection-priority] |
+|------------------|:---------------------:|:----------------:|:------------------------------------:|:--------:|:----------------------------------------:|
+| JAR/WAR/PAR/EAR  |     Tunnel Java DB     |     Include      |                  -                   |    -     |                Not needed                |
+| pom.xml          | Maven repository [^1] |     Exclude      |                  ✓                   |  ✓[^7]   |                    -                     |
+| *gradle.lockfile |           -           |     Exclude      |                  ✓                   |    ✓     |                Not needed                |
+| *.sbt.lock       |           -           |     Exclude      |                  -                   |    ✓     |                Not needed                |
 
 These may be enabled or disabled depending on the target.
 See [here](./index.md) for the detail.
 
 ## JAR/WAR/PAR/EAR
-
 To find information about your JAR[^2] file, Tunnel parses `pom.properties` and `MANIFEST.MF` files in your JAR[^2] file and takes required properties[^3].
 
 If those files don't exist or don't contain enough information - Tunnel will try to find this JAR[^2] file in [tunnel-java-db](https://github.com/khulnasoft-lab/tunnel-java-db).
@@ -32,7 +30,7 @@ The Java DB will be automatically downloaded/updated when any JAR[^2] file is fo
 It is stored in [the cache directory](../../configuration/cache.md#cache-directory).
 
 !!! warning "EXPERIMENTAL"
-Finding JARs in `tunnel-java-db` is an experimental function.
+    Finding JARs in `tunnel-java-db` is an experimental function.
 
 Base JAR[^2] may contain inner JARs[^2] within itself.
 To find information about these JARs[^2], the same logic is used as for the base JAR[^2].
@@ -40,7 +38,6 @@ To find information about these JARs[^2], the same logic is used as for the base
 `table` format only contains the name of root JAR[^2] . To get the full path to inner JARs[^2] use the `json` format.
 
 ## pom.xml
-
 Tunnel parses your `pom.xml` file and tries to find files with dependencies from these local locations.
 
 - project directory[^4]
@@ -48,7 +45,6 @@ Tunnel parses your `pom.xml` file and tries to find files with dependencies from
 - local repository directory[^6].
 
 ### remote repositories
-
 If your machine doesn't have the necessary files - Tunnel tries to find the information about these dependencies in the remote repositories:
 
 - [repositories from pom files][maven-pom-repos]
@@ -57,28 +53,26 @@ If your machine doesn't have the necessary files - Tunnel tries to find the info
 Tunnel reproduces Maven's repository selection and priority:
 
 - for snapshot artifacts:
-  - check only snapshot repositories from pom files (if exists)
+    - check only snapshot repositories from pom files (if exists)
 - for other artifacts:
-  - check release repositories from pom files (if exists)
-  - check [maven central][maven-central]
+    - check release repositories from pom files (if exists)
+    - check [maven central][maven-central]
 
 !!! Note
-Tunnel only takes information about packages. We don't take a list of vulnerabilities for packages from the `maven repository`.
-Information about data sources for Java you can see [here](../../scanner/vulnerability.md#langpkg-data-sources).
+    Tunnel only takes information about packages. We don't take a list of vulnerabilities for packages from the `maven repository`.
+    Information about data sources for Java you can see [here](../../scanner/vulnerability.md#langpkg-data-sources).
 
 You can disable connecting to the maven repository with the `--offline-scan` flag.
 The `--offline-scan` flag does not affect the Tunnel database.
 The vulnerability database will be downloaded anyway.
 
 !!! Warning
-Tunnel may skip some dependencies (that were not found on your local machine) when the `--offline-scan` flag is passed.
+    Tunnel may skip some dependencies (that were not found on your local machine) when the `--offline-scan` flag is passed.
 
 ### supported scopes
-
 Tunnel only scans `import`, `compile`, `runtime` and empty [maven scopes][maven-scopes]. Other scopes and `Optional` dependencies are not currently being analyzed.
 
 ### empty dependency version
-
 There are cases when Tunnel cannot determine the version of dependencies:
 
 - Unable to determine the version from the parent because the parent is not reachable;
@@ -87,36 +81,34 @@ There are cases when Tunnel cannot determine the version of dependencies:
 In these cases, Tunnel uses an empty version for the dependency.
 
 !!! Warning
-Tunnel doesn't detect child dependencies for dependencies without a version.
+    Tunnel doesn't detect child dependencies for dependencies without a version.
 
 ### maven-invoker-plugin
-
 Typically, the integration tests directory (`**/[src|target]/it/*/pom.xml`) of [maven-invoker-plugin][maven-invoker-plugin] doesn't contain actual `pom.xml` files and should be skipped to avoid noise.
 
 Tunnel marks dependencies from these files as the development dependencies and skip them by default.
 If you need to show them, use the `--include-dev-deps` flag.
 
-## Gradle.lock
 
+## Gradle.lock
 `gradle.lock` files only contain information about used dependencies.
 
 !!!note
-All necessary files are checked locally. Gradle file scanning doesn't require internet access.
+    All necessary files are checked locally. Gradle file scanning doesn't require internet access.
 
 ### Dependency-tree
-
 !!! warning "EXPERIMENTAL"
-This feature might change without preserving backwards compatibility.
+    This feature might change without preserving backwards compatibility.
 Tunnel finds child dependencies from `*.pom` files in the cache[^8] directory.
 
 But there is no reliable way to determine direct dependencies (even using other files).
 Therefore, we mark all dependencies as indirect to use logic to guess direct dependencies and build a dependency tree.
 
 ### Licenses
-
 Trity also can detect licenses for dependencies.
 
 Make sure that you have cache[^8] directory to find licenses from `*.pom` dependency files.
+
 
 ## SBT
 
@@ -124,7 +116,7 @@ Make sure that you have cache[^8] directory to find licenses from `*.pom` depend
 [sbt-dependency-lock][sbt-dependency-lock] plugin.
 
 !!!note
-All necessary files are checked locally. SBT file scanning doesn't require internet access.
+    All necessary files are checked locally. SBT file scanning doesn't require internet access.
 
 [^1]: Uses maven repository to get information about dependencies. Internet access required.
 [^2]: It means `*.jar`, `*.war`, `*.par` and `*.ear` file

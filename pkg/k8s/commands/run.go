@@ -8,8 +8,8 @@ import (
 	"github.com/spf13/viper"
 	"golang.org/x/xerrors"
 
-	k8sArtifacts "github.com/khulnasoft/tunnel-kubernetes/pkg/artifacts"
-	"github.com/khulnasoft/tunnel-kubernetes/pkg/k8s"
+	k8sArtifacts "github.com/khulnasoft-lab/tunnel-kubernetes/pkg/artifacts"
+	"github.com/khulnasoft-lab/tunnel-kubernetes/pkg/k8s"
 	cmd "github.com/khulnasoft/tunnel/pkg/commands/artifact"
 	"github.com/khulnasoft/tunnel/pkg/commands/operation"
 	cr "github.com/khulnasoft/tunnel/pkg/compliance/report"
@@ -41,7 +41,7 @@ func Run(ctx context.Context, args []string, opts flag.Options) error {
 	defer func() {
 		cancel()
 		if errors.Is(err, context.DeadlineExceeded) {
-			// e.g. https://khulnasoft.github.io/tunnel/latest/docs/configuration
+			// e.g. https://tunnel.dev/latest/docs/configuration
 			log.WarnContext(ctx, fmt.Sprintf("Provide a higher timeout value, see %s", doc.URL("/docs/configuration/", "")))
 		}
 	}()

@@ -6,7 +6,7 @@
       "id": "tunnel",
       "name": "Tunnel",
       "vendor": {
-        "name": "KhulnaSoft Security"
+        "name": "Khulnasoft Security"
       },
       "version": "{{ appVersion }}"
     },
@@ -16,7 +16,7 @@
       "name": "Tunnel",
       "url": "https://github.com/khulnasoft/tunnel/",
       "vendor": {
-        "name": "KhulnaSoft Security"
+        "name": "Khulnasoft Security"
       },
       "version": "{{ appVersion }}"
     },

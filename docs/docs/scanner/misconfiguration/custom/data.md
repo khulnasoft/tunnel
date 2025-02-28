@@ -1,9 +1,9 @@
 # Custom Data
 
-Custom checks may require additional data in order to make a resolution. You can pass arbitrary data files to Tunnel to be used when evaluating rego checks using the `--data` flag.
+Custom checks may require additional data in order to make a resolution. You can pass arbitrary data files to Tunnel to be used when evaluating rego checks using the `--data` flag. 
 Tunnel recursively searches the specified data paths for JSON (`*.json`) and YAML (`*.yaml`) files.
 
-For example, consider an allowed list of resources that can be created.
+For example, consider an allowed list of resources that can be created. 
 Instead of hardcoding this information inside your policy, you can maintain the list in a separate file.
 
 Example data file:

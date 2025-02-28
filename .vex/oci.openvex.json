@@ -1,7 +1,7 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
   "@id": "https://openvex.dev/docs/public/vex-8e30ed756ae8e4196af93bf43edf68360f396a98c0268787453a3443b26e7d6c",
-  "author": "KhulnaSoft Security",
+  "author": "Khulnasoft Security",
   "timestamp": "2024-07-10T12:17:44.60495+04:00",
   "version": 1,
   "statements": [
@@ -11,7 +11,7 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/tunnel?repository_url=index.docker.io%2Fkhulnasoft%2Ftunnel",
+          "@id": "pkg:oci/tunnel?repository_url=index.docker.io%2Faquasec%2Ftunnel",
           "subcomponents": [
             {"@id": "pkg:apk/alpine/busybox"},
             {"@id": "pkg:apk/alpine/busybox-binsh"},
@@ -45,7 +45,7 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/tunnel?repository_url=index.docker.io%2Fkhulnasoft%2Ftunnel",
+          "@id": "pkg:oci/tunnel?repository_url=index.docker.io%2Faquasec%2Ftunnel",
           "subcomponents": [
             {"@id": "pkg:apk/alpine/busybox"},
             {"@id": "pkg:apk/alpine/busybox-binsh"},
@@ -79,7 +79,7 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/tunnel?repository_url=index.docker.io%2Fkhulnasoft%2Ftunnel",
+          "@id": "pkg:oci/tunnel?repository_url=index.docker.io%2Faquasec%2Ftunnel",
           "subcomponents": [
             {"@id": "pkg:apk/alpine/busybox"},
             {"@id": "pkg:apk/alpine/busybox-binsh"},
@@ -113,7 +113,7 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/tunnel?repository_url=index.docker.io%2Fkhulnasoft%2Ftunnel",
+          "@id": "pkg:oci/tunnel?repository_url=index.docker.io%2Faquasec%2Ftunnel",
           "subcomponents": [
             {"@id": "pkg:apk/alpine/busybox"},
             {"@id": "pkg:apk/alpine/busybox-binsh"},
@@ -147,7 +147,7 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/tunnel?repository_url=index.docker.io%2Fkhulnasoft%2Ftunnel",
+          "@id": "pkg:oci/tunnel?repository_url=index.docker.io%2Faquasec%2Ftunnel",
           "subcomponents": [
             {"@id": "pkg:apk/alpine/libcrypto3"},
             {"@id": "pkg:apk/alpine/libssl3"},
@@ -181,7 +181,7 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/tunnel?repository_url=index.docker.io%2Fkhulnasoft%2Ftunnel",
+          "@id": "pkg:oci/tunnel?repository_url=index.docker.io%2Faquasec%2Ftunnel",
           "subcomponents": [
             {"@id": "pkg:apk/alpine/libcrypto3"},
             {"@id": "pkg:apk/alpine/libssl3"},
@@ -215,7 +215,7 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/tunnel?repository_url=index.docker.io%2Fkhulnasoft%2Ftunnel",
+          "@id": "pkg:oci/tunnel?repository_url=index.docker.io%2Faquasec%2Ftunnel",
           "subcomponents": [
             {"@id": "pkg:apk/alpine/libcrypto3"},
             {"@id": "pkg:apk/alpine/libssl3"}

@@ -10,7 +10,7 @@ jobs:
     uses: ./.github/workflows/reusable-release.yaml
     with:
       goreleaser_config: goreleaser.yml
-      goreleaser_options: "--clean --timeout 90m"
+      goreleaser_options: '--clean --timeout 90m'
     secrets: inherit
 
   deploy-packages:
@@ -44,8 +44,8 @@ jobs:
 
       - name: Setup git settings
         run: |
-          git config --global user.email "dev.sulaiman@icloud.com"
-          git config --global user.name "Md Sulaiman"
+          git config --global user.email "knqyf263@gmail.com"
+          git config --global user.name "Teppei Fukuda"
 
       - name: Create rpm repository
         run: ci/deploy-rpm.sh

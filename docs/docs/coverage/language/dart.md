@@ -5,24 +5,23 @@ Tunnel supports [Dart][dart].
 The following scanners are supported.
 
 | Package manager         | SBOM | Vulnerability | License |
-| ----------------------- | :--: | :-----------: | :-----: |
+|-------------------------|:----:|:-------------:|:-------:|
 | [Dart][dart-repository] |  ✓   |       ✓       |    -    |
 
 The following table provides an outline of the features Tunnel offers.
 
+
 | Package manager         | File         | Transitive dependencies | Dev dependencies | [Dependency graph][dependency-graph] | Position | [Detection Priority][detection-priority] |
-| ----------------------- | ------------ | :---------------------: | :--------------: | :----------------------------------: | :------: | :--------------------------------------: |
+|-------------------------|--------------|:-----------------------:|:----------------:|:------------------------------------:|:--------:|:----------------------------------------:|
 | [Dart][dart-repository] | pubspec.lock |            ✓            |     Included     |                  ✓                   |    -     |                    ✓                     |
 
 ## Dart
-
 In order to detect dependencies, Tunnel searches for `pubspec.lock`.
 
 Tunnel marks indirect dependencies, but `pubspec.lock` file doesn't have options to separate root and dev transitive dependencies.
 So Tunnel includes all dependencies in report.
 
 ### SDK dependencies
-
 Dart uses version `0.0.0` for SDK dependencies (e.g. Flutter).
 It is not possible to accurately determine the versions of these dependencies.
 Tunnel just treats them as `0.0.0`.
@@ -42,11 +41,10 @@ sdks:
 ```
 
 ### Dependency tree
-
 To build `dependency tree` Tunnel parses [cache directory][cache-directory]. Currently supported default directories and `PUB_CACHE` environment (absolute path only).
 
 !!! note
-Make sure the cache directory contains all the dependencies installed in your application. To download missing dependencies, use `dart pub get` command.
+    Make sure the cache directory contains all the dependencies installed in your application. To download missing dependencies, use `dart pub get` command.     
 
 [dart]: https://dart.dev/
 [dart-repository]: https://pub.dev/

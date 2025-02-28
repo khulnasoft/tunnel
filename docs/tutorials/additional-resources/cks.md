@@ -10,7 +10,7 @@ The [Certified Kubernetes Security Specialist (CKS) Exam](https://training.linux
 - [CKS exam study guide][study-guide]
 - [Docker Image Vulnerabilities & Tunnel Image Scanning Demo | K21Academy](https://youtu.be/gHz10UsEdys)
 
-### KhulnaSoft Security Blog posts to learn more
+### Khulnasoft Security Blog posts to learn more
 
 - Supply chain security best [practices][supply-chain-best-practices]
 - Supply chain [attacks][supply-chain-attacks]
@@ -21,5 +21,6 @@ If you know of interesting resources, please start a PR to add those to the list
 [exam]: https://jonathan18186.medium.com/certified-kubernetes-security-specialist-cks-preparation-part-7-supply-chain-security-9cf62c34cf6a
 [questions]: https://github.com/kodekloudhub/certified-kubernetes-security-specialist-cks-course/blob/main/docs/06-Supply-Chain-Security/09-Scan-images-for-known-vulnerabilities-(Tunnel).md
 [study-guide]: https://devopscube.com/cks-exam-guide-tips/
+
 [supply-chain-best-practices]: https://blog.khulnasoft.com/supply-chain-security-best-practices
 [supply-chain-attacks]: https://blog.khulnasoft.com/supply-chain-threats-using-container-images

@@ -17,18 +17,16 @@ There are plenty of builtin rules:
 You can see a full list of [built-in rules][builtin] and [built-in allow rules][builtin-allow].
 
 !!! tip
-If your secret is not detected properly, please make sure that your file including the secret is not in [the allowed paths][builtin-allow].
-You can disable allow rules via [disable-allow-rules](#disable-rules).
+    If your secret is not detected properly, please make sure that your file including the secret is not in [the allowed paths][builtin-allow].
+    You can disable allow rules via [disable-allow-rules](#disable-rules).
 
 ## Quick start
-
 This section shows how to scan secrets in container image and filesystem. Other subcommands should be the same.
 
 ### Container image
-
 Specify an image name.
 
-```shell
+``` shell
 $ tunnel image myimage:1.0.0
 2022-04-21T18:56:44.099+0300    INFO    Detected OS: alpine
 2022-04-21T18:56:44.099+0300    INFO    Detecting Alpine vulnerabilities...
@@ -43,11 +41,11 @@ Total: 6 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 2)
 +--------------+------------------+----------+-------------------+---------------+---------------------------------------+
 | busybox      | CVE-2022-28391   | CRITICAL | 1.34.1-r3         | 1.34.1-r5     | CVE-2022-28391 affecting              |
 |              |                  |          |                   |               | package busybox 1.35.0                |
-|              |                  |          |                   |               | -->avd.khulnasoft.com/nvd/cve-2022-28391 |
+|              |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2022-28391 |
 +--------------+------------------|          |-------------------+---------------+---------------------------------------+
 | ssl_client   | CVE-2022-28391   |          | 1.34.1-r3         | 1.34.1-r5     | CVE-2022-28391 affecting              |
 |              |                  |          |                   |               | package busybox 1.35.0                |
-|              |                  |          |                   |               | -->avd.khulnasoft.com/nvd/cve-2022-28391 |
+|              |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2022-28391 |
 +--------------+------------------+----------+-------------------+---------------+---------------------------------------+
 
 app/secret.sh (secrets)
@@ -61,14 +59,15 @@ Total: 1 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 1)
 +----------+-------------------+----------+---------+--------------------------------+
 ```
 
+
 !!! tip
-Tunnel tries to detect a base image and skip those layers for secret scanning.
-A base image usually contains a lot of files and makes secret scanning much slower.
-If a secret is not detected properly, you can see base layers with the `--debug` flag.
+    Tunnel tries to detect a base image and skip those layers for secret scanning.
+    A base image usually contains a lot of files and makes secret scanning much slower.
+    If a secret is not detected properly, you can see base layers with the `--debug` flag.
 
 ### Filesystem
 
-```shell
+``` shell
 $ tunnel fs /path/to/your_project
 ...(snip)...
 
@@ -83,13 +82,13 @@ Total: 1 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
 +----------------------+------------------------+----------+---------+---------------------------------+
 ```
 
+
 !!! tip
-Your project may have some secrets for testing. You can skip them with `--skip-dirs` or `--skip-files`.
-We would recommend specifying these options so that the secret scanning can be faster if those files don't need to be scanned.
-Also, you can specify paths to be allowed in a configuration file. See the detail [here](#configuration).
+    Your project may have some secrets for testing. You can skip them with `--skip-dirs` or `--skip-files`.
+    We would recommend specifying these options so that the secret scanning can be faster if those files don't need to be scanned.
+    Also, you can specify paths to be allowed in a configuration file. See the detail [here](#configuration).
 
 ## Configuration
-
 This section describes secret-specific configuration.
 Other common options are documented [here](../configuration/index.md).
 
@@ -99,13 +98,12 @@ If the file doesn't exist, only built-in rules are used.
 You can customize the config file path via the `--secret-config` flag.
 
 !!! warning
-Tunnel uses [Golang regexp package](https://pkg.go.dev/regexp/syntax#hdr-Syntax). To use `^` and `$` as symbols of begin and end of line use multi-line mode -`(?m)`.
+    Tunnel uses [Golang regexp package](https://pkg.go.dev/regexp/syntax#hdr-Syntax). To use `^` and `$` as symbols of begin and end of line use multi-line mode -`(?m)`.
 
 ### Custom Rules
-
 Tunnel allows defining custom rules.
 
-```yaml
+``` yaml
 rules:
   - id: rule1
     category: general
@@ -123,17 +121,16 @@ rules:
 ```
 
 `id` (required)
-: - Unique identifier for this rule.
+:   - Unique identifier for this rule.
 
 `category` (required)
-: - String used for metadata and reporting purposes.
+:   - String used for metadata and reporting purposes.
 
 `title` (required)
-: - Short human-readable title of the rule.
+:   - Short human-readable title of the rule.
 
 `severity` (required)
-: - How critical this rule is.
-
+:   - How critical this rule is.
 - Allowed values:
 - CRITICAL
 - HIGH
@@ -141,31 +138,28 @@ rules:
 - LOW
 
 `regex` (required)
-: - Golang regular expression used to detect secrets.
+:   - Golang regular expression used to detect secrets.
 
 `path` (optional)
-: - Golang regular expression used to match paths.
+:   - Golang regular expression used to match paths.
 
 `keywords` (optional, recommended)
-: - Keywords are used for pre-regex check filtering.
-
+:   - Keywords are used for pre-regex check filtering.
 - Rules that contain keywords will perform a quick string compare check to make sure the keyword(s) are in the content being scanned.
 - Ideally these values should either be part of the identifier or unique strings specific to the rule's regex.
 - It is recommended to define for better performance.
 
 `allow-rules` (optional)
-: - Allow rules for a single rule to reduce false positives with known secrets.
-
+:   - Allow rules for a single rule to reduce false positives with known secrets.
 - The details are below.
 
 ### Allow Rules
-
 If the detected secret is matched with the specified `regex`, then that secret will be skipped and not detected.
 The same logic applies for `path`.
 
 `allow-rules` can be defined globally and per each rule. The fields are the same.
 
-```yaml
+``` yaml
 rules:
   - id: rule1
     category: general
@@ -182,24 +176,22 @@ allow-rules:
     regex: 219-09-9999
 ```
 
+
 `id` (required)
-: - Unique identifier for this allow rule.
+:   - Unique identifier for this allow rule.
 
 `description` (optional)
-: - Short human-readable description of this allow rule.
+:   - Short human-readable description of this allow rule.
 
 `regex` (optional)
-: - Golang regular expression used to allow detected secrets.
-
+:   - Golang regular expression used to allow detected secrets.
 - `regex` or `path` must be specified.
 
 `path` (optional)
-: - Golang regular expression used to allow matched paths.
-
+:   - Golang regular expression used to allow matched paths.
 - `regex` or `path` must be specified.
 
 ### Enable Rules
-
 Tunnel provides plenty of out-of-box rules and allow rules, but you may not need all of them.
 In that case, `enable-builtin-rules` will be helpful.
 If you just need AWS secret detection, you can enable only relevant rules as shown below.
@@ -209,7 +201,7 @@ We would strongly recommend using this option if you don't need all rules.
 
 You can see a full list of [built-in rule IDs][builtin] and [built-in allow rule IDs][builtin-allow].
 
-```yaml
+``` yaml
 enable-builtin-rules:
   - aws-access-key-id
   - aws-account-id
@@ -217,7 +209,6 @@ enable-builtin-rules:
 ```
 
 ### Disable Rules
-
 Tunnel offers built-in rules and allow rules, but you may want to disable some of them.
 For example, you don't use Slack, so Slack doesn't have to be scanned.
 You can specify the Slack rule IDs, `slack-access-token` and `slack-web-hook` in `disable-rules` so that those rules will be disabled for less false positives.
@@ -232,7 +223,7 @@ You can disable the allow rule by adding `markdown` to `disable-allow-rules`.
 
 You can see a full list of [built-in rule IDs][builtin] and [built-in allow rule IDs][builtin-allow].
 
-```yaml
+``` yaml
 disable-rules:
   - slack-access-token
   - slack-web-hook
@@ -241,9 +232,8 @@ disable-allow-rules:
 ```
 
 ## Recommendation
-
 We would recommend specifying `--skip-dirs` for faster secret scanning.
-In container image scanning, Tunnel walks the file tree rooted `/` and scans all the files other than [built-in allowed paths][builtin-allow].
+In container image scanning, Tunnel walks the file tree rooted  `/` and scans all the files other than [built-in allowed paths][builtin-allow].
 It will take a while if your image contains a lot of files even though Tunnel tries to avoid scanning layers from a base image.
 If you want to make scanning faster, `--skip-dirs` and `--skip-files` helps so that Tunnel will skip scanning those files and directories.
 You can see more options [here](../configuration/others.md).
@@ -264,10 +254,9 @@ $ tunnel image --scanners vuln alpine:3.15
 ```
 
 ## Example
-
 `tunnel-secret.yaml` in the working directory is loaded by default.
 
-```yaml
+``` yaml
 $ cat tunnel-secret.yaml
 rules:
   - id: rule1
@@ -294,7 +283,7 @@ $ tunnel image YOUR_IMAGE
 
 Also, you can customize the config file path via `--secret-config`.
 
-```yaml
+``` yaml
 $ cat ./secret-config/tunnel.yaml
 rules:
   - id: rule1
@@ -318,7 +307,6 @@ $ tunnel fs --secret-config ./secret-config/tunnel.yaml /path/to/your_project
 ```
 
 ## Credit
-
 This feature is inspired by [gitleaks][gitleaks].
 
 [builtin]: https://github.com/khulnasoft/tunnel/blob/{{ git.tag }}/pkg/fanal/secret/builtin-rules.go

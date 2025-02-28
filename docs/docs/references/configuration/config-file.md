@@ -6,7 +6,6 @@ The config path can be overridden by the `--config` flag.
 An example is [here][example].
 
 These samples contain default values for flags.
-
 ## Global options
 
 ```yaml
@@ -25,8 +24,8 @@ quiet: false
 
 # Same as '--timeout'
 timeout: 5m0s
-```
 
+```
 ## Cache options
 
 ```yaml
@@ -49,8 +48,8 @@ cache:
 
   # Same as '--cache-ttl'
   ttl: 0s
-```
 
+```
 ## Clean options
 
 ```yaml
@@ -72,8 +71,8 @@ clean:
 
   # Same as '--vuln-db'
   vuln-db: false
-```
 
+```
 ## Client/Server options
 
 ```yaml
@@ -92,8 +91,8 @@ server:
 
   # Same as '--token-header'
   token-header: "Tunnel-Token"
-```
 
+```
 ## DB options
 
 ```yaml
@@ -106,8 +105,8 @@ db:
 
   # Same as '--java-db-repository'
   java-repository:
-    - mirror.gcr.io/khulnasoft-lab/tunnel-java-db:1
-    - ghcr.io/khulnasoft-lab/tunnel-java-db:1
+   - mirror.gcr.io/khulnasoft/tunnel-java-db:1
+   - ghcr.io/khulnasoft-lab/tunnel-java-db:1
 
   # Same as '--skip-java-db-update'
   java-skip-update: false
@@ -117,13 +116,13 @@ db:
 
   # Same as '--db-repository'
   repository:
-    - ghcr.io/khulnasoft-lab/tunnel-db:2
-    - ghcr.io/khulnasoft-lab/tunnel-db:2
+   - mirror.gcr.io/khulnasoft/tunnel-db:2
+   - ghcr.io/khulnasoft-lab/tunnel-db:2
 
   # Same as '--skip-db-update'
   skip-update: false
-```
 
+```
 ## Image options
 
 ```yaml
@@ -153,12 +152,12 @@ image:
 
   # Same as '--image-src'
   source:
-    - docker
-    - containerd
-    - podman
-    - remote
-```
+   - docker
+   - containerd
+   - podman
+   - remote
 
+```
 ## Kubernetes options
 
 ```yaml
@@ -196,7 +195,7 @@ kubernetes:
 
   node-collector:
     # Same as '--node-collector-imageref'
-    imageref: "ghcr.io/khulnasoft/node-collector:0.3.1"
+    imageref: "ghcr.io/aquasecurity/node-collector:0.3.1"
 
     # Same as '--node-collector-namespace'
     namespace: "tunnel-temp"
@@ -209,8 +208,8 @@ kubernetes:
 
   # Same as '--tolerations'
   tolerations: []
-```
 
+```
 ## License options
 
 ```yaml
@@ -219,28 +218,28 @@ license:
   confidenceLevel: 0.9
 
   forbidden:
-    - AGPL-1.0
-    - AGPL-3.0
-    - CC-BY-NC-1.0
-    - CC-BY-NC-2.0
-    - CC-BY-NC-2.5
-    - CC-BY-NC-3.0
-    - CC-BY-NC-4.0
-    - CC-BY-NC-ND-1.0
-    - CC-BY-NC-ND-2.0
-    - CC-BY-NC-ND-2.5
-    - CC-BY-NC-ND-3.0
-    - CC-BY-NC-ND-4.0
-    - CC-BY-NC-SA-1.0
-    - CC-BY-NC-SA-2.0
-    - CC-BY-NC-SA-2.5
-    - CC-BY-NC-SA-3.0
-    - CC-BY-NC-SA-4.0
-    - Commons-Clause
-    - Facebook-2-Clause
-    - Facebook-3-Clause
-    - Facebook-Examples
-    - WTFPL
+   - AGPL-1.0
+   - AGPL-3.0
+   - CC-BY-NC-1.0
+   - CC-BY-NC-2.0
+   - CC-BY-NC-2.5
+   - CC-BY-NC-3.0
+   - CC-BY-NC-4.0
+   - CC-BY-NC-ND-1.0
+   - CC-BY-NC-ND-2.0
+   - CC-BY-NC-ND-2.5
+   - CC-BY-NC-ND-3.0
+   - CC-BY-NC-ND-4.0
+   - CC-BY-NC-SA-1.0
+   - CC-BY-NC-SA-2.0
+   - CC-BY-NC-SA-2.5
+   - CC-BY-NC-SA-3.0
+   - CC-BY-NC-SA-4.0
+   - Commons-Clause
+   - Facebook-2-Clause
+   - Facebook-3-Clause
+   - Facebook-Examples
+   - WTFPL
 
   # Same as '--license-full'
   full: false
@@ -249,131 +248,131 @@ license:
   ignored: []
 
   notice:
-    - AFL-1.1
-    - AFL-1.2
-    - AFL-2.0
-    - AFL-2.1
-    - AFL-3.0
-    - Apache-1.0
-    - Apache-1.1
-    - Apache-2.0
-    - Artistic-1.0-cl8
-    - Artistic-1.0-Perl
-    - Artistic-1.0
-    - Artistic-2.0
-    - BSL-1.0
-    - BSD-2-Clause-FreeBSD
-    - BSD-2-Clause-NetBSD
-    - BSD-2-Clause
-    - BSD-3-Clause-Attribution
-    - BSD-3-Clause-Clear
-    - BSD-3-Clause-LBNL
-    - BSD-3-Clause
-    - BSD-4-Clause
-    - BSD-4-Clause-UC
-    - BSD-Protection
-    - CC-BY-1.0
-    - CC-BY-2.0
-    - CC-BY-2.5
-    - CC-BY-3.0
-    - CC-BY-4.0
-    - FTL
-    - ISC
-    - ImageMagick
-    - Libpng
-    - Lil-1.0
-    - Linux-OpenIB
-    - LPL-1.02
-    - LPL-1.0
-    - MS-PL
-    - MIT
-    - NCSA
-    - OpenSSL
-    - PHP-3.01
-    - PHP-3.0
-    - PIL
-    - Python-2.0
-    - Python-2.0-complete
-    - PostgreSQL
-    - SGI-B-1.0
-    - SGI-B-1.1
-    - SGI-B-2.0
-    - Unicode-DFS-2015
-    - Unicode-DFS-2016
-    - Unicode-TOU
-    - UPL-1.0
-    - W3C-19980720
-    - W3C-20150513
-    - W3C
-    - X11
-    - Xnet
-    - Zend-2.0
-    - zlib-acknowledgement
-    - Zlib
-    - ZPL-1.1
-    - ZPL-2.0
-    - ZPL-2.1
+   - AFL-1.1
+   - AFL-1.2
+   - AFL-2.0
+   - AFL-2.1
+   - AFL-3.0
+   - Apache-1.0
+   - Apache-1.1
+   - Apache-2.0
+   - Artistic-1.0-cl8
+   - Artistic-1.0-Perl
+   - Artistic-1.0
+   - Artistic-2.0
+   - BSL-1.0
+   - BSD-2-Clause-FreeBSD
+   - BSD-2-Clause-NetBSD
+   - BSD-2-Clause
+   - BSD-3-Clause-Attribution
+   - BSD-3-Clause-Clear
+   - BSD-3-Clause-LBNL
+   - BSD-3-Clause
+   - BSD-4-Clause
+   - BSD-4-Clause-UC
+   - BSD-Protection
+   - CC-BY-1.0
+   - CC-BY-2.0
+   - CC-BY-2.5
+   - CC-BY-3.0
+   - CC-BY-4.0
+   - FTL
+   - ISC
+   - ImageMagick
+   - Libpng
+   - Lil-1.0
+   - Linux-OpenIB
+   - LPL-1.02
+   - LPL-1.0
+   - MS-PL
+   - MIT
+   - NCSA
+   - OpenSSL
+   - PHP-3.01
+   - PHP-3.0
+   - PIL
+   - Python-2.0
+   - Python-2.0-complete
+   - PostgreSQL
+   - SGI-B-1.0
+   - SGI-B-1.1
+   - SGI-B-2.0
+   - Unicode-DFS-2015
+   - Unicode-DFS-2016
+   - Unicode-TOU
+   - UPL-1.0
+   - W3C-19980720
+   - W3C-20150513
+   - W3C
+   - X11
+   - Xnet
+   - Zend-2.0
+   - zlib-acknowledgement
+   - Zlib
+   - ZPL-1.1
+   - ZPL-2.0
+   - ZPL-2.1
 
   permissive: []
 
   reciprocal:
-    - APSL-1.0
-    - APSL-1.1
-    - APSL-1.2
-    - APSL-2.0
-    - CDDL-1.0
-    - CDDL-1.1
-    - CPL-1.0
-    - EPL-1.0
-    - EPL-2.0
-    - FreeImage
-    - IPL-1.0
-    - MPL-1.0
-    - MPL-1.1
-    - MPL-2.0
-    - Ruby
+   - APSL-1.0
+   - APSL-1.1
+   - APSL-1.2
+   - APSL-2.0
+   - CDDL-1.0
+   - CDDL-1.1
+   - CPL-1.0
+   - EPL-1.0
+   - EPL-2.0
+   - FreeImage
+   - IPL-1.0
+   - MPL-1.0
+   - MPL-1.1
+   - MPL-2.0
+   - Ruby
 
   restricted:
-    - BCL
-    - CC-BY-ND-1.0
-    - CC-BY-ND-2.0
-    - CC-BY-ND-2.5
-    - CC-BY-ND-3.0
-    - CC-BY-ND-4.0
-    - CC-BY-SA-1.0
-    - CC-BY-SA-2.0
-    - CC-BY-SA-2.5
-    - CC-BY-SA-3.0
-    - CC-BY-SA-4.0
-    - GPL-1.0
-    - GPL-2.0
-    - GPL-2.0-with-autoconf-exception
-    - GPL-2.0-with-bison-exception
-    - GPL-2.0-with-classpath-exception
-    - GPL-2.0-with-font-exception
-    - GPL-2.0-with-GCC-exception
-    - GPL-3.0
-    - GPL-3.0-with-autoconf-exception
-    - GPL-3.0-with-GCC-exception
-    - LGPL-2.0
-    - LGPL-2.1
-    - LGPL-3.0
-    - NPL-1.0
-    - NPL-1.1
-    - OSL-1.0
-    - OSL-1.1
-    - OSL-2.0
-    - OSL-2.1
-    - OSL-3.0
-    - QPL-1.0
-    - Sleepycat
+   - BCL
+   - CC-BY-ND-1.0
+   - CC-BY-ND-2.0
+   - CC-BY-ND-2.5
+   - CC-BY-ND-3.0
+   - CC-BY-ND-4.0
+   - CC-BY-SA-1.0
+   - CC-BY-SA-2.0
+   - CC-BY-SA-2.5
+   - CC-BY-SA-3.0
+   - CC-BY-SA-4.0
+   - GPL-1.0
+   - GPL-2.0
+   - GPL-2.0-with-autoconf-exception
+   - GPL-2.0-with-bison-exception
+   - GPL-2.0-with-classpath-exception
+   - GPL-2.0-with-font-exception
+   - GPL-2.0-with-GCC-exception
+   - GPL-3.0
+   - GPL-3.0-with-autoconf-exception
+   - GPL-3.0-with-GCC-exception
+   - LGPL-2.0
+   - LGPL-2.1
+   - LGPL-3.0
+   - NPL-1.0
+   - NPL-1.1
+   - OSL-1.0
+   - OSL-1.1
+   - OSL-2.0
+   - OSL-2.1
+   - OSL-3.0
+   - QPL-1.0
+   - Sleepycat
 
   unencumbered:
-    - CC0-1.0
-    - Unlicense
-    - 0BSD
-```
+   - CC0-1.0
+   - Unlicense
+   - 0BSD
 
+```
 ## Misconfiguration options
 
 ```yaml
@@ -412,14 +411,14 @@ misconfiguration:
 
   # Same as '--misconfig-scanners'
   scanners:
-    - azure-arm
-    - cloudformation
-    - dockerfile
-    - helm
-    - kubernetes
-    - terraform
-    - terraformplan-json
-    - terraformplan-snapshot
+   - azure-arm
+   - cloudformation
+   - dockerfile
+   - helm
+   - kubernetes
+   - terraform
+   - terraformplan-json
+   - terraformplan-snapshot
 
   terraform:
     # Same as '--tf-exclude-downloaded-modules'
@@ -427,8 +426,8 @@ misconfiguration:
 
     # Same as '--tf-vars'
     vars: []
-```
 
+```
 ## Module options
 
 ```yaml
@@ -438,8 +437,8 @@ module:
 
   # Same as '--enable-modules'
   enable-modules: []
-```
 
+```
 ## Package options
 
 ```yaml
@@ -449,22 +448,24 @@ pkg:
 
   # Same as '--pkg-relationships'
   relationships:
-    - unknown
-    - root
-    - workspace
-    - direct
-    - indirect
+   - unknown
+   - root
+   - workspace
+   - direct
+   - indirect
 
   # Same as '--pkg-types'
   types:
-    - os
-    - library
-```
+   - os
+   - library
 
+```
 ## Registry options
 
 ```yaml
 registry:
+  mirrors:
+
   # Same as '--password'
   password: []
 
@@ -476,8 +477,8 @@ registry:
 
   # Same as '--username'
   username: []
-```
 
+```
 ## Rego options
 
 ```yaml
@@ -499,8 +500,8 @@ rego:
 
   # Same as '--trace'
   trace: false
-```
 
+```
 ## Report options
 
 ```yaml
@@ -543,16 +544,16 @@ scan:
 
 # Same as '--severity'
 severity:
-  - UNKNOWN
-  - LOW
-  - MEDIUM
-  - HIGH
-  - CRITICAL
+ - UNKNOWN
+ - LOW
+ - MEDIUM
+ - HIGH
+ - CRITICAL
 
 # Same as '--template'
 template: ""
-```
 
+```
 ## Repository options
 
 ```yaml
@@ -565,14 +566,17 @@ repository:
 
   # Same as '--tag'
   tag: ""
-```
 
+```
 ## Scan options
 
 ```yaml
 scan:
   # Same as '--detection-priority'
   detection-priority: "precise"
+
+  # Same as '--distro'
+  distro: ""
 
   # Same as '--file-patterns'
   file-patterns: []
@@ -591,24 +595,24 @@ scan:
 
   # Same as '--scanners'
   scanners:
-    - vuln
-    - secret
+   - vuln
+   - secret
 
   # Same as '--skip-dirs'
   skip-dirs: []
 
   # Same as '--skip-files'
   skip-files: []
-```
 
+```
 ## Secret options
 
 ```yaml
 secret:
   # Same as '--secret-config'
   config: "tunnel-secret.yaml"
-```
 
+```
 ## Vulnerability options
 
 ```yaml
@@ -624,6 +628,6 @@ vulnerability:
 
   # Same as '--vex'
   vex: []
-```
 
-[example]: https://github.com/khulnasoft/tunnel/tree/{{ git.tag }}/examples/tunnel-config/tunnel.yaml
+```
+[example]: https://github.com/khulnasoft/tunnel/tree/{{ git.tag }}/examples/tunnel-conf/tunnel.yaml

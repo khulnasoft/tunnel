@@ -1,17 +1,17 @@
 # Combined input
 
 ## Overview
-
-Tunnel usually scans each configuration file individually.
+Tunnel usually scans each configuration file individually. 
 Sometimes it might be useful to compare values from different configuration files simultaneously.
 
 When `combine` is set to true, all config files under the specified directory are combined into one input data structure.
 
 !!! example
-`    __rego_input__ := {
+    ```
+    __rego_input__ := {
         "combine": false,
     }
-   `
+    ```
 
 In "combine" mode, the `input` document becomes an array, where each element is an object with two fields:
 
@@ -21,7 +21,6 @@ In "combine" mode, the `input` document becomes an array, where each element is 
 Now you can ensure that duplicate values match across the entirety of your configuration files.
 
 ## Return value
-
 In "combine" mode, the `deny` entrypoint must return an object with two keys
 
 `filepath` (required)
@@ -31,10 +30,10 @@ In "combine" mode, the `deny` entrypoint must return an object with two keys
 : the message describing an issue
 
 !!! example
-```
-deny[res] {
-resource := input[i].contents
-... some logic ...
+    ```
+    deny[res] {
+        resource := input[i].contents
+        ... some logic ...
 
     	res := {
     		"filepath": input[i].path,
@@ -42,3 +41,4 @@ resource := input[i].contents
     	}
     }
     ```
+

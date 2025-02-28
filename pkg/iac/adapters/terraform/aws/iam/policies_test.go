@@ -3,8 +3,7 @@ package iam
 import (
 	"testing"
 
-	"github.com/liamg/iamgo"
-
+	"github.com/aquasecurity/iamgo"
 	"github.com/khulnasoft/tunnel/internal/testutil"
 	"github.com/khulnasoft/tunnel/pkg/iac/adapters/terraform/tftestutil"
 	"github.com/khulnasoft/tunnel/pkg/iac/providers/aws/iam"

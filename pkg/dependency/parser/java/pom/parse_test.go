@@ -694,7 +694,7 @@ func TestPom_Parse(t *testing.T) {
 			// [INFO] com.example:soft:jar:1.0.0
 			// [INFO] +- org.example:example-api:jar:1.7.30:compile
 			// [INFO] \- org.example:example-dependency:jar:1.2.3:compile
-			// Save DependsOn for each package - https://github.com/khulnasoft/go-dep-parser/pull/243#discussion_r1303904548
+			// Save DependsOn for each package - https://github.com/khulnasoft/de-parser/pull/243#discussion_r1303904548
 			name:      "soft requirement",
 			inputFile: filepath.Join("testdata", "soft-requirement", "pom.xml"),
 			local:     true,
@@ -754,7 +754,7 @@ func TestPom_Parse(t *testing.T) {
 			// [INFO] +- org.example:example-dependency:jar:1.2.3:compile
 			// [INFO] |  \- org.example:example-api:jar:2.0.0:compile
 			// [INFO] \- org.example:example-dependency2:jar:2.3.4:compile
-			// Save DependsOn for each package - https://github.com/khulnasoft/go-dep-parser/pull/243#discussion_r1303904548
+			// Save DependsOn for each package - https://github.com/khulnasoft/de-parser/pull/243#discussion_r1303904548
 			name:      "soft requirement with transitive dependencies",
 			inputFile: filepath.Join("testdata", "soft-requirement-with-transitive-dependencies", "pom.xml"),
 			local:     true,
@@ -825,7 +825,7 @@ func TestPom_Parse(t *testing.T) {
 			//[INFO] +- org.example:example-nested:jar:3.3.4:compile
 			//[INFO] \- org.example:example-dependency:jar:1.2.3:compile
 			//[INFO]    \- org.example:example-api:jar:2.0.0:compile
-			// Save DependsOn for each package - https://github.com/khulnasoft/go-dep-parser/pull/243#discussion_r1303904548
+			// Save DependsOn for each package - https://github.com/khulnasoft/de-parser/pull/243#discussion_r1303904548
 			name:      "hard requirement for the specified version",
 			inputFile: filepath.Join("testdata", "hard-requirement", "pom.xml"),
 			local:     true,
@@ -1466,6 +1466,52 @@ func TestPom_Parse(t *testing.T) {
 					ID: "org.example:example-nested:3.3.3",
 					DependsOn: []string{
 						"org.example:example-dependency:1.2.4",
+					},
+				},
+			},
+		},
+		{
+			name:      "overwrite artifact version from dependencyManagement in the root POM when dependency uses `project.*` props",
+			inputFile: filepath.Join("testdata", "root-pom-dep-management-for-deps-with-project-props", "pom.xml"),
+			local:     true,
+			want: []ftypes.Package{
+				{
+					ID:           "com.example:root-pom-dep-management-for-deps-with-project-props:1.0.0",
+					Name:         "com.example:root-pom-dep-management-for-deps-with-project-props",
+					Version:      "1.0.0",
+					Relationship: ftypes.RelationshipRoot,
+				},
+				{
+					ID:           "org.example:example-dependency:1.7.30",
+					Name:         "org.example:example-dependency",
+					Version:      "1.7.30",
+					Relationship: ftypes.RelationshipDirect,
+					Locations: ftypes.Locations{
+						{
+							StartLine: 21,
+							EndLine:   25,
+						},
+					},
+				},
+				{
+					ID:           "org.example:example-api:2.0.0",
+					Name:         "org.example:example-api",
+					Version:      "2.0.0",
+					Licenses:     []string{"The Apache Software License, Version 2.0"},
+					Relationship: ftypes.RelationshipIndirect,
+				},
+			},
+			wantDeps: []ftypes.Dependency{
+				{
+					ID: "com.example:root-pom-dep-management-for-deps-with-project-props:1.0.0",
+					DependsOn: []string{
+						"org.example:example-dependency:1.7.30",
+					},
+				},
+				{
+					ID: "org.example:example-dependency:1.7.30",
+					DependsOn: []string{
+						"org.example:example-api:2.0.0",
 					},
 				},
 			},
@@ -2114,8 +2160,7 @@ func TestPom_Parse(t *testing.T) {
 
 			gotPkgs, gotDeps, err := p.Parse(f)
 			if tt.wantErr != "" {
-				require.Error(t, err)
-				assert.Contains(t, err.Error(), tt.wantErr)
+				require.ErrorContains(t, err, tt.wantErr)
 				return
 			}
 			require.NoError(t, err)

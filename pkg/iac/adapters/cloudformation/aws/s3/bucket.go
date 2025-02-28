@@ -7,8 +7,8 @@ import (
 	"strings"
 
 	s3types "github.com/aws/aws-sdk-go-v2/service/s3/types"
-	"github.com/liamg/iamgo"
 
+	"github.com/aquasecurity/iamgo"
 	"github.com/khulnasoft/tunnel/pkg/iac/providers/aws/iam"
 	"github.com/khulnasoft/tunnel/pkg/iac/providers/aws/s3"
 	"github.com/khulnasoft/tunnel/pkg/iac/scanners/cloudformation/parser"

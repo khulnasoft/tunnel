@@ -59,7 +59,7 @@ var (
 							{
 								Type:    cyclonedx.ComponentTypeApplication,
 								Name:    "tunnel",
-								Group:   "khulnasoft",
+								Group:   "aquasecurity",
 								Version: "dev",
 							},
 						},
@@ -183,7 +183,7 @@ var (
 							{
 								Type:    cyclonedx.ComponentTypeApplication,
 								Name:    "tunnel",
-								Group:   "khulnasoft",
+								Group:   "aquasecurity",
 								Version: "dev",
 							},
 						},

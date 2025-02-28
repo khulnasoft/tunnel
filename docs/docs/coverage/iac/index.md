@@ -1,8 +1,7 @@
 # Infrastructure as Code
 
 ## Scanner
-
-Tunnel scans Infrastructure as Code (IaC) files for
+Tunnel scans Infrastructure as Code (IaC) files for 
 
 - [Misconfigurations][misconf]
 - [Secrets][secret]
@@ -10,7 +9,7 @@ Tunnel scans Infrastructure as Code (IaC) files for
 ## Supported configurations
 
 | Config type                         | File patterns                    |
-| ----------------------------------- | -------------------------------- |
+|-------------------------------------|----------------------------------|
 | [Kubernetes](kubernetes.md)         | \*.yml, \*.yaml, \*.json         |
 | [Docker](docker.md)                 | Dockerfile, Containerfile        |
 | [Terraform](terraform.md)           | \*.tf, \*.tf.json, \*.tfvars     |

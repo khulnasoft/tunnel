@@ -107,7 +107,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						Architecture: "arm64",
 						Config: v1.Config{
 							Labels: map[string]string{
-								"vendor": "khulnasoft",
+								"vendor": "aquasecurity",
 							},
 						},
 					},
@@ -146,7 +146,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 									DiffID: "sha256:d871dadfb37b53ef1ca45be04fc527562b91989991a8f545345ae3be0b93f92a",
 								},
 								SeveritySource: vulnerability.RedHatOVAL,
-								PrimaryURL:     "https://avd.khulnasoft.com/nvd/cve-2018-20623",
+								PrimaryURL:     "https://avd.aquasec.com/nvd/cve-2018-20623",
 								DataSource: &dtypes.DataSource{
 									ID:   vulnerability.RedHatOVAL,
 									Name: "Red Hat OVAL v2",
@@ -287,7 +287,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 							{
 								Type:    cdx.ComponentTypeApplication,
 								Name:    "tunnel",
-								Group:   "khulnasoft",
+								Group:   "aquasecurity",
 								Version: "dev",
 							},
 						},
@@ -308,7 +308,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 							},
 							{
 								Name:  "khulnasoft:tunnel:Labels:vendor",
-								Value: "khulnasoft",
+								Value: "aquasecurity",
 							},
 							{
 								Name:  "khulnasoft:tunnel:RepoDigest",
@@ -559,7 +559,6 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 					{
 						Ref: "3ff14136-e09f-4df9-80ea-000000000004",
 						Dependencies: &[]string{
-							"3ff14136-e09f-4df9-80ea-000000000005",
 							"pkg:gem/actioncontroller@7.0.0",
 						},
 					},
@@ -670,7 +669,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						Updated:     "2019-10-31T01:15:00+00:00",
 						Advisories: &[]cdx.Advisory{
 							{
-								URL: "https://avd.khulnasoft.com/nvd/cve-2018-20623",
+								URL: "https://avd.aquasec.com/nvd/cve-2018-20623",
 							},
 						},
 						Affects: &[]cdx.Affects{
@@ -827,7 +826,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 								InstalledVersion: "7.0.0",
 								FixedVersion:     "~> 5.2.6, >= 5.2.6.2, ~> 6.0.4, >= 6.0.4.6, ~> 6.1.4, >= 6.1.4.6, >= 7.0.2.2",
 								SeveritySource:   vulnerability.RubySec,
-								PrimaryURL:       "https://avd.khulnasoft.com/nvd/cve-2022-23633",
+								PrimaryURL:       "https://avd.aquasec.com/nvd/cve-2022-23633",
 								DataSource: &dtypes.DataSource{
 									ID:   vulnerability.RubySec,
 									Name: "Ruby Advisory Database",
@@ -871,7 +870,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 								InstalledVersion: "7.0.1",
 								FixedVersion:     "~> 5.2.6, >= 5.2.6.2, ~> 6.0.4, >= 6.0.4.6, ~> 6.1.4, >= 6.1.4.6, >= 7.0.2.2",
 								SeveritySource:   vulnerability.RubySec,
-								PrimaryURL:       "https://avd.khulnasoft.com/nvd/cve-2022-23633",
+								PrimaryURL:       "https://avd.aquasec.com/nvd/cve-2022-23633",
 								DataSource: &dtypes.DataSource{
 									ID:   vulnerability.RubySec,
 									Name: "Ruby Advisory Database",
@@ -924,7 +923,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 							{
 								Type:    cdx.ComponentTypeApplication,
 								Name:    "tunnel",
-								Group:   "khulnasoft",
+								Group:   "aquasecurity",
 								Version: "dev",
 							},
 						},
@@ -1123,8 +1122,6 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						Ref: "3ff14136-e09f-4df9-80ea-000000000002",
 						Dependencies: &[]string{
 							"pkg:rpm/centos/acl@2.2.53-1.el8?arch=aarch64&distro=centos-8.3.2011&epoch=1",
-							// Tunnel is unable to identify the direct OS packages as of today.
-							"pkg:rpm/centos/glibc@2.28-151.el8?arch=aarch64&distro=centos-8.3.2011",
 						},
 					},
 					{
@@ -1192,7 +1189,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						Description: "Action Pack is a framework for handling and responding to web requests. Under certain circumstances response bodies will not be closed. In the event a response is *not* notified of a `close`, `ActionDispatch::Executor` will not know to reset thread local state for the next request. This can lead to data being leaked to subsequent requests.This has been fixed in Rails 7.0.2.1, 6.1.4.5, 6.0.4.5, and 5.2.6.1. Upgrading is highly recommended, but to work around this problem a middleware described in GHSA-wh98-p28r-vrc9 can be used.",
 						Advisories: &[]cdx.Advisory{
 							{
-								URL: "https://avd.khulnasoft.com/nvd/cve-2022-23633",
+								URL: "https://avd.aquasec.com/nvd/cve-2022-23633",
 							},
 							{
 								URL: "http://www.openwall.com/lists/oss-security/2022/02/11/5",
@@ -1311,7 +1308,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 							{
 								Type:    cdx.ComponentTypeApplication,
 								Name:    "tunnel",
-								Group:   "khulnasoft",
+								Group:   "aquasecurity",
 								Version: "dev",
 							},
 						},
@@ -1493,7 +1490,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 								FixedVersion:     "2.12.7.1, 2.13.4.2",
 								Status:           dtypes.StatusFixed,
 								SeveritySource:   "ghsa",
-								PrimaryURL:       "https://avd.khulnasoft.com/nvd/cve-2022-42003",
+								PrimaryURL:       "https://avd.aquasec.com/nvd/cve-2022-42003",
 								DataSource: &dtypes.DataSource{
 									ID:   vulnerability.GHSA,
 									Name: "GitHub Security Advisory Maven",
@@ -1538,7 +1535,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 							{
 								Type:    cdx.ComponentTypeApplication,
 								Name:    "tunnel",
-								Group:   "khulnasoft",
+								Group:   "aquasecurity",
 								Version: "dev",
 							},
 						},
@@ -1597,7 +1594,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						Description: "In FasterXML jackson-databind before versions 2.13.4.1 and 2.12.17.1, resource exhaustion can occur because of a lack of a check in primitive value deserializers to avoid deep wrapper array nesting, when the UNWRAP_SINGLE_VALUE_ARRAYS feature is enabled.",
 						Advisories: &[]cdx.Advisory{
 							{
-								URL: "https://avd.khulnasoft.com/nvd/cve-2022-42003",
+								URL: "https://avd.aquasec.com/nvd/cve-2022-42003",
 							},
 							{
 								URL: "https://access.redhat.com/security/cve/CVE-2022-42003",
@@ -1690,7 +1687,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 								InstalledVersion: "1.20.0",
 								FixedVersion:     "1.22.0",
 								SeveritySource:   vulnerability.GHSA,
-								PrimaryURL:       "https://avd.khulnasoft.com/nvd/cve-2023-34468",
+								PrimaryURL:       "https://avd.aquasec.com/nvd/cve-2023-34468",
 								DataSource: &dtypes.DataSource{
 									ID:   vulnerability.GHSA,
 									Name: "GitHub Security Advisory Maven",
@@ -1741,7 +1738,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 								InstalledVersion: "1.20.0",
 								FixedVersion:     "1.22.0",
 								SeveritySource:   vulnerability.GHSA,
-								PrimaryURL:       "https://avd.khulnasoft.com/nvd/cve-2023-34468",
+								PrimaryURL:       "https://avd.aquasec.com/nvd/cve-2023-34468",
 								DataSource: &dtypes.DataSource{
 									ID:   vulnerability.GHSA,
 									Name: "GitHub Security Advisory Maven",
@@ -1794,7 +1791,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 							{
 								Type:    cdx.ComponentTypeApplication,
 								Name:    "tunnel",
-								Group:   "khulnasoft",
+								Group:   "aquasecurity",
 								Version: "dev",
 							},
 						},
@@ -1898,7 +1895,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 						Description: "The DBCPConnectionPool and HikariCPConnectionPool Controller Services in Apache NiFi 0.0.2 through 1.21.0...",
 						Advisories: &[]cdx.Advisory{
 							{
-								URL: "https://avd.khulnasoft.com/nvd/cve-2023-34468",
+								URL: "https://avd.aquasec.com/nvd/cve-2023-34468",
 							},
 							{
 								URL: "http://www.openwall.com/lists/oss-security/2023/06/12/3",
@@ -1981,7 +1978,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 							{
 								Type:    cdx.ComponentTypeApplication,
 								Name:    "tunnel",
-								Group:   "khulnasoft",
+								Group:   "aquasecurity",
 								Version: "dev",
 							},
 						},
@@ -2069,7 +2066,7 @@ func TestMarshaler_MarshalReport(t *testing.T) {
 							{
 								Type:    cdx.ComponentTypeApplication,
 								Name:    "tunnel",
-								Group:   "khulnasoft",
+								Group:   "aquasecurity",
 								Version: "dev",
 							},
 						},

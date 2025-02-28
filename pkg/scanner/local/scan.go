@@ -24,6 +24,7 @@ import (
 	"github.com/khulnasoft/tunnel/pkg/scanner/langpkg"
 	"github.com/khulnasoft/tunnel/pkg/scanner/ospkg"
 	"github.com/khulnasoft/tunnel/pkg/scanner/post"
+	"github.com/khulnasoft/tunnel/pkg/set"
 	"github.com/khulnasoft/tunnel/pkg/types"
 	"github.com/khulnasoft/tunnel/pkg/vulnerability"
 
@@ -90,10 +91,16 @@ func (s Scanner) Scan(ctx context.Context, targetName, artifactKey string, blobK
 		return nil, ftypes.OS{}, xerrors.Errorf("failed to apply layers: %w", err)
 	}
 
+	if !lo.IsEmpty(options.Distro) && !lo.IsEmpty(detail.OS) {
+		log.Info("Overriding detected OS with provided distro", log.String("detected", detail.OS.String()),
+			log.String("provided", options.Distro.String()))
+		detail.OS = options.Distro
+	}
+
 	target := types.ScanTarget{
 		Name:              targetName,
 		OS:                detail.OS,
-		Repository:        detail.Repository,
+		Repository:        lo.Ternary(lo.IsEmpty(options.Distro), detail.Repository, nil),
 		Packages:          mergePkgs(detail.Packages, detail.ImageConfig.Packages, options),
 		Applications:      detail.Applications,
 		Misconfigurations: mergeMisconfigurations(targetName, detail),
@@ -192,7 +199,7 @@ func (s Scanner) misconfsToResults(misconfs []ftypes.Misconfiguration, options t
 	return s.MisconfsToResults(misconfs)
 }
 
-// MisconfsToResults is exported for tunnel-plugin-khulnasoft purposes only
+// MisconfsToResults is exported for tunnel-plugin-aqua purposes only
 func (s Scanner) MisconfsToResults(misconfs []ftypes.Misconfiguration) types.Results {
 	log.Info("Detected config files", log.Int("num", len(misconfs)))
 	var results types.Results
@@ -338,7 +345,7 @@ func toDetectedMisconfiguration(res ftypes.MisconfResult, defaultSeverity dbType
 	// empty namespace implies a go rule from defsec, "builtin" refers to a built-in rego rule
 	// this ensures we don't generate bad links for custom policies
 	if res.Namespace == "" || rego.IsBuiltinNamespace(res.Namespace) {
-		primaryURL = fmt.Sprintf("https://avd.khulnasoft.com/misconfig/%s", strings.ToLower(res.ID))
+		primaryURL = fmt.Sprintf("https://avd.aquasec.com/misconfig/%s", strings.ToLower(res.ID))
 		res.References = append(res.References, primaryURL)
 	}
 
@@ -452,12 +459,12 @@ func mergePkgs(pkgs, pkgsFromCommands []ftypes.Package, options types.ScanOption
 	}
 
 	// pkg has priority over pkgsFromCommands
-	uniqPkgs := make(map[string]struct{})
+	uniqPkgs := set.New[string]()
 	for _, pkg := range pkgs {
-		uniqPkgs[pkg.Name] = struct{}{}
+		uniqPkgs.Append(pkg.Name)
 	}
 	for _, pkg := range pkgsFromCommands {
-		if _, ok := uniqPkgs[pkg.Name]; ok {
+		if uniqPkgs.Contains(pkg.Name) {
 			continue
 		}
 		pkgs = append(pkgs, pkg)

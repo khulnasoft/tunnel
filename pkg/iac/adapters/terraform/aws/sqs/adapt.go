@@ -2,8 +2,8 @@ package sqs
 
 import (
 	"github.com/google/uuid"
-	"github.com/liamg/iamgo"
 
+	"github.com/aquasecurity/iamgo"
 	"github.com/khulnasoft/tunnel/pkg/iac/adapters/terraform/aws/iam"
 	iamp "github.com/khulnasoft/tunnel/pkg/iac/providers/aws/iam"
 	"github.com/khulnasoft/tunnel/pkg/iac/providers/aws/sqs"

@@ -1,7 +1,7 @@
 # Local VEX Files
 
 !!! warning "EXPERIMENTAL"
-This feature might change without preserving backwards compatibility.
+    This feature might change without preserving backwards compatibility.
 
 In addition to [VEX repositories](./repo.md), Tunnel also supports the use of local VEX files for vulnerability filtering.
 This method is useful when you have specific VEX documents that you want to apply to your scans.
@@ -12,15 +12,14 @@ Currently, Tunnel supports the following formats:
 - [CSAF](https://oasis-open.github.io/csaf-documentation/specification.html)
 
 ## CycloneDX
-
 |     Target      | Supported |
-| :-------------: | :-------: |
+|:---------------:|:---------:|
 | Container Image |           |
 |   Filesystem    |           |
 | Code Repository |           |
 |    VM Image     |           |
 |   Kubernetes    |           |
-|      SBOM       |    ✅     |
+|      SBOM       |     ✅     |
 
 There are [two VEX formats](https://cyclonedx.org/capabilities/vex/) for CycloneDX:
 
@@ -37,7 +36,6 @@ The following steps are required:
 3. Provide the VEX when scanning the CycloneDX SBOM
 
 ### Generate the SBOM
-
 You can generate a CycloneDX SBOM with Tunnel as follows:
 
 ```bash
@@ -45,7 +43,6 @@ $ tunnel image --format cyclonedx --output debian11.sbom.cdx debian:11
 ```
 
 ### Create the VEX
-
 Next, create a VEX based on the generated SBOM.
 Multiple vulnerability statuses can be defined under `vulnerabilities`.
 Take a look at the example below.
@@ -90,7 +87,7 @@ urn:cdx:serialNumber/version#bom-ref
 - serialNumber
 - version
 - bom-ref
-
+ 
 These values must be obtained from the CycloneDX SBOM.
 Please note that while the serialNumber starts with `urn:uuid:`, the BOM-Link starts with `urn:cdx:`.
 
@@ -104,7 +101,6 @@ For more details on CycloneDX VEX and BOM-Link, please refer to the following li
 - [Examples](https://github.com/CycloneDX/bom-examples/tree/master)
 
 ### Scan SBOM with VEX
-
 Provide the VEX when scanning the CycloneDX SBOM.
 
 ```bash
@@ -121,22 +117,21 @@ Total: 1 (UNKNOWN: 0, LOW: 1, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
 ├───────────────────────────┼───────────────┼──────────┼───────────────────┼───────────────┼────────────────────────────────────────────────────────────┤
 │ github.com/aws/aws-sdk-go │ CVE-2020-8912 │ LOW      │ v1.44.234         │               │ aws-sdk-go: In-band key negotiation issue in AWS S3 Crypto │
 │                           │               │          │                   │               │ SDK for golang...                                          │
-│                           │               │          │                   │               │ https://avd.khulnasoft.com/nvd/cve-2020-8912                  │
+│                           │               │          │                   │               │ https://avd.aquasec.com/nvd/cve-2020-8912                  │
 └───────────────────────────┴───────────────┴──────────┴───────────────────┴───────────────┴────────────────────────────────────────────────────────────┘
 ```
 
 CVE-2020-8911 is no longer shown as it is filtered out according to the given CycloneDX VEX document.
 
 ## OpenVEX
-
 |     Target      | Supported |
-| :-------------: | :-------: |
-| Container Image |    ✅     |
-|   Filesystem    |    ✅     |
-| Code Repository |    ✅     |
-|    VM Image     |    ✅     |
-|   Kubernetes    |    ✅     |
-|      SBOM       |    ✅     |
+|:---------------:|:---------:|
+| Container Image |     ✅     |
+|   Filesystem    |     ✅     |
+| Code Repository |     ✅     |
+|    VM Image     |     ✅     |
+|   Kubernetes    |     ✅     |
+|      SBOM       |     ✅     |
 
 Tunnel also supports [OpenVEX][openvex] that is designed to be minimal, compliant, interoperable, and embeddable.
 OpenVEX can be used in all Tunnel targets, unlike CycloneDX VEX.
@@ -147,7 +142,6 @@ The following steps are required:
 2. Provide the VEX when scanning your target
 
 ### Create the VEX document
-
 Please see also [the example](https://github.com/openvex/examples).
 Tunnel requires [the Package URL (PURL)][purl] as the product identifier.
 
@@ -156,7 +150,7 @@ $ cat <<EOF > debian11.openvex.json
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
   "@id": "https://openvex.dev/docs/public/vex-2e67563e128250cbcb3e98930df948dd053e43271d70dc50cfa22d57e03fe96f",
-  "author": "KhulnaSoft Security",
+  "author": "Khulnasoft Security",
   "timestamp": "2023-08-29T19:07:16.853479631-06:00",
   "version": 1,
   "statements": [
@@ -190,7 +184,7 @@ If you only specify the PURL of the container image as the product, the resultin
   {
     "vulnerability": {"name": "CVE-2024-32002"},
     "products": [
-      {"@id": "pkg:oci/tunnel?repository_url=ghcr.io%2Fkhulnasoft%2Ftunnel"}
+      {"@id": "pkg:oci/tunnel?repository_url=ghcr.io%2Faquasecurity%2Ftunnel"}
     ],
     "status": "not_affected",
     "justification": "vulnerable_code_not_in_execute_path"
@@ -212,7 +206,7 @@ If the intention is to declare that the `git` package distributed by Alpine Linu
     "vulnerability": {"name": "CVE-2024-32002"},
     "products": [
       {
-        "@id": "pkg:oci/tunnel?repository_url=ghcr.io%2Fkhulnasoft%2Ftunnel",
+        "@id": "pkg:oci/tunnel?repository_url=ghcr.io%2Faquasecurity%2Ftunnel",
         "subcomponents": [
           {"@id": "pkg:apk/alpine/git"}
         ]
@@ -272,31 +266,30 @@ This is particularly useful when there is a common component or library that is 
 You can see [the appendix](#applying-vex-to-dependency-trees) for more details on how VEX is applied in Tunnel.
 
 ### Scan with VEX
-
 Provide the VEX when scanning your target.
 
 ```bash
-$ tunnel image debian:11 --vex debian11.openvex.json
+$ tunnel image debian:11.6 --vex debian11.openvex.json
 ...
 2023-04-26T17:56:05.358+0300    INFO    Filtered out the detected vulnerability {"VEX format": "OpenVEX", "vulnerability-id": "CVE-2019-8457", "status": "not_affected", "justification": "vulnerable_code_not_in_execute_path"}
 
-debian11.spdx.json (debian 11.6)
-================================
-Total: 80 (UNKNOWN: 0, LOW: 58, MEDIUM: 6, HIGH: 16, CRITICAL: 0)
+debian:11.6 (debian 11.6)
+
+Total: 176 (UNKNOWN: 1, LOW: 82, MEDIUM: 46, HIGH: 41, CRITICAL: 5)
 ```
 
 CVE-2019-8457 is no longer shown as it is filtered out according to the given OpenVEX document.
 
-## CSAF
 
+## CSAF
 |     Target      | Supported |
-| :-------------: | :-------: |
-| Container Image |    ✅     |
-|   Filesystem    |    ✅     |
-| Code Repository |    ✅     |
-|    VM Image     |    ✅     |
-|   Kubernetes    |    ✅     |
-|      SBOM       |    ✅     |
+|:---------------:|:---------:|
+| Container Image |     ✅     |
+|   Filesystem    |     ✅     |
+| Code Repository |     ✅     |
+|    VM Image     |     ✅     |
+|   Kubernetes    |     ✅     |
+|      SBOM       |     ✅     |
 
 Tunnel also supports [CSAF][csaf] format for VEX.
 Since CSAF aims to be SBOM format agnostic, both CycloneDX and SPDX formats are available for use as input SBOMs in Tunnel.
@@ -306,8 +299,8 @@ The following steps are required:
 1. Create a CSAF document
 2. Provide the CSAF when scanning your target
 
-### Create the CSAF document
 
+### Create the CSAF document
 Create a CSAF document in JSON format as follows:
 
 <details>
@@ -331,7 +324,7 @@ $ cat <<EOF > debian11.vex.csaf
       "name": "Example Company ProductCERT",
       "namespace": "https://psirt.example.com"
     },
-    "title": "KhulnaSoft example VEX document",
+    "title": "AquaSecurity example VEX document",
     "tracking": {
       "current_release_date": "2024-01-01T11:00:00.000Z",
       "generator": {
@@ -424,45 +417,40 @@ At present, the specified relationship category is not taken into account and al
 You can see [the appendix](#applying-vex-to-dependency-trees) for more details on how VEX is applied in Tunnel.
 
 ### Scan with CSAF VEX
-
 Provide the CSAF document when scanning your target.
 
 ```bash
-$ tunnel image debian:11 --vex debian11.vex.csaf
+$ tunnel image debian:11.8 --vex debian11.vex.csaf
 ...
 2024-01-02T10:28:26.704+0100	INFO	Filtered out the detected vulnerability	{"VEX format": "CSAF", "vulnerability-id": "CVE-2019-8457", "status": "not_affected"}
 
-debian11.spdx.json (debian 11.6)
-================================
-Total: 80 (UNKNOWN: 0, LOW: 58, MEDIUM: 6, HIGH: 16, CRITICAL: 0)
+debian:11.8 (debian 11.8)
+
+Total: 153 (UNKNOWN: 1, LOW: 82, MEDIUM: 33, HIGH: 32, CRITICAL: 5)
 ```
 
 CVE-2019-8457 is no longer shown as it is filtered out according to the given CSAF document.
 
 ## Appendix
-
 ### PURL matching
-
 In the context of VEX, Package URLs (PURLs) are utilized to identify specific software packages and their versions.
 The PURL matching specification outlines how PURLs are interpreted for vulnerability exception processing, ensuring precise identification and broad coverage of software packages.
 
 !!! note
-The following PURL matching rules are not formally defined within the current official PURL specification.
-Instead, they represent [a community consensus][purl-matching] on how to interpret PURLs.
+    The following PURL matching rules are not formally defined within the current official PURL specification.
+    Instead, they represent [a community consensus][purl-matching] on how to interpret PURLs.
 
 Below are the key aspects of the PURL matching rules:
 
 #### Matching Without Version
-
 A PURL without a specified version (e.g., `pkg:maven/com.google.guava/guava`) matches all versions of that package.
 This rule simplifies the application of vulnerability exceptions to all versions of a package.
 
 **Example**: `pkg:maven/com.google.guava/guava` matches:
 
 - All versions of `guava`, such as `com.google.guava:guava:24.1.1`, `com.google.guava:guava:30.0`.
-
+ 
 #### Matching Without Qualifiers
-
 A PURL without any qualifiers (e.g., `pkg:maven/com.google.guava/guava@24.1.1`) matches any variation of that package, irrespective of qualifiers.
 This approach ensures broad matching capabilities, covering all architectural or platform-specific variations of a package version.
 
@@ -472,20 +460,19 @@ This approach ensures broad matching capabilities, covering all architectural or
 - `pkg:maven/com.google.guava/guava@24.1.1?type=pom`
 
 #### Matching With Specific Qualifiers
-
 A PURL that includes specific qualifiers (e.g., `pkg:maven/com.google.guava/guava@24.1.1?classifier=x86`) matches only those package versions that include the same qualifiers.
 
 **Example**: `pkg:maven/com.google.guava/guava@24.1.1?classifier=x86` matches:
 
 - `pkg:maven/com.google.guava/guava@24.1.1?classifier=x86&type=dll`
-  - Extra qualifiers (e.g., `type=dll`) are ignored.
+    - Extra qualifiers (e.g., `type=dll`) are ignored.
 
 does not match:
 
 - `pkg:maven/com.google.guava/guava@24.1.1`
-  - `classifier=x86` is missing.
+    - `classifier=x86` is missing.
 - `pkg:maven/com.google.guava/guava@24.1.1?classifier=sources`
-  - `classifier` must have the same value.
+    - `classifier` must have the same value.
 
 ### Applying VEX to Dependency Trees
 
@@ -495,7 +482,7 @@ Let's consider a project with the following dependency tree, where `Module C v2.
 ```mermaid
 graph TD;
   modRootA(Module Root A v1.0.0)
-  modB(Module B v1.0.0)
+  modB(Module B v1.0.0) 
   modC(Module C v2.0.0)
 
   modRootA-->modB
@@ -517,7 +504,7 @@ Now, suppose a VEX statement is issued for `Module B` as follows:
       }
     ],
     "status": "not_affected",
-    "justification": "vulnerable_code_not_in_execute_path"
+    "justification": "vulnerable_code_not_in_execute_path"  
   }
 ]
 ```
@@ -525,15 +512,15 @@ Now, suppose a VEX statement is issued for `Module B` as follows:
 It declares that `Module B` is not affected by CVE-XXXX-YYYY on `Module C`.
 
 !!! note
-The VEX in this example defines the relationship between `Module B` and `Module C`.
-However, as Tunnel traverses all parents from vulnerable packages, it is also possible to define a VEX for the relationship between a vulnerable package and any parent, such as `Module A` and `Module C`, etc.
+    The VEX in this example defines the relationship between `Module B` and `Module C`.
+    However, as Tunnel traverses all parents from vulnerable packages, it is also possible to define a VEX for the relationship between a vulnerable package and any parent, such as `Module A` and `Module C`, etc.
 
 Mapping this VEX onto the dependency tree would look like this:
 
 ```mermaid
 graph TD;
   modRootA(Module Root A v1.0.0)
-
+  
   subgraph "VEX (Not Affected)"
   modB(Module B v1.0.0)
   modC(Module C v2.0.0)
@@ -565,12 +552,12 @@ Assuming the same VEX as before, applying it to this dependency tree would look 
 ```mermaid
 graph TD;
   modRootZ(Module Root Z v1.0.0)
-
+  
   subgraph "VEX (Not Affected)"
   modB'(Module B v1.0.0)
   modC'(Module C v2.0.0)
   end
-
+  
   modD'(Module D v3.0.0)
 
   modRootZ-->modB'
@@ -584,9 +571,11 @@ While the VEX tells us that `Module B` is not affected by the vulnerability, `Mo
 In the absence of a VEX, the default assumption is that it is affected.
 Taking all of this into account, Tunnel determines that `Module Root Z` is affected by this vulnerability.
 
+
 [csaf]: https://oasis-open.github.io/csaf-documentation/specification.html
 [openvex]: https://github.com/openvex/spec
 [purl]: https://github.com/package-url/purl-spec
 [purl-matching]: https://github.com/openvex/spec/issues/27
+
 [openvex-subcomponent]: https://github.com/openvex/spec/blob/main/OPENVEX-SPEC.md#subcomponent
 [csaf-relationship]: https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3224-product-tree-property---relationships

@@ -37,7 +37,8 @@ Manage VEX repositories
 
 ### SEE ALSO
 
-- [tunnel vex](tunnel_vex.md) - [EXPERIMENTAL] VEX utilities
-- [tunnel vex repo download](tunnel_vex_repo_download.md) - Download the VEX repositories
-- [tunnel vex repo init](tunnel_vex_repo_init.md) - Initialize a configuration file
-- [tunnel vex repo list](tunnel_vex_repo_list.md) - List VEX repositories
+* [tunnel vex](tunnel_vex.md)	 - [EXPERIMENTAL] VEX utilities
+* [tunnel vex repo download](tunnel_vex_repo_download.md)	 - Download the VEX repositories
+* [tunnel vex repo init](tunnel_vex_repo_init.md)	 - Initialize a configuration file
+* [tunnel vex repo list](tunnel_vex_repo_list.md)	 - List VEX repositories
+

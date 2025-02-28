@@ -31,7 +31,7 @@ type Platform struct {
 	*v1.Platform
 
 	// Force returns an error if the specified platform is not found.
-	// This option is for KhulnaSoft, and cannot be configured via Tunnel CLI.
+	// This option is for Aqua, and cannot be configured via Tunnel CLI.
 	Force bool
 }
 
@@ -81,6 +81,9 @@ type RegistryOptions struct {
 
 	// RegistryToken is a bearer token to be sent to a registry
 	RegistryToken string
+
+	// RegistryMirrors is a map of hosts with mirrors for them
+	RegistryMirrors map[string][]string
 
 	// SSL/TLS
 	Insecure bool

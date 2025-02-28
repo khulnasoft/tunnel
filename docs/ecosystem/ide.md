@@ -28,7 +28,7 @@ Tunnel has an extension for Kubernetes Lens that lets you scan Kubernetes worklo
 
 Vim plugin for Tunnel to install and run Tunnel.
 
-👉 Get it at: <https://github.com/khulnasoft/vim-tunnel>
+👉 Get it at: <https://github.com/aquasecurity/vim-tunnel>
 
 ## Docker Desktop (Community)
 
@@ -58,7 +58,7 @@ Web application that allows to load a Tunnel report in json format and displays 
 
 ## Tunnel pre-commit (Community)
 
-A tunnel pre-commit hook that runs a `tunnel fs` in your git repo before commiting, preventing you from commiting secrets in the first place.
+A tunnel pre-commit hook that runs a `tunnel fs` in your git repo before committing, preventing you from committing secrets in the first place.
 
 👉 Get it at: <https://github.com/mxab/pre-commit-tunnel>
 

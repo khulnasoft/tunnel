@@ -6,7 +6,7 @@ import (
 	"path"
 	"strings"
 
-	"github.com/aquasecurity/go-version/pkg/semver"
+	"github.com/khulnasoft/goversify/pkg/semver"
 	"github.com/khulnasoft/tunnel/pkg/version/app"
 )
 
@@ -17,8 +17,8 @@ func BaseURL(ver string) *url.URL {
 	ver = canonicalVersion(ver)
 	return &url.URL{
 		Scheme: "https",
-		Host:   "khulnasoft.github.io",
-		Path:   path.Join("tunnel", ver),
+		Host:   "tunnel.dev",
+		Path:   ver,
 	}
 }
 

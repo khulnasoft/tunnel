@@ -5,6 +5,7 @@ package main
 
 import (
 	"bufio"
+	"errors"
 	"fmt"
 	"io"
 	"os"
@@ -112,7 +113,7 @@ func (Spring4Shell) parseTomcatReleaseNotes(f *os.File, filePath string) (*seria
 
 	m := tomcatVersionRegex.FindStringSubmatch(string(b))
 	if len(m) != 2 {
-		return nil, fmt.Errorf("unknown tomcat release notes format")
+		return nil, errors.New("unknown tomcat release notes format")
 	}
 
 	return &serialize.AnalysisResult{
@@ -178,7 +179,7 @@ func (Spring4Shell) PostScanSpec() serialize.PostScanSpec {
 //	        "DiffID": "sha256:eb769943b91f10a0418f2fc3b4a4fde6c6293be60c37293fcc0fa319edaf27a5"
 //	      },
 //	      "SeveritySource": "nvd",
-//	      "PrimaryURL": "https://avd.khulnasoft.com/nvd/cve-2022-22965",
+//	      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-22965",
 //	      "DataSource": {
 //	        "ID": "glad",
 //	        "Name": "GitLab Advisory Database Community",

@@ -10,7 +10,7 @@ body:
   - type: textarea
     id: info
     attributes:
-      label: "[Optional] Can you provide us with a quote on your favourite part of Tunnel? This may be used on the tunnel.dev website, posted on Twitter (@KhulnaSoftTunnel) or similar marketing material."
+      label: "[Optional] Can you provide us with a quote on your favourite part of Tunnel? This may be used on the tunnel.dev website, posted on Twitter (@AquaTunnel) or similar marketing material."
     validations:
       required: false
   - type: checkboxes

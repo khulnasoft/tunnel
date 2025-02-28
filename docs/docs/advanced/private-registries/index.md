@@ -2,7 +2,6 @@ Tunnel can download images from a private registry without the need for installi
 This makes it easy to run within a CI process.
 
 ## Login
-
 You can log in to a private registry using the `tunnel registry login` command.
 It uses the Docker configuration file (`~/.docker/config.json`) to store the credentials under the hood, and the configuration file path can be configured by `DOCKER_CONFIG` environment variable.
 
@@ -12,7 +11,6 @@ $ tunnel image ghcr.io/your/private_image
 ```
 
 ## Passing Credentials
-
 You can also provide your credentials when scanning.
 
 ```shell
@@ -20,9 +18,9 @@ $ TUNNEL_USERNAME=YOUR_USERNAME TUNNEL_PASSWORD=YOUR_PASSWORD tunnel image YOUR_
 ```
 
 !!! warning
-When passing credentials via environment variables or CLI flags, Tunnel will attempt to use these credentials for all registries encountered during scanning, regardless of the target registry.
-This can potentially lead to unintended credential exposure.
-To mitigate this risk:
+    When passing credentials via environment variables or CLI flags, Tunnel will attempt to use these credentials for all registries encountered during scanning, regardless of the target registry.
+    This can potentially lead to unintended credential exposure.
+    To mitigate this risk:
 
     1. Set credentials cautiously and only when necessary.
     2. Prefer using `tunnel registry login` to pre-configure credentials with specific registries, which ensures credentials are only sent to appropriate registries.
@@ -34,7 +32,8 @@ $ TUNNEL_PASSWORD=YOUR_PASSWORD tunnel image --username YOUR_USERNAME YOUR_PRIVA
 ```
 
 !!! warning
-The CLI flag `--password` is available, but its use is not recommended for security reasons.
+    The CLI flag `--password` is available, but its use is not recommended for security reasons.
+
 
 You can also store your credentials in `tunnel.yaml`.
 For more information, please refer to [the documentation](../../references/configuration/config-file.md).
@@ -55,4 +54,4 @@ In the example above, Tunnel attempts to use two pairs of credentials:
 Please note that the number of usernames and passwords must be the same.
 
 !!! note
-`--password-stdin` doesn't support comma-separated passwords.
+    `--password-stdin` doesn't support comma-separated passwords.

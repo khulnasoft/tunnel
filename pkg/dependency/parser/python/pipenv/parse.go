@@ -4,9 +4,9 @@ import (
 	"io"
 	"strings"
 
-	"github.com/liamg/jfather"
 	"golang.org/x/xerrors"
 
+	"github.com/aquasecurity/jfather"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"
 	xio "github.com/khulnasoft/tunnel/pkg/x/io"
 )

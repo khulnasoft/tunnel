@@ -1,6 +1,6 @@
 # Production and cloud Integrations
 
-## Kubernetes
+## Kubernetes 
 
 [Kubernetes](https://kubernetes.io/) is an open-source system for automating deployment, scaling, and management of containerized applications.
 
@@ -11,13 +11,11 @@ Using the Tunnel Operator you can install Tunnel into a Kubernetes cluster so th
 👉 Get it at: <https://github.com/khulnasoft/tunnel-operator>
 
 ## Harbor (Official)
-
 [Harbor](https://goharbor.io/) is an open source cloud native container and artifact registry.
 
 Tunnel is natively integrated into Harbor, no installation is needed. More info in Harbor documentation: <https://goharbor.io/docs/2.6.0/administration/vulnerability-scanning>
 
 ## Kyverno (Community)
-
 [Kyverno](https://kyverno.io/) is a policy management tool for Kubernetes.
 
 You can use Kyverno to ensure and enforce that deployed workloads' images are scanned for vulnerabilities.
@@ -26,7 +24,7 @@ You can use Kyverno to ensure and enforce that deployed workloads' images are sc
 
 ## Zora (Community)
 
-[Zora](https://zora-docs.undistro.io/) is an open-source solution that scans Kubernetes clusters with multiple plugins at scheduled times.
+[Zora](https://zora-docs.undistro.io/) is an open-source solution that scans Kubernetes clusters with multiple plugins at scheduled times.  
 
 Tunnel is integrated into Zora as a vulnerability scanner plugin.
 

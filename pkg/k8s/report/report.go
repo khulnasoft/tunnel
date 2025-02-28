@@ -10,7 +10,7 @@ import (
 	"github.com/samber/lo"
 
 	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
-	"github.com/khulnasoft/tunnel-kubernetes/pkg/artifacts"
+	"github.com/khulnasoft-lab/tunnel-kubernetes/pkg/artifacts"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"
 	"github.com/khulnasoft/tunnel/pkg/log"
 	"github.com/khulnasoft/tunnel/pkg/sbom/core"

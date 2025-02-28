@@ -1,13 +1,12 @@
 # Programming Language
 
-Tunnel supports programming languages for
+Tunnel supports programming languages for 
 
 - [SBOM][sbom]
 - [Vulnerabilities][vuln]
 - [Licenses][license]
 
 ## Supported languages
-
 The files analyzed vary depending on the target.
 This is because Tunnel primarily categorizes targets into two groups:
 
@@ -18,38 +17,39 @@ If the target is a pre-build project, like a code repository, Tunnel will analyz
 On the other hand, when the target is a post-build artifact, like a container image, Tunnel will analyze installed package metadata like `.gemspec`, binary files, and so on.
 
 | Language             | File                                                                                       | Image[^4] | Rootfs[^5] | Filesystem[^6] | Repository[^7] |
-| -------------------- | ------------------------------------------------------------------------------------------ | :-------: | :--------: | :------------: | :------------: |
-| [Ruby](ruby.md)      | Gemfile.lock                                                                               |     -     |     -      |       ✅       |       ✅       |
-|                      | gemspec                                                                                    |    ✅     |     ✅     |       -        |       -        |
-| [Python](python.md)  | Pipfile.lock                                                                               |     -     |     -      |       ✅       |       ✅       |
-|                      | poetry.lock                                                                                |     -     |     -      |       ✅       |       ✅       |
-|                      | requirements.txt                                                                           |     -     |     -      |       ✅       |       ✅       |
-|                      | egg package[^1]                                                                            |    ✅     |     ✅     |       -        |       -        |
-|                      | wheel package[^2]                                                                          |    ✅     |     ✅     |       -        |       -        |
-| [PHP](php.md)        | composer.lock                                                                              |     -     |     -      |       ✅       |       ✅       |
-|                      | installed.json                                                                             |    ✅     |     ✅     |       -        |       -        |
-| [Node.js](nodejs.md) | package-lock.json                                                                          |     -     |     -      |       ✅       |       ✅       |
-|                      | yarn.lock                                                                                  |     -     |     -      |       ✅       |       ✅       |
-|                      | pnpm-lock.yaml                                                                             |     -     |     -      |       ✅       |       ✅       |
-|                      | package.json                                                                               |    ✅     |     ✅     |       -        |       -        |
-| [.NET](dotnet.md)    | packages.lock.json                                                                         |    ✅     |     ✅     |       ✅       |       ✅       |
-|                      | packages.config                                                                            |    ✅     |     ✅     |       ✅       |       ✅       |
-|                      | .deps.json                                                                                 |    ✅     |     ✅     |       ✅       |       ✅       |
-|                      | \*Packages.props[^9]                                                                       |    ✅     |     ✅     |       ✅       |       ✅       |
-| [Java](java.md)      | JAR/WAR/PAR/EAR[^3]                                                                        |    ✅     |     ✅     |       -        |       -        |
-|                      | pom.xml                                                                                    |     -     |     -      |       ✅       |       ✅       |
-|                      | \*gradle.lockfile                                                                          |     -     |     -      |       ✅       |       ✅       |
-|                      | \*.sbt.lock                                                                                |     -     |     -      |       ✅       |       ✅       |
-| [Go](golang.md)      | Binaries built by Go                                                                       |    ✅     |     ✅     |       -        |       -        |
-|                      | go.mod                                                                                     |     -     |     -      |       ✅       |       ✅       |
-| [Rust](rust.md)      | Cargo.lock                                                                                 |    ✅     |     ✅     |       ✅       |       ✅       |
-|                      | Binaries built with [cargo-auditable](https://github.com/rust-secure-code/cargo-auditable) |    ✅     |     ✅     |       -        |       -        |
-| [C/C++](c.md)        | conan.lock                                                                                 |     -     |     -      |       ✅       |       ✅       |
-| [Elixir](elixir.md)  | mix.lock[^8]                                                                               |     -     |     -      |       ✅       |       ✅       |
-| [Dart](dart.md)      | pubspec.lock                                                                               |     -     |     -      |       ✅       |       ✅       |
-| [Swift](swift.md)    | Podfile.lock                                                                               |     -     |     -      |       ✅       |       ✅       |
-|                      | Package.resolved                                                                           |     -     |     -      |       ✅       |       ✅       |
-| [Julia](julia.md)    | Manifest.toml                                                                              |    ✅     |     ✅     |       ✅       |       ✅       |
+|----------------------|--------------------------------------------------------------------------------------------|:---------:|:----------:|:--------------:|:--------------:|
+| [Ruby](ruby.md)      | Gemfile.lock                                                                               |     -     |     -      |       ✅        |       ✅        |
+|                      | gemspec                                                                                    |     ✅     |     ✅      |       -        |       -        |
+| [Python](python.md)  | Pipfile.lock                                                                               |     -     |     -      |       ✅        |       ✅        |
+|                      | poetry.lock                                                                                |     -     |     -      |       ✅        |       ✅        |
+|                      | uv.lock                                                                                    |     -     |     -      |       ✅        |       ✅        |
+|                      | requirements.txt                                                                           |     -     |     -      |       ✅        |       ✅        |
+|                      | egg package[^1]                                                                            |     ✅     |     ✅      |       -        |       -        |
+|                      | wheel package[^2]                                                                          |     ✅     |     ✅      |       -        |       -        |
+| [PHP](php.md)        | composer.lock                                                                              |     -     |     -      |       ✅        |       ✅        |
+|                      | installed.json                                                                             |     ✅     |     ✅      |       -        |       -        |
+| [Node.js](nodejs.md) | package-lock.json                                                                          |     -     |     -      |       ✅        |       ✅        |
+|                      | yarn.lock                                                                                  |     -     |     -      |       ✅        |       ✅        |
+|                      | pnpm-lock.yaml                                                                             |     -     |     -      |       ✅        |       ✅        |
+|                      | package.json                                                                               |     ✅     |     ✅      |       -        |       -        |
+| [.NET](dotnet.md)    | packages.lock.json                                                                         |     ✅     |     ✅      |       ✅        |       ✅        |
+|                      | packages.config                                                                            |     ✅     |     ✅      |       ✅        |       ✅        |
+|                      | .deps.json                                                                                 |     ✅     |     ✅      |       ✅        |       ✅        |
+|                      | *Packages.props[^9]                                                                        |     ✅     |     ✅      |       ✅        |       ✅        |
+| [Java](java.md)      | JAR/WAR/PAR/EAR[^3]                                                                        |     ✅     |     ✅      |       -        |       -        |
+|                      | pom.xml                                                                                    |     -     |     -      |       ✅        |       ✅        |
+|                      | *gradle.lockfile                                                                           |     -     |     -      |       ✅        |       ✅        |
+|                      | *.sbt.lock                                                                                 |     -     |     -      |       ✅        |       ✅        |
+| [Go](golang.md)      | Binaries built by Go                                                                       |     ✅     |     ✅      |       -        |       -        |
+|                      | go.mod                                                                                     |     -     |     -      |       ✅        |       ✅        |
+| [Rust](rust.md)      | Cargo.lock                                                                                 |     ✅     |     ✅      |       ✅        |       ✅        |
+|                      | Binaries built with [cargo-auditable](https://github.com/rust-secure-code/cargo-auditable) |     ✅     |     ✅      |       -        |       -        |
+| [C/C++](c.md)        | conan.lock                                                                                 |     -     |     -      |       ✅        |       ✅        |
+| [Elixir](elixir.md)  | mix.lock[^8]                                                                               |     -     |     -      |       ✅        |       ✅        |
+| [Dart](dart.md)      | pubspec.lock                                                                               |     -     |     -      |       ✅        |       ✅        |
+| [Swift](swift.md)    | Podfile.lock                                                                               |     -     |     -      |       ✅        |       ✅        |
+|                      | Package.resolved                                                                           |     -     |     -      |       ✅        |       ✅        |
+| [Julia](julia.md)    | Manifest.toml                                                                              |     ✅     |     ✅      |       ✅        |       ✅        |
 
 The path of these files does not matter.
 
@@ -67,4 +67,4 @@ Example: [Dockerfile](https://github.com/khulnasoft/tunnel-ci-test/blob/main/Doc
 [^6]: ✅ means "enabled" and `-` means "disabled" in the filesystem scanning
 [^7]: ✅ means "enabled" and `-` means "disabled" in the git repository scanning
 [^8]: To scan a filename other than the default filename use [file-patterns](../../configuration/skipping.md#file-patterns)
-[^9]: `Directory.Packages.props` and legacy `Packages.props` file names are supported
+[^9]: `Directory.Packages.props` and  legacy `Packages.props` file names are supported

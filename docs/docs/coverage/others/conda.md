@@ -3,46 +3,41 @@
 Tunnel supports the following scanners for Conda packages.
 
 |    Scanner    | Supported |
-| :-----------: | :-------: |
+|:-------------:|:---------:|
 |     SBOM      |     ✓     |
 | Vulnerability |     -     |
 |    License    |     ✓     |
 
 | Package manager | File            | Transitive dependencies | Dev dependencies | [Dependency graph][dependency-graph] | Position | [Detection Priority][detection-priority] |
-| --------------- | --------------- | :---------------------: | :--------------: | :----------------------------------: | :------: | :--------------------------------------: |
+|-----------------|-----------------|:-----------------------:|:----------------:|:------------------------------------:|:--------:|:----------------------------------------:|
 | Conda           | environment.yml |            -            |     Include      |                  -                   |    ✓     |                    -                     |
 
+
 ## `<package>.json`
-
 ### SBOM
-
 Tunnel parses `<conda-root>/envs/<env>/conda-meta/<package>.json` files to find the dependencies installed in your env.
 
 ### License
-
 The `<package>.json` files contain package license information.
 Tunnel includes licenses for the packages it finds without having to parse additional files.
 
 ## `environment.yml`[^1]
-
 ### SBOM
-
 Tunnel supports parsing [environment.yml][environment.yml][^1] files to find dependency list.
 
 `environment.yml`[^1] files supports [version range][env-version-range]. We can't be sure about versions for these dependencies.
 Therefore, you need to use `conda env export` command to get dependency list in `Conda` default format before scanning `environment.yml`[^1] file.
 
 !!! note
-For dependencies in a non-Conda format, Tunnel doesn't include a version of them.
+    For dependencies in a non-Conda format, Tunnel doesn't include a version of them.
 
 ### License
-
 Tunnel parses `conda-meta/<package>.json` files at the [prefix] path.
 
 To correctly define licenses, make sure your `environment.yml`[^1] contains `prefix` field and `prefix` directory contains `package.json` files.
 
-!!! note
-To get correct `environment.yml`[^1] file and fill `prefix` directory - use `conda env export` command.
+!!! note 
+    To get correct `environment.yml`[^1] file and fill `prefix` directory - use `conda env export` command.
 
 [^1]: Tunnel supports both `yaml` and `yml` extensions.
 

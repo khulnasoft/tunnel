@@ -1,8 +1,7 @@
 package sam
 
 import (
-	"github.com/liamg/iamgo"
-
+	"github.com/aquasecurity/iamgo"
 	"github.com/khulnasoft/tunnel/pkg/iac/providers/aws/iam"
 	"github.com/khulnasoft/tunnel/pkg/iac/providers/aws/sam"
 	"github.com/khulnasoft/tunnel/pkg/iac/scanners/cloudformation/parser"

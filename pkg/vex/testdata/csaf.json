@@ -14,7 +14,7 @@
       "name": "Example Company ProductCERT",
       "namespace": "https://psirt.example.com"
     },
-    "title": "KhulnaSoft Security example VEX document",
+    "title": "Khulnasoft Security example VEX document",
     "tracking": {
       "current_release_date": "2022-03-03T11:00:00.000Z",
       "generator": {
@@ -50,7 +50,7 @@
                   "name": "go-transitive v4.0.0",
                   "product_id": "go-transitive-v4.0.0",
                   "product_identification_helper": {
-                    "purl": "pkg:golang/github.com/khulnasoft/go-transitive@v4.0.0"
+                    "purl": "pkg:golang/github.com/aquasecurity/go-transitive@v4.0.0"
                   }
                 }
               }

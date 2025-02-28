@@ -1,8 +1,7 @@
 package iam
 
 import (
-	"github.com/liamg/iamgo"
-
+	"github.com/aquasecurity/iamgo"
 	"github.com/khulnasoft/tunnel/pkg/iac/providers/aws/iam"
 	"github.com/khulnasoft/tunnel/pkg/iac/scanners/cloudformation/parser"
 	iacTypes "github.com/khulnasoft/tunnel/pkg/iac/types"

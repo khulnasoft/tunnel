@@ -10,7 +10,6 @@ Triage includes:
 - Closing issues
 
 # Daily Triage
-
 Daily triage has two goals:
 
 1. Responsiveness for new issues
@@ -27,11 +26,10 @@ It covers:
 The most important level of categorizing the issue is defining what type it is.
 We typically want at least one of the following labels on every issue, and some issues may fall into multiple categories:
 
-- `triage/support` - The default for most incoming issues
+- `triage/support`   - The default for most incoming issues
 - `kind/bug` - When it’s a bug or we aren’t delivering the best user experience
 
-Other possibilities:
-
+Other possibilities: 
 - `kind/feature`- Identify new feature requests
 - `kind/testing` - Update or fix unit/integration tests
 - `kind/cleanup` - Cleaning up/refactoring the codebase
@@ -41,24 +39,25 @@ If the issue is specific to a driver for OS packages or libraries:
 
 **co/[driver for OS packages]**
 
-- `co/alpine`
-- `co/amazon`
-- `co/debian`
-- `co/oracle`
-- `co/photon`
-- `co/redhat`
-- `co/suse`
-- `co/ubuntu`
+  - `co/alpine`
+  - `co/amazon`
+  - `co/debian`
+  - `co/oracle`
+  - `co/photon`
+  - `co/redhat`
+  - `co/suse`
+  - `co/ubuntu`
 
-**co/[driver for libraries of programming languages]**
+**co/[driver for libraries of programming languages]** 
 
-- `co/bundler`
-- `co/cargo`
-- `co/composer`
-- `co/npm`
-- `co/yarn`
-- `co/pipenv`
-- `co/poetry`
+  - `co/bundler`
+  - `co/cargo`
+  - `co/composer`
+  - `co/npm`
+  - `co/yarn`
+  - `co/pipenv`
+  - `co/poetry`
+ 
 
 **Help wanted?**
 
@@ -66,8 +65,8 @@ If the issue is specific to a driver for OS packages or libraries:
 
 `Help wanted` - if the bug could use help from a contributor
 
-## Prioritization
 
+## Prioritization
 If the issue is not `triage/support`, it needs a priority label.
 
 `priority/critical-urgent` - someones top priority ASAP, such as security issue, user-visible bug, or build breakage. Rarely used.
@@ -80,6 +79,7 @@ If the issue is not `triage/support`, it needs a priority label.
 
 `priority/awaiting-more-evidence`: may be useful, but there is not yet enough support.
 
+
 # Weekly Triage
 
 Weekly triage has three goals:
@@ -87,6 +87,7 @@ Weekly triage has three goals:
 1. Catching up on unresponded issues
 1. Reviewing and closing PR’s
 1. Closing stale issues
+
 
 ## Post-Release Triage
 
@@ -103,31 +104,33 @@ This includes reviewing:
 1. Re-evaluation of long-term issues
 1. Re-evaluation of short-term issues
 
+
 ## Responding to Issues
 
 ### Needs More Information
-
 A sample response to ask for more info:
 
 > I don’t yet have a clear way to replicate this issue. Do you mind adding some additional details. Here is additional information that would be helpful:
 >
-> \* The exact `tunnel` command line used
+> \*  The exact `tunnel` command line used
 >
-> \* The exact image you want to scan
+> \*  The exact image you want to scan
 >
-> \* The full output of the `tunnel` command, preferably with `--debug` for extra logging.
+> \*  The full output of the `tunnel` command, preferably with `--debug` for extra logging.
+>
 >
 > Thank you for sharing your experience!
+
 
 Then: Label with `triage/needs-information`.
 
 ### Issue might be resolved
-
 If you think a release may have resolved an issue, ask the author to see if their issue has been resolved:
 
 > Could you please check to see if tunnel <x> addresses this issue? We've made some changes with how this is handled, and improved the tunnel logs output to help us debug tricky cases like this.
 
 Then: Label with `triage/needs-information`.
+
 
 ## Closing with Care
 
@@ -143,39 +146,39 @@ Samples responses for these situations include:
 
 ### Issue has been addressed
 
-> @author: I believe this issue is now addressed by tunnel v1.0.0, as it <reason>. If you still see this issue with tunnel v1.0 or higher, please reopen this issue.
+>@author: I believe this issue is now addressed by tunnel v1.0.0, as it <reason>. If you still see this issue with tunnel v1.0 or higher, please reopen this issue.
 >
-> Thank you for reporting this issue!
+>Thank you for reporting this issue!
 
 Then: Close the issue
 
 ### Duplicate Issue
 
-> This issue appears to be a duplicate of #X, do you mind if we move the conversation there?
+>This issue appears to be a duplicate of #X, do you mind if we move the conversation there?
 >
-> This way we can centralize the content relating to the issue. If you feel that this issue is not in fact a duplicate, please re-open it. If you have additional information to share, please add it to the new issue.
+>This way we can centralize the content relating to the issue. If you feel that this issue is not in fact a duplicate, please re-open it. If you have additional information to share, please add it to the new issue.
 >
-> Thank you for reporting this!
+>Thank you for reporting this!
 
 Then: Label with `triage/duplicate` and close the issue.
 
 ### Lack of Information
-
 If an issue hasn't been active for more than four weeks, and the author has been pinged at least once, then the issue can be closed.
 
-> Hey @author -- hopefully it's OK if I close this - there wasn't enough information to make it actionable, and some time has already passed. If you are able to provide additional details, you may reopen it at any point.
+>Hey @author -- hopefully it's OK if I close this - there wasn't enough information to make it actionable, and some time has already passed. If you are able to provide additional details, you may reopen it at any point.
+> 
+>Here is additional information that may be helpful to us:
 >
-> Here is additional information that may be helpful to us:
+>\* Whether the issue occurs with the latest tunnel release
 >
-> \* Whether the issue occurs with the latest tunnel release
+>\* The exact `tunnel` command line used
 >
-> \* The exact `tunnel` command line used
+>\* The exact image you want to scan
 >
-> \* The exact image you want to scan
+>\* The full output of the `tunnel` command, preferably with `--debug` for extra logging.
 >
-> \* The full output of the `tunnel` command, preferably with `--debug` for extra logging.
 >
-> Thank you for sharing your experience!
+>Thank you for sharing your experience!
 
 Then: Close the issue.
 
@@ -188,7 +191,7 @@ to identify issues that have been specially groomed for new contributors.
 We have specific [guidelines](./help-wanted.md)
 for how to use these labels. If you see an issue that satisfies these
 guidelines, you can add the `help wanted` label and the `good first issue` label.
-Please note that adding the `good first issue` label must also
+Please note that adding the `good first issue` label must also 
 add the `help wanted` label.
 
 If an issue has these labels but does not satisfy the guidelines, please

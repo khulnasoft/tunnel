@@ -22,7 +22,7 @@ tunnel server [flags]
 ```
       --cache-backend string     [EXPERIMENTAL] cache backend (e.g. redis://localhost:6379) (default "fs")
       --cache-ttl duration       cache TTL when using redis as cache backend
-      --db-repository strings    OCI repository(ies) to retrieve tunnel-db in order of priority (default [ghcr.io/khulnasoft-lab/tunnel-db:2,ghcr.io/khulnasoft-lab/tunnel-db:2])
+      --db-repository strings    OCI repository(ies) to retrieve tunnel-db in order of priority (default [mirror.gcr.io/khulnasoft/tunnel-db:2,ghcr.io/khulnasoft-lab/tunnel-db:2])
       --download-db-only         download/update vulnerability database but don't run a scan
       --enable-modules strings   [EXPERIMENTAL] module names to enable
   -h, --help                     help for server
@@ -57,4 +57,5 @@ tunnel server [flags]
 
 ### SEE ALSO
 
-- [tunnel](tunnel.md) - Unified security scanner
+* [tunnel](tunnel.md)	 - Unified security scanner
+

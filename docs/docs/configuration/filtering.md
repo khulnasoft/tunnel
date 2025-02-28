@@ -1,5 +1,4 @@
 # Filtering
-
 Tunnel provides various methods for filtering the results.
 
 ```mermaid
@@ -24,8 +23,7 @@ Similar to the functionality of filtering results, you can also limit the sub-ta
 For information on these settings, please refer to the scanner-specific documentation ([vulnerability](../scanner/vulnerability.md) , [misconfiguration](../scanner/misconfiguration/index.md), etc.).
 
 ## Prioritization
-
-You can filter the results by
+You can filter the results by 
 
 - [Severity](#by-severity)
 - [Status](#by-status)
@@ -33,7 +31,7 @@ You can filter the results by
 ### By Severity
 
 |     Scanner      | Supported |
-| :--------------: | :-------: |
+|:----------------:|:---------:|
 |  Vulnerability   |     ✓     |
 | Misconfiguration |     ✓     |
 |      Secret      |     ✓     |
@@ -121,7 +119,7 @@ HIGH: Last USER command in Dockerfile should not be 'root'
 ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
 
-See https://avd.khulnasoft.com/misconfig/ds002
+See https://avd.aquasec.com/misconfig/ds002
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
  Dockerfile:3
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -146,7 +144,7 @@ CRITICAL: Classic resources should not be used.
 AWS Classic resources run in a shared environment with infrastructure owned by other AWS customers. You should run
 resources in a VPC instead.
 
-See https://avd.khulnasoft.com/misconfig/avd-aws-0081
+See https://avd.aquasec.com/misconfig/avd-aws-0081
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
  main.tf:2-4
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -155,13 +153,12 @@ See https://avd.khulnasoft.com/misconfig/avd-aws-0081
    4 └ }
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ```
-
 </details>
 
 ### By Status
 
 |     Scanner      | Supported |
-| :--------------: | :-------: |
+|:----------------:|:---------:|
 |  Vulnerability   |     ✓     |
 | Misconfiguration |           |
 |      Secret      |           |
@@ -184,12 +181,14 @@ These are only defined for comprehensiveness, and you will not have the opportun
 Some statuses are supported in limited distributions.
 
 |     OS     | Fixed | Affected | Under Investigation | Will Not Fix | Fix Deferred | End of Life |
-| :--------: | :---: | :------: | :-----------------: | :----------: | :----------: | :---------: |
+|:----------:|:-----:|:--------:|:-------------------:|:------------:|:------------:|:-----------:|
 |   Debian   |   ✓   |    ✓     |                     |              |      ✓       |      ✓      |
 |    RHEL    |   ✓   |    ✓     |          ✓          |      ✓       |      ✓       |      ✓      |
 | Other OSes |   ✓   |    ✓     |                     |              |              |             |
 
+
 To ignore vulnerabilities with specific statuses, use the `--ignore-status <list_of_statuses>` option.
+
 
 ```bash
 $ tunnel image --ignore-status affected,fixed ruby:2.4.0
@@ -209,11 +208,11 @@ Total: 527 (UNKNOWN: 0, LOW: 276, MEDIUM: 83, HIGH: 158, CRITICAL: 10)
 │           Library           │  Vulnerability   │ Severity │    Status    │     Installed Version      │ Fixed Version │                            Title                             │
 ├─────────────────────────────┼──────────────────┼──────────┼──────────────┼────────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
 │ binutils                    │ CVE-2014-9939    │ CRITICAL │ will_not_fix │ 2.25-5                     │               │ binutils: buffer overflow in ihex.c                          │
-│                             │                  │          │              │                            │               │ https://avd.khulnasoft.com/nvd/cve-2014-9939                    │
+│                             │                  │          │              │                            │               │ https://avd.aquasec.com/nvd/cve-2014-9939                    │
 │                             ├──────────────────┤          │              │                            ├───────────────┼──────────────────────────────────────────────────────────────┤
 │                             │ CVE-2017-6969    │          │              │                            │               │ binutils: Heap-based buffer over-read in readelf when        │
 │                             │                  │          │              │                            │               │ processing corrupt RL78 binaries                             │
-│                             │                  │          │              │                            │               │ https://avd.khulnasoft.com/nvd/cve-2017-6969                    │
+│                             │                  │          │              │                            │               │ https://avd.aquasec.com/nvd/cve-2017-6969                    │
 │                             ├──────────────────┤          │              │                            ├───────────────┼──────────────────────────────────────────────────────────────┤
 ...
 ```
@@ -221,16 +220,15 @@ Total: 527 (UNKNOWN: 0, LOW: 276, MEDIUM: 83, HIGH: 158, CRITICAL: 10)
 </details>
 
 !!! tip
-To skip all unfixed vulnerabilities, you can use the `--ignore-unfixed` flag .
-It is a shorthand of `--ignore-status affected,will_not_fix,fix_deferred,end_of_life`.
-It displays "fixed" vulnerabilities only.
+    To skip all unfixed vulnerabilities, you can use the `--ignore-unfixed` flag .
+    It is a shorthand of `--ignore-status affected,will_not_fix,fix_deferred,end_of_life`.
+    It displays "fixed" vulnerabilities only.
 
 ```bash
 $ tunnel image --ignore-unfixed ruby:2.4.0
 ```
 
 ## Suppression
-
 You can filter the results by
 
 - [Finding IDs](#by-finding-ids)
@@ -240,7 +238,7 @@ You can filter the results by
 To show the suppressed results, use the `--show-suppressed` flag.
 
 !!! note
-It's exported as `ExperimentalModifiedFindings` in the JSON output.
+    It's exported as `ExperimentalModifiedFindings` in the JSON output.
 
 ```bash
 $ tunnel image --vex debian11.csaf.vex --ignorefile .tunnelignore.yaml --show-suppressed debian:11
@@ -278,11 +276,12 @@ Tunnel supports the [.tunnelignore](#tunnelignore) and [.tunnelignore.yaml](#tun
 #### .tunnelignore
 
 |     Scanner      | Supported |
-| :--------------: | :-------: |
+|:----------------:|:---------:|
 |  Vulnerability   |     ✓     |
 | Misconfiguration |     ✓     |
 |      Secret      |     ✓     |
 |     License      |           |
+
 
 ```bash
 $ cat .tunnelignore
@@ -325,14 +324,14 @@ Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
 #### .tunnelignore.yaml
 
 |     Scanner      | Supported |
-| :--------------: | :-------: |
+|:----------------:|:---------:|
 |  Vulnerability   |     ✓     |
 | Misconfiguration |     ✓     |
 |      Secret      |     ✓     |
 |     License      |     ✓     |
 
 !!! warning "EXPERIMENTAL"
-This feature might change without preserving backwards compatibility.
+    This feature might change without preserving backwards compatibility.
 
 When the extension of the specified ignore file is either `.yml` or `.yaml`, Tunnel will load the file as YAML.
 For the `.tunnelignore.yaml` file, you can set ignored IDs separately for `vulnerabilities`, `misconfigurations`, `secrets`, or `licenses`[^1].
@@ -340,7 +339,7 @@ For the `.tunnelignore.yaml` file, you can set ignored IDs separately for `vulne
 Available fields:
 
 | Field      | Required | Type                | Description                                                                                                                                                             |
-| ---------- | :------: | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|------------|:--------:|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | id         |    ✓     | string              | The identifier of the vulnerability, misconfiguration, secret, or license[^1].                                                                                          |
 | paths[^2]  |          | string array        | The list of file paths to ignore. If `paths` is not set, the ignore finding is applied to all files.                                                                    |
 | purls      |          | string array        | The list of PURLs to ignore packages. If `purls` is not set, the ignore finding is applied to all packages. This field is currently available only for vulnerabilities. |
@@ -395,7 +394,7 @@ $ tunnel image --ignorefile ./.tunnelignore.yaml python:3.9.16-alpine3.16
 2023-08-31T11:10:27.155+0600	INFO	Vulnerability scanning is enabled
 2023-08-31T11:10:27.155+0600	INFO	Secret scanning is enabled
 2023-08-31T11:10:27.155+0600	INFO	If your scanning is slow, please try '--scanners vuln' to disable secret scanning
-2023-08-31T11:10:27.155+0600	INFO	Please see also https://khulnasoft.github.io/tunnel/dev/docs/scanner/secret/#recommendation for faster secret detection
+2023-08-31T11:10:27.155+0600	INFO	Please see also https://tunnel.dev/dev/docs/scanner/secret/#recommendation for faster secret detection
 2023-08-31T11:10:29.164+0600	INFO	Detected OS: alpine
 2023-08-31T11:10:29.164+0600	INFO	Detecting Alpine vulnerabilities...
 2023-08-31T11:10:29.169+0600	INFO	Number of language-specific files: 1
@@ -413,16 +412,16 @@ Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
 ### By Rego
 
 |     Scanner      | Supported |
-| :--------------: | :-------: |
+|:----------------:|:---------:|
 |  Vulnerability   |     ✓     |
 | Misconfiguration |     ✓     |
 |      Secret      |     ✓     |
 |     License      |     ✓     |
 
 !!! warning "EXPERIMENTAL"
-This feature might change without preserving backwards compatibility.
+    This feature might change without preserving backwards compatibility.
 
-[Rego](https://www.openpolicyagent.org/docs/latest/policy-language/) is a policy language that allows you to express decision logic in a concise syntax.
+[Rego](https://www.openpolicyagent.org/docs/latest/policy-language/) is a policy language that allows you to express decision logic in a concise syntax. 
 Rego is part of the popular [Open Policy Agent (OPA)](https://www.openpolicyagent.org) CNCF project.
 For advanced filtering, Tunnel allows you to use Rego language to filter vulnerabilities.
 
@@ -452,7 +451,7 @@ tunnel image -f json centos:7
             "DiffID": "sha256:174f5685490326fc0a1c0f5570b8663732189b327007e47ff13d2ca59673db02"
           },
           "SeveritySource": "redhat",
-          "PrimaryURL": "https://avd.khulnasoft.com/nvd/cve-2015-5186",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2015-5186",
           "Title": "log terminal emulator escape sequences handling",
           "Description": "Audit before 2.4.4 in Linux does not sanitize escape characters in filenames.",
           "Severity": "MEDIUM",
@@ -462,7 +461,7 @@ tunnel image -f json centos:7
 ...
 ```
 
-Each individual Vulnerability, Misconfiguration, License and Secret (under `Results.Vulnerabilities`, `Results.Misconfigurations`,
+Each individual Vulnerability, Misconfiguration, License and Secret (under `Results.Vulnerabilities`, `Results.Misconfigurations`, 
 `Results.Licenses`, `Results.Secrets`) is evaluated for exclusion or inclusion by the `ignore` rule.
 
 The following is a Rego ignore policy that filters out every vulnerability with a specific CWE ID (as seen in the JSON example above):
@@ -487,15 +486,15 @@ More info about the helper functions are in the library [here](https://github.co
 You can create a whitelist of checks using Rego, see the detailed [example](https://github.com/khulnasoft/tunnel/tree/{{ git.tag }}/examples/ignore-policies/whitelist.rego). Additional examples are available [here](https://github.com/khulnasoft/tunnel/tree/{{ git.tag }}/examples/ignore-policies).
 
 ### By Vulnerability Exploitability Exchange (VEX)
-
 |     Scanner      | Supported |
-| :--------------: | :-------: |
+|:----------------:|:---------:|
 |  Vulnerability   |     ✓     |
 | Misconfiguration |           |
 |      Secret      |           |
 |     License      |           |
 
 Please refer to the [VEX documentation](../supply-chain/vex/index.md) for the details.
+
 
 [^1]: license name is used as id for `.tunnelignore.yaml` files.
 [^2]: This doesn't work for os package licenses (e.g. apk, dpkg, rpm). For projects which manage dependencies through a dependency file (e.g. go.mod, yarn.lock) `path` should point to that particular file.

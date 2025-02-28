@@ -1,5 +1,4 @@
 # Azure ARM Template
-
 Tunnel supports the scanners listed in the table below.
 
 |      Scanner       | Supported |
@@ -23,11 +22,9 @@ bicep build main.bicep
 ```
 
 ## Misconfiguration
-
 Tunnel recursively searches directories and scans all found Azure ARM templates.
 
 ## Secret
-
 The secret scan is performed on plain text files, with no special treatment for Azure ARM templates.
 
 [Misconfiguration]: ../../scanner/misconfiguration/index.md

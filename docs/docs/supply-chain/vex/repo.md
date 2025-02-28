@@ -1,7 +1,7 @@
 # VEX Repository
 
 !!! warning "EXPERIMENTAL"
-This feature might change without preserving backwards compatibility.
+    This feature might change without preserving backwards compatibility.
 
 ## Using VEX Repository
 
@@ -10,9 +10,9 @@ While it's planned to be enabled by default in the future, currently it can be a
 
 ```
 $ tunnel image ghcr.io/khulnasoft/tunnel:0.52.0 --vex repo
-2024-07-20T11:22:58+04:00       INFO    [vex] The default repository config has been created
+2024-07-20T11:22:58+04:00       INFO    [vex] The default repository config has been created    
 file_path="/Users/teppei/.tunnel/vex/repository.yaml"
-2024-07-20T11:23:23+04:00       INFO    [vex] Updating repository...    repo="default" url="https://github.com/khulnasoft/vexhub"
+2024-07-20T11:23:23+04:00       INFO    [vex] Updating repository...    repo="default" url="https://github.com/aquasecurity/vexhub"
 ```
 
 During scanning, Tunnel generates PURLs for discovered packages and searches for matching PURLs in the VEX Repository.
@@ -32,18 +32,17 @@ The default configuration file looks like this:
 ```yaml
 repositories:
   - name: default
-    url: https://github.com/khulnasoft/vexhub
+    url: https://github.com/aquasecurity/vexhub
     enabled: true
     username: ""
     password: ""
     token: ""
 ```
 
-By default, [VEX Hub][vexhub] managed by KhulnaSoft Security is used.
+By default, [VEX Hub][vexhub] managed by Khulnasoft Security is used.
 VEX Hub primarily trusts VEX documents published by the package maintainers.
 
 #### Show Configuration
-
 You can see the config file path and the configured repositories with `tunnel vex repo list`:
 
 ```bash
@@ -51,7 +50,7 @@ $ tunnel vex repo list
 VEX Repositories (config: /home/username/.tunnel/vex/repository.yaml)
 
 - Name: default
-  URL: https://github.com/khulnasoft/vexhub
+  URL: https://github.com/aquasecurity/vexhub
   Status: Enabled
 ```
 
@@ -65,6 +64,7 @@ You can add a custom repository as below:
   url: https://example.com/custom-repo
   enabled: true
 ```
+
 
 #### Authentication
 
@@ -98,7 +98,7 @@ The search process follows this order:
 1. Tunnel first looks for a VEX document matching the package's PURL in `repo1`.
 2. If no matching VEX document is found in `repo1`, Tunnel then searches in `repo2`.
 3. This process continues through all configured repositories until a match is found.
-
+ 
 If a matching VEX document is found in any repository (e.g., `repo1`), the search stops, and Tunnel uses that VEX document.
 Subsequent repositories (e.g., `repo2`) are not checked for that specific vulnerability and package combination.
 
@@ -135,7 +135,7 @@ Suppressed Vulnerabilities (Total: 4)
 │    Library    │ Vulnerability  │ Severity │    Status    │                     Statement                     │                  Source                  │
 ├───────────────┼────────────────┼──────────┼──────────────┼───────────────────────────────────────────────────┼──────────────────────────────────────────┤
 │ busybox       │ CVE-2023-42364 │ MEDIUM   │ not_affected │ vulnerable_code_cannot_be_controlled_by_adversary │ VEX Repository: default                  │
-│               │                │          │              │                                                   │ (https://github.com/khulnasoft/vexhub) │
+│               │                │          │              │                                                   │ (https://github.com/aquasecurity/vexhub) │
 │               ├────────────────┤          │              │                                                   │                                          │
 │               │ CVE-2023-42365 │          │              │                                                   │                                          │
 │               │                │          │              │                                                   │                                          │
@@ -204,7 +204,7 @@ There are various use cases for providing custom repositories:
 
 In these cases, you can create a repository that complies with [the VEX Repository Specification][vex-repo] to make it available for use with Tunnel.
 
-[vex-repo]: https://github.com/khulnasoft/vex-repo-spec
-[vexhub]: https://github.com/khulnasoft/vexhub
+[vex-repo]: https://github.com/aquasecurity/vex-repo-spec
+[vexhub]: https://github.com/aquasecurity/vexhub
 [tunnel-vex]: https://github.com/khulnasoft/tunnel/blob/b76a7250912cfc028cfef743f0f98cd81b39f8aa/.vex/tunnel.openvex.json
 [purl]: https://github.com/package-url/purl-spec

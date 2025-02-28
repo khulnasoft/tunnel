@@ -161,7 +161,7 @@ func Test_NewEngineMetadata(t *testing.T) {
    }
  }`,
 
-			"links": "https://avd.khulnasoft.com/avd/183",
+			"links": "https://avd.aquasec.com/avd/183",
 		},
 		"cloud_formation": map[string]any{
 			"good_examples": `---
@@ -174,7 +174,7 @@ Resources:
       S3BucketName: "CloudtrailBucket"
       S3KeyPrefix: "/trailing"
       TrailName: "Cloudtrail"`,
-			"links": []any{"https://avd.khulnasoft.com/avd/183"},
+			"links": []any{"https://avd.aquasec.com/avd/183"},
 		},
 	}
 
@@ -200,7 +200,7 @@ Resources:
    }
  }`,
 				},
-				Links: []string{"https://avd.khulnasoft.com/avd/183"},
+				Links: []string{"https://avd.aquasec.com/avd/183"},
 			},
 		},
 		{
@@ -218,7 +218,7 @@ Resources:
       S3KeyPrefix: "/trailing"
       TrailName: "Cloudtrail"`,
 				},
-				Links: []string{"https://avd.khulnasoft.com/avd/183"},
+				Links: []string{"https://avd.aquasec.com/avd/183"},
 			},
 		},
 	}

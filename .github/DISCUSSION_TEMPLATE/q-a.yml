@@ -6,10 +6,10 @@ body:
         #### Note
         If you have any troubles/questions, feel free to ask.
         Please ensure that you're not asking a duplicate question by searching the [issues](https://github.com/khulnasoft/tunnel/issues)/[discussions](https://github.com/khulnasoft/tunnel/discussions) beforehand.
-
+        
         **Do not open a GitHub issue, please.** Maintainers triage discussions and then create issues.
-
-        Please also check [our contribution guidelines](https://khulnasoft.github.io/tunnel/latest/community/contribute/discussion/).
+        
+        Please also check [our contribution guidelines](https://tunnel.dev/latest/community/contribute/discussion/).
   - type: textarea
     attributes:
       label: Question

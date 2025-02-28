@@ -1,13 +1,12 @@
 # Modules
 
 !!! warning "EXPERIMENTAL"
-This feature might change without preserving backwards compatibility.
+    This feature might change without preserving backwards compatibility.
 
 Tunnel provides a module feature to allow others to extend the Tunnel CLI without the need to change the Tunnel code base.
 It changes the behavior during scanning by WebAssembly.
 
 ## Overview
-
 Tunnel modules are add-on tools that integrate seamlessly with Tunnel.
 They provide a way to extend the core feature set of Tunnel, but without updating the Tunnel binary.
 
@@ -33,15 +32,14 @@ Then, you can update the scan result however you want.
 Modules should be distributed in OCI registries like GitHub Container Registry.
 
 !!! warning
-WebAssembly doesn't allow file access and network access by default.
-Modules can read required files only, but cannot overwrite them.
-WebAssembly is sandboxed and secure by design, but Tunnel modules available in public are not audited for security.
-You should install and run third-party modules at your own risk even though
+    WebAssembly doesn't allow file access and network access by default.
+    Modules can read required files only, but cannot overwrite them.
+    WebAssembly is sandboxed and secure by design, but Tunnel modules available in public are not audited for security.
+    You should install and run third-party modules at your own risk even though 
 
 Under the hood Tunnel leverages [wazero][wazero] to run WebAssembly modules without CGO.
 
 ## Installing a Module
-
 A module can be installed using the `tunnel module install` command.
 This command takes an url. It will download the module and install it in the module cache.
 
@@ -55,11 +53,10 @@ The preference order is as follows:
 For example, to download the WebAssembly module, you can execute the following command:
 
 ```bash
-$ tunnel module install ghcr.io/khulnasoft-lab/tunnel-module-spring4shell
+$ tunnel module install ghcr.io/khulnasoft/tunnel-module-spring4shell
 ```
 
 ## Using Modules
-
 Once the module is installed, Tunnel will load all available modules in the cache on the start of the next Tunnel execution.
 The modules may inject custom logic into scanning and change the result.
 You can run Tunnel as usual and modules are loaded automatically.
@@ -68,7 +65,7 @@ You will see the log messages about WASM modules.
 
 ```shell
 $ tunnel image ghcr.io/khulnasoft/tunnel-test-images:spring4shell-jre8
-2022-06-12T12:57:13.210+0300    INFO    Loading ghcr.io/khulnasoft-lab/tunnel-module-spring4shell/spring4shell.wasm...
+2022-06-12T12:57:13.210+0300    INFO    Loading ghcr.io/khulnasoft/tunnel-module-spring4shell/spring4shell.wasm...
 2022-06-12T12:57:13.596+0300    INFO    Registering WASM module: spring4shell@v1
 ...
 2022-06-12T12:57:14.865+0300    INFO    Module spring4shell: Java Version: 8, Tomcat Version: 8.5.77
@@ -82,7 +79,7 @@ Total: 9 (UNKNOWN: 1, LOW: 3, MEDIUM: 2, HIGH: 3, CRITICAL: 0)
 │                           Library                            │    Vulnerability    │ Severity │ Installed Version │     Fixed Version      │                           Title                            │
 ├──────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼────────────────────────┼────────────────────────────────────────────────────────────┤
 │ org.springframework.boot:spring-boot (helloworld.war)        │ CVE-2022-22965      │ LOW      │ 2.6.3             │ 2.5.12, 2.6.6          │ spring-framework: RCE via Data Binding on JDK 9+           │
-│                                                              │                     │          │                   │                        │ https://avd.khulnasoft.com/nvd/cve-2022-22965                 │
+│                                                              │                     │          │                   │                        │ https://avd.aquasec.com/nvd/cve-2022-22965                 │
 ├──────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼────────────────────────┼────────────────────────────────────────────────────────────┤
 ...(snip)...
 ```
@@ -90,19 +87,16 @@ Total: 9 (UNKNOWN: 1, LOW: 3, MEDIUM: 2, HIGH: 3, CRITICAL: 0)
 In the above example, the Spring4Shell module changed the severity from CRITICAL to LOW because the application doesn't satisfy one of conditions.
 
 ## Uninstalling Modules
-
 Specify a module repository with `tunnel module uninstall` command.
 
 ```bash
-$ tunnel module uninstall ghcr.io/khulnasoft-lab/tunnel-module-spring4shell
+$ tunnel module uninstall ghcr.io/khulnasoft/tunnel-module-spring4shell
 ```
 
 ## Building Modules
-
 It supports TinyGo only at the moment.
 
 ### TinyGo
-
 Tunnel provides Go SDK including three interfaces.
 Your own module needs to implement either or both `Analyzer` and `PostScanner` in addition to `Module`.
 
@@ -126,11 +120,10 @@ type PostScanner interface {
 In the following tutorial, it creates a WordPress module that detects a WordPress version and a critical vulnerability accordingly.
 
 !!! tips
-You can use logging functions such as `Debug` and `Info` for debugging.
-See [examples](#examples) for the detail.
+    You can use logging functions such as `Debug` and `Info` for debugging.
+    See [examples](#examples) for the detail.
 
 #### Initialize your module
-
 Replace the repository name with yours.
 
 ```
@@ -138,7 +131,6 @@ $ go mod init github.com/khulnasoft/tunnel-module-wordpress
 ```
 
 #### Module interface
-
 `Version()` returns your module version and should be incremented after updates.
 `Name()` returns your module name.
 
@@ -164,10 +156,9 @@ func (WordpressModule) Name() string {
 ```
 
 !!! info
-A struct cannot have any fields. Each method invocation is performed in different states.
+    A struct cannot have any fields. Each method invocation is performed in different states.
 
 #### Analyzer interface
-
 If you implement the `Analyzer` interface, `Analyze` method is called when the file path is matched to file patterns returned by `RequiredFiles()`.
 A file pattern must be a regular expression. The syntax detail is [here][regexp].
 
@@ -210,7 +201,7 @@ func (WordpressModule) Analyze(filePath string) (*serialize.AnalysisResult, erro
     if err = scanner.Err(); err != nil {
         return nil, err
     }
-
+	
     return &serialize.AnalysisResult{
         CustomResources: []serialize.CustomResource{
             {
@@ -224,24 +215,24 @@ func (WordpressModule) Analyze(filePath string) (*serialize.AnalysisResult, erro
 ```
 
 !!! tips
-Tunnel caches analysis results according to the module version.
-We'd recommend cleaning the cache or changing the module version every time you update `Analyzer`.
+    Tunnel caches analysis results according to the module version.
+    We'd recommend cleaning the cache or changing the module version every time you update `Analyzer`.
+
 
 #### PostScanner interface
-
 `PostScan` is called after scanning and takes the scan result as an argument from Tunnel.
 In post scanning, your module can perform one of three actions:
 
 - Insert
-  - Add a new security finding
-  - e.g. Add a new vulnerability and misconfiguration
+    - Add a new security finding
+    - e.g. Add a new vulnerability and misconfiguration
 - Update
-  - Update the detected vulnerability and misconfiguration
-  - e.g. Change a severity
+    - Update the detected vulnerability and misconfiguration
+    - e.g. Change a severity
 - Delete
-  - Delete the detected vulnerability and misconfiguration
-  - e.g. Remove Spring4Shell because it is not actually affected.
-
+    - Delete the detected vulnerability and misconfiguration
+    - e.g. Remove Spring4Shell because it is not actually affected.
+ 
 `PostScanSpec()` returns which action the module does.
 If it is `Update` or `Delete`, it also needs to return IDs such as CVE-ID and misconfiguration ID, which your module wants to update or delete.
 
@@ -272,13 +263,13 @@ func (WordpressModule) PostScan(results serialize.Results) (serialize.Results, e
     //       }
     //     ]
     //   }
-    // ]
+    // ]   
     var wpVersion int
     for _, result := range results {
         if result.Class != types.ClassCustom {
             continue
         }
-
+		
         for _, c := range result.CustomResources {
             if c.Type != typeWPVersion {
                 continue
@@ -287,7 +278,7 @@ func (WordpressModule) PostScan(results serialize.Results) (serialize.Results, e
             wasm.Info(fmt.Sprintf("WordPress Version: %s", wpVersion))
 
             ...snip...
-
+			
             if affectedVersion.Check(ver) {
                 vulnerable = true
             }
@@ -327,7 +318,6 @@ In the `Delete` action, `PostScan` needs to return results you want to delete.
 If `PostScan` returns an empty, Tunnel will not delete anything.
 
 #### Build
-
 Follow [the install guide][tinygo-installation] and install TinyGo.
 
 ```bash
@@ -342,7 +332,6 @@ $ cp wordpress.wasm ~/.tunnel/modules
 ```
 
 ## Distribute Your Module
-
 You can distribute your own module in OCI registries. Please follow [the oras installation instruction][oras].
 
 ```bash
@@ -353,15 +342,17 @@ Digest: sha256:6416d0199d66ce52ced19f01d75454b22692ff3aa7737e45f7a189880840424f
 ```
 
 ## Examples
-
 - [Spring4Shell][tunnel-module-spring4shell]
 - [WordPress][tunnel-module-wordpress]
 
 [regexp]: https://github.com/google/re2/wiki/Syntax
+
 [tinygo]: https://tinygo.org/
 [spring4shell]: https://blog.khulnasoft.com/zero-day-rce-vulnerability-spring4shell
 [wazero]: https://github.com/tetratelabs/wazero
+
 [tunnel-module-spring4shell]: https://github.com/khulnasoft/tunnel/tree/main/examples/module/spring4shell
 [tunnel-module-wordpress]: https://github.com/khulnasoft/tunnel-module-wordpress
+
 [tinygo-installation]: https://tinygo.org/getting-started/install/
 [oras]: https://oras.land/cli/
