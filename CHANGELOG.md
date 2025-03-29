@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.61.2](https://github.com/khulnasoft/tunnel/compare/v0.61.1...v0.61.2) (2025-03-29)
+
+
+### Bug Fixes
+
+* mkdocs-dev.yaml ([016e26f](https://github.com/khulnasoft/tunnel/commit/016e26f1d8dc9b949bbab9a5bde8b722e582f47d))
+* mkdocs-latest.yaml ([6400e4d](https://github.com/khulnasoft/tunnel/commit/6400e4d42be0ef2e9ff567c2a22e713e9f5b98d2))
+
 ## [0.61.1](https://github.com/khulnasoft/tunnel/compare/v0.61.0...v0.61.1) (2025-03-29)
 
 
