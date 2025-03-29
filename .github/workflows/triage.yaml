@@ -10,7 +10,7 @@ jobs:
   label:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.2.2
       - uses: ./.github/actions/tunnel-triage
         with:
           discussion_num: ${{ github.event.inputs.discussion_num }}
