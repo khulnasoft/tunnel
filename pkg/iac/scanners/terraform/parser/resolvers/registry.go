@@ -13,7 +13,7 @@ import (
 
 	"golang.org/x/net/idna"
 
-	"github.com/aquasecurity/go-version/pkg/version"
+	"github.com/khulnasoft/goversify/pkg/version"
 	"github.com/khulnasoft/tunnel/pkg/log"
 )
 

@@ -22,7 +22,7 @@ import (
 	"github.com/samber/lo"
 	"golang.org/x/vuln/scan"
 
-	"github.com/aquasecurity/go-version/pkg/version"
+	"github.com/khulnasoft/goversify/pkg/version"
 	"github.com/khulnasoft/tunnel/pkg/log"
 )
 

@@ -11,7 +11,7 @@ import (
 	"golang.org/x/text/language"
 
 	"github.com/khulnasoft-lab/table"
-	"github.com/aquasecurity/tml"
+	"github.com/khulnasoft-lab/tml"
 	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"
 	"github.com/khulnasoft/tunnel/pkg/types"

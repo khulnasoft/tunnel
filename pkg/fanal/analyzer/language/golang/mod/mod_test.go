@@ -133,7 +133,7 @@ func Test_gomodAnalyzer_Analyze(t *testing.T) {
 								Relationship: types.RelationshipRoot,
 								DependsOn: []string{
 									"github.com/khulnasoft/go-dep-parser@v1.0.0",
-									"github.com/aquasecurity/go-version@v1.0.1",
+									"github.com/khulnasoft/goversify@v1.0.1",
 									"golang.org/x/xerrors@v0.0.0-20200804184101-5ec99f83aff1", // No parent found, so it's added here.
 								},
 								ExternalReferences: []types.ExternalRef{
@@ -156,14 +156,14 @@ func Test_gomodAnalyzer_Analyze(t *testing.T) {
 								},
 							},
 							{
-								ID:           "github.com/aquasecurity/go-version@v1.0.1",
-								Name:         "github.com/aquasecurity/go-version",
+								ID:           "github.com/khulnasoft/goversify@v1.0.1",
+								Name:         "github.com/khulnasoft/goversify",
 								Version:      "v1.0.1",
 								Relationship: types.RelationshipDirect,
 								ExternalReferences: []types.ExternalRef{
 									{
 										Type: types.RefVCS,
-										URL:  "https://github.com/aquasecurity/go-version",
+										URL:  "https://github.com/khulnasoft/goversify",
 									},
 								},
 							},

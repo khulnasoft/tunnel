@@ -14,7 +14,7 @@ import (
 	"github.com/samber/lo"
 	"golang.org/x/xerrors"
 
-	goversion "github.com/aquasecurity/go-version/pkg/version"
+	goversion "github.com/khulnasoft/goversify/pkg/version"
 	"github.com/khulnasoft/tunnel/pkg/dependency/parser/python/packaging"
 	"github.com/khulnasoft/tunnel/pkg/dependency/parser/python/pip"
 	"github.com/khulnasoft/tunnel/pkg/fanal/analyzer"

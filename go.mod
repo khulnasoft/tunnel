@@ -1,6 +1,8 @@
 module github.com/khulnasoft/tunnel
 
-go 1.22.9
+go 1.23.4
+
+toolchain go1.24.1
 
 require (
 	github.com/Azure/azure-sdk-for-go v68.0.0+incompatible
@@ -14,8 +16,6 @@ require (
 	github.com/alecthomas/chroma v0.10.0
 	github.com/alicebob/miniredis/v2 v2.33.0
 	github.com/apparentlymart/go-cidr v1.1.0
-	github.com/aquasecurity/go-version v0.0.0-20241105054539-1951e80d786f
-	github.com/aquasecurity/tml v0.6.1
 	github.com/aws/aws-sdk-go-v2 v1.32.5
 	github.com/aws/aws-sdk-go-v2/config v1.28.5
 	github.com/aws/aws-sdk-go-v2/credentials v1.17.46
@@ -133,12 +133,15 @@ require (
 	github.com/khulnasoft-lab/go-npm-version v1.0.0
 	github.com/khulnasoft-lab/go-pep440-version v1.0.0
 	github.com/khulnasoft-lab/testdocker v1.0.0
+	github.com/khulnasoft-lab/tml v0.0.2
 	github.com/khulnasoft-lab/tunnel-db v0.0.0-20250120221338-63ade460b189
 	github.com/khulnasoft-lab/tunnel-java-db v0.0.0-20240907154440-0d77c2623acb
+	github.com/khulnasoft/goversify v0.0.0-20250310221534-b7b4cecdfb37
 	github.com/khulnasoft/tunnel-kubernetes v0.5.3
 )
 
 require (
+	github.com/aquasecurity/go-version v0.0.0-20241105054539-1951e80d786f // indirect
 	github.com/dsnet/compress v0.0.1 // indirect
 	github.com/khulnasoft-lab/goversion v1.0.1 // indirect
 )

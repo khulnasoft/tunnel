@@ -93,7 +93,7 @@ var (
 		{Name: "github.com/khulnasoft-lab/go-gem-version", Version: "v0.0.0-20201115065557-8eed6fe000ce"},
 		{Name: "github.com/khulnasoft-lab/go-npm-version", Version: "v0.0.0-20201110091526-0b796d180798"},
 		{Name: "github.com/khulnasoft-lab/go-pep440-version", Version: "v0.0.0-20210121094942-22b2f8951d46"},
-		{Name: "github.com/aquasecurity/go-version", Version: "v0.0.0-20210121072130-637058cfe492"},
+		{Name: "github.com/khulnasoft/goversify", Version: "v0.0.0-20210121072130-637058cfe492"},
 		{Name: "github.com/khulnasoft-lab/testdocker", Version: "v0.0.0-20210106133225-0b17fe083674"},
 		{Name: "github.com/khulnasoft/tunnel", Version: "v0.16.0"},
 		{Name: "github.com/khulnasoft-lab/tunnel-db", Version: "v0.0.0-20210105160501-c5bf4e153277"},

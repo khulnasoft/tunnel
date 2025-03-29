@@ -17,8 +17,8 @@ import (
 	"github.com/samber/lo"
 	"golang.org/x/xerrors"
 
-	"github.com/aquasecurity/go-version/pkg/semver"
-	goversion "github.com/aquasecurity/go-version/pkg/version"
+	"github.com/khulnasoft/goversify/pkg/semver"
+	goversion "github.com/khulnasoft/goversify/pkg/version"
 	"github.com/khulnasoft/tunnel/pkg/dependency/parser/rust/cargo"
 	"github.com/khulnasoft/tunnel/pkg/detector/library/compare"
 	"github.com/khulnasoft/tunnel/pkg/fanal/analyzer"

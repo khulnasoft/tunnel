@@ -9,7 +9,7 @@ import (
 
 	"golang.org/x/xerrors"
 
-	ver "github.com/aquasecurity/go-version/pkg/version"
+	ver "github.com/khulnasoft/goversify/pkg/version"
 	"github.com/khulnasoft/tunnel/pkg/fanal/analyzer"
 	"github.com/khulnasoft/tunnel/pkg/fanal/types"
 )

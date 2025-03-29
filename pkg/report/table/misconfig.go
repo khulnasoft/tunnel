@@ -8,7 +8,7 @@ import (
 	"github.com/fatih/color"
 	"golang.org/x/term"
 
-	"github.com/aquasecurity/tml"
+	"github.com/khulnasoft-lab/tml"
 	dbTypes "github.com/khulnasoft-lab/tunnel-db/pkg/types"
 	"github.com/khulnasoft/tunnel/pkg/types"
 )

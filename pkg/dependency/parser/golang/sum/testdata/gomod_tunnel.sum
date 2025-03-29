@@ -76,8 +76,8 @@ github.com/khulnasoft/go-dep-parser v0.0.0-20201028043324-889d4a92b8e0/go.mod h1
 github.com/khulnasoft-lab/go-gem-version v0.0.0-20201115065557-8eed6fe000ce/go.mod h1:HXgVzOPvXhVGLJs4ZKO817idqr/xhwsTcj17CLYY74s=
 github.com/khulnasoft-lab/go-npm-version v0.0.0-20201110091526-0b796d180798/go.mod h1:hxbJZtKlO4P8sZ9nztizR6XLoE33O+BkPmuYQ4ACyz0=
 github.com/khulnasoft-lab/go-pep440-version v0.0.0-20210121094942-22b2f8951d46/go.mod h1:olhPNdiiAAMiSujemd1O/sc6GcyePr23f/6uGKtthNg=
-github.com/aquasecurity/go-version v0.0.0-20201107203531-5e48ac5d022a/go.mod h1:9Beu8XsUNNfzml7WBf3QmyPToP1wm1Gj/Vc5UJKqTzU=
-github.com/aquasecurity/go-version v0.0.0-20210121072130-637058cfe492/go.mod h1:9Beu8XsUNNfzml7WBf3QmyPToP1wm1Gj/Vc5UJKqTzU=
+github.com/khulnasoft/goversify v0.0.0-20201107203531-5e48ac5d022a/go.mod h1:9Beu8XsUNNfzml7WBf3QmyPToP1wm1Gj/Vc5UJKqTzU=
+github.com/khulnasoft/goversify v0.0.0-20210121072130-637058cfe492/go.mod h1:9Beu8XsUNNfzml7WBf3QmyPToP1wm1Gj/Vc5UJKqTzU=
 github.com/khulnasoft-lab/testdocker v0.0.0-20210106133225-0b17fe083674/go.mod h1:psfu0MVaiTDLpNxCoNsTeILSKY2EICBwv345f3M+Ffs=
 github.com/khulnasoft/tunnel v0.16.0 h1:lyzqYGQ2TYxcjFwKBw6aU3PwHLvc0+6VTech+0/LnqQ=
 github.com/khulnasoft/tunnel v0.16.0/go.mod h1:SLXDW/zKJWE7XhMEGGfkFGABNvz6b8BAbNjuXztJlj0=

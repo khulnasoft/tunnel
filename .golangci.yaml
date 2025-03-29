@@ -58,12 +58,12 @@ linters-settings:
       modules:
         - github.com/hashicorp/go-version:
             recommendations:
-              - github.com/aquasecurity/go-version
-            reason: "`aquasecurity/go-version` is designed for our use-cases"
+              - github.com/khulnasoft/goversify
+            reason: "`khulnasoft/goversify` is designed for our use-cases"
         - github.com/Masterminds/semver:
             recommendations:
-              - github.com/aquasecurity/go-version
-            reason: "`aquasecurity/go-version` is designed for our use-cases"
+              - github.com/khulnasoft/goversify
+            reason: "`khulnasoft/goversify` is designed for our use-cases"
   gosec:
     excludes:
       - G101

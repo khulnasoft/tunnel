@@ -21,14 +21,14 @@ var (
 			},
 		},
 		{
-			ID:           "github.com/aquasecurity/go-version@v0.0.0-20240603093900-cf8a8d29271d",
-			Name:         "github.com/aquasecurity/go-version",
+			ID:           "github.com/khulnasoft/goversify@v0.0.0-20240603093900-cf8a8d29271d",
+			Name:         "github.com/khulnasoft/goversify",
 			Version:      "v0.0.0-20240603093900-cf8a8d29271d",
 			Relationship: ftypes.RelationshipDirect,
 			ExternalReferences: []ftypes.ExternalRef{
 				{
 					Type: ftypes.RefVCS,
-					URL:  "https://github.com/aquasecurity/go-version",
+					URL:  "https://github.com/khulnasoft/goversify",
 				},
 			},
 		},
@@ -86,7 +86,7 @@ var (
 		{
 			ID: "github.com/org/repo",
 			DependsOn: []string{
-				"github.com/aquasecurity/go-version@v0.0.0-20240603093900-cf8a8d29271d",
+				"github.com/khulnasoft/goversify@v0.0.0-20240603093900-cf8a8d29271d",
 				"stdlib@v1.22.5",
 			},
 		},
@@ -100,7 +100,7 @@ var (
 		{
 			ID: "github.com/org/repo",
 			DependsOn: []string{
-				"github.com/aquasecurity/go-version@v0.0.0-20240603093900-cf8a8d29271d",
+				"github.com/khulnasoft/goversify@v0.0.0-20240603093900-cf8a8d29271d",
 			},
 		},
 	}

@@ -7,7 +7,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/aquasecurity/go-version/pkg/semver"
+	"github.com/khulnasoft/goversify/pkg/semver"
 
 	"github.com/magefile/mage/sh"
 	"golang.org/x/xerrors"

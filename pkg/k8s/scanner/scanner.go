@@ -12,7 +12,7 @@ import (
 	"github.com/samber/lo"
 	"golang.org/x/xerrors"
 
-	"github.com/aquasecurity/go-version/pkg/version"
+	"github.com/khulnasoft/goversify/pkg/version"
 	"github.com/khulnasoft/tunnel-kubernetes/pkg/artifacts"
 	"github.com/khulnasoft/tunnel-kubernetes/pkg/bom"
 	cmd "github.com/khulnasoft/tunnel/pkg/commands/artifact"

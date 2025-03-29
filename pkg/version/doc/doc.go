@@ -6,7 +6,7 @@ import (
 	"path"
 	"strings"
 
-	"github.com/aquasecurity/go-version/pkg/semver"
+	"github.com/khulnasoft/goversify/pkg/semver"
 	"github.com/khulnasoft/tunnel/pkg/version/app"
 )
 

@@ -10,7 +10,7 @@ import (
 	"golang.org/x/xerrors"
 	"gopkg.in/yaml.v3"
 
-	"github.com/aquasecurity/go-version/pkg/semver"
+	"github.com/khulnasoft/goversify/pkg/semver"
 	"github.com/khulnasoft/tunnel/pkg/dependency"
 	ftypes "github.com/khulnasoft/tunnel/pkg/fanal/types"
 	"github.com/khulnasoft/tunnel/pkg/log"

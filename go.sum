@@ -799,8 +799,6 @@ github.com/aquasecurity/bolt-fixtures v0.0.0-20200903104109-d34e7f983986 h1:2a30
 github.com/aquasecurity/bolt-fixtures v0.0.0-20200903104109-d34e7f983986/go.mod h1:NT+jyeCzXk6vXR5MTkdn4z64TgGfE5HMLC8qfj5unl8=
 github.com/aquasecurity/go-version v0.0.0-20241105054539-1951e80d786f h1:6mwfszC0VohA3NF75EX8pPStmmL0spZnTlkLp83M69c=
 github.com/aquasecurity/go-version v0.0.0-20241105054539-1951e80d786f/go.mod h1:1cPOp4BaQZ1G2F5fnw4dFz6pkOyXJI9KTuak8ghIl3U=
-github.com/aquasecurity/tml v0.6.1 h1:y2ZlGSfrhnn7t4ZJ/0rotuH+v5Jgv6BDDO5jB6A9gwo=
-github.com/aquasecurity/tml v0.6.1/go.mod h1:OnYMWY5lvI9ejU7yH9LCberWaaTBW7hBFsITiIMY2yY=
 github.com/arbovm/levenshtein v0.0.0-20160628152529-48b4e1c0c4d0 h1:jfIu9sQUG6Ig+0+Ap1h4unLjW6YQJpKZVmUzxsD4E/Q=
 github.com/arbovm/levenshtein v0.0.0-20160628152529-48b4e1c0c4d0/go.mod h1:t2tdKJDJF9BV14lnkjHmOQgcvEKgtqs5a1N3LNdJhGE=
 github.com/armon/circbuf v0.0.0-20150827004946-bbbad097214e/go.mod h1:3U/XgcO3hCbHZ8TKRvWD2dDTCfh9M9ya+I9JpbB7O8o=
@@ -1692,10 +1690,14 @@ github.com/khulnasoft-lab/table v1.8.0 h1:e1izFsciGkgSoIRSbCm3Jq62aqcvBJWSPm1enS
 github.com/khulnasoft-lab/table v1.8.0/go.mod h1:PxbBMSK0ML2eznvivnkK/36H7m2HkcpmhJveqSB8fLU=
 github.com/khulnasoft-lab/testdocker v1.0.0 h1:mXV0Sn9Qy0oPOFb2qjPfiBtKdKu2gArHVR+1sT/2uis=
 github.com/khulnasoft-lab/testdocker v1.0.0/go.mod h1:VMSwizJYYnb76x8ZPfn4iKkxJHHryIrF1Q6mhQmv7o8=
+github.com/khulnasoft-lab/tml v0.0.2 h1:eLDzmfIjeEgpHS6IZQ7RoR4MrKARthLqssTpP8c7Uf0=
+github.com/khulnasoft-lab/tml v0.0.2/go.mod h1:7GVZR01yJrB6TmDSJ7OGa+qVpDX/6qHVOLo5rkQa1BI=
 github.com/khulnasoft-lab/tunnel-db v0.0.0-20250120221338-63ade460b189 h1:jx2LBb2zFhePCdh8WBqpog2nJXVUSQ9ZwNEOb+7/xbQ=
 github.com/khulnasoft-lab/tunnel-db v0.0.0-20250120221338-63ade460b189/go.mod h1:e9tSNbozvFrbLQA1va8W6R9y02rEJeEo2K6asgk6cP0=
 github.com/khulnasoft-lab/tunnel-java-db v0.0.0-20240907154440-0d77c2623acb h1:BUldttnPfX59gMjE9HOEIJPa9PiCqKBlVoClq53Q5y4=
 github.com/khulnasoft-lab/tunnel-java-db v0.0.0-20240907154440-0d77c2623acb/go.mod h1:6AUG9U6kNHx+ZrFGbQpDDCzs33Ch9Vpb/1qiZgt8I4w=
+github.com/khulnasoft/goversify v0.0.0-20250310221534-b7b4cecdfb37 h1:W62gOnnUMU3ZRwzUUHt/PpD7FXYTFTY/u1ncCLk9r9s=
+github.com/khulnasoft/goversify v0.0.0-20250310221534-b7b4cecdfb37/go.mod h1:0OfSIaRm4X0QUUiugUI3jkMuRNJc5ozHh7FBv4FLDGQ=
 github.com/khulnasoft/tunnel-checks v0.0.2 h1:AwUdfxZEgVwKLRcf+006T5ccY2JMglDYjEkUrCt73o0=
 github.com/khulnasoft/tunnel-checks v0.0.2/go.mod h1:lKl6OfoArgy0M6FADirGVroV5HzzVukhG77eKve9C6A=
 github.com/khulnasoft/tunnel-kubernetes v0.5.3 h1:m5FufXm7jpdbyxwfhFEoPasvA86ZRsLjJhU6NcGvjG0=
