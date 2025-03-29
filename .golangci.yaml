@@ -1,3 +1,5 @@
+version: 2
+
 linters-settings:
   depguard:
     rules:
@@ -102,11 +104,9 @@ linters:
   enable:
     - bodyclose
     - depguard
-    - gci
     - goconst
     - gocritic
     - gocyclo
-    - gofmt
     - gomodguard
     - gosec
     - govet
@@ -116,10 +116,14 @@ linters:
     - revive
     - usetesting
     - testifylint
-    - typecheck
     - unconvert
     - unused
     - usestdlibvars
+
+formatters:
+  enable:
+    - gci
+    - gofmt
 
 run:
   go: '1.24'

@@ -10,7 +10,7 @@ Below is a list of additional resources from Khulnasoft Security.
 
 - [Using Tunnel to Discover Vulnerabilities in VS Code Projects](https://blog.khulnasoft.com/tunnel-open-source-vulnerability-scanner-vs-code)
 - [How does a vulnerability scanner identify packages?](https://youtu.be/PaMnzeHBa8M)
-- [Handling Container Vulnerabilities with Open Policy Agent - Teppei Fukuda, Khulnasoft Security](https://youtu.be/WKE2XNZ2zr4)
+- [Handling Container Vulnerabilities with Open Policy Agent - Md Sulaiman, Khulnasoft Security](https://youtu.be/WKE2XNZ2zr4)
 
 ## CI/CD Pipelines
 
