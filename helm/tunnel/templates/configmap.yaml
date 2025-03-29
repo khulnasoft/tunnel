@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "tunnel.fullname" . }}
+  labels:
+{{ include "tunnel.labels" . | indent 4 }}
+data:
+  TUNNEL_LISTEN: "0.0.0.0:{{ .Values.service.port }}"
+  TUNNEL_CACHE_DIR: "/home/scanner/.cache/tunnel"
+{{- if .Values.tunnel.cache.redis.enabled }}
+  TUNNEL_CACHE_BACKEND: {{ .Values.tunnel.cache.redis.url | quote }}
+  TUNNEL_CACHE_TTL: {{ .Values.tunnel.cache.redis.ttl | quote }}
+  TUNNEL_REDIS_TLS: {{ .Values.tunnel.cache.redis.tls | quote }}
+{{- end }}
+  TUNNEL_DEBUG: {{ .Values.tunnel.debugMode | quote }}
+  TUNNEL_SKIP_DB_UPDATE: {{ .Values.tunnel.skipDBUpdate | quote }}
+  TUNNEL_DB_REPOSITORY: {{ .Values.tunnel.dbRepository | quote }}
+{{- if .Values.httpProxy }}
+  HTTP_PROXY: {{ .Values.httpProxy | quote }}
+{{- end }}
+{{- if .Values.httpsProxy }}
+  HTTPS_PROXY: {{ .Values.httpsProxy | quote }}
+{{- end }}
+{{- if .Values.noProxy }}
+  NO_PROXY: {{ .Values.noProxy | quote }}
+{{- end }}
+{{- with .Values.tunnel.extraEnvVars }}
+  {{- . | toYaml | nindent 2 }}
+{{- end }}

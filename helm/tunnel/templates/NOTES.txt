@@ -1,0 +1,2 @@
+You should be able to access Tunnel server installation within
+the cluster at http://{{ include "tunnel.fullname" . }}.{{ .Release.Namespace }}:{{ .Values.service.port }}

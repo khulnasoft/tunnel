@@ -1,0 +1,11 @@
+apiVersion: v2
+name: tunnel
+version: 0.13.0
+appVersion: 0.61.0
+description: Tunnel helm chart
+keywords:
+  - scanner
+  - tunnel
+  - vulnerability
+sources:
+  - https://github.com/khulnasoft/tunnel
