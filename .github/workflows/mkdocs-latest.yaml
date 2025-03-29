@@ -27,11 +27,11 @@ jobs:
           pip install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git@9.5.44-insiders-4.53.14
           pip install -r docs/build/requirements.txt
         env:
-          GH_TOKEN: ${{ secrets.MKDOCS_KHULNASOFT_BOT }}
+          GH_TOKEN: ${{ secrets.ORG_REPO_TOKEN }}
       - name: Configure the git user
         run: |
-          git config user.name "knqyf263"
-          git config user.email "knqyf263@gmail.com"
+          git config user.name "khulnasoft-bot"
+          git config user.email "info@khulnasoft.com"
       - name: Deploy the latest documents from new tag push
         if: ${{ github.event.inputs.version == '' }}
         run: |
