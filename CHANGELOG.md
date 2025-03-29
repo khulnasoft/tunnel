@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.61.3](https://github.com/khulnasoft/tunnel/compare/v0.61.2...v0.61.3) (2025-03-29)
+
+
+### Bug Fixes
+
+* protoc ([d1695ec](https://github.com/khulnasoft/tunnel/commit/d1695ec8755ed4b5e90c9c713f6ae1d679b0523c))
+
 ## [0.61.2](https://github.com/khulnasoft/tunnel/compare/v0.61.1...v0.61.2) (2025-03-29)
 
 
