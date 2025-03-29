@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.61.1](https://github.com/khulnasoft/tunnel/compare/v0.61.0...v0.61.1) (2025-03-29)
+
+
+### Bug Fixes
+
+* typo ([3d8898a](https://github.com/khulnasoft/tunnel/commit/3d8898a2257c3d85e0d04c98a6490304b0812491))
+
 ## [0.61.0](https://github.com/khulnasoft/tunnel/compare/v0.60.0...v0.61.0) (2025-03-28)
 
 
