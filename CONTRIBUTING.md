@@ -1,1 +1,1 @@
-See [Issues](https://tunnel.dev/latest/community/contribute/issue/) and [Pull Requests](https://tunnel.dev/latest/community/contribute/pr/)
+See [Issues](https://tunnel.khulnasoft.com/latest/community/contribute/issue/) and [Pull Requests](https://tunnel.khulnasoft.com/latest/community/contribute/pr/)

@@ -77,7 +77,7 @@ tunnel:
   gitHubToken: ""
 
   # Docker registry credentials
-  # See also: https://tunnel.dev/dev/advanced/private-registries/docker-hub/
+  # See also: https://tunnel.khulnasoft.com/dev/advanced/private-registries/docker-hub/
   #
   # Either
   # Directly in this file

@@ -30,7 +30,7 @@ import (
 
 const (
 	DocumentSPDXIdentifier = "DOCUMENT"
-	DocumentNamespace      = "http://tunnel.dev"
+	DocumentNamespace      = "http://tunnel.khulnasoft.com"
 	CreatorOrganization    = "khulnasoft"
 	CreatorTool            = "tunnel"
 	noneField              = "NONE"

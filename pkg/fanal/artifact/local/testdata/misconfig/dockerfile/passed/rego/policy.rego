@@ -8,7 +8,7 @@ __rego_metadata__ := {
 	"severity": "LOW",
 	"description": "This is a test policy.",
 	"recommended_actions": "Have a cup of tea.",
-	"url": "https://tunnel.dev/",
+	"url": "https://tunnel.khulnasoft.com/",
 }
 
 # taken from defsec rego lib to mimic behaviour

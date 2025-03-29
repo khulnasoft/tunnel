@@ -2,7 +2,7 @@
 # title: Test policy
 # description: This is a test policy.
 # related_resources:
-# - "https://tunnel.dev/"
+# - "https://tunnel.khulnasoft.com/"
 # custom:
 #   id: TEST001
 #   avd_id: AVD-TEST-0001

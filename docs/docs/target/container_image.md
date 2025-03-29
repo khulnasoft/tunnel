@@ -510,7 +510,7 @@ $ tunnel image --platform=linux/arm alpine:3.16.1
 2022-10-25T21:00:50.972+0300    INFO    Vulnerability scanning is enabled
 2022-10-25T21:00:50.972+0300    INFO    Secret scanning is enabled
 2022-10-25T21:00:50.972+0300    INFO    If your scanning is slow, please try '--scanners vuln' to disable secret scanning
-2022-10-25T21:00:50.972+0300    INFO    Please see also https://tunnel.dev/dev/docs/secret/scanning/#recommendation for faster secret detection
+2022-10-25T21:00:50.972+0300    INFO    Please see also https://tunnel.khulnasoft.com/dev/docs/secret/scanning/#recommendation for faster secret detection
 2022-10-25T21:00:56.190+0300    INFO    Detected OS: alpine
 2022-10-25T21:00:56.190+0300    INFO    Detecting Alpine vulnerabilities...
 2022-10-25T21:00:56.191+0300    INFO    Number of language-specific files: 0

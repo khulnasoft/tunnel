@@ -341,7 +341,7 @@ func Run(ctx context.Context, opts flag.Options, targetKind TargetKind) (err err
 
 	defer func() {
 		if errors.Is(err, context.DeadlineExceeded) {
-			// e.g. https://tunnel.dev/latest/docs/configuration/
+			// e.g. https://tunnel.khulnasoft.com/latest/docs/configuration/
 			log.WarnContext(ctx, fmt.Sprintf("Provide a higher timeout value, see %s", doc.URL("/docs/configuration/", "")))
 		}
 	}()
@@ -530,7 +530,7 @@ func (r *runner) initScannerConfig(ctx context.Context, opts flag.Options) (Scan
 		logger := log.WithPrefix(log.PrefixSecret)
 		logger.Info("Secret scanning is enabled")
 		logger.Info("If your scanning is slow, please try '--scanners vuln' to disable secret scanning")
-		// e.g. https://tunnel.dev/latest/docs/scanner/secret/#recommendation
+		// e.g. https://tunnel.khulnasoft.com/latest/docs/scanner/secret/#recommendation
 		logger.Info(fmt.Sprintf("Please see also %s for faster secret detection", doc.URL("/docs/scanner/secret/", "recommendation")))
 	} else {
 		opts.SecretConfigPath = ""

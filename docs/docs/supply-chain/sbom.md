@@ -452,7 +452,7 @@ SPDXVersion: SPDX-2.3
 DataLicense: CC0-1.0
 SPDXID: SPDXRef-DOCUMENT
 DocumentName: alpine:3.15
-DocumentNamespace: http://tunnel.dev/container_image/alpine:3.15-12db86e1-4aa4-40ec-900b-5aaa5d82461b
+DocumentNamespace: http://tunnel.khulnasoft.com/container_image/alpine:3.15-12db86e1-4aa4-40ec-900b-5aaa5d82461b
 Creator: Organization: khulnasoft
 Creator: Tool: tunnel-0.58.0
 Created: 2025-02-11T07:43:38Z
@@ -742,7 +742,7 @@ $ tunnel image --format spdx-json --output result.spdx alpine:3.15
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
   "name": "alpine:3.15",
-  "documentNamespace": "http://tunnel.dev/container_image/alpine:3.15-bbe0096f-0ed0-47b4-bbea-82121a9201f1",
+  "documentNamespace": "http://tunnel.khulnasoft.com/container_image/alpine:3.15-bbe0096f-0ed0-47b4-bbea-82121a9201f1",
   "creationInfo": {
     "creators": [
       "Organization: khulnasoft",

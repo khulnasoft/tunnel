@@ -10,7 +10,7 @@ body:
         
         **Do not open a GitHub issue, please.** Maintainers triage discussions and then create issues.
         
-        Please also check [our contribution guidelines](https://tunnel.dev/latest/community/contribute/discussion/).
+        Please also check [our contribution guidelines](https://tunnel.khulnasoft.com/latest/community/contribute/discussion/).
   - type: textarea
     attributes:
       label: Description
@@ -117,7 +117,7 @@ body:
       description: Have you tried the following?
       options:
         - label: Run `tunnel clean --all`
-        - label: Read [the troubleshooting](https://tunnel.dev/latest/docs/references/troubleshooting/)
+        - label: Read [the troubleshooting](https://tunnel.khulnasoft.com/latest/docs/references/troubleshooting/)
   - type: markdown
     attributes:
       value: |

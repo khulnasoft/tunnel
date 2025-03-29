@@ -168,7 +168,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 				DataLicense:       spdx.DataLicense,
 				SPDXIdentifier:    "DOCUMENT",
 				DocumentName:      "rails:latest",
-				DocumentNamespace: "http://tunnel.dev/container_image/rails:latest-3ff14136-e09f-4df9-80ea-000000000009",
+				DocumentNamespace: "http://tunnel.khulnasoft.com/container_image/rails:latest-3ff14136-e09f-4df9-80ea-000000000009",
 				CreationInfo: &spdx.CreationInfo{
 					Creators: []common.Creator{
 						{
@@ -490,7 +490,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 				DataLicense:       spdx.DataLicense,
 				SPDXIdentifier:    "DOCUMENT",
 				DocumentName:      "centos:latest",
-				DocumentNamespace: "http://tunnel.dev/container_image/centos:latest-3ff14136-e09f-4df9-80ea-000000000006",
+				DocumentNamespace: "http://tunnel.khulnasoft.com/container_image/centos:latest-3ff14136-e09f-4df9-80ea-000000000006",
 				CreationInfo: &spdx.CreationInfo{
 					Creators: []common.Creator{
 						{
@@ -723,7 +723,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 				DataLicense:       spdx.DataLicense,
 				SPDXIdentifier:    "DOCUMENT",
 				DocumentName:      "masahiro331/CVE-2021-41098",
-				DocumentNamespace: "http://tunnel.dev/filesystem/masahiro331/CVE-2021-41098-3ff14136-e09f-4df9-80ea-000000000006",
+				DocumentNamespace: "http://tunnel.khulnasoft.com/filesystem/masahiro331/CVE-2021-41098-3ff14136-e09f-4df9-80ea-000000000006",
 				CreationInfo: &spdx.CreationInfo{
 					Creators: []common.Creator{
 						{
@@ -882,7 +882,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 				DataLicense:       spdx.DataLicense,
 				SPDXIdentifier:    "DOCUMENT",
 				DocumentName:      "pom.xml",
-				DocumentNamespace: "http://tunnel.dev/filesystem/pom.xml-3ff14136-e09f-4df9-80ea-000000000004",
+				DocumentNamespace: "http://tunnel.khulnasoft.com/filesystem/pom.xml-3ff14136-e09f-4df9-80ea-000000000004",
 				CreationInfo: &spdx.CreationInfo{
 					Creators: []common.Creator{
 						{
@@ -1024,7 +1024,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 				DataLicense:       spdx.DataLicense,
 				SPDXIdentifier:    "DOCUMENT",
 				DocumentName:      "log4j-core-2.17.0.jar",
-				DocumentNamespace: "http://tunnel.dev/filesystem/log4j-core-2.17.0.jar-3ff14136-e09f-4df9-80ea-000000000003",
+				DocumentNamespace: "http://tunnel.khulnasoft.com/filesystem/log4j-core-2.17.0.jar-3ff14136-e09f-4df9-80ea-000000000003",
 				CreationInfo: &spdx.CreationInfo{
 					Creators: []common.Creator{
 						{
@@ -1126,7 +1126,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 				DataLicense:       spdx.DataLicense,
 				SPDXIdentifier:    "DOCUMENT",
 				DocumentName:      "http://test-aggregate",
-				DocumentNamespace: "http://tunnel.dev/repository/test-aggregate-3ff14136-e09f-4df9-80ea-000000000003",
+				DocumentNamespace: "http://tunnel.khulnasoft.com/repository/test-aggregate-3ff14136-e09f-4df9-80ea-000000000003",
 				CreationInfo: &spdx.CreationInfo{
 					Creators: []common.Creator{
 						{
@@ -1220,7 +1220,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 				DataLicense:       spdx.DataLicense,
 				SPDXIdentifier:    "DOCUMENT",
 				DocumentName:      "empty/path",
-				DocumentNamespace: "http://tunnel.dev/filesystem/empty/path-3ff14136-e09f-4df9-80ea-000000000002",
+				DocumentNamespace: "http://tunnel.khulnasoft.com/filesystem/empty/path-3ff14136-e09f-4df9-80ea-000000000002",
 
 				CreationInfo: &spdx.CreationInfo{
 					Creators: []common.Creator{
@@ -1283,7 +1283,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 				DataLicense:       spdx.DataLicense,
 				SPDXIdentifier:    "DOCUMENT",
 				DocumentName:      "secret",
-				DocumentNamespace: "http://tunnel.dev/filesystem/secret-3ff14136-e09f-4df9-80ea-000000000002",
+				DocumentNamespace: "http://tunnel.khulnasoft.com/filesystem/secret-3ff14136-e09f-4df9-80ea-000000000002",
 				CreationInfo: &spdx.CreationInfo{
 					Creators: []common.Creator{
 						{
@@ -1355,7 +1355,7 @@ func TestMarshaler_Marshal(t *testing.T) {
 				DataLicense:       spdx.DataLicense,
 				SPDXIdentifier:    "DOCUMENT",
 				DocumentName:      "go-artifact",
-				DocumentNamespace: "http://tunnel.dev/filesystem/go-artifact-3ff14136-e09f-4df9-80ea-000000000005",
+				DocumentNamespace: "http://tunnel.khulnasoft.com/filesystem/go-artifact-3ff14136-e09f-4df9-80ea-000000000005",
 				CreationInfo: &spdx.CreationInfo{
 					Creators: []common.Creator{
 						{

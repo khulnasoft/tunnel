@@ -14,6 +14,6 @@ jobs:
         run: |
           if [ "${{ github.actor }}" != "khulnasoft-bot" ]; then
             echo "::error::This branch is intended for automated backporting by bot. Please refer to the documentation:"
-            echo "::error::https://tunnel.dev/latest/community/maintainer/backporting/"
+            echo "::error::https://tunnel.khulnasoft.com/latest/community/maintainer/backporting/"
             exit 1
           fi

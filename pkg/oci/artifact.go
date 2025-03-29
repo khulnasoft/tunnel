@@ -256,7 +256,7 @@ func shouldTryOtherRepo(err error) bool {
 	for _, diagnostic := range terr.Errors {
 		// For better user experience
 		if diagnostic.Code == transport.DeniedErrorCode || diagnostic.Code == transport.UnauthorizedErrorCode {
-			// e.g. https://tunnel.dev/latest/docs/references/troubleshooting/#db
+			// e.g. https://tunnel.khulnasoft.com/latest/docs/references/troubleshooting/#db
 			log.Warnf("See %s", doc.URL("/docs/references/troubleshooting/", "db"))
 			break
 		}

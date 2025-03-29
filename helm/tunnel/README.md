@@ -63,9 +63,9 @@ The following table lists the configurable parameters of the Tunnel chart and th
 | `image.pullSecret`                    | The name of an imagePullSecret used to pull tunnel image from e.g. Docker Hub or a private registry  | |
 | `replicaCount`                        | Number of Tunnel Pods to run                                   | `1`            |
 | `tunnel.debugMode`                     | The flag to enable or disable Tunnel debug mode                          | `false` |
-| `tunnel.gitHubToken`                   | The GitHub access token to download Tunnel DB. More info: https://tunnel.dev/latest/docs/references/troubleshooting/#github-rate-limiting                          |      |
-| `tunnel.registryUsername`              | The username used to log in at dockerhub. More info: https://tunnel.dev/latest/docs/advanced/private-registries/docker-hub/ |      |
-| `tunnel.registryPassword`              | The password used to log in at dockerhub. More info: https://tunnel.dev/latest/docs/advanced/private-registries/docker-hub/ |      |
+| `tunnel.gitHubToken`                   | The GitHub access token to download Tunnel DB. More info: https://tunnel.khulnasoft.com/latest/docs/references/troubleshooting/#github-rate-limiting                          |      |
+| `tunnel.registryUsername`              | The username used to log in at dockerhub. More info: https://tunnel.khulnasoft.com/latest/docs/advanced/private-registries/docker-hub/ |      |
+| `tunnel.registryPassword`              | The password used to log in at dockerhub. More info: https://tunnel.khulnasoft.com/latest/docs/advanced/private-registries/docker-hub/ |      |
 | `tunnel.registryCredentialsExistingSecret` | Name of Secret containing dockerhub credentials. Alternative to the 2 parameters above, has precedence if set.                    |      |
 | `tunnel.serviceAccount.annotations`        | Additional annotations to add to the Kubernetes service account resource |     |
 | `tunnel.skipDBUpdate`                    | The flag to enable or disable Tunnel DB downloads from GitHub            | `false`        |
@@ -90,7 +90,7 @@ The following table lists the configurable parameters of the Tunnel chart and th
 | `tolerations`                         | Tolerations for pod assignment                                              |     |
 | `podAnnotations`                      | Annotations for pods created by statefulset                             | `{}` |
 
-The above parameters map to the env variables defined in [tunnel](https://tunnel.dev/latest/docs/configuration/#configuration).
+The above parameters map to the env variables defined in [tunnel](https://tunnel.khulnasoft.com/latest/docs/configuration/#configuration).
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`.
 
@@ -108,4 +108,4 @@ This chart uses a PersistentVolumeClaim to reduce the number of database downloa
 ## Caching
 
 You can specify a Redis server as cache backend. This Redis server has to be already present. You can use the [bitnami chart](https://bitnami.com/stack/redis/helm).
-More Information about the caching backends can be found [here](https://tunnel.dev/latest/docs/configuration/cache/#scan-cache-backend).
+More Information about the caching backends can be found [here](https://tunnel.khulnasoft.com/latest/docs/configuration/cache/#scan-cache-backend).

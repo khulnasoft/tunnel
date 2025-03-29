@@ -107,7 +107,7 @@ tunnel k8s --report summary cluster
 ## Want more? Check out Khulnasoft
 
 If you liked Tunnel, you will love Khulnasoft which builds on top of Tunnel to provide even more enhanced capabilities for a complete security management offering.  
-You can find a high level comparison table specific to Tunnel users [here](https://tunnel.dev/latest/commercial/compare/).
+You can find a high level comparison table specific to Tunnel users [here](https://tunnel.khulnasoft.com/latest/commercial/compare/).
 In addition check out the <https://khulnasoft.com> website for more information about our products and services.
 If you'd like to contact Khulnasoft or request a demo, please use this form: <https://www.khulnasoft.com/demo>
 
@@ -129,14 +129,14 @@ Please ensure to abide by our [Code of Conduct][code-of-conduct] during all inte
 [docker-pulls]: https://img.shields.io/docker/pulls/khulnasoft/tunnel?logo=docker&label=docker%20pulls%20%2F%20tunnel
 [license]: https://github.com/khulnasoft/tunnel/blob/main/LICENSE
 [license-img]: https://img.shields.io/badge/License-Apache%202.0-blue.svg
-[homepage]: https://tunnel.dev
-[docs]: https://tunnel.dev/latest/docs/
+[homepage]: https://tunnel.khulnasoft.com
+[docs]: https://tunnel.khulnasoft.com/latest/docs/
 [pronunciation]: #how-to-pronounce-the-name-tunnel
 [code-of-conduct]: https://github.com/khulnasoft/community/blob/main/CODE_OF_CONDUCT.md
 
-[Installation]:https://tunnel.dev/latest/getting-started/installation/
-[Ecosystem]: https://tunnel.dev/latest/ecosystem/
-[Scanning Coverage]: https://tunnel.dev/latest/docs/coverage/
+[Installation]:https://tunnel.khulnasoft.com/latest/getting-started/installation/
+[Ecosystem]: https://tunnel.khulnasoft.com/latest/ecosystem/
+[Scanning Coverage]: https://tunnel.khulnasoft.com/latest/docs/coverage/
 
 [alpine]: https://ariadne.space/2021/06/08/the-vulnerability-remediation-lifecycle-of-alpine-containers/
 [rego]: https://www.openpolicyagent.org/docs/latest/#rego

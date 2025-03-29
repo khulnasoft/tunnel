@@ -100,7 +100,7 @@ $ tunnel server --cache-backend redis://localhost:6379 \
 [tunnel-java-db]: ./db.md
 [misconf-checks]: ../scanner/misconfiguration/check/builtin.md
 [boltdb]: https://github.com/etcd-io/bbolt
-[parallel-run]: https://tunnel.dev/{{ git.tag}}/docs/references/troubleshooting/#running-in-parallel-takes-same-time-as-series-run
+[parallel-run]: https://tunnel.khulnasoft.com/{{ git.tag}}/docs/references/troubleshooting/#running-in-parallel-takes-same-time-as-series-run
 
 [^1]: Downloaded when scanning for vulnerabilities
 [^2]: Downloaded when scanning `jar/war/par/ear` files

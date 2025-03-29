@@ -17,7 +17,7 @@ func BaseURL(ver string) *url.URL {
 	ver = canonicalVersion(ver)
 	return &url.URL{
 		Scheme: "https",
-		Host:   "tunnel.dev",
+		Host:   "tunnel.khulnasoft.com",
 		Path:   ver,
 	}
 }

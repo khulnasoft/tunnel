@@ -248,7 +248,7 @@ var terraformPolicyMetadata = types.PolicyMetadata{
 	Description:        "This is a test policy.",
 	Severity:           "LOW",
 	RecommendedActions: "Have a cup of tea.",
-	References:         []string{"https://tunnel.dev/"},
+	References:         []string{"https://tunnel.khulnasoft.com/"},
 }
 
 func TestTerraformMisconfigurationScan(t *testing.T) {
@@ -656,7 +656,7 @@ __rego_metadata__ := {
 	"severity": "LOW",
 	"description": "This is a test policy.",
 	"recommended_actions": "Have a cup of tea.",
-	"url": "https://tunnel.dev/",
+	"url": "https://tunnel.khulnasoft.com/",
 }
 
 # taken from defsec rego lib to mimic behaviour
@@ -688,7 +688,7 @@ var terraformPlanPolicyMetadata = types.PolicyMetadata{
 	Description:        "This is a test policy.",
 	Severity:           "LOW",
 	RecommendedActions: "Have a cup of tea.",
-	References:         []string{"https://tunnel.dev/"},
+	References:         []string{"https://tunnel.khulnasoft.com/"},
 }
 
 func TestTerraformPlanSnapshotMisconfScan(t *testing.T) {
@@ -945,7 +945,7 @@ func TestCloudFormationMisconfigurationScan(t *testing.T) {
 											Description:        "This is a test policy.",
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
-											References:         []string{"https://tunnel.dev/"},
+											References:         []string{"https://tunnel.khulnasoft.com/"},
 										},
 										CauseMetadata: types.CauseMetadata{
 											Resource:  "main.yaml:3-6",
@@ -1004,7 +1004,7 @@ func TestCloudFormationMisconfigurationScan(t *testing.T) {
 											Description:        "This is a test policy.",
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
-											References:         []string{"https://tunnel.dev/"},
+											References:         []string{"https://tunnel.khulnasoft.com/"},
 										},
 										CauseMetadata: types.CauseMetadata{
 											Resource:  "main.yaml:2-5",
@@ -1026,7 +1026,7 @@ func TestCloudFormationMisconfigurationScan(t *testing.T) {
 											Description:        "This is a test policy.",
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
-											References:         []string{"https://tunnel.dev/"},
+											References:         []string{"https://tunnel.khulnasoft.com/"},
 										},
 										CauseMetadata: types.CauseMetadata{
 											Resource:  "main.yaml:6-9",
@@ -1168,7 +1168,7 @@ func TestCloudFormationMisconfigurationScan(t *testing.T) {
 											Description:        "This is a test policy.",
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
-											References:         []string{"https://tunnel.dev/"},
+											References:         []string{"https://tunnel.khulnasoft.com/"},
 										},
 										CauseMetadata: types.CauseMetadata{
 											Provider: "Cloud",
@@ -1256,7 +1256,7 @@ func TestDockerfileMisconfigurationScan(t *testing.T) {
 											Description:        "This is a test policy.",
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
-											References:         []string{"https://tunnel.dev/"},
+											References:         []string{"https://tunnel.khulnasoft.com/"},
 										},
 										CauseMetadata: types.CauseMetadata{
 											Provider: "Generic",
@@ -1311,7 +1311,7 @@ func TestDockerfileMisconfigurationScan(t *testing.T) {
 											Description:        "This is a test policy.",
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
-											References:         []string{"https://tunnel.dev/"},
+											References:         []string{"https://tunnel.khulnasoft.com/"},
 										},
 										CauseMetadata: types.CauseMetadata{
 											Provider: "Generic",
@@ -1395,7 +1395,7 @@ func TestDockerfileMisconfigurationScan(t *testing.T) {
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
 											References: []string{
-												"https://tunnel.dev/",
+												"https://tunnel.khulnasoft.com/",
 											},
 										},
 										CauseMetadata: types.CauseMetadata{
@@ -1486,7 +1486,7 @@ func TestKubernetesMisconfigurationScan(t *testing.T) {
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
 											References: []string{
-												"https://tunnel.dev/",
+												"https://tunnel.khulnasoft.com/",
 											},
 										},
 										CauseMetadata: types.CauseMetadata{
@@ -1546,7 +1546,7 @@ func TestKubernetesMisconfigurationScan(t *testing.T) {
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
 											References: []string{
-												"https://tunnel.dev/",
+												"https://tunnel.khulnasoft.com/",
 											},
 										},
 										CauseMetadata: types.CauseMetadata{
@@ -1569,7 +1569,7 @@ func TestKubernetesMisconfigurationScan(t *testing.T) {
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
 											References: []string{
-												"https://tunnel.dev/",
+												"https://tunnel.khulnasoft.com/",
 											},
 										},
 										CauseMetadata: types.CauseMetadata{
@@ -1656,7 +1656,7 @@ func TestKubernetesMisconfigurationScan(t *testing.T) {
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
 											References: []string{
-												"https://tunnel.dev/",
+												"https://tunnel.khulnasoft.com/",
 											},
 										},
 										CauseMetadata: types.CauseMetadata{
@@ -1745,7 +1745,7 @@ func TestAzureARMMisconfigurationScan(t *testing.T) {
 											Description:        "This is a test policy.",
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
-											References:         []string{"https://tunnel.dev/"},
+											References:         []string{"https://tunnel.khulnasoft.com/"},
 										},
 										CauseMetadata: types.CauseMetadata{
 											Resource:  "resources[0]",
@@ -1803,7 +1803,7 @@ func TestAzureARMMisconfigurationScan(t *testing.T) {
 											Description:        "This is a test policy.",
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
-											References:         []string{"https://tunnel.dev/"},
+											References:         []string{"https://tunnel.khulnasoft.com/"},
 										},
 										CauseMetadata: types.CauseMetadata{
 											Resource:  "resources[0]",
@@ -1825,7 +1825,7 @@ func TestAzureARMMisconfigurationScan(t *testing.T) {
 											Description:        "This is a test policy.",
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
-											References:         []string{"https://tunnel.dev/"},
+											References:         []string{"https://tunnel.khulnasoft.com/"},
 										},
 										CauseMetadata: types.CauseMetadata{
 											Resource:  "resources[1]",
@@ -1910,7 +1910,7 @@ func TestAzureARMMisconfigurationScan(t *testing.T) {
 											Description:        "This is a test policy.",
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
-											References:         []string{"https://tunnel.dev/"},
+											References:         []string{"https://tunnel.khulnasoft.com/"},
 										},
 										CauseMetadata: types.CauseMetadata{
 											Provider: "Cloud",
@@ -1999,7 +1999,7 @@ func TestMixedConfigurationScan(t *testing.T) {
 											Description:        "This is a test policy.",
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
-											References:         []string{"https://tunnel.dev/"},
+											References:         []string{"https://tunnel.khulnasoft.com/"},
 										},
 										CauseMetadata: types.CauseMetadata{
 											Resource:  "main.yaml:3-6",
@@ -2027,7 +2027,7 @@ func TestMixedConfigurationScan(t *testing.T) {
 											Description:        "This is a test policy.",
 											Severity:           "LOW",
 											RecommendedActions: "Have a cup of tea.",
-											References:         []string{"https://tunnel.dev/"},
+											References:         []string{"https://tunnel.khulnasoft.com/"},
 										},
 										CauseMetadata: types.CauseMetadata{
 											Resource:  "aws_s3_bucket.asd",

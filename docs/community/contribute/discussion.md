@@ -24,7 +24,7 @@ There are 4 categories:
     If you find any false positives or false negatives, please make sure to report them under the "False Detection" category, not "Bugs".
 
 ## False detection
-Tunnel depends on [multiple data sources](https://tunnel.dev/latest/docs/scanner/vulnerability/#data-sources).
+Tunnel depends on [multiple data sources](https://tunnel.khulnasoft.com/latest/docs/scanner/vulnerability/#data-sources).
 Sometime these databases contain mistakes.
 
 If Tunnel can't detect any CVE-IDs or shows false positive result, at first please follow the next steps:

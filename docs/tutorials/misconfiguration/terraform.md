@@ -9,7 +9,7 @@ We have been consolidating all of our scanning-related efforts in one place, and
 
 ## Tunnel Config Command 
 
-Terraform configuration scanning is available as part of the `tunnel config` command. This command scans all configuration files for misconfiguration issues. You can find the details within [misconfiguration scans in the Tunnel documentation.](https://tunnel.dev/latest/docs/scanner/misconfiguration/) 
+Terraform configuration scanning is available as part of the `tunnel config` command. This command scans all configuration files for misconfiguration issues. You can find the details within [misconfiguration scans in the Tunnel documentation.](https://tunnel.khulnasoft.com/latest/docs/scanner/misconfiguration/) 
 
 Command structure: 
 ``` 
@@ -23,7 +23,7 @@ The `tunnel config` command can scan Terraform configuration, CloudFormation, Do
 - If the configuration that has been defined does not follow best practices, the check will fail.  
 
 ### Prerequisites 
-Install Tunnel on your local machines. The documentation provides several [different installation options.](https://tunnel.dev/latest/getting-started/installation/) 
+Install Tunnel on your local machines. The documentation provides several [different installation options.](https://tunnel.khulnasoft.com/latest/getting-started/installation/) 
 This tutorial will use this example [Terraform tutorial](https://github.com/Cloud-Native-Security/tunnel-demo/tree/main/bad_iac/terraform) for terraform misconfiguration scanning with Tunnel. 
 
 Git clone the tutorial and cd into the directory: 
@@ -83,14 +83,14 @@ tunnel config --severity CRITICAL, MEDIUM terraform-infra
 
 ### Passing tf.tfvars files into `tunnel config` scans 
 
-You can pass terraform values to Tunnel to override default values found in the Terraform HCL code. More information are provided [in the documentation.](https://tunnel.dev/latest/docs/coverage/iac/terraform/#value-overrides) 
+You can pass terraform values to Tunnel to override default values found in the Terraform HCL code. More information are provided [in the documentation.](https://tunnel.khulnasoft.com/latest/docs/coverage/iac/terraform/#value-overrides) 
 
 ``` 
 tunnel config --tf-vars terraform.tfvars ./
 ``` 
 ### Custom Checks 
 
-We have lots of examples in the [documentation](https://tunnel.dev/latest/docs/scanner/misconfiguration/custom/) on how you can write and pass custom Rego checks into terraform misconfiguration scans. 
+We have lots of examples in the [documentation](https://tunnel.khulnasoft.com/latest/docs/scanner/misconfiguration/custom/) on how you can write and pass custom Rego checks into terraform misconfiguration scans. 
 
 ## Secret and vulnerability scans
 
@@ -100,15 +100,15 @@ The `tunnel config` command does not perform secrete and vulnerability checks ou
 tunnel fs --scanners secret,misconfig ./
 ```
 
-The `tunnel config` command is a sub-command of the `tunnel fs` command. You can learn more about this command in the [documentation.](https://tunnel.dev/latest/docs/target/filesystem/) 
+The `tunnel config` command is a sub-command of the `tunnel fs` command. You can learn more about this command in the [documentation.](https://tunnel.khulnasoft.com/latest/docs/target/filesystem/) 
 
 ## Scanning Terraform Plan files
 
-Instead of scanning your different Terraform resources individually, you could also scan your Terraform Plan file before it is deployed for misconfiguration. This will give you insights into any misconfiguration of your resources as they would become deployed. [Here](https://tunnel.dev/latest/docs/coverage/iac/terraform/#terraform) is the link to the documentation.
+Instead of scanning your different Terraform resources individually, you could also scan your Terraform Plan file before it is deployed for misconfiguration. This will give you insights into any misconfiguration of your resources as they would become deployed. [Here](https://tunnel.khulnasoft.com/latest/docs/coverage/iac/terraform/#terraform) is the link to the documentation.
 
 Note that you need to be able to create a terraform init and plan without any errors. 
 
 ## Using Tunnel in your CI/CD pipeline 
-Similar to tfsec, Tunnel can be used either on local developer machines or integrated into your CI/CD pipeline. There are several steps available for different pipelines, including GitHub Actions, Circle CI, GitLab, Travis and more in the tutorials section of the documentation: [https://tunnel.dev/latest/tutorials/integrations/](https://tunnel.dev/latest/tutorials/integrations/) 
+Similar to tfsec, Tunnel can be used either on local developer machines or integrated into your CI/CD pipeline. There are several steps available for different pipelines, including GitHub Actions, Circle CI, GitLab, Travis and more in the tutorials section of the documentation: [https://tunnel.khulnasoft.com/latest/tutorials/integrations/](https://tunnel.khulnasoft.com/latest/tutorials/integrations/) 
 
  
