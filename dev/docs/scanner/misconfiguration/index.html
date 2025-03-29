@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://khulnasoft.github.io/tunnel/dev/docs/scanner/misconfiguration/">
+        <link rel="canonical" href="https://tunnel.khulnasoft.com/dev/docs/scanner/misconfiguration/">
       
       
         <link rel="prev" href="../vulnerability/">
@@ -75,8 +75,8 @@
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Tunnel - Overview" />
 <meta property="og:description" content="Tunnel - All-in-one open source security scanner" />
-<meta property="og:url" content="https://khulnasoft.github.io/tunnel/dev/docs/scanner/misconfiguration/" />
-<meta property="og:image" content="https://khulnasoft.github.io/tunnel/devassets/images/illustrations/banner.png" />
+<meta property="og:url" content="https://tunnel.khulnasoft.com/dev/docs/scanner/misconfiguration/" />
+<meta property="og:image" content="https://tunnel.khulnasoft.com/devassets/images/illustrations/banner.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1080" />
 <meta property="og:image:height" content="568" />
@@ -1740,6 +1740,15 @@ You're not viewing the latest version of the documentation.
 </li>
       
         <li class="md-nav__item">
+  <a href="#type-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type detection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configuration" class="md-nav__link">
     <span class="md-ellipsis">
       Configuration
@@ -1813,13 +1822,13 @@ You're not viewing the latest version of the documentation.
 </li>
         
           <li class="md-nav__item">
-  <a href="#skipping-resources-by-inline-comments" class="md-nav__link">
+  <a href="#skipping-detected-misconfigurations-by-inline-comments" class="md-nav__link">
     <span class="md-ellipsis">
-      Skipping resources by inline comments
+      Skipping detected misconfigurations by inline comments
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Skipping resources by inline comments">
+    <nav class="md-nav" aria-label="Skipping detected misconfigurations by inline comments">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3849,6 +3858,27 @@ You're not viewing the latest version of the documentation.
   
   
     <li class="md-nav__item">
+      <a href="../../supply-chain/vex/sbom-ref/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VEX SBOM Reference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../supply-chain/vex/oci/" class="md-nav__link">
         
   
@@ -5641,6 +5671,27 @@ You're not viewing the latest version of the documentation.
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/abbreviations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Abbreviations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -6334,6 +6385,15 @@ You're not viewing the latest version of the documentation.
 </li>
       
         <li class="md-nav__item">
+  <a href="#type-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type detection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configuration" class="md-nav__link">
     <span class="md-ellipsis">
       Configuration
@@ -6407,13 +6467,13 @@ You're not viewing the latest version of the documentation.
 </li>
         
           <li class="md-nav__item">
-  <a href="#skipping-resources-by-inline-comments" class="md-nav__link">
+  <a href="#skipping-detected-misconfigurations-by-inline-comments" class="md-nav__link">
     <span class="md-ellipsis">
-      Skipping resources by inline comments
+      Skipping detected misconfigurations by inline comments
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Skipping resources by inline comments">
+    <nav class="md-nav" aria-label="Skipping detected misconfigurations by inline comments">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -6486,7 +6546,7 @@ You're not viewing the latest version of the documentation.
 
 
 <h1 id="misconfiguration-scanning">Misconfiguration Scanning<a class="headerlink" href="#misconfiguration-scanning" title="Permanent link">&para;</a></h1>
-<p>Tunnel provides built-in checks to detect configuration issues in popular Infrastructure as Code files, such as: Docker, Kubernetes, Terraform, CloudFormation, and more.
+<p>Tunnel provides built-in checks to detect configuration issues in popular Infrastructure as Code files, such as: Docker, Kubernetes, Terraform, CloudFormation, and more. 
 In addition to built-in checks, you can write your own custom checks, as you can see <a href="custom/">here</a>.</p>
 <h2 id="quick-start">Quick start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
 <p>Simply specify a directory containing IaC files such as Terraform, CloudFormation, Azure ARM templates, Helm Charts and Dockerfile.</p>
@@ -6494,92 +6554,83 @@ In addition to built-in checks, you can write your own custom checks, as you can
 </code></pre></div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-</div>
 <div class="highlight"><pre><span></span><code>$ ls build/
 Dockerfile
 $ tunnel config ./build
-2022-05-16T13:29:29.952+0100 INFO Detected config files: 1
+2022-05-16T13:29:29.952+0100    INFO    Detected config files: 1
 
-    Dockerfile (dockerfile)
-    =======================
-    Tests: 23 (SUCCESSES: 22, FAILURES: 1)
-    Failures: 1 (UNKNOWN: 0, LOW: 0, MEDIUM: 1, HIGH: 0, CRITICAL: 0)
+Dockerfile (dockerfile)
+=======================
+Tests: 23 (SUCCESSES: 22, FAILURES: 1)
+Failures: 1 (UNKNOWN: 0, LOW: 0, MEDIUM: 1, HIGH: 0, CRITICAL: 0)
 
-    MEDIUM: Specify a tag in the &#39;FROM&#39; statement for image &#39;alpine&#39;
-    ══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
-    When using a &#39;FROM&#39; statement you should use a specific tag to avoid uncontrolled behavior when the image is updated.
+MEDIUM: Specify a tag in the &#39;FROM&#39; statement for image &#39;alpine&#39;
+══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+When using a &#39;FROM&#39; statement you should use a specific tag to avoid uncontrolled behavior when the image is updated.
 
-    See https://avd.khulnasoft.com/misconfig/ds001
-    ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-    Dockerfile:1
-    ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-    1 [ FROM alpine:latest
-    ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-    ```
-
-You can also enable misconfiguration detection in container image, filesystem and git repository scanning via `--scanners misconfig`.
-
-```bash
-$ tunnel image --scanners misconfig IMAGE_NAME
+See https://avd.khulnasoft.com/misconfig/ds001
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Dockerfile:1
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+1 [ FROM alpine:latest
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+</code></pre></div>
+</div>
+<p>You can also enable misconfiguration detection in container image, filesystem and git repository scanning via <code>--scanners misconfig</code>.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>tunnel<span class="w"> </span>image<span class="w"> </span>--scanners<span class="w"> </span>misconfig<span class="w"> </span>IMAGE_NAME
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>tunnel<span class="w"> </span>fs<span class="w"> </span>--scanners<span class="w"> </span>misconfig<span class="w"> </span>/path/to/dir
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-</div>
 <p>Misconfiguration detection is not enabled by default in <code>image</code>, <code>fs</code> and <code>repo</code> subcommands.</p>
-<p>Unlike the <code>config</code> subcommand, <code>image</code>, <code>fs</code> and <code>repo</code> subcommands can also scan for vulnerabilities and secrets at the same time.
+</div>
+<p>Unlike the <code>config</code> subcommand, <code>image</code>, <code>fs</code> and <code>repo</code> subcommands can also scan for vulnerabilities and secrets at the same time. 
 You can specify <code>--scanners vuln,misconfig,secret</code> to enable vulnerability and secret detection as well as misconfiguration detection.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-</div>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>myapp/
 Dockerfile<span class="w"> </span>Pipfile.lock
 $<span class="w"> </span>tunnel<span class="w"> </span>fs<span class="w"> </span>--scanners<span class="w"> </span>vuln,misconfig,secret<span class="w"> </span>--severity<span class="w"> </span>HIGH,CRITICAL<span class="w"> </span>myapp/
-<span class="m">2022</span>-05-16T13:42:21.440+0100<span class="w"> </span>INFO<span class="w"> </span>Number<span class="w"> </span>of<span class="w"> </span>language-specific<span class="w"> </span>files:<span class="w"> </span><span class="m">1</span>
-<span class="m">2022</span>-05-16T13:42:21.440+0100<span class="w"> </span>INFO<span class="w"> </span>Detecting<span class="w"> </span>pipenv<span class="w"> </span>vulnerabilities...
-<span class="m">2022</span>-05-16T13:42:21.440+0100<span class="w"> </span>INFO<span class="w"> </span>Detected<span class="w"> </span>config<span class="w"> </span>files:<span class="w"> </span><span class="m">1</span>
+<span class="m">2022</span>-05-16T13:42:21.440+0100<span class="w">    </span>INFO<span class="w">    </span>Number<span class="w"> </span>of<span class="w"> </span>language-specific<span class="w"> </span>files:<span class="w"> </span><span class="m">1</span>
+<span class="m">2022</span>-05-16T13:42:21.440+0100<span class="w">    </span>INFO<span class="w">    </span>Detecting<span class="w"> </span>pipenv<span class="w"> </span>vulnerabilities...
+<span class="m">2022</span>-05-16T13:42:21.440+0100<span class="w">    </span>INFO<span class="w">    </span>Detected<span class="w"> </span>config<span class="w"> </span>files:<span class="w"> </span><span class="m">1</span>
 
-<span class="w">    </span>Pipfile.lock<span class="w"> </span><span class="o">(</span>pipenv<span class="o">)</span>
-<span class="w">    </span><span class="o">=====================</span>
-<span class="w">    </span>Total:<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">(</span>HIGH:<span class="w"> </span><span class="m">1</span>,<span class="w"> </span>CRITICAL:<span class="w"> </span><span class="m">0</span><span class="o">)</span>
+Pipfile.lock<span class="w"> </span><span class="o">(</span>pipenv<span class="o">)</span>
+<span class="o">=====================</span>
+Total:<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">(</span>HIGH:<span class="w"> </span><span class="m">1</span>,<span class="w"> </span>CRITICAL:<span class="w"> </span><span class="m">0</span><span class="o">)</span>
 
-<span class="w">    </span>┌──────────┬────────────────┬──────────┬───────────────────┬───────────────┬───────────────────────────────────────────────────────────┐
-<span class="w">    </span>│<span class="w"> </span>Library<span class="w">  </span>│<span class="w"> </span>Vulnerability<span class="w">  </span>│<span class="w"> </span>Severity<span class="w"> </span>│<span class="w"> </span>Installed<span class="w"> </span>Version<span class="w"> </span>│<span class="w"> </span>Fixed<span class="w"> </span>Version<span class="w"> </span>│<span class="w">                           </span>Title<span class="w">                           </span>│
-<span class="w">    </span>├──────────┼────────────────┼──────────┼───────────────────┼───────────────┼───────────────────────────────────────────────────────────┤
-<span class="w">    </span>│<span class="w"> </span>httplib2<span class="w"> </span>│<span class="w"> </span>CVE-2021-21240<span class="w"> </span>│<span class="w"> </span>HIGH<span class="w">     </span>│<span class="w"> </span><span class="m">0</span>.12.1<span class="w">            </span>│<span class="w"> </span><span class="m">0</span>.19.0<span class="w">        </span>│<span class="w"> </span>python-httplib2:<span class="w"> </span>Regular<span class="w"> </span>expression<span class="w"> </span>denial<span class="w"> </span>of<span class="w"> </span>service<span class="w"> </span>via<span class="w"> </span>│
-<span class="w">    </span>│<span class="w">          </span>│<span class="w">                </span>│<span class="w">          </span>│<span class="w">                   </span>│<span class="w">               </span>│<span class="w"> </span>malicious<span class="w"> </span>header<span class="w">                                          </span>│
-<span class="w">    </span>│<span class="w">          </span>│<span class="w">                </span>│<span class="w">          </span>│<span class="w">                   </span>│<span class="w">               </span>│<span class="w"> </span>https://avd.khulnasoft.com/nvd/cve-2021-21240<span class="w">                </span>│
-<span class="w">    </span>└──────────┴────────────────┴──────────┴───────────────────┴───────────────┴───────────────────────────────────────────────────────────┘
+┌──────────┬────────────────┬──────────┬───────────────────┬───────────────┬───────────────────────────────────────────────────────────┐
+│<span class="w"> </span>Library<span class="w">  </span>│<span class="w"> </span>Vulnerability<span class="w">  </span>│<span class="w"> </span>Severity<span class="w"> </span>│<span class="w"> </span>Installed<span class="w"> </span>Version<span class="w"> </span>│<span class="w"> </span>Fixed<span class="w"> </span>Version<span class="w"> </span>│<span class="w">                           </span>Title<span class="w">                           </span>│
+├──────────┼────────────────┼──────────┼───────────────────┼───────────────┼───────────────────────────────────────────────────────────┤
+│<span class="w"> </span>httplib2<span class="w"> </span>│<span class="w"> </span>CVE-2021-21240<span class="w"> </span>│<span class="w"> </span>HIGH<span class="w">     </span>│<span class="w"> </span><span class="m">0</span>.12.1<span class="w">            </span>│<span class="w"> </span><span class="m">0</span>.19.0<span class="w">        </span>│<span class="w"> </span>python-httplib2:<span class="w"> </span>Regular<span class="w"> </span>expression<span class="w"> </span>denial<span class="w"> </span>of<span class="w"> </span>service<span class="w"> </span>via<span class="w"> </span>│
+│<span class="w">          </span>│<span class="w">                </span>│<span class="w">          </span>│<span class="w">                   </span>│<span class="w">               </span>│<span class="w"> </span>malicious<span class="w"> </span>header<span class="w">                                          </span>│
+│<span class="w">          </span>│<span class="w">                </span>│<span class="w">          </span>│<span class="w">                   </span>│<span class="w">               </span>│<span class="w"> </span>https://avd.khulnasoft.com/nvd/cve-2021-21240<span class="w">                </span>│
+└──────────┴────────────────┴──────────┴───────────────────┴───────────────┴───────────────────────────────────────────────────────────┘
 
-<span class="w">    </span>Dockerfile<span class="w"> </span><span class="o">(</span>dockerfile<span class="o">)</span>
-<span class="w">    </span><span class="o">=======================</span>
-<span class="w">    </span>Tests:<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="o">(</span>SUCCESSES:<span class="w"> </span><span class="m">16</span>,<span class="w"> </span>FAILURES:<span class="w"> </span><span class="m">1</span><span class="o">)</span>
-<span class="w">    </span>Failures:<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">(</span>HIGH:<span class="w"> </span><span class="m">1</span>,<span class="w"> </span>CRITICAL:<span class="w"> </span><span class="m">0</span><span class="o">)</span>
+Dockerfile<span class="w"> </span><span class="o">(</span>dockerfile<span class="o">)</span>
+<span class="o">=======================</span>
+Tests:<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="o">(</span>SUCCESSES:<span class="w"> </span><span class="m">16</span>,<span class="w"> </span>FAILURES:<span class="w"> </span><span class="m">1</span><span class="o">)</span>
+Failures:<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">(</span>HIGH:<span class="w"> </span><span class="m">1</span>,<span class="w"> </span>CRITICAL:<span class="w"> </span><span class="m">0</span><span class="o">)</span>
 
-<span class="w">    </span>HIGH:<span class="w"> </span>Last<span class="w"> </span>USER<span class="w"> </span><span class="nb">command</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>Dockerfile<span class="w"> </span>should<span class="w"> </span>not<span class="w"> </span>be<span class="w"> </span><span class="s1">&#39;root&#39;</span>
-<span class="w">    </span>════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
-<span class="w">    </span>Running<span class="w"> </span>containers<span class="w"> </span>with<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span>user<span class="w"> </span>can<span class="w"> </span>lead<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>container<span class="w"> </span>escape<span class="w"> </span>situation.<span class="w"> </span>It<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>best<span class="w"> </span>practice<span class="w"> </span>to<span class="w"> </span>run<span class="w"> </span>containers<span class="w"> </span>as<span class="w"> </span>non-root<span class="w"> </span>users,<span class="w"> </span>which<span class="w"> </span>can<span class="w"> </span>be<span class="w"> </span><span class="k">done</span><span class="w"> </span>by<span class="w"> </span>adding<span class="w"> </span>a<span class="w"> </span><span class="s1">&#39;USER&#39;</span><span class="w"> </span>statement<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>Dockerfile.
+HIGH:<span class="w"> </span>Last<span class="w"> </span>USER<span class="w"> </span><span class="nb">command</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>Dockerfile<span class="w"> </span>should<span class="w"> </span>not<span class="w"> </span>be<span class="w"> </span><span class="s1">&#39;root&#39;</span>
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running<span class="w"> </span>containers<span class="w"> </span>with<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span>user<span class="w"> </span>can<span class="w"> </span>lead<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>container<span class="w"> </span>escape<span class="w"> </span>situation.<span class="w"> </span>It<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>best<span class="w"> </span>practice<span class="w"> </span>to<span class="w"> </span>run<span class="w"> </span>containers<span class="w"> </span>as<span class="w"> </span>non-root<span class="w"> </span>users,<span class="w"> </span>which<span class="w"> </span>can<span class="w"> </span>be<span class="w"> </span><span class="k">done</span><span class="w"> </span>by<span class="w"> </span>adding<span class="w"> </span>a<span class="w"> </span><span class="s1">&#39;USER&#39;</span><span class="w"> </span>statement<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>Dockerfile.
 
-<span class="w">    </span>See<span class="w"> </span>https://avd.khulnasoft.com/misconfig/ds002
-<span class="w">    </span>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-<span class="w">    </span>Dockerfile:3
-<span class="w">    </span>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-<span class="w">    </span><span class="m">3</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>USER<span class="w"> </span>root
-<span class="w">    </span>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-<span class="w">    </span><span class="sb">```</span>
-
-In<span class="w"> </span>the<span class="w"> </span>above<span class="w"> </span>example,<span class="w"> </span>Tunnel<span class="w"> </span>detected<span class="w"> </span>vulnerabilities<span class="w"> </span>of<span class="w"> </span>Python<span class="w"> </span>dependencies<span class="w"> </span>and<span class="w"> </span>misconfigurations<span class="w"> </span><span class="k">in</span><span class="w"> </span>Dockerfile.
-
-<span class="c1">## Type detection</span>
-
-The<span class="w"> </span>specified<span class="w"> </span>directory<span class="w"> </span>can<span class="w"> </span>contain<span class="w"> </span>mixed<span class="w"> </span>types<span class="w"> </span>of<span class="w"> </span>IaC<span class="w"> </span>files.
-Tunnel<span class="w"> </span>automatically<span class="w"> </span>detects<span class="w"> </span>config<span class="w"> </span>types<span class="w"> </span>and<span class="w"> </span>applies<span class="w"> </span>relevant<span class="w"> </span>checks.
-
-For<span class="w"> </span>example,<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>example<span class="w"> </span>holds<span class="w"> </span>IaC<span class="w"> </span>files<span class="w"> </span><span class="k">for</span><span class="w"> </span>Terraform,<span class="w"> </span>CloudFormation,<span class="w"> </span>Kubernetes,<span class="w"> </span>Helm<span class="w"> </span>Charts,<span class="w"> </span>and<span class="w"> </span>Dockerfile<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>same<span class="w"> </span>directory.
-
-<span class="sb">```</span>bash
-$<span class="w"> </span>ls<span class="w"> </span>iac/
+See<span class="w"> </span>https://avd.khulnasoft.com/misconfig/ds002
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Dockerfile:3
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+<span class="m">3</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>USER<span class="w"> </span>root
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+</code></pre></div>
+</div>
+<p>In the above example, Tunnel detected vulnerabilities of Python dependencies and misconfigurations in Dockerfile.</p>
+<h2 id="type-detection">Type detection<a class="headerlink" href="#type-detection" title="Permanent link">&para;</a></h2>
+<p>The specified directory can contain mixed types of IaC files.
+Tunnel automatically detects config types and applies relevant checks.</p>
+<p>For example, the following example holds IaC files for Terraform, CloudFormation, Kubernetes, Helm Charts, and Dockerfile in the same directory.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>iac/
 Dockerfile<span class="w">  </span>deployment.yaml<span class="w">  </span>main.tf<span class="w"> </span>mysql-8.8.26.tar
 $<span class="w"> </span>tunnel<span class="w"> </span>config<span class="w"> </span>--severity<span class="w"> </span>HIGH,CRITICAL<span class="w"> </span>./iac
 </code></pre></div>
@@ -6639,7 +6690,7 @@ See<span class="w"> </span>https://avd.khulnasoft.com/misconfig/ksv006
 <span class="w">  </span><span class="m">12</span><span class="w"> </span>│<span class="w">       </span>labels:
 <span class="w">  </span><span class="m">13</span><span class="w"> </span>│<span class="w">         </span>app:<span class="w"> </span>hello-kubernetes
 <span class="w">  </span><span class="m">14</span><span class="w"> </span>└<span class="w">     </span>spec:
-<span class="w">  </span>..
+<span class="w">  </span>..<span class="w">   </span>
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 
@@ -6675,7 +6726,7 @@ See<span class="w"> </span>https://avd.khulnasoft.com/misconfig/ksv023
 <span class="w">  </span><span class="m">12</span><span class="w"> </span>│<span class="w">       </span>labels:
 <span class="w">  </span><span class="m">13</span><span class="w"> </span>│<span class="w">         </span>app:<span class="w"> </span>hello-kubernetes
 <span class="w">  </span><span class="m">14</span><span class="w"> </span>└<span class="w">     </span>spec:
-<span class="w">  </span>..
+<span class="w">  </span>..<span class="w">   </span>
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 
@@ -6696,7 +6747,7 @@ See<span class="w"> </span>https://avd.khulnasoft.com/misconfig/ksv026
 <span class="w">  </span><span class="m">12</span><span class="w"> </span>│<span class="w">       </span>labels:
 <span class="w">  </span><span class="m">13</span><span class="w"> </span>│<span class="w">         </span>app:<span class="w"> </span>hello-kubernetes
 <span class="w">  </span><span class="m">14</span><span class="w"> </span>└<span class="w">     </span>spec:
-<span class="w">  </span>..
+<span class="w">  </span>..<span class="w">   </span>
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 
@@ -6723,7 +6774,7 @@ See<span class="w"> </span>https://avd.khulnasoft.com/misconfig/ksv001
 <span class="w">  </span><span class="m">62</span><span class="w"> </span>│<span class="w">             </span>-<span class="w"> </span>name:<span class="w"> </span>BITNAMI_DEBUG
 <span class="w">  </span><span class="m">63</span><span class="w"> </span>│<span class="w">               </span>value:<span class="w"> </span><span class="s2">&quot;false&quot;</span>
 <span class="w">  </span><span class="m">64</span><span class="w"> </span>└<span class="w">             </span>-<span class="w"> </span>name:<span class="w"> </span>MYSQL_ROOT_PASSWORD
-<span class="w">  </span>..
+<span class="w">  </span>..<span class="w">   </span>
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 
@@ -6744,7 +6795,7 @@ See<span class="w"> </span>https://avd.khulnasoft.com/misconfig/ksv012
 <span class="w">  </span><span class="m">62</span><span class="w"> </span>│<span class="w">             </span>-<span class="w"> </span>name:<span class="w"> </span>BITNAMI_DEBUG
 <span class="w">  </span><span class="m">63</span><span class="w"> </span>│<span class="w">               </span>value:<span class="w"> </span><span class="s2">&quot;false&quot;</span>
 <span class="w">  </span><span class="m">64</span><span class="w"> </span>└<span class="w">             </span>-<span class="w"> </span>name:<span class="w"> </span>MYSQL_ROOT_PASSWORD
-<span class="w">  </span>..
+<span class="w">  </span>..<span class="w">   </span>
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 </code></pre></div>
 
@@ -6852,24 +6903,24 @@ Ensure<span class="w"> </span>that<span class="w"> </span>Serverless<span class=
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-</div>
 <p>In the case above, the custom check specified has a metadata annotation for the input schema <code>input: schema["serverless-schema"]</code>. This allows Tunnel to type check the input IaC files provided.</p>
+</div>
 <p>Optionally, you can also pass schemas using the <code>config-file-schemas</code> flag. Tunnel will use these schemas for file filtering and type checking in Rego checks.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 </div>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>tunnel<span class="w"> </span>config<span class="w"> </span>--misconfig-scanners<span class="o">=</span>json,yaml<span class="w"> </span>--config-check<span class="w"> </span>./serverless.rego<span class="w"> </span>--check-namespaces<span class="w"> </span>user<span class="w"> </span>--config-file-schemas<span class="w"> </span>./serverless-schema.json<span class="w"> </span>./iac
 </code></pre></div>
-<p>If the <code>--config-file-schemas</code> flag is specified Tunnel ensures that each input IaC config file being scanned is type-checked against the schema. If the input file does not match any of the passed schemas, it will be ignored.</p>
+<p>If the <code>--config-file-schemas</code> flag is specified Tunnel ensures that each input IaC config file being scanned is type-checked against the schema. If the input file does not match any of the passed schemas, it will be ignored. </p>
 <p>If the schema is specified in the check metadata and is in the directory specified in the <code>--config-check</code> argument, it will be automatically loaded as specified <a href="custom/schema/#custom-checks-with-custom-schemas">here</a>, and will only be used for type checking in Rego.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-</div>
 <p>If a user specifies the <code>--config-file-schemas</code> flag, all input IaC config files are ensured that they pass type-checking. It is not required to pass an input schema in case type checking is not required. This is helpful for scenarios where you simply want to write a Rego check and pass in IaC input for it. Such a use case could include scanning for a new service which Tunnel might not support just yet.</p>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
+<p>It is also possible to specify multiple input schemas with <code>--config-file-schema</code> flag as it can accept a comma separated list of file paths or a directory as input. In the case of multiple schemas being specified, all of them will be evaluated against all the input files.</p>
 </div>
-<p>It is also possible to specify multiple input schemas with <code>--config-file-schema</code> flag as it can accept a comma seperated list of file paths or a directory as input. In the case of multiple schemas being specified, all of them will be evaluated against all the input files.</p>
 <h3 id="passing-custom-data">Passing custom data<a class="headerlink" href="#passing-custom-data" title="Permanent link">&para;</a></h3>
 <p>You can pass directories including your custom data through <code>--data</code> option.
 This can be repeated for specifying multiple directories.</p>
@@ -6889,16 +6940,16 @@ To pass credentials you must use the <code>TF_TOKEN_</code> environment variable
 You cannot use a <code>.terraformrc</code> or <code>terraform.rc</code> file, these are not supported by tunnel yet.</p>
 <p>From the Terraform <a href="https://developer.hashicorp.com/terraform/cli/config/config-file#environment-variable-credentials">docs</a>:</p>
 <blockquote>
-<p>Environment variable names should have the prefix TF<em>TOKEN</em> added to the domain name, with periods encoded as underscores.
+<p>Environment variable names should have the prefix TF_TOKEN_ added to the domain name, with periods encoded as underscores.
 For example, the value of a variable named <code>TF_TOKEN_app_terraform_io</code> will be used as a bearer authorization token when the CLI makes service requests to the hostname <code>app.terraform.io</code>.</p>
 <p>You must convert domain names containing non-ASCII characters to their punycode equivalent with an ACE prefix.
 For example, token credentials for <code>例えば.com</code> must be set in a variable called <code>TF_TOKEN_xn--r8j3dr99h_com</code>.</p>
 <p>Hyphens are also valid within host names but usually invalid as variable names and may be encoded as double underscores.
-For example, you can set a token for the domain name café.fr as TF_TOKEN_xn--caf-dma_fr or TF_TOKEN_xn_<strong>_caf</strong>dma_fr.</p>
+For example, you can set a token for the domain name café.fr as TF_TOKEN_xn--caf-dma_fr or TF_TOKEN_xn<em><strong>_caf</strong>dma</em>fr.</p>
 </blockquote>
 <p>If multiple variables evaluate to the same hostname, Tunnel will choose the environment variable name where the dashes have not been encoded as double underscores.</p>
-<h3 id="skipping-resources-by-inline-comments">Skipping resources by inline comments<a class="headerlink" href="#skipping-resources-by-inline-comments" title="Permanent link">&para;</a></h3>
-<p>Tunnel supports ignoring misconfigured resources by inline comments for Terraform and CloudFormation configuration files only.</p>
+<h3 id="skipping-detected-misconfigurations-by-inline-comments">Skipping detected misconfigurations by inline comments<a class="headerlink" href="#skipping-detected-misconfigurations-by-inline-comments" title="Permanent link">&para;</a></h3>
+<p>Tunnel supports ignoring detected misconfigurations by inline comments for Terraform, CloudFormation (YAML), Helm and Dockerfile configuration files only.</p>
 <p>In cases where Tunnel can detect comments of a specific format immediately adjacent to resource definitions, it is possible to ignore findings from a single source of resource definition (in contrast to <code>.tunnelignore</code>, which has a directory-wide scope on all of the files scanned). The format for these comments is <code>tunnel:ignore:&lt;rule&gt;</code> immediately following the format-specific line-comment <a href="https://developer.hashicorp.com/terraform/language/syntax/configuration#comments">token</a>.</p>
 <p>The ignore rule must contain one of the possible check IDs that can be found in its metadata: ID, short code or alias. The <code>id</code> from the metadata is not case-sensitive, so you can specify, for example, <code>AVD-AWS-0089</code> or <code>avd-aws-0089</code>.</p>
 <p>For example, to ignore a misconfiguration ID <code>AVD-GCP-0051</code> in a Terraform HCL file:</p>
@@ -6908,40 +6959,60 @@ For example, you can set a token for the domain name café.fr as TF_TOKEN_xn--ca
 <span class="w">  </span><span class="na">location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">var.region</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>You can add multiple ignores on the same comment line:</p>
+<p>You can add multiple ignores on the same comment line:
 <div class="highlight"><pre><span></span><code><span class="c1">#tunnel:ignore:AVD-GCP-0051 tunnel:ignore:AVD-GCP-0053</span>
 <span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;google_container_cluster&quot;</span><span class="w"> </span><span class="nv">&quot;example&quot;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="na">name</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nv">var.cluster_name</span>
 <span class="w">  </span><span class="na">location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">var.region</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></p>
 <p>You can also specify a long ID, which is formed as follows: <code>&lt;provider&gt;-&lt;service&gt;-&lt;short-code&gt;</code>.</p>
 <p>As an example, consider the following check metadata:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># custom:</span>
-<span class="c1"># id: AVD-AWS-0089</span>
-<span class="c1"># avd_id: AVD-AWS-0089</span>
-<span class="c1"># provider: aws</span>
-<span class="c1"># service: s3</span>
-<span class="c1"># severity: LOW</span>
-<span class="c1"># short_code: enable-logging</span>
+<span class="w">  </span><span class="c1"># id: AVD-AWS-0089</span>
+<span class="w">  </span><span class="c1"># avd_id: AVD-AWS-0089</span>
+<span class="w">  </span><span class="c1"># provider: aws</span>
+<span class="w">  </span><span class="c1"># service: s3</span>
+<span class="w">  </span><span class="c1"># severity: LOW</span>
+<span class="w">  </span><span class="c1"># short_code: enable-logging</span>
 </code></pre></div>
 <p>Long ID would look like the following: <code>aws-s3-enable-logging</code>.</p>
-<p>Example for CloudFromation:</p>
+<p>Example for CloudFromation:
 <div class="highlight"><pre><span></span><code><span class="nt">AWSTemplateFormatVersion</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2010-09-09&quot;</span>
 <span class="nt">Resources</span><span class="p">:</span>
-<span class="w">  </span><span class="c1">#tunnel:ignore:*</span>
+<span class="c1">#tunnel:ignore:*</span>
 <span class="w">  </span><span class="nt">S3Bucket</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;AWS::S3::Bucket&quot;</span>
+<span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;AWS::S3::Bucket&#39;</span>
 <span class="w">    </span><span class="nt">Properties</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">BucketName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test-bucket</span>
-</code></pre></div>
+</code></pre></div></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ignore rules for Helm files should be placed before the YAML object, since only it contains the location data needed for ignoring.</p>
+</div>
+<p>Example for Helm:
+<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="nt">serviceAccountName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;testchart.serviceAccountName&quot;</span>
+<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">        </span><span class="c1"># tunnel:ignore:KSV018</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;testchart&quot;</span>
+<span class="w">          </span><span class="nt">securityContext</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">runAsUser</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">            </span><span class="nt">runAsGroup</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3000</span>
+<span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;your-repository/your-image:your-tag&quot;</span>
+<span class="w">          </span><span class="nt">imagePullPolicy</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Always&quot;</span>
+</code></pre></div></p>
+<p>Example for Dockerfile:
+<div class="highlight"><pre><span></span><code><span class="k">FROM</span><span class="w"> </span><span class="s">scratch</span>
+<span class="c"># tunnel:ignore:AVD-DS-0022</span>
+<span class="k">MAINTAINER</span><span class="w"> </span><span class="s">moby@example.com</span>
+</code></pre></div></p>
 <h4 id="expiration-date">Expiration Date<a class="headerlink" href="#expiration-date" title="Permanent link">&para;</a></h4>
-<p>You can specify the expiration date of the ignore rule in <code>yyyy-mm-dd</code> format. This is a useful feature when you want to make sure that an ignored issue is not forgotten and worth revisiting in the future. For example:</p>
+<p>You can specify the expiration date of the ignore rule in <code>yyyy-mm-dd</code> format. This is a useful feature when you want to make sure that an ignored issue is not forgotten and worth revisiting in the future. For example:
 <div class="highlight"><pre><span></span><code><span class="c1">#tunnel:ignore:aws-s3-enable-logging:exp:2024-03-10</span>
 <span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;aws_s3_bucket&quot;</span><span class="w"> </span><span class="nv">&quot;example&quot;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="na">bucket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;test&quot;</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></p>
 <p>The <code>aws-s3-enable-logging</code> check will be ignored until <code>2024-03-10</code> until the ignore rule expires.</p>
 <h4 id="ignoring-by-attributes">Ignoring by attributes<a class="headerlink" href="#ignoring-by-attributes" title="Permanent link">&para;</a></h4>
 <p>You can ignore a resource by its attribute value. This is useful when using the <code>for-each</code> meta-argument. For example:</p>
@@ -6966,7 +7037,7 @@ For example, you can set a token for the domain name café.fr as TF_TOKEN_xn--ca
 <div class="highlight"><pre><span></span><code><span class="c1">#tunnel:ignore:aws-ec2-no-public-ingress-sgr[from_port=3306]</span>
 <span class="c1">#tunnel:ignore:aws-ec2-no-public-ingress-sgr[from_port=5432]</span>
 </code></pre></div>
-<p>You can also ignore a resource on multiple attributes in the same rule:</p>
+<p>You can also ignore a resource on multiple attributes in the same rule:
 <div class="highlight"><pre><span></span><code><span class="nb">locals</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nb">rules</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nb">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
@@ -6992,7 +7063,7 @@ For example, you can set a token for the domain name café.fr as TF_TOKEN_xn--ca
 <span class="w">  </span><span class="na">security_group_id</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="nv">aws_security_group.example.id</span>
 <span class="w">  </span><span class="na">source_security_group_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">aws_security_group.example.id</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></p>
 <p>Checks can also be ignored by nested attributes:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#tunnel:ignore:*[logging_config.prefix=myprefix]</span>
 <span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;aws_cloudfront_distribution&quot;</span><span class="w"> </span><span class="nv">&quot;example&quot;</span><span class="w"> </span><span class="p">{</span>
@@ -7012,7 +7083,7 @@ For example, you can set a token for the domain name café.fr as TF_TOKEN_xn--ca
 <span class="w">  </span><span class="na">bucket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;my-s3-bucket&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>An example of ignoring checks for a specific bucket in a module:</p>
+<p>An example of ignoring checks for a specific bucket in a module:
 <div class="highlight"><pre><span></span><code><span class="nb">locals</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="na">bucket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;test1&quot;, &quot;test2&quot;</span><span class="p">]</span>
 <span class="p">}</span>
@@ -7023,7 +7094,7 @@ For example, you can set a token for the domain name café.fr as TF_TOKEN_xn--ca
 <span class="w">  </span><span class="na">source</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;terraform-aws-modules/s3-bucket/aws&quot;</span>
 <span class="w">  </span><span class="na">bucket</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nv">each.value</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></p>
 <h4 id="support-for-wildcards">Support for Wildcards<a class="headerlink" href="#support-for-wildcards" title="Permanent link">&para;</a></h4>
 <p>You can use wildcards in the <code>ws</code> (workspace) and <code>ignore</code> sections of the ignore rules.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># tunnel:ignore:aws-s3-*:ws:dev-*</span>
@@ -7113,8 +7184,8 @@ For example, you can set a token for the domain name café.fr as TF_TOKEN_xn--ca
       
       
     
-    <a href="https://twitter.com/khulnasoft" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253"/></svg>
+    <a href="https://twitter.com/KhulnasoftTunnel" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9zm-24.8 373.8h39.1L151.1 88h-42z"/></svg>
     </a>
   
     
@@ -7126,17 +7197,6 @@ For example, you can set a token for the domain name café.fr as TF_TOKEN_xn--ca
     
     <a href="https://github.com/khulnasoft/tunnel" target="_blank" rel="noopener" title="github.com" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
-    </a>
-  
-    
-    
-    
-    
-      
-      
-    
-    <a href="https://github.com/khulnasoft/tunnel" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1s21.16-47.06 47.06-47.06h47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06S448 171 448 196.9s-21.16 47.06-47.06 47.06h-47.06zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06S309 480 283.1 480s-47.06-21.16-47.06-47.06v-47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06s21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06z"/></svg>
     </a>
   
 </div>

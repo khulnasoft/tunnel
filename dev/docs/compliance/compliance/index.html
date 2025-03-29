@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://khulnasoft.github.io/tunnel/dev/docs/compliance/compliance/">
+        <link rel="canonical" href="https://tunnel.khulnasoft.com/dev/docs/compliance/compliance/">
       
       
         <link rel="prev" href="../../supply-chain/vex/oci/">
@@ -75,8 +75,8 @@
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Tunnel - Built-in Compliance" />
 <meta property="og:description" content="Tunnel - All-in-one open source security scanner" />
-<meta property="og:url" content="https://khulnasoft.github.io/tunnel/dev/docs/compliance/compliance/" />
-<meta property="og:image" content="https://khulnasoft.github.io/tunnel/devassets/images/illustrations/banner.png" />
+<meta property="og:url" content="https://tunnel.khulnasoft.com/dev/docs/compliance/compliance/" />
+<meta property="og:image" content="https://tunnel.khulnasoft.com/devassets/images/illustrations/banner.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1080" />
 <meta property="og:image:height" content="568" />
@@ -3667,6 +3667,27 @@ You're not viewing the latest version of the documentation.
   
   
     <li class="md-nav__item">
+      <a href="../../supply-chain/vex/sbom-ref/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VEX SBOM Reference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../supply-chain/vex/oci/" class="md-nav__link">
         
   
@@ -5708,6 +5729,27 @@ You're not viewing the latest version of the documentation.
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/abbreviations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Abbreviations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -6624,8 +6666,8 @@ You're not viewing the latest version of the documentation.
 <h1 id="built-in-compliance-reports">Built-in Compliance Reports<a class="headerlink" href="#built-in-compliance-reports" title="Permanent link">&para;</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">EXPERIMENTAL</p>
-</div>
 <p>This feature might change without preserving backwards compatibility.</p>
+</div>
 <p>Tunnel’s compliance flag lets you curate a specific set of checks into a report. In a typical Tunnel scan, there are hundreds of different checks for many different components and configurations, but sometimes you already know which specific checks you are interested in. Often this would be an industry accepted set of checks such as CIS, or some vendor specific guideline, or your own organization policy that you want to comply with. These are all possible using the flexible compliance infrastructure that's built into Tunnel. Compliance reports are defined as simple YAML documents that select checks to include in the report.</p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <p>Compliance report is currently supported in the following targets (tunnel sub-commands):</p>
@@ -6670,7 +6712,6 @@ to specify a built-in compliance report, select it by ID like <code>tunnel --com
 <ul>
 <li><a href="../../target/container_image/#compliance">Docker compliance</a></li>
 <li><a href="../../target/kubernetes/#compliance">Kubernetes compliance</a></li>
-<li><a href="../target/aws.md#compliance">AWS compliance</a></li>
 </ul>
 <h2 id="contribute-a-built-in-compliance-report">Contribute a Built-in Compliance Report<a class="headerlink" href="#contribute-a-built-in-compliance-report" title="Permanent link">&para;</a></h2>
 <h3 id="define-a-compliance-spec-based-on-cis-benchmark-or-other-specs">Define a Compliance spec, based on CIS benchmark or other specs<a class="headerlink" href="#define-a-compliance-spec-based-on-cis-benchmark-or-other-specs" title="Permanent link">&para;</a></h3>
@@ -6682,22 +6723,20 @@ to specify a built-in compliance report, select it by ID like <code>tunnel --com
 <span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CIS Kubernetes Benchmarks</span>
 <span class="w">  </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">k8s</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cis</span>
-<span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.23&quot;</span>
+<span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;1.23&#39;</span>
 <span class="w">  </span><span class="nt">relatedResources</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.cisecurity.org/benchmark/kubernetes</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.cisecurity.org/benchmark/kubernetes</span>
 <span class="w">  </span><span class="nt">controls</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.1.1</span>
-<span class="w">      </span><span class="nt">name</span><span class="p">:</span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">Ensure that the API server pod specification file permissions are set to</span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">600 or more restrictive</span>
-<span class="w">      </span><span class="nt">description</span><span class="p">:</span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">Ensure that the API server pod specification file has permissions</span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">of 600 or more restrictive</span>
-<span class="w">      </span><span class="nt">checks</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AVD-KCV-0073</span>
-<span class="w">      </span><span class="nt">commands</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CMD-0001</span>
-<span class="w">      </span><span class="nt">severity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HIGH</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.1.1</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ensure that the API server pod specification file permissions are set to</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">600 or more restrictive</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ensure that the API server pod specification file has permissions</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">of 600 or more restrictive</span>
+<span class="w">    </span><span class="nt">checks</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AVD-KCV-0073</span>
+<span class="w">    </span><span class="nt">commands</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CMD-0001</span>
+<span class="w">    </span><span class="nt">severity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HIGH</span>
 </code></pre></div>
 <h3 id="compliance-id">Compliance ID<a class="headerlink" href="#compliance-id" title="Permanent link">&para;</a></h3>
 <p>ID field is the name used to execute the compliance scan via tunnel
@@ -6779,7 +6818,7 @@ deny<span class="o">[</span>res<span class="o">]</span><span class="w"> </span><
 <span class="w">  </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kubelet.conf file permissions</span>
 <span class="w">  </span><span class="nt">nodeType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">worker</span>
 <span class="w">  </span><span class="nt">audit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stat -c %a $kubelet.kubeconfig</span>
-<span class="w">  </span><span class="nt">platfroms</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">platforms</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">k8s</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aks</span>
 </code></pre></div>
@@ -6789,7 +6828,7 @@ deny<span class="o">[</span>res<span class="o">]</span><span class="w"> </span><
 </code></pre></div>
 <h4 id="command-key">Command Key<a class="headerlink" href="#command-key" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Re-use an existing key or specifiy a new one (make sure key name has no spaces)</li>
+<li>Re-use an existing key or specify a new one (make sure key name has no spaces)</li>
 </ul>
 <p>Note: The key value should match the key name evaluated by the Rego check.</p>
 <h3 id="command-title">Command Title<a class="headerlink" href="#command-title" title="Permanent link">&para;</a></h3>
@@ -6801,19 +6840,19 @@ deny<span class="o">[</span>res<span class="o">]</span><span class="w"> </span><
 <li>master</li>
 </ul>
 <h3 id="command-audit">Command Audit<a class="headerlink" href="#command-audit" title="Permanent link">&para;</a></h3>
-<p>Specify here the shell command to be used please make sure to add error supression (2&gt;/dev/null)</p>
+<p>Specify here the shell command to be used please make sure to add error suppression (2&gt;/dev/null)</p>
 <h3 id="command-platforms">Command Platforms<a class="headerlink" href="#command-platforms" title="Permanent link">&para;</a></h3>
 <p>The list of platforms that support this command. Name should be taken from this list <a href="#compliance-platform">Platforms</a></p>
 <h3 id="command-config-files">Command Config Files<a class="headerlink" href="#command-config-files" title="Permanent link">&para;</a></h3>
 <p>The commands use a configuration file that helps obtain the paths to binaries and configuration files based on different platforms (e.g., Rancher, native Kubernetes, etc.).</p>
 <p>For example:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">kubelet</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">bins</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kubelet</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hyperkube kubelet</span>
-<span class="w">  </span><span class="nt">confs</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/kubernetes/kubelet-config.yaml</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/kubelet/config.yaml</span>
+<span class="w">    </span><span class="nt">bins</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kubelet</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hyperkube kubelet</span>
+<span class="w">    </span><span class="nt">confs</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/kubernetes/kubelet-config.yaml</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/kubelet/config.yaml</span>
 </code></pre></div>
 <h3 id="commands-files-location">Commands Files Location<a class="headerlink" href="#commands-files-location" title="Permanent link">&para;</a></h3>
 <p>Currently checks files location are :<code>https://github.com/khulnasoft/tunnel-checks/tree/main/checks</code></p>
@@ -6851,24 +6890,24 @@ under command file</p>
 <span class="w">  </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;k8s-myreport&quot;</span><span class="w"> </span><span class="c1"># report unique identifier. this should not container spaces.</span>
 <span class="w">  </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;My</span><span class="nv"> </span><span class="s">custom</span><span class="nv"> </span><span class="s">Kubernetes</span><span class="nv"> </span><span class="s">report&quot;</span><span class="w"> </span><span class="c1"># report title. Any one-line title.</span>
 <span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Describe</span><span class="nv"> </span><span class="s">your</span><span class="nv"> </span><span class="s">report&quot;</span><span class="w"> </span><span class="c1"># description of the report. Any text.</span>
-<span class="w">  </span><span class="nt">relatedResources</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">relatedResources </span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://some.url</span><span class="w"> </span><span class="c1"># useful references. URLs only.</span>
 <span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="c1"># spec version (string)</span>
 <span class="w">  </span><span class="nt">controls</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Non-root</span><span class="nv"> </span><span class="s">containers&quot;</span><span class="w"> </span><span class="c1"># Name for the control (appears in the report as is). Any one-line name.</span>
-<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Check</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">container</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">running</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">root&quot;</span><span class="w"> </span><span class="c1"># Description (appears in the report as is). Any text.</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Check</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">container</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">running</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">root&#39;</span><span class="w"> </span><span class="c1"># Description (appears in the report as is). Any text.</span>
 <span class="w">      </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="c1"># control identifier (string)</span>
-<span class="w">      </span><span class="nt">checks</span><span class="p">:</span><span class="w"> </span><span class="c1"># list of existing Tunnel checks that define the control</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AVD-KSV-0012</span><span class="w"> </span><span class="c1"># check ID. Must start with `AVD-` or `CVE-`</span>
+<span class="w">      </span><span class="nt">checks</span><span class="p">:</span><span class="w">   </span><span class="c1"># list of existing Tunnel checks that define the control</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AVD-KSV-0012</span><span class="w"> </span><span class="c1"># check ID. Must start with `AVD-` or `CVE-` </span>
 <span class="w">      </span><span class="nt">severity</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;MEDIUM&quot;</span><span class="w"> </span><span class="c1"># Severity for the control (note that checks severity isn&#39;t used)</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Immutable</span><span class="nv"> </span><span class="s">container</span><span class="nv"> </span><span class="s">file</span><span class="nv"> </span><span class="s">systems&quot;</span>
-<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Check</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">container</span><span class="nv"> </span><span class="s">root</span><span class="nv"> </span><span class="s">file</span><span class="nv"> </span><span class="s">system</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">immutable&quot;</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Check</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">container</span><span class="nv"> </span><span class="s">root</span><span class="nv"> </span><span class="s">file</span><span class="nv"> </span><span class="s">system</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">immutable&#39;</span>
 <span class="w">      </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.1&quot;</span>
 <span class="w">      </span><span class="nt">checks</span><span class="p">:</span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AVD-KSV-0014</span>
 <span class="w">      </span><span class="nt">severity</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;LOW&quot;</span>
 </code></pre></div>
-<p>The check id field (<code>controls[].checks[].id</code>) is referring to existing check by it's "AVD ID". This AVD ID is easily located in the check's source code metadata header, or by browsing <a href="https://avd.khulnasoft.com/">KhulnaSoft vulnerability DB</a>, specifically in the <a href="https://avd.khulnasoft.com/misconfig/">Misconfigurations</a> and <a href="https://avd.khulnasoft.com/nvd">Vulnerabilities</a> sections.</p>
+<p>The check id field (<code>controls[].checks[].id</code>) is referring to existing check by it's "AVD ID". This AVD ID is easily located in the check's source code metadata header, or by browsing <a href="https://avd.khulnasoft.com/">Khulnasoft vulnerability DB</a>, specifically in the <a href="https://avd.khulnasoft.com/misconfig/">Misconfigurations</a> and <a href="https://avd.khulnasoft.com/nvd">Vulnerabilities</a> sections.</p>
 <p>Once you have a compliance spec, you can select it by file path: <code>tunnel --compliance @&lt;/path/to/compliance.yaml&gt;</code> (note the <code>@</code> indicating file path instead of report id).</p>
 
 
@@ -6954,8 +6993,8 @@ under command file</p>
       
       
     
-    <a href="https://twitter.com/khulnasoft" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253"/></svg>
+    <a href="https://twitter.com/KhulnasoftTunnel" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9zm-24.8 373.8h39.1L151.1 88h-42z"/></svg>
     </a>
   
     
@@ -6967,17 +7006,6 @@ under command file</p>
     
     <a href="https://github.com/khulnasoft/tunnel" target="_blank" rel="noopener" title="github.com" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
-    </a>
-  
-    
-    
-    
-    
-      
-      
-    
-    <a href="https://github.com/khulnasoft/tunnel" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1s21.16-47.06 47.06-47.06h47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06S448 171 448 196.9s-21.16 47.06-47.06 47.06h-47.06zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06S309 480 283.1 480s-47.06-21.16-47.06-47.06v-47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06s21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06z"/></svg>
     </a>
   
 </div>
